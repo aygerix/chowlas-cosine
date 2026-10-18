@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-18, session 2)
+# STATE — current targets and honest status (updated 2026-10-18 late night)
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -74,57 +74,57 @@ error diffusion; separated-block unions; local SA from Bu seeds; Sidon lower-fla
 cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatness (E29); P18 as a finite probe (E28); averaged Bedert (P14: (a) is t-independent); sums of several squares
 Σ P_j^2 (P15 remark: pseudo-random squares give R ~ √log X).
 
-## Plan in priority order (updated 2026-10-18 night, after P22)
-1. DONE: G3 resolved (FALSE, P22). Agent g3 finishing its write-up; then commit report + scratch.
-2. Z-specific lower bound, test case Lemma OR(2): M(S ∪ (S+t)) >= c√t for every transversal S mod t (the Z-analogue of
-   O4; F_A = 4cos(πtθ)·f_{S+t/2}). Probe numerically first (levels with tapered profile), then attempt a proof.
-3. λ-fold rulers (NOTEBOOK evening entry; E35 done): SA finds λ = 2 structure but λ = 3, 4 exact fractions DECAY with k
-   and every candidate has R >= 0.68 — demoted pending a structural idea (homometric triples; or prove W >= c k^{1+δ}).
-4. DONE: P21 and the negative-definite fibre lemma are KERNEL-CHECKED (RunTopGroup.lean, NegDefFibre.lean; 109
-   axiom lines standard). Next Lean target, if any: O4⁺ (fourth Schur power, elementary); O4 itself needs Galois rings.
-5. Low priority: exhaustive N = 43–44 with src/exh2.c (validated, load-balanced) when compute is free.
+## Plan in priority order (updated 2026-10-18 late night, after E40/E41 and the branch-2 review)
+1. **Line D: the dense regime, the common crux of both tracks** (NOTEBOOK "Branch 2 reassessed").
+   - Lower bound: Chowla for dense sets is open even in Z_p (half-sets: Sanders p^{1/3} vs Spencer/Paley p^{1/2}).
+   - Proved here: the elementary p^{1/4}; the exact identities h*h = const and h^{*3} = p²h + p²λ(λ−1)(λ−2) for
+     h = ĝ + λ (g = 2·1_A − 1); the spectral gap ĝ(γ) <= λ³/2 (γ ≠ 0).
+   - Target: exponent > 1/3 in Z_p (difference-set rigidity / global large-spectrum structure), then dense A ⊂ [1, X].
+   - E41 (exact half-set optima) running: does min M_p/√p level off near 1/2 or keep falling?
+2. Construction agent (native, started before the codex rule): dense regime at N ≈ 50–300 plus >= 2 new mechanisms.
+   Verify and record its report when it lands.
+3. OR(2) demoted to a test case:
+   - its energy half is the standard energy bound;
+   - its structured half contains the dense problem;
+   - C½ holds in its dilated sub-family (rotation sweep, PROVED).
+4. Lean (next subagent, via codex): O4⁺, P20 Theorem 2, the Z → Z_N transfer lemma; then the line-D identities.
+5. Low priority:
+   - exhaustive N = 43 in [1,60] (src/exh2.c);
+   - λ-ruler obstruction proofs (C-W, W' >= ck^{1+δ}).
 Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM dirichlet via src/dirun.sh
 (8 vCPU = 4 physical cores, 32 GB; default -c 4 so lead + one agent share it; -c 8 for exclusive jobs). Not the laptop
-(shared with other projects), never the VM fejer. F4 (src/f4run.sh) only as fallback. exh2 N=33 benchmark: 30 s at -c 8.
+(shared with other projects), never the VM fejer. F4 (src/f4run.sh) only as fallback.
+Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex CLI, Sol 6.1 at xhigh reasoning
+(`codex exec -m gpt-6.1-sol -c model_reasoning_effort="xhigh" ...`), still at most one at a time.
 
-## Running now (2026-10-18 night)
-- DONE: agent "lambda" (P23, E39 lead-verified). The λ >= 3 near-ruler construction line is KILLED (heuristically):
-  W >= k exactly for k <= 12 and growing; φ ≈ 0.8 at best; every candidate has R >= 0.68. Signs, cyclic lifts, products
-  and homometric triples all fail; T5 proves W ≍ k² for separated designs. The construction track has NO live
-  mechanism. Next: a new construction idea is needed, or a proof of the obstruction (C-W, then W' >= ck^{1+δ}).
-- E37/E37b/E37c (dirichlet, src/e37*_batch.sh): exact ILP max |B_t| at K <= 3–4 in cyclic, coprime and higher-rank
-  groups. Partial: ℓ-torsion outside ⟨t⟩ drives run-tops (NOTEBOOK night entry); full table to EXPERIMENTS when done.
-- Queued: exhaustive N = 43 in [1,60] with src/exh2.c once the VM is free (dense-regime trend; N = 42 took 9619 s).
+## Running now (2026-10-18 late night)
+- Construction agent a6d21d62b5c3e53ad (native; brief .research/agents/construct_brief.md).
+- E41 (dirichlet, src/e41_batch.sh): exact half-set optima for p = 59..89 → examples/zp_half/e41_mid.txt.
+- E37 main batch (Z_105, Z_256, Z_4^4) still running. E37b done: primal values only, they track the 3-rank.
 
-## Active lines (>= 3) (updated 2026-10-18, after P21)
-1. [lower bound, universal] CLOSED as a group question: G3 is FALSE (P22, group exponent exactly 4). The run-top route
-   now needs Z-specific input in the run-top bound itself; test case Lemma OR(2) (plan item 2).
-2. [lower bound, Z-specific] Exponent > 1/4 by the run-top route needs torsion-free input. Identified candidates: the
-   continuous t-offset φ (first-order term odd in j); coupling of t-run lobes (Dirichlet main/side lobes) with the
-   macroscopic profile; Shankar's averaging (I <= Q) is the only Z-input of the current chain. No proof route yet.
-3. [C½ for construction classes] P16/P16′ (Bu class, kernel-checked). Sidon differences ⟺ SNZ-weak
-   (min|F_B|² <= 0.293k) — typical-size statement, moments cannot do it (unlike P16), related to the open Newman
-   minimum-modulus problem (LITERATURE). Dense regime: exhaustive N = 43 in [1,60] queued for F4 (load >= 12 today).
-4. [construction] No live sub-1/2 mechanism. Run-structured sets (E34) are dominated by macroscopic Gibbs; a fair test
-   needs tapered p.d. run-start profiles. All known mechanisms pinned >= 1/2.
-5. [verification] P21 Lean statements written (RunTopGroup.lean, typechecks); formalization agent to follow the g3
-   agent (one agent at a time).
+## Active lines (>= 3) (updated 2026-10-18 late night)
+1. [lower bound, dense] Line D (above). The finite model Z_p has no subgroups. E10 shows that in the sparse regime
+   Z_p still allows grid-R ≈ 0.31, so any Z proof needs continuity. Only the dense regime might be provable in Z_p.
+2. [lower bound, universal] Run-top route mapped:
+   - group exponent exactly 4 (P22);
+   - the two-step scheme is capped at 1/3 in Z;
+   - JMTZ capped at 1/6 with an optimal clique theorem.
+   No Z-specific run-top mechanism yet; OR(2) gave only the rotation sweep.
+3. [C½ for construction classes] P16/P16′ (Bu class, kernel-checked); λ-rulers killed (P23). Line D's half-set data
+   doubles as dense-regime evidence.
+4. [construction] Dense FR supports: the agent's report is the next input. Every other known mechanism is pinned at
+   >= 1/2.
+5. [verification] Lean: P21 and the negative-definite fibre lemma done; next O4⁺ via codex.
 
 ## Compute policy
 All calculations on GCP VM dirichlet via src/dirun.sh (user rule 2026-10-18); F4 fallback; never the laptop or fejer.
 
-## First concrete next step (updated 2026-10-18, after P20/P21)
-(1) Lower bound. Group-agnostic run-top bounds are capped at K³ even WITHOUT full or singleton cosets (P20 Theorem 1;
-P21: F_p^4, every t-coset one (p−1)-run, K = 3p, |B_t| = p³ — elementary proof). Conjectures G and G_noFull are dead.
-Both K³ mechanisms need negative-definite fibres = runs longer than ord(t)/2 (PROVED lemma, P21), impossible in Z.
-The torsion-free ingredient identified: continuous t-direction offset φ, whose first-order term is odd in j (NOTEBOOK).
-First derivation: Lemma OR — for A = S + t·[0, ℓ) (S a transversal mod t, one run per class) prove M(A) >= c√(ℓ|A|) via
-the φ-linearisation at φ ≈ 1/(2ℓ) with an honest second-order bound; then test numerically on structured S (random,
-quadratic-phase, Sidon-like). Then: fibres with several runs (the general case) — G_arc / Z run-top bound K^{3}.
-(2) Dense regime (C½ only, low priority): exhaustive N = 41 ([1,57]) 0.57404, N = 42 ([1,60], complete) 0.57896 — the
-0.49 + 0.54/√N fit fails at N = 42; optima since N = 36 stay >= 0.574 (consistent with the anatomy prediction of a rise);
-N = 50 MILP is search-limited (R <= 0.584181). Large N needs a search that respects the p.d. macroscopic profile.
-(3) Constructions: every known mechanism (squares, dense profiles, Sidon differences, Hermite mixtures, modular lifts)
-is pinned at >= 1/2 by a proved or heuristic obstruction (ρ*, diagonal concentration, Parseval noise). No live sub-1/2
-candidate; a new mechanism must be non-square, non-profile, non-dissociated.
-Compute: laptop via src/localrun.sh (memory guard, <= 4 cores, user rule); F4 via src/f4run.sh when load < 12.
+## First concrete next step (updated 2026-10-18 late night)
+(1) Read E41 for p = 59..89. If min M_p/√p keeps falling below 0.5, find the structure of the optima (dilated
+near-interval + tail): fit the profile and the tail, and test a parametric family for large p. That would be a
+dense-regime construction in Z_p and the first sub-Paley dense family. If it levels off, attack exponent > 1/3:
+  - a symmetric near-planar large spectrum is what the identities allow at λ ~ p^{1/4};
+  - rule it out by difference-set rigidity (Johnsen: −1 is never a multiplier of a nontrivial abelian difference set)
+    in a quantitative form.
+(2) When the construction agent reports: re-certify its records, record them, commit.
+(3) Lean via codex (one subagent at a time).

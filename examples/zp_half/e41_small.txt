@@ -1,0 +1,12 @@
+p=13 k=3 |A|=6 minM=2.302775638 M/sqrtp=0.638675 nopt=1 nodes=17 P=1 3 4 
+p=17 k=4 |A|=8 minM=2.561552813 M/sqrtp=0.621268 nopt=1 nodes=59 P=1 2 4 8 
+p=11 k=3 |A|=6 minM=2.397877389 M/sqrtp=0.722987 nopt=1 nodes=9 P=1 2 3 
+p=19 k=5 |A|=10 minM=2.545809309 M/sqrtp=0.584049 nopt=1 nodes=95 P=1 2 3 4 5 
+p=23 k=6 |A|=12 minM=3.050621632 M/sqrtp=0.636099 nopt=1 nodes=323 P=1 2 3 4 5 6 
+p=29 k=7 |A|=14 minM=3.192582404 M/sqrtp=0.592848 nopt=1 nodes=1587 P=1 4 5 6 7 9 13 
+p=31 k=8 |A|=16 minM=3.418727432 M/sqrtp=0.614022 nopt=1 nodes=2979 P=1 2 3 4 5 6 7 12 
+p=37 k=9 |A|=18 minM=3.367213311 M/sqrtp=0.553566 nopt=1 nodes=12811 P=1 2 3 4 5 6 7 9 10 
+p=41 k=10 |A|=20 minM=3.596659063 M/sqrtp=0.561704 nopt=1 nodes=41677 P=1 2 3 4 5 6 7 8 10 11 
+p=43 k=11 |A|=22 minM=3.581408750 M/sqrtp=0.546160 nopt=1 nodes=67851 P=1 2 3 4 5 6 7 8 10 11 12 
+p=47 k=12 |A|=24 minM=3.555657861 M/sqrtp=0.518646 nopt=1 nodes=182375 P=1 2 3 4 5 6 7 18 19 21 22 23 
+p=53 k=13 |A|=26 minM=3.953483772 M/sqrtp=0.543053 nopt=1 nodes=1185691 P=1 2 3 4 5 6 7 9 10 11 12 13 16 

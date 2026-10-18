@@ -302,7 +302,10 @@ NUMERICAL-EXACT where "opt" (solver-certified optimum); otherwise a lower bound 
    K0 = 4:             Z_64: 11 opt (t of order 4), 14 opt (t = 1) | Z_4³ 16 opt | Z_8²: 15 opt (both t) | Z_125 (t = 25) >=5.
 Reading (NOTEBOOK night entry, corrected): only the elementary abelian F_3^4 (bent mechanism) stands out; cyclic Z_81 is
 the most restrictive; coprimality alone does not keep |B_t| small (Z_3×Z_4² gives 12). At K <= 4 exponents cannot be
-read off. Remaining instances of e37/e37b were still running at the time of writing.
+read off. e37b (rank dependence at order 243, K0 = 3, all hit 900 s, dual bounds 77–81, so lower bounds only):
+   Z_9×Z_27 >=6 | Z_3²×Z_27 >=6 | Z_3×Z_9² >=6 | Z_3³×Z_9 >=18 (3-rank 4: contains the F_3^4 bent configuration).
+   Primal values track the 3-rank (rank <= 3: 3–6; rank 4: 18), consistent with the reading above; not certified.
+   The e37 instances Z_105 (t = 1), Z_256 (two t), Z_4^4 were still running at the time of writing.
 
 ## E38 (2026-10-18 night) The O4-shaped class in Z: A = S ∪ (S+t) vs unrestricted sets (src/pair_sa.c, src/e38_batch.sh;
 ## data examples/pair_sa/e38.txt) — HEURISTIC (SA, grid minimum over 4096 points of [0,π], seed 1, 3e6 moves × 4 restarts)
@@ -323,3 +326,17 @@ reflection broken by x₁ <= L − x_{k−2}. Independent of the agent's bb_lamb
    — identical to the agent's table for every k (same argmin spans where the ranges overlap).
 The agent's best set D = {0,2,4,5,10,11,13,14,18,24}: |A| = 12, def = 9, M = 2.35706, R = 0.6804 (grid 4e5 + golden-section
 refinement, uncertified; agent 0.680). T2 parity count checked on 5 random reflection-symmetric sets.
+## E40 (2026-10-18 late night) Branch-2 dichotomy test on transversal 2-run sets A = S ∪ (S+t), s_y = y + t·k_y
+## (src/e40_transversal.py; dense FFT grid on [0, 2π) + golden-section refinement: UNCERTIFIED; rng seed 12345)
+Columns: level range L, M, R = M/sqrt(2t), M/sqrt t, M·L/t, fraction of pairs (y1,y2) with |defect| <= 1.
+   t = 1024:  constant 445.5 (M/t 0.435) | linear k = ⌊2y/√t⌋ (L = 64) 446.5 | quadratic ⌊y²/t⌋ (L = 1023) 1292 |
+              random uniform levels L = 4 / 32 / 128: 744 / 498 / 447 | random tapered (min of two uniforms)
+              L = 4 / 32 / 124: 385 / 161 / 198 (M/√t = 12.0 / 5.0 / 6.2) | Z_4 digit quadratic (O4-like) 582.
+   t = 64, 256 behave the same way (table in the run log reproduced by the script).
+Reading:
+   - Uniform level profiles give M ≈ 0.44·t regardless of L. That is the Gibbs lobe of the flat macroscopic profile
+     (density 1/L on [0, tL)), so the heuristic "case (a): M >~ t/L" is only a lower bound that the best (tapered)
+     profiles approach. Tapered random levels drop to the fluctuation scale M ≈ 5–6·√t.
+   - The O4-like Z_4 quadratic levels have nothing special in Z: M grows linearly in t (L = 4, sharp profile).
+   - The small-defect fraction is high only for AP-like (linear, constant) levels, which all have M ~ t.
+     Large-L random levels have small-defect fraction 1–7% and M ~ 5√t: consistent with dichotomy case (b).

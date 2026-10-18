@@ -625,3 +625,58 @@
   (BSG-type for sections). Then show that such a piece costs M >~ δ^{O(1)}·t via a localized Fejér test function on the
   frequency 1/q-scale. Check case (a)'s Gibbs bound rigorously. If both hold, Lemma OR(2) (Chowla for transversal 2-run
   sets) follows with polynomial losses in δ. That would be the first lower bound that genuinely uses torsion-freeness.
+
+## 2026-10-18 (late night, cont.) — Branch 2 reassessed: OR(2) is not a simplification; the dense regime is the common crux
+- **E40** (EXPERIMENTS) tested the dichotomy on transversal 2-run sets. Uniform level profiles give M ≈ 0.44·t for every
+  level range L: a Gibbs lobe from the flat profile. Tapered random levels drop to M ≈ 5–6·√t (fluctuation scale).
+  The O4-like Z_4 quadratic levels give M ∝ t in Z.
+- **The energy half is the standard energy bound (no new content).** Since E(S ∪ (S+t)) <= 16·E(S), the factorized
+  argument M >~ t^{3/2}/(√E(S)·log t) is the general bound M >~ |A|^{3/2}/√E(A) with an extra log. Demoted.
+- **The structured half contains the dense-profile problem.** A transversal with level range L is a dense subset of
+  [0, (L+1)t). E40's tapered random levels sit at the fluctuation scale, exactly like dense sets in Z. So proving OR(2)
+  needs Chowla for (special) dense sets, the regime the construction track calls live.
+- **Rotation sweep: C½ holds in the dilated sub-family (PROVED, elementary).**
+  - Let Y be a full section of Z_t, q ≡ 1 (mod t) with q >> t², S = qY and A = S ∪ (S+t). Then exactly
+        f_A(x) = 2cos(α)·Re(e^{iα} F_Y(qx)),   α = tx/2.
+  - As x moves through a window of width 2π/q, θ = qx covers a full period while α changes by πt/q. Hence
+        M(A) = max_θ (|F_Y(θ)| − f_Y(θ)) + O(t²/q)   (choose 2α = π − arg F_Y(θ)).
+  - So M(A) >= max_θ |Im F_Y(θ)| >= ‖Im F_Y‖_2 = √((t − [0∈Y])/2), and R(A) = M/√(2t) >= 1/2 − o(1).
+  - The slowly rotating phase exposes the sine sum. Groups have only finitely many phases (φ ∈ (1/4)Z in O4), so they
+    escape this; it is a genuine continuum effect.
+  - In general S is not periodic and the sweep is not free. Any OR(2) proof must find a substitute for it.
+- **Strategic review (skill §3).**
+  - Distance: branch 2 aimed to isolate torsion-freeness in the O4-shaped class. Every route through OR(2) lands either
+    in the standard energy bound or in the dense-profile problem. E10 already showed that "no subgroups" (Z_p prime)
+    does not give C½ in the sparse regime (cyclotomic classes reach grid-R ≈ 0.31). The decisive Z-feature is
+    continuity: all x, not one grid.
+  - Kill: OR(2) as the branch-2 vehicle. It stays a test case (the rotation sweep above is its one clean output).
+  - Pivot: **line D — the dense regime as the common crux of both tracks.**
+    - Lower-bound side: Chowla for dense sets is open even in the cleanest finite model. For symmetric A ⊂ Z_p with
+      |A| = (p+1)/2, Sanders (Israel J. Math. 179 (2010), arXiv 0807.5104v2, Thm 1.2 and the remark after it) proves
+      M >= c·p^{1/3}; Spencer gives O(p^{1/2}); Sanders: "It seems interesting to try to close this gap."
+    - For general density α, Sanders' Thm 4.1 gives exponent α/5 only. Bedert (2509.05260v3) cites only Sanders' dense
+      result. Dense A ⊂ [1, X] embed into Z_p, so lower bounds transfer to Z. Constructions do not transfer (off-grid
+      values).
+    - Construction side: the dense FR-support regime is the live candidate (construction agent running).
+- **Line D, first formulation (PROVED identities).**
+  - Let A ⊂ Z_p^* be symmetric with |A| = (p ± 1)/2, g = 2·1_A − 1 (a ±1 function) and λ = 2M_p(A). Unnormalized DFT:
+    ĝ(0) = ±1, ĝ(γ) = 2·1̂_A(γ) >= −λ for γ ≠ 0.
+  - Since g² = 1, Σ_γ ĝ(γ)ĝ(δ−γ) = p²·[δ = 0]. With h := ĝ + λ >= 0 this says that h*h is constant off the origin:
+        (h*h)(δ) = pλ(λ + 2)·(1 + O(1/λ)) for δ ≠ 0,  Σh = p(1 + λ) + O(1),  Σh² = p² + O(pλ²).
+    So h is a nonnegative weighted difference set in Z_p. In the exactly two-valued case h = c·1_D, D would be a
+    symmetric (p, λ², λ⁴/p)-type difference set with real character values ±λ. Paley (λ ≈ √p) is the 3-valued
+    near-instance.
+  - **Elementary p^{1/4} (PROVED).** Let Λ = max_{γ≠0} ĝ(γ). From Σ_{γ≠0}ĝ² = p² − 1 and Σ|ĝ| <= p + 2λp we get
+    Λ >= (p² − 1)/(p(1 + 2λ)). The identity at δ = 2γ₁ (with ĝ(γ₁) = Λ) bounds the mixed-sign terms by 2λΣĝ⁺ and gives
+    Λ² <= 2λ + 2λp(1 + λ). Together: λ⁴ >~ p/8, i.e. M_p >= (1/2)(p/8)^{1/4}(1 − o(1)).
+    Sanders' 1/3 needs his r-fold boolean convolutions (Lemma 3.2, r = 2⌈1/α⌉).
+  - Single-coefficient and energy (E(h·1_Γ)) refinements reproduce p^{1/4} and no more. A random level set
+    Γ = {h >= p^{2/3}} of size p^{2/3} is consistent with all the second-order constraints at λ = p^{1/3}. To beat 1/3,
+    one must use that h*h is EXACTLY constant (difference-set rigidity) or higher boolean structure.
+- **E41 (started).** Exact min M_p over half-sets of Z_p by branch and bound (src/zp_half.c). For p <= 53:
+  - The optima are Paley for p = 13, 17, 29.
+  - From p = 37 on, the optima are dilates of near-intervals with a tail. This is the anatomy of the dense Z optima.
+  - M/√p falls from 0.72 (p = 11) to 0.519 (p = 47) and 0.543 (p = 53), already below Paley's (1 + √p)/(2√p).
+  - Discriminating question: does M_p/√p level off near 1/2 (dense Chowla plausible in Z_p) or keep falling towards the
+    Sanders scale p^{−1/6}? Near-intervals in Z_p are exactly the grid shadows of dense Z sets. So the same question
+    decides whether off-grid (continuum) information is needed even in the dense case.

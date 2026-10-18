@@ -6,3 +6,4 @@ import ChowlaCosine.Cube
 import ChowlaCosine.Star
 import ChowlaCosine.Multiplicity
 import ChowlaCosine.Averaging
+import ChowlaCosine.HalfSquare

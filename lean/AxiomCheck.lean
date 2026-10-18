@@ -84,3 +84,52 @@ open ChowlaCosine
 #print axioms card_le_of_no_multiples
 #check @card_le_of_no_multiples'
 #print axioms card_le_of_no_multiples'
+-- 9. P16: half-integer square structure of Bu et al.'s sets (HalfSquare.lean)
+#check @cosSum_buSet
+#print axioms cosSum_buSet
+#check @cosSum_buSet_of_sidon
+#print axioms cosSum_buSet_of_sidon
+#check @two_sum_pairs_half
+#print axioms two_sum_pairs_half
+#check @halfP_sq_sub_sum_sq
+#print axioms halfP_sq_sub_sum_sq
+#check @sum_cos_half_sq
+#print axioms sum_cos_half_sq
+#check @injOn_buSet_diff
+#print axioms injOn_buSet_diff
+#check @injOn_buSet_sum
+#print axioms injOn_buSet_sum
+#check @buSet_pos
+#print axioms buSet_pos
+#check @card_buSet
+#print axioms card_buSet
+#check @sidon_quad_count
+#print axioms sidon_quad_count
+#check @integral_halfC_pow_four
+#print axioms integral_halfC_pow_four
+#check @normalized_halfC_pow_four
+#print axioms normalized_halfC_pow_four
+#check @integral_halfC_pow_four_le
+#print axioms integral_halfC_pow_four_le
+#check @integral_cos_mul_triK
+#print axioms integral_cos_mul_triK
+#check @integral_cos_mul_triK_real
+#print axioms integral_cos_mul_triK_real
+#check @integral_triK
+#print axioms integral_triK
+#check @visit_lemma
+#print axioms visit_lemma
+#check @exists_visit_of_sinc_sum_lt
+#print axioms exists_visit_of_sinc_sum_lt
+#check @halfC_periodic
+#print axioms halfC_periodic
+#check @abs_halfC_sub_le
+#print axioms abs_halfC_sub_le
+#check @halfSquare_lower_bound_of_visit
+#print axioms halfSquare_lower_bound_of_visit
+#check @halfSquare_lower_bound
+#print axioms halfSquare_lower_bound
+#check @sinc_sq_le_min
+#print axioms sinc_sq_le_min
+#check @halfSquare_lower_bound_min
+#print axioms halfSquare_lower_bound_min

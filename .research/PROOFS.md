@@ -74,6 +74,15 @@ Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_
   `averaging_identity` ((1/q)Σ_{j<q} f_A(x + 2πj/q) = f_{A∩qZ}(x), q >= 1), `cosSum_filter_dvd_ge` (f_A >= −M ∀x ⇒
   f_{A∩qZ} >= −M ∀x, every q : ℕ), `card_sub_le_of_cosSum_ge` (|A| − q|A∩qZ| <= (q−1)M, q >= 2) and
   `card_le_of_no_multiples` (no multiples of q ⇒ |A| <= (q−1)M).
+- KERNEL-CHECKED 2026-10-18 (Lean agent; lead re-ran `lake build` (8716 jobs OK), regenerated AxiomCheck.out (identical,
+  61 lines, all [propext, Classical.choice, Quot.sound]), grep: no sorry/admit/native_decide/axiom): P16 lemmas M1–M4 in
+  lean/ChowlaCosine/HalfSquare.lean — `cosSum_buSet_of_sidon` (f_{A(S)} = P^2 − k/2 − C/2 ∀x, S Sidon), `card_buSet`
+  (|A(S)| = k(k−1)), `normalized_halfC_pow_four` ((1/2π)∫C^4 = 3k^2/4 − 3k/8), `visit_lemma` (|P| >= δ on [c−h,c+h] ⇒
+  δ <= Σ sinc^2(b_s h/2)), `abs_halfC_sub_le` (Lipschitz), `halfSquare_lower_bound_of_visit` / `halfSquare_lower_bound`
+  / `halfSquare_lower_bound_min` (P16 Chebyshev form: under Σ_s min(1, 4/((3s+½)h)^2) < √(ηk/2) and
+  24π/(η^4 k^2) < 2r⌊2π/(2h+2r)⌋, r = η/(2(6L+1)), ∃x f_{A(S)}(x) < −(½−η)k).
+  NOT formalized: the Lindström/Abel step Σ_s ḡ(|b_s|) <= Σbar(h) (so the explicit rate (L/k^3)^{1/6} is paper-only; the
+  Lean theorem takes the frequency-wise majorant sum as a hypothesis, checkable per S), and the P16′ large-sieve form.
 - NOT formalized: P7 admissibility count, P1 (Fejér–Riesz absent from mathlib), P6, P10–P12, P13(b–d), P14, gain identity.
 
 ## P9. Induced-subgraph (local spectral) lemma (PROVED, elementary)
@@ -182,7 +191,7 @@ Beating 1/2 inside this template needs Σ_j P_j^2 >= δ rk/2 everywhere — a lo
 
 ## P16. C½ for Bu's construction with any Sidon set of range L = o(k^3) (PROVED on paper by lead 2026-10-18;
 ## numerics src/bu_halfsquare.py, constants src/p16_constants.py; INDEPENDENTLY REVIEWED by agent 2026-10-18: CORRECT,
-## no gap (.research/agents/p16_review.md); Lean formalization in progress)
+## no gap (.research/agents/p16_review.md); lemmas M1–M4 KERNEL-CHECKED 2026-10-18, Lindström step paper-only)
 Review corrections (presentational): (M1) read "h := any h > 0 with Σbar(h) < δ" (the infimum is not attained; the
 inequality is strict, so h* itself works). (M3) Bu et al.'s own sets have L ≈ 8–12 k^2 (up to ≈ 32 k^2 in their proof
 regime), not L <= k^2; the rate k^{−1/6} is unaffected but the explicit table below is for L = k^2/2. (M6) Remark (c) needs

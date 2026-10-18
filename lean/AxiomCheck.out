@@ -162,3 +162,103 @@ card_le_of_no_multiples : ∀ (A : Finset ℕ) (q : ℕ),
 card_le_of_no_multiples' : ∀ (A : Finset ℕ) (q : ℕ),
   2 ≤ q → (∀ a ∈ A, 0 < a) → (∀ a ∈ A, ¬q ∣ a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card ≤ (↑q - 1) * M
 'ChowlaCosine.card_le_of_no_multiples'' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_buSet : ∀ (S : Finset ℤ),
+  Set.InjOn (fun p => (3 * (p.2 - p.1)).toNat) ↑(ltPairs S) →
+    Set.InjOn (fun p => (3 * (p.1 + p.2) + 1).natAbs) ↑(ltPairs S) →
+      ∀ (x : ℝ), cosSum (buSet S) x = halfP S x ^ 2 - ↑S.card / 2 - halfC S x / 2
+'ChowlaCosine.cosSum_buSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_buSet_of_sidon : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (x : ℝ), cosSum (buSet S) x = halfP S x ^ 2 - ↑S.card / 2 - halfC S x / 2
+'ChowlaCosine.cosSum_buSet_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+two_sum_pairs_half : ∀ (S : Finset ℤ) (x : ℝ),
+  2 * ∑ p ∈ ltPairs S, Real.cos ((3 * ↑p.1 + 1 / 2) * x) * Real.cos ((3 * ↑p.2 + 1 / 2) * x) =
+    ∑ p ∈ ltPairs S, (Real.cos (↑(3 * (p.2 - p.1)) * x) + Real.cos (↑(3 * (p.1 + p.2) + 1) * x))
+'ChowlaCosine.two_sum_pairs_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfP_sq_sub_sum_sq : ∀ (S : Finset ℤ) (x : ℝ),
+  halfP S x ^ 2 - ∑ s ∈ S, Real.cos ((3 * ↑s + 1 / 2) * x) ^ 2 =
+    ∑ p ∈ ltPairs S, (Real.cos (↑(3 * (p.2 - p.1)) * x) + Real.cos (↑(3 * (p.1 + p.2) + 1) * x))
+'ChowlaCosine.halfP_sq_sub_sum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_cos_half_sq : ∀ (S : Finset ℤ) (x : ℝ), ∑ s ∈ S, Real.cos ((3 * ↑s + 1 / 2) * x) ^ 2 = ↑S.card / 2 + halfC S x / 2
+'ChowlaCosine.sum_cos_half_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+injOn_buSet_diff : ∀ (S : Finset ℤ), IsSidon S → Set.InjOn (fun p => (3 * (p.2 - p.1)).toNat) ↑(ltPairs S)
+'ChowlaCosine.injOn_buSet_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+injOn_buSet_sum : ∀ (S : Finset ℤ), IsSidon S → Set.InjOn (fun p => (3 * (p.1 + p.2) + 1).natAbs) ↑(ltPairs S)
+'ChowlaCosine.injOn_buSet_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+buSet_pos : ∀ (S : Finset ℤ), ∀ a ∈ buSet S, 0 < a
+'ChowlaCosine.buSet_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_buSet : ∀ (S : Finset ℤ), IsSidon S → (buSet S).card = S.card * (S.card - 1)
+'ChowlaCosine.card_buSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_quad_count : ∀ (S : Finset ℤ),
+  IsSidon S → (∑ a ∈ S, ∑ b ∈ S, ∑ c ∈ S, ∑ d ∈ S, if a + b = c + d then 1 else 0) = 2 * ↑S.card ^ 2 - ↑S.card
+'ChowlaCosine.sidon_quad_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_halfC_pow_four : ∀ (S : Finset ℤ),
+  IsSidon S → ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4 = Real.pi / 4 * (3 * (2 * ↑S.card ^ 2 - ↑S.card))
+'ChowlaCosine.integral_halfC_pow_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+normalized_halfC_pow_four : ∀ (S : Finset ℤ),
+  IsSidon S → 1 / (2 * Real.pi) * ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4 = 3 * ↑S.card ^ 2 / 4 - 3 * ↑S.card / 8
+'ChowlaCosine.normalized_halfC_pow_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_halfC_pow_four_le : ∀ (S : Finset ℤ),
+  IsSidon S → ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4 ≤ 2 * Real.pi * (3 * ↑S.card ^ 2 / 4)
+'ChowlaCosine.integral_halfC_pow_four_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cos_mul_triK : ∀ (b c h : ℝ),
+  0 < h → ∫ (x : ℝ) in c - h..c + h, Real.cos (b * x) * triK c h x = Real.cos (b * c) * Real.sinc (b * h / 2) ^ 2
+'ChowlaCosine.integral_cos_mul_triK' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cos_mul_triK_real : ∀ (b c h : ℝ),
+  0 < h → ∫ (x : ℝ), Real.cos (b * x) * triK c h x = Real.cos (b * c) * Real.sinc (b * h / 2) ^ 2
+'ChowlaCosine.integral_cos_mul_triK_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_triK : ∀ (c h : ℝ), 0 < h → ∫ (x : ℝ) in c - h..c + h, triK c h x = 1
+'ChowlaCosine.integral_triK' depends on axioms: [propext, Classical.choice, Quot.sound]
+@visit_lemma : ∀ {ι : Type u_1} (F : Finset ι) (b : ι → ℝ) (c h δ : ℝ),
+  0 < h → (∀ x ∈ Set.Icc (c - h) (c + h), δ ≤ |∑ s ∈ F, Real.cos (b s * x)|) → δ ≤ ∑ s ∈ F, Real.sinc (b s * h / 2) ^ 2
+'ChowlaCosine.visit_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+@exists_visit_of_sinc_sum_lt : ∀ {ι : Type u_1} (F : Finset ι) (b : ι → ℝ) (h δ : ℝ),
+  0 < h →
+    ∑ s ∈ F, Real.sinc (b s * h / 2) ^ 2 < δ →
+      ∀ (c : ℝ), ∃ y ∈ Set.Icc (c - h) (c + h), |∑ s ∈ F, Real.cos (b s * y)| < δ
+'ChowlaCosine.exists_visit_of_sinc_sum_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfC_periodic : ∀ (S : Finset ℤ), Function.Periodic (halfC S) (2 * Real.pi)
+'ChowlaCosine.halfC_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+abs_halfC_sub_le : ∀ (S : Finset ℤ) (L : ℝ),
+  (∀ s ∈ S, |↑s| ≤ L) → ∀ (x y : ℝ), |halfC S x - halfC S y| ≤ ↑S.card * (6 * L + 1) * |x - y|
+'ChowlaCosine.abs_halfC_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_of_visit : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        ∀ (η : ℝ),
+          0 < η →
+            ∀ (h : ℝ),
+              0 < h →
+                (∀ (c : ℝ), ∃ y ∈ Set.Icc (c - h) (c + h), |halfP S y| < √(η * ↑S.card / 2)) →
+                  24 * Real.pi / (η ^ 4 * ↑S.card ^ 2) <
+                      2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ →
+                    ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_of_visit' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        ∀ (η : ℝ),
+          0 < η →
+            ∀ (h : ℝ),
+              0 < h →
+                ∑ s ∈ S, Real.sinc ((3 * ↑s + 1 / 2) * h / 2) ^ 2 < √(η * ↑S.card / 2) →
+                  24 * Real.pi / (η ^ 4 * ↑S.card ^ 2) <
+                      2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ →
+                    ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sinc_sq_le_min : ∀ {y : ℝ}, y ≠ 0 → Real.sinc y ^ 2 ≤ min 1 (1 / y ^ 2)
+'ChowlaCosine.sinc_sq_le_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_min : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        ∀ (η : ℝ),
+          0 < η →
+            ∀ (h : ℝ),
+              0 < h →
+                ∑ s ∈ S, min 1 (4 / ((3 * ↑s + 1 / 2) * h) ^ 2) < √(η * ↑S.card / 2) →
+                  24 * Real.pi / (η ^ 4 * ↑S.card ^ 2) <
+                      2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ →
+                    ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_min' depends on axioms: [propext, Classical.choice, Quot.sound]

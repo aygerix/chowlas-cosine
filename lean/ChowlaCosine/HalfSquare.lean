@@ -493,13 +493,13 @@ theorem integral_cos_mul_triK (b c h : ℝ) (hh : 0 < h) :
         (f := fun y => (y - c + h) * (y - c + h) / (2 * h ^ 2))
         (fun x _ => by
           have := ((hlin x).mul (hlin x)).div_const (2 * h ^ 2)
-          exact this.congr_deriv (by field_simp; ring))
+          exact this.congr_deriv (by field_simp; ring_nf))
         ((by fun_prop : Continuous fun x : ℝ => (x - c + h) / h ^ 2).intervalIntegrable _ _),
       intervalIntegral.integral_eq_sub_of_hasDerivAt
         (f := fun y => -((c + h - y) * (c + h - y)) / (2 * h ^ 2))
         (fun x _ => by
           have := (((hlin2 x).mul (hlin2 x)).neg).div_const (2 * h ^ 2)
-          exact this.congr_deriv (by field_simp; ring))
+          exact this.congr_deriv (by field_simp; ring_nf))
         ((by fun_prop : Continuous fun x : ℝ => (c + h - x) / h ^ 2).intervalIntegrable _ _)]
     field_simp
     ring
@@ -512,7 +512,7 @@ theorem integral_cos_mul_triK (b c h : ℝ) (hh : 0 < h) :
         (fun x _ => by
           have := ((((hlin x).mul (hsin x)).div_const b).add ((hcos x).div_const (b ^ 2))).div_const
             (h ^ 2)
-          exact this.congr_deriv (by field_simp; ring))
+          exact this.congr_deriv (by field_simp; ring_nf))
         ((by fun_prop : Continuous fun x : ℝ =>
           Real.cos (b * x) * ((x - c + h) / h ^ 2)).intervalIntegrable _ _),
       intervalIntegral.integral_eq_sub_of_hasDerivAt
@@ -520,7 +520,7 @@ theorem integral_cos_mul_triK (b c h : ℝ) (hh : 0 < h) :
         (fun x _ => by
           have := ((((hlin2 x).mul (hsin x)).div_const b).sub ((hcos x).div_const (b ^ 2))).div_const
             (h ^ 2)
-          exact this.congr_deriv (by field_simp; ring))
+          exact this.congr_deriv (by field_simp; ring_nf))
         ((by fun_prop : Continuous fun x : ℝ =>
           Real.cos (b * x) * ((c + h - x) / h ^ 2)).intervalIntegrable _ _)]
     have hbh : b * h / 2 ≠ 0 := div_ne_zero (mul_ne_zero hb hh0) two_ne_zero
@@ -532,7 +532,9 @@ theorem integral_cos_mul_triK (b c h : ℝ) (hh : 0 < h) :
         Real.cos (b * c) * Real.cos (b * h) - Real.sin (b * c) * Real.sin (b * h) := by
       rw [show b * (c + h) = b * c + b * h by ring, Real.cos_add]
     have e3 : Real.cos (b * h) = 1 - 2 * Real.sin (b * h / 2) ^ 2 := by
-      rw [show b * h = 2 * (b * h / 2) by ring, Real.cos_two_mul, Real.cos_sq']
+      have hbh2 : b * h = 2 * (b * h / 2) := by ring
+      conv_lhs => rw [hbh2]
+      rw [Real.cos_two_mul, Real.cos_sq']
       ring
     rw [e1, e2, e3]
     field_simp
@@ -543,6 +545,30 @@ theorem integral_triK (c h : ℝ) (hh : 0 < h) : ∫ x in (c - h)..(c + h), triK
   have := integral_cos_mul_triK 0 c h hh
   simp only [zero_mul, Real.cos_zero, one_mul, zero_div, Real.sinc_zero, one_pow, mul_one] at this
   exact this
+
+/-- The triangle kernel vanishes outside `[c - h, c + h]`. -/
+theorem triK_eq_zero {c h x : ℝ} (hh : 0 < h) (hx : x ∉ Set.Icc (c - h) (c + h)) :
+    triK c h x = 0 := by
+  unfold triK
+  have h1 : h < |x - c| := by
+    rw [Set.mem_Icc, not_and_or, not_le, not_le] at hx
+    rcases hx with hx | hx
+    · rw [abs_of_neg (by linarith)]
+      linarith
+    · rw [abs_of_pos (by linarith)]
+      linarith
+  rw [max_eq_left (by rw [sub_nonpos, le_div_iff₀ hh]; linarith)]
+  simp
+
+/-- **M3, whole-line form.** `∫_ℝ cos (b x) φ_{c,h}(x) dx = cos (b c) · sinc² (b h / 2)`. -/
+theorem integral_cos_mul_triK_real (b c h : ℝ) (hh : 0 < h) :
+    ∫ x, Real.cos (b * x) * triK c h x = Real.cos (b * c) * Real.sinc (b * h / 2) ^ 2 := by
+  have hzero : ∀ x, x ∉ Set.Icc (c - h) (c + h) → Real.cos (b * x) * triK c h x = 0 := by
+    intro x hx
+    rw [triK_eq_zero hh hx, mul_zero]
+  rw [← MeasureTheory.setIntegral_eq_integral_of_forall_compl_eq_zero hzero,
+    MeasureTheory.integral_Icc_eq_integral_Ioc,
+    ← intervalIntegral.integral_of_le (by linarith), integral_cos_mul_triK b c h hh]
 
 /-- Linearity: `∫ (∑_s cos (b_s x)) φ_{c,h}(x) dx = ∑_s cos (b_s c) sinc² (b_s h / 2)`. -/
 theorem integral_sum_cos_mul_triK {ι : Type*} (F : Finset ι) (b : ι → ℝ) (c h : ℝ) (hh : 0 < h) :
@@ -840,5 +866,43 @@ theorem halfSquare_lower_bound (S : Finset ℤ) (hS : IsSidon S) (L : ℝ)
     ∃ x : ℝ, cosSum (buSet S) x < -((1 / 2 - η) * S.card) :=
   halfSquare_lower_bound_of_visit S hS L hL η hη h hh
     (fun c => exists_visit_of_sinc_sum_lt S (fun s => 3 * (s : ℝ) + 1 / 2) h _ hh hsinc c) hcond
+
+/-- `sinc² y ≤ min (1, 1/y²)` for `y ≠ 0`. -/
+theorem sinc_sq_le_min {y : ℝ} (hy : y ≠ 0) : Real.sinc y ^ 2 ≤ min 1 (1 / y ^ 2) := by
+  refine le_min ?_ ?_
+  · rw [← sq_abs]
+    exact pow_le_one₀ (abs_nonneg _) (Real.abs_sinc_le_one y)
+  · rw [Real.sinc_of_ne_zero hy, div_pow]
+    gcongr
+    exact Real.sin_sq_le_one y
+
+/-- **M4 (P16 main theorem, elementary-majorant form).** Same conclusion as
+`halfSquare_lower_bound`, with the hypothesis
+`∑_{s ∈ S} min (1, 4 / ((3s + 1/2) h)²) < √(η k / 2)` (the majorant `ḡ` of the paper's Step 2,
+evaluated on the actual frequencies; the Lindström/Abel-summation bound `∑_s ḡ(|b_s|) ≤ Σ̄(h)`
+is *not* formalized). -/
+theorem halfSquare_lower_bound_min (S : Finset ℤ) (hS : IsSidon S) (L : ℝ)
+    (hL : ∀ s ∈ S, |(s : ℝ)| ≤ L) (η : ℝ) (hη : 0 < η) (h : ℝ) (hh : 0 < h)
+    (hmin : ∑ s ∈ S, min 1 (4 / ((3 * (s : ℝ) + 1 / 2) * h) ^ 2) <
+      Real.sqrt (η * S.card / 2))
+    (hcond : 24 * π / (η ^ 4 * (S.card : ℝ) ^ 2) <
+      2 * (η / (2 * (6 * L + 1))) *
+        (⌊2 * π / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ : ℝ)) :
+    ∃ x : ℝ, cosSum (buSet S) x < -((1 / 2 - η) * S.card) := by
+  refine halfSquare_lower_bound S hS L hL η hη h hh (lt_of_le_of_lt (Finset.sum_le_sum ?_) hmin) hcond
+  intro s _
+  have hb : 3 * (s : ℝ) + 1 / 2 ≠ 0 := by
+    intro h0
+    have h6 : ((6 * s + 1 : ℤ) : ℝ) = 0 := by
+      push_cast
+      linarith
+    have : (6 * s + 1 : ℤ) = 0 := by exact_mod_cast h6
+    omega
+  have hy : (3 * (s : ℝ) + 1 / 2) * h / 2 ≠ 0 := div_ne_zero (mul_ne_zero hb hh.ne') two_ne_zero
+  have e : 1 / ((3 * (s : ℝ) + 1 / 2) * h / 2) ^ 2 = 4 / ((3 * (s : ℝ) + 1 / 2) * h) ^ 2 := by
+    field_simp
+    ring
+  rw [← e]
+  exact sinc_sq_le_min hy
 
 end ChowlaCosine

@@ -373,3 +373,19 @@
   Beating 1/2 = finding residual skew below the square curve; the dense SA/MILP optima never did, P16 forbids it for
   squares at any profile. Note also that Bu's profile has spikes at x = ±2π/3 (φ̂(±1) = 1/2 > 0): mod-3 structure is
   harmless because the period-3 pattern (1, 1/2, 1/2) is p.d. on Z_3.
+- Hermite-mixture constructions are blocked by Parseval noise (HEURISTIC, Wick model H1; computations exact). For a
+  frequency set B with all signed d-sums distinct, the full d-set family gives f_{A_d} = 2^{d−1}e_d(cos b_s x) ≈
+  c_d k^{d/2} He_d(z), z = P/√(k/2): d = 2: (k/2)He_2, min −k/2, N ≈ k², R = 1/2; d = 4: (k²/12)He_4, min He_4 = −6,
+  N ≈ k⁴/3, R = √3/2. A MIXED residual q(z) = He_2 + t·He_4 is far more skewed: |min q|/||q||_2 = (1 − 3t)/√(2 + 24t²)
+  decreases from 0.707 (t = 0) to 0.306 at t = 1/6 (q = z⁴/6 − 1/2, the shape of a 4th power). But with 0/1
+  coefficients the relative weight is FORCED, t = k/6 for full families; t = 1/6 needs a sub-family of 4-sets of density
+  ε = 1/k, whose cosine sum has L² norm √(ε|A_4|/2) ≈ 0.41k^{3/2} by Parseval while its component along He_4(z) is only
+  ≈ ε·||(k²/12)He_4|| ≈ 0.4k: noise dominates (and is Gaussian-like, min ~ −k^{3/2}√log). Structured sub-families
+  (e.g. Σs ≡ 0 mod k) are the same: the j ≠ 0 twists contribute independent He_4's of total size ≈ k^{3/2}. So within
+  the Wick/elementary-symmetric world only pure degrees are realisable and degree 2 (Bu, R = 1/2) is optimal;
+  a sub-1/2 construction must leave this world (non-dissociated, genuinely arithmetic structure).
+- Run-top agent result (P19): Bedert's K^4 is SHARP for every argument using F >= −K only through A-independent
+  degree-2 (or degree-r) convolution inequalities — random relaxed sets satisfy all of them with K_* ≍ (N log N)^{1/4}
+  and |B_t| ≍ N. Exponent 1/4 therefore REQUIRES degree-1 input (pointwise F >= −K, ||F||_1 <= 2K, or the domination
+  |1̂_{B_t}| <= 4G + |Q_2| used beyond norms). Exact target: Lemma S, ∫min(|1̂_{B_t}|, K³)² << K^{4−δ}. Cheapest
+  discriminating experiment: search finite groups (F_3^d, Z_m^d, ±-combinations of a few cosets) for |B_t| >> K^{2+ε}.

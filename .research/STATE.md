@@ -57,6 +57,10 @@ Fejér-kernel counterexample to the displayed chain); not used here.
   degree-1 (single nonnegative multiplier) inequality has a coefficient gap (|c_1| <= c_0). Exponent 1/4 would need a
   run-top test function with L^1 <~ K^{1/2}.
 
+- P19 (agent, proof read by lead): Bedert's |B_t| << K^4 is sharp for all degree-2 gap-inequality methods (random
+  relaxed sets); the universal exponent 1/4 needs Target Lemma S (degree-1 input). Open group question: finite abelian
+  groups with |B_t| >> K^{2+ε}?
+
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
 error diffusion; separated-block unions; local SA from Bu seeds; Sidon lower-flat polynomials (E8/E12/E15: c -> 0);

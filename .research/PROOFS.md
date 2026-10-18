@@ -316,3 +316,28 @@ of ||1_A − W||^2 >= (1 − ρ* − o(1))N for every p.d. W with 0 <= W <= 1 (t
 charge secondary spikes of the residual to uncompensated negative lobes (maximality of W). (a)+(b) would give
 Chowla up to √log for dense sets — a target, not a result. Note the L^∞ hypothesis must hold on the major arc too
 (where G is the profile-approximation error).
+
+## P19. Bedert's run-top bound |B_t| << K^4 is sharp for degree-2 methods (agent "runtop" 2026-10-18; report
+## .research/agents/runtop_report.md; proof read by lead, key identity re-derived by hand; numeric spot-check pending)
+Setting: A = −A ⊂ Z\{0}, F = 1̂_A, G = F + K, B_t = {m ∈ A : m − t ∈ A, m + t ∉ A}, f_t = 2(1 + sin 2πtx)F.
+Identity (lead re-derived): f_t∗f_t = (4 − 2cos 2πtx)F + 2e(−tx)1̂_{A∩(A+2t)} + 8 Im 1̂_{A∩(A+t)}.
+Theorem A (OBSTRUCTION, PROVED by agent; probabilistic, explicit constants). For N >= 2.4e6, 1 <= t <= √N, random symmetric
+A ⊂ [−N,N] with P(j ∈ A) = h(W(j/N)), W(u) = (1−|u|)_+/2, 2h + 2h² = w (so E[coefficients of f_t∗f_t] = Fejér profile
++ O(t/N)), satisfies with probability >= 1/2: f_t∗f_t >= −16K_*² on T with K_*⁴ <= 21 N log N (so Bedert's (37)/(38) hold
+with K = K_*), the norm conclusions of Lemma 7.1 hold (Q_1 = 0), |B_t| >= 0.0055N >= 6.6e-5 K_*⁴/log K_*, and
+inf_Q (||1̂_B − Q||² + K_*²||Q||_1²) >= c|B_t| (no test function helps). What fails is only degree-1 information: F >= −K_*,
+||F||_1 <= 2K_*, |Q_1| <= 4G.
+Theorem B (PROVED by agent). For ANY finite family of A-independent inequalities w·((m_1G + m_1'K)∗(m_2G + m_2'K)) >= 0
+(w, m nonnegative trig polys in tx) random sets satisfy all of them with K_* ≍ (N log N)^{1/4}, |B_t| ≍ N; r-fold
+convolutions cap at K^{2r}. With the degree-1 no-gap barrier (NOTEBOOK; audited CORRECT, extends to any frequency support
+of an A-independent multiplier): every "pointwise gap inequality + test function" proof is capped at K^4.
+Proposition C (agent, arb-certified single points): the K² in (37) is attained by genuine sets (Singer q=31: −0.668K²,
+q=53: −0.590K², Erdős–Turán p=59: −0.511K², with K <= |D|), so the constant term cannot be o(K²).
+Proposition M (PROVED by agent from (38) + Lemma 7.2): |B_t| <= 4388 ∫ min(|1̂_{B_t}|, 13.46 K|B_t|^{1/2})² — the exact power
+of the method. TARGET LEMMA S (OPEN): ∫ min(|1̂_{B_t}|, K³)² <= C K^{4−δ} under F >= −K; δ = 1 gives Chowla exponent 1/4
+(with Shankar). It fails for the Theorem A sets, so it must use F >= −K at degree 1. Splits into (S1) little L² mass of
+1̂_{B_t} below height K² and (S2) meas{|1̂_{B_t}| >= s} << K^{1−δ}/s for K² <= s <= K³.
+Groups: Prop 7.3 holds in every finite abelian group and bounds in all Z_N transfer to Z; unions of subgroups and an F_3^d
+family give |B_t| <~ K² (PROVED for those classes). OPEN: does some finite group have |B_t| >> K^{2+ε}? (If yes, Lemma S
+must use torsion-freeness.) By-product (agent, elementary): fibre domination |1̂_{S_r}(θ)| <= K + 1̂_{S_0}(θ) for residue
+fibres S_r = {s : r + st ∈ A}.

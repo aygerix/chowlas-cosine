@@ -31,7 +31,13 @@ star bound; P8 multiplicity bound; P13(a) averaging identity, restriction to mul
 
 NEW 2026-10-18 late night: P27 (codex agent, lead-checked) OR(2)-weak for residue-strip 2-run sets:
 M(S∪(S+t)) >= √(n/k)/80 when S lies in k residues mod q within an arc [0,t/2], q >= 32t√k (exponent 3/8 for k <= n^{1/4}).
+P27 Theorem C (codex agent, lead re-checked every step): residues in [0, Lt] (k classes), q >= 16BJtk, B = L²+(L+1)²,
+J = 2L+3 ⇒ M(S∪(S+t)) >= √n/(32BJ²k^{3/2}): SQUARE-ROOT for bounded unions of translated dilates; cancellation
+family qY ∪ (qY+3t) has M >= |S|/16. Mechanism: the real coset grid (θ+2πZ)/q splits micro phase from macro profile
+(Z-specific). Unrestricted OR(2)-weak OPEN.
 P25 sharpened localization; P26 half-set ⟺ symmetric weighted near-planar sets.
+P28 averaged local-maximal bound (proved) + E45: recovers ~0.21√n on all non-deterministic sets; turning it into a
+theorem needs "locally deterministic ⇒ Gibbs". E46: ball-shaped Bohr sets killed.
 KERNEL-CHECKED 2026-10-18 night (codex agent, lead re-verified: rebuild + 33 standard-axiom declarations): T0 Schur
 products; P20 Thm 2 (order 3) and its run-top corollary |B_t| <= |E| + (K+u₀)³ + 1; O4⁺ (order 4); line-D half-set
 identities T3(a)–(e) incl. the spectral gap (PROOFS 'Lean status update').
@@ -104,12 +110,11 @@ Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM
 Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex CLI, Sol 6.1 at xhigh reasoning
 (`codex exec -m gpt-6.1-sol -c model_reasoning_effort="xhigh" ...`), still at most one at a time.
 
-## Running now (2026-10-18 late night)
-- Construction agent a6d21d62b5c3e53ad (native; brief .research/agents/construct_brief.md).
-- E41 (dirichlet, src/e41_batch.sh): exact half-set optima for p = 59..89 → examples/zp_half/e41_mid.txt.
-- E37 done (final table in EXPERIMENTS). E41 done (exact to p = 89).
-- Exhaustive N = 43 in [1,60] (src/exh2_driver.py, 4 vCPUs, started 2026-10-18 20:00 UTC) → examples/smallN_runs/exh2_43_60.out.
-- Rule: whenever a job ends, check vmstat and start the next queued job; the VM must not idle with work queued.
+## Running now (2026-10-18, VM restarted on c2d-standard-8)
+- E44 (src/e44_grb_dense.sh): Gurobi lazy-cut box MILP, warm-started, N=45 X=64 → N=50 X=72 → N=55 X=79;
+  progress in examples/gurobi/e44.jsonl (N=45 bound 3.23 vs incumbent 3.836 at 1500 s).
+- E37g (src/e37g_batch.sh): Gurobi group run-top ILP, 18 instances → examples/cyclic_ilp/e37g.jsonl.
+- Codex agent: see NOTEBOOK for the current brief (one at a time).
 
 ## Active lines (>= 3) (updated 2026-10-18 late night)
 1. [lower bound, dense] Line D (above). The finite model Z_p has no subgroups. E10 shows that in the sparse regime
@@ -126,12 +131,11 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 5. [verification] Lean: P21 and the negative-definite fibre lemma done; next O4⁺ via codex.
 
 ## Compute policy
-Gurobi (2026-10-18): full 13.0.3 distribution at /opt/gurobi1303/linux64 on dirichlet (env in /etc/profile.d/gurobi.sh and
-src/dirun.sh). The only gurobi.lic on the VM (whole-disk search 2026-10-18) is the pip one bundled with gurobipy,
-~/chowla_venv/lib/python3.12/site-packages/gurobipy/.libs/gurobi.lic: TYPE=PIP, restricted, expires 2027-11-29.
-With it gurobi_cl solves small.lp and stops on big.lp (3000 binaries) with Error 10010 'Model too large for size-limited
-license'. So both gurobipy and gurobi_cl run models <= 2000 rows/cols only. Activation: `grbgetkey <key>` on the VM, or a WLS gurobi.lic in ~/.
-All calculations on GCP VM dirichlet via src/dirun.sh (user rule 2026-10-18); F4 fallback; never the laptop or fejer.
+Gurobi 13.0.3 full distribution at /opt/gurobi1303/linux64 on dirichlet with the user's licence
+(/opt/gurobi1303/gurobi.lic; env set in src/dirun.sh). User rule: Gurobi is the solver for every MILP/LP.
+All calculations on GCP VM dirichlet via src/dirun.sh; never the laptop or fejer. Global quota CPUS_ALL_REGIONS = 16.
+Process rule (user, 2026-10-18): computations are fire-and-forget; foreground time goes to mathematics, one codex agent
+in parallel.
 
 ## First concrete next step (updated 2026-10-18 late night)
 (1) Read E41 for p = 59..89. If min M_p/√p keeps falling below 0.5, find the structure of the optima (dilated

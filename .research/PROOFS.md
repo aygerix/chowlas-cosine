@@ -46,3 +46,17 @@ At typical x, blockwise cosine sums behave like independent Gaussians; set-ness 
 fixed positive coefficients kappa_a = (1/2) prod t_i^{a_i}/a_i! (t_i^2 = 2k_i). Degree-2 chaos: R >= 1/2, equality
 iff single block (= Bu). Degree 4 single block: R = sqrt3*... = 0.866. Non-Wick z^4-3 would give 0.2165 but needs
 lower-chaos multiplicities ~ block size. CONJECTURE H1: large-block Wick models have inf R = 1/2.
+
+## P8. Weighted-multiplicity bound for square certificates (PROVED, paper; generalizes Bu et al. Prop 8.2)
+Let A ⊂ N finite, N = |A|. Suppose lambda + f_A(x) = |Q(x)|^2 - h(x) for all x, where Q(x) = sum_{β∈B} q_β e^{iβx}
+(B a finite subset of a single coset γ0+Z of R, q_β ∈ C) and h is a real trig polynomial whose spectrum avoids ±A ∪ {0}.
+Let mu(g) = |B ∩ (B+g)| and w(g) = sum_{β-β'=g} |q_β|^2 |q_β'|^2, mu_bar = sum_{g≠0} mu(g) w(g) / sum_{g≠0} w(g).
+Then N <= 2 mu_bar lambda^2; in particular lambda >= sqrt(N/(2 mu_max)).
+Proof. r(g) := sum_{β-β'=g} q_β conj(q_β') is the coefficient of e^{igx} in |Q|^2; matching coefficients,
+r(g) = 1/2 for g ∈ ±A and r(g) = ĥ(g) otherwise (g≠0), r(0) = lambda (since ĥ(0)=0). Hence
+N/2 <= sum_{g≠0} |r(g)|^2 <= sum_{g≠0} mu(g) w(g) (Cauchy–Schwarz over the mu(g) pairs) = mu_bar (lambda^2 - sum|q|^4) <= mu_bar lambda^2.
+Consequences: (i) exact FR factors supported on Sidon sets give R >= 1/sqrt2; on sets with all multiplicities <= 2,
+R >= 1/2 (this is the Bu barrier, now for arbitrary weights); (ii) R(A) < 1/sqrt(2m) forces the FR factor of
+f_A + M(A) to have |q|^2-weighted mean difference multiplicity > m; equality-type efficiency requires the pair
+products q_β conj(q_{β-g}) to be nearly constant along each difference class (=> nearly flat multiplicities).
+Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_+ ... only lambda is bounded.

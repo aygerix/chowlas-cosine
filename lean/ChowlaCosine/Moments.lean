@@ -48,7 +48,7 @@ theorem integral_cos_mul_cos_nat {a b : ℕ} (ha : 0 < a) (hb : 0 < b) :
 theorem integral_cosSum (A : Finset ℕ) (hA : ∀ a ∈ A, 0 < a) :
     ∫ x in (0 : ℝ)..2 * π, cosSum A x = 0 := by
   unfold cosSum
-  rw [intervalIntegral.integral_finsetSum (fun a _ => intervalIntegrable_cos_mul _ _ _)]
+  rw [intervalIntegral.integral_finsetSum (fun (a : ℕ) _ => intervalIntegrable_cos_mul _ _ _)]
   exact Finset.sum_eq_zero (fun a ha => integral_cos_nat_mul (hA a ha))
 
 /-- **Parseval.** `∫_0^{2π} f_A² = π |A|` when every element of `A` is positive. -/
@@ -63,7 +63,7 @@ theorem integral_cosSum_sq (A : Finset ℕ) (hA : ∀ a ∈ A, 0 < a) :
       (fun x => Real.cos ((a : ℝ) * x) * Real.cos ((b : ℝ) * x)) MeasureTheory.volume 0 (2 * π) :=
     fun a b => (by fun_prop : Continuous fun x =>
       Real.cos ((a : ℝ) * x) * Real.cos ((b : ℝ) * x)).intervalIntegrable _ _
-  rw [intervalIntegral.integral_finsetSum (fun a _ =>
+  rw [intervalIntegral.integral_finsetSum (fun (a : ℕ) _ =>
     (by fun_prop : Continuous fun x => ∑ b ∈ A,
       Real.cos ((a : ℝ) * x) * Real.cos ((b : ℝ) * x)).intervalIntegrable _ _)]
   calc ∑ a ∈ A, ∫ x in (0 : ℝ)..2 * π, ∑ b ∈ A, Real.cos ((a : ℝ) * x) * Real.cos ((b : ℝ) * x)

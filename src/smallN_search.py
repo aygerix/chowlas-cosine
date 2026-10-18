@@ -617,32 +617,58 @@ def _mk(N, cap, init, iters, seed, tag, T0f=0.3, T1f=0.003, pg=0.4, D=3):
     return (N, cap, init, int(iters), T0f * s, T1f * s, seed, pg, D, 24, 16, tag)
 
 
-def sa_round1(Ns, it_per_N=4e5, big_cap_N=40):
+def sa_round1(Ns, it_per_N=3e5):
+    """Broad round: random starts at several caps, structured starts (Sidon differences,
+    Bu two-sided sets), and a few runs at the huge cap 4N^2 (N <= 40, multiples of 5)."""
     tasks = []
     for N in Ns:
         rng = np.random.default_rng(97 * N + 1)
-        caps = sorted({math.ceil(1.25 * N) + 2, math.ceil(1.5 * N) + 1, 2 * N, 3 * N, 5 * N})
+        caps = sorted({math.ceil(1.25 * N) + 2, math.ceil(1.5 * N) + 1, 2 * N, 3 * N})
         iters = it_per_N * N
         for cap in caps:
-            for r in range(3):
+            for r in range(2):
                 init = sorted(rng.choice(np.arange(1, cap + 1), size=N, replace=False).tolist())
                 tasks.append(_mk(N, cap, init, iters, 1000003 * N + 7919 * cap + r, f"random_cap{cap}"))
-        # structured seeds: run at a cap that fits them (their own max, plus slack), and at 4N^2 if small N
-        sc = [c for c in (5 * N, 10 * N, 4 * N * N) if c <= 8000 and (N <= big_cap_N or c <= 10 * N)]
-        for cap in sc:
-            for tag, A0 in structured_seeds(N, cap, rng)[:(4 if cap <= 10 * N else 2)]:
-                it = iters if cap <= 10 * N else iters // 2
-                tasks.append(_mk(N, cap, A0, it, 31337 * N + cap + len(tasks), f"{tag}_cap{cap}",
+        for cap in (5 * N, 10 * N):
+            ss = structured_seeds(N, cap, rng)
+            # prefer one Sidon-difference and one Bu seed with the smallest R
+            sd = sorted([t for t in ss if t[0].startswith("sidon")], key=lambda t: accurate_M(t[1])[0])[:1]
+            bu = sorted([t for t in ss if t[0].startswith("bu")], key=lambda t: accurate_M(t[1])[0])[:1]
+            for tag, A0 in sd + bu:
+                tasks.append(_mk(N, cap, A0, iters, 31337 * N + cap + len(tasks), f"{tag}_cap{cap}",
                                  T0f=0.15, T1f=0.003))
-        # one random start at the huge cap
-        if 4 * N * N <= 8000 and N <= big_cap_N:
+        if N <= 40 and N % 5 == 0:
             cap = 4 * N * N
+            ss = structured_seeds(N, cap, rng)
+            sd = sorted([t for t in ss if t[0].startswith("sidon")], key=lambda t: accurate_M(t[1])[0])[:1]
+            for tag, A0 in sd:
+                tasks.append(_mk(N, cap, A0, iters // 2, 4243 * N, f"{tag}_cap{cap}", T0f=0.15, T1f=0.003))
             init = sorted(rng.choice(np.arange(1, cap + 1), size=N, replace=False).tolist())
             tasks.append(_mk(N, cap, init, iters // 2, 4242 * N, f"random_cap{cap}"))
     return tasks
 
 
-def sa_round2(best, Ns, it_per_N=4e5, reps=8):
+def grow_shrink_seeds(best, N, rng):
+    """Seeds for N from the best sets at N-1 (add the best single element) and N+1 (drop the
+    element whose removal is best)."""
+    out = []
+    lo = best.get(str(N - 1))
+    if lo:
+        A = lo["A"]
+        cand = [b for b in range(1, max(A) + max(4, N // 3)) if b not in set(A)]
+        sc = sorted(((accurate_M(A + [b])[0], b) for b in cand))[:2]
+        for M, b in sc:
+            out.append(("grow_from_%d" % (N - 1), sorted(A + [b])))
+    hi = best.get(str(N + 1))
+    if hi:
+        A = hi["A"]
+        sc = sorted(((accurate_M([a for a in A if a != c])[0], c) for c in A))[:2]
+        for M, c in sc:
+            out.append(("shrink_from_%d" % (N + 1), sorted(a for a in A if a != c)))
+    return out
+
+
+def sa_round2(best, Ns, it_per_N=3e5, reps=6):
     tasks = []
     for N in Ns:
         rec = best.get(str(N))
@@ -651,6 +677,9 @@ def sa_round2(best, Ns, it_per_N=4e5, reps=8):
         A = rec["A"]
         rng = np.random.default_rng(55 * N + 3)
         cap = max(max(A) + max(3, N // 2), math.ceil(1.5 * N))
+        for tag, A0 in grow_shrink_seeds(best, N, rng):
+            c2 = max(cap, max(A0))
+            tasks.append(_mk(N, c2, A0, it_per_N * N, 991 * N + len(tasks), f"{tag}_cap{c2}", T0f=0.1, T1f=0.002))
         for r in range(reps):
             k = int(rng.integers(2, max(3, N // 4) + 1))
             init = perturb(A, cap, k, rng)

@@ -39,15 +39,15 @@ theorem sum_product_symm (B : Finset ℤ) (g : ℤ × ℤ → ℝ) (hg : ∀ u v
     symm
     apply Finset.sum_nbij' (fun b => (b, b)) (fun p => p.1)
     · intro b hb
-      simp only [Finset.coe_filter, Finset.mem_product, Set.mem_setOf_eq]
+      simp only [Finset.mem_filter, Finset.mem_product]
       exact ⟨⟨hb, hb⟩, rfl⟩
     · intro p hp
-      simp only [Finset.coe_filter, Finset.mem_product, Set.mem_setOf_eq] at hp
+      simp only [Finset.mem_filter, Finset.mem_product] at hp
       exact hp.1.1
     · intro b _
       rfl
     · intro p hp
-      simp only [Finset.coe_filter, Finset.mem_product, Set.mem_setOf_eq] at hp
+      simp only [Finset.mem_filter, Finset.mem_product] at hp
       exact Prod.ext rfl hp.2
     · intro b _
       rfl
@@ -121,11 +121,14 @@ theorem injOn_toNat_of_sidon (B : Finset ℤ)
     (hB : Set.InjOn (fun p : ℤ × ℤ => p.2 - p.1) ↑(ltPairs B)) :
     Set.InjOn (fun p : ℤ × ℤ => (p.2 - p.1).toNat) ↑(ltPairs B) := by
   intro p hp q hq hpq
-  simp only [ltPairs, Finset.coe_filter, Finset.mem_product, Set.mem_setOf_eq] at hp hq
-  apply hB (by simpa [ltPairs] using hp) (by simpa [ltPairs] using hq)
+  have hp' := hp
+  have hq' := hq
+  rw [Finset.mem_coe] at hp' hq'
+  simp only [ltPairs, Finset.mem_filter] at hp' hq'
+  apply hB hp hq
   simp only at hpq ⊢
-  have h1 : (0 : ℤ) ≤ p.2 - p.1 := by linarith [hp.2]
-  have h2 : (0 : ℤ) ≤ q.2 - q.1 := by linarith [hq.2]
+  have h1 : (0 : ℤ) ≤ p.2 - p.1 := by linarith [hp'.2]
+  have h2 : (0 : ℤ) ≤ q.2 - q.1 := by linarith [hq'.2]
   rw [← Int.toNat_of_nonneg h1, ← Int.toNat_of_nonneg h2, hpq]
 
 /-- All elements of `diffSet B` are positive. -/

@@ -8,3 +8,4 @@ import ChowlaCosine.Multiplicity
 import ChowlaCosine.Averaging
 import ChowlaCosine.HalfSquare
 import ChowlaCosine.HalfSquareExplicit
+import ChowlaCosine.HalfSquareSieve

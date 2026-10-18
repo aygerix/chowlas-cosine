@@ -93,7 +93,24 @@ Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_
   (L/k^3)^{1/6}, with the trivial Sidon count k(k−1) <= 2·diam (Lindström not needed) and h = 64/(3ηk) inside the proof.
   Supporting lemmas: sidon_card_mul_pred_le_of_Ico, card_filter_abs_half_le (N(N−1) <= 4u/3 for |3s+½| <= u),
   sum_min_le_sidon (Σ_s min(1, 4/((3s+½)h)^2) <= 1 + (4/3)sqrt(8/(3h))), halfSquare_hcond_explicit.
-  Still paper-only: P16′ (large-sieve form, exponent 1/5) and Lindström's sharper count.
+  Still paper-only: Lindström's sharper count.
+- KERNEL-CHECKED 2026-10-18 (Lean agent #2; lead forced re-elaboration `lake env lean ChowlaCosine/HalfSquareSieve.lean`
+  (OK), `lake build` (8718 jobs OK), regenerated AxiomCheck.out from scratch (byte-identical to agent's; 103 axiom lines,
+  all [propext, Classical.choice, Quot.sound]); grep: no sorry/admit/native_decide/axiom; only new def halfS): **P16′
+  (exponent 1/5), Gallagher-sieve form**, lean/ChowlaCosine/HalfSquareSieve.lean —
+    theorem halfSquare_lower_bound_sieve (S : Finset ℤ) (hS : IsSidon S) (L : ℝ) (hL : ∀ s ∈ S, |(s:ℝ)| ≤ L)
+      (hL1 : 1 ≤ L) (η : ℝ) (hη : 0 < η) (hη' : η ≤ 1/2) (hk : 600 * (6 * L + 1) ≤ η ^ 5 * (S.card : ℝ) ^ 3) :
+      ∃ x : ℝ, cosSum (buSet S) x < -((1/2 - η) * S.card)
+  (corollary: 4200·L ≤ η^5 k^3). I.e. R(A(S)) > 1/2 − η whenever η^5 k^3 >= 4200 L: rate (L/k^3)^{1/5}, C0 = 600 not
+  optimised (agent estimate ≈ 100 with θ = 1/5). Route: Gallagher's inequality instead of Montgomery–Vaughan —
+  gallagher_local, gallagher_sum (needs every window [y_j − δ0/2, y_j + δ0/2] inside ONE period window [c0, c0+T]);
+  integral_halfC_sq_mul_halfS_sq_le (∫C^2 C'^2 <= D^2 ∫C^4, frequencies ≡ 1 mod 6, no Sidon needed);
+  integral_abs_halfC_cube_mul_halfS_le (∫|C^3 C'| <= D ∫C^4, AM–GM); sieve_halfC_pow_four
+  (Σ_{j<m} C(y_j)^4 <= (1/δ0 + 4D)∫_0^{2π}C^4); θ = 1/2, h = 64/(3ηk), δ0 = 2h, m = ⌊π/(2h)⌋ visits; hidden lower
+  bound η^4k^2 >= 600 comes from the Sidon count k(k−1) <= 4L (sieve_numerics). Report .research/agents/lean_p16_sieve.md.
+  CORRECTION found by formalization: the lead's Gallagher sketch (brief, Step A) let the windows I_j sit in a window of
+  length 2π + δ0 and folded by periodicity — that double-counts the overlap; the correct hypothesis is containment in a
+  single period window, which Step D satisfies exactly (centres 4hj, δ0 = 2h, c0 = −2h, 4hm <= 2π). Conclusion unaffected.
 - NOT formalized: P7 admissibility count, P1 (Fejér–Riesz absent from mathlib), P6, P10–P12, P13(b–d), P14, gain identity.
 
 ## P9. Induced-subgraph (local spectral) lemma (PROVED, elementary)
@@ -202,7 +219,7 @@ Beating 1/2 inside this template needs Σ_j P_j^2 >= δ rk/2 everywhere — a lo
 
 ## P16. C½ for Bu's construction with any Sidon set of range L = o(k^3) (PROVED on paper by lead 2026-10-18;
 ## numerics src/bu_halfsquare.py, constants src/p16_constants.py; INDEPENDENTLY REVIEWED by agent 2026-10-18: CORRECT,
-## no gap (.research/agents/p16_review.md); lemmas M1–M4 and the unconditional explicit form (η^6k^3 >= 7000L) KERNEL-CHECKED 2026-10-18; P16′ paper-only)
+## no gap (.research/agents/p16_review.md); lemmas M1–M4 and the unconditional explicit form (η^6k^3 >= 7000L) KERNEL-CHECKED 2026-10-18; P16′ (Gallagher form, η^5k^3 >= 4200L) KERNEL-CHECKED 2026-10-18)
 Review corrections (presentational): (M1) read "h := any h > 0 with Σbar(h) < δ" (the infimum is not attained; the
 inequality is strict, so h* itself works). (M3) Bu et al.'s own sets have L ≈ 8–12 k^2 (up to ≈ 32 k^2 in their proof
 regime), not L <= k^2; the rate k^{−1/6} is unaffected but the explicit table below is for L = k^2/2. (M6) Remark (c) needs
@@ -248,7 +265,8 @@ P16 generalisations (same proof, paper level, lead 2026-10-18):
      sets with a dense core near 0 AND range L >> k^3 escape the theorem.
 
 ## P16′. Large-sieve form of P16 (found by the review agent 2026-10-18; re-derived and constants recomputed by lead,
-## src/p16prime_constants.py; PROVED on paper, two independent derivations)
+## src/p16prime_constants.py; PROVED on paper, two independent derivations; Gallagher-sieve form with C0 = 600
+## KERNEL-CHECKED 2026-10-18, lean/ChowlaCosine/HalfSquareSieve.lean)
 Hypotheses as P16, D := 6L+1, 0 < θ < 1, δ := (θηk)^{1/2}, any 0 < h <= π/2 with Σbar(h) < δ, m := ⌊π/(2h)⌋.
 If m (2(1−θ)ηk)^4 >= (4D + π/h)(3k^2/4 − 3k/8) then M(A(S)) > (1/2 − η)k.
 Proof. Assume f_{A(S)} >= −(1/2−η)k. Windows [4hj−h, 4hj+h], j < m, contain visits y_j (|P(y_j)| < δ, Step 2); Step 3
@@ -280,3 +298,21 @@ P16/P16′ rule out improving their identity-based route (their Remark 8.4) for 
 Numerical sup (E16, src/profile_opt.py): 0.7239 (h >= 0), 0.7245 (signed). Relevance: under symmetric rounding
 (c_E = √2) dense sets have R ≈ sqrt(1−ρ), so beating 1/2 that way needs ρ > 3/4; (b) comes within 0.02 of excluding it
 for h >= 0 profiles, (a) does not. Neither bound is needed elsewhere; recorded so the constant is not re-derived.
+
+## P18. Dense min–max lemma: Chowla for dense sets whose positive-definite residual is upper-flat (PROVED; lead 2026-10-18)
+Statement. Let A ⊂ [1, X], f = f_A >= −M on R. Let W = (W_n)_{1<=n<=X} be real with Ŵ(x) := Σ_n W_n cos(nx) and
+||Ŵ'||_{L^1[0,2π]} <= βX, and put G := f − Ŵ = Σ_n e_n cos(nx), e_n = 1_A(n) − W_n. If max_x |G(x)| <= Λ, then
+    π Σ_n n^2 e_n^2 <= X Λ (2πXM + βX),   i.e.   M >= Σ n^2 e_n^2 / (2 X^2 Λ) − β/(2π).
+Proof. Bernstein in L^1 for the nonnegative degree-X trig polynomial f + M: ||f'||_1 <= X||f + M||_1 = 2πXM. Hence
+||G'||_1 <= 2πXM + βX. Bernstein in sup: ||G'||_∞ <= X Λ. And ||G'||_2^2 = πΣ n^2 e_n^2 <= ||G'||_∞ ||G'||_1.  ∎
+Admissible W: if W extends to a positive-definite sequence on Z with W_0 <= 1 (so W_0 + 2Ŵ >= 0), Bernstein in L^1
+applied to Ŵ + W_0/2 >= 0 gives ||Ŵ'||_1 <= πX W_0, so β = π works.
+Reading. For dense A (N >= αX) with a p.d. profile W and residual mass Σe_n^2 >= γN spread over [1, X]
+(Σ n^2 e_n^2 >= c X^2 Σ e_n^2), upper-flatness Λ = λ√X gives M >= (cγα^{1/2}/(2λ))·√N − 1/2: Chowla for that A.
+Random dense A and Bu sets have Λ ≈ √(X log X) off the main spike, so the lemma recovers M >~ √(N/log N) for them;
+the hypothesis fails exactly when the residual has secondary spikes (large Fourier coefficients of 1_A − W at
+minor-arc frequencies) — the multi-level structures of NOTEBOOK session 2. Open pieces: (a) a finite/discrete version
+of ||1_A − W||^2 >= (1 − ρ* − o(1))N for every p.d. W with 0 <= W <= 1 (the doubly-positive bound, P17/E16); (b) a way to
+charge secondary spikes of the residual to uncompensated negative lobes (maximality of W). (a)+(b) would give
+Chowla up to √log for dense sets — a target, not a result. Note the L^∞ hypothesis must hold on the major arc too
+(where G is the profile-approximation error).

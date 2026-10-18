@@ -182,3 +182,40 @@ open ChowlaCosine
 #print axioms halfSquare_lower_bound_explicit
 #check @halfSquare_lower_bound_explicit'
 #print axioms halfSquare_lower_bound_explicit'
+-- 11. P16' (rate exponent 1/5): Gallagher large sieve (HalfSquareSieve.lean)
+#check @gallagher_local
+#print axioms gallagher_local
+#check @sum_integral_le_of_sorted
+#print axioms sum_integral_le_of_sorted
+#check @gallagher_sum
+#print axioms gallagher_sum
+#check @continuous_halfS
+#print axioms continuous_halfS
+#check @halfS_periodic
+#print axioms halfS_periodic
+#check @hasDerivAt_halfC
+#print axioms hasDerivAt_halfC
+#check @cc_nonneg
+#print axioms cc_nonneg
+#check @sin_mul_sin_int
+#print axioms sin_mul_sin_int
+#check @integral_cos_cos_mul_sin_mul_sin
+#print axioms integral_cos_cos_mul_sin_mul_sin
+#check @sum_sq_mul_sum_sq
+#print axioms sum_sq_mul_sum_sq
+#check @integral_halfC_sq_mul_halfS_sq_le
+#print axioms integral_halfC_sq_mul_halfS_sq_le
+#check @integral_abs_halfC_cube_mul_halfS_le
+#print axioms integral_abs_halfC_cube_mul_halfS_le
+#check @sieve_halfC_pow_four
+#print axioms sieve_halfC_pow_four
+#check @halfP_visit_explicit
+#print axioms halfP_visit_explicit
+#check @sieve_numerics
+#print axioms sieve_numerics
+#check @sieve_arith
+#print axioms sieve_arith
+#check @halfSquare_lower_bound_sieve
+#print axioms halfSquare_lower_bound_sieve
+#check @halfSquare_lower_bound_sieve'
+#print axioms halfSquare_lower_bound_sieve'

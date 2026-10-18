@@ -713,3 +713,28 @@
   N(2H) <= 9N(H) + 8M; local Fourier uniformity at every scale. It is the rigorous macroscopic-Gibbs tool. It holds in
   Z_N only for localized sets, so it is genuinely Z-specific. It is far from √n by itself (Singer/Bu satisfy it
   easily). Next: combine P24 at scale H << t with the 2-run structure (OR(2)-weak) and with Roth's triple count.
+
+## 2026-10-18 (late night, after the Gurobi switch) — dual view, two-scale decoupling, line-D reformulation
+- Process change (user, 2026-10-18): computations are fire-and-forget; foreground time goes to math. A codex agent
+  works OR(2)-weak in parallel (.research/agents/or2_brief.md).
+- **Every valid inequality is an average.** M = max over probability measures μ of −∫f dμ (Herglotz duality).
+  P24/P25 use weights F_H(y)(1 + cos(my + φ)). The k-term generalisation F_H(y)|Σ_j c_j e^{im_j y}|² gives:
+  for each x₀, the H-decimated local-sum sequence k ↦ L_{kH}(x₀), Hermitian-extended with diagonal
+  2(g_H(x₀) + M), is positive definite. That captures the Gibbs lobes (interval: M >~ 0.1X). But its spectral density
+  is an interpolation of f on the coset x₀ + (2π/H)Z, i.e. again an average of f >= −M. A fixed family of weights
+  can only reproduce f >= −M; a √n bound needs weights chosen ADAPTIVELY from A (max-cut / signing view of
+  Cay(Z, ±A)). JMTZ do exactly that via cliques and are capped at 1/6. Räty–Sudakov–Tomon (arXiv 2311.02070,
+  positive discrepancy and MaxCut) bound λ₂, not λ_min, so they do not apply directly.
+- **P25 (sharpened localization, PROVED):** |L_m(x₀)| <= 2M + 2(f ∗ F_H)(x₀). Corollaries:
+  - flat-minimum rigidity;
+  - an L² form that random dense sets saturate.
+  Missing mechanism, stated precisely: show that the energy of A ∩ [2H, X] (smoothed at 1/H) cannot concentrate on
+  Pos_H = {f ∗ F_H > 0}, a set determined by A ∩ [1, H].
+  - If it is spread, P25 gives M² >~ (1 − ρ)nH/X, i.e. dense Chowla.
+  - If it concentrates, high and low parts are aligned (B + P-type product structure). Aligned examples (sumsets with
+    progressions) have linear M via the Dirichlet lobe.
+  So a dichotomy "aligned ⇒ large M via rotation" is the target. Not yet proved; it is the dense analogue of OR(2).
+- **P26 (PROVED):** symmetric half-sets of Z_p ⟺ symmetric u >= 0 with u ⋆ u = δ₀ + ε (weighted near-planar sets);
+  2M_p = Σu ∓ 1. The elementary p^{1/4} is the non-symmetric planar bound. Natural Singer-based symmetric weights are
+  killed by the E41 exact data (2M_p ≈ √p at p = 13, 31, 73).
+- Gurobi A/B (E43/E44): MIPNODE user cuts slow node throughput ~4x and lose. Plain lazy-cut model kept.

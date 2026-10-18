@@ -454,3 +454,19 @@
   transversal mod t. Second-order error ~ 1/4 of the main term at φ = 1/(2ℓ): needs an honest proof, then a test.
   If OR holds, the group extremal shape (every t-coset = one long run) is impossible in Z at small K; the general case
   (fibres with many runs) is what a Z-run-top bound must handle.
+
+## 2026-10-18 (evening) — λ-fold rulers: the one live construction mechanism with a path to R -> 0
+- Statement (PROVED, elementary). Let D ⊂ Z, |D| = k, r(d) = #{(u,v) ∈ D² : u − v = d}. Suppose r(d) ∈ {0, λ} for all d > 0
+  except a defect set Δ, and put W := Σ_{d∈Δ, d>0} 2r(d) (defect weight). Let A = {d > 0 : r(d) = λ}. Then
+      2λ f_A(x) = |F_D(x)|² − k − E(x),   E(x) = Σ_{d∈Δ, d>0} 2r(d) cos(dx),   |E| <= W,
+  so M(A) <= (k + W)/(2λ) and λ|A| = k(k−1)/2 − W/2, hence R(A) <= (1 + W/k)/√(2λ) · (1 + o(1)) whenever W = O(k).
+  λ = 1: Sidon differences (R <= 1/√2); λ = 2 with W = k: Bu's construction (R -> 1/2, P16 shows it is sharp there);
+  λ = 3 needs W < 0.22k for R < 1/2; fixed W/k and λ -> ∞ would give R -> 0, i.e. an Epoch solution if effective.
+- Known constraints: P4 — exact (W = 0) is impossible for λ >= 2 (the extreme difference has r = 1); symmetric copies
+  (translations, reflections) give coherent multiplicity at most 2, and translates create diagonals of multiplicity k
+  (NOTEBOOK 2026-10-18 "consistent thinning"). P8 is consistent with R ≈ 1/√(2λ). So λ >= 3 needs ALGEBRAIC coincidences
+  (no symmetry), with defects O(k) — e.g. near the extremes, where few pairs exist, defects seem unavoidable.
+- Open questions (both outcomes valuable): (Q1) do λ = 3 near-rulers with W <= 0.2k exist for some k? (Q2) prove
+  W >= c(λ)·k^{1+δ} for λ >= 3 (that would kill this mechanism, a C½-type obstruction for all uniform-multiplicity
+  difference constructions). First test: exact/SAT/ILP search over D ⊂ [0, L] for small k (C code), minimizing W at
+  λ = 3; compare with the extreme-difference counting lower bound on W.

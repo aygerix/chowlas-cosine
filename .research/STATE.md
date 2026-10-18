@@ -70,6 +70,17 @@ error diffusion; separated-block unions; local SA from Bu seeds; Sidon lower-fla
 cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatness (E29); P18 as a finite probe (E28); averaged Bedert (P14: (a) is t-independent); sums of several squares
 Σ P_j^2 (P15 remark: pseudo-random squares give R ~ √log X).
 
+## Plan in priority order (2026-10-18 evening; agreed with the user)
+1. G3 (agent g3 running): proof ⇒ Chowla exponent 1/4 (verify, write up, Lean); counterexample ⇒ even 1/4 needs Z input.
+2. Z-specific ingredient for run-tops (continuous t-offset φ; lobe/profile coupling; Shankar averaging is the only
+   Z input today).
+3. λ-fold rulers (NOTEBOOK evening entry): search for λ = 3 near-rulers with defect weight W <= 0.2k (C/SAT), and in
+   parallel try to prove W >= c k^{1+δ} for λ >= 3. Only live construction mechanism with a path to R -> 0.
+4. Lean formalization of P21 (statements in lean/ChowlaCosine/RunTopGroup.lean) after the g3 agent.
+5. Low priority: exhaustive N = 43–44 with src/exh2.c (validated, load-balanced) when compute is free.
+Compute: laptop via src/localrun.sh (4 cores, guarded; machine is shared with other projects, load can be ~40);
+F4 via src/f4run.sh (refuses at load >= 12); user is acquiring more compute (2026-10-18).
+
 ## Active lines (>= 3) (updated 2026-10-18, after P21)
 1. [lower bound, universal; AGENT g3 running] G3: |B_t| <= CK³ in every finite abelian group (sharp by P20/P21) ⇒
    Chowla exponent 1/4 via transfer + Shankar. Known: ord t = 3 without singleton cosets (P20 Thm 2). Barrier: Schur

@@ -396,3 +396,11 @@
   ĉ = −|H|/2 at the parity character: K = 4, 19, 109 for H = Z_6, Z_6², Z_6³ (|B_t| = 3, 18, 108 ≈ K). Patching with full
   /empty fibres re-creates the −|H|/4 at the same character. Mechanism: aligning D-phases with a character forces D to
   be a coset, which is penalised at degree 0. Consistent with the agent's evidence that groups give |B_t| <~ K².
+- Conjecture G in Z_3 × H, slice form (PROVED reductions, lead). With t = (1,0) and fibre functions q_j(h) =
+  Σ_{i∈A_h} ω^{ij}: F(j,ψ) = q̂_j(ψ), q_2 = conj q_1, so only j = 0 (fibre sizes c) and j = 1 (u := q_1, values in μ_6 ∪ {0},
+  u(−h) = conj u(h)) matter. u ∈ −μ_3 exactly on 2-point fibres D (run-tops), u ∈ μ_3 on singletons E, u = 0 on empty/full;
+  u³ = 1_E − 1_D. If K >= −min û and u(0) = 0, then w = û + K >= 0 and the threefold convolution gives
+      0 <= Σ_{ψ1ψ2ψ3=1} w(ψ1)w(ψ2)w(ψ3) = |H|²(Σ_h u³ + K³) = |H|²(|E| − |D| + K³),   i.e.   |D| <= |E| + K³.
+  So run-tops exceed singletons by at most K³. Not sufficient: |E| is unbounded at K = 1 (A = graph of a homomorphism on
+  a subgroup), and degree-3 positivity alone is capped (P19). A proof of G needs to rule out D-fibres while E-fibres
+  carry the compensation — the same "boundary vs bulk" structure as run-tops in Z.

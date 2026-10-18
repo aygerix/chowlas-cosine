@@ -262,3 +262,17 @@ give intervals/GAPs (R ≈ 0.22√n). Every family is dominated by the macroscop
 (uniform on [0, t²] with a sharp cutoff: M ≈ 0.22·|A|·const), so the experiment does not test the run mechanism of
 Lemma OR at all. A meaningful test needs S with a tapered positive-definite profile and algebraic (not random) fine
 structure. Kept as a failed probe.
+
+## E35 (2026-10-18) λ-fold ruler search (src/lambda_ruler_sa.c, src/e35_batch.sh, src/e35_eval.py; GCP VM dirichlet)
+SA (5e7 single-point moves × 4 restarts, seed 1) maximising φ = share of pairs of D ⊂ [0,L] (|D| = k, endpoints 0, L)
+whose difference has multiplicity exactly λ; grid λ ∈ {2,3,4}, k ∈ {8,…,30}, L = (k²/(2λ))·{1, 1.5, 2.5, 4}.
+HEURISTIC (search lower bounds on the best φ). Data: examples/lambda_ruler/e35_grid.txt.
+   λ = 2 (validation): best φ = 1 − 1/(k−1) EXACTLY for k = 8…21 (Bu-type coherent structure found); 0.935/0.938 at
+         k = 24/30 (optimum 0.957/0.966: slightly search-limited).
+   λ = 3: best φ = 0.75 (k=8), 0.80 (10), 0.77 (12), 0.77 (15), 0.69 (18), 0.67 (21), 0.62 (24), 0.57 (30) — DECREASING.
+   λ = 4: 0.71, 0.71, 0.79, 0.72, 0.65, 0.67, 0.59, 0.52 (k = 8…30) — decreasing.
+Actual R(A) (A = multiplicity-λ differences; FFT + Newton, uncertified): λ = 2 candidates 0.71–1.03, λ = 3: 0.68–1.96,
+λ = 4: 0.71–2.33 — none near 1/2. The defect sum E (weight W ≈ k–14k) peaks where |F_D|² is small, so the naive
+R ≈ 1/√(2λφ) badly underestimates. Reading: no coherent multiplicity-3 or -4 structure appears (φ decays toward the
+generic level), while λ = 2 structure is found immediately — consistent with P4 (symmetry gives at most 2). Not a
+proof; candidates beyond SA reach: homometric triples (NOTEBOOK evening entry). Runtime ≈ 12 min on 4 vCPUs.

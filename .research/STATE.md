@@ -74,8 +74,8 @@ cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatnes
 1. G3 (agent g3 running): proof ⇒ Chowla exponent 1/4 (verify, write up, Lean); counterexample ⇒ even 1/4 needs Z input.
 2. Z-specific ingredient for run-tops (continuous t-offset φ; lobe/profile coupling; Shankar averaging is the only
    Z input today).
-3. λ-fold rulers (NOTEBOOK evening entry): search for λ = 3 near-rulers with defect weight W <= 0.2k (C/SAT), and in
-   parallel try to prove W >= c k^{1+δ} for λ >= 3. Only live construction mechanism with a path to R -> 0.
+3. λ-fold rulers (NOTEBOOK evening entry; E35 done): SA finds λ = 2 structure but λ = 3, 4 exact fractions DECAY with k
+   and every candidate has R >= 0.68 — demoted pending a structural idea (homometric triples; or prove W >= c k^{1+δ}).
 4. Lean formalization of P21 (statements in lean/ChowlaCosine/RunTopGroup.lean) after the g3 agent.
 5. Low priority: exhaustive N = 43–44 with src/exh2.c (validated, load-balanced) when compute is free.
 Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM dirichlet via src/dirun.sh

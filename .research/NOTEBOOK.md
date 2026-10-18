@@ -470,3 +470,11 @@
   W >= c(λ)·k^{1+δ} for λ >= 3 (that would kill this mechanism, a C½-type obstruction for all uniform-multiplicity
   difference constructions). First test: exact/SAT/ILP search over D ⊂ [0, L] for small k (C code), minimizing W at
   λ = 3; compare with the extreme-difference counting lower bound on W.
+- E35 result (same evening): SA finds λ = 2 coherent sets at once (φ = 1 − 1/(k−1)) but for λ = 3, 4 the best exact
+  fraction DECREASES with k (λ = 3: 0.80 at k = 10 → 0.57 at k = 30); all candidates have actual R >= 0.68 because E
+  concentrates where |F_D| is small. Sharper criterion than φ > 2/3: M(A) = max_x (k + E(x) − |F_D(x)|²)/(2λ), so E
+  must be small exactly on the near-zero set of F_D (Bu achieves this only because E = 2C is a half-frequency copy of
+  the square root P — P16's mechanism). Next on this line, if pursued: (i) homometric-triple constructions D = U ∪ V ∪ W
+  (pairwise homometric Sidon sets give multiplicity 3 on within-part differences; cross families U−V, V−W, W−U must
+  then coincide up to translation); (ii) a proof that coherent multiplicity >= 3 forces W >= c·k^{1+δ}. Line demoted to
+  low priority pending a structural idea.

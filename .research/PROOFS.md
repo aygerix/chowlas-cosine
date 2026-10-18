@@ -587,3 +587,21 @@ Limits (agent, checked):
 - No argument puts general small-M sets into residue strips.
 Status: PROVED (paper), lead-verified; not yet kernel-checked. Novelty outside the project unchecked.
 Agent's next step: the second- and third-derivative analysis at π/t for the cancellation pattern {0, 3t}.
+
+## P28. Averaged local-maximal bound (PROVED, lead 2026-10-19; numerics src/p28_test.py)
+Statement. Let K >= 0 be a 2π-periodic kernel with K̂(0) = 1 and K̂(k) = 0 for |k| >= H (for example the Fejér kernel F_H).
+For every finite A ⊂ Z_{>0},
+    M(A) >= (1/4π) ∫_0^{2π} sup_{m >= H} |Σ_{a∈A} K̂(a − m) e^{iax}| dx.
+Proof.
+- P25 with K in place of F_H: W = K(x − x₀)(1 + cos(m(x − x₀) + φ)) >= 0 has mean K̂(0) + ½Re(e^{iφ}K̂(m)) = 1 for
+  m >= H. So |Σ_a K̂(a − m)e^{iax₀}| <= 2M + 2(f ∗ K)(x₀) for all m >= H and all x₀.
+- Take the sup over m, then integrate over x₀. Use ∫(f ∗ K) = 2π·(mean of f)·K̂(0) = 0. ∎
+Remarks.
+- H = 1 (K ≡ 1) gives M >= 1/2.
+- The trivial L¹ bound M >= ‖f_A‖₁/(4π) uses Re F_A globally. P28 improves it in two ways: it uses the full modulus,
+  and the sup over window locations sits INSIDE the x-integral.
+- Heuristic dichotomy, NOT proved:
+  - local randomness (windows with Gaussian-like spectra) gives M >~ √(local variance);
+  - a counterexample must be locally deterministic at every scale (all windows' spectra concentrated on a common small
+    set of frequencies), the Bohr-type regime where the Gibbs constraints (P24/P25) act.
+  Making "deterministic ⇒ Gibbs" quantitative is the open step.

@@ -435,3 +435,24 @@ User directive (2026-10-18): Gurobi replaces the C/HiGHS dense searches from now
     to OLD.
 - Relaunched 2026-10-18 ~23:50 UTC: e44 dense (6 threads); e37g group batch without cutoff hints (2 threads).
   The other instances continue.
+
+## E45 (2026-10-19) How much of M does the P28 bound recover? (src/p28_test.py on dirichlet; UNCERTIFIED quadrature)
+B = max over H ∈ {X/64, …, X} of (1/4π)∫ sup_m |Σ_a F̂_H(a − m)e^{iax}| dx, with window centres on a grid of spacing H/4.
+   set                    n      max A   M/√n    B/√n    B/M
+   dense N=50 (C-N50)     50     72      0.570   0.218   0.38
+   dense N=45 (C-N45)     45     61      0.572   0.225   0.39
+   Singer–Bu q=61         3782   10707   0.604   0.209   0.35
+   Singer–Bu q=101        10302  30575   0.589   0.207   0.35
+   random diffs (k=40)    676    3876    1.203   0.248   0.21
+   random d=0.5           1017   1999    7.19    0.234   0.03
+   random d=0.05          1973   39989   8.92    0.308   0.03
+   interval [1,200]       200    200     3.12    0.085   0.03
+Reading:
+- P28 gives ≈ 0.21–0.31·√n on every set with local randomness, including all near-extremal ones, where it recovers
+  35–39% of M.
+- It fails only for the deterministic interval, where it gives ~log n and M is carried by Gibbs.
+- This supports the dichotomy behind P28: "B_P28 small at every scale ⇒ deterministic spectrum ⇒ Gibbs lobes
+  (non-positive-definite twisted profiles at the spikes)". A quantitative version of that implication would give
+  Chowla.
+- Tried and failed (NOTEBOOK): descending spikes through scales with P25 and the triangle inequality loses a factor
+  5 per scale (g_H <= 5g_{H/4} + 4M), the same as P24(b) shell growth. The phase information must be used.

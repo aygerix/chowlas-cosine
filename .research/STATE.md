@@ -29,6 +29,9 @@ KERNEL-CHECKED (Lean 4, axioms propext/choice/Quot.sound only, no sorry; re-veri
 difference-set identity; Sidon consequence; mean zero/Parseval; P5; P7 cube identity + vertex min; P9 star lemma and
 star bound; P8 multiplicity bound; P13(a) averaging identity, restriction to multiples, (q−1)M >= |A| − q|A∩qZ|.
 
+NEW 2026-10-18 late night: P27 (codex agent, lead-checked) OR(2)-weak for residue-strip 2-run sets:
+M(S∪(S+t)) >= √(n/k)/80 when S lies in k residues mod q within an arc [0,t/2], q >= 32t√k (exponent 3/8 for k <= n^{1/4}).
+P25 sharpened localization; P26 half-set ⟺ symmetric weighted near-planar sets.
 KERNEL-CHECKED 2026-10-18 night (codex agent, lead re-verified: rebuild + 33 standard-axiom declarations): T0 Schur
 products; P20 Thm 2 (order 3) and its run-top corollary |B_t| <= |E| + (K+u₀)³ + 1; O4⁺ (order 4); line-D half-set
 identities T3(a)–(e) incl. the spectral gap (PROOFS 'Lean status update').

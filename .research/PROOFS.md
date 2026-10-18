@@ -559,3 +559,31 @@ Falsification of the natural construction (done): weights on D ∪ (−D) for a 
 (the sum-representation parity on 2D breaks it). The exact symmetric half-set optima (E41) at the Singer primes
 p = 13, 31, 73 have 2M_p ≈ 1.02–1.28·√p, nowhere near the p^{1/4} scale (2.9 at p = 73).
 So no near-planar symmetric weights exist at small p. A p^{1/4} construction would need weights far from 0/1.
+
+## P27. OR(2)-weak for residue-strip 2-run sets (codex agent "or2" 2026-10-18, report .research/agents/or2_report.md;
+## PROVED on paper; proof re-checked line by line by the lead; finite checks by the agent on dirichlet)
+Theorem B (phase-coherence inequality). Let t, q >= 1, R ⊂ {0, …, R*} with q > R* + 2t, Y_r ⊂ Z_{>=0} (0 ∉ Y_0 if
+0 ∈ R), S = ∪_r (qY_r + r), n_r = |Y_r|, n = Σn_r, A = S ∪ (S + t). Assume S ∩ (S + jt) = ∅ for j = ±1, ±2. Put
+C_y = Σ_{r : y∈Y_r} e^{iπr/t}, C = 2(Im C_0)² + Σ_{y>=1}|C_y|², G = Σ_r [r² + (r+t)²]√n_r. Then
+    M(A) >= t²C/(4G) − π²G/(2q²).
+Proof (checked):
+- (i) Exact lifting. At u = (θ + 2πj)/q, f_A(u) = h_θ(u) := Re[(1 + e^{itu})Σ_r e^{iru}z_r(θ)], with
+  z_r = Σ_{y∈Y_r} e^{iyθ}.
+- (ii) Bounds on h_θ: |h_θ''| <= L(θ) = Σ_r[r² + (r+t)²]|z_r(θ)|; h_θ(π/t) = 0; h_θ'(π/t) = t·Im Σ_y C_y e^{iyθ}.
+- (iii) Sampled-derivative lemma, from a Taylor upper bound at the grid point nearest u₀ − h'/L:
+  if h(u₀) = 0, |h''| <= L and h >= −M on a 2π/q-grid, then h'(u₀)² <= 2LM + π²L²/q².
+- (iv) Integrate in θ. Orthogonality with nonnegative levels gives ∫(Im b)² = C/2; also ∫L <= G and ∫L² <= G².
+Theorem A. If R ⊂ [0, t/2], k = |R| and q >= 32t√k, then M(S ∪ (S+t)) >= √(n/k)/80, and >= √(n/k)/32 if min S >= q.
+- The phases e^{iπr/t} lie in an arc of width π/2, so |C_y|² >= ℓ_y/2 and C >= (n − k)/2.
+- G <= (5/2)t²√(kn), and the error term is <= (1/80)√(n/k).
+- n < 2k is covered by M >= 1/2.
+Consequences:
+- OR(2)-weak holds on this class when k <= n^{1/2−2δ}: M >= n^{1/4+δ}/80. For example k <= n^{1/4} gives
+  exponent 3/8.
+- Bounded k gives a square-root bound.
+- The class strictly contains the dilated class qY of the rotation sweep, and also non-dilates (gcd 1).
+Limits (agent, checked):
+- R = {0, 3t} with Y_0 = Y_{3t} gives C_y = 0 identically, so (B) is empty. The theorem is not universal.
+- No argument puts general small-M sets into residue strips.
+Status: PROVED (paper), lead-verified; not yet kernel-checked. Novelty outside the project unchecked.
+Agent's next step: the second- and third-derivative analysis at π/t for the cancellation pattern {0, 3t}.

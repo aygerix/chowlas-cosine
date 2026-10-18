@@ -238,3 +238,52 @@
   "Gauss-sum-like" quantities through small values (the P16 visit lemma is the rigorous 1-D instance), and small values of
   the square factor are exactly where f_A ≈ −(diagonal) ≈ −k/2. Spectral form: Bu's Cayley graph on Z is a "Paley graph
   on Z" (λ_min = −√(d/2)·(1+o(1)), P16), and C½ says no distance graph on Z beats Paley.
+
+## 2026-10-18 (session 1, late) — the quadratic class: why Bu's single square is extremal (Smith's theorem)
+- Setting (HEURISTIC + one standard theorem). For half-integer frequencies b_s with all |b_s ± b_t| distinct and a graph G on
+  S, the set A_G = {|b_s ± b_t| : st ∈ E(G)} has f_{A_G} = c^T Adj(G) c with c_s = cos(b_s x), N = 2|E|. Write
+  Adj = Σ μ_i v_i v_i^T, T := Σ_{μ>0} μ_i = Σ_{μ<0}|μ_i| (trace 0), N = Σ μ_i^2. In the Gaussian model (c ≈ N(0, I/2) at a
+  typical x) the most negative values occur where all p positive components vanish, giving M ≈ T/2 + (fluctuation of the
+  negative chi-square part). Since Σ_{μ>0} μ_i^2 <= T^2, R >~ (T/2)/sqrt(T^2 + Σ_{μ<0} μ_i^2) -> 1/2 at best, with
+  equality only if (i) p = 1 (then Σ_{μ>0}μ^2 = T^2 exactly) and (ii) the negative spectrum is flat (Σ_{μ<0}μ^2 = o(T^2)).
+- Smith (1970): a graph has exactly one positive eigenvalue iff its non-isolated vertices form a complete multipartite
+  graph. So the p = 1 class is f = P^2 − Σ_i P_i^2 (blocks B_i), and condition (ii) forces blocks of size o(k): K_k = Bu.
+  For p >= 2 the positive part must avoid simultaneous vanishing, i.e. be lower-flat (p = 2 with complex F is the Sidon-
+  difference class, which needs min|F|^2 >= 0.29k: SNZ-weak; numerics E8/E12/E15 say c -> 0).
+- E22 tests the p = 1 class beyond K_k: even blocks of size 2 cost ≈ +0.35k in M (the within-block sum is not engineered,
+  so its extreme values at the zeros of P add up). So inside the quadratic ("square-identity") paradigm Bu is extremal,
+  and P16 proves it rigorously for K_k with L = o(k^3). This sharpens Bu et al.'s Remark 8.4 ("below 1/2 needs an idea
+  outside the square-identity paradigm") into: quadratic forms in Sidon-type cosines cannot beat 1/2 unless the cosines
+  are non-Gaussian (additive structure among the b_s, which creates collisions) or the positive part is lower-flat.
+- Higher chaos is worse: Bu = He_2. For the full degree-m elementary symmetric construction, R -> |min He_m|/sqrt(2·m!)
+  (m = 2: 1/2; m = 4: 6/sqrt 48 = 0.866; m = 6: 2.72). Sparse sub-families add Gaussian noise at the k^{m/2} scale.
+
+## 2026-10-18 (session 2) — reformulations and failed attacks recorded so they are not repeated
+- Probability-measure form of Chowla (PROVED, trivial but clarifying). A = −A ⊂ Z\{0}, F = 1̂_A >= −K. Then
+  ν := (F + K)/K is a probability density with ν̂(n) ∈ {0, 1/K} (n ≠ 0), and ν∗ν = (1/K)ν + (1 − 1/K)λ (λ = Haar): two
+  independent ν-samples sum to a ν-sample with probability 1/K, else to a uniform one. ||ν||_2^2 = 1 + |A|/K^2, so
+  Chowla ⟺ every such "1/K-idempotent" density has ||ν||_2^2 <= C. Bu: ν ≈ 2P^2/k (chi-square law), ||ν||_2^2 ≈ 3, the
+  Gaussian kurtosis that the Sidon property pins. Consequences tried: ν∗ν >= 1 − 1/K pointwise (spread condition);
+  popular sums of {F >= H} land in {F >= (H|E_H|)^2/4} — the level drops to <= K^2/4, i.e. the K^2 threshold of Bedert's
+  (S'). No new leverage found today.
+- 2-D visit via locally linear/chirp phase (the STATE "next step"): if |F_D|^2 >= βk on [c−h, c+h] and the phase were
+  linear (resp. quadratic), the triangle (resp. chirped-triangle) test gives √(βk) <= Σ_d |window transform(d − ω)|
+  <~ C/√h by Sidon counting, so h <~ C^2/(βk). But for ultraflat-type behaviour the phase coherence length is ~X^{-1/2}
+  (polynomial phase of order m: ~X^{-1}β^{1/2m}), far below 1/(βk) since X >> k. The test cannot close without an a
+  priori bound on the phase derivatives of F, which is exactly the arithmetic input that is missing. Recorded as failed.
+- Singer sets, midpoint moments (idea, not pursued): on any shifted grid x_j = 2π(j+θ)/v, Σ_j |F|^2 = vk and
+  Σ_j |F|^4 = v(2k^2 − k) exactly (Singer sets are Sidon mod v; in Z the defect d1+d2−d3−d4 ∈ {0, ±v} only for trivial
+  solutions). A moment test (m2 − β)^2 > (1 − β)(m3 − βm2) would force min |F|^2 < βk, but the main term near x = 0
+  dominates m3 (~k^6 vs k^5 bulk); removing it needs weights |1 − e^{ix}|^{2s}, whose moments are signed relation
+  counts of Singer sets lifted to Z (not algebraic; would need Weil/Deligne-type equidistribution). Low value.
+- Dense regime, where could positive skew come from? (HEURISTIC + one classical lemma.) A positive spike of G = f_A − T
+  at a nonzero rational 2πj/q with a p.d. envelope needs the local residue pattern u: Z_q → {1−w, −w} (mean 0) to have
+  REAL, nonnegative Fourier coefficients (an imaginary part produces the odd sine-transform of the profile, which takes
+  both signs at full spike size). Lemma (classical, via |φ(r) − φ(r+s)|^2 <= 2φ(0)(φ(0) − φ(s)) for p.d. φ): if
+  1_S − c is positive definite on a finite abelian group with 0 ∈ S and c < 1, then S is a subgroup. So such spikes force
+  local sublattice structure dZ of FIXED density, whose amplitude must then be modulated by a fractional p.d. profile —
+  which needs rounding at the next level, passing >= (1 − ρ*) of the L^2 mass on. A hierarchy of modulated sublattices
+  is the only shape of a positively skewed dense rounding; at the finest level the modulation is a 0/1 step function
+  (non-p.d.), whose Dirichlet defects add incoherently to Gaussian-size noise. This is a heuristic reason why the skew of
+  the exhaustive optima fades with N (E21). Fixed-profile experiment E23 (src/profile_rounding.py): sigma-delta
+  roundings of p.d. profiles have c_E ≈ 2.1–3.8 and growing with X (tri, gauss, fejer2 at X = 100–1600).

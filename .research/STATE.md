@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-18, session 1, late)
+# STATE — current targets and honest status (updated 2026-10-18, session 2)
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -26,6 +26,9 @@ KERNEL-CHECKED (Lean 4, axioms propext/choice/Quot.sound only, no sorry; re-veri
 difference-set identity; Sidon consequence; mean zero/Parseval; P5; P7 cube identity + vertex min; P9 star lemma and
 star bound; P8 multiplicity bound; P13(a) averaging identity, restriction to multiples, (q−1)M >= |A| − q|A∩qZ|.
 
+NEW (session 2): P17 rigorous bounds on the doubly-positive profile constant: ρ* <= 0.9057 (all profiles), <= 0.7698 for
+w = h⋆h̃ with h >= 0 (Beckner + Hölder); numerical sup 0.7239.
+
 ## Heuristic / numerical
 H1 Wick model. Dense-profile identity R = c_E sqrt((1−ρ)/2) (σ_E^2 = (1−ρ)N/2), ρ <= ρ* ≈ 0.7239 (numerical sup over
 doubly-positive profiles; autocorrelation analogue of the Matolcsi–Vinuesa constant). Symmetric rounding (c_E >= √2)
@@ -33,6 +36,12 @@ doubly-positive profiles; autocorrelation analogue of the Matolcsi–Vinuesa con
 and c_E rises (1.43 → 1.79); anatomy extrapolation from N=36 gives R_∞ ≈ 0.50–0.51 — the dense regime is the one live
 candidate against C½ (needs c_E < 1.35 with a p.d. profile). LNS/SA at N >= 45 are search-limited (calibration: random
 starts reach only 0.60 at N=36), so "R rises past N=36" is NOT established.
+
+Quadratic ("square-identity") class (NOTEBOOK 2026-10-18 late): in the Gaussian model R >~ 1/2 with equality only for one
+positive eigenvalue (= complete multipartite by Smith's theorem) with small parts, i.e. Bu. E22: complete-multipartite
+Bu sums with blocks of size >= 2 are much worse (M/k ≈ 1.0 at b = 2 vs 0.65 for Bu). Killed as a construction route.
+Literature check: Erdélyi 2607.21877v1's n^{1/3} proof for Littlewood cosine polynomials has a gap (LITERATURE.md;
+Fejér-kernel counterexample to the displayed chain); not used here.
 
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
@@ -53,6 +62,10 @@ cyclotomic Z-lifts and model sets (E11); averaged Bedert (P14: (a) is t-independ
 Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).
 
 ## First concrete next step
-Read the Lean HalfSquare.lean report (P16 review: done, CORRECT). Run ONE agent at a time (user request). Then try the 2-D
-visit lemma for Sidon differences: if |F_D| >= sqrt(βk) on a window, compare F_D with e^{iωx} for the window's mean
-phase speed ω and bound Σ_d φ̂(ω − d) by Sidon counting.
+(1) Collect the structured MILP result for N = 45 (examples/milp/X62_n45_Y34_H3.log, F4) and certify it; if R(45) <
+0.565 the dense regime trends down — then run N = 50, 55, 60 the same way (one job at a time, F4 load < 12). Exhaustive
+box search is too slow at L − N >= 19 (N = 41, L = 60 ran > 2 h); rerun with L = round(1.375N) + 1.
+(2) Integrate the Lean agent's unconditional explicit P16 (lean/ChowlaCosine/HalfSquare*.lean; report
+.research/agents/lean_p16_explicit.md): re-run lake build + AxiomCheck yourself before recording KERNEL-CHECKED.
+(3) Lower-bound line: the only universal lead is Bedert's (S') "approximate additive closure of {F > K^2}"; the
+measure form ν∗ν = ν/K + (1 − 1/K)λ (NOTEBOOK session 2) is the cleanest language for it.

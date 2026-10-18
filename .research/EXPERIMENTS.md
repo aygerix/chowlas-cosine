@@ -101,3 +101,14 @@
    skew:  +0.70  +1.18  +0.78  +0.55  +0.37  +0.19    (random: −0.05..+0.01, 5–95% within ±0.5)
    The exhaustive optima exploit positive skew (the only mechanism that can beat 1/2, E16), but the skew FADES and c_E
    RISES with N over 29–40; extrapolated, c_E stays above the 1.35 needed for R_∞ < 1/2. Small-N evidence only.
+
+## E22 (2026-10-18) Complete-multipartite Bu sums (src/multipartite_bu.py; FFT grid >= 16 max A, UNCERTIFIED estimates)
+S = Bu et al.'s certified Sidon sets (examples/bu_reproduction_certified.json); blocks of size b (consecutive in sorted S
+or random); A = cross-block pair frequencies, f_A = P^2 − Σ_i P_i^2, N = k^2 − Σ|B_i|^2. M/k (R):
+   k=40:  b=1 0.693 (0.701) | b=2 1.170/1.026 | b=4 2.04/1.60 | b=8 3.60/2.45 | b=20 7.74/4.59   (sorted/random)
+   k=60:  b=1 0.671 (0.677) | b=2 1.113/0.953 | b=4 2.18/1.35 | b=8 4.16/2.10 | b=30 13.96/6.28
+   k=80:  b=1 0.653 (0.657) | b=2 1.053/0.960 | b=4 2.08/1.39 | b=8 3.93/1.97 | b=40 14.97/5.44
+Idealised (concentrated) prediction (k/2)/sqrt(N) = 0.503–0.707. Even b = 2 costs ≈ +0.35k: the within-block sum f_W
+(k frequencies, not engineered) adds Gaussian extreme values at the zeros of P, whereas Bu's Singer/parity design
+specifically keeps C small there. The one-positive-eigenvalue class beyond K_k is worse in practice. Killed as a
+construction route.

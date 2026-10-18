@@ -50,3 +50,17 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   Madrid arXiv:2106.13873 §5). de Dios Pont–Madrid treat ∫∫ f f w <= C||f||_1||f||_2 (C ≈ 0.8056 box, 0.7152 Gaussian
   weight) — a different functional. Our ρ* ≈ 0.7239 (h >= 0), 0.7245 (signed, slightly infeasible): not found in the
   literature in this form (quick check only, 2026-10-18).
+
+## Littlewood cosine polynomials (signed / free-phase analogue) — read 2026-10-18
+- Erdélyi, arXiv:2607.21877v1 (24 Jul 2026) claims max T_n >= n^{1/3}/60 and −min T_n >= n^{1/3}/60 for every
+  T_n = Σ_{j=1}^n cos(jt − θ_j) (unit amplitudes, full support; includes ±1 cosine polynomials). Remark 2.3:
+  max(max T, −min T) >= (n/4)^{1/2} trivially.
+  **Lead's check: the proof of Thm 2.1 has a gap (v1).** The display after (4.15) bounds Σ_E ∫_E|T'|^2 by
+  (∫_0^{2π}|T'|)·Σ_E m(E)·max_E|T'|, but (4.3) only gives ∫_E|T'|^2 <= (∫|T'|)·max_E|T'| (no m(E) factor); the m(E)
+  factors do not follow. The chain uses only −n <= T <= δ, deg T <= n, ∫T = 0, and would give
+  ∫|T'|^2 <= 4π^2·12.26·n^{5/2}δ^{3/2}. T = 1 − F_n (F_n = Fejér kernel) meets these hypotheses with δ = 1 and has
+  ∫|T'|^2 = πΣ_{j<n} 4j^2(1−j/n)^2 ≈ 0.419 n^3 > 484 n^{5/2} for n >= 2e6 (checked numerically: n = 2e6 gives
+  3.35e18 > 2.74e18). Correcting the step (keeping ∫_E|T'| instead) loses everything: the region {T <= −n/4} can carry
+  all of ∫|T'|^2 with δ = O(1). Whether the n^{1/3} statement is true for unit-amplitude T is open to us. Not used
+  anywhere in this project. (An adaptation to dense 0/1 sets A ⊂ [1,X] would have given M(A) >> N^{5/3}/X^{4/3}; it
+  fails for the same reason.)

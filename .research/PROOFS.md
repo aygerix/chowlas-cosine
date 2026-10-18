@@ -256,3 +256,16 @@ h > 4ρ/(δ−E) contain visits. For spread S (ρ ≍ k/L, E = O(1)) L cancels a
 Bu's random thinnings needs a w.h.p. counting bound near 0 (not verified).
 Literature: Bu et al. 2610.17160v1 do not prove a matching lower bound (their Remark 8.5: sharpness "we do not prove");
 P16/P16′ rule out improving their identity-based route (their Remark 8.4) for L = o(k^3).
+
+## P17. Rigorous upper bounds for the doubly-positive profile constant ρ* (PROVED, elementary; lead 2026-10-18)
+ρ(w) := ∫w^2/(w(0)∫w) over continuous integrable even w: R → [0,∞) with ŵ >= 0 (so 0 <= w <= w(0) = 1 after scaling).
+(a) ρ* <= 0.9057 for the whole class. Proof: the Gram matrix of {0, t, 2t} is PSD, det = (1−w(2t))(1+w(2t)−2w(t)^2) >= 0,
+    so w(t) <= sqrt((1+w(2t))/2) <= a + b w(2t) (tangent at y0 = 0.64: b = 1/(2 sqrt(2(1+y0))) = 0.27608, a = 0.72885).
+    Multiply by w(t) >= 0 and integrate; Cauchy–Schwarz ∫w(t)w(2t)dt <= ||w||_2^2/√2. Hence (1 − b/√2)||w||_2^2 <= a∫w,
+    ρ <= a/(1 − b/√2) = 0.90565.  ∎
+(b) ρ <= 0.76980 on the subclass w = h⋆h̃ with h >= 0: Beckner's sharp Young inequality ||h⋆h̃||_2 <= A_{4/3}^2 ||h||_{4/3}^2
+    (A_{4/3}^2 = (4/3)^{3/4}/4^{1/4} = 0.87738) and Hölder ||h||_{4/3}^2 <= ||h||_1 ||h||_2, with ||h||_1^2 = ∫w, ||h||_2^2 = w(0).
+    Strict (Beckner's equality needs Gaussians, Hölder's needs |h| constant on its support).  ∎
+Numerical sup (E16, src/profile_opt.py): 0.7239 (h >= 0), 0.7245 (signed). Relevance: under symmetric rounding
+(c_E = √2) dense sets have R ≈ sqrt(1−ρ), so beating 1/2 that way needs ρ > 3/4; (b) comes within 0.02 of excluding it
+for h >= 0 profiles, (a) does not. Neither bound is needed elsewhere; recorded so the constant is not re-derived.

@@ -331,3 +331,31 @@
   / sqrt(1+β) with z ~ sqrt(2 log #zeros): the √β cost beats the β/4 gain for small β, and large β is the dense regime.
   (ii) Adding the diagonal frequencies {6s+1 : s ∈ S'} for half of S turns −C/2 into −(C_{S\S'} − C_{S'})/2, same
   variance; N grows by k/2, gain O(1/k) in R. The diagonal term can be re-signed but not removed.
+
+## 2026-10-18 (session 2, cont.) — P18 test, P16′ kernel-checked, ρ* reappears for Sidon differences
+- P16′ (exponent 1/5) KERNEL-CHECKED (Gallagher form; PROOFS). Formalization caught a window-folding error in the
+  lead's Gallagher sketch (windows must sit in ONE period window) — conclusion unaffected.
+- P18 (dense min–max) is qualitatively right but numerically empty at N <= 1e4 (E28): the spike at 0 needs
+  W_0 >= 2N/X, and the Bernstein chain loses ≈ 10x. Closed as a probe.
+- Sidon differences D(B): R(D(B)) = (1 − c)/√2 with c = min|F_B|²/k, so beating 1/2 ⟺ c > 1 − 1/√2 ≈ 0.293. New
+  structural observation (HEURISTIC, profile level): write F_B = D + Z with D(x) = k ŵ(xL) the profile part (B ⊂ [0,L),
+  L = λk², profile w a probability density on [0,1]). The Sidon property, smoothed, says k²(w⋆w̃)(s)/L <= 1, i.e.
+  w⋆w̃ <= λ. The spike's share of E|F|⁴ = 2k² − k is ∫|D|⁴/(2k²)·... = c_w/(2λ)·2 with c_w = ∫(w⋆w̃)² <=
+  ρ*·(w⋆w̃)(0)·∫w⋆w̃ <= ρ*λ, where ρ* ≈ 0.7239 is EXACTLY the doubly-positive constant of E16/P17 (w⋆w̃ is doubly
+  positive). Hence E|Z|⁴ >= (2 − ρ*)k² ≈ 1.28k² while E|Z|² ≈ k: the off-spike fluctuation of a Sidon sum is flatter than
+  Gaussian (kurtosis 4/3 for uniform profiles, >= 2 − ρ* always) but never ultraflat. The same constant ρ* bounds the
+  dense regime (R = c_E√((1−ρ)/2)) — a common obstruction: macroscopic profiles can absorb at most a ρ* fraction of the
+  fourth moment / energy. Lower-flatness (c > 0.293) is not excluded by moments; E8/E12/E15/E29 all give c -> 0.
+- Where Bedert's K^4 (Prop 7.3, 2509.05260v3 §7) comes from — and a small barrier (PROVED, elementary). Setting:
+  A = −A, F = 1̂_A, G = F + K >= 0, a_m = 1_A(m), B_t = {m ∈ A : m − t ∈ A, m + t ∉ A} (tops of maximal t-runs).
+  Bedert: (38) |φ_t| <= ψ_t + O(K^2) with φ̂_t >= 4+√2 on B_t > sup ψ̂_t = 4 + 1/√2 (a coefficient GAP), built from
+  f_t ∗ f_t where f_t = 2(1 + sin 2πtx)F >= −4K; tested against H∗H, H = |Q_1|, 1̂_{B_t} = Q_1 + Q_2, |Q_1| <= 4G,
+  ||Q_2||_2 << K^2 (Lemma 7.1). Losses: O(K^2)·||H||_1^2 <= 16K^4 and K^2|B|^{1/2} from Q_2; both give |B_t| << K^4.
+  BARRIER (degree 1 cannot give a gap): for any nonnegative multiplier m(x) = Σ_j c_j e(jtx), the coefficient of m·F at m is
+  Λ(ε) = Σ_j c_j ε_j, ε_j = a_{m−jt}. On B_t-patterns (ε_0 = ε_1 = 1, ε_{−1} = 0, others free) min |Im Λ| <= |Im c_1|
+  (take ε_j = 0 for |j| >= 2) <= |c_1| <= c_0 <= max over patterns of Re Λ. So the odd part can never strictly dominate
+  the even part's coefficients: some nonlinearity (degree >= 2 in the pattern) is forced, and every degree costs one
+  factor K in the additive constant (functions built linearly from G have L^1 ≈ K per unit coefficient). Hence within
+  "pointwise gap inequality + nonnegative test function" the bound is |B_t| <~ K^2·||H||_1^2; K^3 (=> exponent 1/4)
+  needs a test H >= |Q|, Q̂ ≈ 1 on B_t in L^2, with ||H||_1 <~ K^{1/2} — e.g. if run-top sets B_t had small Fourier
+  L^1 norm relative to K. Not pursued further now; recorded so the next attempt starts from the right bottleneck.

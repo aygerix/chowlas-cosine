@@ -45,10 +45,21 @@ Bu sums with blocks of size >= 2 are much worse (M/k ≈ 1.0 at b = 2 vs 0.65 fo
 Literature check: Erdélyi 2607.21877v1's n^{1/3} proof for Littlewood cosine polynomials has a gap (LITERATURE.md;
 Fejér-kernel counterexample to the displayed chain); not used here.
 
+## Session-2 late additions (2026-10-18)
+- P16′ KERNEL-CHECKED (HalfSquareSieve.lean, η^5k^3 >= 4200L). Formalization corrected the window-folding step of the
+  lead's Gallagher sketch (windows inside one period window); conclusion unaffected.
+- P18 (dense min–max Bernstein lemma) PROVED but numerically empty on records (E28): qualitative only.
+- E29: Erdős–Turán quadratic Sidon sets have min|F_B|^2/k -> 0 (killed). Profile analysis: Sidon forces the profile
+  autocorrelation <= λ, so the spike carries <= ρ* of E|F|^4 — the doubly-positive constant ρ* ≈ 0.724 is a COMMON
+  obstruction to dense sets and Sidon-difference sets (NOTEBOOK).
+- Bedert framework barrier (NOTEBOOK): the K^4 in Prop 7.3 = O(K^2) (degree-2 gap inequality) × ||H||_1^2; PROVED that no
+  degree-1 (single nonnegative multiplier) inequality has a coefficient gap (|c_1| <= c_0). Exponent 1/4 would need a
+  run-top test function with L^1 <~ K^{1/2}.
+
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
 error diffusion; separated-block unions; local SA from Bu seeds; Sidon lower-flat polynomials (E8/E12/E15: c -> 0);
-cyclotomic Z-lifts and model sets (E11); averaged Bedert (P14: (a) is t-independent); sums of several squares
+cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatness (E29); P18 as a finite probe (E28); averaged Bedert (P14: (a) is t-independent); sums of several squares
 Σ P_j^2 (P15 remark: pseudo-random squares give R ~ √log X).
 
 ## Active lines (>= 3)

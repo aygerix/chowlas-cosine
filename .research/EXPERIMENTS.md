@@ -170,3 +170,18 @@ N=40: c_E 1.75, skew +0.25, ρ 0.83 | N=45: c_E 1.79, skew +0.55, ρ 0.83. Box r
 0.565–0.584 (no monotone trend); the low R values are carried by ρ ≈ 0.83 > ρ* = 0.72 — a non-positive-definite profile
 that finite size tolerates — while c_E creeps up (1.62 → 1.79). Holding c_E ≈ 1.8 with a p.d. profile would give
 R_∞ ≈ 1.8·sqrt((1−ρ*)/2) ≈ 0.67. Still no evidence for a dense route below 1/2.
+
+## E28 (2026-10-18) P18 dense min–max lemma on the records — UNINFORMATIVE (src/p18_test.py)
+Profiles W = w0·(Fejér K_Y or tent autocorrelation), Y <= X+1 (genuinely p.d., degree <= X), w0 ∈ [0.3, 2.5]; Λ = max|f − Ŵ|
+on a 64X grid (uncertified). Best bound B = Σn²e²/(2X²Λ) − w0/2 over the grid is <= 0.03 for every record (box N=20..55,
+MILP N=45, Singer–Bu q=61,101) versus M = 2.7–60. Two reasons, both structural: (i) a p.d. degree-X profile has
+ΣW <= X·W_0/2, so absorbing the spike f(0) = N needs W_0 >= 2N/X ≈ 1.4 for the dense records (N/X ≈ 0.7), and the
+correction W_0/2 then exceeds the main term; with W_0 <= 1 the residual keeps the spike (Λ ≈ 0.2X). (ii) the chain
+||G'||_2² <= ||G'||_∞||G'||_1 loses a factor ≈ 10 even for flat residuals. Decision: P18 stays a qualitative lemma (a
+√(N/log N)-type statement for flat residuals); not a probe of finite records. Dense line continues via E16/E21 anatomy.
+
+## E29 (2026-10-18) Erdős–Turán quadratic Sidon sets are not lower-flat — KILLED (src/et_flat.py; 64L FFT, UNCERTIFIED)
+B = {2pj + ((a j² + ℓ j) mod p) : 0 <= j < p}, a < min(p,12), ℓ ∈ {0,1} (all Sidon; checked for a = 1, ℓ = 0). Motivation:
+Gauss-sum flatness |F_B(2πa/p)|² = p. Result: max over twists of c = min|F_B|²/k = 0.0029 (p=5), 0.0009 (13), 1e-4 (23),
+< 1e-4 for p = 37..223. Far below the 0.293 needed for R(D(B)) < 1/2. Flatness at one lattice of roots of unity
+does not survive interpolation (same failure as Singer, E8/E11).

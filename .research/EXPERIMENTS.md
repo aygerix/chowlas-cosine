@@ -138,7 +138,7 @@ chosen set certified by arb ball arithmetic (chowla.certify_lower_bound, oversam
    q:        13     23     31     43     61      101     151     199     251     307      401
    N:       182    552    992   1892   3782   10302   22952   39800   63252   94556   161202
    R (est): .673   .644   .635   .618   .604    .588    .576    .565    .561    .5567    .5536
-   R_cert:   —      —      —      —    .60406  .58874  .57770  .56630  .56272  .55679   .55476
+   R_cert:   —      —      —      —    .60406  .58874  .57770  .56630  .56272  .55670   .55366  (q=307,401: oversample 32)
    (q = 307, 401: laptop, src/localrun.sh, blocked certifier, 115 s / 133 s, peak RSS < 1 GB.) Better fit than 0.95/√k:
    (R − 1/2)·√(k/log k) = 0.403, 0.417, 0.427, 0.407, 0.423, 0.416, 0.439 (est) for k = 62..402 — consistent with Bu et
    al.'s O(n^{1/4}√log n) error (max of the C-fluctuation over ≍ L zeros of P).

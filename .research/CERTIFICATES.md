@@ -35,6 +35,8 @@ points + 4th-order Taylor remainder (rigorous lower bound on min over ALL real x
    same arb-DFT + Taylor certificate computed in 64 decimated residue blocks; validated bit-identical to the unblocked
    certifier on q = 61, 101 and N = 45. q = 401: grid estimate 0.55358, certificate loses 0.0012 to the Taylor remainder
    at oversample 16 — rerun at oversample 32 to tighten.)
+   Tightened 2026-10-18 (certify_lower_bound_blocked, oversample 32, 128 blocks, L = 2^24, ~220 s each):
+   q = 307: min f >= −171.184725, R <= 0.556699;  q = 401: min f >= −222.292595, **R <= 0.553656** (N = 161202).
 
 ## C-N45 (2026-10-18): N = 45, max 61 (E27; examples/milp/N45_best.json)
 A = [1..13, 15..35, 37, 39, 40, 41, 45, 50, 52, 57, 58, 60, 61].

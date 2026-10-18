@@ -350,14 +350,14 @@ Reading:
 Objective: P = k pairs {a,−a} ⊂ Z_p^*, k = (p−1)/4 or (p+1)/4, M_p = max_{γ≠0} −2Σ_{a∈P}cos(2πaγ/p). Grid-R in Z
 normalization: M_p/(2√k) ≈ M_p/√p. Paley (quadratic residues, p ≡ 1 mod 4): (1+√p)/2.
 NUMERICAL-EXACT (double precision; the minimizing P is unique in every case, the reported value is 1e−9 accurate):
-   p:      11    13    17    19    23    29    31    37    41    43    47    53    59    61    67    71    73    79    83
-   M_p/√p .723  .639  .621  .584  .636  .593  .614  .554  .562  .546  .519  .543  .541  .523  .508  .493  .508  .491  .483
+   p:      11    13    17    19    23    29    31    37    41    43    47    53    59    61    67    71    73    79    83    89
+   M_p/√p .723  .639  .621  .584  .636  .593  .614  .554  .562  .546  .519  .543  .541  .523  .508  .493  .508  .491  .483  .491
    - The optima are Paley for p = 13, 17, 29.
    - From p = 37 on they are dilates of near-intervals with a tail, the anatomy of the dense Z optima.
      For example p = 79: P = [1,16] ∪ {18,19,25,27} after dilation by 16.
    - Spectrum: one giant profile coefficient (≈ 0.27p) and a nearly flat negative floor at the minimum.
-   - The optima are below Paley for p >= 37 and below grid-R 1/2 for p = 71, 79, 83.
-   - p = 89 did not finish within 5400 s (e41_mid partial file; 5.2e9 nodes at p = 83).
+   - The optima are below Paley for p >= 37 and below grid-R 1/2 for p = 71, 79, 83, 89.
+   - p = 89: M_p = 4.630071582 after 3.3e10 nodes (examples/zp_half/e41_mid.txt).
 HEURISTIC (zp_sa.c; calibrated: it reproduces the exact optima at p = 47, 53, 79):
    - Unrestricted SA is sub-Paley at p = 101 (0.516) and worse than Paley from p = 149 (search-limited).
    - Core-plus-tail SA (pairs 1..L forced; E41c) gives p = 149: 0.4825, 197: 0.523, 293: 0.528 (≈ Paley 0.529),

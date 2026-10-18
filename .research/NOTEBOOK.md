@@ -296,3 +296,17 @@
   peaks are wide (w >> K^{-4}) or additively closed"; a narrow middle peak means a set A' ⊂ A of size ≈ K^3 spread over
   length > K^4 that is coherent with one frequency — the next thing to try to exclude using F >= −K on A' alone
   (Chowla for A' gives M(A') >= |A'|^{1/5}, too weak; one needs the interaction of A' with the rest of A).
+- Singer–Bu (E25) anatomy. For f = P^2 − k/2 − C/2 with b_s = 3s+½: at x = π/3 + t, (6s+1)π/3 ≡ π/3 so C ≈ Re(e^{iπ/3}
+  e^{it} F_S(6t)) ≈ +k/2 near t = 0, while P(π/3) = cos(π/6)(#even − #odd). So the only dangerous special points are
+  x ≡ ±π/3 (C ≈ +k/2), and they are neutralised iff the parity imbalance e − o of S satisfies roughly (e−o)^2 >~ 0.8k
+  (P's main lobe is twice as wide as C's). Bu et al. buy this with a deleted odd "parity block"; a cyclic shift of a
+  full Singer set does it for free (the best shifts have large |e − o|). At x ≡ π, C = −k and P = 0 (f = P^2 >= 0); at
+  ±2π/3, C = −k/2, P = k/2. Elsewhere the excess over k/2 is the generic fluctuation of −C/2 at near-zeros of P,
+  ≈ 0.95√k in E25 — the term P16 shows cannot be made negative of order k.
+- SNZ-weak via rotating visits (PROVED consequence, no contradiction found). If |F_D|^2 >= βk everywhere (D Sidon), apply
+  the P16 visit lemma to every G_θ = Re(e^{−iθ}F_D) (all are cosine sums with the same Sidon frequency counting): each
+  window of length 2h, h ≈ 5/(ηk), contains x with |cos(ψ(x) − θ)| < sqrt(η/(2β)), ψ = arg F_D. Hence ψ sweeps an angle
+  >= π − O(sqrt(η/β)) inside EVERY such window: lower-flat Sidon polynomials must wind at speed >~ ηk uniformly, i.e.
+  have >~ ηk zeros inside the unit disk, angularly equidistributed at scale 1/(ηk). Upper bounds on winding available
+  from |ψ'| <= |F'|/|F| are ~X/√β >> ηk, so no contradiction; a proof of SNZ-weak needs a reason why 0/1 Sidon
+  polynomials cannot have that zero geometry (their zeros' radial distribution is the natural place to look).

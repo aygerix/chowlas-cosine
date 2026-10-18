@@ -134,3 +134,21 @@ Better at every size than Bu et al.'s random tent-thinned sets (E4: 0.6573 at N 
 uncertified). Excess fits R − 1/2 ≈ 0.95/√k (i.e. M ≈ k/2 + 0.95√k: the C-fluctuation at the zeros of P), so R -> 1/2
 from above like N^{-1/4}, as P16 (kernel-checked) and the heuristic predict. q = 251 gives the best certified finite R
 known to us (0.56272 at N = 63252), narrowly beating the dense N = 36 optimum (0.56481). Not a step toward R -> 0.
+E24 addendum — exact optima for X <= 22 (all 2^X sign patterns, grid 16X on [0, π], top-20 Newton-polished):
+   X:   8      10     12     14     16     18     20     22
+   c*: 1.032  1.157  1.104  1.126  1.060  1.103  1.057  1.094
+Optima are Dirichlet-like (e.g. X = 14: all + except ε_13; X = 20: alternating = Dirichlet at π), whose c = 0.307√X
+still fits under 1.33 at X <= 18. So small-X values say nothing about skew; E24's SA values at X >= 50 are the
+relevant probe.
+
+## E26 (2026-10-18) Free-phase analogue: min over θ of max_t Σ_{j<=n} cos(jt − θ_j) (src/freephase_opt.py; UNCERTIFIED)
+Adam on a soft-max (grid 16n), true max by FFT 64n + Newton; c := max/sqrt(n/2):
+   n = 25: 0.899 | 50: 0.894–0.895 | 100: 0.908–0.909 | 200: 0.902      (grid values ≈ 0.866–0.87 throughout)
+So with FREE phases (unit moduli, full support) the one-sided ratio is ≈ 0.9 and flat in n — far below the 1.33 a dense
+0/1 rounding would need, and below the arcsine value √2; whereas with real ±1 coefficients (E24) the optimised ratio
+rises past 1.33 by X ≈ 100. The phase restriction to {0, π} (real two-valued coefficients) is what destroys the skew.
+Side remark: consistent with max T ≍ √n for free phases (Erdélyi's claimed n^{1/3}/60 would be far from sharp).
+E24b — second optimiser (src/signed_homotopy.py: a = tanh(κu), κ ↑, Adam on soft-min, round + single-flip polish),
+best of 3–5 seeds: X = 50: 1.43 | 100: 1.47 | 200: 1.40–1.47 | 400: 1.51 | 800: 1.58. Worse than SA at small X,
+slightly better at X >= 200; both optimisers put the achievable ±1 ratio at ≈ 1.45–1.6 for X in [200, 800], slowly rising.
+(Caveat: the ±1 problem is the constant profile, ρ = 1/2, for which beating 1/2 would need c_E < 1 — even stricter.)

@@ -67,6 +67,13 @@
    [3.3887696, 3.3887699]), 37 0.5758, 40 0.5842. Edge-touching optima (max = L) at N=29,30,34,38–40. Fit over N=20–36:
    R ≈ 0.49 + 0.54/√N (finite-N only). SA for N=45–100: 0.612–0.665 (search-limited). Structure: tapered dense sets,
    E(A)/N^3 ≈ 0.5, not Sidon-difference sets. Data: examples/smallN_best.json, examples/smallN_runs/.
+   ADDENDUM 2026-10-18 (laptop, src/localrun.sh, 1 core): N=41, box [1,57], complete in 1247 s (3.97e10 nodes): optimum
+   A = [1..33, 38, 39, 43, 44, 46, 48, 52, 55], M_est = 3.675475, certified M <= 3.675636, R = 0.57404, x* = 1.0761,
+   unique (second best M = 3.68887). Box optima N = 34..41: 0.5741, 0.5677, 0.5648, 0.5758, 0.5818, 0.5816, 0.5842, 0.5740
+   (boxes L = 52, 52, 52, 52, 52, 54, 55, 57). The fit R ≈ 0.49 + 0.54/√N (N = 20–36) predicts 0.574 at N = 41 — matched;
+   N = 38–40 sit above it but their optima touch the box edge (max A = L), so those boxes were too tight. Conclusion:
+   finite-N data remain consistent with a slow decline toward ≈ 0.49–0.50, i.e. they do NOT discriminate C½ (limit
+   1/2) from a limit slightly below 1/2; the anatomy argument (ρ -> ρ*, c_E rising) predicts an eventual rise.
 ## E15 (2026-10-18) Sidon lower-flatness SA (src/sidon_flat_sa.py k L 60000 seed; 32L grid, UNCERTIFIED)
    best c = min|F_D|^2/k: k=8 0.019, 10 0.012, 12 0.0031, 16 0.00083, 20 0.00051 — far below the 0.293 needed for
    R(D−D) < 1/2 and below E12's exhaustive k <= 7 optima; supports SNZ. Data: examples/sidon_flat_sa.jsonl.

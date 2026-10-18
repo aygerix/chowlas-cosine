@@ -389,3 +389,10 @@
   and |B_t| ≍ N. Exponent 1/4 therefore REQUIRES degree-1 input (pointwise F >= −K, ||F||_1 <= 2K, or the domination
   |1̂_{B_t}| <= 4G + |Q_2| used beyond norms). Exact target: Lemma S, ∫min(|1̂_{B_t}|, K³)² << K^{4−δ}. Cheapest
   discriminating experiment: search finite groups (F_3^d, Z_m^d, ±-combinations of a few cosets) for |B_t| >> K^{2+ε}.
+- FAILED (lead, checked exactly): a finite-group "counterexample" to P19's group question. Γ = Z_3 × H, t = (1,0); fibres
+  A_h ⊂ Z_3 with |A_h| = 2 (D: one run-top each, so |B_t| = |D|) carry phase g_1 = −ω^{i0} (odd 6th roots), |A_h| = 1 (E)
+  carry +ω^{i1}. Choosing u = Σ_{i∈A_h}ω^i = ζ_6^{λ(h)} for a hom λ: H → Z_6 makes every j = 1, 2 character value >= 0,
+  but the j = 0 values are the fibre-size transform ĉ with c = 1 + 1_D, and D = {λ odd} is an index-2 coset, so
+  ĉ = −|H|/2 at the parity character: K = 4, 19, 109 for H = Z_6, Z_6², Z_6³ (|B_t| = 3, 18, 108 ≈ K). Patching with full
+  /empty fibres re-creates the −|H|/4 at the same character. Mechanism: aligning D-phases with a character forces D to
+  be a coset, which is penalised at degree 0. Consistent with the agent's evidence that groups give |B_t| <~ K².

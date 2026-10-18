@@ -519,3 +519,43 @@ main statements read against the brief.
   - spectral_gap: T3(d).
   - coefficient_upper_bound: T3(e).
 No statement was refuted, weakened, or given an extra hypothesis.
+
+## P25. Sharpened localization: the near-zero term of P24 is the Fejér-smoothed f itself (PROVED; lead 2026-10-18)
+Setting as P24: f = f_A >= −M, F_H the Fejér kernel (F̂_H(k) = (1 − |k|/H)₊), and for m >= H and x₀ ∈ R
+L_m(x₀) := Σ_a F̂_H(a − m)e^{iax₀}. Put g_H := f ∗ F_H = Σ_{a∈A} F̂_H(a)cos(ax). Note g_H >= −M and ∫g_H = 0.
+Lemma. |L_m(x₀)| <= 2M + 2g_H(x₀) for every m >= H and every x₀.
+Proof. This is P24's proof with the first term kept exact. With W(x) = F_H(x − x₀)(1 + cos(m(x − x₀) + φ)) >= 0 and
+mean 1, (1/2π)∫fW = g_H(x₀) + ½Re(e^{−iφ}L_m(x₀)) >= −M. Then choose φ. ∎
+(P24 is the special case g_H(x₀) <= Σ_{a<H}(1 − a/H).)
+Corollaries:
+- (a) Flat-minimum rigidity: if g_H(x₀) <= −M + η, then every window sum satisfies |L_m(x₀)| <= 2η. So if f is close to
+  its minimum on most of a 1/H-neighbourhood of x₀, A is locally orthogonal to e^{iax₀} at every location at scale H.
+- (b) L² form: summing |L_m|² over windows and integrating gives
+      (2H/3)·|A ∩ [2H, ∞)| <= max A · [4M² + 2Σ_{a∈A, a<H}(1 − a/H)²].
+  This is WEAKER than P24(a) whenever P24 applies.
+Why this does not give √n (recorded so it is not retried): for random dense A, typical windows have
+|L_m| ≈ √(δH), and 2g_H ≈ 2√(δH/3) matches it. The inequality is saturated by random sets, so (b) gives nothing for
+uniformly dense A (the low-part energy cancels exactly). A √n bound needs a mechanism showing that the high part's
+energy does NOT concentrate on {g_H > 0}, a set determined by A ∩ [1, H]: a decoupling or dichotomy statement.
+
+## P26. Half-sets of Z_p ⟺ symmetric weighted near-planar difference sets (PROVED, exact equivalence; lead 2026-10-18)
+Conventions: ĝ(γ) = Σ_x g(x)e(−γx/p), (u ⋆ v)(δ) = Σ_β u(β)v(δ − β) on Ẑ_p ≅ Z_p.
+(⇐) Let u >= 0 be symmetric on Z_p with u ⋆ u = δ₀ + ε·1 for some ε >= 0, and s := Σu (so s² = 1 + pε).
+  Put ĝ := pu − λ with λ ∈ {s − 1, s + 1}, and let g be its inverse transform.
+  Then ĝ ⋆ ĝ = p²δ₀, because p²(u⋆u) − 2λps + pλ² = p²δ₀ + p((s − λ)² − 1). So g² ≡ 1, and g is real by symmetry:
+  g is a ±1 function.
+  Moreover ĝ(γ) = pu(γ) − λ >= −λ for all γ. With A := {g = 1}: 1̂_A(γ) = ĝ(γ)/2 >= −λ/2 for γ ≠ 0, and
+  2|A| − p = ĝ(0) = pu(0) − λ.
+(⇒) Conversely, if g = 2·1_A − 1 is even, ĝ >= −λ off 0 and ĝ(0) + λ >= 0, then u := (ĝ + λ)/p qualifies.
+So min over symmetric half-sets of 2M_p equals min Σu ∓ 1 over symmetric u >= 0 with flat autocorrelation and
+u(0) = (λ ± 1)/p.
+Consequences:
+- Without symmetry, planar difference sets (u = 1_D/√(k−1), Singer parameters) give Σu ≈ p^{1/4}. The elementary
+  bound λ >~ p^{1/4} (line D) is exactly the non-symmetric planar bound; symmetry enters only through
+  u(γ)² <= (u⋆u)(2γ).
+- Sanders' question (M_p ≍ p^{1/3}, p^{1/2}, or below?) asks how far SYMMETRIC weighted near-planar sets are from
+  planar.
+Falsification of the natural construction (done): weights on D ∪ (−D) for a Singer set D cannot be exactly flat
+(the sum-representation parity on 2D breaks it). The exact symmetric half-set optima (E41) at the Singer primes
+p = 13, 31, 73 have 2M_p ≈ 1.02–1.28·√p, nowhere near the p^{1/4} scale (2.9 at p = 73).
+So no near-planar symmetric weights exist at small p. A p^{1/4} construction would need weights far from 0/1.

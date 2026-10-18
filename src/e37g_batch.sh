@@ -2,7 +2,7 @@
 # E37g: Gurobi reruns of the E37 instances that hit HiGHS's 900 s limit (src/grb_group_bt.py; pip gurobipy, size-limited
 # licence suffices: <= ~900 rows, ~400 cols). Usage (on dirichlet via dirun.sh): sh src/e37g_batch.sh TL THREADS
 TL=${1:-1800}; TH=${2:-4}
-run() { python src/grb_group_bt.py "$1" "$2" "$3" $TL $TH "" $4; }
+run() { python src/grb_group_bt.py "$1" "$2" "$3" $TL $TH; }   # no cutoff: in v1 the cutoff hint made Gurobi miss Z_256's 7 (2026-10-18)
 # K0 = 4, order 256: Z_4^4 (O4 gives 56; HiGHS >= 55, bound 62) and cyclic Z_256
 run 4,4,4,4 1,0,0,0 4 55; run 256 64 4 7; run 256 1 4 4
 # K0 = 4: Z_125, Z_121, Z_105; K0 = 3: Z_105 (t = 35)

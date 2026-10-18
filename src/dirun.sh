@@ -34,6 +34,7 @@ $SSH $H "touch /tmp/ccmark.$tag; cd ~/chowla_cosine && sudo systemd-run --quiet 
   -p MemoryMax=${m}G -p MemorySwapMax=0 -p CPUQuota=$((100 * c))% \
   --setenv=PATH=/home/jmercedes/chowla_venv/bin:/opt/gurobi1303/linux64/bin:/usr/local/bin:/usr/bin:/bin --setenv=HOME=/home/jmercedes \
   --setenv=GUROBI_HOME=/opt/gurobi1303/linux64 --setenv=LD_LIBRARY_PATH=/opt/gurobi1303/linux64/lib \
+  --setenv=GRB_LICENSE_FILE=/opt/gurobi1303/gurobi.lic \
   --setenv=CHOWLA_WORKERS=$c --setenv=OMP_NUM_THREADS=$c --setenv=OPENBLAS_NUM_THREADS=$c \
   --setenv=MKL_NUM_THREADS=$c --setenv=PYTHONUNBUFFERED=1 --working-directory=/home/jmercedes/chowla_cosine \
   timeout -s KILL $t $cmd < /dev/null 2>&1; rc=\$?; \

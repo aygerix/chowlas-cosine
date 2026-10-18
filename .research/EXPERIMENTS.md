@@ -415,3 +415,23 @@ Validation, X = 40, n0 = 24 (E13 exact value M = 2.826302–2.826305):
 Note: the LP relaxation of this model is weak by nature. A fractional tapered profile with a positive-definite cosine
 transform makes lam ≈ 0, so the proof is all branching. Expect no miracle on the full-box dense problem; Gurobi's value
 is in structured or warm-started instances.
+
+## E44 (2026-10-18 late night) Gurobi full-box dense optima (src/e44_grb_dense.sh → src/grb_dense.py)
+User directive (2026-10-18): Gurobi replaces the C/HiGHS dense searches from now on.
+- Licence: the user installed it at /opt/gurobi1303/gurobi.lic (LicenseID 2655336). dirun.sh passes it as
+  GRB_LICENSE_FILE. gurobipy now solves a 3000-variable model, so the size limit is gone.
+- Stopped:
+  - the C class search C(79,55,42,2), with incumbent M = 4.2053961, R = 0.5670555, uncertified
+    (warm start: examples/gurobi/warm_N55.json);
+  - the HiGHS cold comparison at X = 40.
+- Queue: N = 45 in [1,64], N = 50 in [1,72], N = 55 in [1,79]; 5 threads, 4 h each, warm starts from the best sets.
+  Output: examples/gurobi/e44.jsonl, with progress lines every 5 min, and dense_N*_X*.json.
+- E37g: the Z_4^4 instance crashed (Bus error) at 22:28, when the licence/library files were installed. RERUN NEEDED.
+- VM stop for a resize attempt killed all runs. c2d-standard-56 failed: global CPUS_ALL_REGIONS quota is 16.
+- A/B test, X = 40, n0 = 24, cold, 4 threads each, concurrent:
+  - OLD (grid 4X, lazy cuts only): OPTIMAL in 639 s, 2.86e6 nodes.
+  - NEW (grid 8X plus MIPNODE user cuts at fractional minima): bound 2.53 at 600 s with 0.70e6 nodes, killed.
+  - The Python node callback cuts node throughput ~4x, and the tighter node LPs do not pay for it. Defaults reverted
+    to OLD.
+- Relaunched 2026-10-18 ~23:50 UTC: e44 dense (6 threads); e37g group batch without cutoff hints (2 threads).
+  The other instances continue.

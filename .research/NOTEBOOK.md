@@ -592,3 +592,36 @@
     no level function k (with S near a GAP) keeps the DFT of e^{2πi k_y φ} one-sided for a positive measure of φ.
 - **E38 consistent:** under equal search effort the class is 0.04–0.08 worse than unrestricted sets, and the gap grows
   with N.
+
+## 2026-10-18 (late night) — Branch 2: where torsion-freeness enters the O4-shaped class (cohomological view)
+- **Setup.** A transversal S = {s_y = y + t·k_y : y ∈ Z_t} is a set-theoretic section of Z → Z_t. Its additive defect
+      d(y₁,y₂) := (s_{y₁} + s_{y₂} − s_{y₁+y₂})/t = k_{y₁} + k_{y₂} − k_{y₁+y₂} + carry(y₁,y₂) ∈ Z
+  is a 2-cocycle, cohomologous to the carry cocycle. The extension 0 → Z →(×t) Z → Z_t → 0 does not split, because Z is
+  torsion-free, so d ≡ 0 is impossible. In O4 the corresponding extension of Z_4 by GR(4,a) is torsion: sections with
+  zero defect exist, and the Gauss-sum phases ride on top of them. **This is the precise point where Z differs.**
+- **Averaging identity (PROVED, one line).** For each y₁, Σ_{y₂ ∈ Z_t} d(y₁,y₂) = s_{y₁}. So the mean defect in row y₁ is
+  k_{y₁} + y₁/t: spread-out levels force large defects on average.
+- **Third moment of the twisted function (PROVED computation).**
+  - Write H := ψ·Re G, where G = Σ_y e^{i s'_y x}, s'_y = s_y + t/2 and ψ = sign cos(tx/2). The condition f_A >= −M
+    reads H >= −M/(2|cos(tx/2)|).
+  - ψ has frequencies at the odd multiples (2d+1)t/2, with coefficients (4/π)(−1)^d/(2d+1). Hence
+        ∫ ψ (Re G)³ = (3/8)·(4/π)·Σ_{y₁+y₂ ≡ y₃} (−1)^{d}/(2d+1) + (all-plus terms),   d = d(y₁,y₂).
+  - The third moment is therefore a weighted count of pairs with SMALL defect (weights ~ 1/|d|).
+- **Dichotomy (proof plan, not a proof).**
+  - (a) Levels confined to a range L: the macroscopic profile of A is a step function in L blocks of length t. Its
+    transform is ≈ 2(sin θ/θ)·Σ_ℓ n_ℓ cos((ℓ+1)θ), with θ = tx and n_ℓ = #{y : k_y = ℓ}. A nonnegative-coefficient
+    cosine polynomial with no constant term dips to about −t/L, so M >~ t/L (heuristic Gibbs; needs a rigorous
+    version).
+  - (b) Defects typically large (few pairs with |d| <= J): the third moment is <~ t²/J, the Roth-type argument gives
+    M >~ √t once t²/J <~ t^{3/2}, and the energy form above is the same mechanism.
+  - (c) The hard middle: many small-defect pairs with a large level range. Example: linear levels k_y = ⌊βy⌋, which give
+    d ∈ {0, −1} on the pairs without wrap-around (about half) and d ≈ βt + 1 on the others. Then S is essentially an AP
+    with step 1 + βt, and A = AP ∪ (AP + t) has a Dirichlet lobe, M ~ t.
+  - So case (c) should reduce to "a large small-defect set forces Bohr/AP structure (rank 1, since Z_t is cyclic), and
+    rank-1 structure forces a Gibbs lobe". The cyclic source Z_t is what should make this rank-1, unlike the high-rank
+    Galois-ring sections of O4.
+- **Next derivation.** Make (c) quantitative in the simplest form: if #{(y₁,y₂) : d(y₁,y₂) ∈ {0,−1}} >= δt², show that S
+  has a subset of size >= δ^{O(1)} t lying in an AP of length O_δ(t) and common difference q ≡ 1 (mod t)
+  (BSG-type for sections). Then show that such a piece costs M >~ δ^{O(1)}·t via a localized Fejér test function on the
+  frequency 1/q-scale. Check case (a)'s Gibbs bound rigorously. If both hold, Lemma OR(2) (Chowla for transversal 2-run
+  sets) follows with polynomial losses in δ. That would be the first lower bound that genuinely uses torsion-freeness.

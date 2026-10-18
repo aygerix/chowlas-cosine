@@ -87,3 +87,12 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   (near Γ itself), and K ≍ |Γ|^{1/4}, matching Sanders' dichotomy. No literature found on run-tops (B_t) in groups;
   the P19–P21 questions appear to be ours. Partial-difference-set / two-weight-code literature (quadric complements
   have the familiar three-valued spectrum) not searched.
+- Novelty check for P22 (2026-10-18 night; arXiv HTML of Bedert 2509.05260v3 and Shankar 2609.05338v1). Neither paper
+  discusses sharpness of |B_t| << K⁴, finite-group or finite-field models, or barriers. Bedert §1: "It seems plausible
+  that our method can produce an even better exponent than 1/5." Shankar §5 names two ways past 1/5: "a stronger exponent
+  than K⁴" in the run-top bound, or "additional information showing that many boundary sets are simultaneously large".
+  P22 (Theorem O4 + E36b) answers both for group-agnostic arguments. In O4, |B_t| = K⁴/4 − K²/2 for one t, and the average
+  of |B_t| over t ∈ A is ≈ K⁴/8, so many boundary sets are simultaneously large there. Any improvement must use Z.
+  Galois-ring relative difference sets are classical (Hammons–Kumar–Calderbank–Sloane–Solé 1994; Ma–Schmidt on
+  (2^a,2^a,2^a,1)-RDS, which as I recall need exponent <= 4, so they are not cyclic for a >= 2; this recollection is NOT
+  verified). Their use as run-top extremisers was not found in these two papers. No wider search was done.

@@ -63,6 +63,10 @@ Fejér-kernel counterexample to the displayed chain); not used here.
   singleton cosets gives |B_t| <= K³ (sharp). Group-agnostic run-top bounds cannot beat K³.
 - P21 (lead, elementary): K³ without full/singleton cosets (F_p^4, K = 3p, |B_t| = p³); G_noFull refuted; diagnosis:
   negative-definite fibres need runs > ord(t)/2 (absent in Z).
+- P22 (agent g3 Theorem O4; proof re-derived by lead; lead-independent E36 for a = 3, 5, 7): G3 FALSE. In Z_4 × GR(4,a),
+  K = 2^{(a+1)/2}, |B_t| = K⁴/4 − K²/2; A-averaged run-tops K⁴/8 (E36b). With Bedert's group-valid K⁴: the group
+  exponent of run-tops is EXACTLY 4, per t and on average. Every group-agnostic run-top argument stops at Chowla exponent
+  1/5; beyond needs a Z-specific run-top bound (a weakening of Chowla itself). Barrier note §3b.
 
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
@@ -70,22 +74,22 @@ error diffusion; separated-block unions; local SA from Bu seeds; Sidon lower-fla
 cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatness (E29); P18 as a finite probe (E28); averaged Bedert (P14: (a) is t-independent); sums of several squares
 Σ P_j^2 (P15 remark: pseudo-random squares give R ~ √log X).
 
-## Plan in priority order (2026-10-18 evening; agreed with the user)
-1. G3 (agent g3 running): proof ⇒ Chowla exponent 1/4 (verify, write up, Lean); counterexample ⇒ even 1/4 needs Z input.
-2. Z-specific ingredient for run-tops (continuous t-offset φ; lobe/profile coupling; Shankar averaging is the only
-   Z input today).
+## Plan in priority order (updated 2026-10-18 night, after P22)
+1. DONE: G3 resolved (FALSE, P22). Agent g3 finishing its write-up; then commit report + scratch.
+2. Z-specific lower bound, test case Lemma OR(2): M(S ∪ (S+t)) >= c√t for every transversal S mod t (the Z-analogue of
+   O4; F_A = 4cos(πtθ)·f_{S+t/2}). Probe numerically first (levels with tapered profile), then attempt a proof.
 3. λ-fold rulers (NOTEBOOK evening entry; E35 done): SA finds λ = 2 structure but λ = 3, 4 exact fractions DECAY with k
    and every candidate has R >= 0.68 — demoted pending a structural idea (homometric triples; or prove W >= c k^{1+δ}).
-4. Lean formalization of P21 (statements in lean/ChowlaCosine/RunTopGroup.lean) after the g3 agent.
+4. Lean formalization of P21 (statements in lean/ChowlaCosine/RunTopGroup.lean) after the g3 agent; O4⁺ (fourth Schur
+   power) is elementary and a good second target; O4 itself needs Galois rings (not in mathlib).
 5. Low priority: exhaustive N = 43–44 with src/exh2.c (validated, load-balanced) when compute is free.
 Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM dirichlet via src/dirun.sh
 (8 vCPU = 4 physical cores, 32 GB; default -c 4 so lead + one agent share it; -c 8 for exclusive jobs). Not the laptop
 (shared with other projects), never the VM fejer. F4 (src/f4run.sh) only as fallback. exh2 N=33 benchmark: 30 s at -c 8.
 
 ## Active lines (>= 3) (updated 2026-10-18, after P21)
-1. [lower bound, universal; AGENT g3 running] G3: |B_t| <= CK³ in every finite abelian group (sharp by P20/P21) ⇒
-   Chowla exponent 1/4 via transfer + Shankar. Known: ord t = 3 without singleton cosets (P20 Thm 2). Barrier: Schur
-   products of fibre transforms always count singleton cosets positively.
+1. [lower bound, universal] CLOSED as a group question: G3 is FALSE (P22, group exponent exactly 4). The run-top route
+   now needs Z-specific input in the run-top bound itself; test case Lemma OR(2) (plan item 2).
 2. [lower bound, Z-specific] Exponent > 1/4 by the run-top route needs torsion-free input. Identified candidates: the
    continuous t-offset φ (first-order term odd in j); coupling of t-run lobes (Dirichlet main/side lobes) with the
    macroscopic profile; Shankar's averaging (I <= Q) is the only Z-input of the current chain. No proof route yet.

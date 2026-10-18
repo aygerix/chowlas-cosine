@@ -478,3 +478,32 @@
   (pairwise homometric Sidon sets give multiplicity 3 on within-part differences; cross families U−V, V−W, W−U must
   then coincide up to translation); (ii) a proof that coherent multiplicity >= 3 forces W >= c·k^{1+δ}. Line demoted to
   low priority pending a structural idea.
+
+## 2026-10-18 (night) — G3 is false (P22): the run-top route is capped at exponent 1/5 for group-agnostic methods
+- Agent g3: Theorem O4 (GR(4,a) Teichmüller relative difference set; every unit coset a 2-run; K = 2^{(a+1)/2},
+  |B_t| = K⁴/4 − K²/2). Lead: paper proof re-derived step by step (Lemma T, Lemma S, the three slices, O4⁺) and an
+  independent implementation (E36: naive lift, brute-force Teichmüller set, dot-product pairing) reproduces K, |B_t| and
+  the full spectrum for a = 3, 5, 7. Recorded as P22. Upper side: O4⁺ (fourth Schur power, any group, ord t = 4) and
+  Bedert's group-valid K⁴. So the group window [3, 4] of P20/P21 closes at 4.
+- E36b (lead, new): the A-AVERAGE of |B_t| in O4 is K⁴/8 − O(K²) (= |A|/4: run-tops as frequent as in a random set of
+  density 1/2). In O4 Shankar's averaging inequality Σ_{t∈A}|B_t| >= T/3 HOLDS (|A|²/4 >= T/3 with T ≈ |A|²/2), and Roth's
+  T >= n²/K − nK holds. So in groups the chain's ONLY failing step is the run-top bound, and it fails also on average.
+- Strategic review (skill §3; triggered by a landscape-changing worker result).
+  Distance: the run-top lower-bound route is now completely mapped. Degree-2 methods cap at K⁴ even in Z (P19); every
+  group-agnostic method caps at K⁴ (P22), per t and on average. Exponent > 1/5 by this route needs a run-top bound that
+  uses Z itself (order, interval structure, no torsion) AND goes beyond degree 2. In Z, Chowla itself would give
+  |B_t| <= |A| <= CK², so the needed lemma is a genuine weakening of Chowla — no shortcut.
+  Theory of success: the only Z-specific mechanisms identified are (i) the continuous t-offset φ — which on inspection is
+  the Bernstein/derivative effect F((j+φ)/t) ≈ F(j/t) + (φ/t)F′(j/t), quantitatively weak (P18 was empty on records);
+  (ii) the macroscopic Gibbs constraint (sets with small K must have an approximately positive-definite density profile;
+  E34 shows it dominates structured "one-run-per-class" families). Neither yields a run-top inequality yet.
+  Kill: all group-agnostic run-top work (G3 line closed once the agent's write-up lands). Keep the barrier note as the
+  deliverable (it explains why Bedert/Shankar stop at 1/5).
+  Continue: Z-specific lower bounds only with a concrete mechanism. Candidate sharpened by O4: the class
+  A = S ∪ (S + t) (one 2-run per residue class, S a transversal mod t) is exactly the Z-analogue of O4, and
+      F_A(θ) = 4cos(πtθ)·f_{S+t/2}(θ)     (symmetric form; f = cosine sum),
+  so small K forces sign(f_{S+t/2}) = sign(cos πtθ) wherever |f_{S+t/2}| >~ K. In Z_4 × GR(4,a) this is achievable with
+  K ~ |A|^{1/4} (Gauss-sum phases); in Z it must hold for all real θ. Lemma OR(ℓ = 2): M(S ∪ (S+t)) >= c√t for every
+  transversal S. Both a proof (Chowla for an O4-shaped class) and a Z-construction in the class would be informative.
+  Bias check: the last five lower-bound items (P19–P22) were all run-top barriers — a single template. Next lower-bound
+  effort must be different (e.g., Lemma OR(2) as a test case for a Z-only argument), and the construction track needs time.

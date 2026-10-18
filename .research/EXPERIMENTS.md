@@ -276,3 +276,15 @@ Actual R(A) (A = multiplicity-λ differences; FFT + Newton, uncertified): λ = 2
 R ≈ 1/√(2λφ) badly underestimates. Reading: no coherent multiplicity-3 or -4 structure appears (φ decays toward the
 generic level), while λ = 2 structure is found immediately — consistent with P4 (symmetry gives at most 2). Not a
 proof; candidates beyond SA reach: homometric triples (NOTEBOOK evening entry). Runtime ≈ 12 min on 4 vCPUs.
+
+## E36 (2026-10-18) Independent check of Theorem O4 (src/e36_o4_check.py, src/e36b_o4_avg.py; GCP VM dirichlet)
+Lead's own implementation, independent of the agent's code: GR(4,a) = Z_4[x]/(f) with f the NAIVE 0/1 lift of an
+F_2-irreducible (x³+x+1, x⁵+x²+1, x⁷+x+1, x⁹+x⁴+1; any monic lift of an irreducible gives a Galois ring), Teichmüller set
+by brute force {z : z^{2^a} = z}, characters via the DOT-PRODUCT pairing on Z_4^a (not the trace form), W̄ = {u_0 = 0},
+spectrum by numpy FFT over Z_4^{1+a} (integrality asserted), run-tops counted directly; RDS property checked exhaustively.
+   a   |A|     K    |B_t|   K⁴/4 − K²/2   spectrum (value: multiplicity)
+   3   124     4    56      56            −4:167, 0:64, 12:8, 28:16
+   5   2044    8    992     992           −8:1984, −4:991, 0:1024, 60:32, 248:64
+   7   32764   16   16256   16256         −16:32512, −4:16255, 0:16384, 252:128, 2032:256
+Identical to the agent's table (different lift/pairing). E36b, A-averaged run-tops: avg_{t∈A}|B_t| = 30.97 / 511 / 8191
+(K⁴/8 = 32 / 512 / 8192); distribution in PROOFS P22. Runtime < 1 min.

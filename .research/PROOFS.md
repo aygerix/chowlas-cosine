@@ -409,3 +409,39 @@ a Gibbs penalty). Refined target G_arc: |B_t| <= CK^{2 or 3} whenever every maxi
 Lean: exact statements in lean/ChowlaCosine/RunTopGroup.lean (A = −A, 0 ∉ A, every t-line has p − 1 points,
 |B_t| = p³, every nontrivial character sum real and >= −3p); statements typecheck (lake env lean, 2026-10-18), proofs
 `sorry`, file not imported by ChowlaCosine.lean. NOT kernel-checked yet.
+
+## P22. The group exponent of run-tops is exactly 4 (Theorem O4, agent "g3" 2026-10-18; report
+## .research/agents/g3_report.md §2; paper proof checked line by line by lead; NUMERICAL-EXACT, lead-independent E36)
+Setting as in P20. G3 (|B_t| <= CK³ in every finite abelian group) is FALSE, and so is any group-agnostic K^{4−δ}.
+Theorem O4 (PROVED). a >= 3 odd, R = GR(4, a) (Galois ring: |R| = 4^a, (R,+) ≅ Z_4^a, R^× = R \ 2R), Γ = Z_4 × R,
+t = (1, 0). T = Teichmüller set (|T| = 2^a, lifts of F_{2^a}). S(y) = Σ_{x∈T} i^{Tr(xy)}; for y ∈ R^×,
+conj S(y) = 2^{(a−1)/2}(1+i)·i^{k(y)} defines k(y) ∈ Z_4. W̄ ⊂ F_{2^a} an F_2-hyperplane, F₀ = {2u : ū ∈ W̄ \ 0}.
+    A = {(s, y) : y ∈ R^×, s ∈ {k(y), k(y)+1}} ∪ (Z_4 × F₀).
+Then A = −A, 0 ∉ A, K = 2^{(a+1)/2}, |B_t| = 4^a − 2^a = K⁴/4 − K²/2.
+Proof (lead re-derived every step).
+- Lemma T: τ(α) + τ(β) = τ(α+β) + 2τ(√(αβ)) (square both sides; 4 = 0 kills cross terms of the 2-part; compare with
+  Frobenius). Hence x − x′ = τ(x̄ + x̄′) + 2τ(√(x̄x̄′) + x̄′), and every unit is a difference of T in exactly one way
+  (x̄ū = ν² + ū² has one solution), no nonzero element of 2R is one: T is a (2^a, 2^a, 2^a, 1) relative difference set.
+- Lemma S: S = 0 on 2R \ 0; |S|² = 2^a + Σ_{u∈R^×} i^{Tr(uy)} = 2^a on R^× (the 2R-sum is 2^a[ȳ = 0]); S ∈ Z[i] of norm
+  2^a ⇒ S = unit·(1+i)^a = unit·(2i)^{(a−1)/2}(1+i). S(−y) = conj S(y) ⇒ k(−y) = −k(y) − 1 ⇒ A_{−y} = −A_y.
+- Fibres A_y (along t): the 2-run {k(y), k(y)+1} on R^×, Z_4 on F₀, ∅ else. Characters χ_{j,λ} = i^{js + Tr(λy)}.
+  j = 2: a 2-run, a full and an empty fibre all have Σ(−1)^s = 0 ⇒ F ≡ 0. j = 1: U_1 = conj S/2^{(a−1)/2} on R^×, and
+  Σ_{y∈R} conj S(y) i^{Tr(λy)} = 4^a[λ ∈ T] ⇒ F(1, λ) = 2^{−(a−1)/2}(4^a[λ ∈ T] − 2^a) ∈ {−K, K(2^a − 1)}; j = 3 by
+  symmetry. j = 0: fibre sizes 2 on R^×, 4 on F₀ ⇒ F(0, λ) = −4 (λ ∈ 2R \ 0) or 4(2^{a−1}[tr(λ̄·)|W̄ ≡ 0] − 1).
+  So min F = −max(4, K). Each 2-run has one top, full/empty none: |B_t| = |R^×|. ∎
+Proposition O4⁺ (PROVED, agent; lead checked). Any Γ, ord t = 4, χ₀(t) = i, U(y) = Σ_{x∈A∩y} χ₀(x) on H̄ = Γ/⟨t⟩:
+U + Kδ₀ p.d. ⇒ (U + Kδ₀)⁴ p.d. (Schur); U⁴ρ̄ (ρ = χ₀⁴ ∈ Ĥ̄) equals (Σ_{s∈S} i^s)⁴ = −4 on 2-runs, +1 on singletons and
+3-runs, 0 on {k, k+2}, full, empty. Hence 4|D₂| <= |E| + |D₃| + (K + u₀)⁴, u₀ ∈ {0, −1}; O4 is extremal (E = D₃ = ∅).
+Upper side: Bedert Prop 7.3 (|B_t| << K⁴) holds in every finite abelian group. So the group exponent of |B_t| is EXACTLY 4.
+Averaged form (lead, E36b, NUMERICAL-EXACT a = 3, 5, 7): in O4, (1/|A|)Σ_{t∈A}|B_t| = 30.97, 511, 8191 = K⁴/8 − O(K²)
+(every t ∈ A of order 4 has |B_t| ∈ {29,33,56}, {497,525,992}, {8129,8253,16256}). So also the A-AVERAGED run-top count
+used in Shankar's chain has group exponent 4: run-tops in O4 are as frequent as for a random set of density 1/2.
+Consequences (PROVED, modulo the transfer bookkeeping of the barrier note §1):
+- Every bound on |B_t| or on its A-average that holds in all finite abelian groups is >= K⁴/8 − O(K²); the Bedert/Shankar
+  exponent 1/5 is the limit of the run-top route unless the run-top bound itself uses Z (order, intervals, absence of
+  torsion). P20/P21's K³ window is closed from above: [3, 4] → {4}.
+- O4 has |A| ≈ 2·4^a, so K ≈ (2|A|)^{1/4}: a symmetric set in an exponent-4 group, with no subgroup structure, whose minimum
+  is |A|^{1/4}. Runs have length exactly ord(t)/2 = 2. In Z (and its Z_N transfer) every t-run is < ord(t)/2 − 1, so
+  G_arc with strict inequality and G3 in Z stay OPEN. But in Z, |B_t| <= |A| and Chowla itself would give |B_t| <= CK², so
+  "G3 in Z" is a weakening of Chowla, not an independent lemma: progress on it needs genuinely Z-specific input.
+Novelty: not checked (the RDS is classical: quaternary Kerdock / Family A sequences; its use here appears new).

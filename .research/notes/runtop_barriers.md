@@ -2,7 +2,8 @@
 
 Status (2026-10-18). §3 Theorem 1: PROVED (agent conjG; lead re-verified numerically with an independent set).
 §3 Theorem 2: PROVED (lead, elementary; numerical check for p ≤ 23). §4: PROVED (agent conjG; checked line by line by
-lead). §2 summarises PROVED results of `.research/agents/runtop_report.md` (agent; proof read by lead, independent
+lead). §3b (Theorem O4): PROVED (agent g3; paper proof checked line by line by lead; lead's independent computation
+E36). §2 summarises PROVED results of `.research/agents/runtop_report.md` (agent; proof read by lead, independent
 numerical check). Nothing here is kernel-checked yet. These are barriers for **lower-bound proofs**, not constructions,
 and they say nothing about Epoch's `solution(c, n)`.
 
@@ -72,9 +73,45 @@ Numerically (E33), K = 3p and |B_t| = p³ exactly for p = 3, …, 23.
 - No run-top bound valid in all finite abelian groups can have β < 3. This holds even for sets with no full and no
   singleton ⟨t⟩-cosets (Theorem 2). So every group-agnostic Fourier argument, including pointwise positivity at all
   characters, gives at best Chowla exponent 1/4 by this route.
-- The group window for the optimal exponent is [3, 4].
+- The group window for the optimal exponent was [3, 4]; §3b closes it at 4.
 - Theorem 2's set has n ≈ p⁴ and K = 3p, i.e. K ≍ n^{1/4}. It is the group-theoretic shape of a hypothetical exponent-1/4
   counterexample: every t-coset is a single long run.
+
+## 3b. Group-agnostic arguments are capped at K⁴: the group exponent is exactly 4 (P22, agent g3)
+
+**Theorem O4.** Let a ≥ 3 be odd, R = GR(4, a) the Galois ring with 4^a elements, Γ = Z_4 × R and t = (1, 0).
+Let T ⊂ R be the Teichmüller set and S(y) = Σ_{x∈T} i^{Tr(xy)}. For a unit y, define k(y) by
+conj S(y) = 2^{(a−1)/2}(1 + i)i^{k(y)}. Let F₀ = {2u : ū ∈ W̄ \ 0}, where W̄ is a hyperplane of F_{2^a}. Then
+
+    A = {(s, y) : y ∈ R^×, s ∈ {k(y), k(y) + 1}} ∪ (Z_4 × F₀)
+
+is symmetric, 0 ∉ A, K = 2^{(a+1)/2} and |B_t| = 4^a − 2^a = K⁴/4 − K²/2.
+
+*Mechanism.*
+- T is a (2^a, 2^a, 2^a, 1) relative difference set. Its character sums are 2^{(a−1)/2}·(1 + i)·(unit), which is
+  exactly the phase set of the transform of a 2-run {k, k + 1} along an element of order 4.
+- So the slice χ(t) = ±i takes the two values {−K, K(2^a − 1)}.
+- The slice χ(t) = −1 vanishes identically on 2-runs.
+- The slice χ(t) = 1 sees only the fibre sizes, and it is repaired by full cosets over a hyperplane of 2R (cost 4).
+
+**Matching upper bound (any group, ord t = 4).** 4|D₂| ≤ |E| + |D₃| + (K + u₀)⁴. This is the fourth-power analogue of §4,
+and O4 is extremal for it. Bedert's |B_t| ≪ K⁴ holds in every group, so **the group exponent is exactly 4**.
+
+**Averaged form (E36b).** In O4 the average of |B_t| over t ∈ A is K⁴/8 − O(K²), for a = 3, 5, 7. So the A-averaged
+run-top count that Shankar's chain actually uses also has group exponent 4. Run-tops in O4 are as frequent as in a random
+set of density 1/2.
+
+**Consequence.** No bound on |B_t|, or on its average over t ∈ A, that holds in all finite abelian groups beats K⁴/8.
+The run-top route stops at Chowla exponent 1/5 (Bedert/Shankar) unless **the run-top bound itself** uses a property of Z.
+The averaging step (Shankar) is not enough.
+
+Candidate properties of Z that O4 violates:
+- **Run length.** Runs in O4 have length exactly ord(t)/2, while every t-run in Z is shorter than ord(t)/2 − 1.
+- **Order of t.** ord t = 4 in O4.
+- **Torsion.** The quotient 2-torsion lies inside the repaired region.
+
+Caution: in Z we have |B_t| ≤ |A|, so Chowla itself implies |B_t| ≤ CK². Any Z run-top bound is therefore a weakening
+of Chowla, not an independent tool.
 
 ## 4. The cubic bound for t of order 3 (P20, agent conjG)
 
@@ -103,16 +140,18 @@ on singleton cosets. So these methods bound |D| − ε|E|, never |D| alone (conj
   is a Dirichlet kernel, with a positive main lobe and negative side lobes.
 - **Torsion-free first-order effect (HEURISTIC).** Write θ = (j + φ)/t. Because F is even, the term linear in φ at
   θ = j/t has opposite signs at j and −j. Groups of exponent p have no small φ.
-- **Conclusion.** An improvement of the run-top bound below K³, and hence a Chowla exponent above 1/4 by this route,
-  must use the order or interval structure of Z, for example the continuity of the t-direction offset φ. The intermediate
-  target G3 (|B_t| ≤ CK³ in every finite abelian group, or just in Z) would give exponent 1/4. It is open. The theorem of §4
-  proves it for ord t = 3 without singleton cosets.
+- **Conclusion (updated after §3b).** G3 in groups is FALSE (Theorem O4). Any run-top bound below K⁴, and hence any
+  Chowla exponent above 1/5 by this route, must use the order or interval structure of Z. One example is the continuity
+  of the t-direction offset φ. G3 in Z, and G_arc with strict run length < ord(t)/2, remain OPEN; they would give
+  exponent 1/4. §4 proves the ord t = 3 case without singleton cosets.
 
 ## 6. Refuted intermediate conjectures (kept)
 - G: |B_t| ≤ CK² in every finite abelian group. Refuted by Theorem 1.
 - G_noFull: the same bound when no ⟨t⟩-coset lies inside A. Refuted by Theorem 2.
 - "Paley sets are optimal, C = 1/2." Refuted by quadric level sets (ratio 1, 2) and by Theorems 1–2.
 - Group form of Lemma S with δ > 1. Refuted by Theorem 1.
+- G3: |B_t| ≤ CK³ in every finite abelian group. Refuted by Theorem O4 (§3b), also in its A-averaged form.
+- G_arc with "≤ ord(t)/2": refuted by Theorem O4 (its runs have length exactly ord(t)/2).
 
 Novelty: not checked. The spectra {−q, (p−1)q, q(q−1)} suggest links with two-weight codes and strongly regular
 Cayley graphs. These should be searched before any external claim.

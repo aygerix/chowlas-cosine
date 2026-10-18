@@ -17,8 +17,9 @@ shift $((OPTIND-1))
 (( m > 30 )) && m=30
 (( t > 86400 )) && t=86400
 R=/Users/jmercedes/Desktop/Projects/Research/chowla-cosine
-IP=$(gcloud compute instances describe dirichlet --zone us-east1-b --project littlewood-paley-8375 \
-       --format='get(networkInterfaces[0].accessConfigs[0].natIP)' 2>/dev/null)
+# DIRICHLET_IP (optional) skips the gcloud lookup, e.g. for codex agents whose sandbox cannot write ~/.config/gcloud.
+IP=${DIRICHLET_IP:-$(gcloud compute instances describe dirichlet --zone us-east1-b --project littlewood-paley-8375 \
+       --format='get(networkInterfaces[0].accessConfigs[0].natIP)' 2>/dev/null)}
 [[ -n $IP ]] || { echo "dirun.sh: cannot resolve dirichlet's IP (is the VM running?)" >&2; exit 255; }
 SSH=(ssh -i $HOME/.ssh/google_compute_engine -o UserKnownHostsFile=$HOME/.ssh/google_compute_known_hosts
      -o HostKeyAlias=compute.2840844007150016813 -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=60)
@@ -31,7 +32,8 @@ args=("$@"); [[ ${args[1]} == python ]] && args[1]=/home/jmercedes/chowla_venv/b
 cmd=${(j: :)${(q)args}}
 $SSH $H "touch /tmp/ccmark.$tag; cd ~/chowla_cosine && sudo systemd-run --quiet --scope --uid=jmercedes \
   -p MemoryMax=${m}G -p MemorySwapMax=0 -p CPUQuota=$((100 * c))% \
-  --setenv=PATH=/home/jmercedes/chowla_venv/bin:/usr/local/bin:/usr/bin:/bin --setenv=HOME=/home/jmercedes \
+  --setenv=PATH=/home/jmercedes/chowla_venv/bin:/opt/gurobi1303/linux64/bin:/usr/local/bin:/usr/bin:/bin --setenv=HOME=/home/jmercedes \
+  --setenv=GUROBI_HOME=/opt/gurobi1303/linux64 --setenv=LD_LIBRARY_PATH=/opt/gurobi1303/linux64/lib \
   --setenv=CHOWLA_WORKERS=$c --setenv=OMP_NUM_THREADS=$c --setenv=OPENBLAS_NUM_THREADS=$c \
   --setenv=MKL_NUM_THREADS=$c --setenv=PYTHONUNBUFFERED=1 --working-directory=/home/jmercedes/chowla_cosine \
   timeout -s KILL $t $cmd < /dev/null 2>&1; rc=\$?; \

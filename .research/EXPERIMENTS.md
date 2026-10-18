@@ -79,6 +79,13 @@
    UPDATE after the [1,60] rerun: the descending fit is contradicted at N = 42; the data now lean toward the anatomy
    prediction (ρ -> ρ*, c_E rising ⇒ dense optima rise past N ≈ 36), i.e. toward C½ in the dense regime (still finite-N
    evidence only, not a proof).
+   N=43, box [1,60] (src/exh2.c via exh2_driver.py on dirichlet, 4 threads; certified pruning threshold 4.168221):
+   COMPLETE in 7647 s (2.44e11 nodes, 36895 survivors). Optimum
+   A = [1..14, 16..34, 38, 41, 43, 44, 47, 50, 51, 52, 55, 57] (max 57 < L, so not edge-touching).
+   Its value: M = 3.796328 (Newton estimate), arb certificate M <= 3.796574, so R(43) <= 0.578972.
+   Second best M = 3.796371: almost tied, equiripple. Data: examples/smallN_runs/exh2_43_60.out.
+   Exact box optima N = 41, 42, 43: 0.5740, 0.5790, 0.5789.
+   Structured-class optima (E42, exact only inside their class, not full boxes): N = 45 0.5718, 50 0.5701, 55 <= 0.5671.
 ## E15 (2026-10-18) Sidon lower-flatness SA (src/sidon_flat_sa.py k L 60000 seed; 32L grid, UNCERTIFIED)
    best c = min|F_D|^2/k: k=8 0.019, 10 0.012, 12 0.0031, 16 0.00083, 20 0.00051 — far below the 0.293 needed for
    R(D−D) < 1/2 and below E12's exhaustive k <= 7 optima; supports SNZ. Data: examples/sidon_flat_sa.jsonl.
@@ -378,7 +385,9 @@ Results (dirichlet, 4 threads):
 - N = 45: class optimum R = 0.5718436 (X = 64, Y ∈ {36, 38}, h = 3). This is the E27/C-N45 set.
 - N = 50, X = 71, Y = 40, h = 3: COMPLETE, class optimum M = 4.0483107, R = 0.5725176 (3.2e10 nodes, 975 s).
 - N = 50, X = 72, Y = 38, h = 2: interrupted by a session restart after finding M = 4.0309356, R = 0.5700604
-  (holes {27}). Relaunched 2026-10-18 21:0x UTC for class optimality: runs/ct/o50y38x72.txt.
+  (holes {27}). Rerun 2026-10-18 night: COMPLETE, class optimum M = 4.0309356, R = 0.5700604 (1.6e10 nodes, 619 s,
+  runs/ct/o50y38x72.txt). The partial pre-restart log is runs/ct/o50y38x72_partial_interrupted.txt.
+- N = 55 classes C(79/81, 55, 42/44, 2) queued (batch_n55.sh).
 Certification by the lead (.research/agents/construct_scratch/cert_n50.py; examples/construct/N50_certified.json).
 Both sets are certified by E2 (arb DFT + Taylor, oversample 64) AND E3 (PARI 2.15.4 Sturm):
 - max 72: M ∈ [4.0309354, 4.0309358], **R(50) <= 0.5700604**.
@@ -387,3 +396,22 @@ Both replace the E27 addendum's 0.584181. A, the minimizer and its ripple are in
 Reading: the dense records N = 36, 45, 50 are 0.5648, 0.5718, 0.5701. That is flat at ≈ 0.57: no downward trend, and
 nowhere near 1/2. Single-swap tabu is inadequate in this regime (N = 36 optimum: 7 dips within 0.08; basin test fails
 2 of 4 runs).
+
+## E43 (2026-10-18 night) Gurobi 13.0.3 ports: validation (pip gurobipy, size-limited licence <= 2000 rows/cols)
+src/grb_dense.py is the box problem (min M over A ⊂ [1,X], |A| = n0, optional core/holes):
+- Gurobi binary model with LAZY cuts in a MIPSOL callback at the true minimiser and at the grid local minima;
+- initial cuts on the grid πj/(4X).
+src/grb_group_bt.py is the E37 model (max |B_t|), unchanged logic, with an optional cutoff.
+Validation, X = 40, n0 = 24 (E13 exact value M = 2.826302–2.826305):
+- Gurobi, cold, 2 threads, dirichlet oversubscribed (~10 threads on 8 vCPUs): OPTIMAL in 1116 s, 2.26e6 nodes,
+  249 lazy cuts, bound = obj = 2.8263048. The set is E13's [1,3..12,14..20,22,23,27,28,34,37]; found at t = 97 s.
+- So the model is correct, but there is NO speedup over HiGHS on this instance (E13: 875 s, conditions not recorded).
+- Fair comparison, 2 threads each, same load:
+  - Gurobi WARM (optimum given as start): OPTIMAL in 219 s (1.02e6 nodes), i.e. ~4x faster than E13's 875 s.
+  - HiGHS COLD (box_minlam.py): round 0 alone took 1309 s, slower than Gurobi cold (1116 s total). Its final time is
+    still running.
+  - Reading: ~4x, not the 10–100x hoped for, on this weak-LP model.
+- N = 55 class C(79,55,42,2) (still running): incumbent M = 4.2053961, R = 0.5670555 (holes {24}; uncertified).
+Note: the LP relaxation of this model is weak by nature. A fractional tapered profile with a positive-definite cosine
+transform makes lam ≈ 0, so the proof is all branching. Expect no miracle on the full-box dense problem; Gurobi's value
+is in structured or warm-started instances.

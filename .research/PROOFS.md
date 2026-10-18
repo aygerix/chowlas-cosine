@@ -499,3 +499,23 @@ Meaning. This is the rigorous form of the macroscopic Gibbs constraint ("profile
 localization noted in NOTEBOOK (iii). It holds in Z_N only for localized A (N >> max A). It explains E40's uniform-level
 results (M ≈ 0.44t) and the E11 failures (lifts concentrated at one scale) in one line. It cannot reach √n alone:
 Singer/Bu sets satisfy every instance with room to spare (N(H) ~ H).
+
+## Lean status update (2026-10-18 night): O4⁺, P20 Theorem 2 and the line-D identities are KERNEL-CHECKED
+Codex agent (Sol 6.1, brief .research/agents/lean_o4plus_brief.md, report .research/agents/lean_o4plus_report.md).
+Lead re-verification: full rebuild on dirichlet ("Build completed successfully", 8722 jobs); AxiomCheck.lean prints 33
+declarations, all exactly [propext, Classical.choice, Quot.sound]; no sorry, axiom or native_decide in the new files;
+main statements read against the brief.
+- lean/ChowlaCosine/FibreSchur.lean (namespace ChowlaCosine.FibreSchur), on the actual quotient G ⧸ ⟨t⟩:
+  - PositiveDefinite.mul / .pow: T0, Schur products on finite abelian groups.
+  - order_three_fibre_bound: T1, |D| − |E| <= (K + u₀)³. The hypothesis is Re F(η) >= −K for every nontrivial
+    additive character η.
+  - order_three_runTops_bound: |B_t| <= |E| + (K + u₀)³ + 1, with B_t = {m ∈ A : m − t ∈ A, m + t ∉ A}.
+  - order_four_fibre_bound: T2/O4⁺, 4|D₂| <= |E| + |D₃| + (K + u₀)⁴.
+  - order_three_zero_fibre and order_four_zero_fibre: u₀ ∈ {0, −1}.
+- lean/ChowlaCosine/HalfSet.lean, on ZMod p with g a ±1 function:
+  - hat_conv_hat: T3(a).
+  - shiftedHat_square_off_zero: T3(b).
+  - shiftedHat_cube and cubicConstant_eq_brief: T3(c), with c₁ = p²(2λ + 3λ²g(0) + λ³).
+  - spectral_gap: T3(d).
+  - coefficient_upper_bound: T3(e).
+No statement was refuted, weakened, or given an extra hypothesis.

@@ -9,7 +9,7 @@
 ## Best certified constructions (ball-arithmetic certificates, E2; Sturm brackets for N <= 40)
 - Small-N exhaustive box optima (agent, E14): **N=36, max 50, R <= 0.56481** (best finite R known to us; lead re-certified),
   N=35 0.5677, N=34 0.5741, N=24 0.5769 (= exact [1,40] optimum by MILP, E13), N=27 1/√3 (M = 3 at x = π).
-- Structured MILP (E27, C-N45): N=45 R <= 0.571844 (two certificates). Structured-class B&B (E42, C-N50): **N=50 R <= 0.5700604** (max 72, two certificates; class-optimality rerun in progress), N=50 0.5725176 (class optimum for X=71,Y=40,h=3). LNS-MILP (E18): N=45 0.5948, N=50 0.6036, N=60 0.6243, N=80 0.6630 (uncertified objective; certify before quoting).
+- Structured MILP (E27, C-N45): N=45 R <= 0.571844 (two certificates). Structured-class B&B (E42, C-N50): **N=50 R <= 0.5700604** (max 72, two certificates; exact optimum of the class C(72,50,38,2)), N=50 0.5725176 (class optimum for X=71,Y=40,h=3). LNS-MILP (E18): N=45 0.5948, N=50 0.6036, N=60 0.6243, N=80 0.6630 (uncertified objective; certify before quoting).
 - Bu et al. reproduction (E4): N=6320 R <= 0.6573. Bu's identity on FULL Singer sets with best shift (E25, C-SB):
   N=63252 R <= 0.56272; N=94556 R <= 0.556699; **N=161202 R <= 0.553656** (q = 401, oversample-32 certificate; best certified finite R known to us).
   Fit R − 1/2 ≈ 0.42–0.45·√(log k / k) (k = 62..402). Nothing below 1/2 anywhere.
@@ -28,6 +28,10 @@ R(A(S)) > 1/2 − η whenever η^5k^3 >= 4200L, Gallagher sieve; lead re-elabora
 KERNEL-CHECKED (Lean 4, axioms propext/choice/Quot.sound only, no sorry; re-verified by lead, 37 axiom lines):
 difference-set identity; Sidon consequence; mean zero/Parseval; P5; P7 cube identity + vertex min; P9 star lemma and
 star bound; P8 multiplicity bound; P13(a) averaging identity, restriction to multiples, (q−1)M >= |A| − q|A∩qZ|.
+
+KERNEL-CHECKED 2026-10-18 night (codex agent, lead re-verified: rebuild + 33 standard-axiom declarations): T0 Schur
+products; P20 Thm 2 (order 3) and its run-top corollary |B_t| <= |E| + (K+u₀)³ + 1; O4⁺ (order 4); line-D half-set
+identities T3(a)–(e) incl. the spectral gap (PROOFS 'Lean status update').
 
 NEW (session 2): P17 rigorous bounds on the doubly-positive profile constant: ρ* <= 0.9057 (all profiles), <= 0.7698 for
 w = h⋆h̃ with h >= 0 (Beckner + Hölder); numerical sup 0.7239.
@@ -119,6 +123,11 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 5. [verification] Lean: P21 and the negative-definite fibre lemma done; next O4⁺ via codex.
 
 ## Compute policy
+Gurobi (2026-10-18): full 13.0.3 distribution at /opt/gurobi1303/linux64 on dirichlet (env in /etc/profile.d/gurobi.sh and
+src/dirun.sh). The only gurobi.lic on the VM (whole-disk search 2026-10-18) is the pip one bundled with gurobipy,
+~/chowla_venv/lib/python3.12/site-packages/gurobipy/.libs/gurobi.lic: TYPE=PIP, restricted, expires 2027-11-29.
+With it gurobi_cl solves small.lp and stops on big.lp (3000 binaries) with Error 10010 'Model too large for size-limited
+license'. So both gurobipy and gurobi_cl run models <= 2000 rows/cols only. Activation: `grbgetkey <key>` on the VM, or a WLS gurobi.lic in ~/.
 All calculations on GCP VM dirichlet via src/dirun.sh (user rule 2026-10-18); F4 fallback; never the laptop or fejer.
 
 ## First concrete next step (updated 2026-10-18 late night)

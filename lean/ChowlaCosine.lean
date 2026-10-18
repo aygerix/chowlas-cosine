@@ -11,3 +11,5 @@ import ChowlaCosine.HalfSquareExplicit
 import ChowlaCosine.HalfSquareSieve
 import ChowlaCosine.RunTopGroup
 import ChowlaCosine.NegDefFibre
+import ChowlaCosine.FibreSchur
+import ChowlaCosine.HalfSet

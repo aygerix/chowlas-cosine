@@ -680,3 +680,14 @@
   - Discriminating question: does M_p/√p level off near 1/2 (dense Chowla plausible in Z_p) or keep falling towards the
     Sanders scale p^{−1/6}? Near-intervals in Z_p are exactly the grid shadows of dense Z sets. So the same question
     decides whether off-grid (continuum) information is needed even in the dense case.
+- **E41 completed to p = 83 (exact) and p = 797 (heuristic).**
+  - Exact half-set optima in Z_p go below grid-R 1/2 at p = 71, 79, 83. They are dilated near-intervals with tails:
+    one giant profile coefficient and a flat floor.
+  - Heuristics stay sub-Paley up to p = 197 and are search-limited beyond.
+  - So in Z_p, C½ fails for dense sets too (as E10 showed for sparse cyclotomic classes). Z_p only constrains the
+    critically sampled frequencies; the full circle in Z does not allow this.
+  - For Sanders' question (p^{1/3} vs p^{1/2}) the data are consistent with both a + b/√p (a ≈ 0.35) and p^{−0.2}
+    decay of M_p/√p. Not decided.
+  - Decision: line D's numerical half has delivered what it can cheaply. The theoretical half (exponent > 1/3 via
+    difference-set rigidity) stays open but is a side question for Z; the Z-relevant content is the anatomy (profile
+    plus tail), which matches the Z dense optima.

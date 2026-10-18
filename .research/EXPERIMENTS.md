@@ -340,3 +340,24 @@ Reading:
    - The O4-like Z_4 quadratic levels have nothing special in Z: M grows linearly in t (L = 4, sharp profile).
    - The small-defect fraction is high only for AP-like (linear, constant) levels, which all have M ~ t.
      Large-L random levels have small-defect fraction 1–7% and M ~ 5√t: consistent with dichotomy case (b).
+## E41 (2026-10-18 late night) Dense finite model: exact min M_p over symmetric half-sets of Z_p (Sanders' question)
+## (src/zp_half.c exact branch and bound, multiplicative symmetry broken by 1 ∈ P; src/zp_sa.c heuristic; dirichlet)
+Objective: P = k pairs {a,−a} ⊂ Z_p^*, k = (p−1)/4 or (p+1)/4, M_p = max_{γ≠0} −2Σ_{a∈P}cos(2πaγ/p). Grid-R in Z
+normalization: M_p/(2√k) ≈ M_p/√p. Paley (quadratic residues, p ≡ 1 mod 4): (1+√p)/2.
+NUMERICAL-EXACT (double precision; the minimizing P is unique in every case, the reported value is 1e−9 accurate):
+   p:      11    13    17    19    23    29    31    37    41    43    47    53    59    61    67    71    73    79    83
+   M_p/√p .723  .639  .621  .584  .636  .593  .614  .554  .562  .546  .519  .543  .541  .523  .508  .493  .508  .491  .483
+   - The optima are Paley for p = 13, 17, 29.
+   - From p = 37 on they are dilates of near-intervals with a tail, the anatomy of the dense Z optima.
+     For example p = 79: P = [1,16] ∪ {18,19,25,27} after dilation by 16.
+   - Spectrum: one giant profile coefficient (≈ 0.27p) and a nearly flat negative floor at the minimum.
+   - The optima are below Paley for p >= 37 and below grid-R 1/2 for p = 71, 79, 83.
+   - p = 89 did not finish within 5400 s (e41_mid partial file; 5.2e9 nodes at p = 83).
+HEURISTIC (zp_sa.c; calibrated: it reproduces the exact optima at p = 47, 53, 79):
+   - Unrestricted SA is sub-Paley at p = 101 (0.516) and worse than Paley from p = 149 (search-limited).
+   - Core-plus-tail SA (pairs 1..L forced; E41c) gives p = 149: 0.4825, 197: 0.523, 293: 0.528 (≈ Paley 0.529),
+     401: 0.541, 601: 0.577, 797: 0.578. Search-limited from about p = 300, so the large-p trend is undetermined.
+Reading: in Z_p the profile is constrained only at the critically sampled frequencies γ ∈ Z_p, so near-interval
+profiles with tuned tails beat Paley at small p. This is the Z_p version of the loose positive-definiteness tolerance
+that makes dense Z optima good at small N. Whether min M_p/√p -> 0 (towards Sanders' p^{1/3}) or levels off is the
+same open question as the dense Z regime.

@@ -228,6 +228,93 @@ def certify_lower_bound(A, L=None, oversample=16, prec=96):
     return Certificate(float(lower[j]), L, float(g0.min()), rem, j)
 
 
+
+def _ball_dft_decimated(coeff_dicts, L, B, r, prec):
+    """Rigorous values y_{r+B*i}, 0 <= i < L/B, of y_j = sum_k c_k exp(-2 pi i k j / L), for each coefficient dict.
+    Decimation in time: y_{r+Bi} = DFT_{L/B}(v)_i with v_{k'} = sum_{k = k' mod L/B} c_k exp(-2 pi i r k / L); the twist is
+    computed in ball arithmetic (exp_pi_i of the exact dyadic -2rk/L), so the result is as rigorous as _ball_dft while
+    holding only L/B balls at a time.  Returns a list of (mid_re, rad_re, mid_im, rad_im) per dict."""
+    import flint
+    old = flint.ctx.prec
+    flint.ctx.prec = prec
+    Lb = L // B
+    try:
+        keys = sorted(set().union(*[d.keys() for d in coeff_dicts]))
+        tw = {k: flint.acb(flint.arb(-2 * r * k) / L).exp_pi_i() for k in keys} if r else None
+        out = []
+        for d in coeff_dicts:
+            v = [flint.acb(0)] * Lb
+            for k, c in d.items():
+                z = flint.acb(c) if tw is None else flint.acb(c) * tw[k]
+                v[k % Lb] = v[k % Lb] + z
+            w = flint.acb.dft(v)
+            mr = np.fromiter((float(z.real.mid()) for z in w), dtype=np.float64, count=Lb)
+            rr = np.fromiter((float(z.real.rad()) for z in w), dtype=np.float64, count=Lb)
+            mi = np.fromiter((float(z.imag.mid()) for z in w), dtype=np.float64, count=Lb)
+            ri = np.fromiter((float(z.imag.rad()) for z in w), dtype=np.float64, count=Lb)
+            out.append((mr, rr + np.abs(mr) * 2.3e-16 + 1e-300, mi, ri + np.abs(mi) * 2.3e-16 + 1e-300))
+            del v, w
+    finally:
+        flint.ctx.prec = old
+    return out
+
+
+def _cell_lower(g0, e0, g1, e1, g2, e2, g3, e3, h2, rem):
+    """Certified lower bound on each Taylor cell [t_j - h2, t_j + h2] (same algebra as certify_lower_bound)."""
+    cand = [np.full(len(g0), -h2), np.full(len(g0), h2)]
+    a_ = g3 / 2.0; b_ = g2; c_ = g1
+    disc = b_ * b_ - 4 * a_ * c_
+    with np.errstate(divide="ignore", invalid="ignore", over="ignore"):
+        sq = np.sqrt(np.maximum(disc, 0.0))
+        sb = np.where(b_ >= 0, 1.0, -1.0)
+        q = -(b_ + sb * sq) / 2.0
+        r_a = np.where(a_ != 0, q / a_, np.where(b_ != 0, -c_ / b_, 0.0))
+        r_b = np.where(q != 0, c_ / q, 0.0)
+    for rr in (r_a, r_b):
+        cand.append(np.where(np.isfinite(rr), np.clip(rr, -h2, h2), h2))
+    pmin = np.full(len(g0), np.inf)
+    for s in cand:
+        pmin = np.minimum(pmin, g0 + g1 * s + g2 * s * s / 2 + g3 * s ** 3 / 6)
+    ball = e0 + e1 * h2 + e2 * h2 ** 2 / 2 + e3 * h2 ** 3 / 6
+    mag = np.abs(g0) + np.abs(g1) * h2 + np.abs(g2) * h2 ** 2 / 2 + np.abs(g3) * h2 ** 3 / 6
+    return pmin - ball - rem - 1e-14 * mag - 1e-12
+
+
+def certify_lower_bound_blocked(A, L=None, oversample=16, prec=96, blocks=16, log=None):
+    """RIGOROUS lower bound for min_x f_A(x) with bounded memory: identical certificate to certify_lower_bound (arb DFT
+    of the 0th..3rd derivative sums on the grid t_j = j/L + 4th-order Taylor cells), but the grid is processed in `blocks`
+    residue classes j = r (mod blocks) via _ball_dft_decimated, so peak memory is ~1/blocks of the unblocked version."""
+    A = validate(A)
+    amax = max(A)
+    if L is None:
+        L = 1 << max(10, math.ceil(math.log2(oversample * amax + 1)))
+    assert L % blocks == 0
+    def coeffs(k):
+        d = {}
+        for a in A:
+            d[a % L] = d.get(a % L, 0) + a ** k
+        return d
+    cds = [coeffs(0), coeffs(1), coeffs(2), coeffs(3)]
+    tp = 2 * math.pi
+    h2 = 0.5 / L
+    S4 = (tp ** 4) * float(sum(a ** 4 for a in A)) * (1 + 1e-12)
+    rem = S4 * h2 ** 4 / 24.0
+    best = (math.inf, -1); gmin = math.inf
+    for r in range(blocks):
+        (m0, r0, _, _), (_, _, m1, r1), (m2, r2, _, _), (_, _, m3, r3) = _ball_dft_decimated(cds, L, blocks, r, prec)
+        g0, e0 = m0, r0
+        g1, e1 = tp * m1, tp * r1 * (1 + 1e-15)
+        g2, e2 = -(tp ** 2) * m2, (tp ** 2) * r2 * (1 + 1e-15)
+        g3, e3 = -(tp ** 3) * m3, (tp ** 3) * r3 * (1 + 1e-15)
+        lower = _cell_lower(g0, e0, g1, e1, g2, e2, g3, e3, h2, rem)
+        i = int(np.argmin(lower))
+        if lower[i] < best[0]:
+            best = (float(lower[i]), r + blocks * i)
+        gmin = min(gmin, float(g0.min()))
+        if log:
+            log(f"  block {r + 1}/{blocks}: running lower bound {best[0]:.6f}")
+    return Certificate(best[0], L, gmin, rem, best[1], method="arb-dft (decimated, %d blocks) + 4th-order Taylor" % blocks)
+
 # ---------------------------------------------------------------------------
 # (E3) exact Sturm certificate via PARI/GP (small max(A))
 # ---------------------------------------------------------------------------

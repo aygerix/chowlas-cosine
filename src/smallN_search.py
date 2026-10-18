@@ -1206,7 +1206,7 @@ def main_exhaustive(argv):
     if not plan:
         plan = [(4, 40), (5, 40), (6, 40), (7, 40), (8, 40)]
     log = _log_to(os.path.join(RUN_DIR, "exhaustive.log"))
-    res = run_exhaustive(plan, log=log)
+    res = run_exhaustive(plan, workers=int(os.environ.get('CHOWLA_WORKERS', '6')), log=log)  # localrun.sh sets 4
     path = os.path.join(RUN_DIR, "exhaustive.json")
     old = {}
     if os.path.exists(path):

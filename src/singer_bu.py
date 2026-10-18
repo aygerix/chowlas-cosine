@@ -3,7 +3,8 @@
 S = (D + shift mod v) − ⌊v/2⌋ for a Singer difference set D ⊂ Z_v (v = q^2+q+1, |D| = q+1), so S ⊂ [−v/2, v/2] is Sidon
 with L ≈ v/2 ≈ k^2/2 (the densest Sidon sets).  A(S) = {3|s−t|} ∪ {|3(s+t)+1|}, |A| = k(k−1),
 f_{A(S)} = P^2 − k/2 − C/2 (P15).  Shift chosen by FFT-grid minimum over `nshift` equally spaced shifts; the chosen set is
-then certified with chowla.certify_lower_bound (arb ball-arithmetic DFT + Taylor remainder: RIGOROUS lower bound on min f).
+then certified with chowla.certify_lower_bound_blocked (arb ball-arithmetic DFT, decimated in 64 residue blocks, + Taylor
+remainder: RIGOROUS lower bound on min f; identical to certify_lower_bound, validated on q = 61, 101).
 P16 (kernel-checked) forces R(A(S)) > 1/2 − η once η^6 k^3 >= 7000 L, so this family converges to 1/2 from above.
 Usage: python src/singer_bu.py q1,q2,... [nshift]      (appends to examples/singer_bu/certified.json)
 """
@@ -12,7 +13,7 @@ import numpy as np
 sys.path.insert(0, 'src')
 from singer import singer
 from bu import A_of_S
-from chowla import certify_lower_bound, min_estimate_fft
+from chowla import certify_lower_bound_blocked, min_estimate_fft
 
 path = 'examples/singer_bu/certified.json'
 out = json.load(open(path)) if os.path.exists(path) else {}
@@ -31,7 +32,7 @@ for q in qs:
         M = -min_estimate_fft(A_of_S(S), oversample=16, polish=16).fmin
         if best is None or M < best[0]: best = (M, shift)
     S = sorted(((d + best[1]) % v) - v // 2 for d in D); A = A_of_S(S); N = len(A)
-    lb = certify_lower_bound(A, oversample=16).lower_bound
+    lb = certify_lower_bound_blocked(A, oversample=16, blocks=64).lower_bound   # same certificate, ~1/64 memory
     out[str(q)] = dict(q=q, shift=best[1], S=S, N=N, max=max(A), cert_lower=lb, R_cert=-lb / math.sqrt(N))
     json.dump(out, open(path, 'w'))
     print(f"q={q} k={q+1} N={N} max={max(A)} R_est={best[0]/math.sqrt(N):.5f} R_cert<={-lb/math.sqrt(N):.5f} "

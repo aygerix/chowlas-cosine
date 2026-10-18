@@ -305,7 +305,12 @@ the most restrictive; coprimality alone does not keep |B_t| small (Z_3×Z_4² gi
 read off. e37b (rank dependence at order 243, K0 = 3, all hit 900 s, dual bounds 77–81, so lower bounds only):
    Z_9×Z_27 >=6 | Z_3²×Z_27 >=6 | Z_3×Z_9² >=6 | Z_3³×Z_9 >=18 (3-rank 4: contains the F_3^4 bent configuration).
    Primal values track the 3-rank (rank <= 3: 3–6; rank 4: 18), consistent with the reading above; not certified.
-   The e37 instances Z_105 (t = 1), Z_256 (two t), Z_4^4 were still running at the time of writing.
+   e37 final instances (900 s; 'opt' = solver-certified, else best found with dual bound):
+   - K0 = 4: F_5³ 25 opt | Z_4^4 (t = e1) >=55 (bound 62), consistent with Theorem O4's exact 56 at a = 3
+     (Z_4 × GR(4,3) ≅ Z_4^4) | Z_256: >=7 (t = 64), >=4 (t = 1) | Z_125 (t = 1) >=4 (bound 39) | Z_121 (t = 11) >=4 |
+     Z_105 (t = 1) >=13 (bound 30).
+   - K0 = 3: Z_105 (t = 35) >=4.
+   Order 256 at K0 = 4: rank 4 (Z_4^4) >= 55 against cyclic >= 7. Cyclic groups stay the most restrictive throughout.
 
 ## E38 (2026-10-18 night) The O4-shaped class in Z: A = S ∪ (S+t) vs unrestricted sets (src/pair_sa.c, src/e38_batch.sh;
 ## data examples/pair_sa/e38.txt) — HEURISTIC (SA, grid minimum over 4096 points of [0,π], seed 1, 3e6 moves × 4 restarts)

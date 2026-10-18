@@ -78,8 +78,9 @@ cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatnes
    parallel try to prove W >= c k^{1+δ} for λ >= 3. Only live construction mechanism with a path to R -> 0.
 4. Lean formalization of P21 (statements in lean/ChowlaCosine/RunTopGroup.lean) after the g3 agent.
 5. Low priority: exhaustive N = 43–44 with src/exh2.c (validated, load-balanced) when compute is free.
-Compute: laptop via src/localrun.sh (4 cores, guarded; machine is shared with other projects, load can be ~40);
-F4 via src/f4run.sh (refuses at load >= 12); user is acquiring more compute (2026-10-18).
+Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM dirichlet via src/dirun.sh
+(8 vCPU = 4 physical cores, 32 GB; default -c 4 so lead + one agent share it; -c 8 for exclusive jobs). Not the laptop
+(shared with other projects), never the VM fejer. F4 (src/f4run.sh) only as fallback. exh2 N=33 benchmark: 30 s at -c 8.
 
 ## Active lines (>= 3) (updated 2026-10-18, after P21)
 1. [lower bound, universal; AGENT g3 running] G3: |B_t| <= CK³ in every finite abelian group (sharp by P20/P21) ⇒
@@ -97,7 +98,7 @@ F4 via src/f4run.sh (refuses at load >= 12); user is acquiring more compute (202
    agent (one agent at a time).
 
 ## Compute policy
-Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).
+All calculations on GCP VM dirichlet via src/dirun.sh (user rule 2026-10-18); F4 fallback; never the laptop or fejer.
 
 ## First concrete next step (updated 2026-10-18, after P20/P21)
 (1) Lower bound. Group-agnostic run-top bounds are capped at K³ even WITHOUT full or singleton cosets (P20 Theorem 1;

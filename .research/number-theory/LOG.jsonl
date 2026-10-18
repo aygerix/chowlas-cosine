@@ -1,0 +1,1 @@
+{"goal": "Chowla cosine: either (C) algorithm solution(c,n) giving sets A,|A|>=n, min_x sum_{a in A} cos(ax) >= -c sqrt|A| for all c>0 (disproof), or (L) absolute c0>0 with M(A)>=c0 sqrt|A| for all finite A (proof)", "time_utc": "2026-10-18T02:58:14+00:00", "type": "start"}

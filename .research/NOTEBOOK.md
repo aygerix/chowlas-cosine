@@ -538,17 +538,28 @@
   - So W must be H-invariant mod p, and the only such Z-sets known are periodic lifts, which bring back the
     single-period lift problem (off-grid sinc excursions ~ √(p/m)·√log; product with a coarse window multiplies them).
   - Same conclusion as E10/E11, now with the exact formula and the precise requirement (H-invariance of W mod p).
-- **E37 partial result (exact ILP, K <= 3, ord t = 3): ℓ-torsion outside ⟨t⟩ drives run-tops.** Max |B_t| at K₀ = 3:
-  - With 3-torsion outside ⟨t⟩: F_3^4: 18 (P20 Theorem 1); Z_9 × Z_9: 6.
-  - Cyclic: Z_81 (t of order 3, 9, 81): 3, 4, 5.
-  - Coprime, H of order prime to 3: Z_3 × F_2^5: 6; Z_3 × F_5^2: 4.
-  - Larger groups (Z_243 etc.) are still running, so the full table is in EXPERIMENTS when done.
-  - Reading: the K³ mechanisms need ℓ-rank in the quotient, matching conjG's Theorem 4 ("needs p-torsion outside ⟨t⟩").
-  - The Z_N transfer with N = t·q (q prime > 4X/t) is EXACTLY a split coprime group Z_q × Z_t with ord t = q.
-    So **Conjecture CP**, "|B_t| <= C K^β (β < 4) when Γ = Z_ℓ × H, ℓ prime, ℓ ∤ |H|", would transfer to Z.
-  - Caveat: for large ℓ the fibres hold many runs. The small-order data constrain only ℓ = 3. As shown above, Galois
-    adds nothing beyond algebraic integrality. CP is therefore a reformulation of the Z problem plus the evidence that
-    the known group obstructions need ℓ-torsion, not a new tool.
+- **E37 partial result (exact ILP, K <= 3–4) — CORRECTED the same night: the "coprime ⟹ small" reading is NOT supported.**
+  Max |B_t| at K₀ = 3, ord t = 3 (all solver-optimal unless noted):
+  - F_3^4: 18 (bent mechanism, P20 Theorem 1).
+  - Z_9², Z_3×Z_27: 6.
+  - Z_81: 3 / 4 / 5 for t of order 3 / 9 / 81.
+  - Coprime H: Z_3×F_2^5 6, Z_3×F_5² 4, **Z_3×Z_4²×Z_2: 12**.
+  - The last is a Lemma-3 configuration in Z_3 × Z_4²: full cosets on the index-4 subgroup {y1 + y2 ≡ 0}, 2-point
+    cosets on the other 12 classes, K = 3. That is |B_t| = (4/3)K² with H of order prime to 3, so coprimality alone does
+    not keep run-tops small at this size.
+  - At order 64, K₀ = 4: Z_64 gives 11 (t of order 4) and 14 (t of order 64), against Z_4³ 16 and Z_8² 15. The cyclic
+    deficit is mild there.
+  - Larger instances (Z_243, Z_240, Z_231, Z_3×Z_81, Z_125, Z_3×Z_32, Z_3×Z_7²) hit the 900 s limit with weak dual bounds:
+    inconclusive.
+  - Reading:
+    - Only F_3^4 (the bent mechanism, needs elementary abelian 3-rank) stands out, and cyclic Z_81 is the most
+      restrictive.
+    - At K <= 4 these numbers cannot distinguish exponent 2 from 3.
+    - Conjecture CP below remains a reformulation of the Z problem, with only weak support from E37.
+  - Observation kept: the Z_N transfer with N = t·q (q prime > 4X/t) is exactly a split coprime group Z_q × Z_t with
+    ord t = q. So Conjecture CP, "|B_t| <= C K^β (β < 4) when Γ = Z_ℓ × H, ℓ prime, ℓ ∤ |H|", would transfer to Z.
+    For large ℓ the fibres hold many runs, Galois adds nothing beyond integrality, and E37 shows CP needs more than
+    coprimality at small K.
 - **Kurtosis form of C½ (reformulation, PROVED identity).** With exact Fejér–Riesz f_A + M = |Q|², the autocorrelation r
   of Q's coefficients has r(0) = M, r(±a) = 1/2 on A and 0 elsewhere. Hence ‖Q‖_4^4/‖Q‖_2^4 = 1 + N/(2M²) = 1 + 1/(2R²).
   So C½ ⟺ every polynomial whose aperiodic autocorrelation is {0, 1/2}-valued off the origin has kurtosis <= 3 + o(1)

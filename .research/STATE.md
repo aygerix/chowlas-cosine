@@ -100,7 +100,9 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 ## Running now (2026-10-18 late night)
 - Construction agent a6d21d62b5c3e53ad (native; brief .research/agents/construct_brief.md).
 - E41 (dirichlet, src/e41_batch.sh): exact half-set optima for p = 59..89 → examples/zp_half/e41_mid.txt.
-- E37 main batch (Z_105, Z_256, Z_4^4) still running. E37b done: primal values only, they track the 3-rank.
+- E37 done (final table in EXPERIMENTS). E41 done (exact to p = 89).
+- Exhaustive N = 43 in [1,60] (src/exh2_driver.py, 4 vCPUs, started 2026-10-18 20:00 UTC) → examples/smallN_runs/exh2_43_60.out.
+- Rule: whenever a job ends, check vmstat and start the next queued job; the VM must not idle with work queued.
 
 ## Active lines (>= 3) (updated 2026-10-18 late night)
 1. [lower bound, dense] Line D (above). The finite model Z_p has no subgroups. E10 shows that in the sparse regime

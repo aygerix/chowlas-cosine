@@ -112,3 +112,13 @@ Idealised (concentrated) prediction (k/2)/sqrt(N) = 0.503–0.707. Even b = 2 co
 (k frequencies, not engineered) adds Gaussian extreme values at the zeros of P, whereas Bu's Singer/parity design
 specifically keeps C small there. The one-positive-eigenvalue class beyond K_k is worse in practice. Killed as a
 construction route.
+
+## E24 (2026-10-18) One-sided skew for ±1 cosine polynomials (constant profile w = 1/2; src/signed_sa.py; UNCERTIFIED)
+c := −min Σ_{n<=X} ε_n cos(nx) / sqrt(X/2) (= c_E of the constant profile). Single-flip SA, grid 8X, Newton polish:
+   X:            50     100    200    400
+   2e6 iters:   1.17   1.34   1.54   1.69     (two seeds, best)
+   2e7 iters:    —     1.32   1.46   1.65
+Baselines: Rudin–Shapiro c = 2.00 (|P| <= sqrt(2X)), Legendre/Fekete c ≈ 2.0–2.2 (two-valued ±√p on the grid, larger in
+between), random ≈ sqrt(2 log X). Optimised sequences are strongly skewed at small X (c < sqrt2 = arcsine value) but c
+RISES with X (also with 10x more search), crossing the 1.33 needed by the dense heuristic near X ≈ 100. Same pattern as
+E21 (skew of the exhaustive 0/1 optima fades with N). Mechanism probe only: says nothing rigorous about the limit.

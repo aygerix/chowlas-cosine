@@ -287,3 +287,12 @@
   (non-p.d.), whose Dirichlet defects add incoherently to Gaussian-size noise. This is a heuristic reason why the skew of
   the exhaustive optima fades with N (E21). Fixed-profile experiment E23 (src/profile_rounding.py): sigma-delta
   roundings of p.d. profiles have c_E ≈ 2.1–3.8 and growing with X (tri, gauss, fejer2 at X = 100–1600).
+- (S') in peak language (HEURISTIC analysis, session 2). With φ = F + K, ∫∫φ(u)φ(v)ψ(u+v) = ∫φψ + (K^2−K)∫ψ for every ψ.
+  If u, v sit in peaks of φ of height >= H and width w, then φ(u+v) >= H^2·w − K^2, so sums of peaks are high once
+  H^2 w >> K^2. For the extremal 1/5 configuration (middle layer: height K^3, total measure K^{-2}, n ≈ K^5) closure needs
+  w >> K^{-4}; but a peak of height H has width w <~ 1/H (the coherent part A' of A has |A'| >~ H inside an interval of
+  length ~1/w), so middle-layer peaks have w <= K^{-3} and narrow ones (w < K^{-4}) are not excluded by idempotence alone.
+  Middle-middle pair mass ≈ (K^3)^4 (K^{-2})^2 = K^8 = nK^3 is exactly the (S') threshold. So (S') ⟺ "middle-layer
+  peaks are wide (w >> K^{-4}) or additively closed"; a narrow middle peak means a set A' ⊂ A of size ≈ K^3 spread over
+  length > K^4 that is coherent with one frequency — the next thing to try to exclude using F >= −K on A' alone
+  (Chowla for A' gives M(A') >= |A'|^{1/5}, too weak; one needs the interaction of A' with the rest of A).

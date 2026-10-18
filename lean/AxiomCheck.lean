@@ -133,3 +133,52 @@ open ChowlaCosine
 #print axioms sinc_sq_le_min
 #check @halfSquare_lower_bound_min
 #print axioms halfSquare_lower_bound_min
+-- 10. P16 explicit (Sidon counting, rank majorant, unconditional final theorem)
+#check @IsSidon.mono
+#print axioms IsSidon.mono
+#check @injOn_sub_ltPairs_of_sidon
+#print axioms injOn_sub_ltPairs_of_sidon
+#check @sidon_card_mul_pred_le_of_diam
+#print axioms sidon_card_mul_pred_le_of_diam
+#check @sidon_card_mul_pred_le_of_Ico
+#print axioms sidon_card_mul_pred_le_of_Ico
+#check @le_one_add_sqrt_of_mul_pred_le
+#print axioms le_one_add_sqrt_of_mul_pred_le
+#check @sidon_card_le_one_add_sqrt_of_Ico
+#print axioms sidon_card_le_one_add_sqrt_of_Ico
+#check @sidon_card_mul_pred_le_real
+#print axioms sidon_card_mul_pred_le_real
+#check @card_filter_abs_half_le
+#print axioms card_filter_abs_half_le
+#check @card_filter_abs_half_le_sqrt
+#print axioms card_filter_abs_half_le_sqrt
+#check @absB_injective
+#print axioms absB_injective
+#check @absB_pos
+#print axioms absB_pos
+#check @rankB_lt_rankB
+#print axioms rankB_lt_rankB
+#check @rankB_injOn
+#print axioms rankB_injOn
+#check @rankB_lt_card
+#print axioms rankB_lt_card
+#check @rankB_bound
+#print axioms rankB_bound
+#check @one_div_sq_sq_le
+#print axioms one_div_sq_sq_le
+#check @telG_nonneg
+#print axioms telG_nonneg
+#check @sum_range_telG_le
+#print axioms sum_range_telG_le
+#check @min_le_telG
+#print axioms min_le_telG
+#check @sum_min_absB_le
+#print axioms sum_min_absB_le
+#check @sum_min_le_sidon
+#print axioms sum_min_le_sidon
+#check @halfSquare_hcond_explicit
+#print axioms halfSquare_hcond_explicit
+#check @halfSquare_lower_bound_explicit
+#print axioms halfSquare_lower_bound_explicit
+#check @halfSquare_lower_bound_explicit'
+#print axioms halfSquare_lower_bound_explicit'

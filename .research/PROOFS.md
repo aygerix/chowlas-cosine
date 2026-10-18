@@ -83,6 +83,17 @@ Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_
   24π/(η^4 k^2) < 2r⌊2π/(2h+2r)⌋, r = η/(2(6L+1)), ∃x f_{A(S)}(x) < −(½−η)k).
   NOT formalized: the Lindström/Abel step Σ_s ḡ(|b_s|) <= Σbar(h) (so the explicit rate (L/k^3)^{1/6} is paper-only; the
   Lean theorem takes the frequency-wise majorant sum as a hypothesis, checkable per S), and the P16′ large-sieve form.
+- KERNEL-CHECKED 2026-10-18 (Lean agent; lead re-ran `lake build` (8717 jobs OK), regenerated AxiomCheck.out (identical,
+  85 lines, all [propext, Classical.choice, Quot.sound]), grep: no sorry/admit/native_decide/axiom): **P16 unconditional,
+  explicit** in lean/ChowlaCosine/HalfSquareExplicit.lean —
+    theorem halfSquare_lower_bound_explicit (S : Finset ℤ) (hS : IsSidon S) (L : ℝ) (hL : ∀ s ∈ S, |(s:ℝ)| ≤ L)
+      (hL1 : 1 ≤ L) (η : ℝ) (hη : 0 < η) (hη' : η ≤ 1/2) (hk : 1000 * (6 * L + 1) ≤ η ^ 6 * (S.card : ℝ) ^ 3) :
+      ∃ x : ℝ, cosSum (buSet S) x < -((1/2 - η) * S.card)
+  (and the corollary with hk : 7000 * L ≤ η^6 k^3). I.e. R(A(S)) > 1/2 − η whenever η^6 k^3 >= 7000 L: the P16 rate
+  (L/k^3)^{1/6}, with the trivial Sidon count k(k−1) <= 2·diam (Lindström not needed) and h = 64/(3ηk) inside the proof.
+  Supporting lemmas: sidon_card_mul_pred_le_of_Ico, card_filter_abs_half_le (N(N−1) <= 4u/3 for |3s+½| <= u),
+  sum_min_le_sidon (Σ_s min(1, 4/((3s+½)h)^2) <= 1 + (4/3)sqrt(8/(3h))), halfSquare_hcond_explicit.
+  Still paper-only: P16′ (large-sieve form, exponent 1/5) and Lindström's sharper count.
 - NOT formalized: P7 admissibility count, P1 (Fejér–Riesz absent from mathlib), P6, P10–P12, P13(b–d), P14, gain identity.
 
 ## P9. Induced-subgraph (local spectral) lemma (PROVED, elementary)
@@ -191,7 +202,7 @@ Beating 1/2 inside this template needs Σ_j P_j^2 >= δ rk/2 everywhere — a lo
 
 ## P16. C½ for Bu's construction with any Sidon set of range L = o(k^3) (PROVED on paper by lead 2026-10-18;
 ## numerics src/bu_halfsquare.py, constants src/p16_constants.py; INDEPENDENTLY REVIEWED by agent 2026-10-18: CORRECT,
-## no gap (.research/agents/p16_review.md); lemmas M1–M4 KERNEL-CHECKED 2026-10-18, Lindström step paper-only)
+## no gap (.research/agents/p16_review.md); lemmas M1–M4 and the unconditional explicit form (η^6k^3 >= 7000L) KERNEL-CHECKED 2026-10-18; P16′ paper-only)
 Review corrections (presentational): (M1) read "h := any h > 0 with Σbar(h) < δ" (the infimum is not attained; the
 inequality is strict, so h* itself works). (M3) Bu et al.'s own sets have L ≈ 8–12 k^2 (up to ≈ 32 k^2 in their proof
 regime), not L <= k^2; the rate k^{−1/6} is unaffected but the explicit table below is for L = k^2/2. (M6) Remark (c) needs

@@ -752,6 +752,35 @@ def sa_round3(best, Ns, it_per_N=6e5, reps=4):
     return tasks
 
 
+def growth_chain(args):
+    """Greedy growth chain: from a good set A0, repeatedly add the single element (in
+    [1, max+slack]) minimizing accurate M, then polish with a cold SA run; record the best
+    set at every size up to Nmax.  UNCERTIFIED heuristic."""
+    A0, Nmax, seed, it_per_N, slack_f = args
+    rng = np.random.default_rng(seed)
+    A = sorted(A0)
+    out = {}
+    while len(A) < Nmax:
+        N = len(A) + 1
+        s = set(A)
+        slack = max(4, int(slack_f * N))
+        cand = [b for b in range(1, max(A) + slack) if b not in s]
+        _, b = min((accurate_M(A + [b])[0], b) for b in cand)
+        A = sorted(A + [b])
+        cap = max(A) + max(3, N // 4)
+        sq = math.sqrt(N)
+        best, B, cur, st = sa(N, cap, A, int(it_per_N * N), T0=0.03 * sq, T1=0.001 * sq,
+                              seed=int(rng.integers(1 << 62)), pglobal=0.3, D=3)
+        B = primitive(B)
+        MB, xB = accurate_M(B)
+        MA, xA = accurate_M(A)
+        if MB < MA:
+            A = sorted(B) if len(set(B)) == N else A
+            MA, xA = MB, xB
+        out[N] = (MA, list(A), xA)
+    return seed, out
+
+
 def adapt_size(A, N, slack=None):
     """Greedily add/remove single elements (best accurate_M at each step) until |A| = N."""
     A = sorted(set(A))
@@ -820,8 +849,33 @@ def main_sa(argv):
             if str(N) not in best or M < best[str(N)]["est_M"] - 1e-9:
                 best[str(N)] = {"A": A1, "est_M": M, "R_est": M / math.sqrt(N), "max": max(A1), "x_star": x,
                                 "found_by": tag + " (seed itself)", "cap": max(A1), "seed": None, "iters": 0}
+    elif stage == "chain":
+        starts = []
+        for n0 in (30, 32, 34, 35, 36):
+            if str(n0) in best:
+                starts.append(best[str(n0)]["A"])
+        jobs = []
+        for i, A0 in enumerate(starts):
+            jobs.append((A0, 100, 8000 + i, 1e5, 0.3))
+        jobs.append((best["36"]["A"], 100, 8100, 2e5, 0.5))
+        with Pool(6) as pool:
+            for seedv, res in pool.imap_unordered(growth_chain, jobs):
+                for N, (M, A, x) in res.items():
+                    allres.append({"N": N, "cap": max(A), "A": A, "M_grid": None, "M_est": M, "x": x,
+                                   "iters": 0, "T0": None, "T1": None, "seed": seedv, "time": 0,
+                                   "tag": f"growth_chain_seed{seedv}"})
+                    if str(N) not in best or M < best[str(N)]["est_M"] - 1e-9:
+                        best[str(N)] = {"A": A, "est_M": M, "R_est": M / math.sqrt(N), "max": max(A), "x_star": x,
+                                        "found_by": f"growth_chain_seed{seedv} (greedy add + cold SA polish)",
+                                        "cap": max(A), "seed": seedv, "iters": -1}
+                        log(f"chain {seedv}: N={N} new best R_est={M/math.sqrt(N):.5f} max={max(A)}")
+        with open(os.path.join(RUN_DIR, "sa_best_raw.json"), "w") as fh:
+            json.dump(best, fh, indent=1)
+        with open(os.path.join(RUN_DIR, "sa_all_runs.json"), "w") as fh:
+            json.dump(allres, fh)
+        return
     elif stage == "r3":
-        tasks = sa_round3(best, Ns)
+        tasks = sa_round3(best, Ns, it_per_N=3e5, reps=3)
     else:
         raise SystemExit("stage r1|r2|r3")
     done = {(r["N"], r["cap"], r["seed"], r["tag"]) for r in allres}
@@ -880,7 +934,7 @@ def max_clique_diff(A):
     return len(B), B, len(dif) / len(A)
 
 
-def sidon_clique(A, node_limit=300000):
+def sidon_clique(A, node_limit=100000):
     """Largest Sidon B (containing 0, WLOG min B = 0) with every positive difference of B in A.
     coverage = C(|B|,2)/|A| (= 1 iff A is exactly the Sidon difference set (B-B)^+).
     Returns (m, B, coverage, complete_flag)."""
@@ -1042,7 +1096,15 @@ def main_analyze(argv):
         c = []
         if str(N) in sab:
             r = sab[str(N)]
-            c.append((r["est_M"], primitive(r["A"]), f"SA ({r['found_by']}, cap {r['cap']}, seed {r['seed']}, iters {r['iters']})"))
+            if str(r["found_by"]).startswith("exhaustive"):
+                lab = f"{r['found_by']} (complete enumeration)"
+            elif r.get("iters", 0) == -1:
+                lab = f"{r['found_by']}"
+            elif r.get("iters", 0) == 0:
+                lab = f"seed set {r['found_by']}"
+            else:
+                lab = f"SA ({r['found_by']}, cap {r['cap']}, seed {r['seed']}, iters {r['iters']}, grid G>=16*cap)"
+            c.append((r["est_M"], primitive(r["A"]), lab))
         if N in ex_by_N:
             r = ex_by_N[N]
             A = primitive(r["opt_A"])
@@ -1094,23 +1156,23 @@ def main_analyze(argv):
         comp.append({"tag": tag, "N": n, "max": max(A), "R_est": round(M / math.sqrt(n), 5), "sidon_coverage": round(scov, 3),
                      "E_over_N2": round(additive_energy(A) / n ** 2, 3), "T3_over_N2": round(triples(A) / n ** 2, 3),
                      "x_star_over_2pi": round(x / (2 * math.pi), 5)})
-    # trend fits on N >= 10
-    NN = np.array([r["N"] for r in rows if r["N"] >= 10], float)
-    RR = np.array([r["R_est"] for r in rows if r["N"] >= 10], float)
+    # trend fits
     fits = {}
-    if len(NN) >= 4:
+    for lo, hi in ((10, 36), (10, 100), (20, 36)):
+        NN = np.array([r["N"] for r in rows if lo <= r["N"] <= hi], float)
+        RR = np.array([r["R_cert"] for r in rows if lo <= r["N"] <= hi], float)
+        if len(NN) < 4:
+            continue
         X = np.vstack([np.ones_like(NN), 1 / np.sqrt(NN)]).T
-        coef, res, *_ = np.linalg.lstsq(X, RR, rcond=None)
-        fits["R = a + b/sqrt(N)"] = [float(c) for c in coef]
+        coef, *_ = np.linalg.lstsq(X, RR, rcond=None)
         X2 = np.vstack([np.ones_like(NN), np.log(NN)]).T
         c2, *_ = np.linalg.lstsq(X2, np.log(RR), rcond=None)
-        fits["R = C N^gamma"] = [float(math.exp(c2[0])), float(c2[1])]
-        X3 = np.vstack([np.ones_like(NN), np.log(NN)]).T
-        c3, *_ = np.linalg.lstsq(X3, RR, rcond=None)
-        fits["R = a + b log N"] = [float(c) for c in c3]
-        # windowed minima of R (running min over N ranges)
-        fits["window_min_R"] = {f"{lo}-{hi}": float(min((r["R_est"] for r in rows if lo <= r["N"] <= hi), default=float('nan')))
-                                for lo, hi in ((4, 10), (11, 20), (21, 30), (31, 40), (41, 60), (61, 100))}
+        c3, *_ = np.linalg.lstsq(X2, RR, rcond=None)
+        fits[f"N{lo}-{hi}"] = {"R=a+b/sqrtN": [float(c) for c in coef],
+                               "R=C*N^gamma": [float(math.exp(c2[0])), float(c2[1])],
+                               "R=a+b*logN": [float(c) for c in c3]}
+    fits["window_min_R_cert"] = {f"{lo}-{hi}": float(min((r["R_cert"] for r in rows if lo <= r["N"] <= hi), default=float('nan')))
+                                 for lo, hi in ((4, 10), (11, 20), (21, 30), (31, 40), (41, 60), (61, 100))}
     with open(os.path.join(RUN_DIR, "analysis.json"), "w") as fh:
         json.dump({"rows": rows, "comparison": comp, "fits": fits}, fh, indent=1)
     keys = ["N", "R_est", "R_cert", "max", "max_over_N", "E_over_N2", "E_over_N3", "T3_over_N2", "initial_run",

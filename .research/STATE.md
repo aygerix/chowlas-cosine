@@ -7,11 +7,14 @@
   NOTEBOOK 2026-10-17 late. If true, Epoch's algorithm cannot exist. Not assumed: both tracks stay open.
 
 ## Best certified constructions (ours; ball-arithmetic certificates, E2/E4)
-- Dense SA (E5, src/dense_sa.py): N=20, max 30, R <= 0.6011 (= exact box optimum for lam=2.7 by MILP);
+- Small-N optimizer agent (src/smallN_search.py, examples/smallN_runs/sa_best_raw.json), arb-certified by lead
+  2026-10-18: N=29 max 44 R <= 0.57665; N=24 max 37 R <= 0.57692; N=27 max 43 R <= 0.57735 (min = -3 at x = π);
+  N=32 R <= 0.57966. BEST FINITE R KNOWN TO US: 0.5767.
+- Dense SA (E6, src/dense_sa.py): N=20, max 30, R <= 0.6011 (= exact box optimum for lam=2.7 by MILP);
   N=34, max 49, R <= 0.6043; N=54 R <= 0.6403; N=73 R <= 0.6730; N=122 R <= 0.6942.
 - Bu et al. reproduction (E4): N=6320, max 432979, R <= 0.6573 (approaches 1/2 from above; excess ≈ 1.3 sqrt k).
 - Exhaustive box optima (agent; [1,40]/[1,100]): N<=17, R >= 0.6137 (N=16).
-- NO finite set with R < 0.60 found by any method. Nothing below 1/2.
+- No finite set with R < 0.576 found by any method. Nothing below 1/2.
 
 ## Proved here
 Paper: P1 Fejér–Riesz; P2 probabilistic; P3 projection Z^k->Z; P4 no exact t>=2 uniform difference sets (torsion-free);
@@ -35,13 +38,17 @@ Bu seeds (strict local optima: 61_12, 101_20, 199_40); Sidon "lower-flat" polyno
 0.0017 at k=16; 0.293 needed to beat 1/2).
 
 ## Active lines (>= 3)
-1. [construction / C½ falsification] exact box MILP (src/box_ilp.py) for X = 40..80: true box optimum R(X);
-   dense-regime trend; any R < 1/2 kills C½. Design search for coherent rounding (two-sided squares matched to a
-   p.d. profile).
-2. [lower bound] C½ restricted classes: Sidon differences (⟺ every Sidon D has min|F_D|^2 <= 0.293|D|); Bu class
-   (⟺ ρ^2 >= g/2 fails somewhere); induced-subgraph/clique bounds (JMTZ framework) toward exponent > 1/5.
-3. [obstruction] multiplicity barrier: is coherent gain Γ > 2 possible for any exact FR factor? (P8 sharpening.)
+1. [construction / C½ falsification] exact fixed-size box MILP (src/box_minlam.py, highspy, warm starts) around the
+   small-N minimum R ≈ 0.577 (N ≈ 24–29): is the box optimum lower? Any certified R < 1/2 kills C½.
+   Lead for an escape (only one found): a NON-WICK, nearly two-valued value distribution, as realised in Z_p by aligned
+   cyclotomic classes (E10: R_p = 0.416/0.368/0.313 for m = 3/4/6) — needs an identity valid on all of R (E11: naive
+   lifts and model sets fail).
+2. [lower bound] (a) averaged Bedert–Shankar boundary bound Σ_t |B_t| << nK^3 => K >> n^{1/4} (agent running);
+   (b) C½ on classes: SNZ (Sidon near-zero) conjecture => C½ for Sidon differences and for the whole Bu class (P13).
+3. [obstruction] multiplicity barrier (P8, gain identity, consistent-thinning heuristic); dissociated classes proved
+   (P10–P12); finite-vs-Z contrast (E10) shows any proof of C½ must use continuity/torsion-freeness.
 
 ## First concrete next step
-Read examples/box_ilp/X{40,50,60}.jsonl (MILP runs launched 2026-10-18 00:00, ~30 min/lam); compare the exact box
-optimum R(X) with SA; then try to prove min_x |F_D(x)|^2 = o(|D|) for Sidon D (would prove C½ for Sidon differences).
+Read examples/box_minlam/X40_n24.log and X45_n27.log (fixed-size MILP, launched 2026-10-18 00:35); then attempt SNZ for
+Singer sets via equidistribution of the Singer Fourier phases (sinc-interpolation of |G(l)| = √q values with
+pseudo-random phases), or a counterexample search for SNZ with structured (non-Singer) Sidon sets.

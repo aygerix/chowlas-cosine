@@ -65,7 +65,11 @@ Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_
 - KERNEL-CHECKED: difference-set square identity (`norm_sq_sum_exp`); Sidon consequence f_{D-D} >= -|D|/2 with |D-D|_+ = k(k-1)/2
   (`sidon_diffSet_main`); mean zero and Parseval (`integral_cosSum`, `integral_cosSum_sq`); P5 intersection lemma
   (`cosSum_inter_ge`, no sign hypothesis on M_i needed); P7 cube identity + multilinear vertex minimum (`cubeSum_min`).
-- NOT formalized: P7 admissibility count |A| = sum 2^{|S|-1} (distinct signed sums), P1 (needs Fejér–Riesz, absent from mathlib), P6, P8.
+- KERNEL-CHECKED 2026-10-18 (Lean agent, re-verified by lead: build OK, 29 #print axioms lines all [propext, Classical.choice,
+  Quot.sound], no sorry): P9 `star_lemma` (∀ W, v: Σ v_u v_w 1[|u−w|∈A] >= −2M Σ v^2) and `star_bound` (A-independent
+  I ⊂ ±A ⇒ sqrt|I|/2 <= M); P8 `card_le_of_sq_certificate` (λ + f_A = |Σ_{β∈B} q_β e^{iβx}|^2 − Σ_{g∈G} c_g cos(gx), G avoiding
+  0 and ±A, pair counts <= m at |g| ∈ A ⇒ |A| <= 2mλ^2; integer-frequency version) and the stated variant.
+- NOT formalized: P7 admissibility count, P1 (Fejér–Riesz absent from mathlib), P6, P10–P13, gain identity.
 
 ## P9. Induced-subgraph (local spectral) lemma (PROVED, elementary)
 For finite W ⊂ Z and real v on W: Σ_{u,w∈W} v_u v_w 1[u−w ∈ ±A] = (1/2π)∫ 2 f_A(x) |V(x)|^2 dx >= −2M(A) Σ v_u^2,
@@ -114,3 +118,20 @@ Remarks: (i) d = 2 already gives η ≈ 0.55 (q = 1 − 0.18 Z^2), i.e. R >= 0.2
 statement for several blocks / any 0-1 PSD block matrix Q gives R >= 1/2 with equality iff Q = J (single block):
 this is the rigorous form of H1 for degree-2 dissociated chaos; (iii) Bu's Singer-based S are Diss(4) only, so the
 extremal examples lie OUTSIDE the class — C½ for them is not covered.
+
+## P13. Even-part reduction for the Bu class (PROVED; numerically confirmed)
+(a) For every finite A ⊂ Z_{>0} and q >= 1: (1/q) Σ_{j<q} f_A(x + 2πj/q) = f_{A ∩ qZ}(x), hence M(A) >= M(A ∩ qZ).
+(b) Bu class: S ⊂ Z Sidon, α_j = 3s_j + 1/2, A = A(S) (|A| = k(k−1)). Then A ∩ 2Z = (S' − S')_+ with
+    S' = {ε_j α_j}, ε_j = (−1)^{s_j}: a ∈ A is even iff a = 3|s_i − s_j| with s_i ≡ s_j (2) or a = |3(s_i+s_j)+1| with
+    s_i ≢ s_j (2), i.e. exactly one frequency per pair, and these are the differences ε_iα_i − ε_jα_j. S' is Sidon
+    (its differences are distinct elements of ±A), so f_{A∩2Z} = (|F_{S'}|^2 − k)/2 and
+        M(A(S)) >= (k − min_x |Σ_j e^{i ε_j α_j x}|^2)/2.
+    Explicit instance (x = π/2): F_{S'}(π/2) = e^{iπ/4} Σ_j (−1)^{⌊s_j/2⌋}, so M(A(S)) >= (k − (n_{0,1} − n_{2,3})^2)/2,
+    n_{0,1} (n_{2,3}) = #{s ∈ S : s mod 4 ∈ {0,1} ({2,3})}.
+(c) Numerics (certified Bu sets, examples/bu_reproduction_certified.json): M(A ∩ 2Z) = k/2 to 3 decimals for
+    k = 12, 20, 40, 60, 80 (min |F_{S'}|^2/k < 1e-4; exact zero at x = π/2 for k = 80). So Bu's M = k/2 + excess with
+    the k/2 coming entirely from the even part, which is a Sidon-difference set.
+(d) Consequently: C½ for the whole Bu class (R(A(S)) >= 1/2 − o(1) for every Sidon S) follows from
+    **Sidon near-zero conjecture (SNZ)**: for every Sidon set D of k reals in a common coset of Z (integers or
+    half-integers), min_x |F_D(x)|^2 = o(k).  SNZ also gives R(D−D) -> 1/√2 for Sidon differences. P11 proves SNZ for
+    B_h sets with h -> ∞; E8 supports it (best min|F_D|^2/k decreasing to 0.0017 at k=16).

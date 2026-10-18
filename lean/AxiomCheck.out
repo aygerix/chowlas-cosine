@@ -61,3 +61,78 @@ cosSum_inter_ge' : ∀ (A₁ A₂ : Finset ℕ),
     (∀ (j : Fin k), v j = -2 ∨ v j = 2) ∧
       (∀ (θ : Fin k → ℝ), multilinPoly J v ≤ cubeSum J θ) ∧ ∃ θ, cubeSum J θ = multilinPoly J v
 'ChowlaCosine.cubeSum_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+@integral_cos_nat_mul_cos_int : ∀ {a : ℕ},
+  0 < a →
+    ∀ (m : ℤ), ∫ (x : ℝ) in 0..2 * Real.pi, Real.cos (↑a * x) * Real.cos (↑m * x) = if m.natAbs = a then Real.pi else 0
+'ChowlaCosine.integral_cos_nat_mul_cos_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+quadTrig_eq : ∀ (W : Finset ℤ) (v : ℤ → ℝ) (x : ℝ),
+  quadTrig W v x = (∑ u ∈ W, v u * Real.cos (↑u * x)) ^ 2 + (∑ u ∈ W, v u * Real.sin (↑u * x)) ^ 2
+'ChowlaCosine.quadTrig_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_quadTrig : ∀ (W : Finset ℤ) (v : ℤ → ℝ),
+  ∫ (x : ℝ) in 0..2 * Real.pi, quadTrig W v x = 2 * Real.pi * ∑ u ∈ W, v u ^ 2
+'ChowlaCosine.integral_quadTrig' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cosSum_mul_quadTrig : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (W : Finset ℤ) (v : ℤ → ℝ),
+      ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x * quadTrig W v x =
+        Real.pi * ∑ u ∈ W, ∑ w ∈ W, v u * v w * if (u - w).natAbs ∈ A then 1 else 0
+'ChowlaCosine.integral_cosSum_mul_quadTrig' depends on axioms: [propext, Classical.choice, Quot.sound]
+star_lemma : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (M : ℝ),
+      (∀ (x : ℝ), -M ≤ cosSum A x) →
+        ∀ (W : Finset ℤ) (v : ℤ → ℝ),
+          (∑ u ∈ W, ∑ w ∈ W, v u * v w * if (u - w).natAbs ∈ A then 1 else 0) ≥ -2 * M * ∑ u ∈ W, v u ^ 2
+'ChowlaCosine.star_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+nonneg_of_cosSum_ge : ∀ (A : Finset ℕ), (∀ a ∈ A, 0 < a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → 0 ≤ M
+'ChowlaCosine.nonneg_of_cosSum_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+star_bound : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (M : ℝ),
+      (∀ (x : ℝ), -M ≤ cosSum A x) →
+        ∀ (I : Finset ℤ), (∀ i ∈ I, i.natAbs ∈ A) → (∀ i ∈ I, ∀ j ∈ I, i ≠ j → (i - j).natAbs ∉ A) → √↑I.card / 2 ≤ M
+'ChowlaCosine.star_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+norm_sq_eq_sqTrig : ∀ (B : Finset ℤ) (q : ℤ → ℂ) (x : ℝ),
+  ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 = sqTrig B q x
+'ChowlaCosine.norm_sq_eq_sqTrig' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rp_le : ∀ (q : ℤ → ℂ) (β β' : ℤ), Rp q β β' ≤ ‖q β‖ * ‖q β'‖
+'ChowlaCosine.Rp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+lam_eq_of_sq_certificate : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          lam = ∑ β ∈ B, ‖q β‖ ^ 2
+'ChowlaCosine.lam_eq_of_sq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+coeff_eq_one_of_sq_certificate : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          ∀ {a : ℕ}, a ∈ A → (∑ β ∈ B, ∑ β' ∈ B, if (β - β').natAbs = a then Rp q β β' else 0) = 1
+'ChowlaCosine.coeff_eq_one_of_sq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_pairs_natAbs_le : ∀ (B : Finset ℤ) (a m : ℕ),
+  {β ∈ B | β - ↑a ∈ B}.card ≤ m → {β ∈ B | β - -↑a ∈ B}.card ≤ m → {p ∈ B ×ˢ B | (p.1 - p.2).natAbs = a}.card ≤ 2 * m
+'ChowlaCosine.card_pairs_natAbs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_sq_certificate : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          ∀ (m : ℕ), (∀ (g : ℤ), g.natAbs ∈ A → {β ∈ B | β - g ∈ B}.card ≤ m) → ↑A.card ≤ 2 * ↑m * lam ^ 2
+'ChowlaCosine.card_le_of_sq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_sq_certificate' : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          ∀ (m : ℕ), (∀ (g : ℤ), g ≠ 0 → {β ∈ B | β - g ∈ B}.card ≤ m) → ↑A.card ≤ 2 * ↑m * lam ^ 2
+'ChowlaCosine.card_le_of_sq_certificate'' depends on axioms: [propext, Classical.choice, Quot.sound]

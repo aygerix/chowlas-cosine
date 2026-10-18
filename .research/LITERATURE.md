@@ -28,3 +28,10 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
 - **Shankar arXiv:2609.05338v1 (4 Sep 2026)**: K(N) >> N^{1/5} (log-free). Exact identity sum_{t in A}|B_t| = 6Q - 4I >= T/3 replaces Bedert Lemma 7.4. Read in full; short; argument checked here line-by-line (it is elementary given Bedert's Props).
 - Yip arXiv:2610.01657v1: >> n^{1/6.43} (cited by Bu et al.; not read).
 - Belov–Konyagin: multisets with coefficients in {1..O(log^3 n)} can have min >= -O(log n)^3 (cited by Bedert) — set-ness is essential.
+- 2026-10-18 novelty check for C½ (alphaXiv discover "Chowla cosine problem", recency): only 2610.17160, 2609.05338,
+  2509.05260, 2509.03490, 1206.5012 relevant; none states a sharp-constant 1/2 conjecture (Bu et al. say going below 1/2
+  "appears to require an idea outside the square-identity paradigm"). Absence of a hit is not proof of novelty.
+- JMTZ 2509.03490 (ETH/Stanford): every graph with average degree d and |λ_min| <= d^γ contains a clique of size
+  d^{1−O(γ)}; corollary gives the first polynomial Chowla bound. Our P9 star lemma is the elementary special case of
+  their induced-subgraph viewpoint.
+- 2026-10-18 search 'Newman polynomials minimum modulus unit circle' (alphaXiv): no result on lower-flat 0/1 (Newman) or Sidon-support polynomials; nearest: flat Littlewood polynomials exist (BBMST 1907.09464). SNZ novelty unverified.

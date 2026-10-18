@@ -37,3 +37,33 @@ open ChowlaCosine
 #print axioms multilinPoly_min_at_vertex_two
 #check @cubeSum_min
 #print axioms cubeSum_min
+-- 6. Star / induced-subgraph lemma (P9)
+#check @integral_cos_nat_mul_cos_int
+#print axioms integral_cos_nat_mul_cos_int
+#check @quadTrig_eq
+#print axioms quadTrig_eq
+#check @integral_quadTrig
+#print axioms integral_quadTrig
+#check @integral_cosSum_mul_quadTrig
+#print axioms integral_cosSum_mul_quadTrig
+#check @star_lemma
+#print axioms star_lemma
+#check @nonneg_of_cosSum_ge
+#print axioms nonneg_of_cosSum_ge
+#check @star_bound
+#print axioms star_bound
+-- 7. Multiplicity bound for square certificates (P8)
+#check @norm_sq_eq_sqTrig
+#print axioms norm_sq_eq_sqTrig
+#check @Rp_le
+#print axioms Rp_le
+#check @lam_eq_of_sq_certificate
+#print axioms lam_eq_of_sq_certificate
+#check @coeff_eq_one_of_sq_certificate
+#print axioms coeff_eq_one_of_sq_certificate
+#check @card_pairs_natAbs_le
+#print axioms card_pairs_natAbs_le
+#check @card_le_of_sq_certificate
+#print axioms card_le_of_sq_certificate
+#check @card_le_of_sq_certificate'
+#print axioms card_le_of_sq_certificate'

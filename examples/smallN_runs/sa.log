@@ -230,3 +230,5 @@ stage r2: 356 tasks for N in 4..100
 [   77.2s] N=26 new best R_est=0.58469 max=37 by lead_X30_s1_adapt20to26_cap40 (cap 40)
 [   82.2s] N=22 new best R_est=0.60406 max=34 by lead_X30_s1_adapt20to22_cap35 (cap 35)
 [   87.5s] N=21 new best R_est=0.60803 max=36 by grow_from_20_cap37 (cap 37)
+skipping 0 already-completed tasks
+stage r3: 56 tasks for N in 37..100

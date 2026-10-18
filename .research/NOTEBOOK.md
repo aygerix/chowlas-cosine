@@ -113,3 +113,78 @@
   Falsification plan: any certified R < 1/2 at any N kills it (and would be a record). Implication: if C½ holds,
   Epoch's algorithm cannot exist and the lower-bound track is the correct direction; it does NOT by itself suggest a
   proof method (moments cannot give it: Bu ≈ centered chi-square, which moment constraints do not exclude).
+
+## 2026-10-18 — landscape picture, multiplicity via consistent thinning, Hoffman/Motzkin remark
+### Sidon lower-flatness (C½ on Sidon differences) — NUMERICAL
+- R(D−D) < 1/2 ⟺ min_x |F_D|^2 > (1 − 1/√2)|D| ≈ 0.293|D|. SA over Sidon D: best min|F_D|^2/k = 0.103 (k=5), 0.096 (6),
+  0.034 (8), 0.020 (10), 0.0041 (12), 0.0017 (16). Decreasing towards 0. P10 (B_3) / P11 (B_h) prove the dissociated case.
+### Why dense optima are good at small N and (probably) not asymptotically (HEURISTIC)
+- Dense A ⊂ [1,L]: low-x part of f is L·ρ̂(ξ) (profile ρ) and must be >= −c√L, so ρ̂ >= −c/√L: the positive-definiteness
+  tolerance is LOOSE at small L (c/√L ≈ 0.1 at L=30), allowing near-0/1 profiles (interval + resonant tail, few
+  rounding errors). As L grows the profile must become genuinely p.d. (cannot be flat-topped: |ρ(t+s)−ρ(t)|^2 <=
+  2ρ(0)(ρ(0)−ρ(s))), forcing a constant fraction κ of rounding noise. Singer differences are the triangle-profile
+  dense example with R = 1/√2. Expected: R_dense(N) rises from ≈0.60 (N≈20–34) towards ≈0.7, consistent with SA
+  (0.64, 0.67, 0.69, 0.75 at N = 54, 73, 122, 150), while sparse Bu sets approach 1/2 from above only for N >~ 10^4.
+  So the best known K(N)/√N is ≈0.6 at every scale tried, non-monotone in N; nothing points below 1/2.
+### Multiplicity > 2 via consistent thinning — obstruction (HEURISTIC, extends P4 / Bu §8)
+- Bu's thinning works because every A-frequency has ONE representation per symmetry orbit: Bernoulli thinning keeps
+  coefficients in {0,1}. For multiplicity m >= 3 the m representations must survive/die together ("consistent
+  thinning"), which needs a group of order m acting on the support and preserving differences: only translations and
+  the reversal exist (P4). Translation copies S ∪ (S+t): within-copy classes get 2σ^2 and cross classes σ^2 (2:1);
+  forcing cross classes to multiplicity 2 needs S−S ≈ invariant under 2t, i.e. a product S0 + T0, whose T0-diagonal
+  classes have multiplicity |T0| (tent / diagonal dominates). Every such attempt reproduces the non-uniform diagonal.
+### Hoffman / Motzkin / lonely-runner remark (PROVED, standard)
+- Cay(Z_X, ±A) has λ_min >= −2M for every X > 2 max A, so Hoffman gives: every I ⊂ Z with (I−I) ∩ ±A = ∅ has upper
+  density <= M/(N+M); equivalently M >= N μ(A)/(1 − μ(A)), μ(A) = Motzkin density of A-avoiding sets. Corollaries:
+  if ||aθ|| >= δ for all a ∈ A (some θ) then M >= Nδ/(1−δ); if A has no multiple of q then M >= N/(q−1) (i.e. small-R
+  sets contain >= (N − (q−1)M)/q multiples of q for every q). One-directional (intervals have μ = 1/(N+1)); no new
+  general bound.
+### C½ as a spectral statement (remark)
+- Adjacency of the distance graph Cay(Z, ±A) has spectrum {2 f_A(x)}, degree d = 2N, λ_min = −2M. C½ ⟺ λ_min <= −sqrt(d/2)
+  (1 − o(1)). Paley graphs (p ≡ 1 mod 4) have d = (p−1)/2, λ_min = −(1+√p)/2 ≈ −sqrt(d/2): Bu's constant 1/2 is exactly the
+  conference-graph value. So C½ says "distance graphs on Z are never spectrally better than Paley graphs". In finite groups
+  subgroups/complete graphs beat Paley (λ_min = −1), so any proof must use torsion-freeness (cf. P4), not only spectral
+  graph theory; JMTZ (2509.03490) is the closest general-graph statement (cliques at |λ_min| <= d^γ, γ small).
+### Finite cyclic analog beats 1/2 (E10) — what it teaches
+- Cyclotomic classes H ⊂ Z_p^* of index m with aligned Gauss sums have nontrivial Fourier values ((m−1)√p, −√p,...)/m,
+  giving grid-ratio 1/sqrt(2m) (verified 0.416, 0.368, 0.313 for m = 3, 4, 6). These are DENSE (d = p/m) and their
+  Z-lifts fail: off-grid values are sinc-interpolations of pseudo-randomly arranged periods (size ~ sqrt(p/m)·sqrt(log)),
+  and tapered multi-period lifts give coherent major-arc dips of size (X/q)·√q/m. Bu/Singer survive lifting only because
+  the certificate (|F_D|^2 >= 0, ρ^2 − diag) is an identity on all of R, not a mod-p statement.
+- Research question this isolates: is there a Gauss-sum-type phase alignment realizable by an R-identity (a square or
+  sum of squares in the continuous variable)? Without it, C½ stands; with it, the cyclotomic 1/sqrt(2m) mechanism could
+  give R -> 0 (Epoch direction).
+### Distributional formulation of the frontier (HEURISTIC, organising principle)
+- Let ν_A = law of f_A(x), x uniform on the circle: mean 0, variance N/2, min −M. Then R = M/sqrt N = β/(sqrt2 σ) with
+  β = −min, σ = sd. Sidon differences: ν ≈ (k/2)(Exp(1) − 1) ⇒ R = 1/sqrt2. Bu: ν ≈ (k/2)(χ²_1 − 1) ⇒ R = 1/2. PSD
+  degree-2 Gaussian chaos Σ λ_i (Z_i^2 − 1): R = Σλ_i/(2 sqrt(Σλ_i^2)) >= 1/2 (H1, rigorous in P12 for dissociated
+  frequencies). Two-point law (−β w.p. 1−p, α−β w.p. p): R = sqrt(p/(2(1−p))) -> 0 as p -> 0; this is what aligned
+  cyclotomic periods realise in Z_p (E10: p = 1/m). Non-Wick quartics such as (Z^2−1)^2 − 2 would give R ≈ 0.19.
+- So R < 1/2 requires a NON-WICK value distribution (strongly skewed, nearly two-valued) — "f_A ≈ α 1_E − β" for a
+  scattered set E of measure ≈ 2R^2. Obstruction in Z: a 0/1-coefficient polynomial cannot approximate a step function
+  (Gibbs overshoot ~0.09α ≫ β), so E must be a union of many tiny pieces around a quasi-subgroup of T, i.e. a
+  Meyer/model-set-like configuration whose exponential sums are two-valued. Candidate source to examine next: cut-and-
+  project (model) sets and their duals (Meyer's harmonious sets) — the continuous analogue of self-dual cyclotomic sets.
+- First check of the model-set lead (derivation, not yet numerics): A = {n : {nθ} ∈ W_n} with a tapered symmetric
+  window W_n = (−w(n/X)/2, w(n/X)/2) gives f_A ≈ Σ_m (bump at x = ∓2πmθ with profile c_m(t) = sin(π m w(t))/(π m)).
+  For m <~ sqrt X the bumps have amplitude ~X/m and their shapes are p.d. only if c_m(t) is p.d. in t, which fails
+  (oscillating in t for large m). Flat (Gauss-sum-like) amplitudes would need a window with flat Fourier coefficients —
+  the same problem one level up. Lead weakened, not killed (fractal / arithmetic windows untested).
+### SNZ for Singer sets — mechanism (HEURISTIC; possible theorem via Katz-type equidistribution)
+- Grid values G(l) = F_D(2πl/v) have |G(l)|^2 = q (l ≠ 0). Interpolation (exact up to O(1/v)):
+  F_D(2π(l+s)/v) = Σ_m G(m) D_v(l+s−m), D_v(n+s) ≈ (e^{2πis} − 1)/(2πi(n+s)). At s = 1/2:
+  F_D ≈ (i/π) Σ_n G(l−n)/(n+1/2): the pairs (G(l−n), G(l+1+n)) enter with weights ±1/(n+1/2) and cancel when the phase
+  sequence is locally symmetric about l+1/2. With equidistributed, roughly independent phases, J matched pairs occur
+  for some l once v >~ ε^{−J}, leaving a tail of size ~ sqrt(q/J): min|F_D|^2 <~ q/ log v -> 0 (slowly).
+- Rigorous route: joint equidistribution of (G(l), ..., G(l+J)) over l (Gauss/Kloosterman-type sums over F_{q^3};
+  Katz monodromy) would give SNZ for Singer sets, hence R -> 1/sqrt2 for Singer differences and, through P13, a
+  lower bound M(A(S)) >= k/2 − o(k) for Bu's own Singer-based sets.
+### The constructive question in its sharpest form (synthesis of P8, E10, consistent thinning)
+- In Z_p the R < 1/2 examples (E10) are cyclotomic association schemes: the difference multiplicity of H is CONSTANT on
+  each cyclotomic class (coherent multiplicity, exactly the P8 escape) and Gauss-sum alignment makes the spectrum
+  two-valued. In Z the same object would be a "torsion-free association scheme": a support B ⊂ Z whose difference
+  multiplicities are (nearly) constant on a partition of Z\{0} into classes, with the target classes forming A.
+  P4 forbids exactness (extreme differences have multiplicity 1); Bu's tent-thinning repairs the boundary only for
+  multiplicity 1 (Bernoulli keeps 0/1), and consistent thinning for m >= 3 needs a difference-preserving group of
+  order m (impossible). An R -> 0 construction must therefore absorb boundary defects of the lifted scheme with an
+  error budget o(sqrt N) while m -> ∞ — the precise quantitative target for the Epoch track.

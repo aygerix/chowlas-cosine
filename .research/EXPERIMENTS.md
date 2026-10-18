@@ -366,3 +366,24 @@ Reading: in Z_p the profile is constrained only at the critically sampled freque
 profiles with tuned tails beat Paley at small p. This is the Z_p version of the loose positive-definiteness tolerance
 that makes dense Z optima good at small N. Whether min M_p/√p -> 0 (towards Sanders' p^{1/3}) or levels off is the
 same open question as the dense Z regime.
+
+## E42 (2026-10-18 night) Structured-class branch and bound C(X,N,Y,h) — construct agent (interim) + lead certification
+Class C(X,N,Y,h) = {A ⊂ [1,X]: |A| = N, at most h holes in the core [1,Y], free tail in (Y,X]}.
+Code: .research/agents/construct_scratch/coretail_omp.c (OpenMP, one shared threshold).
+Method:
+- complete DFS over tails with the valid grid prune g_S(x_j) + U_j(k,i) < −thr (grid values are true values of f);
+- leaves are Newton-polished, so the result is NUMERICAL-EXACT class optimum, not interval-certified.
+Calibration: recovers the exhaustive optima N = 36, 41, 42 in 2–13 s (full exhaustive: hours).
+Results (dirichlet, 4 threads):
+- N = 45: class optimum R = 0.5718436 (X = 64, Y ∈ {36, 38}, h = 3). This is the E27/C-N45 set.
+- N = 50, X = 71, Y = 40, h = 3: COMPLETE, class optimum M = 4.0483107, R = 0.5725176 (3.2e10 nodes, 975 s).
+- N = 50, X = 72, Y = 38, h = 2: interrupted by a session restart after finding M = 4.0309356, R = 0.5700604
+  (holes {27}). Relaunched 2026-10-18 21:0x UTC for class optimality: runs/ct/o50y38x72.txt.
+Certification by the lead (.research/agents/construct_scratch/cert_n50.py; examples/construct/N50_certified.json).
+Both sets are certified by E2 (arb DFT + Taylor, oversample 64) AND E3 (PARI 2.15.4 Sturm):
+- max 72: M ∈ [4.0309354, 4.0309358], **R(50) <= 0.5700604**.
+- max 68: M ∈ [4.0483104, 4.0483108], R(50) <= 0.5725176.
+Both replace the E27 addendum's 0.584181. A, the minimizer and its ripple are in the json.
+Reading: the dense records N = 36, 45, 50 are 0.5648, 0.5718, 0.5701. That is flat at ≈ 0.57: no downward trend, and
+nowhere near 1/2. Single-swap tabu is inadequate in this regime (N = 36 optimum: 7 dips within 0.08; basin test fails
+2 of 4 runs).

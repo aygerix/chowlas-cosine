@@ -1,0 +1,1 @@
+DONE X=57 N=41 Y=33 h=2 G=684 part=1/4 patterns=141 rootpass=141 nodes=12429480 leaves=0 best_M=3.7000000 R=0.5778429 t=1.3

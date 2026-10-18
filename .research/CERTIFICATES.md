@@ -44,3 +44,16 @@ Certificate 1: chowla.certify_lower_bound(A, oversample=64) ⇒ min_x f_A >= −
 Certificate 2: chowla.sturm_certify(A, 38360448, 10^7): PARI/GP Sturm count, Σ T_a(y) + 3.8360448 has no root in [−1,1]
   (True, 0); with 3.8360432 it has 2 roots. Hence M(A) ∈ [3.8360432, 3.8360448], R(A) <= 0.571844.
 Status: INTERVAL-CERTIFIED finite case, two independent methods.
+
+## C-N50 (2026-10-18 night): N = 50 structured-class records (E42; examples/construct/N50_certified.json)
+A72 = [1..26, 28..40, 43, 44, 47, 49, 50, 52, 54, 60, 68, 69, 72] (max 72).
+A68 = [1..18, 20..37, 39..42, 47, 48, 50, 52, 57, 61, 62, 64, 65, 68] (max 68).
+Certificate 1: chowla.certify_lower_bound(A, oversample=64):
+  - A72: min f >= −4.0309358;
+  - A68: min f >= −4.0483108.
+Certificate 2: chowla.sturm_certify(A, B, 10^7), PARI/GP 2.15.4 on dirichlet:
+  - A72: Σ T_a + 4.0309358 has no root in [−1,1]; with 4.0309354 it has 2 roots.
+  - A68: Σ T_a + 4.0483108 has no root in [−1,1]; with 4.0483104 it has 2 roots.
+Hence M(A72) ∈ [4.0309354, 4.0309358] and **R <= 0.5700604**; M(A68) ∈ [4.0483104, 4.0483108] and R <= 0.5725176.
+Status: INTERVAL-CERTIFIED finite case, two independent methods.
+Reproduce with `src/dirun.sh -c 1 python .research/agents/construct_scratch/cert_n50.py`.

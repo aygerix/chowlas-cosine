@@ -22,3 +22,11 @@ Certificate 1 (lead): src/chowla.certify_lower_bound(A, oversample=64): arb ball
 Certificate 2 (agent): PARI/GP Sturm sequences on Σ T_a(t) + B over t ∈ [−1,1] bracket M(A) ∈ [3.3887696, 3.3887699].
 Status: INTERVAL-CERTIFIED finite case (two independent methods). Says nothing about any limit.
 Also certified (same method): N=35 (max 48) R <= 0.567674; N=34 (max 48) R <= 0.574135.
+
+## C-SB (2026-10-18): Bu sums on full Singer sets (E25), examples/singer_bu/certified.json (S, shift, N, max, bound)
+Method: src/chowla.certify_lower_bound(A, oversample=16) — arb ball DFT of f, f', f'', f''' on L = 2^⌈log2(16 max A)⌉
+points + 4th-order Taylor remainder (rigorous lower bound on min over ALL real x). One method only (no Sturm check: degree
+~1.9e5 is beyond the exact route); status INTERVAL-CERTIFIED (single method).
+   q = 61: N = 3782, max 10707, min f >= −37.1485, R <= 0.60406
+   q = 101: N = 10302, max 30575, min f >= −59.7566, R <= 0.58874
+   q = 151: N = 22952, R <= 0.57770;  q = 199: N = 39800, R <= 0.56630;  q = 251: N = 63252, max 189688, R <= 0.56272

@@ -122,3 +122,15 @@ Baselines: Rudin–Shapiro c = 2.00 (|P| <= sqrt(2X)), Legendre/Fekete c ≈ 2.0
 between), random ≈ sqrt(2 log X). Optimised sequences are strongly skewed at small X (c < sqrt2 = arcsine value) but c
 RISES with X (also with 10x more search), crossing the 1.33 needed by the dense heuristic near X ≈ 100. Same pattern as
 E21 (skew of the exhaustive 0/1 optima fades with N). Mechanism probe only: says nothing rigorous about the limit.
+
+## E25 (2026-10-18) Bu's identity on FULL Singer sets, best cyclic shift (src/singer_bu.py; certificates C-SB below)
+S = shifted, centred Singer set (k = q+1, L ≈ k^2/2, no thinning, no parity block); shift = best of ~40–60 by FFT grid;
+chosen set certified by arb ball arithmetic (chowla.certify_lower_bound, oversample 16):
+   q:        13     23     31     43     61      101     151     199     251
+   N:       182    552    992   1892   3782   10302   22952   39800   63252
+   R (est): .673   .644   .635   .618   .604    .588    .576    .565    .561
+   R_cert:   —      —      —      —    .60406  .58874  .57770  .56630  .56272
+Better at every size than Bu et al.'s random tent-thinned sets (E4: 0.6573 at N = 6320; their paper: 0.635 at 25440,
+uncertified). Excess fits R − 1/2 ≈ 0.95/√k (i.e. M ≈ k/2 + 0.95√k: the C-fluctuation at the zeros of P), so R -> 1/2
+from above like N^{-1/4}, as P16 (kernel-checked) and the heuristic predict. q = 251 gives the best certified finite R
+known to us (0.56272 at N = 63252), narrowly beating the dense N = 36 optimum (0.56481). Not a step toward R -> 0.

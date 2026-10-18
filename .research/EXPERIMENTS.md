@@ -456,3 +456,19 @@ Reading:
   Chowla.
 - Tried and failed (NOTEBOOK): descending spikes through scales with P25 and the triangle inequality loses a factor
   5 per scale (g_H <= 5g_{H/4} + 4M), the same as P24(b) shell growth. The phase information must be used.
+
+## E46 (2026-10-19) KILLED: ball-shaped Kronecker/Bohr sets as a construction (src/e46_bohr_ball.py, seed 20261019)
+A = {a <= X : |(2a/X − 1, ‖aα₁‖/r, …, ‖aα_d‖/r)|₂ <= 1}, density ≈ 1/4 in the lift, 3 random α per row
+(the cube variant crashed at d = 0, a script bug; irrelevant).
+R = M/√n (min over 3 α):
+   d:       0      1      2      3      4      6      8
+   n≈400   4.38   6.49   7.93   9.02   10.41  11.65  12.39
+   n≈1600  8.70   12.85  15.91  18.39  20.26  23.46  25.53
+R ∝ √n at every d, so M is linear in n, and R grows with d. Mechanism (the motivation was that a (d+1)-ball's Fourier
+transform has a first negative lobe exponentially small in d):
+- (i) The ball transform still has real negative values at lattice frequencies k (Λ₁ min ≈ −0.13 for the disk).
+  Each Kronecker spike x ≈ −2πk·α carries a twisted profile with such a value, so there is a Gibbs lobe linear in n.
+- (ii) In high dimension almost all of the ball's volume lies in a boundary layer, so the 0/1 set is a sum of very many
+  small spikes (lattice-point discrepancy) and behaves like noise, giving M ~ √(n log X) or worse. For d >= 4 the
+  r = 0.5 cap also clips the ball in T^d.
+A 0/1 set cannot have both a smooth shape (small Gibbs) and no boundary noise. This is the same tension P28 isolates.

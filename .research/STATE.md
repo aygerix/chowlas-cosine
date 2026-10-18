@@ -79,11 +79,15 @@ cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatnes
 ## Compute policy
 Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).
 
-## First concrete next step
-(1) Collect the structured MILP result for N = 45 (examples/milp/X62_n45_Y34_H3.log, F4) and certify it; if R(45) <
-0.565 the dense regime trends down — then run N = 50, 55, 60 the same way (one job at a time, F4 load < 12). Exhaustive
-box search is too slow at L − N >= 19 (N = 41, L = 60 ran > 2 h); rerun with L = round(1.375N) + 1.
-(2) Integrate the Lean agent's unconditional explicit P16 (lean/ChowlaCosine/HalfSquare*.lean; report
-.research/agents/lean_p16_explicit.md): re-run lake build + AxiomCheck yourself before recording KERNEL-CHECKED.
-(3) Lower-bound line: the only universal lead is Bedert's (S') "approximate additive closure of {F > K^2}"; the
-measure form ν∗ν = ν/K + (1 − 1/K)λ (NOTEBOOK session 2) is the cleanest language for it.
+## First concrete next step (updated 2026-10-18 late)
+(1) Lower bound (the sharpest open target): Conjecture G / Lemma S (PROOFS P19). |B_t| <= CK² in all finite abelian groups
+⇒ Chowla exponent 1/3 in Z (transfer + Shankar). P19 proves Fourier-polynomial (degree-r, A-independent) inequalities cannot
+do it; any proof must use pointwise positivity of ALL characters structurally. Start in F_3^d with the slice form: S_0, S_1
+(S_2 = −S_1), a = 1̂_{S_0}, z = 1̂_{S_1}; constraints a + 2Re(ω^j z) >= −K (j = 0,1,2) for every ψ, |S_1| <= |S_0| + K;
+D-fibres = h in exactly two of S_0, S_1, −S_1. Paley sets give ratio 1/2 and are local maxima (E30).
+(2) Dense regime (C½ only, low priority): exhaustive N = 42 in [1,60] running/finished (examples/smallN_runs/local_42_60.log);
+N = 50 MILP is search-limited (R <= 0.584181). Large N needs a search that respects the p.d. macroscopic profile.
+(3) Constructions: every known mechanism (squares, dense profiles, Sidon differences, Hermite mixtures, modular lifts)
+is pinned at >= 1/2 by a proved or heuristic obstruction (ρ*, diagonal concentration, Parseval noise). No live sub-1/2
+candidate; a new mechanism must be non-square, non-profile, non-dissociated.
+Compute: laptop via src/localrun.sh (memory guard, <= 4 cores, user rule); F4 via src/f4run.sh when load < 12.

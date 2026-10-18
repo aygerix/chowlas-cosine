@@ -567,3 +567,28 @@
   unbounded. This is the opposite of merit-factor problems: two-valued off-peak autocorrelation with MANY nonzero values.
   - Strong form, consistent with all data (exhaustive N <= 42 min 0.5648; Bu decreasing to 1/2 from above): R(A) > 1/2
     for EVERY finite nonempty A. Recorded as a conjecture (C½-strong). Not assumed.
+
+## 2026-10-18 (night, cont.) — Lemma OR(2), the O4-shaped class in Z: energy form and the reformulation through levels
+- **Setting.** A = S ∪ (S+t), S a transversal mod t, s_y = y + t·k_y, s'_y = s_y + t/2. Then f_A(x) = 2cos(tx/2)·g(x) with
+  g = Σ_y cos(s'_y x), and f_A(x + 2πj/t) = 2cos(tx/2)·w_j(x) where w_j = Re v̂_x(j) and v_x(y) = e^{i s'_y x}.
+- **Energy form (lead; proof sketch, constants unoptimized).** For x in the "good" set G (cos(tx/2) >= 1/2 and
+  Σ_y cos((s'_y + s'_{−y})x) >= −t/2), every w_j >= −M.
+  - Then Σ_j w_j = t·cos(s'_0 x) and Σ_j w_j² >= t²/4.
+  - Write P = Σ w^+ <= t(M + 1) and Q₂ = Σ_{w>0} w² >= t²/4 − tM². Hölder (Σw² <= (Σw)^{2/3}(Σw⁴)^{1/3}) gives
+    Σ_j |v̂_x(j)|⁴ >= Q₂³/P² >= t⁴/(512(M+1)²) when M² <= t/8.
+  - Integrate over x, using ∫Σ_j|v̂_x(j)|⁴ = t·E(S) (additive energy). This gives (M + 1)² >= |G|·t³/(512·E(S)).
+  - So the class satisfies M >~ √(t³/E(S)): Chowla when S is near-Sidon (E(S) = O(t²)), exponent δ when
+    E(S) <= t^{3−2δ}.
+  - **Gap:** |G| >= c needs care when the m_y = s'_y + s'_{−y} cluster at small multiples of t. It holds in the examples
+    checked by hand (all m_y = t or 2t). Not yet written as a full proof.
+- **Meaning.** This is the pseudo-random half of a dichotomy; it is standard in flavor (energy instead of Schur triples).
+  The structured half (E(S) >= t^{3−δ}, S near a GAP) is exactly where O4 lives in groups: a graph of a level function
+  k: Z_t → Z with Gauss-sum phases. That half is where torsion-freeness must enter.
+- **Level reformulation of the structured half.** At x = 2π(j + φ)/t: v_x(y) = e^{2πi(j+φ)(y + t/2)/t}·e^{2πi k_y φ}. So for
+  every φ the vector y ↦ e^{2πi k_y φ}·e^{2πiφ y/t} (DFT index j) needs DFT real parts >= −M/(2cos πφ), uniformly in φ.
+  - At φ = 1/4 the factors are i^{k_y}: this is O4's condition, except for the slow twist e^{2πiy/(4t)} that Z adds.
+  - At other φ the levels rotate with speeds k_y.
+  - Groups see only φ ∈ (1/4)Z. Z must satisfy the condition at every φ. A proof in the structured case should show that
+    no level function k (with S near a GAP) keeps the DFT of e^{2πi k_y φ} one-sided for a positive measure of φ.
+- **E38 consistent:** under equal search effort the class is 0.04–0.08 worse than unrestricted sets, and the gap grows
+  with N.

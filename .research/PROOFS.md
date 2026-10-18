@@ -340,7 +340,8 @@ of the method. TARGET LEMMA S (OPEN): ∫ min(|1̂_{B_t}|, K³)² <= C K^{4−δ
 1̂_{B_t} below height K² and (S2) meas{|1̂_{B_t}| >= s} << K^{1−δ}/s for K² <= s <= K³.
 Groups: Prop 7.3 holds in every finite abelian group and bounds in all Z_N transfer to Z; unions of subgroups and an F_3^d
 family give |B_t| <~ K² (PROVED for those classes). OPEN: does some finite group have |B_t| >> K^{2+ε}? (If yes, Lemma S
-must use torsion-freeness.) By-product (agent, elementary): fibre domination |1̂_{S_r}(θ)| <= K + 1̂_{S_0}(θ) for residue
+must use torsion-freeness.) ANSWERED (P20): YES, |B_t| = K²(K−1) in F_p^{1+3a}; the group
+exponent window is [3, 4]. By-product (agent, elementary): fibre domination |1̂_{S_r}(θ)| <= K + 1̂_{S_0}(θ) for residue
 fibres S_r = {s : r + st ∈ A}.
 Conjecture G (2026-10-18, lead; evidence E30). There is an absolute C such that for every finite abelian group Γ, every
 symmetric A ⊂ Γ\{0} with F = 1̂_A >= −K on Γ̂, and every t ∈ Γ: |B_t| <= C·K² (B_t = {m ∈ A : m − t ∈ A, m + t ∉ A}).
@@ -349,3 +350,32 @@ Consequence: by the transfer Z -> Z_N (P19) |B_t| <= CK² in Z for every t, and 
 Status: OPEN; Paley sets show C >= 1/2 is needed; P19 shows it cannot be proved by degree-2 gap inequalities (and
 degree-r Fourier manipulations cap at K^{2r}), so it needs structural (degree-1 / additive-combinatorial) input. In Z the
 statement follows from C½ (|B_t| <= n <= K²), so it is a strictly weaker, finite-field-model target.
+**REFUTED 2026-10-18 (P20 Theorem 1; agent conjG, lead-verified with an independent construction, E31):** in F_p^4 the
+complement of an elliptic quadric with isotropic t has K = p, |B_t| = p²(p−1) = K²(K−1). G in Z is untouched (it follows
+from C½); the route "G in all groups ⇒ exponent 1/3" is dead.
+
+## P20. Run-tops in finite abelian groups: Conjecture G is false, the group exponent is in [3, 4] (agent "conjG"
+## 2026-10-18, report .research/agents/conjG_report.md; Theorem 1 lead-verified (E31, independent construction);
+## Theorem 2 and Lemma 3 proofs checked line by line by lead; Theorem 4 / Prop 5 read, not re-derived)
+Setting: Γ finite abelian, A = −A ⊂ Γ\{0}, F = 1̂_A real, K = −min F, B_t = {m ∈ A : m − t ∈ A, m + t ∉ A}.
+Theorem 1 (PROVED on paper by agent; NUMERICAL-EXACT for 9 (p,a), lead-confirmed for F_p^4, p <= 13). For every odd p,
+a >= 1, q = p^a, Γ = F_p × F_q × F_{q²}, t = (1,0,0): A = {(s,r,w) : r ≠ 0, s ≠ Tr(w²/(θr))} ∪ {(s,0,w) : Tr(θw²) ≠ 0}
+(θ chosen with η(θ)·Σ_w e_p(Tr w²) = −q) has min F = −q and |B_t| = (q−1)q² = K²(K−1). Spectrum {−q, (p−1)q, q(q−1)}.
+Mechanism: every t-line with r ≠ 0 misses A in exactly one point (one run, one top); after the w-sum the phase
+Tr(w²/(θr)) becomes F_p-linear in r (dual of a vectorial bent map), so the j ≠ 0 slices are two-valued; fibres over r = 0
+are empty/full and repair the degree-0 slice. Simplest form (lead, E31): A = {x ∈ F_p^4 : x1x2 + x3² − d x4² ≠ 0}
+(d a non-residue), t = e1 isotropic: Q is affine on each t-line, so lines with x2 ≠ 0 lose exactly one point.
+Theorem 2 (PROVED; lead checked). ord t = 3, χ0(t) = ω, H̄ = Γ/⟨t⟩, U(y) = Σ_{x∈A∩y} χ0(x). Û(φ) = F(χ0φ) >= −K, so
+U + Kδ0 is p.d. on H̄, hence so is its cube; U³ = ρ(1_E − 1_D) off y = 0 (ρ = χ0³ ∈ Ĥ̄; D = 2-point cosets = run-tops,
+E = singleton cosets). Evaluating at ρ̄: |D| − |E| <= (K + u0)³, u0 = U(0) ∈ {0, −1}. So |B_t| <= K³ if E = ∅ (sharp
+by Theorem 1 with p = 3).
+Lemma 3 (PROVED; lead checked). If all ⟨t⟩-cosets over a subgroup V̄ of index m are empty/full, |D| + |E| <= (m−1)K²
+(Û sums to 0 on each V̄^⊥-coset; Σx_i² <= m(m−1)K² for x_i >= −K, Σx_i = 0; Parseval). Equality in Theorem 1.
+Theorem 4 (agent). In Z_3 × H with 3 ∤ |H| equality in Lemma 3 forces m <= 2 (Galois: U real ⇒ degree-0 contradiction):
+the exact extremal mechanism needs p-torsion outside ⟨t⟩. Prop 5 (agent): if S0 ∪ {0} is a subgroup, |B_t| <= 8K² + 3K.
+Barriers (agent, PROVED): (i) every "Σ_h product of p.d. fibre atoms" inequality has monomials equal to 1 on singleton
+fibres, so it bounds |D| − c|E|, never |D| alone; (ii) arguments seeing only real-reduced fibre data (1_E − 1_D,
+1_E + 2·1_D + 3·1_F) are capped at K⁴ (partial-spread example). (iii) Group form of Lemma S fails for every δ > 1.
+Consequences: any group-agnostic run-top bound is >= K³ (so the run-top + Shankar route gives at best exponent 1/4
+unless it uses torsion-freeness / interval structure); G3 (|B_t| <= CK³ in all groups, or just in Z) would give
+exponent 1/4 (> Shankar's 1/5). Novelty: not checked (likely related to two-weight codes / strongly regular Cayley graphs).

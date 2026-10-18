@@ -219,3 +219,18 @@ Frontier max|B_t| subject to K <= K0 (t = e_1), 200k iterations, seed 1, K0 ∈ 
    |B_t| = 51, ratio 0.4615 — SA finds nothing better; p = 1009: K = 16.382, |B_t| = 123, ratio 0.4583 — nothing better.
    Paley is a local maximum under pair toggles; its ratio -> 1/2 from below. Suggests C = 1/2 might be the group
    constant in Conjecture G (weak evidence).
+   CORRECTION 2026-10-18: "never above 1/2" was a search limit. Quadric level sets give ratio exactly 1 and 2, and P20
+   Theorem 1 gives |B_t| = K²(K−1) (unbounded ratio). SA started from Theorem 1 stays there; from scratch it never finds
+   it (isolated local maxima). Conjecture G is REFUTED (E31, P20).
+
+## E31 (2026-10-18) Lead's independent check of the Conjecture G counterexample (src/e31_quadric_check.py; laptop,
+## localrun.sh -m 2; numpy FFT over all p^4 characters, values integral to 1e-6 and rounded: NUMERICAL-EXACT)
+A = {x ∈ F_p^4 : x1x2 + x3² − d·x4² ≠ 0}, d the least non-residue (elliptic quadric complement), t = e1 (isotropic).
+Built independently of the agent's field-trace construction. Checks: A = −A, 0 ∉ A, F real, all values integers.
+   p  |A|    K   F-spectrum            |B_t|   p²(p−1)   |B_t|/K²
+   3  60     3   {−3, 6, |A|}          18      18        2
+   5  520    5   {−5, 20, |A|}         100     100       4
+   7  2100   7   {−7, 42, |A|}         294     294       6
+   11 13420  11  {−11, 110, |A|}       1210    1210      10
+   13 26520  13  {−13, 156, |A|}       2028    2028      12
+Confirms |B_t| = K²(K−1) in rank 4 for every tested p (P20 Theorem 1, a = 1). Runtime < 10 s.

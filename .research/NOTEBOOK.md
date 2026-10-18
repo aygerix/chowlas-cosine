@@ -404,3 +404,34 @@
   So run-tops exceed singletons by at most K³. Not sufficient: |E| is unbounded at K = 1 (A = graph of a homomorphism on
   a subgroup), and degree-3 positivity alone is capped (P19). A proof of G needs to rule out D-fibres while E-fibres
   carry the compensation — the same "boundary vs bulk" structure as run-tops in Z.
+
+## 2026-10-18 (session 2, late) — Conjecture G refuted (P20); what survives for Z
+- Agent conjG: Conjecture G is FALSE in groups. P20 Theorem 1: |B_t| = K²(K−1) in F_p^{1+3a}. Lead re-verified with an
+  independent, simpler set (E31): A = {x ∈ F_p^4 : x1x2 + x3² − d x4² ≠ 0}, t = e1. Q is affine along t-lines (t isotropic),
+  so each line with x2 ≠ 0 loses exactly one point (one run, one top: p²(p−1) tops); lines with x2 = 0 are FULL
+  ((x3,x4) ≠ 0) or empty, and these full lines repair the degree-0 slice. Spectrum {−p, p(p−1), |A|}: K = p.
+- Theorem 2 (agent, lead checked): ord t = 3 ⇒ |D| − |E| <= (K + u0)³ via U³ = ρ(1_E − 1_D) and Schur cubes of the p.d.
+  fibre transform. Barrier: singleton fibres E always count +1 in any positive combination of fibre monomials; and
+  monomials U^aŪ^b c^d (a ≡ b mod 3, a + b odd) give 2^d|D| <= |E| + (K+u0)^{a+b}(K+c0)^d — |D| <= ε|E| + C_ε K^{β(ε)},
+  never |D| alone (E is unbounded at K = 1: subgroup graphs).
+- Z version of the fibre transform (PROVED, lead; elementary). A = −A ⊂ Z\{0}, F >= −K, t >= 1, A_y = {k : y + kt ∈ A}
+  (0 <= y < t), S_y(z) = Σ_{k∈A_y} z^k. For φ ∈ R, U^φ(y) := e(yφ/t)S_y(e(φ)) has DFT_j = F((φ+j)/t) on Z_t, so U^φ + Kδ0
+  is p.d. on Z_t. Schur products: for any z_1..z_r ∈ T with Πz_i = 1,
+      Σ_{y=1}^{t−1} Π_i S_y(z_i) + Π_i (S_0(z_i) + K) >= 0.
+  In correlation form: Σ_d μ̂(d)·N_r(d) >= −(K-terms), N_r(d) = #{a : a, a + d_1t, .., a + d_{r−1}t ∈ A} — positivity of
+  the t-direction correlations. With z_i = ω this is exactly the Z_{3t} multiset statement: S_y(ω) only sees A_y mod 3
+  (a run contributes a unit or 0 by its length mod 3; the pair {0,2} contributes −1 like a 2-run, {0,3} contributes 8).
+  So in Z the cube identity "U³ = ±ρ on 2-point fibres" has no analogue: fibres are long and alias mod 3. The order-3
+  mechanism does not transfer; I have no Z-specific replacement yet.
+- What Z inherits that Theorem 1 violates (NEW refined finite model). The transfer Z -> Z_N (A ⊂ [−N/4, N/4]) never has
+  a ⟨t⟩-coset inside A (choose N prime: the only coset is Z_N). Theorem 1 needs full cosets (r = 0 fibres; Lemma 3 and
+  Theorem 4 both use the degree-0 repair). Conjecture G_noFull: |B_t| <= C K² whenever A contains no ⟨t⟩-coset.
+  It would imply exponent 1/3 in Z; its K³ version exponent 1/4. Evidence so far: anisotropic quadric level sets
+  {Q = c} (lines meet in <= 2 points: no full cosets) give ratio exactly 1. Next: exhaustive test over all
+  Stab(t)-invariant sets A = {x : (Q(x), B(x,t)) ∈ S} in F_p^n (line patterns follow the affine dynamics
+  (q, b) -> (q + b + Q(t), b + 2Q(t)) on F_p²); restrict to no-full and measure max |B_t|/K² versus p, n.
+- Strategic review (skill §3). Distance: the run-top route is now mapped: degree-2 Fourier methods <= K⁴ (P19, sharp,
+  exponent 1/5); group-agnostic methods >= K³ (P20; at best exponent 1/4). A proof of K^{3−δ} must use torsion-free /
+  interval structure; G_noFull is the minimal such input that kills the known extremal mechanism. Kill: Conjecture G,
+  "Paley optimal", group-form Lemma S. Continue: G_noFull probe (cheap, discriminating); P16-type C½ for further
+  classes; dense-regime exhaustive. Construction track: no live sub-1/2 mechanism; every known one is pinned.

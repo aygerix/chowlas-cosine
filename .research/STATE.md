@@ -58,8 +58,9 @@ Fejér-kernel counterexample to the displayed chain); not used here.
   run-top test function with L^1 <~ K^{1/2}.
 
 - P19 (agent, proof read by lead): Bedert's |B_t| << K^4 is sharp for all degree-2 gap-inequality methods (random
-  relaxed sets); the universal exponent 1/4 needs Target Lemma S (degree-1 input). Open group question: finite abelian
-  groups with |B_t| >> K^{2+ε}?
+  relaxed sets); the universal exponent 1/4 needs Target Lemma S (degree-1 input).
+- P20 (agent conjG; Theorem 1 lead-verified E31): Conjecture G FALSE in groups, |B_t| = K²(K−1); ord t = 3 without
+  singleton cosets gives |B_t| <= K³ (sharp). Group-agnostic run-top bounds cannot beat K³.
 
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
@@ -79,12 +80,13 @@ cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatnes
 ## Compute policy
 Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).
 
-## First concrete next step (updated 2026-10-18 late)
-(1) Lower bound (the sharpest open target): Conjecture G / Lemma S (PROOFS P19). |B_t| <= CK² in all finite abelian groups
-⇒ Chowla exponent 1/3 in Z (transfer + Shankar). P19 proves Fourier-polynomial (degree-r, A-independent) inequalities cannot
-do it; any proof must use pointwise positivity of ALL characters structurally. Start in F_3^d with the slice form: S_0, S_1
-(S_2 = −S_1), a = 1̂_{S_0}, z = 1̂_{S_1}; constraints a + 2Re(ω^j z) >= −K (j = 0,1,2) for every ψ, |S_1| <= |S_0| + K;
-D-fibres = h in exactly two of S_0, S_1, −S_1. Paley sets give ratio 1/2 and are local maxima (E30).
+## First concrete next step (updated 2026-10-18, after P20)
+(1) Lower bound. Conjecture G is REFUTED in groups (P20: |B_t| = K²(K−1) in F_p^4, quadric complement, full cosets
+essential); group window [3, 4]. Group-agnostic arguments give at best |B_t| ≲ K³ (exponent 1/4 via Shankar). New
+refined finite model inherited from Z: G_noFull (no ⟨t⟩-coset inside A; transfer to Z_N, N prime, always satisfies it).
+First experiment: exhaustive over Stab(t)-invariant sets {x : (Q(x), B(x,t)) ∈ S} in F_p^n (p = 3, 5, 7; n = 4..6),
+no-full filter, max |B_t|/K². Growth ⇒ G_noFull false (need interval structure); bounded ⇒ try to prove G_noFull
+for ord t = 3 (fibres of size <= 2: types ∅/E/D; Theorem 2 gives |D| <= |E| + K³).
 (2) Dense regime (C½ only, low priority): exhaustive N = 41 ([1,57]) 0.57404, N = 42 ([1,60], complete) 0.57896 — the
 0.49 + 0.54/√N fit fails at N = 42; optima since N = 36 stay >= 0.574 (consistent with the anatomy prediction of a rise);
 N = 50 MILP is search-limited (R <= 0.584181). Large N needs a search that respects the p.d. macroscopic profile.

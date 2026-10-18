@@ -85,7 +85,8 @@ Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the M
 do it; any proof must use pointwise positivity of ALL characters structurally. Start in F_3^d with the slice form: S_0, S_1
 (S_2 = −S_1), a = 1̂_{S_0}, z = 1̂_{S_1}; constraints a + 2Re(ω^j z) >= −K (j = 0,1,2) for every ψ, |S_1| <= |S_0| + K;
 D-fibres = h in exactly two of S_0, S_1, −S_1. Paley sets give ratio 1/2 and are local maxima (E30).
-(2) Dense regime (C½ only, low priority): exhaustive N = 42 in [1,60] running/finished (examples/smallN_runs/local_42_60.log);
+(2) Dense regime (C½ only, low priority): exhaustive N = 41 ([1,57]) 0.57404, N = 42 ([1,60], complete) 0.57896 — the
+0.49 + 0.54/√N fit fails at N = 42; optima since N = 36 stay >= 0.574 (consistent with the anatomy prediction of a rise);
 N = 50 MILP is search-limited (R <= 0.584181). Large N needs a search that respects the p.d. macroscopic profile.
 (3) Constructions: every known mechanism (squares, dense profiles, Sidon differences, Hermite mixtures, modular lifts)
 is pinned at >= 1/2 by a proved or heuristic obstruction (ρ*, diagonal concentration, Parseval noise). No live sub-1/2

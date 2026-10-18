@@ -318,7 +318,8 @@ Chowla up to √log for dense sets — a target, not a result. Note the L^∞ hy
 (where G is the profile-approximation error).
 
 ## P19. Bedert's run-top bound |B_t| << K^4 is sharp for degree-2 methods (agent "runtop" 2026-10-18; report
-## .research/agents/runtop_report.md; proof read by lead, key identity re-derived by hand; numeric spot-check pending)
+## .research/agents/runtop_report.md; proof read by lead, key identity re-derived by hand; lead's independent numeric
+## check src/p19_thmA_check.py: min f_t∗f_t ≈ −3.4√(N log N), |B_t|/K_*⁴ ≈ 0.05 for N = 2e3..3.2e4, t = 1, 3)
 Setting: A = −A ⊂ Z\{0}, F = 1̂_A, G = F + K, B_t = {m ∈ A : m − t ∈ A, m + t ∉ A}, f_t = 2(1 + sin 2πtx)F.
 Identity (lead re-derived): f_t∗f_t = (4 − 2cos 2πtx)F + 2e(−tx)1̂_{A∩(A+2t)} + 8 Im 1̂_{A∩(A+t)}.
 Theorem A (OBSTRUCTION, PROVED by agent; probabilistic, explicit constants). For N >= 2.4e6, 1 <= t <= √N, random symmetric

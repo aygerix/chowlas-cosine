@@ -254,3 +254,11 @@ A = {x2 ≠ 0, x1x2 + N(x3,x4) ≠ 0} ∪ {x2 = 0, x1 ≠ τ2(x3,x4)}, t = e1. W
    |B_t| = p³ exactly; t-lines all have p − 1 points; |B_t|/K³ = 1/27; |B_t|/K² = p/9.
 Best random homogeneous cubic τ2 (300 trials) lowers K slightly: p = 5: 13.09, 7: 20.89, 11: 30.65, 13: 38.92,
 17: 48.61, 19: 56.99 (K = p + max ĝ exactly in every case). Confirms P21; refutes G_noFull.
+
+## E34 (2026-10-18) One t-run per residue class in Z (src/e34_onerun.py; FFT + Newton, UNCERTIFIED) — UNINFORMATIVE
+A = {y + tk : 0 <= y < t, τ(y) < k <= τ(y) + ℓ}, |A| = ℓt, t ∈ {31, 101, 307}, ℓ ∈ {2,3,4,8}, τ ∈ {0, random, c·y,
+c·y², c/y mod t} (12 choices each). Best R: 1.9–4.4 (t = 31), 3.0–7.0 (t = 101), 4.0–10 (t = 307); τ = 0 and linear τ
+give intervals/GAPs (R ≈ 0.22√n). Every family is dominated by the macroscopic Gibbs lobe of the run-start set S
+(uniform on [0, t²] with a sharp cutoff: M ≈ 0.22·|A|·const), so the experiment does not test the run mechanism of
+Lemma OR at all. A meaningful test needs S with a tapered positive-definite profile and algebraic (not random) fine
+structure. Kept as a failed probe.

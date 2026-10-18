@@ -77,3 +77,13 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
 - Contrast: flat ±1 (Littlewood) polynomials exist, δ√n <= |P| <= Δ√n (Balister–Bollobás–Morris–Sahasrabudhe–Tiba,
   arXiv:1907.09464). Their autocorrelations are not 0/1, so this does not transfer to cosine sums with unit
   coefficients; it does show "flat from below" is not forbidden by L²/L⁴ considerations alone.
+
+## Group analogue of Chowla (context for P20/P21; quick check 2026-10-18)
+- Sanders, "Chowla's cosine problem", arXiv:0807.5104 (2008): for finite G and symmetric A with |A| ≍ |G|, either A is
+  close (small symmetric difference) to a subgroup, or some nontrivial character has −1̂_A(χ) >= |A|^c. In groups
+  M_Γ(A) = 0 for subgroups, so Chowla fails; only the near-subgroup dichotomy survives. JMTZ (2509.03490) restate the
+  stability form. A Fields talk "Chowla's cosine problem in abelian groups" exists (not read).
+- Consistency with P20/P21: our K³ sets are dense, |A| = (1 − 1/p)|Γ| with complement ≈ |Γ|/p, i.e. near-subgroup
+  (near Γ itself), and K ≍ |Γ|^{1/4}, matching Sanders' dichotomy. No literature found on run-tops (B_t) in groups;
+  the P19–P21 questions appear to be ours. Partial-difference-set / two-weight-code literature (quadric complements
+  have the familiar three-valued spectrum) not searched.

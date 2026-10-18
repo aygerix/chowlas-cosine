@@ -87,6 +87,13 @@ Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM
 (8 vCPU = 4 physical cores, 32 GB; default -c 4 so lead + one agent share it; -c 8 for exclusive jobs). Not the laptop
 (shared with other projects), never the VM fejer. F4 (src/f4run.sh) only as fallback. exh2 N=33 benchmark: 30 s at -c 8.
 
+## Running now (2026-10-18 night)
+- Agent "lambda" (brief .research/agents/lambda_brief.md): exact optima and theory for λ = 3 near-uniform difference
+  multisets, the only known route to R < 1/2 (P8). Report -> .research/agents/lambda_report.md.
+- E37/E37b/E37c (dirichlet, src/e37*_batch.sh): exact ILP max |B_t| at K <= 3–4 in cyclic, coprime and higher-rank
+  groups. Partial: ℓ-torsion outside ⟨t⟩ drives run-tops (NOTEBOOK night entry); full table to EXPERIMENTS when done.
+- Queued: exhaustive N = 43 in [1,60] with src/exh2.c once the VM is free (dense-regime trend; N = 42 took 9619 s).
+
 ## Active lines (>= 3) (updated 2026-10-18, after P21)
 1. [lower bound, universal] CLOSED as a group question: G3 is FALSE (P22, group exponent exactly 4). The run-top route
    now needs Z-specific input in the run-top bound itself; test case Lemma OR(2) (plan item 2).

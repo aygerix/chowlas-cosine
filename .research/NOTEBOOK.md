@@ -507,3 +507,52 @@
   transversal S. Both a proof (Chowla for an O4-shaped class) and a Z-construction in the class would be informative.
   Bias check: the last five lower-bound items (P19–P22) were all run-top barriers — a single template. Next lower-bound
   effort must be different (e.g., Lemma OR(2) as a test case for a Z-only argument), and the construction track needs time.
+
+## 2026-10-18 (night, cont.) — attempts recorded so they are not repeated
+- **Galois rigidity for split coprime groups (FAILED as a new constraint).** Let ord t = 3, Γ = Z_3 × H, χ₀(t) = ω, and
+  write U = a + bω pointwise (a, b integer functions on H).
+  - Then F(1,φ) = â + ωb̂ and F(2,φ) = â + ω²b̂. Both are real and ≥ −K, so with V := 2a − b, W := b:
+        V̂(φ) + 2K >= √3·|Ŵ(φ)|   for all φ.
+  - Squaring and Parseval give |D_±| + |E_±| <= 2(|D_0| + |E_0|) + 2K² + 4Ku₀. Here D_0, E_0 are the cosets whose
+    special point lies in H (phase 0) and D_±, E_± the other phases. This holds in EVERY split group, not only coprime
+    ones.
+  - In the coprime case (3 ∤ |H|), Galois gives F(2,φ) = σF(1,φ). But A = −A already gives F(2,φ) = F(1,φ̄), and the two
+    identities coincide. So Galois adds only "values are algebraic integers" (norm >= 1), which is constant-size
+    information: it shifts K by about 1.
+  - Also: ‖1_A‖_{A(Γ)} <= 2K + 1 in any group (Σ_χ F = 0 and F >= −K). Green–Sanders then gives a tower-type structure,
+    the group form of the MPS log bound. It is not polynomial.
+  - So any "cyclic groups are better" phenomenon (E37) must come from the scarcity of subgroups and bent functions
+    (Schmidt field descent for flat mixed sums Σ_y ω^{τ(y)}φ(y) with 3 ∤ |H|), not from Galois positivity.
+- **Quartic chaos with 0/1 coefficients (re-check of the "non-Wick quartic" lead; FAILED, confirms P8).**
+  - Set f = (P² − c)²/3 − const with P = Σ_{s∈S} cos(sx) and S B_4-dissociated. Generic 4-sums then have coefficient
+    24/8/3 = 1, as required.
+  - 2-sums have coefficient (3(k−1) − 2c)/3. Making it 0 or 1 forces c ≈ 3k/2, and then (P² − c) ≈ (k/2)(Z² − 3).
+  - So f ≈ (k²/12)·He_4(Z), whose minimum −6 against L² norm √24 gives R ≈ √3/2 ≈ 0.87.
+  - The skewed He_4 + 4He_2 of R ≈ 0.19 would need 2-sum coefficients of order k, i.e. coherent multiplicity: P8 again.
+  - Defect terms (sums with a repeated element) are only O(k^{3/2}) in sup, so they are not the issue; the coefficient
+    cap is.
+- **Cyclotomic window lifts A = W ∩ π_p^{-1}(A_p)** (A_p an aligned cyclotomic class in Z_p, W ⊂ Z a Chowla-good window):
+  F_A(θ) = Σ_r c_r F_W(θ − r/p) exactly, with c_0 = 1/m and c_r = (Gauss period)/p.
+  - Grid values pick up the distribution of W mod p. Unless #{n ∈ W : n ≡ a} is constant on cyclotomic classes, the
+    fluctuation term is ~ √(|A_p|·|W|/p) = √n.
+  - So W must be H-invariant mod p, and the only such Z-sets known are periodic lifts, which bring back the
+    single-period lift problem (off-grid sinc excursions ~ √(p/m)·√log; product with a coarse window multiplies them).
+  - Same conclusion as E10/E11, now with the exact formula and the precise requirement (H-invariance of W mod p).
+- **E37 partial result (exact ILP, K <= 3, ord t = 3): ℓ-torsion outside ⟨t⟩ drives run-tops.** Max |B_t| at K₀ = 3:
+  - With 3-torsion outside ⟨t⟩: F_3^4: 18 (P20 Theorem 1); Z_9 × Z_9: 6.
+  - Cyclic: Z_81 (t of order 3, 9, 81): 3, 4, 5.
+  - Coprime, H of order prime to 3: Z_3 × F_2^5: 6; Z_3 × F_5^2: 4.
+  - Larger groups (Z_243 etc.) are still running, so the full table is in EXPERIMENTS when done.
+  - Reading: the K³ mechanisms need ℓ-rank in the quotient, matching conjG's Theorem 4 ("needs p-torsion outside ⟨t⟩").
+  - The Z_N transfer with N = t·q (q prime > 4X/t) is EXACTLY a split coprime group Z_q × Z_t with ord t = q.
+    So **Conjecture CP**, "|B_t| <= C K^β (β < 4) when Γ = Z_ℓ × H, ℓ prime, ℓ ∤ |H|", would transfer to Z.
+  - Caveat: for large ℓ the fibres hold many runs. The small-order data constrain only ℓ = 3. As shown above, Galois
+    adds nothing beyond algebraic integrality. CP is therefore a reformulation of the Z problem plus the evidence that
+    the known group obstructions need ℓ-torsion, not a new tool.
+- **Kurtosis form of C½ (reformulation, PROVED identity).** With exact Fejér–Riesz f_A + M = |Q|², the autocorrelation r
+  of Q's coefficients has r(0) = M, r(±a) = 1/2 on A and 0 elsewhere. Hence ‖Q‖_4^4/‖Q‖_2^4 = 1 + N/(2M²) = 1 + 1/(2R²).
+  So C½ ⟺ every polynomial whose aperiodic autocorrelation is {0, 1/2}-valued off the origin has kurtosis <= 3 + o(1)
+  (real-Gaussian value; Bu = real cosine sum). Sidon gives complex-Gaussian kurtosis 2 (R = 1/√2). Epoch ⟺ kurtosis
+  unbounded. This is the opposite of merit-factor problems: two-valued off-peak autocorrelation with MANY nonzero values.
+  - Strong form, consistent with all data (exhaustive N <= 42 min 0.5648; Bu decreasing to 1/2 from above): R(A) > 1/2
+    for EVERY finite nonempty A. Recorded as a conjecture (C½-strong). Not assumed.

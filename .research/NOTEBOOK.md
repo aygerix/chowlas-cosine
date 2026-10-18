@@ -73,5 +73,43 @@
 - A ⊂ [1,L] dense needs a positive-definite macroscopic density profile (no jumps: a 0/1 profile with a jump gives
   Dirichlet lobes ~ -cL; positive-definite profiles cannot have flat tops). Best simple profile = triangle; then the
   rounding noise has L^2-mass >= N/12 (1/6 of total). Gaussian noise => R ~ sqrt(log L) (bad); a noise with floor
-  -sigma would give R ≈ 0.29, real-square-shaped noise R ≈ 0.20. Singer differences are the dense flat-profile
-  (sharp cutoff!) example where structured antisymmetric noise E = sin(vx/2) * (odd poly) cancels Dirichlet lobes.
+  -sigma would give R ≈ 0.29, real-square-shaped noise R ≈ 0.20. Singer differences are the dense TRIANGLE-profile
+  (CORRECTED 2026-10-17: measured deciles 0.97,0.89,...,0.03 for q=101; NOT a sharp cutoff) example where structured antisymmetric noise E = sin(vx/2) * (odd poly) cancels Dirichlet lobes.
+
+## 2026-10-17 (session 1, late) — dense regime data, gain identity, star lemma, conjecture C½
+### Dense SA (src/dense_sa.py; toggle/swap SA over subsets of [1,X], free N, 4e5 iters) — arb-certified (E2)
+| X | N | max | certified M <= | R <= |
+|---|---|-----|----------------|------|
+| 30 | 20 | 30 | 2.68817 | 0.6011 |
+| 50 | 34 | 49 | 3.52350 | 0.6043 |
+| 80 | 54 | 80 | 4.70460 | 0.6403 |
+| 120 | 73 | 115 | 5.74899 | 0.6730 |
+| 180 | 122 | 180 | 7.66634 | 0.6942 |
+| 260 | 150 | 255 | 9.13501 | 0.7459 |
+- Structure: interval [1, ~0.65X] with a few holes + sparse tail near t ≈ 2π/x1 (x1 = first Dirichlet lobe ≈ 4.49/L),
+  e.g. N=34: [1,31]\{12,28} ∪ {40,42,45,49}. Tail elements resonate (cos(t x1) ≈ 1) with the first negative lobe.
+- R grows with X under fixed SA budget (0.60 -> 0.75); budget-limited, not conclusive. Exact box MILP launched (below).
+- Error diffusion of the Fejér profile is BAD (R = 1.1–2.4): first-order ΣΔ shapes the error to x ≈ π.
+### Box MILP (src/box_ilp.py): maximise |A| s.t. A ⊂ [1,X], f_A >= -lam, cutting planes at violating x
+- X=30, lam=2.7: optimal N=20, the SA set above, R = 0.6011 (exact box optimum for that lam, numerically verified).
+### FR anatomy (src/fr_anatomy.py) and the gain identity
+- For even f_A the minimum-phase factor is REAL. With Γ = Σ_{g≠0}|r(g)|^2 / Σ_{g≠0} w(g) and L = Σ|q|^4/λ^2:
+  **Γ (1 - L) = N/(2λ^2) = 1/(2R^2)** for EVERY spectral factor (Γ, L depend on the factor; the product does not).
+  So R < 1/2 iff every spectral factor has Γ(1-L) > 2 — P8 is the C–S step Γ <= μ̄. Min-phase factor of the N=20
+  optimum: L = 0.35 (one spike q_X = 1.24), Γ = 2.13; the spike is an artefact of the root choice, not structure.
+### Star / induced-subgraph lemma (P9, PROVED, elementary; the JMTZ framework at its simplest)
+- For finite W ⊂ Z and v: W -> R, Σ_{u,w∈W} v_u v_w 1[u-w ∈ ±A] = ∫ 2 f_A |V|^2 >= -2M ||v||^2. Hence
+  M(A) >= -λ_min(Cay(Z,±A)[W]) / 2. Corollaries: (i) I ⊂ ±A with (I-I) ∩ ±A = ∅ gives M >= sqrt|I|/2;
+  (ii) a clique K and an independent I completely joined give M >~ sqrt(|K||I|)/2; (iii) Turán: M >= N/sqrt(S3 + 2N),
+  S3 = #{(a,b,c) ∈ (±A)^3: a-b=c}. For Sidon differences (iii) gives only N^{1/4}; it is a localized third moment.
+- Consequence for R -> 0 sets: every subset of ±A of size s >> M^2 has >= 2 s^{3/2} - 4Ms internal A-differences.
+### CONJECTURE C½ (new working hypothesis; HEURISTIC + NUMERICAL evidence only)
+  For every finite nonempty A ⊂ Z_{>0}:  M(A) >= sqrt(|A|)/2.  (Sharp: Bu et al. give R -> 1/2 from above.)
+  Evidence: (a) exhaustive box optima N <= 17 (R >= 0.61); (b) SA / MILP dense optima N <= 150 (R >= 0.60);
+  (c) certified Bu sets approach 1/2 from ABOVE, excess (M - k/2)/sqrt k ≈ 1.0–1.4 > 0; (d) P8: square certificates
+  with support multiplicity <= 2 have R >= 1/2; (e) H1 Wick heuristic: degree-2 chaos optimum is exactly 1/2;
+  (f) gain identity: R < 1/2 needs coherent multiplicity Γ(1-L) > 2 in every factor — never observed (max seen ≈1.39).
+  Trivially true for N <= 4 (M >= 1 always: average f over x = (2j+1)π/max A).
+  Falsification plan: any certified R < 1/2 at any N kills it (and would be a record). Implication: if C½ holds,
+  Epoch's algorithm cannot exist and the lower-bound track is the correct direction; it does NOT by itself suggest a
+  proof method (moments cannot give it: Bu ≈ centered chi-square, which moment constraints do not exclude).

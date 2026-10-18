@@ -66,3 +66,51 @@ Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_
   (`sidon_diffSet_main`); mean zero and Parseval (`integral_cosSum`, `integral_cosSum_sq`); P5 intersection lemma
   (`cosSum_inter_ge`, no sign hypothesis on M_i needed); P7 cube identity + multilinear vertex minimum (`cubeSum_min`).
 - NOT formalized: P7 admissibility count |A| = sum 2^{|S|-1} (distinct signed sums), P1 (needs Fejér–Riesz, absent from mathlib), P6, P8.
+
+## P9. Induced-subgraph (local spectral) lemma (PROVED, elementary)
+For finite W ⊂ Z and real v on W: Σ_{u,w∈W} v_u v_w 1[u−w ∈ ±A] = (1/2π)∫ 2 f_A(x) |V(x)|^2 dx >= −2M(A) Σ v_u^2,
+V(x) = Σ v_u e^{iux}. Hence M(A) >= −λ_min(Cay(Z,±A)[W])/2. Star case: I ⊂ ±A, (I−I)∩±A = ∅, v = sqrt|I| δ_0 − 1_I
+gives M >= sqrt|I|/2. Turán: α(Cay[±A]) >= 2N/(d̄+1), d̄ = S3/(2N) => M >= N/sqrt(S3+2N).
+
+## Gain identity (PROVED): for every spectral factor q of λ + f_A (λ = ||q||^2 >= M), with r = q ⋆ q̃,
+Γ := Σ_{g≠0}|r(g)|^2 / Σ_{g≠0} Σ_{β−β'=g}|q_β|^2|q_β'|^2 and L := Σ|q_β|^4/λ^2 satisfy Γ(1−L) = N/(2λ^2).
+(Numerator = N/2 by r = ½·1_{±A}; denominator = λ^2 − Σ|q|^4.)  P8 is Γ <= μ̄ (Cauchy–Schwarz).
+
+## C½ (CONJECTURED, see NOTEBOOK 2026-10-17 late): M(A) >= sqrt|A|/2 for all finite nonempty A ⊂ Z_{>0}.
+
+## P10. Sidon differences of B_3 sets: R >= (sqrt2-1)/sqrt2·... ≈ 0.293 (PROVED, paper; moment method)
+Let D be a B_3 set (all 3-sums distinct up to order), |D| = k, A = (D-D)_+, N = k(k-1)/2, Y = |F_D|^2 on the circle.
+EY = k, EY^2 = 2k^2 - k (Sidon), EY^3 <= 6k^3 (B_3: only trivial solutions). If Y >= (1-δ)k everywhere, Z = Y-(1-δ)k >= 0
+and (EZ^2)^2 <= EZ * EZ^3 with EZ = δk, EZ^2 = k^2(1+δ^2) - k, EZ^3 <= k^3(2 + 3δ + δ^3) + O(k^2) give, to leading
+order, (1+δ^2)^2 <= δ(2+3δ+δ^3) ⟺ 1 <= 2δ + δ^2 ⟺ δ >= sqrt2 - 1. Hence min Y <= (2 - sqrt2)k + O(1) and
+M(A) = (k - min Y)/2 >= ((sqrt2-1)/2) k - O(1), i.e. R(A) >= (sqrt2-1)/sqrt2 · (1 - O(1/k)) = 0.2929...
+Equivalent reformulation used for C½: R(D-D) >= 1/2 ⟺ min_x |F_D(x)|^2 <= (1 - 1/sqrt2)k(1+o(1)) for Sidon D.
+Numerics (scratchpad sidon_flat.py, SA): best min|F_D|^2/k = 0.103 (k=5), 0.096 (6), 0.034 (8), 0.020 (10), 0.0041 (12),
+0.0017 (16) — far below 0.293. Singer sets (all multipliers tried, q <= 101): min|F_D|^2/k <= 0.008.
+
+## P11. B_h-difference sets: R(D-D) >= (1 - ε_h)/sqrt2 - o_h(1), ε_h -> 0 (PROVED, sketch at paper level)
+D a B_h set (only trivial solutions of d_1+..+d_m = d'_1+..+d'_m, m <= h), Y = |F_D|^2: EY^m = m! k^m (1 + O_m(1/k)),
+the moments of k·Exp(1). If Y >= ck everywhere, take q(y) = (y - ck)(1 - y/(Bk))^{2j} (degree 2j+1 <= h): q(Y) >= 0
+pointwise, while E q(Y) = k E[(E-c)(1-E/B)^{2j}] + O(k/k) with E ~ Exp(1); with λ = 2j/B fixed > 1/c - 1 and
+j -> ∞, (1-E/B)^{2j} -> e^{-λE} (dominated convergence on the Exp tail) and E[(E-c)e^{-λE}] = 1/(1+λ)^2 - c/(1+λ) < 0:
+contradiction. So min Y <= ε_h k, M(D-D) >= (1-ε_h)k/2. Meaning: Sidon differences can beat 1/sqrt2 only through
+additive relations of bounded length in D (structure), never through "generic" Sidon sets. Same mechanism expected
+(not yet written) for the Bu class A(S): dissociated S => f ≈ (k/2)(Z^2-1) in moments => M >= (1/2 - ε)k.
+
+## P12. C½ for dissociated two-sided (Bu-class) sets (PROVED at paper level; constants not optimised)
+Setting: α_1..α_k distinct positive reals such that the k(k−1) numbers α_i ± α_j (i<j) are distinct positive
+integers; A = {α_i − α_j, α_i + α_j}, so f_A = ρ^2 − Σ_j c_j^2 with c_j = cos(α_j x), ρ = Σ c_j (exact algebra).
+Hypothesis Diss(D): every relation Σ_{i=1}^m ε_i α_{j_i} = 0 with m <= D, ε_i ∈ {±1}, is trivial (indices pair off
+with opposite signs). (For Bu's α_j = 3s_j + 1/2: Diss(4) ⟸ S Sidon; Diss(6) needs S to be B_3-like, false for Singer.)
+Claim: if Diss(2d+4) holds then M(A) >= (k/2)(1 − η_d) − O_d(1), where η_d = min_{deg q <= d} E[Z^2 q(Z)^2]/E[q(Z)^2]
+(Z ~ N(0,1)), and η_d -> 0 as d -> ∞ (η_d ≍ (smallest Gauss–Hermite node)^2 ≍ 1/d). Hence R(A) >= (1/2)(1 − η_d) − o(1).
+Proof. Average over x in a common period (half-integer α's: period 4π). For any polynomial P in c_1..c_k of degree <= D,
+E_x P(c(x)) = E_iid P(cos θ_1, .., cos θ_k) EXACTLY (both sides expand into products of cosines; E_x of a product
+2^{-m} Σ_ε 1[Σ ε_i α_{j_i} = 0] equals the iid value iff only trivial relations occur). Take the test measure
+dμ = q(ρ/sqrt(k/2))^2 dx / E[q^2]: M >= −E_μ f = E_iid[(Σ c_j^2 − ρ^2) q^2]/E_iid[q^2] (degree 2d+2 <= D). In the iid
+model Σ_j E[c_j^2 q(ρ)^2] = (k/2) E[q^2] + O_d(1)·E[q^2] (the c_j^2 − 1/2 terms interact with q(ρ) only through O(d)
+coordinates), and E[ρ^2 q^2]/E[q^2] = (k/2)(E_G[Z^2 q^2]/E_G[q^2] + O_d(1/k)) by the moment CLT. Choose q optimal. □
+Remarks: (i) d = 2 already gives η ≈ 0.55 (q = 1 − 0.18 Z^2), i.e. R >= 0.22 for B_3-type S; (ii) the analogous
+statement for several blocks / any 0-1 PSD block matrix Q gives R >= 1/2 with equality iff Q = J (single block):
+this is the rigorous form of H1 for degree-2 dissociated chaos; (iii) Bu's Singer-based S are Diss(4) only, so the
+extremal examples lie OUTSIDE the class — C½ for them is not covered.

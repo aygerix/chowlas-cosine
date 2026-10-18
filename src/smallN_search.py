@@ -513,7 +513,7 @@ def _load_exh():
     return json.load(open(fp)) if os.path.exists(fp) else {}
 
 
-def run_exhaustive(plan, workers=10, log=print):
+def run_exhaustive(plan, workers=6, log=print):
     results = {}
     with Pool(workers) as pool:
         for N, L in plan:
@@ -705,7 +705,7 @@ def sa_round2(best, Ns, it_per_N=3e5, reps=6):
     return tasks
 
 
-def run_sa_tasks(tasks, best, allres, log, workers=10, save_every=20):
+def run_sa_tasks(tasks, best, allres, log, workers=6, save_every=10):
     t0 = time.time()
     with Pool(workers) as pool:
         for i, r in enumerate(pool.imap_unordered(_sa_eval_task, tasks)):
@@ -728,6 +728,67 @@ def run_sa_tasks(tasks, best, allres, log, workers=10, save_every=20):
         json.dump(allres, fh)
 
 
+def sa_round3(best, Ns, it_per_N=6e5, reps=4):
+    """Deeper ILS for N >= 20: perturbations of best(N), plus best sets of neighbouring
+    N (within the list) adapted greedily to size N."""
+    tasks = []
+    keys = sorted(int(k) for k in best)
+    for N in Ns:
+        if N < 20 or str(N) not in best:
+            continue
+        rng = np.random.default_rng(313 * N + 9)
+        A = best[str(N)]["A"]
+        cap = max(max(A) + max(3, N // 3), math.ceil(1.5 * N))
+        for r in range(reps):
+            k = int(rng.integers(2, max(3, N // 5) + 1))
+            tasks.append(_mk(N, cap, perturb(A, cap, k, rng), it_per_N * N, 5557 * N + r,
+                             f"r3_ils_k{k}_cap{cap}", T0f=0.12, T1f=0.002))
+        nbrs = sorted((abs(M - N), M) for M in keys if M != N and abs(M - N) <= max(5, N // 8))[:2]
+        for _, M in nbrs:
+            A0 = adapt_size(best[str(M)]["A"], N)
+            c2 = max(cap, max(A0) + 3)
+            tasks.append(_mk(N, c2, A0, it_per_N * N, 6661 * N + M, f"r3_adapt_from_{M}_cap{c2}",
+                             T0f=0.12, T1f=0.002))
+    return tasks
+
+
+def adapt_size(A, N, slack=None):
+    """Greedily add/remove single elements (best accurate_M at each step) until |A| = N."""
+    A = sorted(set(A))
+    slack = slack if slack is not None else max(4, N // 3)
+    while len(A) < N:
+        s = set(A)
+        cand = [b for b in range(1, max(A) + slack) if b not in s]
+        _, b = min((accurate_M(A + [b])[0], b) for b in cand)
+        A = sorted(A + [b])
+    while len(A) > N:
+        _, c = min((accurate_M([a for a in A if a != c])[0], c) for c in A)
+        A = [a for a in A if a != c]
+    return A
+
+
+def lead_seeds(Ns, maxdiff=None):
+    """Seeds from the lead's dense free-N runs (examples/dense_runs/X*_s*.json, key "A")."""
+    import glob
+    files = sorted(glob.glob(os.path.join(ROOT, "examples", "dense_runs", "X*_s*.json")))
+    sets = []
+    for f in files:
+        try:
+            sets.append((os.path.basename(f), sorted(json.load(open(f))["A"])))
+        except Exception:
+            pass
+    out = []
+    for N in Ns:
+        for name, A in sets:
+            if abs(len(A) - N) <= (maxdiff or max(8, N // 7)):
+                out.append((N, "lead_" + name.replace(".json", "") + f"_adapt{len(A)}to{N}", adapt_size(A, N)))
+    return out
+
+
+def _task_key(a):
+    return (int(a[0]), int(a[1]), int(a[6]), str(a[11]))
+
+
 def main_sa(argv):
     os.makedirs(RUN_DIR, exist_ok=True)
     stage = argv[0] if argv else "r1"
@@ -738,12 +799,35 @@ def main_sa(argv):
     ap = os.path.join(RUN_DIR, "sa_all_runs.json")
     allres = json.load(open(ap)) if os.path.exists(ap) else []
     _lib()
+    for k2, r2 in _load_exh().items():   # merge exhaustive box optima
+        if "opt_A" in r2:
+            A2 = primitive(r2["opt_A"])
+            M2, x2 = accurate_M(A2)
+            n2 = str(len(A2))
+            if n2 not in best or M2 < best[n2]["est_M"] - 1e-9:
+                best[n2] = {"A": A2, "est_M": M2, "R_est": M2 / math.sqrt(len(A2)), "max": max(A2), "x_star": x2,
+                            "found_by": f"exhaustive box [1,{r2['L']}]", "cap": r2["L"], "seed": None, "iters": 0}
     if stage == "r1":
         tasks = sa_round1(Ns)
     elif stage == "r2":
-        tasks = sa_round2(best, Ns)
+        tasks = sa_round2(best, Ns, reps=3, it_per_N=1.5e5)
+        for N, tag, A0 in lead_seeds(Ns):
+            cap = max(max(A0) + max(3, N // 4), math.ceil(1.5 * N))
+            tasks.append(_mk(N, cap, A0, 2e5 * N, 4447 * N + len(tasks), tag + f"_cap{cap}", T0f=0.1, T1f=0.002))
+            A1 = sorted(A0)
+            # also accurately record the adapted seed itself as a candidate
+            M, x = accurate_M(A1)
+            if str(N) not in best or M < best[str(N)]["est_M"] - 1e-9:
+                best[str(N)] = {"A": A1, "est_M": M, "R_est": M / math.sqrt(N), "max": max(A1), "x_star": x,
+                                "found_by": tag + " (seed itself)", "cap": max(A1), "seed": None, "iters": 0}
+    elif stage == "r3":
+        tasks = sa_round3(best, Ns)
     else:
-        raise SystemExit("stage r1|r2")
+        raise SystemExit("stage r1|r2|r3")
+    done = {(r["N"], r["cap"], r["seed"], r["tag"]) for r in allres}
+    n0 = len(tasks)
+    tasks = [a for a in tasks if _task_key(a) not in done]
+    log(f"skipping {n0 - len(tasks)} already-completed tasks")
     # big tasks first for load balance
     tasks.sort(key=lambda a: -a[3] * math.log2(16 * a[1]) * (1 + a[1] / 2000))
     log(f"stage {stage}: {len(tasks)} tasks for N in {Ns[0]}..{Ns[-1]}")
@@ -965,7 +1049,7 @@ def main_analyze(argv):
             c.append((accurate_M(A)[0], A, f"exhaustive optimum over all N-subsets of [1,{r['L']}]"))
         c.sort(key=lambda t: t[0])
         cands[N] = c
-    with Pool(10) as pool:
+    with Pool(6) as pool:
         certs = pool.map(_cert_task, [cands[N][0][1] for N in Ns])
     out = {}
     for N, (lb, Lg) in zip(Ns, certs):
@@ -982,6 +1066,18 @@ def main_analyze(argv):
             desc += "; SA best R by cap: " + ", ".join(f"{c}:{v:.4f}" for c, v in sorted(bycap.items()))
         out[str(N)] = {"A": A, "est_min": -M, "cert_lower": lb, "R_est": M / math.sqrt(N),
                        "R_cert": -lb / math.sqrt(N), "max": max(A), "search": desc, "cert_grid_L": Lg}
+        if max(A) <= 64:
+            # exact PARI Sturm bracket: f_A >= -Bup on [0,2pi] proved; f_A >= -Blo fails (sign change)
+            from chowla import sturm_certify
+            Bup = math.ceil(M * 1e7) + 1
+            Blo = math.floor(M * 1e7) - 1
+            try:
+                ok_up, _ = sturm_certify(A, Bup, 10 ** 7)
+                ok_lo, n_lo = sturm_certify(A, Blo, 10 ** 7)
+                if ok_up and not ok_lo:
+                    out[str(N)]["sturm_M_bracket"] = [Blo / 1e7, Bup / 1e7]
+            except Exception as ex:  # pragma: no cover
+                out[str(N)]["sturm_error"] = str(ex)
     save_best(out)
     # structure
     rows = []

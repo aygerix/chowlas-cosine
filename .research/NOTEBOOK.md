@@ -708,3 +708,8 @@
     worked because F_{qY}(x) = F_Y(qx) is 2π/q-periodic (Bohr structure).
   - Conclusion: the next lower-bound attempt should combine localization (local profiles at scale H with 1 << H << t)
     with the 2-run structure; there is no shortcut through group statements.
+- **P24 (localization lemma, PROVED, one line):** |Σ_a (1 − |a−m|/H)_+ e^{iax₀}| <= 2M + 2N(H) for all m >= H and all
+  x₀. Corollaries: A ⊂ [Y, 2Y] ⟹ M >= |A|/4; small M forces a multiplicative spread >= √n/(4c); shell growth
+  N(2H) <= 9N(H) + 8M; local Fourier uniformity at every scale. It is the rigorous macroscopic-Gibbs tool. It holds in
+  Z_N only for localized sets, so it is genuinely Z-specific. It is far from √n by itself (Singer/Bu satisfy it
+  easily). Next: combine P24 at scale H << t with the 2-run structure (OR(2)-weak) and with Roth's triple count.

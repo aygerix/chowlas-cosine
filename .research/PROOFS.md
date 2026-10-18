@@ -475,3 +475,27 @@ W = 2·def, φ = λ|A|/C(k,2) = 1 − def/C(k,2). Identity 2λf_A = |F_D|² − 
   - Kill statement needed: non-harmless defect weight W' >= c·k^{1+δ}, or max over {F_D ≈ 0} of E >= ck.
 Status of the line: the λ >= 3 near-ruler route to R < 1/2 is KILLED as a construction line (heuristically; no
 asymptotic theorem). Revival criteria: a λ = 3 set with W < k at some k >= 7, or W < 0.22k with φ near 1.
+
+## P24. Localization lemma: windowed local transforms are bounded by 2M (lead 2026-10-18 late night; PROVED,
+## elementary, one line; novelty unchecked, likely folklore; sanity-checked by hand on [H, 3H) and random A ⊂ [Y, 2Y])
+Setting: A ⊂ Z_{>0} finite, f_A >= −M on R, N(H) := |A ∩ [1, H)|, F_H the Fejér kernel with F̂_H(k) = (1 − |k|/H)_+.
+Lemma. For every integer H >= 1, every m >= H and every x₀ ∈ R:
+    |L_m(x₀)| <= 2M + 2·Σ_{a∈A, a<H} (1 − a/H),    L_m(x₀) := Σ_{a∈A} (1 − |a − m|/H)_+ e^{i a x₀}.
+Proof.
+- W(x) := F_H(x − x₀)(1 + cos(m(x − x₀) + φ)) >= 0 and (1/2π)∫W = 1 + Re(e^{iφ})F̂_H(m) = 1 because m >= H.
+- (1/2π)∫cos(ax)W(x)dx = Re(e^{iax₀}[F̂_H(a) + ½e^{iφ}F̂_H(a + m) + ½e^{−iφ}F̂_H(a − m)]), and F̂_H(a + m) = 0.
+- So −M <= (1/2π)∫f_A W = Σ_{a<H}(1 − a/H)cos(ax₀) + ½Re(e^{−iφ}L_m(x₀)) (the m-shift cancels inside L_m).
+  Choose φ to make the last term −½|L_m(x₀)|. ∎
+Corollaries (PROVED).
+- (a) If A ⊂ [Y, 2Y], then M >= |A|/4 (H = Y, m = ⌊3Y/2⌋, x₀ = 0; all weights >= 1/2; N(Y) = 0). More generally,
+  A ⊂ [Y, λY] gives M >= |A|/(4⌈λ − 1⌉). A set with M <= c√|A| must spread over a multiplicative range
+  max A / min A >= √|A|/(4c).
+- (b) Shell growth: |A ∩ [H, 2H)| <= 8M + 8N(H), i.e. N(2H) <= 9N(H) + 8M (two windows of half-width H/2, weights
+  >= 1/2).
+- (c) Local Fourier uniformity: at every location m >= H and every frequency x₀ (e.g. x₀ = 2πr/q), the Fejér-weighted
+  local exponential sum of A at scale H is <= 2M + 2N(H). So A is locally equidistributed in every residue class and
+  every Bohr direction, up to M, at every scale H at which few elements lie below H.
+Meaning. This is the rigorous form of the macroscopic Gibbs constraint ("profiles must be nearly p.d.") and of the
+localization noted in NOTEBOOK (iii). It holds in Z_N only for localized A (N >> max A). It explains E40's uniform-level
+results (M ≈ 0.44t) and the E11 failures (lifts concentrated at one scale) in one line. It cannot reach √n alone:
+Singer/Bu sets satisfy every instance with room to spare (N(H) ~ H).

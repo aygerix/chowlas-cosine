@@ -7,13 +7,15 @@ B_t = {x ∈ A : x − t ∈ A, x + t ∉ A}.  Simulated annealing on pair toggl
 every finite abelian group (|B_t| << K^4); the agent's evidence suggests |B_t| <~ K^2 in groups.  UNCERTIFIED (float K,
 heuristic search: lower bounds on the frontier only).
 Usage: python src/group_runtop_sa.py m1,m2,...,md iters seed K0list      e.g.  3,3,3,3,3,3 200000 1 2,3,4,6,8
+       python src/group_runtop_sa.py p iters seed ratio paley   (prime p ≡ 1 mod 4: start at the quadratic residues and
+       maximise |B_t|/K² directly by SA, to test whether the Paley value 1/2 can be exceeded)
 """
 import sys, math, itertools, json
 import numpy as np
 
 ms = [int(v) for v in sys.argv[1].split(',')]
 iters, seed = int(sys.argv[2]), int(sys.argv[3])
-K0s = [float(v) for v in sys.argv[4].split(',')]
+K0s = [float(v) for v in sys.argv[4].split(',')] if sys.argv[4] != 'ratio' else []
 rng = np.random.default_rng(seed)
 G = list(itertools.product(*[range(m) for m in ms])); n = len(G)
 idx = {g: i for i, g in enumerate(G)}
@@ -53,6 +55,35 @@ def run(K0, init=None):
             ind[a] = ind[neg[a]] = bool(x[p])
     return best
 
+
+def run_ratio(init):
+    x = init.copy(); F = C[x].sum(0); ind = np.zeros(n, bool); r = np.array(reps)
+    ind[r[x]] = True; ind[neg[r[x]]] = True
+    def sc(F, ind):
+        K = max(1.0, -F.min()); b = runtops(ind); return b / K ** 2, b, K
+    cur, b, K = sc(F, ind); best = (cur, b, K)
+    for it in range(iters):
+        T = 0.02 * (1 - it / iters) + 1e-4
+        p_ = int(rng.integers(len(reps))); a = reps[p_]; s_ = -1.0 if x[p_] else 1.0
+        F2 = F + s_ * C[p_]; ind[a] = ind[neg[a]] = not x[p_]
+        new, b2, K2 = sc(F2, ind)
+        if new >= cur or rng.random() < math.exp((new - cur) / T):
+            x[p_] = not x[p_]; F = F2; cur = new
+            if new > best[0]: best = (new, b2, K2)
+        else:
+            ind[a] = ind[neg[a]] = bool(x[p_])
+    return best
+
+
+if len(sys.argv) > 5 and sys.argv[5] == 'paley':
+    pr = ms[0]; assert len(ms) == 1 and pr % 4 == 1
+    qr = {(v * v) % pr for v in range(1, pr)}
+    init = np.array([G[r_][0] in qr for r_ in reps])
+    F0 = C[init].sum(0); ind0 = np.zeros(n, bool); r = np.array(reps); ind0[r[init]] = True; ind0[neg[r[init]]] = True
+    print(f"Paley p={pr}: K={-F0.min():.3f} |B_t|={runtops(ind0)} ratio={runtops(ind0) / F0.min() ** 2:.4f}", flush=True)
+    best = run_ratio(init)
+    print(f"after SA: best ratio {best[0]:.4f} (|B_t|={best[1]}, K={best[2]:.3f})", flush=True)
+    sys.exit(0)
 
 out = []
 for K0 in K0s:

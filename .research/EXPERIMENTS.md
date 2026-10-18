@@ -212,3 +212,7 @@ Frontier max|B_t| subject to K <= K0 (t = e_1), 200k iterations, seed 1, K0 ∈ 
    larger groups (it finds LESS in Z3^7 / Z2187 than in smaller groups), so these are lower bounds on the frontier only.
    Benchmarks: Paley/QR sets in F_p (p ≡ 1 mod 4): K = (1+√p)/2, |B_t| ≈ p/8 ⇒ |B_t|/K² -> 1/2; index-m cyclotomic classes
    give ≈ (m−1)/(m³c_m²) (≈ 0.17 for m = 3) — Paley is the best known group example. No |B_t| >> K² found.
+   Paley-seeded ratio search (mode `ratio paley`, 1e5 SA steps maximising |B_t|/K² directly): p = 401: Paley K = 10.512,
+   |B_t| = 51, ratio 0.4615 — SA finds nothing better; p = 1009: K = 16.382, |B_t| = 123, ratio 0.4583 — nothing better.
+   Paley is a local maximum under pair toggles; its ratio -> 1/2 from below. Suggests C = 1/2 might be the group
+   constant in Conjecture G (weak evidence).

@@ -70,14 +70,20 @@ error diffusion; separated-block unions; local SA from Bu seeds; Sidon lower-fla
 cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatness (E29); P18 as a finite probe (E28); averaged Bedert (P14: (a) is t-independent); sums of several squares
 Σ P_j^2 (P15 remark: pseudo-random squares give R ~ √log X).
 
-## Active lines (>= 3)
-1. [lower bound, class] P16 follow-ups: extend the range of L (local Lipschitz, higher moments), and attack SNZ-weak for
-   Sidon differences (min|F_D|^2 <= 0.29k) with a 2-D visit lemma (locally linear phase).
-2. [lower bound, universal] "visit + concentration" for arbitrary A via a spectral factor (gain identity); Bedert–Shankar
-   middle-layer exclusion needs torsion-freeness (P14(v)) — parked unless a level-set decomposition appears.
-3. [construction / C½ falsification] dense regime: is there a positively skewed rounding error (c_E < 1.35) for a
-   doubly-positive profile? Only such an error lets dense sets beat 1/2 (E16). Exhaustive N = 41–50 in [1, 1.5N] (on F4).
-4. [obstruction] identify ρ* exactly (extremal problem for doubly-positive functions) and prove the dense-profile bound.
+## Active lines (>= 3) (updated 2026-10-18, after P21)
+1. [lower bound, universal; AGENT g3 running] G3: |B_t| <= CK³ in every finite abelian group (sharp by P20/P21) ⇒
+   Chowla exponent 1/4 via transfer + Shankar. Known: ord t = 3 without singleton cosets (P20 Thm 2). Barrier: Schur
+   products of fibre transforms always count singleton cosets positively.
+2. [lower bound, Z-specific] Exponent > 1/4 by the run-top route needs torsion-free input. Identified candidates: the
+   continuous t-offset φ (first-order term odd in j); coupling of t-run lobes (Dirichlet main/side lobes) with the
+   macroscopic profile; Shankar's averaging (I <= Q) is the only Z-input of the current chain. No proof route yet.
+3. [C½ for construction classes] P16/P16′ (Bu class, kernel-checked). Sidon differences ⟺ SNZ-weak
+   (min|F_B|² <= 0.293k) — typical-size statement, moments cannot do it (unlike P16), related to the open Newman
+   minimum-modulus problem (LITERATURE). Dense regime: exhaustive N = 43 in [1,60] queued for F4 (load >= 12 today).
+4. [construction] No live sub-1/2 mechanism. Run-structured sets (E34) are dominated by macroscopic Gibbs; a fair test
+   needs tapered p.d. run-start profiles. All known mechanisms pinned >= 1/2.
+5. [verification] P21 Lean statements written (RunTopGroup.lean, typechecks); formalization agent to follow the g3
+   agent (one agent at a time).
 
 ## Compute policy
 Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).

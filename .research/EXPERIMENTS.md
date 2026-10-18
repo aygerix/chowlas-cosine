@@ -183,6 +183,13 @@ N=40: c_E 1.75, skew +0.25, ρ 0.83 | N=45: c_E 1.79, skew +0.55, ρ 0.83. Box r
 that finite size tolerates — while c_E creeps up (1.62 → 1.79). Holding c_E ≈ 1.8 with a p.d. profile would give
 R_∞ ≈ 1.8·sqrt((1−ρ*)/2) ≈ 0.67. Still no evidence for a dense route below 1/2.
 
+E27 addendum (2026-10-18, laptop, src/localrun.sh, 3 HiGHS threads): N = 50, X = 70, Y = 38, H = 3, warm start = SA best
+(R 0.612), 5400 s time limit: incumbent M = 4.130782, dual bound 2.964 (gap large — search-limited, NOT optimal).
+A = [1..26, 28..34, 36..39, 41, 45, 46, 48..52, 56, 58, 62, 67, 70], arb certificate (oversample 64): min f >= −4.1307824,
+R(50) <= 0.584181 (examples/milp/N50_best.json). The fit 0.49 + 0.54/√N predicts 0.566 — not tested (search-limited).
+Structural remark: the tail must cancel the core's Dirichlet lobe (≈ 0.217Y), so it holds ≈ 0.2Y elements (8 at N = 41):
+linear, not √N; at large N the optimum must approach a p.d. macroscopic profile, so small-N fits do not extrapolate.
+
 ## E28 (2026-10-18) P18 dense min–max lemma on the records — UNINFORMATIVE (src/p18_test.py)
 Profiles W = w0·(Fejér K_Y or tent autocorrelation), Y <= X+1 (genuinely p.d., degree <= X), w0 ∈ [0.3, 2.5]; Λ = max|f − Ŵ|
 on a 64X grid (uncertified). Best bound B = Σn²e²/(2X²Λ) − w0/2 over the grid is <= 0.03 for every record (box N=20..55,

@@ -450,3 +450,33 @@ halfSquare_lower_bound_sieve' : ∀ (S : Finset ℤ),
           ∀ (η : ℝ),
             0 < η → η ≤ 1 / 2 → 4200 * L ≤ η ^ 5 * ↑S.card ^ 3 → ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
 'ChowlaCosine.halfSquare_lower_bound_sieve'' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.runSet_neg : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  p ≠ 2 → ∀ (d : ZMod p) (x : RunTopGroup.Γ p), -x ∈ RunTopGroup.runSet p d ↔ x ∈ RunTopGroup.runSet p d
+'ChowlaCosine.RunTopGroup.runSet_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.zero_not_mem_runSet : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)] (d : ZMod p), 0 ∉ RunTopGroup.runSet p d
+'ChowlaCosine.RunTopGroup.zero_not_mem_runSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.card_line_inter : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)] (d : ZMod p) (x : RunTopGroup.Γ p),
+  {s | x + s • RunTopGroup.tVec p ∈ RunTopGroup.runSet p d}.card = p - 1
+'ChowlaCosine.RunTopGroup.card_line_inter' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.card_runTops : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  p ≠ 2 → ∀ (d : ZMod p), (RunTopGroup.runTops p (RunTopGroup.runSet p d) (RunTopGroup.tVec p)).card = p ^ 3
+'ChowlaCosine.RunTopGroup.card_runTops' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.charSum_lower : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  p ≠ 2 →
+    ∀ (d : ZMod p),
+      ¬IsSquare d →
+        ∀ (ψ : AddChar (ZMod p) ℂ),
+          ψ.IsPrimitive →
+            ∀ (c : RunTopGroup.Γ p),
+              c ≠ 0 →
+                (RunTopGroup.charSum p ψ (RunTopGroup.runSet p d) c).im = 0 ∧
+                  -(3 * ↑p) ≤ (RunTopGroup.charSum p ψ (RunTopGroup.runSet p d) c).re
+'ChowlaCosine.RunTopGroup.charSum_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+NegDefFibre.le_two_mul_card_of_negDef : ∀ (ℓ : ℕ),
+  1 ≤ ℓ →
+    ∀ (I : Finset (ZMod ℓ)),
+      I.Nonempty →
+        0 ∉ I →
+          (∀ s ∈ I, -s ∈ I) →
+            (∀ (j : ZMod ℓ), j ≠ 0 → ∑ s ∈ I, Real.cos (2 * Real.pi * (↑j.val * ↑s.val) / ↑ℓ) ≤ 0) → ℓ ≤ 2 * I.card
+'ChowlaCosine.NegDefFibre.le_two_mul_card_of_negDef' depends on axioms: [propext, Classical.choice, Quot.sound]

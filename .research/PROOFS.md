@@ -406,9 +406,13 @@ so every run-top in such a fibre sits on a run longer than half the cycle. Both 
 use runs of length p − 1 = ord(t) − 1. In Z (and in its Z_N transfer) every maximal t-run has length <= 2X/t + 1 < ord(t)/2,
 and its transform along t is a Dirichlet kernel with main lobe +ℓ and side lobes ≈ −0.22ℓ (HEURISTIC: sign changes force
 a Gibbs penalty). Refined target G_arc: |B_t| <= CK^{2 or 3} whenever every maximal t-run has length <= ord(t)/2.
-Lean: exact statements in lean/ChowlaCosine/RunTopGroup.lean (A = −A, 0 ∉ A, every t-line has p − 1 points,
-|B_t| = p³, every nontrivial character sum real and >= −3p); statements typecheck (lake env lean, 2026-10-18), proofs
-`sorry`, file not imported by ChowlaCosine.lean. NOT kernel-checked yet.
+Lean: KERNEL-CHECKED 2026-10-18. Formalization agent; lead re-ran `lake build` (8720 jobs OK) and AxiomCheck on dirichlet:
+109 lines, all [propext, Classical.choice, Quot.sound], no sorry. Theorem statements are byte-identical to the lead's
+statement file. lean/ChowlaCosine/RunTopGroup.lean proves: runSet_neg (A = −A), zero_not_mem_runSet, card_line_inter
+(p − 1 points per t-line), card_runTops (|B_t| = p³) and charSum_lower (for ψ primitive and c ≠ 0, F real and >= −3p).
+Not formalized: (i) that (ψ, c) runs over all nontrivial characters (standard); (ii) attainment of −3p.
+The negative-definite fibre lemma (ℓ <= 2|I|) is KERNEL-CHECKED too, in lean/ChowlaCosine/NegDefFibre.lean
+(le_two_mul_card_of_negDef). Report: .research/agents/lean_p21_report.md.
 
 ## P22. The group exponent of run-tops is exactly 4 (Theorem O4, agent "g3" 2026-10-18; report
 ## .research/agents/g3_report.md §2; paper proof checked line by line by lead; NUMERICAL-EXACT, lead-independent E36)

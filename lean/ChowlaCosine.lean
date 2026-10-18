@@ -9,3 +9,5 @@ import ChowlaCosine.Averaging
 import ChowlaCosine.HalfSquare
 import ChowlaCosine.HalfSquareExplicit
 import ChowlaCosine.HalfSquareSieve
+import ChowlaCosine.RunTopGroup
+import ChowlaCosine.NegDefFibre

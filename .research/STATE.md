@@ -80,8 +80,8 @@ cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatnes
    O4; F_A = 4cos(πtθ)·f_{S+t/2}). Probe numerically first (levels with tapered profile), then attempt a proof.
 3. λ-fold rulers (NOTEBOOK evening entry; E35 done): SA finds λ = 2 structure but λ = 3, 4 exact fractions DECAY with k
    and every candidate has R >= 0.68 — demoted pending a structural idea (homometric triples; or prove W >= c k^{1+δ}).
-4. Lean formalization of P21 (statements in lean/ChowlaCosine/RunTopGroup.lean) after the g3 agent; O4⁺ (fourth Schur
-   power) is elementary and a good second target; O4 itself needs Galois rings (not in mathlib).
+4. DONE: P21 and the negative-definite fibre lemma are KERNEL-CHECKED (RunTopGroup.lean, NegDefFibre.lean; 109
+   axiom lines standard). Next Lean target, if any: O4⁺ (fourth Schur power, elementary); O4 itself needs Galois rings.
 5. Low priority: exhaustive N = 43–44 with src/exh2.c (validated, load-balanced) when compute is free.
 Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM dirichlet via src/dirun.sh
 (8 vCPU = 4 physical cores, 32 GB; default -c 4 so lead + one agent share it; -c 8 for exclusive jobs). Not the laptop

@@ -219,3 +219,17 @@ open ChowlaCosine
 #print axioms halfSquare_lower_bound_sieve
 #check @halfSquare_lower_bound_sieve'
 #print axioms halfSquare_lower_bound_sieve'
+-- 12. P21: |B_t| = p³ with every t-line a single (p−1)-run and min F ≥ −3p (RunTopGroup.lean)
+#check @ChowlaCosine.RunTopGroup.runSet_neg
+#print axioms ChowlaCosine.RunTopGroup.runSet_neg
+#check @ChowlaCosine.RunTopGroup.zero_not_mem_runSet
+#print axioms ChowlaCosine.RunTopGroup.zero_not_mem_runSet
+#check @ChowlaCosine.RunTopGroup.card_line_inter
+#print axioms ChowlaCosine.RunTopGroup.card_line_inter
+#check @ChowlaCosine.RunTopGroup.card_runTops
+#print axioms ChowlaCosine.RunTopGroup.card_runTops
+#check @ChowlaCosine.RunTopGroup.charSum_lower
+#print axioms ChowlaCosine.RunTopGroup.charSum_lower
+-- 13. P21 diagnosis: negative-definite fibre lemma (NegDefFibre.lean)
+#check @ChowlaCosine.NegDefFibre.le_two_mul_card_of_negDef
+#print axioms ChowlaCosine.NegDefFibre.le_two_mul_card_of_negDef

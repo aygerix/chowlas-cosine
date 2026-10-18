@@ -586,7 +586,25 @@ Limits (agent, checked):
 - R = {0, 3t} with Y_0 = Y_{3t} gives C_y = 0 identically, so (B) is empty. The theorem is not universal.
 - No argument puts general small-M sets into residue strips.
 Status: PROVED (paper), lead-verified; not yet kernel-checked. Novelty outside the project unchecked.
-Agent's next step: the second- and third-derivative analysis at π/t for the cancellation pattern {0, 3t}.
+Theorem C (agent, final report §5; PROVED; lead re-checked every step, including constants). Fix L >= 0, B = L² + (L+1)²,
+J = 2L + 3. If min S >= q, the residues of S mod q lie in [0, Lt] (k classes), the 2-run conditions hold, and
+q >= 16BJtk, then
+    M(S ∪ (S + t)) >= √n / (32BJ²k^{3/2}).
+Proof skeleton:
+- Theorem B at every zero u_j = (2j+1)π/t, averaged over j: C_* = Σ_y Σ_a b_{y,a}², with b_{y,a} the alternating
+  counts along residues a + ht. Cauchy–Schwarz gives N_alt² <= N·C_*.
+- Macro profile H(u) = Σ_r n_r[cos ru + cos(r+t)u] with m = −min H. Coefficient domination gives n <= 2k(n_0 + m).
+- The t-shift average H̄ = (1 + cos v)·R̄ with deg R̄ <= L. A J-point grid with Σ 1/(1 + cos v_j) = J²/2 gives
+  N <= J²C_* + (J² − 1)m, hence n <= 2kJ²(C_* + m).
+- Either derivative energy (Theorem B) or the macro dip (exact on the grid 2πa/q plus Taylor) gives the bound.
+Corollaries:
+- Square-root bound for bounded unions of translated dilates.
+- n^{3/8} for k <= n^{1/12}.
+- The cancellation family S = qY ∪ (qY + 3t) has M >= |S|/16 for q >= 24t (a linear macro dip).
+Status: PROVED (paper), lead-verified, not kernel-checked; novelty unchecked. Unrestricted OR(2)-weak remains OPEN.
+Mechanism: the coset grid (θ + 2πZ)/q of the real line separates the micro (quotient) phase from the macro (residue)
+profile. The exact zero of the pair factor plus a sampled-derivative/Taylor lemma converts either derivative energy
+or a macro dip into a negative value. Z-specific: it uses genuine real sample points, not a group character.
 
 ## P28. Averaged local-maximal bound (PROVED, lead 2026-10-19; numerics src/p28_test.py)
 Statement. Let K >= 0 be a 2π-periodic kernel with K̂(0) = 1 and K̂(k) = 0 for |k| >= H (for example the Fejér kernel F_H).

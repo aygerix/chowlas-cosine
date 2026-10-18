@@ -159,3 +159,14 @@ E25b — re-signing the diagonal: SA over S' ⊂ S for A(S) ∪ {|6s+1| : s ∈ 
 Singer–Bu set: best grid R 0.58806 → 0.58760 using one added frequency; certified 0.5924 (worse than the base 0.58874;
 8x grid misranking). The diagonal can be re-signed (f = P^2 − k/2 − ½Σσ_s cos((6s+1)x)) but no sign pattern helps,
 matching the heuristic E[D_σ | P = 0] ≈ −(1/4k)Σσ_s, far smaller than the √k fluctuations at the zeros of P.
+
+## E27 (2026-10-18) Structured exact MILP at N = 45 (src/box_core_milp.py 62 45 34 3 5400 4, on F4; examples/milp/)
+Restricted box: A ⊂ [1, 62], |A| = 45, core [1, 34] with <= 3 holes. HiGHS hit the 5400 s limit in round 0: incumbent
+lam = 3.80706 on the cut set, true M = 3.83604, dual bound 3.128 (so the restricted optimum is NOT certified optimal).
+A = [1..13, 15..35, 37, 39, 40, 41, 45, 50, 52, 57, 58, 60, 61] (holes in [1,61]: 14, 36, 38, 42–44, 46–49, 51, 53–56, 59),
+x* = 2.4548. Certified (C-N45): **R <= 0.571844**. Previous N = 45 bests: LNS 0.5948, SA 0.6162.
+Anatomy (Gaussian-smoothed profile, bw 4; bulk x > 8/X; same code for all three): N=36: c_E 1.62, skew +0.38, ρ 0.81 |
+N=40: c_E 1.75, skew +0.25, ρ 0.83 | N=45: c_E 1.79, skew +0.55, ρ 0.83. Box records over N = 36..45 stay in
+0.565–0.584 (no monotone trend); the low R values are carried by ρ ≈ 0.83 > ρ* = 0.72 — a non-positive-definite profile
+that finite size tolerates — while c_E creeps up (1.62 → 1.79). Holding c_E ≈ 1.8 with a p.d. profile would give
+R_∞ ≈ 1.8·sqrt((1−ρ*)/2) ≈ 0.67. Still no evidence for a dense route below 1/2.

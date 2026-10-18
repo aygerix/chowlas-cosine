@@ -30,3 +30,10 @@ points + 4th-order Taylor remainder (rigorous lower bound on min over ALL real x
    q = 61: N = 3782, max 10707, min f >= −37.1485, R <= 0.60406
    q = 101: N = 10302, max 30575, min f >= −59.7566, R <= 0.58874
    q = 151: N = 22952, R <= 0.57770;  q = 199: N = 39800, R <= 0.56630;  q = 251: N = 63252, max 189688, R <= 0.56272
+
+## C-N45 (2026-10-18): N = 45, max 61 (E27; examples/milp/N45_best.json)
+A = [1..13, 15..35, 37, 39, 40, 41, 45, 50, 52, 57, 58, 60, 61].
+Certificate 1: chowla.certify_lower_bound(A, oversample=64) ⇒ min_x f_A >= −3.8360448 (arb ball DFT + Taylor).
+Certificate 2: chowla.sturm_certify(A, 38360448, 10^7): PARI/GP Sturm count, Σ T_a(y) + 3.8360448 has no root in [−1,1]
+  (True, 0); with 3.8360432 it has 2 roots. Hence M(A) ∈ [3.8360432, 3.8360448], R(A) <= 0.571844.
+Status: INTERVAL-CERTIFIED finite case, two independent methods.

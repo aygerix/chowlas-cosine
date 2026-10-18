@@ -89,13 +89,17 @@ theorem exists_endpoint_le {k : ℕ} (J : Finset (Finset (Fin k))) (y : Fin k �
     {a b t : ℝ} (ht : t ∈ Set.Icc a b) :
     ∃ s, (s = a ∨ s = b) ∧
       multilinPoly J (Function.update y i s) ≤ multilinPoly J (Function.update y i t) := by
-  rw [multilinPoly_update, multilinPoly_update]
+  set c₀ := ∑ S ∈ J, if i ∈ S then 0 else ∏ j ∈ S, y j
   set c₁ := ∑ S ∈ J, if i ∈ S then ∏ j ∈ S \ {i}, y j else 0
+  have key : ∀ s, multilinPoly J (Function.update y i s) = c₀ + s * c₁ :=
+    fun s => multilinPoly_update J y i s
   by_cases hc : 0 ≤ c₁
   · refine ⟨a, Or.inl rfl, ?_⟩
+    rw [key, key]
     have := mul_le_mul_of_nonneg_right ht.1 hc
     linarith
   · refine ⟨b, Or.inr rfl, ?_⟩
+    rw [key, key]
     have := mul_le_mul_of_nonpos_right ht.2 (le_of_lt (not_le.mp hc))
     linarith
 
@@ -188,9 +192,12 @@ theorem cubeSum_min {k : ℕ} (J : Finset (Finset (Fin k))) :
     rw [cubeSum_eq_multilinPoly]
     congr 1
     ext j
+    show 2 * Real.cos (if v j = 2 then 0 else π) = v j
     by_cases h : v j = 2
-    · simp [h]
+    · rw [if_pos h, Real.cos_zero, h]
+      ring
     · have h' : v j = -2 := (hv j).resolve_right h
-      simp [h, h']
+      rw [if_neg h, Real.cos_pi, h']
+      ring
 
 end ChowlaCosine

@@ -80,7 +80,7 @@ theorem integral_cosSum_mul_cosSum_sub (A₁ A₂ : Finset ℕ) (h₁ : ∀ a �
         exact Finset.sum_congr rfl (fun b hb => integral_cos_mul_cos_sub (h₁ a ha) (h₂ b hb) x)
     _ = ∑ a ∈ A₁, (if a ∈ A₂ then π * Real.cos ((a : ℝ) * x) else 0) := by
         refine Finset.sum_congr rfl (fun a _ => ?_)
-        exact Finset.sum_ite_eq A₂ a (fun a => π * Real.cos ((a : ℝ) * x))
+        exact Finset.sum_ite_eq A₂ a (fun _ => π * Real.cos ((a : ℝ) * x))
     _ = ∑ a ∈ A₁ ∩ A₂, π * Real.cos ((a : ℝ) * x) := by
         rw [Finset.sum_ite_mem]
     _ = π * cosSum (A₁ ∩ A₂) x := by
@@ -120,7 +120,6 @@ theorem cosSum_inter_ge (A₁ A₂ : Finset ℕ) (h₁ : ∀ a ∈ A₁, 0 < a) 
     | exact (continuous_const.mul hc₁).intervalIntegrable _ _
     | exact (continuous_const.mul hc₂').intervalIntegrable _ _
     | exact continuous_const.intervalIntegrable _ _
-    | (apply Continuous.intervalIntegrable; fun_prop)
 
 /-- The intersection lemma with the (redundant) hypotheses `0 ≤ M₁`, `0 ≤ M₂`, exactly as in
 the paper statement. -/

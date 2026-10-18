@@ -39,8 +39,7 @@ theorem sum_product_symm (B : Finset ℤ) (g : ℤ × ℤ → ℝ) (hg : ∀ u v
     symm
     apply Finset.sum_nbij' (fun b => (b, b)) (fun p => p.1)
     · intro b hb
-      simp only [Finset.mem_filter, Finset.mem_product]
-      exact ⟨⟨hb, hb⟩, rfl⟩
+      simp [hb]
     · intro p hp
       simp only [Finset.mem_filter, Finset.mem_product] at hp
       exact hp.1.1
@@ -176,5 +175,22 @@ theorem cosSum_diffSet_ge_of_sidon (B : Finset ℤ)
   have hid := norm_sq_sum_exp B x
   have hnn : 0 ≤ ‖∑ b ∈ B, Complex.exp ((b : ℂ) * (x : ℂ) * Complex.I)‖ ^ 2 := sq_nonneg _
   linarith
+
+end ChowlaCosine
+
+namespace ChowlaCosine
+
+/-- **Sidon consequence, combined statement** (fully unfolded). If the difference map
+`(u,v) ↦ v - u` is injective on `{(u,v) ∈ B × B : u < v}`, then
+`A := {(v - u).toNat : u < v in B}` consists of positive naturals, has
+`|A| = |B| (|B| - 1) / 2`, and satisfies `f_A(x) ≥ -|B|/2` for every real `x`. -/
+theorem sidon_diffSet_main (B : Finset ℤ)
+    (hB : Set.InjOn (fun p : ℤ × ℤ => p.2 - p.1) ↑((B ×ˢ B).filter (fun p => p.1 < p.2))) :
+    (∀ a ∈ ((B ×ˢ B).filter (fun p => p.1 < p.2)).image (fun p => (p.2 - p.1).toNat), 0 < a) ∧
+    (((B ×ˢ B).filter (fun p => p.1 < p.2)).image (fun p => (p.2 - p.1).toNat)).card =
+      B.card * (B.card - 1) / 2 ∧
+    ∀ x : ℝ, -((B.card : ℝ) / 2) ≤
+      cosSum (((B ×ˢ B).filter (fun p => p.1 < p.2)).image (fun p => (p.2 - p.1).toNat)) x :=
+  ⟨diffSet_pos B, card_diffSet_of_sidon B hB, cosSum_diffSet_ge_of_sidon B hB⟩
 
 end ChowlaCosine

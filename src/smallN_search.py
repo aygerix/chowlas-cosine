@@ -493,17 +493,24 @@ def _exh_task(args):
     return prefix, n, sets, Ms, st, time.time() - t
 
 
-def box_upper_bound(N, L, pool, restarts=20, iters=200000):
-    """Heuristic best set in [1,L] (SA); returns (certified M upper bound, set)."""
+def box_upper_bound(N, L, pool, restarts=20, iters=200000, extra=()):
+    """Heuristic best set in [1,L] (SA, plus any known sets in `extra` that fit in the box);
+    returns (certified M upper bound, set)."""
     rng = np.random.default_rng(1000 * N + L)
     tasks = []
     for r in range(restarts):
         init = sorted(rng.choice(np.arange(1, L + 1), size=N, replace=False).tolist())
         tasks.append((N, L, init, iters, 0.3, 0.003, 7919 * r + N * 31 + L, 0.4, 3, 24, 32))
     res = pool.map(_sa_task, tasks)
-    cands = sorted({tuple(r[1]) for r in res}, key=lambda A: accurate_M(A)[0])[:3]
+    pool_sets = {tuple(r[1]) for r in res} | {tuple(sorted(A)) for A in extra if len(A) == N and max(A) <= L}
+    cands = sorted(pool_sets, key=lambda A: accurate_M(A)[0])[:3]
     best = min(cands, key=certify)
     return certify(best), list(best)
+
+
+def _load_exh():
+    fp = os.path.join(RUN_DIR, "exhaustive.json")
+    return json.load(open(fp)) if os.path.exists(fp) else {}
 
 
 def run_exhaustive(plan, workers=10, log=print):
@@ -511,7 +518,17 @@ def run_exhaustive(plan, workers=10, log=print):
     with Pool(workers) as pool:
         for N, L in plan:
             t0 = time.time()
-            ub, A0 = box_upper_bound(N, L, pool)
+            known = []
+            for fn in ("sa_best_raw.json",):
+                fp = os.path.join(RUN_DIR, fn)
+                if os.path.exists(fp):
+                    kb = json.load(open(fp)).get(str(N))
+                    if kb:
+                        known.append(kb["A"])
+            for k2, r2 in _load_exh().items():
+                if r2.get("N") == N and "opt_A" in r2:
+                    known.append(primitive(r2["opt_A"]))
+            ub, A0 = box_upper_bound(N, L, pool, extra=known)
             thr = ub + 1e-9
             # prefixes (a1,a2) for load balance
             prefixes = [(a1, a2) for a1 in range(1, L - N + 2) for a2 in range(a1 + 1, L - N + 3)]

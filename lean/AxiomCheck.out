@@ -1,0 +1,63 @@
+norm_sq_sum_exp : ∀ (B : Finset ℤ) (x : ℝ),
+  ‖∑ b ∈ B, Complex.exp (↑b * ↑x * Complex.I)‖ ^ 2 =
+    ↑B.card + 2 * ∑ p ∈ B ×ˢ B with p.1 < p.2, Real.cos (↑(p.2 - p.1) * x)
+'ChowlaCosine.norm_sq_sum_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_diffSet_ge_of_sidon : ∀ (B : Finset ℤ),
+  Set.InjOn (fun p => p.2 - p.1) ↑({p ∈ B ×ˢ B | p.1 < p.2}) →
+    ∀ (x : ℝ), -(↑B.card / 2) ≤ cosSum (Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2})) x
+'ChowlaCosine.cosSum_diffSet_ge_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_diffSet_of_sidon : ∀ (B : Finset ℤ),
+  Set.InjOn (fun p => p.2 - p.1) ↑(ltPairs B) → (diffSet B).card = B.card * (B.card - 1) / 2
+'ChowlaCosine.card_diffSet_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+diffSet_pos : ∀ (B : Finset ℤ), ∀ a ∈ diffSet B, 0 < a
+'ChowlaCosine.diffSet_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+two_mul_card_ltPairs : ∀ (B : Finset ℤ), 2 * (ltPairs B).card = B.card * (B.card - 1)
+'ChowlaCosine.two_mul_card_ltPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_diffSet_main : ∀ (B : Finset ℤ),
+  Set.InjOn (fun p => p.2 - p.1) ↑({p ∈ B ×ˢ B | p.1 < p.2}) →
+    (∀ a ∈ Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2}), 0 < a) ∧
+      (Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2})).card = B.card * (B.card - 1) / 2 ∧
+        ∀ (x : ℝ), -(↑B.card / 2) ≤ cosSum (Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2})) x
+'ChowlaCosine.sidon_diffSet_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cosSum : ∀ (A : Finset ℕ), (∀ a ∈ A, 0 < a) → ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x = 0
+'ChowlaCosine.integral_cosSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cosSum_sq : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) → ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x ^ 2 = Real.pi * ↑A.card
+'ChowlaCosine.integral_cosSum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+normalized_mean_sq : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) → 1 / (2 * Real.pi) * ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x ^ 2 = ↑A.card / 2
+'ChowlaCosine.normalized_mean_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_inter_ge : ∀ (A₁ A₂ : Finset ℕ),
+  (∀ a ∈ A₁, 0 < a) →
+    (∀ a ∈ A₂, 0 < a) →
+      ∀ (M₁ M₂ : ℝ),
+        (∀ (x : ℝ), -M₁ ≤ cosSum A₁ x) → (∀ (x : ℝ), -M₂ ≤ cosSum A₂ x) → ∀ (x : ℝ), -(2 * M₁ * M₂) ≤ cosSum (A₁ ∩ A₂) x
+'ChowlaCosine.cosSum_inter_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_inter_ge' : ∀ (A₁ A₂ : Finset ℕ),
+  (∀ a ∈ A₁, 0 < a) →
+    (∀ a ∈ A₂, 0 < a) →
+      ∀ (M₁ M₂ : ℝ),
+        0 ≤ M₁ →
+          0 ≤ M₂ →
+            (∀ (x : ℝ), cosSum A₁ x ≥ -M₁) →
+              (∀ (x : ℝ), cosSum A₂ x ≥ -M₂) → ∀ (x : ℝ), cosSum (A₁ ∩ A₂) x ≥ -2 * M₁ * M₂
+'ChowlaCosine.cosSum_inter_ge'' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_prod_two_cos_eq_cubeSum : ∀ {k : ℕ} (J : Finset (Finset (Fin k))) (θ : Fin k → ℝ),
+  ∑ S ∈ J, ∏ j ∈ S, 2 * Real.cos (θ j) = ∑ S ∈ J, ∑ ε, Real.cos (∑ j, ↑↑(ε j) * θ ↑j)
+'ChowlaCosine.sum_prod_two_cos_eq_cubeSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+@multilinPoly_min_at_vertex : ∀ {k : ℕ} (J : Finset (Finset (Fin k))) {a b : ℝ},
+  a ≤ b →
+    ∃ v,
+      (∀ (j : Fin k), v j = a ∨ v j = b) ∧
+        ∀ (y : Fin k → ℝ), (∀ (j : Fin k), y j ∈ Set.Icc a b) → multilinPoly J v ≤ multilinPoly J y
+'ChowlaCosine.multilinPoly_min_at_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
+@multilinPoly_min_at_vertex_two : ∀ {k : ℕ} (J : Finset (Finset (Fin k))),
+  ∃ v,
+    (∀ (j : Fin k), v j = -2 ∨ v j = 2) ∧
+      ∀ (y : Fin k → ℝ), (∀ (j : Fin k), y j ∈ Set.Icc (-2) 2) → multilinPoly J v ≤ multilinPoly J y
+'ChowlaCosine.multilinPoly_min_at_vertex_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+@cubeSum_min : ∀ {k : ℕ} (J : Finset (Finset (Fin k))),
+  ∃ v,
+    (∀ (j : Fin k), v j = -2 ∨ v j = 2) ∧
+      (∀ (θ : Fin k → ℝ), multilinPoly J v ≤ cubeSum J θ) ∧ ∃ θ, cubeSum J θ = multilinPoly J v
+'ChowlaCosine.cubeSum_min' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -60,3 +60,9 @@ R >= 1/2 (this is the Bu barrier, now for arbitrary weights); (ii) R(A) < 1/sqrt
 f_A + M(A) to have |q|^2-weighted mean difference multiplicity > m; equality-type efficiency requires the pair
 products q_β conj(q_{β-g}) to be nearly constant along each difference class (=> nearly flat multiplicities).
 Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_+ ... only lambda is bounded.
+
+## Lean status (2026-10-17, re-verified by lead: `lake build` OK, 15 theorems, axioms = [propext, Classical.choice, Quot.sound], no sorry/native_decide)
+- KERNEL-CHECKED: difference-set square identity (`norm_sq_sum_exp`); Sidon consequence f_{D-D} >= -|D|/2 with |D-D|_+ = k(k-1)/2
+  (`sidon_diffSet_main`); mean zero and Parseval (`integral_cosSum`, `integral_cosSum_sq`); P5 intersection lemma
+  (`cosSum_inter_ge`, no sign hypothesis on M_i needed); P7 cube identity + multilinear vertex minimum (`cubeSum_min`).
+- NOT formalized: P7 admissibility count |A| = sum 2^{|S|-1} (distinct signed sums), P1 (needs Fejér–Riesz, absent from mathlib), P6, P8.

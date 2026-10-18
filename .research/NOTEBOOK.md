@@ -691,3 +691,20 @@
   - Decision: line D's numerical half has delivered what it can cheaply. The theoretical half (exponent > 1/3 via
     difference-set rigidity) stays open but is a side question for Z; the Z-relevant content is the anatomy (profile
     plus tail), which matches the Z dense optima.
+- **Where a Z-specific run-top bound must come from (reductions, PROVED-trivial; recorded to stop re-deriving them).**
+  - (i) The chain needs Σ_{t∈A}|B_t| <= n·K^{4−δ}. Since |B_t| <= |A ∩ (A+t)|, it suffices that
+    max_t |A ∩ (A+t)| <= K^{4−δ}.
+  - Restricted to sets made of t-runs of length exactly 2 (A = S ∪ (S+t), S ∩ (S + jt) = ∅ for j = ±1, ±2), both
+    statements are the same: "OR(2)-weak", M(S ∪ (S+t)) >= c|S|^{1/4+δ}. Groups violate it (O4: every run is a
+    2-run, K ~ |A|^{1/4}). Numerically Z is far from violating it (E38: R ≈ 0.6; E40: M ≈ 5√t).
+    So OR(2)-weak is the minimal Z-statement any improvement of the run-top route must contain.
+  - (ii) The natural group formulation, G_arc with all t-runs of length <= η·ord(t) and η -> 0, is the Z problem
+    itself via the Z_N transfer (N >> max A makes η arbitrarily small). It is not a reduction.
+  - (iii) The one Z-feature expressible in finite groups is localization: A sits in an arc of length X << N in Z_N.
+    That allows localizing x at any scale 1/H with H <= X, hence local profiles (Gibbs at every scale and location).
+    O4 spreads over its whole group and has no scale.
+  - (iv) A local rotation sweep (S inside a window of width w << t) gives M >~ 2|F_S(x₀)| under a Diophantine condition
+    on c/t. That is large only when S is dense in a short window, the trivial (Dirichlet) regime. The dilated case
+    worked because F_{qY}(x) = F_Y(qx) is 2π/q-periodic (Bohr structure).
+  - Conclusion: the next lower-bound attempt should combine localization (local profiles at scale H with 1 << H << t)
+    with the 2-run structure; there is no shortcut through group statements.

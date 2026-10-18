@@ -152,3 +152,10 @@ E24b — second optimiser (src/signed_homotopy.py: a = tanh(κu), κ ↑, Adam o
 best of 3–5 seeds: X = 50: 1.43 | 100: 1.47 | 200: 1.40–1.47 | 400: 1.51 | 800: 1.58. Worse than SA at small X,
 slightly better at X >= 200; both optimisers put the achievable ±1 ratio at ≈ 1.45–1.6 for X in [200, 800], slowly rising.
 (Caveat: the ±1 problem is the constant profile, ρ = 1/2, for which beating 1/2 would need c_E < 1 — even stricter.)
+E25 addendum: scanning 600 shifts with 8x FFT grids picked shifts whose CERTIFIED R was worse (q=199: est 0.5625 →
+cert 0.56642; q=251: est 0.5600 → cert 0.56529) than the 60-shift picks (cert 0.56630, 0.56272): 8x grids misrank by
+~0.004. src/singer_bu.py now re-ranks the top 8 shifts with 16x grids + Newton before certifying (q=31: cert 0.63240).
+E25b — re-signing the diagonal: SA over S' ⊂ S for A(S) ∪ {|6s+1| : s ∈ S'} (valid: no collisions, by Sidon) on the q = 101
+Singer–Bu set: best grid R 0.58806 → 0.58760 using one added frequency; certified 0.5924 (worse than the base 0.58874;
+8x grid misranking). The diagonal can be re-signed (f = P^2 − k/2 − ½Σσ_s cos((6s+1)x)) but no sign pattern helps,
+matching the heuristic E[D_σ | P = 0] ≈ −(1/4k)Σσ_s, far smaller than the √k fluctuations at the zeros of P.

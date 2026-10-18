@@ -310,3 +310,24 @@
   have >~ ηk zeros inside the unit disk, angularly equidistributed at scale 1/(ηk). Upper bounds on winding available
   from |ψ'| <= |F'|/|F| are ~X/√β >> ηk, so no contradiction; a proof of SNZ-weak needs a reason why 0/1 Sidon
   polynomials cannot have that zero geometry (their zeros' radial distribution is the natural place to look).
+- Synthesis after E24/E24b/E26 (HEURISTIC picture, session 2). Writing f + λ = |H|^2 (Fejér–Riesz), a real cosine sum
+  has a REAL factor H, and the question "how skewed can the error be" becomes: minimise ||h||^2 over sequences whose
+  aperiodic autocorrelation is two-valued (±½, or {−w, 1−w}) at every lag. With complex h (free phases, |a(j)| = ½) the
+  optimum is flat at ≈ 0.9·sqrt(X/2) (E26); with real h (±1 cosine sums) the optimised ratio rises 1.17 → 1.58 over
+  X = 50 → 800 (two optimisers), plausibly toward the Rudin–Shapiro value 2 (an upper bound for every X). If the real
+  constant tends to c_∞ >= ~1.6, dense 0/1 sets have R_∞ ≈ c_E·sqrt((1−ρ*)/2) >= ~0.6 (consistent with LNS 0.66 at
+  N = 80), so asymptotically the dense regime loses to Bu (-> 1/2). The only mechanism producing sub-arcsine skew on Z
+  is then multiplicative: a square of a Sidon-type cosine sum (Bu, χ²_1 law, ratio 1/√2), pinned at 1/2 by P16. This
+  is the most coherent account so far of why C½ should hold; it is not a proof.
+  Conjecture (new, testable): c_±(X) := min_{ε ∈ {±1}^X} (−min_x Σ ε_n cos nx)/sqrt(X/2) satisfies liminf c_± >= 1.5.
+- Min–max tradeoff (PROVED, two lines; the correct core of Erdélyi's attempt). For a real trig polynomial
+  L = Σ_{n<=X} a_n cos(nx) with L >= −M: πΣ n^2 a_n^2 = ||L'||_2^2 <= ||L'||_∞ ||L'||_1 <= (X·max|L|)(X·2πM) (Bernstein in
+  sup and in L^1 for L + M >= 0), so M·max|L| >= Σ n^2 a_n^2 / (2X^2). For ±1 full support: M·max|L| >= X/6, i.e.
+  upper-flat ±1 cosine polynomials (max|L| <= C√X, e.g. BBMST) have −min >= √X/(6C), and a small minimum forces spikes
+  of height >= X/(6M). Level-set refinements cannot do better: spikes of height B, width 1/X, total L^1 mass <= 2πM carry
+  derivative energy up to 2πX^2 BM, exactly the budget. For 0/1 sets the spike at x = 0 (height N) makes it trivial.
+- Adding structure to a Bu set does not help asymptotically (HEURISTIC). (i) A = A(S) ⊔ B with B a dense p.d. rounding
+  (|B| = βk^2): at the zeros of P the excess is −C/2 + G_B, of variance k/8 + (1−ρ)βk^2/2, so R ≈ (1/2 + z sqrt((1−ρ)β/2))
+  / sqrt(1+β) with z ~ sqrt(2 log #zeros): the √β cost beats the β/4 gain for small β, and large β is the dense regime.
+  (ii) Adding the diagonal frequencies {6s+1 : s ∈ S'} for half of S turns −C/2 into −(C_{S\S'} − C_{S'})/2, same
+  variance; N grows by k/2, gain O(1/k) in R. The diagonal term can be re-signed but not removed.

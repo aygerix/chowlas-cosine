@@ -67,3 +67,20 @@ open ChowlaCosine
 #print axioms card_le_of_sq_certificate
 #check @card_le_of_sq_certificate'
 #print axioms card_le_of_sq_certificate'
+-- 8. Averaging over q-th roots of unity
+#check @sum_range_cos_shift
+#print axioms sum_range_cos_shift
+#check @sum_cosSum_shift
+#print axioms sum_cosSum_shift
+#check @averaging_identity
+#print axioms averaging_identity
+#check @cosSum_filter_dvd_ge
+#print axioms cosSum_filter_dvd_ge
+#check @card_sub_le_of_cosSum_ge
+#print axioms card_sub_le_of_cosSum_ge
+#check @le_of_cosSum_ge_mixed
+#print axioms le_of_cosSum_ge_mixed
+#check @card_le_of_no_multiples
+#print axioms card_le_of_no_multiples
+#check @card_le_of_no_multiples'
+#print axioms card_le_of_no_multiples'

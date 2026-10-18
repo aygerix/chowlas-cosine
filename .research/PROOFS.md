@@ -69,7 +69,12 @@ Note: lambda here is ||Q||_2^2; when h != 0, M(A) <= lambda + max_x (h - |Q|^2)_
   Quot.sound], no sorry): P9 `star_lemma` (∀ W, v: Σ v_u v_w 1[|u−w|∈A] >= −2M Σ v^2) and `star_bound` (A-independent
   I ⊂ ±A ⇒ sqrt|I|/2 <= M); P8 `card_le_of_sq_certificate` (λ + f_A = |Σ_{β∈B} q_β e^{iβx}|^2 − Σ_{g∈G} c_g cos(gx), G avoiding
   0 and ±A, pair counts <= m at |g| ∈ A ⇒ |A| <= 2mλ^2; integer-frequency version) and the stated variant.
-- NOT formalized: P7 admissibility count, P1 (Fejér–Riesz absent from mathlib), P6, P10–P13, gain identity.
+- KERNEL-CHECKED 2026-10-18 (Lean agent; lead re-ran `lake build` (OK) and regenerated AxiomCheck: 37 lines, all
+  [propext, Classical.choice, Quot.sound], no sorry/admit/native_decide): P13(a) in lean/ChowlaCosine/Averaging.lean —
+  `averaging_identity` ((1/q)Σ_{j<q} f_A(x + 2πj/q) = f_{A∩qZ}(x), q >= 1), `cosSum_filter_dvd_ge` (f_A >= −M ∀x ⇒
+  f_{A∩qZ} >= −M ∀x, every q : ℕ), `card_sub_le_of_cosSum_ge` (|A| − q|A∩qZ| <= (q−1)M, q >= 2) and
+  `card_le_of_no_multiples` (no multiples of q ⇒ |A| <= (q−1)M).
+- NOT formalized: P7 admissibility count, P1 (Fejér–Riesz absent from mathlib), P6, P10–P12, P13(b–d), P14, gain identity.
 
 ## P9. Induced-subgraph (local spectral) lemma (PROVED, elementary)
 For finite W ⊂ Z and real v on W: Σ_{u,w∈W} v_u v_w 1[u−w ∈ ±A] = (1/2π)∫ 2 f_A(x) |V(x)|^2 dx >= −2M(A) Σ v_u^2,
@@ -106,15 +111,17 @@ Setting: α_1..α_k distinct positive reals such that the k(k−1) numbers α_i 
 integers; A = {α_i − α_j, α_i + α_j}, so f_A = ρ^2 − Σ_j c_j^2 with c_j = cos(α_j x), ρ = Σ c_j (exact algebra).
 Hypothesis Diss(D): every relation Σ_{i=1}^m ε_i α_{j_i} = 0 with m <= D, ε_i ∈ {±1}, is trivial (indices pair off
 with opposite signs). (For Bu's α_j = 3s_j + 1/2: Diss(4) ⟸ S Sidon; Diss(6) needs S to be B_3-like, false for Singer.)
-Claim: if Diss(2d+4) holds then M(A) >= (k/2)(1 − η_d) − O_d(1), where η_d = min_{deg q <= d} E[Z^2 q(Z)^2]/E[q(Z)^2]
+Claim: if Diss(2d+2) holds then M(A) >= (k/2)(1 − η_d) − O_d(1), where η_d = min_{deg q <= d} E[Z^2 q(Z)^2]/E[q(Z)^2]
 (Z ~ N(0,1)), and η_d -> 0 as d -> ∞ (η_d ≍ (smallest Gauss–Hermite node)^2 ≍ 1/d). Hence R(A) >= (1/2)(1 − η_d) − o(1).
 Proof. Average over x in a common period (half-integer α's: period 4π). For any polynomial P in c_1..c_k of degree <= D,
 E_x P(c(x)) = E_iid P(cos θ_1, .., cos θ_k) EXACTLY (both sides expand into products of cosines; E_x of a product
 2^{-m} Σ_ε 1[Σ ε_i α_{j_i} = 0] equals the iid value iff only trivial relations occur). Take the test measure
-dμ = q(ρ/sqrt(k/2))^2 dx / E[q^2]: M >= −E_μ f = E_iid[(Σ c_j^2 − ρ^2) q^2]/E_iid[q^2] (degree 2d+2 <= D). In the iid
+dμ = q(ρ/sqrt(k/2))^2 dx / E[q^2]: M >= −E_μ f = E_iid[(Σ c_j^2 − ρ^2) q^2]/E_iid[q^2] (f·q(ρ)^2 has degree 2d+2 <= D). In the iid
 model Σ_j E[c_j^2 q(ρ)^2] = (k/2) E[q^2] + O_d(1)·E[q^2] (the c_j^2 − 1/2 terms interact with q(ρ) only through O(d)
 coordinates), and E[ρ^2 q^2]/E[q^2] = (k/2)(E_G[Z^2 q^2]/E_G[q^2] + O_d(1/k)) by the moment CLT. Choose q optimal. □
-Remarks: (i) d = 2 already gives η ≈ 0.55 (q = 1 − 0.18 Z^2), i.e. R >= 0.22 for B_3-type S; (ii) the analogous
+Remarks: (i) η_d (even q; generalized eigenproblem on Gaussian moments): η_2 = 0.5505, η_4 = 0.3803, η_6 = 0.2906,
+ η_8 = 0.2352, η_10 = 0.1975, η_12 = 0.1702, giving R >= 0.2247 (Diss(6), B_3-type S), 0.3098 (Diss(10)),
+ 0.3547 (Diss(14)), 0.3824 (Diss(18)), 0.4013 (Diss(22)), 0.4149 (Diss(26)); (ii) the analogous
 statement for several blocks / any 0-1 PSD block matrix Q gives R >= 1/2 with equality iff Q = J (single block):
 this is the rigorous form of H1 for degree-2 dissociated chaos; (iii) Bu's Singer-based S are Diss(4) only, so the
 extremal examples lie OUTSIDE the class — C½ for them is not covered.
@@ -135,3 +142,74 @@ extremal examples lie OUTSIDE the class — C½ for them is not covered.
     **Sidon near-zero conjecture (SNZ)**: for every Sidon set D of k reals in a common coset of Z (integers or
     half-integers), min_x |F_D(x)|^2 = o(k).  SNZ also gives R(D−D) -> 1/√2 for Sidon differences. P11 proves SNZ for
     B_h sets with h -> ∞; E8 supports it (best min|F_D|^2/k decreasing to 0.0017 at k=16).
+
+## P14. Bedert–Shankar boundary bound: what averaging over t can and cannot give (PROVED at paper level by agent
+## 2026-10-18, notes .research/agents/bedert_avg.md; lead re-derived (i) and (ii))
+Setting (Bedert 2509.05260 v3 §7, Shankar 2609.05338 v1): A = −A ⊂ Z\{0}, n = |A|, F = 1̂_A ≥ −K on T = R/Z (K = 2M),
+A_t = A ∩ (A+t), B_t = A_t \ (−A_t). Shankar: Σ_{t∈A}|B_t| >= T/3 >= n^2/(6K) (n >= 2K^2); Bedert: |B_t| << K^4 ⇒ K >> n^{1/5}.
+(i) Abstract Prop 7.3. The proof uses only (38) and Lemma 7.2, so for EVERY t ≠ 0 and EVERY Q ∈ L^2(T):
+    |B_t|^{1/2} <= 33.12 ||1̂_{B_t} − Q||_2 + 6.727 K ||Q||_1.   [(β−α)b^2 <= 2(α+γ)br + (α+γ)r^2 + 32K^2||Q||_1^2,
+    β−α = 1/√2, α+γ = 11.536; solve in b = |B|^{1/2}.]  The method's output is the K-functional inf_Q(r^2 + K^2||Q||_1^2).
+(ii) Localisation. Q = 1̂_{B_t} 1_{F >= λ} and Cauchy–Schwarz with weight F+K (∫(F+K) = K) give ||Q||_1^2 <= K|B_t|/(λ+K);
+    λ = 181K^3 gives |B_t| <= 4388 ∫_{F<181K^3} |1̂_{B_t}|^2.
+(iii) Refined bound: |B_t| <= 140416 L(A) + 8776 ||Q_{2,t}||_2^2, L(A) := ∫_{F<181K^3}(F+K)^2 <= 182K^4, hence
+    n/(6K) <= 140416 L(A) + 8776 avg_{t∈A} ||Q_{2,t}||_2^2.   (★)
+    Source (a) is t-INDEPENDENT: averaging cannot improve it. Any exponent gain needs L(A) << K^{4−δ} ("no middle layer:
+    F+K carries o(K) L^1-mass at heights ≍ K^3") or non-saturation ∫_{F<CK^3} Σ_t |Q_{1,t}|^2 << nK^3, plus (b) averaged.
+(iv) (b), partially: every piece of Q_2 with a factor T_2 = min(F,0) has Σ_{t∈Z} ||·||_2^2 <= C(n+K^4)K^2. Pure-T_1
+    truncation remainders are NOT averaged (reduce to an additive-closure statement (S') for the spectrum {F > K^2}).
+(v) [lead, 2026-10-18] The "no middle layer" statement FAILS in finite groups: in Z_N (N = product of distinct primes) let
+    A = ∪_i (H_i \ {0}) for r subgroups of sizes ≈ r^3 and r of sizes ≈ r^10 (pairwise trivial intersections). Then
+    F = Σ_i |H_i| 1_{H_i^⊥} − r, K = r, n ≈ r^11 >= K^4, and L(A) ≈ Σ_{|H_i| < C r^3} |H_i| ≈ r^4 ≍ K^4. So any proof of
+    L(A) << K^{4−δ} must use torsion-freeness of Z (as must C½ itself, cf. E10). Heuristic reading: a middle layer in Z
+    requires sub-structures that are themselves strong Chowla counterexamples (a possible induction-on-scales route; no
+    rigorous decomposition of A along level sets of F is known).
+Numerics (agent, uncertified floats): on every √n-family, avg ||Q_{1,t}||_1 ≈ 0.25K, so Σ_t ||Q_{1,t}||_1^2 << nK^{2−δ}
+is FALSE; the weaker Σ_t ℓ_t^2 <= C(nK + K^4) (C ≈ 0.05–0.07) is consistent but untestable (n ≍ K^2 in all known sets).
+
+## P15. Bu's construction is the square of a half-integer cosine sum (PROVED, one line; presumably implicit in Bu et al.)
+For |w| = 1, |z|^2 + Re(w z^2) = 2 (Re(w^{1/2} z))^2. With G(x) = Σ_{s∈S} e^{3isx} and w = e^{ix}:
+    (|G|^2 − k)/2 + Re(e^{ix} G^2)/2 = P(x)^2 − k/2,   P(x) = Σ_{s∈S} cos((3s + 1/2) x).
+Expanding P^2 = k/2 + (1/2)C(x) + Σ_{s<t}[cos(3(s−t)x) + cos((3(s+t)+1)x)], C(x) := Σ_s cos((6s+1)x). For Bu's set
+A(S) = {3|s−t|} ∪ {|3(s+t)+1|} (s<t; src/bu.py) this is the EXACT identity
+    f_{A(S)}(x) = P(x)^2 − k/2 − C(x)/2,   hence   k/2 + max_{x: P(x)=0} C(x)/2  <=  M(A(S))  <=  k/2 + max_x C(x)/2·[P small].
+So the excess M − k/2 is governed by the diagonal sum C at the real zeros of P (P is 2π-antiperiodic, so zeros exist);
+for pseudo-random S, C at the zeros behaves like a sample of a √k-scale sum, matching the observed excess ≈ 1.3√k (E4) and
+Bu et al.'s O(n^{1/4}√log n) error. The Bu class is {P^2 − const − C/2 : P a half-integer cosine sum with distinct
+pairwise sums/differences}; C½ for the class ⟸ "some real zero of P has C >= −o(k)" (weaker-looking than SNZ, P13). Consequence (HEURISTIC): sums of several squares Σ_j P_j^2 − rk/2 give
+R ≈ √r/2 · (1 − min Σ P_j^2/(rk/2)); with pseudo-random P_j the minimum of the χ^2_r-like sum gives R ~ √(log X), worse.
+Beating 1/2 inside this template needs Σ_j P_j^2 >= δ rk/2 everywhere — a lower-flatness statement of SNZ type.
+
+## P16. C½ for Bu's construction with any Sidon set of range L = o(k^3) (PROVED on paper by lead 2026-10-18;
+## numerics src/bu_halfsquare.py, constants src/p16_constants.py; INDEPENDENT REVIEW REQUESTED — not yet scrutinised)
+Statement. Let S ⊂ Z ∩ [−L, L] be a Sidon set, |S| = k, such that A(S) = {3|s−t|} ∪ {|3(s+t)+1|} (s < t) is a genuine
+set of k(k−1) positive integers (Bu et al.). Let 0 < η <= 1/2, δ := (ηk/2)^{1/2}, h := the least h > 0 with Σbar(h) < δ
+(Σbar below), r := η/(2(6L+1)), n := ⌊2π/(2h+2r)⌋. If 2rn > 24π/(η^4 k^2), then M(A(S)) > (1/2 − η)k, so
+R(A(S)) > 1/2 − η. Asymptotically: R(A(S)) >= 1/2 − O((L/k^3)^{1/6}); for L <= k^2 (Bu's dense Sidon sets)
+R >= 1/2 − O(k^{−1/6}) = 1/2 − O(N^{−1/12}). Explicit (L = k^2/2): R >= 0.230 (k = 1e6), 0.376 (1e8), 0.443 (1e10),
+0.4735 (1e12). Together with Bu et al.'s upper bound, R(A(S)) -> 1/2 exactly along their family.
+Notation. b_s = 3s + 1/2, P(x) = Σ_s cos(b_s x), T = {6s+1}, C(x) = Σ_s cos((6s+1)x); note P(x) = C(x/2).
+Step 0 (identity, exact). 2cos(b_s x)cos(b_t x) = cos(3(s−t)x) + cos((3(s+t)+1)x) and cos^2(b_s x) = (1 + cos((6s+1)x))/2,
+    so f_{A(S)} = P^2 − Σ_s cos^2(b_s x) = P^2 − k/2 − C/2.   (numerically 1e−8 on all certified Bu sets)
+Step 1 (fourth moment, uses Sidon). Mean over [0,2π): E[C^4] = 2^{−4}#{(u_1..u_4) ∈ (±T)^4 : Σu_i = 0}. Writing
+    u_i = σ_i(6s_i+1): Σσ_i ≡ 0 (mod 6) forces two + and two − signs, and then s_1+s_2 = s_3+s_4, so (Sidon) the − pair
+    is a permutation of the + pair: count = 6(2k^2 − k). Hence E[C^4] = 3k^2/4 − 3k/8 (checked exactly by DFT, k <= 80).
+    Chebyshev: |{x ∈ I : C(x) <= −τ}| <= 2π E[C^4]/τ^4 for every interval I of length 2π.
+Step 2 (visit lemma, uses Sidon counting). Let φ be the triangle kernel of half-width h centred at c (φ >= 0, ∫φ = 1,
+    φ̂(ν) = sinc^2(νh/2)). If |P| >= δ on [c−h, c+h], P has constant sign there, so δ <= |∫Pφ| <= Σ_s sinc^2(|b_s|h/2).
+    The |b_s| are distinct (3(s+s') ≠ −1) and N(t) := #{s : |b_s| <= t} counts a Sidon set in <= 2t/3 + 4/3 consecutive
+    integers, so N(t) <= α t^{1/2} + β t^{1/4} + γ (Lindström; α = (2/3)^{1/2}, β = (2/3)^{1/4}, γ = 1+(4/3)^{1/2}+(4/3)^{1/4}).
+    With gbar(t) = min(1, 4/(th)^2) >= sinc^2(th/2) nonincreasing, Σ_s gbar(|b_s|) = ∫N(−gbar') <= ∫_{2/h}^∞ (αt^{1/2}+βt^{1/4}+γ)
+    8/(h^2 t^3) dt =: Σbar(h) ≈ 1.54 h^{−1/2}. So every interval of half-length h (Σbar(h) < δ) contains y with |P(y)| < δ.
+Step 3 (assume the conclusion fails: f_{A(S)} >= −(1/2−η)k everywhere). At a visit y: −(1/2−η)k <= δ^2 − k/2 − C(y)/2,
+    i.e. C(y) <= 2δ^2 − 2ηk = −ηk. Since |C'| <= Σ_s|6s+1| <= k(6L+1), C <= −ηk/2 on [y−r, y+r], r = η/(2(6L+1)).
+Step 4 (count). Windows [c_j − h, c_j + h], c_j = j(2h+2r), j < n, each contain a visit y_j; the intervals [y_j − r, y_j + r]
+    are disjoint and lie in an interval of length <= 2π, so |{C <= −ηk/2}| >= 2rn. Step 1 with τ = ηk/2 gives
+    |{C <= −ηk/2}| <= 24π/(η^4 k^2). If 2rn > 24π/(η^4k^2) this is a contradiction.  ∎
+Asymptotics: h ≈ 2.4/δ^2 = 4.8/(ηk), n ≈ 0.66ηk, so the condition is ≈ 0.66η^2 k/(6L) > 75.4/(η^4 k^2), i.e. k^3 >~ 690 L η^{−6}.
+Remarks. (a) Only Steps 1–2 use the Sidon property; no SNZ, no dissociation (contrast P12, P13). (b) The bottleneck is the
+crude Lipschitz radius r ~ η/L; a local (typical-derivative) bound or higher moments of C (B_h-type S) extend the range
+of L. (c) The same proof applies to any "half-integer square" f = P^2 − Q with P = Σcos(b_s x), b_s ∈ Z+1/2 and
+{2|b_s|} having only trivial ± additive quadruples and Sidon-type counting near 0. (d) Mechanism: Q = Σcos^2(b_s x)
+concentrates at k/2 (variance k/8 for ANY distinct |2b_s|), and a positive cosine sum cannot avoid small values on any
+window of length >> 1/k; so at some near-zero of P, f ≈ −Q ≈ −k/2. This is the 1/2 of Bu's construction, rigorously.

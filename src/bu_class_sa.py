@@ -25,9 +25,12 @@ def Mest(A, G):
 def run(k, L, iters, seed):
     rng = np.random.default_rng(seed)
     G = 1 << math.ceil(math.log2(16 * (6 * L + 2)))
-    while True:
-        S = sorted(rng.choice(np.arange(-L, L + 1), size=k, replace=False).tolist())
-        if sidon(S): break
+    while True:                                   # greedy random Sidon set (rejection of whole sets is hopeless for k >~ 15)
+        S = []
+        for x in rng.permutation(np.arange(-L, L + 1)).tolist():
+            if len(S) == k: break
+            if sidon(S + [x]): S.append(x)
+        if len(S) == k: S = sorted(S); break
     cur = Mest(A_of(S), G); best = (cur, S)
     for it in range(iters):
         T = 0.3 * (0.003 / 0.3) ** (it / iters)

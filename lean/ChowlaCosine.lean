@@ -5,3 +5,4 @@ import ChowlaCosine.Intersection
 import ChowlaCosine.Cube
 import ChowlaCosine.Star
 import ChowlaCosine.Multiplicity
+import ChowlaCosine.Averaging

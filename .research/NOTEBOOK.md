@@ -188,3 +188,28 @@
   multiplicity 1 (Bernoulli keeps 0/1), and consistent thinning for m >= 3 needs a difference-preserving group of
   order m (impossible). An R -> 0 construction must therefore absorb boundary defects of the lifted scheme with an
   error budget o(sqrt N) while m -> ∞ — the precise quantitative target for the Epoch track.
+
+## 2026-10-18 (session 1, cont.) — averaged boundary route closed; dense-profile theory; P16 (C½ for the Bu class)
+- Averaged Bedert–Shankar (agent, P14): averaging cannot help because, after localisation, source (a) of Bedert's K^4 is
+  t-independent: L(A) = ∫_{F<181K^3}(F+K)^2. Exponent gain ⟺ "no middle layer" (or non-saturation) + averaged (b).
+  Lead: the no-middle-layer statement FAILS in Z_N (unions of subgroups of sizes r^3 and r^10), so it needs torsion-
+  freeness — same status as C½. Route parked: it needs a structural decomposition of A along level sets of F.
+- Small-N exhaustive (agent): new best certified R = 0.56481 (N = 36). Box MILP confirms N=24 optimum in [1,40].
+- Dense-profile theory (E16/E17): f_A = X ŵ(xX) + E(x), main term needs ŵ >= 0 up to O(1/√X); with σ_E^2 = (1−ρ)N/2,
+  R = c_E sqrt((1−ρ)/2) where ρ = ∫w^2/∫w <= ρ* ≈ 0.7239 for doubly-positive profiles (numerical sup, new constant to
+  identify). Symmetric (arcsine) rounding errors give c_E >= √2 ⇒ R >~ 0.5255. Measured c_E ∈ [1.43, 1.87]. So dense sets
+  beat 1/2 only if their rounding errors are positively skewed — the same non-Wick requirement as before, one level down.
+  Bu sets are the sparse end (ρ ≈ 0, c_E = 1/√2). Finite-N gains come from the O(1/√X) non-p.d. tolerance, which vanishes.
+- P15: Bu's sum is f_{A(S)} = P^2 − k/2 − C/2 with P = Σcos((3s+1/2)x) = C(x/2): i.e. f_{A(S)}(2u) = C(u)^2 − C(2u)/2 − k/2
+  for the single Sidon cosine sum C(u) = Σcos((6s+1)u). Excess = (C/2 − P^2) at near-zeros of P (E19).
+- P16 (main new theorem of the day): R(A(S)) >= 1/2 − O((L/k^3)^{1/6}) for every Sidon S ⊂ [−L, L]. Mechanism: Q = Σcos^2
+  concentrates at k/2 (4th moment of C exact by Sidon), while a positive bump test plus Sidon counting forces P to come
+  within sqrt(ηk/2) of 0 in every window of length ~5/(ηk); at those points f ≈ −Q, and a Lipschitz/Chebyshev count
+  rules out C <= −ηk at all of them. First unconditional proof that Bu's construction cannot beat 1/2 (P12 needed
+  dissociation, P13 needed SNZ). Review + Lean agents launched.
+- Next questions this raises: (i) does the same "visit + concentration" scheme prove SNZ-weak (min|F_D|^2 <= 0.29k) for
+  Sidon differences? The obstacle is that |F_D|^2 needs a 2-D visit (P_c, P_s both small); a bump test only gives 1-D
+  visits. Idea to try: rotate, f_{D−D} = (|F|^2 − k)/2 and use Re(e^{−iθ(x)}F) with a locally linear phase θ.
+  (ii) Can P16's scheme be made universal: for an ARBITRARY A, write f_A = P^2 − Q + (rest) via a Fejér–Riesz factor?
+  The gain identity (Γ(1−L) = 1/(2R^2)) says every spectral factor carries the same information; a "visit" lemma for the
+  factor + concentration of its diagonal could give a universal lower bound with the right exponent in special classes.

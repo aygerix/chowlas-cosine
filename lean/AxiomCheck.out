@@ -136,3 +136,29 @@ card_le_of_sq_certificate' : ∀ (A : Finset ℕ),
               ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
           ∀ (m : ℕ), (∀ (g : ℤ), g ≠ 0 → {β ∈ B | β - g ∈ B}.card ≤ m) → ↑A.card ≤ 2 * ↑m * lam ^ 2
 'ChowlaCosine.card_le_of_sq_certificate'' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_range_cos_shift : ∀ (a q : ℕ),
+  0 < q →
+    ∀ (x : ℝ),
+      ∑ j ∈ Finset.range q, Real.cos (↑a * (x + 2 * Real.pi * ↑j / ↑q)) = if q ∣ a then ↑q * Real.cos (↑a * x) else 0
+'ChowlaCosine.sum_range_cos_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_cosSum_shift : ∀ (A : Finset ℕ) (q : ℕ),
+  0 < q → ∀ (x : ℝ), ∑ j ∈ Finset.range q, cosSum A (x + 2 * Real.pi * ↑j / ↑q) = ↑q * cosSum ({a ∈ A | q ∣ a}) x
+'ChowlaCosine.sum_cosSum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+averaging_identity : ∀ (A : Finset ℕ) (q : ℕ),
+  0 < q → ∀ (x : ℝ), 1 / ↑q * ∑ j ∈ Finset.range q, cosSum A (x + 2 * Real.pi * ↑j / ↑q) = cosSum ({a ∈ A | q ∣ a}) x
+'ChowlaCosine.averaging_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_filter_dvd_ge : ∀ (A : Finset ℕ) (q : ℕ) (M : ℝ),
+  (∀ (x : ℝ), -M ≤ cosSum A x) → ∀ (x : ℝ), -M ≤ cosSum ({a ∈ A | q ∣ a}) x
+'ChowlaCosine.cosSum_filter_dvd_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_sub_le_of_cosSum_ge : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card - ↑q * ↑{a ∈ A | q ∣ a}.card ≤ (↑q - 1) * M
+'ChowlaCosine.card_sub_le_of_cosSum_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+le_of_cosSum_ge_mixed : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → (↑A.card - ↑q * ↑{a ∈ A | q ∣ a}.card) / (↑q - 1) ≤ M
+'ChowlaCosine.le_of_cosSum_ge_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_no_multiples : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → (∀ a ∈ A, ¬q ∣ a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card ≤ (↑q - 1) * M
+'ChowlaCosine.card_le_of_no_multiples' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_no_multiples' : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → (∀ a ∈ A, 0 < a) → (∀ a ∈ A, ¬q ∣ a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card ≤ (↑q - 1) * M
+'ChowlaCosine.card_le_of_no_multiples'' depends on axioms: [propext, Classical.choice, Quot.sound]

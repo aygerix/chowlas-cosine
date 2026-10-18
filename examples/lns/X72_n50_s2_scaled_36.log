@@ -1,0 +1,13 @@
+step 0 mode 2: M=5.27521 R=0.74603 t=4s
+step 1 mode 0: M=5.07309 R=0.71744 t=5s
+step 2 mode 1: M=4.97150 R=0.70308 t=6s
+step 3 mode 0: M=4.75260 R=0.67212 t=17s
+step 4 mode 0: M=4.70587 R=0.66551 t=24s
+step 5 mode 0: M=4.66339 R=0.65950 t=58s
+step 20 mode 0: M=4.60488 R=0.65123 t=92s
+step 95 mode 0: M=4.60141 R=0.65074 t=251s
+step 97 mode 0: M=4.55495 R=0.64417 t=285s
+step 101 mode 1: M=4.54448 R=0.64269 t=297s
+step 105 mode 0: M=4.47229 R=0.63248 t=312s
+step 203 mode 1: M=4.31681 R=0.61049 t=479s
+step 209 mode 0: M=4.26781 R=0.60356 t=561s

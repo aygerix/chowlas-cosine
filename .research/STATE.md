@@ -61,6 +61,8 @@ Fejér-kernel counterexample to the displayed chain); not used here.
   relaxed sets); the universal exponent 1/4 needs Target Lemma S (degree-1 input).
 - P20 (agent conjG; Theorem 1 lead-verified E31): Conjecture G FALSE in groups, |B_t| = K²(K−1); ord t = 3 without
   singleton cosets gives |B_t| <= K³ (sharp). Group-agnostic run-top bounds cannot beat K³.
+- P21 (lead, elementary): K³ without full/singleton cosets (F_p^4, K = 3p, |B_t| = p³); G_noFull refuted; diagnosis:
+  negative-definite fibres need runs > ord(t)/2 (absent in Z).
 
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
@@ -80,13 +82,14 @@ cyclotomic Z-lifts and model sets (E11); Erdős–Turán quadratic Sidon flatnes
 ## Compute policy
 Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).
 
-## First concrete next step (updated 2026-10-18, after P20)
-(1) Lower bound. Conjecture G is REFUTED in groups (P20: |B_t| = K²(K−1) in F_p^4, quadric complement, full cosets
-essential); group window [3, 4]. Group-agnostic arguments give at best |B_t| ≲ K³ (exponent 1/4 via Shankar). New
-refined finite model inherited from Z: G_noFull (no ⟨t⟩-coset inside A; transfer to Z_N, N prime, always satisfies it).
-First experiment: exhaustive over Stab(t)-invariant sets {x : (Q(x), B(x,t)) ∈ S} in F_p^n (p = 3, 5, 7; n = 4..6),
-no-full filter, max |B_t|/K². Growth ⇒ G_noFull false (need interval structure); bounded ⇒ try to prove G_noFull
-for ord t = 3 (fibres of size <= 2: types ∅/E/D; Theorem 2 gives |D| <= |E| + K³).
+## First concrete next step (updated 2026-10-18, after P20/P21)
+(1) Lower bound. Group-agnostic run-top bounds are capped at K³ even WITHOUT full or singleton cosets (P20 Theorem 1;
+P21: F_p^4, every t-coset one (p−1)-run, K = 3p, |B_t| = p³ — elementary proof). Conjectures G and G_noFull are dead.
+Both K³ mechanisms need negative-definite fibres = runs longer than ord(t)/2 (PROVED lemma, P21), impossible in Z.
+The torsion-free ingredient identified: continuous t-direction offset φ, whose first-order term is odd in j (NOTEBOOK).
+First derivation: Lemma OR — for A = S + t·[0, ℓ) (S a transversal mod t, one run per class) prove M(A) >= c√(ℓ|A|) via
+the φ-linearisation at φ ≈ 1/(2ℓ) with an honest second-order bound; then test numerically on structured S (random,
+quadratic-phase, Sidon-like). Then: fibres with several runs (the general case) — G_arc / Z run-top bound K^{3}.
 (2) Dense regime (C½ only, low priority): exhaustive N = 41 ([1,57]) 0.57404, N = 42 ([1,60], complete) 0.57896 — the
 0.49 + 0.54/√N fit fails at N = 42; optima since N = 36 stay >= 0.574 (consistent with the anatomy prediction of a rise);
 N = 50 MILP is search-limited (R <= 0.584181). Large N needs a search that respects the p.d. macroscopic profile.

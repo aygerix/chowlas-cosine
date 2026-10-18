@@ -1,0 +1,37 @@
+p=5 n=4 d=1,1,1,1 t=1,0,0,0 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.600 (K=5.0, B=65);  nofull 1.000 (K=1.0, B=1)
+p=5 n=4 d=1,1,1,1 t=0,0,0,1 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.600 (K=5.0, B=65);  nofull 1.000 (K=1.0, B=1)
+p=5 n=4 d=1,1,1,1 t=1,2,0,0 Q(t)=0 units=17 classes=25 cycles=9
+  best |B_t|/K^2: all 1.000 (K=1.0, B=1);  nofull 1.000 (K=1.0, B=1)
+p=5 n=4 d=1,1,1,2 t=1,0,0,0 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.600 (K=5.0, B=65);  nofull 1.000 (K=1.0, B=1)
+p=5 n=4 d=1,1,1,2 t=0,0,0,1 Q(t)=2 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.600 (K=5.0, B=65);  nofull 1.000 (K=1.0, B=1)
+p=5 n=4 d=1,1,1,2 t=1,2,0,0 Q(t)=0 units=16 classes=24 cycles=8
+  best |B_t|/K^2: all 4.000 (K=5.0, B=100);  nofull 1.000 (K=1.0, B=1)
+p=5 n=5 d=1,1,1,1,1 t=1,0,0,0,0 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1.0, B=1);  nofull 1.000 (K=1.0, B=1)
+p=5 n=5 d=1,1,1,1,1 t=0,0,0,0,1 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1.0, B=1);  nofull 1.000 (K=1.0, B=1)
+p=5 n=5 d=1,1,1,1,1 t=1,2,0,0,0 Q(t)=0 units=17 classes=25 cycles=9
+  best |B_t|/K^2: all 1.638 (K=17.472, B=500);  nofull 1.000 (K=1.0, B=1)
+p=5 n=5 d=1,1,1,1,2 t=1,0,0,0,0 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1.0, B=1);  nofull 1.000 (K=1.0, B=1)
+p=5 n=5 d=1,1,1,1,2 t=0,0,0,0,1 Q(t)=2 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1.0, B=1);  nofull 1.000 (K=1.0, B=1)
+p=5 n=5 d=1,1,1,1,2 t=1,2,0,0,0 Q(t)=0 units=17 classes=25 cycles=9
+  best |B_t|/K^2: all 1.638 (K=17.472, B=500);  nofull 1.000 (K=1.0, B=1)
+p=5 n=6 d=1,1,1,1,1,1 t=1,0,0,0,0,0 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.920 (K=25.0, B=1825);  nofull 1.000 (K=1.0, B=1)
+p=5 n=6 d=1,1,1,1,1,1 t=0,0,0,0,0,1 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.920 (K=25.0, B=1825);  nofull 1.000 (K=1.0, B=1)
+p=5 n=6 d=1,1,1,1,1,1 t=1,2,0,0,0,0 Q(t)=0 units=17 classes=25 cycles=9
+  best |B_t|/K^2: all 1.000 (K=1.0, B=1);  nofull 1.000 (K=1.0, B=1)
+p=5 n=6 d=1,1,1,1,1,2 t=1,0,0,0,0,0 Q(t)=1 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.920 (K=25.0, B=1825);  nofull 1.000 (K=1.0, B=1)
+p=5 n=6 d=1,1,1,1,1,2 t=0,0,0,0,0,1 Q(t)=2 units=17 classes=25 cycles=5
+  best |B_t|/K^2: all 2.920 (K=25.0, B=1825);  nofull 1.000 (K=1.0, B=1)
+p=5 n=6 d=1,1,1,1,1,2 t=1,2,0,0,0,0 Q(t)=0 units=17 classes=25 cycles=9
+  best |B_t|/K^2: all 4.000 (K=25.0, B=2500);  nofull 1.000 (K=1.0, B=1)
+done

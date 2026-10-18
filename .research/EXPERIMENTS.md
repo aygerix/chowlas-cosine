@@ -234,3 +234,23 @@ Built independently of the agent's field-trace construction. Checks: A = −A, 0
    11 13420  11  {−11, 110, |A|}       1210    1210      10
    13 26520  13  {−13, 156, |A|}       2028    2028      12
 Confirms |B_t| = K²(K−1) in rank 4 for every tested p (P20 Theorem 1, a = 1). Runtime < 10 s.
+
+## E32 (2026-10-18) Exhaustive Stab(t)-invariant sets in F_p^n, no-full filter (src/e32_invariant_nofull.py; laptop)
+All symmetric unions of Witt classes C(q,b) = {x ∉ span t : Q(x) = q, B(x,t) = b} plus points of span(t) (2^7 sets for p = 3).
+p = 3, n = 4..8, Q ∈ {Σx_i², Σx_i² with last coefficient 2}, t ∈ {e1, e_n, e1+e2+e3}: best |B_t|/K² over ALL invariant
+sets = 2 exactly (isotropic t, n even: P20 Thm 1 / quadric complements, K = 3, 9, 27 at n = 4, 6, 8) or 1; over NO-FULL
+invariant sets = 1 exactly (anisotropic quadric level sets, K = 3^{n/2−1}). Odd n: <= 1 at K = 1 only. Log:
+examples/group_runtop/e32_batch.log (p = 5 rows there failed an integrality assert — values lie in Q(ζ_5)^+; fixed,
+re-run in e32_p5.log). p = 5, n = 4..6 (2^17 sets each): ALL invariant sets reach 2.6 (anisotropic t, n = 4, K = 5, B = 65),
+2.92 (n = 6, K = 25, B = 1825), 4 = p − 1 (elliptic isotropic t: P20 Thm 1, K = 5 and 25), 1.64 (n = 5, isotropic, K = 17.47);
+NO-FULL invariant sets: max ratio 1 in every case (only K = 1, |B_t| = 1 attains it). Reading: within the orthogonally invariant class, forbidding full cosets kills the ratio-2
+mechanism — but the class is too small: P21 (non-invariant τ2 on the subspace x2 = 0) gives unbounded ratio with no
+full cosets.
+
+## E33 (2026-10-18) All-(p−1)-point fibres in F_p^4 (src/e33_alld_nofull.py; FFT over all p^4 characters, float)
+A = {x2 ≠ 0, x1x2 + N(x3,x4) ≠ 0} ∪ {x2 = 0, x1 ≠ τ2(x3,x4)}, t = e1. With τ2 = x3x4² (mode x3x4sq):
+   p    3   5    7    11    13    17    19    23
+   K    9   15   21   33    39    51    57    69      (= 3p exactly)
+   |B_t| = p³ exactly; t-lines all have p − 1 points; |B_t|/K³ = 1/27; |B_t|/K² = p/9.
+Best random homogeneous cubic τ2 (300 trials) lowers K slightly: p = 5: 13.09, 7: 20.89, 11: 30.65, 13: 38.92,
+17: 48.61, 19: 56.99 (K = p + max ĝ exactly in every case). Confirms P21; refutes G_noFull.

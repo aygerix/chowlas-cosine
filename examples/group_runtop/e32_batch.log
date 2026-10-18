@@ -1,0 +1,151 @@
+p=3 n=4 d=1,1,1,1 t=1,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=3, B=9);  nofull 1.000 (K=3, B=9)
+p=3 n=4 d=1,1,1,1 t=0,0,0,1 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=3, B=9);  nofull 1.000 (K=3, B=9)
+p=3 n=4 d=1,1,1,1 t=1,1,1,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=4 d=1,1,1,2 t=1,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=3, B=9);  nofull 1.000 (K=3, B=9)
+p=3 n=4 d=1,1,1,2 t=0,0,0,1 Q(t)=2 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=3, B=9);  nofull 1.000 (K=3, B=9)
+p=3 n=4 d=1,1,1,2 t=1,1,1,0 Q(t)=0 units=6 classes=8 cycles=4
+  best |B_t|/K^2: all 2.000 (K=3, B=18);  nofull 1.000 (K=1, B=1)
+p=3 n=5 d=1,1,1,1,1 t=1,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=5 d=1,1,1,1,1 t=0,0,0,0,1 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=5 d=1,1,1,1,1 t=1,1,1,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=5 d=1,1,1,1,2 t=1,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=5 d=1,1,1,1,2 t=0,0,0,0,1 Q(t)=2 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=5 d=1,1,1,1,2 t=1,1,1,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=6 d=1,1,1,1,1,1 t=1,0,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=9, B=81);  nofull 1.000 (K=9, B=81)
+p=3 n=6 d=1,1,1,1,1,1 t=0,0,0,0,0,1 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=9, B=81);  nofull 1.000 (K=9, B=81)
+p=3 n=6 d=1,1,1,1,1,1 t=1,1,1,0,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 2.000 (K=9, B=162);  nofull 1.000 (K=1, B=1)
+p=3 n=6 d=1,1,1,1,1,2 t=1,0,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=9, B=81);  nofull 1.000 (K=9, B=81)
+p=3 n=6 d=1,1,1,1,1,2 t=0,0,0,0,0,1 Q(t)=2 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=9, B=81);  nofull 1.000 (K=9, B=81)
+p=3 n=6 d=1,1,1,1,1,2 t=1,1,1,0,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=7 d=1,1,1,1,1,1,1 t=1,0,0,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=7 d=1,1,1,1,1,1,1 t=0,0,0,0,0,0,1 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=7 d=1,1,1,1,1,1,1 t=1,1,1,0,0,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=7 d=1,1,1,1,1,1,2 t=1,0,0,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=7 d=1,1,1,1,1,1,2 t=0,0,0,0,0,0,1 Q(t)=2 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=7 d=1,1,1,1,1,1,2 t=1,1,1,0,0,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=8 d=1,1,1,1,1,1,1,1 t=1,0,0,0,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=27, B=729);  nofull 1.000 (K=27, B=729)
+p=3 n=8 d=1,1,1,1,1,1,1,1 t=0,0,0,0,0,0,0,1 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=27, B=729);  nofull 1.000 (K=27, B=729)
+p=3 n=8 d=1,1,1,1,1,1,1,1 t=1,1,1,0,0,0,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 1.000 (K=1, B=1);  nofull 1.000 (K=1, B=1)
+p=3 n=8 d=1,1,1,1,1,1,1,2 t=1,0,0,0,0,0,0,0 Q(t)=1 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=27, B=729);  nofull 1.000 (K=27, B=729)
+p=3 n=8 d=1,1,1,1,1,1,1,2 t=0,0,0,0,0,0,0,1 Q(t)=2 units=7 classes=9 cycles=3
+  best |B_t|/K^2: all 1.000 (K=27, B=729);  nofull 1.000 (K=27, B=729)
+p=3 n=8 d=1,1,1,1,1,1,1,2 t=1,1,1,0,0,0,0,0 Q(t)=0 units=7 classes=9 cycles=5
+  best |B_t|/K^2: all 2.000 (K=27, B=1458);  nofull 1.000 (K=1, B=1)
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+Traceback (most recent call last):
+  File "/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/src/e32_invariant_nofull.py", line 59, in <module>
+    assert np.abs(cols - np.round(cols)).max() < 1e-6
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError
+done

@@ -379,3 +379,30 @@ fibres, so it bounds |D| − c|E|, never |D| alone; (ii) arguments seeing only r
 Consequences: any group-agnostic run-top bound is >= K³ (so the run-top + Shankar route gives at best exponent 1/4
 unless it uses torsion-freeness / interval structure); G3 (|B_t| <= CK³ in all groups, or just in Z) would give
 exponent 1/4 (> Shankar's 1/5). Novelty: not checked (likely related to two-weight codes / strongly regular Cayley graphs).
+
+## P21. Full cosets are not needed: |B_t| = K³/27 with every t-coset a single (p−1)-run (lead 2026-10-18; PROVED,
+## elementary; NUMERICAL check E33 for p = 3..23: K = 3p and |B_t| = p³ exactly)
+Theorem. Let p be an odd prime, d a non-residue, N(v) = v3² − d v4², Γ = F_p^4, t = e1, and
+    A = {x : x2 ≠ 0, x1x2 + N(x3,x4) ≠ 0} ∪ {x : x2 = 0, x1 ≠ x3·x4²}.
+Then A = −A, 0 ∉ A, every ⟨t⟩-coset meets A in exactly p − 1 points (no full cosets; no singleton cosets for p >= 5),
+F(χ) >= −3p for every nontrivial χ, and |B_t| = p³. Hence |B_t| >= K³/27 and |B_t|/K² >= p/9 -> ∞.
+Proof. Symmetry: both conditions are invariant under x -> −x (N even; x3x4² odd), and x = 0 has x2 = 0, x1 = 0 = x3x4².
+Each line {x + st} with x2 ≠ 0 misses exactly x1 = −N/x2; each line with x2 = 0 misses exactly x1 = x3x4². A cyclic run
+F_p \ {τ} has exactly one top (m = τ − 1: m − 1 = τ − 2 ≠ τ as p >= 3, m + 1 = τ ∉ A), so |B_t| = #lines = p³.
+Characters χ = e_p(jx1 + kx2 + c·v). j = 0: every line has p − 1 points, so F = (p−1)·Σ_{x2,v} e_p(kx2 + c·v) = 0 for
+(k,c) ≠ 0. j ≠ 0: a line missing τ contributes −e_p(jτ)·χ(line). The x2 ≠ 0 part: for α = −j/x2,
+Σ_v e_p(αN(v) + c·v) = η(α)η(−αd)g² e_p(−N*(c)/(4α)) = −p·e_p(N*(c)x2/(4j)) (g² = η(−1)p, η(d) = −1,
+N*(c) = c3² − c4²/d), so this part equals p(p·[k + N*(c)/(4j) = 0] − 1) ∈ {−p, p(p−1)} (the E31 / P20 bulk). The x2 = 0
+part is −ĝ_j(c), ĝ_j(c) = Σ_{v3,v4} e_p(j v3v4² + c3v3 + c4v4) = p·Σ_{v4 : j v4² = −c3} e_p(c4v4) ∈ [−2p, 2p] (real:
+at most two roots ±u). So F >= −p − 2p. ∎
+Meaning. The P20 mechanism (Theorem 1) repairs the degree-0 slice with full cosets; here it is repaired by making all
+fibres the same size (c ≡ p − 1, so ĉ = 0), at the price of a second Gauss-type sum over the q²-point subspace x2 = 0,
+which is O(p) = O(K). Conjecture G_noFull (NOTEBOOK; "no ⟨t⟩-coset inside A ⇒ |B_t| <= CK²") is REFUTED; |B_t| ≍ K³ is
+attained with no full and no singleton cosets, matching Theorem 2's |D| <= |E| + K³ (E = ∅) up to the factor 27.
+Diagnosis (PROVED part / HEURISTIC part). Along t, each fibre I = F_p \ {τ} has transform Σ_{s∈I} e_p(js) = −e_p(jτ) for
+every j ≠ 0: a NEGATIVE-DEFINITE fibre (up to the phase). A symmetric fibre I ⊂ Z_ℓ with 0 ∉ I whose transform is <= 0
+at all j ≠ 0 must have |I| >= ℓ/2 (PROVED: |I|/ℓ − 1_I is p.d., so |I|/ℓ >= |I|/ℓ − 1_I(s)... i.e. |I|/ℓ >= 1 − |I|/ℓ on I),
+so every run-top in such a fibre sits on a run longer than half the cycle. Both known K³ mechanisms (P20 Thm 1, P21)
+use runs of length p − 1 = ord(t) − 1. In Z (and in its Z_N transfer) every maximal t-run has length <= 2X/t + 1 < ord(t)/2,
+and its transform along t is a Dirichlet kernel with main lobe +ℓ and side lobes ≈ −0.22ℓ (HEURISTIC: sign changes force
+a Gibbs penalty). Refined target G_arc: |B_t| <= CK^{2 or 3} whenever every maximal t-run has length <= ord(t)/2.

@@ -435,3 +435,22 @@
   interval structure; G_noFull is the minimal such input that kills the known extremal mechanism. Kill: Conjecture G,
   "Paley optimal", group-form Lemma S. Continue: G_noFull probe (cheap, discriminating); P16-type C½ for further
   classes; dense-regime exhaustive. Construction track: no live sub-1/2 mechanism; every known one is pinned.
+- G_noFull REFUTED (P21, lead, elementary). In F_p^4: bulk lines x2 ≠ 0 as in E31; lines x2 = 0 also miss exactly one
+  point, at τ2 = x3x4² (odd). All fibres have p − 1 points ⇒ degree-0 slice ≡ 0; the x2 = 0 part adds −ĝ_j(c) with
+  ĝ_j(c) = p·Σ_{v4: jv4² = −c3} e_p(c4v4) ∈ [−2p, 2p]. K = 3p, |B_t| = p³ = K³/27 exactly (E33, p = 3..23). E32 (exhaustive
+  O(Q)_t-invariant sets, p = 3: n <= 8; p = 5: n <= 6): no-full invariant sets never exceed ratio 1 — the invariant class
+  is too small (P21's τ2 is not invariant). So K³ in groups needs neither full nor singleton cosets.
+- Diagnosis: negative-definite fibres. Both K³ mechanisms use fibres F_p\{τ}, whose transform along t is −e_p(jτ) at
+  EVERY j ≠ 0. Lemma (PROVED, P21): a fibre with transform <= 0 at all j ≠ 0 (after translation) has |I| >= ord(t)/2 —
+  its run is longer than half the cycle. In Z/Z_N-transfer every t-run is < ord(t)/2.
+- Torsion-free mechanism (HEURISTIC, lead). In Z write θ = (j + φ)/t. Fibre transforms S_y(e(φ)) depend on a CONTINUOUS
+  φ; near φ = 0, F((j+φ)/t) = ĉ(j) + φ·H_j'(0) + O(φ²), H_j'(0) = (2πi/t)Σ_{a∈A} a e(ja/t), and since F is even,
+  H_{−j}'(0) = −H_j'(0): the first-order term has OPPOSITE signs at j and −j, so one of F((±j+φ)/t) is pushed down.
+  Groups have no small φ (φ ∈ (1/p)Z), so no such term. Model class where this can be made quantitative: one run per
+  residue class, equal length ℓ: A = S + t·[0, ℓ) (S has one element per class mod t), F(θ) = D_ℓ(tθ)·F_S(θ). With
+  centred run positions b_y (odd in y), G_φ(j) := F_S((φ+j)/t) ≈ (2πiφ/t)·b̂(j) for φ <~ 1/ℓ, odd in j; Parseval
+  Σ_j |b̂(j)|² = tΣ b_y² ≈ t²X²/3 (X ≈ ℓt/2) gives max_j |G_{1/(2ℓ)}(j)| >~ √t/4, times D_ℓ(1/(2ℓ)) ≈ 2ℓ/π:
+  K >~ 0.16·ℓ√t = 0.16·√(ℓ|A|). Candidate Lemma OR (one-run classes): M(A) >= c·√(ℓ|A|) for A = S + t[0,ℓ), S a
+  transversal mod t. Second-order error ~ 1/4 of the main term at φ = 1/(2ℓ): needs an honest proof, then a test.
+  If OR holds, the group extremal shape (every t-coset = one long run) is impossible in Z at small K; the general case
+  (fibres with many runs) is what a Z-run-top bound must handle.

@@ -1,0 +1,4 @@
+a=1: S(1) = +1*(1+i)^1;  units checked=2, phase-formula mismatches=0
+a=3: S(1) = +1*(1+i)^3;  units checked=56, phase-formula mismatches=0
+a=5: S(1) = +1*(1+i)^5;  units checked=992, phase-formula mismatches=0
+a=7: S(1) = +1*(1+i)^7;  units checked=16256, phase-formula mismatches=0

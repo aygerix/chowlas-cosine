@@ -16,12 +16,17 @@ def span(gens):
     for g in gens:
         S = {tuple((s[i] + c * g[i]) % 3 for i in range(k)) for s in S for c in range(3)}
     return frozenset(S)
-subs = set()
-for w in range(1, k + 1):
-    for gens in itertools.combinations(lines, w):
-        S = span(gens)
-        if len(S) == 3 ** w: subs.add(S)
-h = highspy.Highs(); h.setOptionValue("output_flag", False); h.setOptionValue("time_limit", 1500.0)
+subs = set(); frontier = [span([L]) for L in lines]
+subs.update(frontier)
+while frontier:
+    nxt = []
+    for S in frontier:
+        for L in lines:
+            if L in S: continue
+            T2 = frozenset(tuple((s[i] + c * L[i]) % 3 for i in range(k)) for s in S for c in range(3))
+            if T2 not in subs: subs.add(T2); nxt.append(T2)
+    frontier = nxt
+h = highspy.Highs(); h.setOptionValue("output_flag", False); h.setOptionValue("time_limit", 700.0)
 inf = highspy.kHighsInf; nL = len(lines)
 for _ in range(nL): h.addVar(0, 1)
 h.changeColsIntegrality(nL, np.arange(nL, dtype=np.int32), np.array([highspy.HighsVarType.kInteger] * nL))

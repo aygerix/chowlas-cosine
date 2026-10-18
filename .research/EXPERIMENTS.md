@@ -82,8 +82,22 @@
    400 steps each: N=45 (X=70, from SA 0.6162) → 0.5948; N=50 (X=72) → 0.6051 (SA start), 0.6036 (scaled-36 start);
    N=60 (X=92, from 0.6308) → 0.6243; N=80 (X=115, scaled-36) → 0.6630. Sanity: N=36 box optimum is a fixed point.
    R increases with N beyond 36 in every method so far (consistent with E16/E17; not a proof). Data: examples/lns/.
+   Certified (E2, arb): N=45 R <= 0.59476, N=50 0.60356, N=60 0.62427, N=80 0.66303 (examples/lns/certified.json).
 ## E19 (2026-10-18) Bu-class checks for P15/P16 (src/bu_halfsquare.py on F4; src/p16_constants.py)
    Identity f_{A(S)} = P^2 − k/2 − C/2 holds to 4e−8 on all certified Bu sets; E[C^4] = 3k^2/4 − 3k/8 EXACTLY (k=12..80);
    visit lemma: every window of the P16 size contains |P| < δ (100% of windows, η = .3, .5). Bu minima sit at near-zeros
    of P with C ≈ +2√k..2.7√k (excess = C/2 − P^2 ≈ 1.0–1.37√k; mean of C over zeros of P ≈ −0.1√k).
    E9 update (Bu-class SA, examples/bu_class/runs.jsonl): k=24 R=0.6829, k=32 0.6796, k=40 0.6787 (excess 0.83–1.08√k).
+## E20 (2026-10-18) Singer sets: distribution of u = |F_D|^2/k on shifted grids x = 2π(j+θ)/v, j = 1..v−1 (exact sums)
+   q=23/47/73 (k = 24/48/74): θ=0: var 0 (exactly flat, u = q/k); θ=0.1: var 0.06–0.08, min 0.04–0.32; θ=0.25: var
+   0.34–0.42, P(u<0.29) ≈ 0.09–0.12; θ=0.5: var 0.82–0.90, min 1e−4..1e−3, P(u<0.29) = 0.26/0.21/0.25 (exponential law:
+   var 1, 0.252). Every shifted grid has E u^2 = 2 − 1/k exactly (Sidon mod v). So SNZ-weak for Singer sets holds at ~1/4
+   of the midpoints; a proof needs the half-shifted Hilbert transform H(l) = Σ_n G(l−n)/(n+1/2) of the Singer Gauss sums
+   G(l) (|G| = √q) to be small for one l — e.g. from joint equidistribution of consecutive Gauss sums (Katz-type).
+## E21 (2026-10-18) Skewness of the rounding error E = f_A − main (Gaussian-smoothed profile bw 4; bulk x > 8/X; inline
+   script, 2^14 grid; random roundings = 200 Bernoulli(w) sets per profile)
+   N:      24     29     34     35     36     40
+   c_E:    1.45   1.43   1.63   1.73   1.77   1.79     (random roundings: median 2.50–2.59)
+   skew:  +0.70  +1.18  +0.78  +0.55  +0.37  +0.19    (random: −0.05..+0.01, 5–95% within ±0.5)
+   The exhaustive optima exploit positive skew (the only mechanism that can beat 1/2, E16), but the skew FADES and c_E
+   RISES with N over 29–40; extrapolated, c_E stays above the 1.35 needed for R_∞ < 1/2. Small-N evidence only.

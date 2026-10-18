@@ -35,3 +35,18 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   d^{1−O(γ)}; corollary gives the first polynomial Chowla bound. Our P9 star lemma is the elementary special case of
   their induced-subgraph viewpoint.
 - 2026-10-18 search 'Newman polynomials minimum modulus unit circle' (alphaXiv): no result on lower-flat 0/1 (Newman) or Sidon-support polynomials; nearest: flat Littlewood polynomials exist (BBMST 1907.09464). SNZ novelty unverified.
+
+## References used by P16 (2026-10-18)
+- B. Lindström, "An inequality for B_2-sequences", J. Combin. Theory 6 (1969) 211–212: a Sidon set in {1,…,n} has fewer
+  than n^{1/2} + n^{1/4} + 1 elements (used for the visit-lemma counting; the trivial bound k(k−1)/2 <= n−1 also works with
+  worse constants).
+- Triangle (Fejér) kernel transform: ∫ (1/h)(1−|y|/h)_+ e^{iνy} dy = (sin(νh/2)/(νh/2))^2 (standard).
+- Novelty of P16: independent agent checking Bu et al. 2610.17160 and citing literature (report .research/agents/p16_review.md).
+- Kahane's ultraflat unimodular polynomials (J.-P. Kahane, "Sur les polynômes à coefficients unimodulaires", Bull. LMS 12
+  (1980) 321–342) show that 2-D "visit" statements need arithmetic input (NOTEBOOK 2026-10-18).
+- Profile constant ρ* (E16): sup ||h⋆h||_2^2/(||h⋆h||_∞ ||h⋆h||_1) over h with h⋆h >= 0 (doubly-positive profiles; w depends
+  only on |ĥ|^2, so real even h is fully general). This is the autoCORRELATION analogue of the Martin–O'Bryant /
+  Matolcsi–Vinuesa autoCONVOLUTION constant (>= 0.8892, Matolcsi–Vinuesa 2010; best constant 1 for signed f, de Dios Pont–
+  Madrid arXiv:2106.13873 §5). de Dios Pont–Madrid treat ∫∫ f f w <= C||f||_1||f||_2 (C ≈ 0.8056 box, 0.7152 Gaussian
+  weight) — a different functional. Our ρ* ≈ 0.7239 (h >= 0), 0.7245 (signed, slightly infeasible): not found in the
+  literature in this form (quick check only, 2026-10-18).

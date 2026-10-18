@@ -21,13 +21,14 @@ def holds(k, L, eta):
     if h is None: return False
     r = eta / (2 * (6 * L + 1)); n = math.floor(2 * math.pi / (2 * h + 2 * r))
     return 2 * r * n > 24 * math.pi / (eta ** 4 * k ** 2) * (1 + 1e-9)
-for h in (1e-1, 1e-2, 1e-4, 1e-6, 1e-8):
-    print(f"h={h:g}: Σbar(h)={sigbar(h):.4f}  Σbar·√h={sigbar(h)*math.sqrt(h):.4f}", flush=True)
-for k in (10**4, 10**5, 10**6, 10**7, 10**8, 10**10, 10**12):
-    for Lname, L in (("k^2/2", k * k // 2), ("k^2.5", int(k ** 2.5))):
-        if not holds(k, L, 0.5): print(f"k={k:.0e} L={Lname}: no eta <= 1/2", flush=True); continue
-        lo, hi = 1e-12, 0.5
-        for _ in range(200):
-            mid = (lo + hi) / 2
-            lo, hi = (lo, mid) if holds(k, L, mid) else (mid, hi)
-        print(f"k={k:.0e} L={Lname}: M(A(S)) >= (1/2 - {hi:.4f}) k   [R >= {0.5-hi:.4f}]", flush=True)
+if __name__ == "__main__":
+  for h in (1e-1, 1e-2, 1e-4, 1e-6, 1e-8):
+      print(f"h={h:g}: Σbar(h)={sigbar(h):.4f}  Σbar·√h={sigbar(h)*math.sqrt(h):.4f}", flush=True)
+  for k in (10**4, 10**5, 10**6, 10**7, 10**8, 10**10, 10**12):
+      for Lname, L in (("k^2/2", k * k // 2), ("k^2.5", int(k ** 2.5))):
+          if not holds(k, L, 0.5): print(f"k={k:.0e} L={Lname}: no eta <= 1/2", flush=True); continue
+          lo, hi = 1e-12, 0.5
+          for _ in range(200):
+              mid = (lo + hi) / 2
+              lo, hi = (lo, mid) if holds(k, L, mid) else (mid, hi)
+          print(f"k={k:.0e} L={Lname}: M(A(S)) >= (1/2 - {hi:.4f}) k   [R >= {0.5-hi:.4f}]", flush=True)

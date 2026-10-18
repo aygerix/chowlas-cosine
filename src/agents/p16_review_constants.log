@@ -1,0 +1,35 @@
+1. Sbar closed form vs quadrature, and Sbar*sqrt(h):
+   h=   0.1  closed=10.2817846651  quad=10.2817846651  Sbar*sqrt(h)=3.25139
+   h=  0.01  closed=22.5088073511  quad=22.5088073511  Sbar*sqrt(h)=2.25088
+   h=0.0001  closed=169.470141475  quad=169.470141475  Sbar*sqrt(h)=1.6947
+   h=1.0e-6  closed=1581.66528533  quad=1581.66528533  Sbar*sqrt(h)=1.58167
+   h=1.0e-8  closed=15522.0444411  quad=15522.0444411  Sbar*sqrt(h)=1.5522
+   leading coefficient 16*alpha/(3*2^1.5) = 1.5396007; gamma = 3.2292705
+2. P16 as stated (theta=1/2, E4 <= 3k^2/4): minimal eta, R >= 1/2 - eta
+   k=1e4: L=k^2/2: none | L=12.5k^2: none | L=32k^2: none
+   k=1e5: L=k^2/2: R>=0.09787 | L=12.5k^2: none | L=32k^2: none
+   k=1e6: L=k^2/2: R>=0.2302 | L=12.5k^2: R>=0.04003 | L=32k^2: none
+   k=1e7: L=k^2/2: R>=0.3178 | L=12.5k^2: R>=0.1889 | L=32k^2: R>=0.1362
+   k=1e8: L=k^2/2: R>=0.3764 | L=12.5k^2: R>=0.2889 | L=32k^2: R>=0.2531
+   k=1e10: L=k^2/2: R>=0.4429 | L=12.5k^2: R>=0.4024 | L=32k^2: R>=0.3858
+   k=1e12: L=k^2/2: R>=0.4735 | L=12.5k^2: R>=0.4548 | L=32k^2: R>=0.4471
+   smallest k with some eta<=1/2 (L=k^2/2): ~29425;  (L=12.5k^2): ~615262
+3. Asymptotic constant: k^3 > c L eta^-6 ; fitted c from eta_min at k=1e12, L=k^2/2
+   eta_min=0.026462  c = k^3 eta^6 / L = 686.701  (author: ~690)
+4. REFEREE IMPROVEMENTS (not part of P16 as stated):
+   (a) Lipschitz proof with optimised theta (delta^2 = theta*eta*k):
+       k=1e5, L=k^2/2: R >= 0.1785 (theta=0.167)
+       k=1e6, L=k^2/2: R >= 0.2863 (theta=0.167)
+       k=1e8, L=k^2/2: R >= 0.4027 (theta=0.167)
+       k=1e10, L=k^2/2: R >= 0.4551 (theta=0.167)
+       k=1e12, L=k^2/2: R >= 0.4792 (theta=0.167)
+   (b) large-sieve proof (no Lipschitz bound), best theta:
+       k=1e3: L=k^2/2: none | L=12.5k^2: none | L=32k^2: none
+       k=1e4: L=k^2/2: R>=0.2091 (th=0.22) | L=12.5k^2: none | L=32k^2: none
+       k=1e5: L=k^2/2: R>=0.328 (th=0.22) | L=12.5k^2: R>=0.177 (th=0.22) | L=32k^2: R>=0.1116 (th=0.22)
+       k=1e6: L=k^2/2: R>=0.3949 (th=0.2) | L=12.5k^2: R>=0.3015 (th=0.2) | L=32k^2: R>=0.2609 (th=0.2)
+       k=1e8: L=k^2/2: R>=0.4593 (th=0.2) | L=12.5k^2: R>=0.4227 (th=0.2) | L=32k^2: R>=0.4068 (th=0.2)
+       k=1e10: L=k^2/2: R>=0.484 (th=0.2) | L=12.5k^2: R>=0.4695 (th=0.2) | L=32k^2: R>=0.4632 (th=0.2)
+       k=1e12: L=k^2/2: R>=0.4936 (th=0.2) | L=12.5k^2: R>=0.4879 (th=0.2) | L=32k^2: R>=0.4854 (th=0.2)
+       smallest k with some eta<=1/2 (L=k^2/2, theta=1/5): ~1296
+       asymptotic: eta_min=0.00636813 at k=1e12; c5 = k^3 eta^5 / L = 20.9454 (heuristic ~20.7)

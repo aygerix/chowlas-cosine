@@ -1,0 +1,90 @@
+
+== Bu_61_12: k=12 L=1598 (L/k^2=11.10) B2=True genuine=True grid=2^19
+   S0 identity max err 2.8e-10 | S1 count 1656 vs 6(2k^2-k)=1656 | FFT mean C^4 103.5000 vs 103.5000 | max Sx/Sbar 0.136
+   eta=0.1: delta=0.77 h_ex=0.00684 h_bar=None run=0.00333 run/2h_ex=0.244
+   eta=0.3: delta=1.34 h_ex=0.00397 h_bar=None run=0.00283 run/2h_ex=0.356
+   eta=0.5: delta=1.73 h_ex=0.00326 h_bar=None run=0.00261 run/2h_ex=0.401
+
+== Bu_101_20: k=20 L=3191 (L/k^2=7.98) B2=True genuine=True grid=2^20
+   S0 identity max err 1.2e-09 | S1 count 4680 vs 6(2k^2-k)=4680 | FFT mean C^4 292.5000 vs 292.5000 | max Sx/Sbar 0.175
+   eta=0.1: delta=1.00 h_ex=0.01696 h_bar=None run=0.00296 run/2h_ex=0.087
+   eta=0.3: delta=1.73 h_ex=0.00469 h_bar=None run=0.00284 run/2h_ex=0.303
+   eta=0.5: delta=2.24 h_ex=0.00361 h_bar=None run=0.00234 run/2h_ex=0.324
+
+== Bu_199_40: k=40 L=17358 (L/k^2=10.85) B2=True genuine=True grid=2^22
+   S0 identity max err 1.3e-08 | S1 count 18960 vs 6(2k^2-k)=18960 | FFT mean C^4 1185.0000 vs 1185.0000 | max Sx/Sbar 0.161
+   eta=0.1: delta=1.41 h_ex=0.00246 h_bar=None run=0.00066 run/2h_ex=0.133
+   eta=0.3: delta=2.45 h_ex=0.00151 h_bar=None run=0.00053 run/2h_ex=0.175
+   eta=0.5: delta=3.16 h_ex=0.00117 h_bar=None run=0.00052 run/2h_ex=0.220
+
+== Bu_311_60: k=60 L=42256 (L/k^2=11.74) B2=True genuine=True grid=2^23
+   S0 identity max err 4.3e-08 | S1 count 42840 vs 6(2k^2-k)=42840 | FFT mean C^4 2677.5000 vs 2677.5000 | max Sx/Sbar 0.147
+   eta=0.1: delta=1.73 h_ex=0.00111 h_bar=None run=0.00022 run/2h_ex=0.099
+   eta=0.3: delta=3.00 h_ex=0.00046 h_bar=None run=0.00017 run/2h_ex=0.188
+   eta=0.5: delta=3.87 h_ex=0.00036 h_bar=58.95478 run=0.00017 run/2h_ex=0.237 run/2h_bar=0.000
+
+== Bu_401_80: k=80 L=76107 (L/k^2=11.89) B2=True genuine=True grid=2^23
+   S0 identity max err 8.5e-08 | S1 count 76320 vs 6(2k^2-k)=76320 | FFT mean C^4 4770.0000 vs 4770.0000 | max Sx/Sbar 0.159
+   eta=0.1: delta=2.00 h_ex=0.00176 h_bar=None run=0.00016 run/2h_ex=0.044
+   eta=0.3: delta=3.46 h_ex=0.00059 h_bar=1549.96793 run=0.00014 run/2h_ex=0.121 run/2h_bar=0.000
+   eta=0.5: delta=4.47 h_ex=0.00038 h_bar=8.58582 run=0.00012 run/2h_ex=0.160 run/2h_bar=0.000
+
+== Singer101_centred_full: k=102 L=5151 (L/k^2=0.50) B2=True genuine=True grid=2^20
+   S0 identity max err 5.5e-09 | S1 count 124236 vs 6(2k^2-k)=124236 | FFT mean C^4 7764.7500 vs 7764.7500 | max Sx/Sbar 0.665
+   eta=0.1: delta=2.26 h_ex=0.02316 h_bar=None run=0.00259 run/2h_ex=0.056
+   eta=0.3: delta=3.91 h_ex=0.00949 h_bar=49.4061 run=0.00246 run/2h_ex=0.129 run/2h_bar=0.000
+   eta=0.5: delta=5.05 h_ex=0.00652 h_bar=3.00685 run=0.00197 run/2h_ex=0.151 run/2h_bar=0.000 | windows=1 bad=0 | meas(C<=-eta k/2)=4.25e-04 <= cheb 1.15e-01 | 2rn=1.62e-05 vs 1.16e-01
+
+== Singer307_centred_full: k=308 L=47278 (L/k^2=0.50) B2=True genuine=True grid=2^23
+   S0 identity max err 2.6e-07 | S1 count 1136520 vs 6(2k^2-k)=1136520 | FFT mean C^4 71032.5000 vs 71032.5000 | max Sx/Sbar 0.669
+   eta=0.1: delta=3.92 h_ex=0.00118 h_bar=46.71304 run=0.00028 run/2h_ex=0.119 run/2h_bar=0.000
+   eta=0.3: delta=6.80 h_ex=0.00082 h_bar=0.52493 run=0.00024 run/2h_ex=0.144 run/2h_bar=0.000 | windows=5 bad=0 | meas(C<=-eta k/2)=6.97e-05 <= cheb 9.80e-02 | 2rn=5.29e-06 vs 9.81e-02
+   eta=0.5: delta=8.77 h_ex=0.00066 h_bar=0.17755 run=0.00023 run/2h_ex=0.174 run/2h_bar=0.001 | windows=17 bad=0 | meas(C<=-eta k/2)=4.27e-05 <= cheb 1.27e-02 | 2rn=3.00e-05 vs 1.27e-02
+
+== Singer101_shifted_positive_far: k=102 L=110301 (L/k^2=10.60) B2=True genuine=True grid=2^23
+   S0 identity max err 2.5e-07 | S1 count 124236 vs 6(2k^2-k)=124236 | FFT mean C^4 7764.7500 vs 7764.7500 | max Sx/Sbar 0.115
+   eta=0.1: delta=2.26 h_ex=2e-05 h_bar=None run=0.00001 run/2h_ex=0.343
+   eta=0.3: delta=3.91 h_ex=2e-05 h_bar=49.4061 run=0.00001 run/2h_ex=0.314 run/2h_bar=0.000
+   eta=0.5: delta=5.05 h_ex=2e-05 h_bar=3.00685 run=0.00001 run/2h_ex=0.322 run/2h_bar=0.000 | windows=1 bad=0 | meas(C<=-eta k/2)=3.77e-04 <= cheb 1.15e-01 | 2rn=7.56e-07 vs 1.16e-01
+
+== ErdosTuran211_centred: k=211 L=44311 (L/k^2=1.00) B2=True genuine=True grid=2^23
+   S0 identity max err 2.4e-07 | S1 count 532986 vs 6(2k^2-k)=532986 | FFT mean C^4 33311.6250 vs 33311.6250 | max Sx/Sbar 0.483
+   eta=0.1: delta=3.25 h_ex=0.00153 h_bar=19595663.88136 run=0.00059 run/2h_ex=0.195 run/2h_bar=0.000
+   eta=0.3: delta=5.63 h_ex=0.00088 h_bar=1.45181 run=0.00058 run/2h_ex=0.326 run/2h_bar=0.000 | windows=2 bad=0 | meas(C<=-eta k/2)=5.80e-04 <= cheb 2.09e-01 | 2rn=2.26e-06 vs 2.09e-01
+   eta=0.5: delta=7.26 h_ex=0.00068 h_bar=0.38659 run=0.00040 run/2h_ex=0.297 run/2h_bar=0.001 | windows=8 bad=0 | meas(C<=-eta k/2)=1.10e-04 <= cheb 2.70e-02 | 2rn=1.50e-05 vs 2.71e-02
+
+== ErdosTuran101_dilated_x7_centred: k=101 L=70707 (L/k^2=6.93) B2=True genuine=True grid=2^23
+   S0 identity max err 9.1e-08 | S1 count 121806 vs 6(2k^2-k)=121806 | FFT mean C^4 7612.8750 vs 7612.8750 | max Sx/Sbar 0.184
+   eta=0.1: delta=2.25 h_ex=0.00067 h_bar=None run=0.00027 run/2h_ex=0.200
+   eta=0.3: delta=3.89 h_ex=0.00038 h_bar=53.88 run=0.00025 run/2h_ex=0.322 run/2h_bar=0.000
+   eta=0.5: delta=5.02 h_ex=0.00029 h_bar=3.11997 run=0.00023 run/2h_ex=0.386 run/2h_bar=0.000 | windows=1 bad=0 | meas(C<=-eta k/2)=5.80e-04 <= cheb 1.18e-01 | 2rn=1.18e-06 vs 1.18e-01
+
+== greedy_near_zero_k80: k=80 L=10018 (L/k^2=1.57) B2=True genuine=True grid=2^21
+   S0 identity max err 7.1e-09 | S1 count 76320 vs 6(2k^2-k)=76320 | FFT mean C^4 4770.0000 vs 4770.0000 | max Sx/Sbar 0.540
+   eta=0.1: delta=2.00 h_ex=0.64506 h_bar=None run=0.00645 run/2h_ex=0.005
+   eta=0.3: delta=3.46 h_ex=0.19668 h_bar=1549.96793 run=0.00518 run/2h_ex=0.013 run/2h_bar=0.000
+   eta=0.5: delta=4.47 h_ex=0.10715 h_bar=8.58582 run=0.00515 run/2h_ex=0.024 run/2h_bar=0.000
+
+== greedy_near_zero_k150: k=150 L=55819 (L/k^2=2.48) B2=True genuine=True grid=2^23
+   S0 identity max err 9.5e-08 | S1 count 269100 vs 6(2k^2-k)=269100 | FFT mean C^4 16818.7500 vs 16818.7500 | max Sx/Sbar 0.540
+   eta=0.1: delta=2.74 h_ex=0.33305 h_bar=None run=0.00246 run/2h_ex=0.004
+   eta=0.3: delta=4.74 h_ex=0.09218 h_bar=4.96065 run=0.00245 run/2h_ex=0.013 run/2h_bar=0.000
+   eta=0.5: delta=6.12 h_ex=0.04995 h_bar=0.8915 run=0.00244 run/2h_ex=0.024 run/2h_bar=0.001 | windows=3 bad=0 | meas(C<=-eta k/2)=1.31e-04 <= cheb 5.34e-02 | 2rn=4.48e-06 vs 5.36e-02
+
+== MianChowla_k100_positive: k=100 L=27219 (L/k^2=2.72) B2=True genuine=True grid=2^23
+   S0 identity max err 3.6e-08 | S1 count 119400 vs 6(2k^2-k)=119400 | FFT mean C^4 7462.5000 vs 7462.5000 | max Sx/Sbar 0.458
+   eta=0.1: delta=2.24 h_ex=0.24649 h_bar=None run=0.00516 run/2h_ex=0.010
+   eta=0.3: delta=3.87 h_ex=0.0912 h_bar=58.95478 run=0.00297 run/2h_ex=0.016 run/2h_bar=0.000
+   eta=0.5: delta=5.00 h_ex=0.05271 h_bar=3.23981 run=0.00295 run/2h_ex=0.028 run/2h_bar=0.000
+
+== lacunary_2^i_k16: k=16 L=32768 (L/k^2=128.00) B2=True genuine=True grid=2^23
+   S0 identity max err 3.9e-09 | S1 count 2976 vs 6(2k^2-k)=2976 | FFT mean C^4 186.0000 vs 186.0000 | max Sx/Sbar 0.360
+   eta=0.1: delta=0.89 h_ex=0.63135 h_bar=None run=0.02166 run/2h_ex=0.017
+   eta=0.3: delta=1.55 h_ex=0.38714 h_bar=None run=0.01908 run/2h_ex=0.025
+   eta=0.5: delta=2.00 h_ex=0.28346 h_bar=None run=0.01090 run/2h_ex=0.019
+
+== lacunary_-2^i_k16: k=16 L=32768 (L/k^2=128.00) B2=True genuine=True grid=2^23
+   S0 identity max err 6.0e-09 | S1 count 2976 vs 6(2k^2-k)=2976 | FFT mean C^4 186.0000 vs 186.0000 | max Sx/Sbar 0.362
+   eta=0.1: delta=0.89 h_ex=0.79977 h_bar=None run=0.02166 run/2h_ex=0.014
+   eta=0.3: delta=1.55 h_ex=0.45243 h_bar=None run=0.01908 run/2h_ex=0.021
+   eta=0.5: delta=2.00 h_ex=0.32949 h_bar=None run=0.01091 run/2h_ex=0.017

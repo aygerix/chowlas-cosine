@@ -13,3 +13,12 @@ Method E2 (src/chowla.py certify_lower_bound: arb ball DFT of a^0..a^3 weights o
 4th-order remainder S4 (π/2L)^4/24, float pads). Best: X30_s1 N=20 max 30, f_A >= −2.68817 for all real x, R <= 0.6011;
 X50_s0 N=34 max 49, f_A >= −3.52350, R <= 0.6043. Re-verify: `.venv/bin/python -c "import sys,json;sys.path.insert(0,'src');
 from chowla import certify_lower_bound as c;d=json.load(open('examples/dense_certified.json'));print(c(d['X50_s0']['A']))"`.
+
+## C-N36 (2026-10-18): best finite set known to us, R(A) <= 0.564795
+A = [1..11, 13..23, 25..31, 34, 35, 37, 44, 45, 48, 50]  (N = 36, max 50; examples/smallN_best.json key "36";
+exhaustive optimum of the box [1,52], small-N agent).
+Certificate 1 (lead): src/chowla.certify_lower_bound(A, oversample=64): arb ball-arithmetic DFT on L = 4096 points +
+  4th-order Taylor remainder 4.3e−7 ⇒ min_x f_A(x) >= −3.3887702 ⇒ M(A) <= 3.3887702, R <= 0.564795.
+Certificate 2 (agent): PARI/GP Sturm sequences on Σ T_a(t) + B over t ∈ [−1,1] bracket M(A) ∈ [3.3887696, 3.3887699].
+Status: INTERVAL-CERTIFIED finite case (two independent methods). Says nothing about any limit.
+Also certified (same method): N=35 (max 48) R <= 0.567674; N=34 (max 48) R <= 0.574135.

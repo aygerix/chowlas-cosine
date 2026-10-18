@@ -213,3 +213,28 @@
   (ii) Can P16's scheme be made universal: for an ARBITRARY A, write f_A = P^2 − Q + (rest) via a Fejér–Riesz factor?
   The gain identity (Γ(1−L) = 1/(2R^2)) says every spectral factor carries the same information; a "visit" lemma for the
   factor + concentration of its diagonal could give a universal lower bound with the right exponent in special classes.
+- Correction to the dense-profile reading: R = c_E sqrt((1−ρ)/2) is an identity (σ_E^2 = (1−ρ)N/2 by Parseval), so
+  "raise ρ and keep Bu's skew" is not a free knob. Measured on sparse Bu sets: ρ ≈ 0.03, σ_E/√N = 0.698 =
+  sqrt((1−ρ)/2) exactly. For a Bu set built on a Sidon S with density profile σ, the difference profile is σ⋆σ (doubly
+  positive, ρ <= ρ*), but P16 still pins R >= 1/2 − o(1): the skew c_E adjusts. The heuristic's only content is
+  ρ <= ρ* plus whatever lower bound on c_E a mechanism gives.
+- 2-D visits (the missing lemma V2 behind SNZ-weak and behind the "two squares" route): soft arguments cannot prove it.
+  A bump test only controls 1-D projections, and the planar curve (P_1, P_2) can spin (|θ'| ~ L/√η) while staying
+  outside a disk — exactly what Kahane's ultraflat unimodular polynomials do. So V2 must use the 0/1 + Sidon arithmetic.
+  For Singer sets the arithmetic is explicit: midpoint values are a discrete Hilbert transform of Gauss-type sums
+  (E20: exponential-like law at θ = 1/2). Route recorded, not pursued further today.
+- Dense regime is the LIVE candidate against C½ (not against Chowla). Anatomy of the N=36 optimum: M = 3.389 = (E part
+  2.606) + (main part 0.783 at x*). As N grows the O(1) main part vanishes relative to √N (−0.13 in R), but the profile
+  must become positive-definite (tolerance ~1/√X), pushing ρ from 0.79 to <= ρ* = 0.724 and σ_E/√N up by
+  sqrt(0.276/0.21) ≈ 1.15–1.17. Holding c_E at its N=36 value gives R_∞ ≈ 0.434·1.16 ≈ 0.50–0.51. So the dense limit is
+  undecided at the level of this heuristic: R_∞ < 1/2 iff the optimal rounding error keeps c_E below ≈ 1.35 while the
+  profile becomes p.d. Discriminating experiment: good dense sets at N = 100–1000 (exhaustive is out of reach; LNS from
+  random starts is too weak (0.60–0.62 at N=36), so a structured optimizer is needed: interval core [1, 0.6X] + exact
+  tail MILP (src/lns_milp.py mode 3), X ≈ 1.38N).
+- Conceptual synthesis (why Z_p beats 1/2 and Z apparently cannot): the Z_p winners (E10) need "Gauss sums" that are
+  deterministic — constant modulus and aligned phase on the whole grid — making the spectrum two-valued. On Z the analogous
+  objects (exponential sums of Sidon/Singer sets) are functions of a continuous variable: E20 shows a Singer set exactly
+  flat on its own grid (|F|^2 = q) becomes exponential-like at the half-shifted points. Continuity forces the
+  "Gauss-sum-like" quantities through small values (the P16 visit lemma is the rigorous 1-D instance), and small values of
+  the square factor are exactly where f_A ≈ −(diagonal) ≈ −k/2. Spectral form: Bu's Cayley graph on Z is a "Paley graph
+  on Z" (λ_min = −√(d/2)·(1+o(1)), P16), and C½ says no distance graph on Z beats Paley.

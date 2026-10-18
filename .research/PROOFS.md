@@ -181,12 +181,17 @@ R ≈ √r/2 · (1 − min Σ P_j^2/(rk/2)); with pseudo-random P_j the minimum 
 Beating 1/2 inside this template needs Σ_j P_j^2 >= δ rk/2 everywhere — a lower-flatness statement of SNZ type.
 
 ## P16. C½ for Bu's construction with any Sidon set of range L = o(k^3) (PROVED on paper by lead 2026-10-18;
-## numerics src/bu_halfsquare.py, constants src/p16_constants.py; INDEPENDENT REVIEW REQUESTED — not yet scrutinised)
+## numerics src/bu_halfsquare.py, constants src/p16_constants.py; INDEPENDENTLY REVIEWED by agent 2026-10-18: CORRECT,
+## no gap (.research/agents/p16_review.md); Lean formalization in progress)
+Review corrections (presentational): (M1) read "h := any h > 0 with Σbar(h) < δ" (the infimum is not attained; the
+inequality is strict, so h* itself works). (M3) Bu et al.'s own sets have L ≈ 8–12 k^2 (up to ≈ 32 k^2 in their proof
+regime), not L <= k^2; the rate k^{−1/6} is unaffected but the explicit table below is for L = k^2/2. (M6) Remark (c) needs
+ALL sign patterns of quadruples (2+2−, 3+1−, 4+) to be trivial. "A(S) genuine" is equivalent to S being B_2 (incl. 2s = s'+s'').
 Statement. Let S ⊂ Z ∩ [−L, L] be a Sidon set, |S| = k, such that A(S) = {3|s−t|} ∪ {|3(s+t)+1|} (s < t) is a genuine
 set of k(k−1) positive integers (Bu et al.). Let 0 < η <= 1/2, δ := (ηk/2)^{1/2}, h := the least h > 0 with Σbar(h) < δ
 (Σbar below), r := η/(2(6L+1)), n := ⌊2π/(2h+2r)⌋. If 2rn > 24π/(η^4 k^2), then M(A(S)) > (1/2 − η)k, so
-R(A(S)) > 1/2 − η. Asymptotically: R(A(S)) >= 1/2 − O((L/k^3)^{1/6}); for L <= k^2 (Bu's dense Sidon sets)
-R >= 1/2 − O(k^{−1/6}) = 1/2 − O(N^{−1/12}). Explicit (L = k^2/2): R >= 0.230 (k = 1e6), 0.376 (1e8), 0.443 (1e10),
+R(A(S)) > 1/2 − η. Asymptotically: R(A(S)) >= 1/2 − O((L/k^3)^{1/6}); for L = O(k^2) (Bu's dense Sidon sets)
+R >= 1/2 − O(k^{−1/6}) = 1/2 − O(N^{−1/12}). (Superseded quantitatively by P16′ below.) Explicit (L = k^2/2): R >= 0.230 (k = 1e6), 0.376 (1e8), 0.443 (1e10),
 0.4735 (1e12). Together with Bu et al.'s upper bound, R(A(S)) -> 1/2 exactly along their family.
 Notation. b_s = 3s + 1/2, P(x) = Σ_s cos(b_s x), T = {6s+1}, C(x) = Σ_s cos((6s+1)x); note P(x) = C(x/2).
 Step 0 (identity, exact). 2cos(b_s x)cos(b_t x) = cos(3(s−t)x) + cos((3(s+t)+1)x) and cos^2(b_s x) = (1 + cos((6s+1)x))/2,
@@ -213,3 +218,32 @@ of L. (c) The same proof applies to any "half-integer square" f = P^2 − Q with
 {2|b_s|} having only trivial ± additive quadruples and Sidon-type counting near 0. (d) Mechanism: Q = Σcos^2(b_s x)
 concentrates at k/2 (variance k/8 for ANY distinct |2b_s|), and a positive cosine sum cannot avoid small values on any
 window of length >> 1/k; so at some near-zero of P, f ≈ −Q ≈ −k/2. This is the 1/2 of Bu's construction, rigorously.
+P16 generalisations (same proof, paper level, lead 2026-10-18):
+(G1) Dilate/shift family A_{q,r}(S) = {q|s−t|} ∪ {|q(s+t)+r|} (s<t), q >= 3, q ∤ 2r: use b_s = qs + r/2, C = Σcos((2qs+r)x).
+     Step 1 needs Σσ_i(2qs_i + r) = 0 ⇒ rΣσ_i ≡ 0 (mod 2q) ⇒ Σσ_i = 0 (since q ∤ r, q ∤ 2r); Lipschitz |C'| <= k(2qL+|r|);
+     counting N(t) <= #{s : |s| <= t/q + 1}. Same conclusion with 6L+1 replaced by 2qL+|r| and the counting constants rescaled.
+(G2) Counting-function form: let h_S(δ) := inf{h > 0 : Σ_s sinc^2(|b_s|h/2) < δ}. If 2r⌊2π/(2h_S(δ) + 2r)⌋ > 24π/(η^4k^2)
+     (δ = (ηk/2)^{1/2}, r = η/(2(6L+1))) then M(A(S)) > (1/2−η)k. Lindström gives h_S(δ) <~ 2.4/δ^2 for every Sidon S; for
+     S spread out at scale L (N(t) ≈ kt/L) h_S ≈ k/(Lδ), and the condition holds for every L once k >> η^{-11}: only Sidon
+     sets with a dense core near 0 AND range L >> k^3 escape the theorem.
+
+## P16′. Large-sieve form of P16 (found by the review agent 2026-10-18; re-derived and constants recomputed by lead,
+## src/p16prime_constants.py; PROVED on paper, two independent derivations)
+Hypotheses as P16, D := 6L+1, 0 < θ < 1, δ := (θηk)^{1/2}, any 0 < h <= π/2 with Σbar(h) < δ, m := ⌊π/(2h)⌋.
+If m (2(1−θ)ηk)^4 >= (4D + π/h)(3k^2/4 − 3k/8) then M(A(S)) > (1/2 − η)k.
+Proof. Assume f_{A(S)} >= −(1/2−η)k. Windows [4hj−h, 4hj+h], j < m, contain visits y_j (|P(y_j)| < δ, Step 2); Step 3
+gives C(y_j) < −2(1−θ)ηk. The y_j are 2h-separated mod 2π (4hm <= 2π). F := C^2 has the 4D+1 frequencies |ν| <= 2D and
+Σ|F̂(ν)|^2 = E[C^4]; the large sieve (Selberg/Montgomery–Vaughan, δ_0-separated points, δ_0 = h/π) gives
+Σ_j C(y_j)^4 <= (4D + π/h) E[C^4] < m(2(1−θ)ηk)^4, a contradiction.  ∎
+Asymptotics (θ = 1/5): η ≈ (20.9 L/k^3)^{1/5}, so R(A(S)) >= 1/2 − O((L/k^3)^{1/5}); nontrivial from k ≈ 1.3e3 at
+L = k^2/2. Explicit lower bounds on R(A(S)) (lead's recomputation = agent's table):
+   k:          1e4     1e5     1e6     1e8     1e12
+   L=k^2/2:    0.209   0.328   0.395   0.459   0.4936
+   L=12.5k^2:  —       0.177   0.302   0.423   0.4879     (Bu et al.'s typical range)
+   L=32k^2:    —       0.112   0.261   0.407   0.4854
+Gain over P16: the depth C(y_j)^4 is used directly instead of a Lipschitz neighbourhood (one factor of η).
+(I3, agent, PROVED as a lemma; application CONDITIONAL) Density visit lemma: N(t) <= ρt + E ⇒ windows of half-length
+h > 4ρ/(δ−E) contain visits. For spread S (ρ ≍ k/L, E = O(1)) L cancels and η ≍ k^{−1/3} for every L; applying it to
+Bu's random thinnings needs a w.h.p. counting bound near 0 (not verified).
+Literature: Bu et al. 2610.17160v1 do not prove a matching lower bound (their Remark 8.5: sharpness "we do not prove");
+P16/P16′ rule out improving their identity-based route (their Remark 8.4) for L = o(k^3).

@@ -17,16 +17,21 @@ Paper: P1 Fejér–Riesz; P2 probabilistic; P3 projection; P4 no exact t>=2 unif
 P6 energy bounds; P7 cube framework; P8 multiplicity bound (R < 1/2 needs coherent multiplicity > 2); P9 star lemma;
 gain identity; P10 B_3 differences R >= 0.293; P11 B_h differences -> 1/√2; P12 dissociated Bu class; P13 even part.
 NEW 2026-10-18: P14 (averaged boundary bound: precise obstruction L(A); finite-model counterexample to "no middle
-layer"); P15 (Bu = P^2 − k/2 − C/2, P(x) = C(x/2)); **P16: R(A(S)) >= 1/2 − O((L/k^3)^{1/6}) for every Sidon S ⊂ [−L,L]**
-— C½ for Bu's construction, unconditional (PROVED ON PAPER by lead; independent review and Lean formalization RUNNING;
-do not upgrade until review returns; explicit: R >= 0.376 at k = 1e8, 0.4735 at k = 1e12 for L = k^2/2).
+layer"); P15 (Bu = P^2 − k/2 − C/2, P(x) = C(x/2)); **P16/P16′: R(A(S)) >= 1/2 − O((L/k^3)^{1/5}) for every Sidon S ⊂ [−L,L]**
+— C½ for Bu's construction, unconditional. PROVED on paper and INDEPENDENTLY REVIEWED (agent: CORRECT; P16′ large-sieve
+form re-derived by lead). Explicit: R >= 0.302 at k = 1e6 and 0.423 at k = 1e8 for Bu's range L ≈ 12.5k^2. Lean
+formalization of the lemmas in progress (agent).
 KERNEL-CHECKED (Lean 4, axioms propext/choice/Quot.sound only, no sorry; re-verified by lead, 37 axiom lines):
 difference-set identity; Sidon consequence; mean zero/Parseval; P5; P7 cube identity + vertex min; P9 star lemma and
 star bound; P8 multiplicity bound; P13(a) averaging identity, restriction to multiples, (q−1)M >= |A| − q|A∩qZ|.
 
 ## Heuristic / numerical
-H1 Wick model. Dense-profile law (E16/E17): R ≈ c_E sqrt((1−ρ)/2), ρ <= ρ* ≈ 0.7239 (numerical sup over doubly-positive
-profiles), symmetric rounding c_E >= √2 ⇒ dense limit >~ 0.5255; measured c_E 1.43–1.87; dense optima rise past N ≈ 36.
+H1 Wick model. Dense-profile identity R = c_E sqrt((1−ρ)/2) (σ_E^2 = (1−ρ)N/2), ρ <= ρ* ≈ 0.7239 (numerical sup over
+doubly-positive profiles; autocorrelation analogue of the Matolcsi–Vinuesa constant). Symmetric rounding (c_E >= √2)
+⇒ dense limit >~ 0.5255. Exhaustive optima DO use positive skew (E21: +1.18 at N=29) but the skew fades (+0.19 at N=40)
+and c_E rises (1.43 → 1.79); anatomy extrapolation from N=36 gives R_∞ ≈ 0.50–0.51 — the dense regime is the one live
+candidate against C½ (needs c_E < 1.35 with a p.d. profile). LNS/SA at N >= 45 are search-limited (calibration: random
+starts reach only 0.60 at N=36), so "R rises past N=36" is NOT established.
 
 ## Refuted / killed routes (keep)
 Cube vertex framework; A_{k-1} root squares; quarter-integer trick; fractional decomposition; dithered Fejér/Beatty;
@@ -47,6 +52,6 @@ cyclotomic Z-lifts and model sets (E11); averaged Bedert (P14: (a) is t-independ
 Heavy jobs run on F4 (src/f4run.sh; ~/chowla_venv on f4-magma). Never swap the Mac (user request 2026-10-18).
 
 ## First concrete next step
-Read the P16 review (.research/agents/p16_review.md) and the Lean HalfSquare.lean report; fix any gap. Then try the 2-D
+Read the Lean HalfSquare.lean report (P16 review: done, CORRECT). Run ONE agent at a time (user request). Then try the 2-D
 visit lemma for Sidon differences: if |F_D| >= sqrt(βk) on a window, compare F_D with e^{iωx} for the window's mean
 phase speed ω and bound Σ_d φ̂(ω − d) by Sidon counting.

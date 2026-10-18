@@ -288,3 +288,26 @@ spectrum by numpy FFT over Z_4^{1+a} (integrality asserted), run-tops counted di
    7   32764   16   16256   16256         −16:32512, −4:16255, 0:16384, 252:128, 2032:256
 Identical to the agent's table (different lift/pairing). E36b, A-averaged run-tops: avg_{t∈A}|B_t| = 30.97 / 511 / 8191
 (K⁴/8 = 32 / 512 / 8192); distribution in PROOFS P22. Runtime < 1 min.
+
+## E37 (2026-10-18 night) Exact ILP max |B_t| in cyclic / coprime / higher-rank groups (src/group_bt_ilp.py from agent g3;
+## src/e37_batch.sh, e37b, e37c; HiGHS, 900 s per instance; data examples/cyclic_ilp/*.jsonl)
+NUMERICAL-EXACT where "opt" (solver-certified optimum); otherwise a lower bound (best found) with the dual bound.
+   K0 = 3, ord t = 3:  F_3^4 18 (agent, opt) | Z_9² 6 opt | Z_3×Z_27 5 opt (t ∈ Z_3), 6 opt (t = (0,9)) | Z_81: 3 / 4 / 5 opt
+                       for t of order 3 / 9 / 81 | Z_3×F_2^5 6 opt | Z_3×F_5² 4 opt | Z_3×Z_25 4 opt | Z_3×Z_4²×Z_2 12 opt
+                       (A ⊂ Z_3×Z_4²: full cosets on {y1+y2 ≡ 0}, 2-point cosets elsewhere; Lemma-3 type, coprime H) |
+                       Z_243 >=3 (bound 81) | Z_240 >=3 | Z_231 >=6 | Z_3×Z_81 >=5 | Z_3×Z_32 >=6 (bound 19) | Z_3×Z_7² >=6.
+   K0 = 4:             Z_64: 11 opt (t of order 4), 14 opt (t = 1) | Z_4³ 16 opt | Z_8²: 15 opt (both t) | Z_125 (t = 25) >=5.
+Reading (NOTEBOOK night entry, corrected): only the elementary abelian F_3^4 (bent mechanism) stands out; cyclic Z_81 is
+the most restrictive; coprimality alone does not keep |B_t| small (Z_3×Z_4² gives 12). At K <= 4 exponents cannot be
+read off. Remaining instances of e37/e37b were still running at the time of writing.
+
+## E38 (2026-10-18 night) The O4-shaped class in Z: A = S ∪ (S+t) vs unrestricted sets (src/pair_sa.c, src/e38_batch.sh;
+## data examples/pair_sa/e38.txt) — HEURISTIC (SA, grid minimum over 4096 points of [0,π], seed 1, 3e6 moves × 4 restarts)
+Same N, same span, same search effort; "free" = unrestricted subsets of [1, span].
+   N = 36 (span 50):   pair best 0.655 (t = 2; 0.66–0.68 for t <= span/8; 0.99 at t = 25)  | free 0.611 (exhaustive truth 0.5648)
+   N = 60 (span 85):   pair best 0.693 (t = 3; 0.69–0.70 for t <= span/4; 1.23 at t = 42) | free 0.649
+   N = 100 (span 150): pair best 0.732 (t = 18; 0.73–0.77 for t <= span/4; 1.46 at t = 75) | free 0.657
+   (span 170 for N = 60: both modes search-limited, pair 0.76–0.96, free 0.83.)
+Reading: under equal search effort, forcing every t-run to be a 2-run costs 0.04–0.08 in R, and the gap grows with N
+(0.044, 0.044, 0.075). This is the opposite of the group picture (O4: this shape is EXTREMAL in Z_4 × GR(4,a)), and
+it is mild evidence for Lemma OR(2) (Chowla for the O4-shaped class in Z). Not a proof; the SA is search-limited.

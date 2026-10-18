@@ -204,3 +204,11 @@ B = {2pj + ((a j² + ℓ j) mod p) : 0 <= j < p}, a < min(p,12), ℓ ∈ {0,1} (
 Gauss-sum flatness |F_B(2πa/p)|² = p. Result: max over twists of c = min|F_B|²/k = 0.0029 (p=5), 0.0009 (13), 1e-4 (23),
 < 1e-4 for p = 37..223. Far below the 0.293 needed for R(D(B)) < 1/2. Flatness at one lattice of roots of unity
 does not survive interpolation (same failure as Singer, E8/E11).
+
+## E30 (2026-10-18) Run-tops in finite abelian groups (src/group_runtop_sa.py; SA on pair toggles, float K; laptop)
+Frontier max|B_t| subject to K <= K0 (t = e_1), 200k iterations, seed 1, K0 ∈ {2,3,4,6,8,12,16}; best |B_t|/K0²:
+   Z7^3 0.389 (K0=12: |B_t| = 56), Z5^4 0.333, Z9^3 0.500 (K0 = 2), Z3^6 0.500 (K0=2; 0.137 at K0 = 16), Z3^7 0.500 (K0 = 2),
+   Z243 0.472 (K0=12: 68), Z729 0.333, Z2187 <= 0.125 (partial). Never above 1/2. The SA is visibly search-limited in the
+   larger groups (it finds LESS in Z3^7 / Z2187 than in smaller groups), so these are lower bounds on the frontier only.
+   Benchmarks: Paley/QR sets in F_p (p ≡ 1 mod 4): K = (1+√p)/2, |B_t| ≈ p/8 ⇒ |B_t|/K² -> 1/2; index-m cyclotomic classes
+   give ≈ (m−1)/(m³c_m²) (≈ 0.17 for m = 3) — Paley is the best known group example. No |B_t| >> K² found.

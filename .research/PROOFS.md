@@ -342,3 +342,10 @@ Groups: Prop 7.3 holds in every finite abelian group and bounds in all Z_N trans
 family give |B_t| <~ K² (PROVED for those classes). OPEN: does some finite group have |B_t| >> K^{2+ε}? (If yes, Lemma S
 must use torsion-freeness.) By-product (agent, elementary): fibre domination |1̂_{S_r}(θ)| <= K + 1̂_{S_0}(θ) for residue
 fibres S_r = {s : r + st ∈ A}.
+Conjecture G (2026-10-18, lead; evidence E30). There is an absolute C such that for every finite abelian group Γ, every
+symmetric A ⊂ Γ\{0} with F = 1̂_A >= −K on Γ̂, and every t ∈ Γ: |B_t| <= C·K² (B_t = {m ∈ A : m − t ∈ A, m + t ∉ A}).
+Consequence: by the transfer Z -> Z_N (P19) |B_t| <= CK² in Z for every t, and with Shankar's averaging
+(max_t|B_t| >= T/(3n) >= n/(3K) − K/3, Roth T >= n²/K − nK) this gives K >= (n/(3C))^{1/3} − O(1): Chowla exponent 1/3.
+Status: OPEN; Paley sets show C >= 1/2 is needed; P19 shows it cannot be proved by degree-2 gap inequalities (and
+degree-r Fourier manipulations cap at K^{2r}), so it needs structural (degree-1 / additive-combinatorial) input. In Z the
+statement follows from C½ (|B_t| <= n <= K²), so it is a strictly weaker, finite-field-model target.

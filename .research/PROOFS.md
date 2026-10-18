@@ -449,3 +449,29 @@ Consequences (PROVED, modulo the transfer bookkeeping of the barrier note §1):
   G_arc with strict inequality and G3 in Z stay OPEN. But in Z, |B_t| <= |A| and Chowla itself would give |B_t| <= CK², so
   "G3 in Z" is a weakening of Chowla, not an independent lemma: progress on it needs genuinely Z-specific input.
 Novelty: not checked (the RDS is classical: quaternary Kerdock / Family A sequences; its use here appears new).
+
+## P23. λ-fold near-rulers (agent "lambda" 2026-10-18; report .research/agents/lambda_report.md; T2 and T5 proofs checked
+## by lead; T1, T3, T4 read; exact optima for k = 6..11 reproduced by the lead's independent enumerator, E39)
+Setting: D ⊂ Z, |D| = k, r(d) = #{(u,v) ∈ D² : u − v = d}, A = {d > 0 : r(d) = λ}, def = Σ_{d>0, r(d) ∉ {0,λ}} r(d),
+W = 2·def, φ = λ|A|/C(k,2) = 1 − def/C(k,2). Identity 2λf_A = |F_D|² − k − E, |E| <= W (NOTEBOOK evening entry).
+- T1 (PROVED, agent): for λ >= 3, W >= 6, and def ≡ C(k,2) (mod λ). Tight at k = 3, 4, 6.
+- T2 (PROVED; lead checked). If D = c − D (reflection-symmetric), exactly ⌊k/2⌋ difference classes have odd r.
+  - Proof: the involution (u,v) ↦ (c−v, c−u) preserves u − v. Its fixed pairs are (u, c−u) with u > c/2, one per class
+    d = 2u − c. So for odd λ, |A| <= ⌊k/2⌋ and φ <= λ/(k−1).
+  - The signed version holds the same way.
+- T3 (PROVED formula, agent): D = [0,N) + N·B with B Sidon, λ = N has def = C(N,2)(b + 2R(B)), where R(B) is the number
+  of runs of B − B. This gives explicit φ = 0.80–0.85 for k = 18..216 (refutes "φ <= 2/3 + o(1)"), but W ≍ k² and actual
+  R is 1.36–1.71.
+- T4 (PROVED, agent): a product A + N·B is λ-fold only if A is a cyclic (N,|A|,λ) difference set, and then the aligned
+  classes are all defects.
+- T5 (PROVED; lead checked). If the cross family X = U × V is isolated (no other pair of D has a difference u − v), then
+      λ·#(good pairs of X) <= Σ_d c(d)² = Σ_δ r_U(δ) r_V(δ) <= √(E(U)E(V)).
+  - For Sidon U, V of size s, more than a fraction 1 − 2/λ of X are defects.
+  - So separated homometric triples have W >= (2/27)k² + (2/9)k, or W >= (2/9)k² with three distinct gaps.
+- Conjecture C-W (CONJECTURED): λ = 3 ⇒ W >= k for all k >= 4, tight at k = 6 ({0,1,3,4,5,7}). It holds for k <= 12
+  (NUMERICAL-EXACT, agent; k <= 11 also lead, E39) and in the certified spans at k = 13, 14.
+  - Caution: C-W does not kill the mechanism, since λ = 2 also has W = k (Bu) and survives because its defects are
+    harmless.
+  - Kill statement needed: non-harmless defect weight W' >= c·k^{1+δ}, or max over {F_D ≈ 0} of E >= ck.
+Status of the line: the λ >= 3 near-ruler route to R < 1/2 is KILLED as a construction line (heuristically; no
+asymptotic theorem). Revival criteria: a λ = 3 set with W < k at some k >= 7, or W < 0.22k with φ near 1.

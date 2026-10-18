@@ -1,0 +1,39 @@
+lam=4 k=4 L=5 mindef=6 G=0 phi=0.0000 nodes=7 D=0,1,2,5lam=4 k=4 L=4 mindef=6 G=0 phi=0.0000 nodes=5 D=0,1,2,4
+lam=4 k=4 L=3 mindef=6 G=0 phi=0.0000 nodes=3 D=0,1,2,3
+
+lam=4 k=4 L=6 mindef=6 G=0 phi=0.0000 nodes=10 D=0,1,2,6
+lam=4 k=4 L=9 mindef=6 G=0 phi=0.0000 nodes=21 D=0,1,2,9
+lam=4 k=4 L=7 mindef=6 G=0 phi=0.0000 nodes=13 D=0,1,2,7
+lam=4 k=4 L=8 mindef=6 G=0 phi=0.0000 nodes=17 D=0,1,2,8lam=4 k=4 L=10 mindef=6 G=0 phi=0.0000 nodes=26 D=0,1,2,10
+
+lam=4 k=4 L=11 mindef=6 G=0 phi=0.0000 nodes=31 D=0,1,2,11
+lam=4 k=4 L=12 mindef=6 G=0 phi=0.0000 nodes=37 D=0,1,2,12
+lam=4 k=4 L=14 mindef=6 G=0 phi=0.0000 nodes=50 D=0,1,2,14
+lam=4 k=4 L=13 mindef=6 G=0 phi=0.0000 nodes=43 D=0,1,2,13lam=4 k=4 L=15 mindef=6 G=0 phi=0.0000 nodes=57 D=0,1,2,15
+
+lam=4 k=4 L=17 mindef=6 G=0 phi=0.0000 nodes=73 D=0,1,2,17
+lam=4 k=4 L=16 mindef=6 G=0 phi=0.0000 nodes=65 D=0,1,2,16
+lam=4 k=4 L=19 mindef=6 G=0 phi=0.0000 nodes=91 D=0,1,2,19
+lam=4 k=4 L=18 mindef=6 G=0 phi=0.0000 nodes=82 D=0,1,2,18
+lam=4 k=4 L=21 mindef=6 G=0 phi=0.0000 nodes=111 D=0,1,2,21
+lam=4 k=4 L=22 mindef=6 G=0 phi=0.0000 nodes=122 D=0,1,2,22
+lam=4 k=4 L=20 mindef=6 G=0 phi=0.0000 nodes=101 D=0,1,2,20
+lam=4 k=4 L=24 mindef=6 G=0 phi=0.0000 nodes=145 D=0,1,2,24
+lam=4 k=4 L=23 mindef=6 G=0 phi=0.0000 nodes=133 D=0,1,2,23
+lam=4 k=4 L=25 mindef=6 G=0 phi=0.0000 nodes=157 D=0,1,2,25
+lam=4 k=4 L=26 mindef=6 G=0 phi=0.0000 nodes=170 D=0,1,2,26
+lam=4 k=4 L=27 mindef=6 G=0 phi=0.0000 nodes=183 D=0,1,2,27
+lam=4 k=4 L=29 mindef=6 G=0 phi=0.0000 nodes=211 D=0,1,2,29
+lam=4 k=4 L=30 mindef=6 G=0 phi=0.0000 nodes=226 D=0,1,2,30
+lam=4 k=4 L=31 mindef=6 G=0 phi=0.0000 nodes=241 D=0,1,2,31
+lam=4 k=4 L=28 mindef=6 G=0 phi=0.0000 nodes=197 D=0,1,2,28
+lam=4 k=4 L=32 mindef=6 G=0 phi=0.0000 nodes=257 D=0,1,2,32
+lam=4 k=4 L=33 mindef=6 G=0 phi=0.0000 nodes=273 D=0,1,2,33
+lam=4 k=4 L=34 mindef=6 G=0 phi=0.0000 nodes=290 D=0,1,2,34
+lam=4 k=4 L=36 mindef=6 G=0 phi=0.0000 nodes=325 D=0,1,2,36
+lam=4 k=4 L=35 mindef=6 G=0 phi=0.0000 nodes=307 D=0,1,2,35
+lam=4 k=4 L=37 mindef=6 G=0 phi=0.0000 nodes=343 D=0,1,2,37
+lam=4 k=4 L=38 mindef=6 G=0 phi=0.0000 nodes=362 D=0,1,2,38
+lam=4 k=4 L=39 mindef=6 G=0 phi=0.0000 nodes=381 D=0,1,2,39
+lam=4 k=4 L=40 mindef=6 G=0 phi=0.0000 nodes=401 D=0,1,2,40
+# lam=4 k=4 L in [3,40] best_def=6 best_phi=0.0000

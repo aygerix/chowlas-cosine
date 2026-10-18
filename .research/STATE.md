@@ -88,8 +88,10 @@ Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM
 (shared with other projects), never the VM fejer. F4 (src/f4run.sh) only as fallback. exh2 N=33 benchmark: 30 s at -c 8.
 
 ## Running now (2026-10-18 night)
-- Agent "lambda" (brief .research/agents/lambda_brief.md): exact optima and theory for λ = 3 near-uniform difference
-  multisets, the only known route to R < 1/2 (P8). Report -> .research/agents/lambda_report.md.
+- DONE: agent "lambda" (P23, E39 lead-verified). The λ >= 3 near-ruler construction line is KILLED (heuristically):
+  W >= k exactly for k <= 12 and growing; φ ≈ 0.8 at best; every candidate has R >= 0.68. Signs, cyclic lifts, products
+  and homometric triples all fail; T5 proves W ≍ k² for separated designs. The construction track has NO live
+  mechanism. Next: a new construction idea is needed, or a proof of the obstruction (C-W, then W' >= ck^{1+δ}).
 - E37/E37b/E37c (dirichlet, src/e37*_batch.sh): exact ILP max |B_t| at K <= 3–4 in cyclic, coprime and higher-rank
   groups. Partial: ℓ-torsion outside ⟨t⟩ drives run-tops (NOTEBOOK night entry); full table to EXPERIMENTS when done.
 - Queued: exhaustive N = 43 in [1,60] with src/exh2.c once the VM is free (dense-regime trend; N = 42 took 9619 s).

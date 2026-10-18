@@ -273,7 +273,10 @@ HEURISTIC (search lower bounds on the best φ). Data: examples/lambda_ruler/e35_
    λ = 4: 0.71, 0.71, 0.79, 0.72, 0.65, 0.67, 0.59, 0.52 (k = 8…30) — decreasing.
 Actual R(A) (A = multiplicity-λ differences; FFT + Newton, uncertified): λ = 2 candidates 0.71–1.03, λ = 3: 0.68–1.96,
 λ = 4: 0.71–2.33 — none near 1/2. The defect sum E (weight W ≈ k–14k) peaks where |F_D|² is small, so the naive
-R ≈ 1/√(2λφ) badly underestimates. Reading: no coherent multiplicity-3 or -4 structure appears (φ decays toward the
+R ≈ 1/√(2λφ) badly underestimates. CORRECTION (2026-10-18 night, E39 / agent lambda): the SA was search-limited. Exact optima give φ = 0.818 at k = 12
+(SA 0.773), and tabu gives φ ≈ 0.835 at k = 30 (SA 0.57). "φ decreases with k" is an ARTEFACT; the true best φ for
+λ = 3 is about 0.8, flat in k, with W/k growing. The conclusion "no route to R < 1/2" stands (every candidate R >= 0.68).
+Original reading, kept for the record: no coherent multiplicity-3 or -4 structure appears (φ decays toward the
 generic level), while λ = 2 structure is found immediately — consistent with P4 (symmetry gives at most 2). Not a
 proof; candidates beyond SA reach: homometric triples (NOTEBOOK evening entry). Runtime ≈ 12 min on 4 vCPUs.
 
@@ -311,3 +314,12 @@ Same N, same span, same search effort; "free" = unrestricted subsets of [1, span
 Reading: under equal search effort, forcing every t-run to be a 2-run costs 0.04–0.08 in R, and the gap grows with N
 (0.044, 0.044, 0.075). This is the opposite of the group picture (O4: this shape is EXTREMAL in Z_4 × GR(4,a)), and
 it is mild evidence for Lemma OR(2) (Chowla for the O4-shaped class in Z). Not a proof; the SA is search-limited.
+
+## E39 (2026-10-18 night) Lead's independent check of the λ-ruler exact optima (src/e39_lam_exact.c, src/e39_batch.sh,
+## src/e39_R.py; GCP VM dirichlet; data examples/lambda_verify/)
+Plain DFS over D ⊂ [0, L] with 0, L ∈ D (span exactly L), incremental r(d), prune only on over-full weight Σ_{r>λ} r,
+reflection broken by x₁ <= L − x_{k−2}. Independent of the agent's bb_lambda.c, whose bounds are stronger.
+   λ = 3:  k = 6: min def 3 (L <= 40) | 7: 6 (L <= 40) | 8: 7 (L <= 40) | 9: 9 (L <= 36) | 10: 9 (L <= 30) | 11: 10 (L <= 30)
+   — identical to the agent's table for every k (same argmin spans where the ranges overlap).
+The agent's best set D = {0,2,4,5,10,11,13,14,18,24}: |A| = 12, def = 9, M = 2.35706, R = 0.6804 (grid 4e5 + golden-section
+refinement, uncertified; agent 0.680). T2 parity count checked on 5 random reflection-symmetric sets.

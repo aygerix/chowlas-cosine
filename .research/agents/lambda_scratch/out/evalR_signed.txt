@@ -1,0 +1,51 @@
+lam=3 k=13 neg=0 L=42 |A|=21 phi=0.8077 W=30 W/k=2.308 M=3.8389 R=0.8377 naiveM=(k+W)/2lam=7.167 naiveR=1.5639 x*=6.08015 |F_D(x*)|^2=1.340 E(x*)=11.374 idcheck=-2.1e-14 mean E on lowest-quartile |F|^2 = -0.285 (overall mean -0.000, max 30.000) corr(E,|F|^2)=0.302
+   near-zeros of F_D (|F|^2<0.1k): 14 local minima; E there: min -10.52 mean -2.50 max 7.80 (k=13); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 3.369; 'ideal' R if E=0 there: 0.4700
+   defects d:r(d) = 19:1 21:1 23:1 26:1 28:1 29:2 30:2 31:1 32:1 36:1 38:1 40:1 42:1
+lam=3 k=13 neg=0 L=46 |A|=20 phi=0.7692 W=36 W/k=2.769 M=4.0000 R=0.8944 naiveM=(k+W)/2lam=8.167 naiveR=1.8261 x*=3.14159 |F_D(x*)|^2=1.000 E(x*)=12.000 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = 1.357 (overall mean -0.000, max 36.000) corr(E,|F|^2)=0.330
+   near-zeros of F_D (|F|^2<0.1k): 10 local minima; E there: min -2.92 mean 2.22 max 8.95 (k=13); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 3.629; 'ideal' R if E=0 there: 0.4838
+   defects d:r(d) = 6:2 14:1 17:1 24:1 26:2 27:1 28:1 29:1 31:1 34:1 35:1 36:1 38:1 39:1 44:1 46:1
+lam=3 k=7 neg=6 L=8 |A|=3 phi=0.4286 W=4 W/k=0.571 M=1.3156 R=0.7595 naiveM=(k+W)/2lam=1.833 naiveR=1.0585 x*=1.29294 |F_D(x*)|^2=1.207 E(x*)=2.100 idcheck=1.8e-15 mean E on lowest-quartile |F|^2 = 0.196 (overall mean -0.000, max 2.250) corr(E,|F|^2)=0.263
+   near-zeros of F_D (|F|^2<0.1k): 2 local minima; E there: min 0.49 mean 0.49 max 0.49 (k=7); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.182; 'ideal' R if E=0 there: 0.6358
+   defects d:r(d) = 4:1 8:-1
+lam=3 k=8 neg=1 L=10 |A|=4 phi=0.4286 W=4 W/k=0.500 M=2.0000 R=1.0000 naiveM=(k+W)/2lam=2.000 naiveR=1.0000 x*=3.14159 |F_D(x*)|^2=0.000 E(x*)=4.000 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = 0.931 (overall mean -0.000, max 4.000) corr(E,|F|^2)=0.229
+   near-zeros of F_D (|F|^2<0.1k): 5 local minima; E there: min 0.39 mean 1.44 max 4.00 (k=8); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 2.000; 'ideal' R if E=0 there: 0.6667
+   defects d:r(d) = 4:1 10:1
+lam=3 k=9 neg=7 L=10 |A|=3 phi=0.2500 W=2 W/k=0.222 M=1.5000 R=0.8660 naiveM=(k+W)/2lam=1.833 naiveR=1.0585 x*=4.18879 |F_D(x*)|^2=1.000 E(x*)=1.000 idcheck=-3.0e-14 mean E on lowest-quartile |F|^2 = -0.960 (overall mean 0.000, max 2.000) corr(E,|F|^2)=0.189
+   near-zeros of F_D (|F|^2<0.1k): 4 local minima; E there: min -1.64 mean -1.32 max -1.00 (k=9); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.327; 'ideal' R if E=0 there: 0.8625
+   defects d:r(d) = 10:-1
+lam=3 k=10 neg=1 L=15 |A|=8 phi=0.5333 W=6 W/k=0.600 M=1.9568 R=0.6918 naiveM=(k+W)/2lam=2.667 naiveR=0.9428 x*=5.90832 |F_D(x*)|^2=0.589 E(x*)=2.330 idcheck=-7.1e-15 mean E on lowest-quartile |F|^2 = 0.423 (overall mean -0.000, max 6.000) corr(E,|F|^2)=0.200
+   near-zeros of F_D (|F|^2<0.1k): 10 local minima; E there: min -0.67 mean 0.40 max 1.31 (k=10); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.874; 'ideal' R if E=0 there: 0.5884
+   defects d:r(d) = 1:1 11:1 15:1
+lam=4 k=8 neg=7 L=9 |A|=3 phi=0.4286 W=8 W/k=1.000 M=1.3156 R=0.7595 naiveM=(k+W)/2lam=2.000 naiveR=1.1547 x*=1.29294 |F_D(x*)|^2=0.020 E(x*)=2.545 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = 0.092 (overall mean -0.000, max 4.350) corr(E,|F|^2)=0.333
+   near-zeros of F_D (|F|^2<0.1k): 4 local minima; E there: min -4.18 mean -0.83 max 2.51 (k=8); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.314; 'ideal' R if E=0 there: 0.5771
+   defects d:r(d) = 4:2 5:1 9:-1
+lam=4 k=10 neg=2 L=11 |A|=3 phi=0.2667 W=6 W/k=0.600 M=1.3156 R=0.7595 naiveM=(k+W)/2lam=2.000 naiveR=1.1547 x*=1.29294 |F_D(x*)|^2=3.134 E(x*)=3.659 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = -0.493 (overall mean 0.000, max 4.787) corr(E,|F|^2)=0.243
+   near-zeros of F_D (|F|^2<0.1k): 1 local minima; E there: min -2.00 mean -2.00 max -2.00 (k=10); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.000; 'ideal' R if E=0 there: 0.7217
+   defects d:r(d) = 5:1 7:-1 11:1
+lam=3 k=12 neg=2 L=19 |A|=8 phi=0.3636 W=8 W/k=0.667 M=2.2667 R=0.8014 naiveM=(k+W)/2lam=3.333 naiveR=1.1785 x*=0.29795 |F_D(x*)|^2=0.170 E(x*)=1.770 idcheck=-1.8e-15 mean E on lowest-quartile |F|^2 = -0.607 (overall mean -0.000, max 6.145) corr(E,|F|^2)=0.229
+   near-zeros of F_D (|F|^2<0.1k): 8 local minima; E there: min -3.22 mean -1.16 max 1.39 (k=12); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 2.231; 'ideal' R if E=0 there: 0.7070
+   defects d:r(d) = 8:1 13:-1 16:1 19:1
+lam=3 k=14 neg=2 L=26 |A|=12 phi=0.3956 W=14 W/k=1.000 M=3.4781 R=1.0041 naiveM=(k+W)/2lam=4.667 naiveR=1.3472 x*=6.07381 |F_D(x*)|^2=0.908 E(x*)=7.777 idcheck=2.1e-14 mean E on lowest-quartile |F|^2 = 0.472 (overall mean -0.000, max 14.000) corr(E,|F|^2)=0.304
+   near-zeros of F_D (|F|^2<0.1k): 6 local minima; E there: min 2.25 mean 3.71 max 6.13 (k=14); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 3.335; 'ideal' R if E=0 there: 0.6678
+   defects d:r(d) = 3:2 5:2 23:1 25:1 26:1
+lam=3 k=16 neg=3 L=34 |A|=14 phi=0.3500 W=20 W/k=1.250 M=4.0000 R=1.0690 naiveM=(k+W)/2lam=6.000 naiveR=1.6036 x*=3.14159 |F_D(x*)|^2=4.000 E(x*)=12.000 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = -0.890 (overall mean -0.000, max 12.000) corr(E,|F|^2)=0.295
+   near-zeros of F_D (|F|^2<0.1k): 10 local minima; E there: min -6.81 mean -1.52 max 3.54 (k=16); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 3.160; 'ideal' R if E=0 there: 0.7096
+   defects d:r(d) = 6:2 10:-1 11:-1 13:-1 14:1 29:-1 30:1 32:1 34:-1
+lam=3 k=20 neg=4 L=53 |A|=17 phi=0.2684 W=30 W/k=1.500 M=5.0466 R=1.2240 naiveM=(k+W)/2lam=8.333 naiveR=2.0211 x*=4.57946 |F_D(x*)|^2=1.902 E(x*)=12.182 idcheck=1.8e-14 mean E on lowest-quartile |F|^2 = -1.696 (overall mean -0.000, max 22.000) corr(E,|F|^2)=0.347
+   near-zeros of F_D (|F|^2<0.1k): 18 local minima; E there: min -11.19 mean -2.68 max 8.94 (k=20); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 4.603; 'ideal' R if E=0 there: 0.8052
+   defects d:r(d) = 7:2 8:1 10:-1 11:1 19:1 24:1 25:2 27:1 30:2 33:1 45:1 53:-1
+lam=4 k=14 neg=2 L=19 |A|=9 phi=0.3956 W=14 W/k=1.000 M=2.3195 R=0.7732 naiveM=(k+W)/2lam=3.500 naiveR=1.1667 x*=4.98136 |F_D(x*)|^2=2.529 E(x*)=7.085 idcheck=1.1e-14 mean E on lowest-quartile |F|^2 = 1.685 (overall mean -0.000, max 14.000) corr(E,|F|^2)=0.215
+   near-zeros of F_D (|F|^2<0.1k): 2 local minima; E there: min 0.51 mean 0.51 max 0.51 (k=14); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.766; 'ideal' R if E=0 there: 0.5676
+   defects d:r(d) = 9:1 10:1 11:1 13:1 14:1 15:1 19:1
+lam=4 k=16 neg=4 L=25 |A|=6 phi=0.2000 W=8 W/k=0.500 M=2.0000 R=0.8165 naiveM=(k+W)/2lam=3.000 naiveR=1.2247 x*=3.14159 |F_D(x*)|^2=0.000 E(x*)=0.000 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = -0.696 (overall mean 0.000, max 6.161) corr(E,|F|^2)=0.200
+   near-zeros of F_D (|F|^2<0.1k): 7 local minima; E there: min -3.92 mean -1.43 max 0.55 (k=16); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 2.000; 'ideal' R if E=0 there: 0.8165
+   defects d:r(d) = 3:-1 15:-1 21:1 25:1
+lam=4 k=20 neg=4 L=40 |A|=14 phi=0.2947 W=36 W/k=1.800 M=3.5355 R=0.9449 naiveM=(k+W)/2lam=7.000 naiveR=1.8708 x*=2.24912 |F_D(x*)|^2=2.200 E(x*)=10.484 idcheck=-7.1e-15 mean E on lowest-quartile |F|^2 = -2.779 (overall mean -0.000, max 18.514) corr(E,|F|^2)=0.333
+   near-zeros of F_D (|F|^2<0.1k): 16 local minima; E there: min -10.59 mean -6.24 max 1.35 (k=20); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 2.561; 'ideal' R if E=0 there: 0.6671
+   defects d:r(d) = 3:1 19:2 22:2 24:-1 25:2 26:2 28:-1 31:1 32:1 33:-2 35:-1 36:1 40:-1
+lam=5 k=16 neg=2 L=30 |A|=11 phi=0.4583 W=30 W/k=1.875 M=2.3449 R=0.7070 naiveM=(k+W)/2lam=4.600 naiveR=1.3870 x*=4.84720 |F_D(x*)|^2=1.470 E(x*)=8.919 idcheck=-6.8e-14 mean E on lowest-quartile |F|^2 = 0.677 (overall mean -0.000, max 18.000) corr(E,|F|^2)=0.289
+   near-zeros of F_D (|F|^2<0.1k): 14 local minima; E there: min -10.96 mean -0.02 max 8.88 (k=16); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 2.344; 'ideal' R if E=0 there: 0.4811
+   defects d:r(d) = 5:3 9:2 13:1 17:2 18:1 20:1 24:1 25:1 27:-1 29:-1 30:-1
+lam=6 k=14 neg=3 L=19 |A|=4 phi=0.2637 W=18 W/k=1.286 M=2.0000 R=1.0000 naiveM=(k+W)/2lam=2.667 naiveR=1.3333 x*=3.14159 |F_D(x*)|^2=4.000 E(x*)=14.000 idcheck=0.0e+00 mean E on lowest-quartile |F|^2 = 1.016 (overall mean -0.000, max 14.000) corr(E,|F|^2)=0.307
+   near-zeros of F_D (|F|^2<0.1k): 8 local minima; E there: min -7.55 mean 0.52 max 5.06 (k=14); lower bound from identity: M >= (k + max E - |F|^2)/(2 lam) = 1.574; 'ideal' R if E=0 there: 0.5762
+   defects d:r(d) = 4:3 6:1 8:1 9:-1 11:-1 14:-1 19:-1

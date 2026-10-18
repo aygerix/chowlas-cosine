@@ -1,0 +1,42 @@
+lam=3 k=11 L=12 mindef=46 G=3 phi=0.1636 nodes=210 D=0,1,2,3,4,5,6,7,10,11,12lam=3 k=11 L=10 mindef=52 G=1 phi=0.0545 nodes=10 D=0,1,2,3,4,5,6,7,8,9,10
+
+lam=3 k=11 L=11 mindef=49 G=2 phi=0.1091 nodes=54 D=0,1,2,3,4,5,6,7,9,10,11
+lam=3 k=11 L=13 mindef=43 G=4 phi=0.2182 nodes=651 D=0,1,2,3,4,5,6,7,11,12,13
+lam=3 k=11 L=15 mindef=28 G=9 phi=0.4909 nodes=2992 D=0,1,2,3,4,5,6,7,13,14,15
+lam=3 k=11 L=16 mindef=25 G=10 phi=0.5455 nodes=6152 D=0,1,2,3,4,6,9,11,14,15,16
+lam=3 k=11 L=14 mindef=40 G=5 phi=0.2727 nodes=1685 D=0,1,2,3,4,5,6,7,12,13,14
+lam=3 k=11 L=17 mindef=16 G=13 phi=0.7091 nodes=8712 D=0,1,2,3,4,10,11,12,15,16,17
+lam=3 k=11 L=18 mindef=22 G=11 phi=0.6000 nodes=22047 D=0,1,2,3,4,5,10,12,16,17,18
+lam=3 k=11 L=19 mindef=19 G=12 phi=0.6545 nodes=36184 D=0,1,2,3,4,8,11,13,17,18,19
+lam=3 k=11 L=20 mindef=19 G=12 phi=0.6545 nodes=64216 D=0,1,2,3,4,9,11,15,16,17,20
+lam=3 k=11 L=21 mindef=16 G=13 phi=0.7091 nodes=94076 D=0,1,2,4,5,11,12,13,17,18,21
+lam=3 k=11 L=22 none<=18 nodes=183750
+lam=3 k=11 L=23 mindef=16 G=13 phi=0.7091 nodes=267580 D=0,1,4,5,7,11,15,16,19,21,23
+lam=3 k=11 L=24 mindef=16 G=13 phi=0.7091 nodes=392167 D=0,1,2,5,9,11,15,16,19,22,24
+lam=3 k=11 L=25 mindef=13 G=14 phi=0.7636 nodes=485697 D=0,1,3,4,10,11,12,15,16,17,25
+lam=3 k=11 L=26 mindef=13 G=14 phi=0.7636 nodes=705998 D=0,1,3,7,8,11,13,19,23,24,26
+lam=3 k=11 L=27 mindef=13 G=14 phi=0.7636 nodes=1138956 D=0,2,3,5,8,11,12,15,16,18,27
+lam=3 k=11 L=28 mindef=10 G=15 phi=0.8182 nodes=1140640 D=0,2,4,5,11,12,15,17,20,21,28
+lam=3 k=11 L=29 none<=15 nodes=2582088
+lam=3 k=11 L=30 mindef=13 G=14 phi=0.7636 nodes=2538525 D=0,1,3,7,8,13,15,17,18,21,30
+lam=3 k=11 L=31 mindef=13 G=14 phi=0.7636 nodes=3718938 D=0,1,9,11,12,16,17,19,26,28,31
+lam=3 k=11 L=32 none<=12 nodes=4001006
+lam=3 k=11 L=33 none<=12 nodes=4956645
+lam=3 k=11 L=34 none<=12 nodes=6344358
+lam=3 k=11 L=35 none<=12 nodes=7686482
+lam=3 k=11 L=36 none<=12 nodes=9427412
+lam=3 k=11 L=37 none<=12 nodes=11147994
+lam=3 k=11 L=38 none<=12 nodes=13580319
+lam=3 k=11 L=39 none<=12 nodes=15406046
+lam=3 k=11 L=40 none<=12 nodes=18720389
+lam=3 k=11 L=41 none<=12 nodes=21131130
+lam=3 k=11 L=42 none<=12 nodes=24935672
+lam=3 k=11 L=43 none<=12 nodes=28024971
+lam=3 k=11 L=44 none<=12 nodes=33230297
+lam=3 k=11 L=45 none<=12 nodes=36217887
+lam=3 k=11 L=46 none<=12 nodes=43104082
+lam=3 k=11 L=47 none<=12 nodes=47098374
+lam=3 k=11 L=48 none<=12 nodes=54730749
+lam=3 k=11 L=49 none<=12 nodes=59877836
+lam=3 k=11 L=50 none<=12 nodes=69897822
+# lam=3 k=11 L in [10,50] best_def=10 best_phi=0.8182

@@ -1,0 +1,64 @@
+=== N = lambda = 3: D = [0,3) + 3*B
+Golomb b=4 len=6 tau=1 k=12 defpairs=18 phi=0.7273 W/k=3.00 tau/b^2=0.062
+Golomb b=5 len=11 tau=3 k=15 defpairs=27 phi=0.7429 W/k=3.60 tau/b^2=0.120
+Golomb b=6 len=17 tau=3 k=18 defpairs=30 phi=0.8039 W/k=3.33 tau/b^2=0.083
+Golomb b=7 len=25 tau=7 k=21 defpairs=45 phi=0.7857 W/k=4.29 tau/b^2=0.143
+Golomb b=8 len=34 tau=11 k=24 defpairs=60 phi=0.7826 W/k=5.00 tau/b^2=0.172
+Golomb b=9 len=44 tau=15 k=27 defpairs=75 phi=0.7863 W/k=5.56 tau/b^2=0.185
+Golomb b=10 len=55 tau=13 k=30 defpairs=72 phi=0.8345 W/k=4.80 tau/b^2=0.130
+Golomb b=11 len=72 tau=29 k=33 defpairs=123 phi=0.7670 W/k=7.45 tau/b^2=0.240
+Golomb b=12 len=85 tau=21 k=36 defpairs=102 phi=0.8381 W/k=5.67 tau/b^2=0.146
+Golomb b=13 len=106 tau=35 k=39 defpairs=147 phi=0.8016 W/k=7.54 tau/b^2=0.207
+Golomb b=14 len=127 tau=35 k=42 defpairs=150 phi=0.8258 W/k=7.14 tau/b^2=0.179
+Singer q=2 v=7 b=3 best-lift tau=1 tau/b^2=0.111 k=9 defpairs=15 phi=0.5833 W/k=3.33
+Singer q=3 v=13 b=4 best-lift tau=1 tau/b^2=0.062 k=12 defpairs=18 phi=0.7273 W/k=3.00
+Singer q=5 v=31 b=6 best-lift tau=3 tau/b^2=0.083 k=18 defpairs=30 phi=0.8039 W/k=3.33
+Singer q=7 v=57 b=8 best-lift tau=9 tau/b^2=0.141 k=24 defpairs=54 phi=0.8043 W/k=4.50
+Singer q=11 v=133 b=12 best-lift tau=19 tau/b^2=0.132 k=36 defpairs=96 phi=0.8476 W/k=5.33
+Singer q=13 v=183 b=14 best-lift tau=31 tau/b^2=0.158 k=42 defpairs=138 phi=0.8397 W/k=6.57
+Singer q=17 v=307 b=18 best-lift tau=53 tau/b^2=0.164 k=54 defpairs=216 phi=0.8491 W/k=8.00
+Singer q=19 v=381 b=20 best-lift tau=67 tau/b^2=0.168 k=60 defpairs=264 phi=0.8508 W/k=8.80
+Singer q=23 v=553 b=24 best-lift tau=111 tau/b^2=0.193 k=72 defpairs=408 phi=0.8404 W/k=11.33
+Singer q=29 v=871 b=30 best-lift tau=179 tau/b^2=0.199 k=90 defpairs=630 phi=0.8427 W/k=14.00 (sampled lifts)
+Singer q=31 v=993 b=32 best-lift tau=221 tau/b^2=0.216 k=96 defpairs=762 phi=0.8329 W/k=15.88 (sampled lifts)
+Singer q=37 v=1407 b=38 best-lift tau=313 tau/b^2=0.217 k=114 defpairs=1056 phi=0.8361 W/k=18.53 (sampled lifts)
+Singer q=41 v=1723 b=42 best-lift tau=387 tau/b^2=0.219 k=126 defpairs=1290 phi=0.8362 W/k=20.48 (sampled lifts)
+Singer q=43 v=1893 b=44 best-lift tau=445 tau/b^2=0.230 k=132 defpairs=1470 phi=0.8300 W/k=22.27 (sampled lifts)
+Singer q=47 v=2257 b=48 best-lift tau=531 tau/b^2=0.230 k=144 defpairs=1740 phi=0.8310 W/k=24.17 (sampled lifts)
+Singer q=53 v=2863 b=54 best-lift tau=695 tau/b^2=0.238 k=162 defpairs=2250 phi=0.8275 W/k=27.78 (sampled lifts)
+Singer q=59 v=3541 b=60 best-lift tau=867 tau/b^2=0.241 k=180 defpairs=2784 phi=0.8272 W/k=30.93 (sampled lifts)
+Singer q=61 v=3783 b=62 best-lift tau=947 tau/b^2=0.246 k=186 defpairs=3030 phi=0.8239 W/k=32.58 (sampled lifts)
+Singer q=67 v=4557 b=68 best-lift tau=1165 tau/b^2=0.252 k=204 defpairs=3702 phi=0.8212 W/k=36.29 (sampled lifts)
+Singer q=71 v=5113 b=72 best-lift tau=1303 tau/b^2=0.251 k=216 defpairs=4128 phi=0.8222 W/k=38.22 (sampled lifts)
+=== N = lambda = 4: D = [0,4) + 4*B
+Golomb b=4 len=6 tau=1 k=16 defpairs=36 phi=0.7000 W/k=4.50 tau/b^2=0.062
+Golomb b=5 len=11 tau=3 k=20 defpairs=54 phi=0.7158 W/k=5.40 tau/b^2=0.120
+Golomb b=6 len=17 tau=3 k=24 defpairs=60 phi=0.7826 W/k=5.00 tau/b^2=0.083
+Golomb b=7 len=25 tau=7 k=28 defpairs=90 phi=0.7619 W/k=6.43 tau/b^2=0.143
+Golomb b=8 len=34 tau=11 k=32 defpairs=120 phi=0.7581 W/k=7.50 tau/b^2=0.172
+Golomb b=9 len=44 tau=15 k=36 defpairs=150 phi=0.7619 W/k=8.33 tau/b^2=0.185
+Golomb b=10 len=55 tau=13 k=40 defpairs=144 phi=0.8154 W/k=7.20 tau/b^2=0.130
+Golomb b=11 len=72 tau=29 k=44 defpairs=246 phi=0.7400 W/k=11.18 tau/b^2=0.240
+Golomb b=12 len=85 tau=21 k=48 defpairs=204 phi=0.8191 W/k=8.50 tau/b^2=0.146
+Golomb b=13 len=106 tau=35 k=52 defpairs=294 phi=0.7783 W/k=11.31 tau/b^2=0.207
+Golomb b=14 len=127 tau=35 k=56 defpairs=300 phi=0.8052 W/k=10.71 tau/b^2=0.179
+Singer q=2 v=7 b=3 best-lift tau=1 tau/b^2=0.111 k=12 defpairs=30 phi=0.5455 W/k=5.00
+Singer q=3 v=13 b=4 best-lift tau=1 tau/b^2=0.062 k=16 defpairs=36 phi=0.7000 W/k=4.50
+Singer q=5 v=31 b=6 best-lift tau=3 tau/b^2=0.083 k=24 defpairs=60 phi=0.7826 W/k=5.00
+Singer q=7 v=57 b=8 best-lift tau=9 tau/b^2=0.141 k=32 defpairs=108 phi=0.7823 W/k=6.75
+Singer q=11 v=133 b=12 best-lift tau=19 tau/b^2=0.132 k=48 defpairs=192 phi=0.8298 W/k=8.00
+Singer q=13 v=183 b=14 best-lift tau=31 tau/b^2=0.158 k=56 defpairs=276 phi=0.8208 W/k=9.86
+Singer q=17 v=307 b=18 best-lift tau=53 tau/b^2=0.164 k=72 defpairs=432 phi=0.8310 W/k=12.00
+Singer q=19 v=381 b=20 best-lift tau=67 tau/b^2=0.168 k=80 defpairs=528 phi=0.8329 W/k=13.20
+Singer q=23 v=553 b=24 best-lift tau=111 tau/b^2=0.193 k=96 defpairs=816 phi=0.8211 W/k=17.00
+Singer q=29 v=871 b=30 best-lift tau=179 tau/b^2=0.199 k=120 defpairs=1260 phi=0.8235 W/k=21.00 (sampled lifts)
+Singer q=31 v=993 b=32 best-lift tau=221 tau/b^2=0.216 k=128 defpairs=1524 phi=0.8125 W/k=23.81 (sampled lifts)
+Singer q=37 v=1407 b=38 best-lift tau=313 tau/b^2=0.217 k=152 defpairs=2112 phi=0.8160 W/k=27.79 (sampled lifts)
+Singer q=41 v=1723 b=42 best-lift tau=387 tau/b^2=0.219 k=168 defpairs=2580 phi=0.8161 W/k=30.71 (sampled lifts)
+Singer q=43 v=1893 b=44 best-lift tau=445 tau/b^2=0.230 k=176 defpairs=2940 phi=0.8091 W/k=33.41 (sampled lifts)
+Singer q=47 v=2257 b=48 best-lift tau=531 tau/b^2=0.230 k=192 defpairs=3480 phi=0.8102 W/k=36.25 (sampled lifts)
+Singer q=53 v=2863 b=54 best-lift tau=695 tau/b^2=0.238 k=216 defpairs=4500 phi=0.8062 W/k=41.67 (sampled lifts)
+Singer q=59 v=3541 b=60 best-lift tau=867 tau/b^2=0.241 k=240 defpairs=5568 phi=0.8059 W/k=46.40 (sampled lifts)
+Singer q=61 v=3783 b=62 best-lift tau=947 tau/b^2=0.246 k=248 defpairs=6060 phi=0.8021 W/k=48.87 (sampled lifts)
+Singer q=67 v=4557 b=68 best-lift tau=1165 tau/b^2=0.252 k=272 defpairs=7404 phi=0.7991 W/k=54.44 (sampled lifts)
+Singer q=71 v=5113 b=72 best-lift tau=1303 tau/b^2=0.251 k=288 defpairs=8256 phi=0.8002 W/k=57.33 (sampled lifts)

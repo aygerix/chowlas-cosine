@@ -1,0 +1,37 @@
+lam=4 k=6 L=5 mindef=11 G=1 phi=0.2667 nodes=5 D=0,1,2,3,4,5
+lam=4 k=6 L=8 mindef=11 G=1 phi=0.2667 nodes=53 D=0,1,2,3,4,8
+lam=4 k=6 L=6 mindef=7 G=2 phi=0.5333 nodes=11 D=0,1,2,3,4,6
+lam=4 k=6 L=7 mindef=11 G=1 phi=0.2667 nodes=29 D=0,1,2,3,4,7
+lam=4 k=6 L=10 mindef=11 G=1 phi=0.2667 nodes=129 D=0,1,2,3,4,10
+lam=4 k=6 L=9 mindef=11 G=1 phi=0.2667 nodes=83 D=0,1,2,3,4,9
+lam=4 k=6 L=12 mindef=7 G=2 phi=0.5333 nodes=214 D=0,2,4,6,8,12
+lam=4 k=6 L=13 mindef=11 G=1 phi=0.2667 nodes=346 D=0,1,2,3,4,13
+lam=4 k=6 L=11 mindef=11 G=1 phi=0.2667 nodes=187 D=0,1,2,3,4,11
+lam=4 k=6 L=14 mindef=11 G=1 phi=0.2667 nodes=450 D=0,1,2,3,4,14
+lam=4 k=6 L=15 mindef=11 G=1 phi=0.2667 nodes=571 D=0,1,2,3,4,15
+lam=4 k=6 L=18 mindef=7 G=2 phi=0.5333 nodes=923 D=0,3,6,9,12,18
+lam=4 k=6 L=16 mindef=11 G=1 phi=0.2667 nodes=726 D=0,1,2,3,4,16
+lam=4 k=6 L=20 mindef=11 G=1 phi=0.2667 nodes=1555 D=0,1,2,3,4,20lam=4 k=6 L=17 mindef=11 G=1 phi=0.2667 nodes=894 D=0,1,2,3,4,17
+
+lam=4 k=6 L=19 mindef=11 G=1 phi=0.2667 nodes=1310 D=0,1,2,3,4,19
+lam=4 k=6 L=22 mindef=11 G=1 phi=0.2667 nodes=2147 D=0,1,2,3,4,22
+lam=4 k=6 L=23 mindef=11 G=1 phi=0.2667 nodes=2486 D=0,1,2,3,4,23
+lam=4 k=6 L=21 mindef=11 G=1 phi=0.2667 nodes=1823 D=0,1,2,3,4,21
+lam=4 k=6 L=24 mindef=7 G=2 phi=0.5333 nodes=2434 D=0,4,8,12,16,24
+lam=4 k=6 L=26 mindef=11 G=1 phi=0.2667 nodes=3722 D=0,1,2,3,4,26
+lam=4 k=6 L=27 mindef=11 G=1 phi=0.2667 nodes=4198 D=0,1,2,3,4,27
+lam=4 k=6 L=25 mindef=11 G=1 phi=0.2667 nodes=3280 D=0,1,2,3,4,25
+lam=4 k=6 L=28 mindef=11 G=1 phi=0.2667 nodes=4756 D=0,1,2,3,4,28
+lam=4 k=6 L=29 mindef=11 G=1 phi=0.2667 nodes=5322 D=0,1,2,3,4,29
+lam=4 k=6 L=30 mindef=7 G=2 phi=0.5333 nodes=5074 D=0,5,10,15,20,30
+lam=4 k=6 L=31 mindef=11 G=1 phi=0.2667 nodes=6615 D=0,1,2,3,4,31
+lam=4 k=6 L=34 mindef=11 G=1 phi=0.2667 nodes=8907 D=0,1,2,3,4,34
+lam=4 k=6 L=32 mindef=11 G=1 phi=0.2667 nodes=7315 D=0,1,2,3,4,32
+lam=4 k=6 L=33 mindef=11 G=1 phi=0.2667 nodes=8055 D=0,1,2,3,4,33
+lam=4 k=6 L=35 mindef=11 G=1 phi=0.2667 nodes=9761 D=0,1,2,3,4,35
+lam=4 k=6 L=37 mindef=11 G=1 phi=0.2667 nodes=11674 D=0,1,2,3,4,37
+lam=4 k=6 L=36 mindef=7 G=2 phi=0.5333 nodes=9117 D=0,6,12,18,24,36lam=4 k=6 L=38 mindef=11 G=1 phi=0.2667 nodes=12688 D=0,1,2,3,4,38
+
+lam=4 k=6 L=39 mindef=11 G=1 phi=0.2667 nodes=13753 D=0,1,2,3,4,39
+lam=4 k=6 L=40 mindef=11 G=1 phi=0.2667 nodes=14964 D=0,1,2,3,4,40
+# lam=4 k=6 L in [5,40] best_def=7 best_phi=0.5333

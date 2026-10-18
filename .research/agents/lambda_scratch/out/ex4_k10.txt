@@ -1,0 +1,33 @@
+lam=4 k=10 L=11 mindef=25 G=5 phi=0.4444 nodes=138 D=0,1,2,3,4,5,8,9,10,11lam=4 k=10 L=10 mindef=37 G=2 phi=0.1778 nodes=44 D=0,1,2,3,4,5,7,8,9,10
+
+lam=4 k=10 L=9 mindef=41 G=1 phi=0.0889 nodes=9 D=0,1,2,3,4,5,6,7,8,9
+lam=4 k=10 L=12 mindef=25 G=5 phi=0.4444 nodes=420 D=0,1,2,3,4,7,8,9,10,12
+lam=4 k=10 L=13 mindef=21 G=6 phi=0.5333 nodes=985 D=0,1,2,3,6,7,10,11,12,13
+lam=4 k=10 L=15 mindef=17 G=7 phi=0.6222 nodes=3653 D=0,1,2,4,7,8,9,12,13,15
+lam=4 k=10 L=14 mindef=17 G=7 phi=0.6222 nodes=1859 D=0,1,2,3,6,8,9,10,13,14
+lam=4 k=10 L=16 mindef=13 G=8 phi=0.7111 nodes=5639 D=0,1,3,6,7,8,10,12,15,16
+lam=4 k=10 L=17 mindef=13 G=8 phi=0.7111 nodes=9025 D=0,1,2,5,8,9,10,12,14,17
+lam=4 k=10 L=18 mindef=13 G=8 phi=0.7111 nodes=17087 D=0,2,3,7,8,9,11,12,14,18
+lam=4 k=10 L=19 mindef=13 G=8 phi=0.7111 nodes=21818 D=0,1,3,5,6,9,10,11,13,19
+lam=4 k=10 L=20 mindef=13 G=8 phi=0.7111 nodes=31672 D=0,1,3,5,6,7,10,11,13,20
+lam=4 k=10 L=21 mindef=13 G=8 phi=0.7111 nodes=50110 D=0,2,3,4,6,10,11,13,14,21
+lam=4 k=10 L=22 none<=16 nodes=90313
+lam=4 k=10 L=23 none<=16 nodes=120019
+lam=4 k=10 L=25 none<=16 nodes=205374
+lam=4 k=10 L=24 none<=16 nodes=161677
+lam=4 k=10 L=26 none<=16 nodes=271836
+lam=4 k=10 L=27 none<=16 nodes=337533
+lam=4 k=10 L=28 none<=16 nodes=440070
+lam=4 k=10 L=29 none<=16 nodes=539692
+lam=4 k=10 L=30 none<=16 nodes=685103
+lam=4 k=10 L=31 none<=16 nodes=826127
+lam=4 k=10 L=32 mindef=13 G=8 phi=0.7111 nodes=699898 D=0,2,6,12,14,16,20,24,30,32
+lam=4 k=10 L=34 mindef=13 G=8 phi=0.7111 nodes=897304 D=0,2,4,10,16,18,20,24,28,34
+lam=4 k=10 L=33 none<=16 nodes=1209013
+lam=4 k=10 L=35 none<=16 nodes=1716445
+lam=4 k=10 L=36 mindef=13 G=8 phi=0.7111 nodes=1687643 D=0,4,6,14,16,18,22,24,28,36
+lam=4 k=10 L=38 mindef=13 G=8 phi=0.7111 nodes=1653731 D=0,2,6,10,12,18,20,22,26,38
+lam=4 k=10 L=37 none<=16 nodes=2362626
+lam=4 k=10 L=40 mindef=13 G=8 phi=0.7111 nodes=2115473 D=0,2,6,10,12,14,20,22,26,40
+lam=4 k=10 L=39 none<=16 nodes=3168560
+# lam=4 k=10 L in [9,40] best_def=13 best_phi=0.7111

@@ -1,0 +1,38 @@
+lam=3 k=5 L=5 mindef=4 G=2 phi=0.6000 nodes=8 D=0,1,2,3,5
+lam=3 k=5 L=6 mindef=7 G=1 phi=0.3000 nodes=16 D=0,1,2,3,6
+lam=3 k=5 L=4 mindef=7 G=1 phi=0.3000 nodes=4 D=0,1,2,3,4
+lam=3 k=5 L=9 mindef=7 G=1 phi=0.3000 nodes=54 D=0,1,2,3,9
+lam=3 k=5 L=10 mindef=4 G=2 phi=0.6000 nodes=62 D=0,2,4,6,10
+lam=3 k=5 L=7 mindef=7 G=1 phi=0.3000 nodes=25 D=0,1,2,3,7
+lam=3 k=5 L=11 mindef=7 G=1 phi=0.3000 nodes=100 D=0,1,2,3,11
+lam=3 k=5 L=8 mindef=7 G=1 phi=0.3000 nodes=38 D=0,1,2,3,8
+lam=3 k=5 L=12 mindef=7 G=1 phi=0.3000 nodes=131 D=0,1,2,3,12
+lam=3 k=5 L=13 mindef=7 G=1 phi=0.3000 nodes=167 D=0,1,2,3,13
+lam=3 k=5 L=16 mindef=7 G=1 phi=0.3000 nodes=316 D=0,1,2,3,16
+lam=3 k=5 L=14 mindef=7 G=1 phi=0.3000 nodes=210 D=0,1,2,3,14
+lam=3 k=5 L=15 mindef=4 G=2 phi=0.6000 nodes=210 D=0,3,6,9,15
+lam=3 k=5 L=17 mindef=7 G=1 phi=0.3000 nodes=380 D=0,1,2,3,17
+lam=3 k=5 L=18 mindef=7 G=1 phi=0.3000 nodes=453 D=0,1,2,3,18
+lam=3 k=5 L=19 mindef=7 G=1 phi=0.3000 nodes=534 D=0,1,2,3,19lam=3 k=5 L=20 mindef=4 G=2 phi=0.6000 nodes=507 D=0,4,8,12,20
+
+lam=3 k=5 L=21 mindef=7 G=1 phi=0.3000 nodes=725 D=0,1,2,3,21
+lam=3 k=5 L=22 mindef=7 G=1 phi=0.3000 nodes=836 D=0,1,2,3,22
+lam=3 k=5 L=24 mindef=7 G=1 phi=0.3000 nodes=1090 D=0,1,2,3,24
+lam=3 k=5 L=23 mindef=7 G=1 phi=0.3000 nodes=957 D=0,1,2,3,23
+lam=3 k=5 L=25 mindef=4 G=2 phi=0.6000 nodes=986 D=0,5,10,15,25
+lam=3 k=5 L=27 mindef=7 G=1 phi=0.3000 nodes=1560 D=0,1,2,3,27
+lam=3 k=5 L=26 mindef=7 G=1 phi=0.3000 nodes=1391 D=0,1,2,3,26
+lam=3 k=5 L=29 mindef=7 G=1 phi=0.3000 nodes=1939 D=0,1,2,3,29
+lam=3 k=5 L=28 mindef=7 G=1 phi=0.3000 nodes=1743 D=0,1,2,3,28lam=3 k=5 L=32 mindef=7 G=1 phi=0.3000 nodes=2616 D=0,1,2,3,32
+lam=3 k=5 L=31 mindef=7 G=1 phi=0.3000 nodes=2375 D=0,1,2,3,31
+lam=3 k=5 L=30 mindef=4 G=2 phi=0.6000 nodes=1712 D=0,6,12,18,30
+
+lam=3 k=5 L=35 mindef=4 G=2 phi=0.6000 nodes=2728 D=0,7,14,21,35
+lam=3 k=5 L=34 mindef=7 G=1 phi=0.3000 nodes=3145 D=0,1,2,3,34
+lam=3 k=5 L=33 mindef=7 G=1 phi=0.3000 nodes=2872 D=0,1,2,3,33
+lam=3 k=5 L=36 mindef=7 G=1 phi=0.3000 nodes=3741 D=0,1,2,3,36
+lam=3 k=5 L=37 mindef=7 G=1 phi=0.3000 nodes=4065 D=0,1,2,3,37
+lam=3 k=5 L=38 mindef=7 G=1 phi=0.3000 nodes=4408 D=0,1,2,3,38
+lam=3 k=5 L=40 mindef=4 G=2 phi=0.6000 nodes=4094 D=0,8,16,24,40
+lam=3 k=5 L=39 mindef=7 G=1 phi=0.3000 nodes=4769 D=0,1,2,3,39
+# lam=3 k=5 L in [4,40] best_def=4 best_phi=0.6000

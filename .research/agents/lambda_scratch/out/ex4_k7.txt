@@ -1,0 +1,36 @@
+lam=4 k=7 L=6 mindef=17 G=1 phi=0.1905 nodes=6 D=0,1,2,3,4,5,6
+lam=4 k=7 L=9 mindef=9 G=3 phi=0.5714 nodes=66 D=0,1,2,3,4,6,9lam=4 k=7 L=10 mindef=9 G=3 phi=0.5714 nodes=143 D=0,1,4,5,6,9,10
+
+lam=4 k=7 L=8 mindef=9 G=3 phi=0.5714 nodes=40 D=0,1,2,3,5,6,8
+lam=4 k=7 L=7 mindef=13 G=2 phi=0.3810 nodes=20 D=0,1,2,3,4,6,7
+lam=4 k=7 L=11 mindef=13 G=2 phi=0.3810 nodes=285 D=0,1,2,3,4,6,11
+lam=4 k=7 L=14 mindef=9 G=3 phi=0.5714 nodes=669 D=0,1,6,7,8,13,14
+lam=4 k=7 L=12 mindef=9 G=3 phi=0.5714 nodes=334 D=0,1,5,6,7,11,12lam=4 k=7 L=13 mindef=13 G=2 phi=0.3810 nodes=671 D=0,1,2,3,4,6,13
+lam=4 k=7 L=15 mindef=13 G=2 phi=0.3810 nodes=1297 D=0,1,2,3,4,6,15
+
+lam=4 k=7 L=16 mindef=9 G=3 phi=0.5714 nodes=1132 D=0,1,7,8,9,15,16
+lam=4 k=7 L=17 mindef=13 G=2 phi=0.3810 nodes=2243 D=0,1,2,3,4,6,17
+lam=4 k=7 L=18 mindef=9 G=3 phi=0.5714 nodes=1756 D=0,1,8,9,10,17,18
+lam=4 k=7 L=19 mindef=13 G=2 phi=0.3810 nodes=3583 D=0,1,2,3,4,6,19
+lam=4 k=7 L=21 mindef=13 G=2 phi=0.3810 nodes=5358 D=0,1,2,3,4,6,21
+lam=4 k=7 L=20 mindef=9 G=3 phi=0.5714 nodes=2514 D=0,1,9,10,11,19,20
+lam=4 k=7 L=23 mindef=13 G=2 phi=0.3810 nodes=7824 D=0,1,2,3,4,6,23
+lam=4 k=7 L=25 mindef=13 G=2 phi=0.3810 nodes=10921 D=0,1,2,3,4,6,25
+lam=4 k=7 L=22 mindef=9 G=3 phi=0.5714 nodes=3579 D=0,1,10,11,12,21,22
+lam=4 k=7 L=26 mindef=9 G=3 phi=0.5714 nodes=6251 D=0,1,12,13,14,25,26
+lam=4 k=7 L=24 mindef=9 G=3 phi=0.5714 nodes=4758 D=0,1,11,12,13,23,24
+lam=4 k=7 L=27 mindef=9 G=3 phi=0.5714 nodes=10417 D=0,3,6,9,12,18,27
+lam=4 k=7 L=28 mindef=9 G=3 phi=0.5714 nodes=7957 D=0,1,13,14,15,27,28
+lam=4 k=7 L=30 mindef=9 G=3 phi=0.5714 nodes=10046 D=0,1,14,15,16,29,30
+lam=4 k=7 L=29 mindef=13 G=2 phi=0.3810 nodes=19718 D=0,1,2,3,4,6,29
+lam=4 k=7 L=32 mindef=9 G=3 phi=0.5714 nodes=12287 D=0,1,15,16,17,31,32
+lam=4 k=7 L=31 mindef=13 G=2 phi=0.3810 nodes=25688 D=0,1,2,3,4,6,31
+lam=4 k=7 L=34 mindef=9 G=3 phi=0.5714 nodes=15100 D=0,1,16,17,18,33,34
+lam=4 k=7 L=33 mindef=13 G=2 phi=0.3810 nodes=32617 D=0,1,2,3,4,6,33
+lam=4 k=7 L=36 mindef=9 G=3 phi=0.5714 nodes=17932 D=0,1,17,18,19,35,36
+lam=4 k=7 L=35 mindef=13 G=2 phi=0.3810 nodes=41172 D=0,1,2,3,4,6,35
+lam=4 k=7 L=38 mindef=9 G=3 phi=0.5714 nodes=21460 D=0,1,18,19,20,37,38
+lam=4 k=7 L=37 mindef=13 G=2 phi=0.3810 nodes=51234 D=0,1,2,3,4,6,37
+lam=4 k=7 L=40 mindef=9 G=3 phi=0.5714 nodes=25180 D=0,1,19,20,21,39,40
+lam=4 k=7 L=39 mindef=13 G=2 phi=0.3810 nodes=62707 D=0,1,2,3,4,6,39
+# lam=4 k=7 L in [6,40] best_def=9 best_phi=0.5714

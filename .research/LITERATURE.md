@@ -64,3 +64,16 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   all of ∫|T'|^2 with δ = O(1). Whether the n^{1/3} statement is true for unit-amplitude T is open to us. Not used
   anywhere in this project. (An adaptation to dense 0/1 sets A ⊂ [1,X] would have given M(A) >> N^{5/3}/X^{4/3}; it
   fails for the same reason.)
+
+## Minimum modulus of 0/1 (Newman) polynomials — relevance to Sidon differences (quick check 2026-10-18)
+- For Sidon B (|B| = k), A = positive differences: min|F_B|² = k − 2M(A), so C½ restricted to Sidon differences is
+  EXACTLY min_x |F_B(x)|² <= (1 − 1/√2 + o(1))k ("SNZ-weak", STATE line 1). A general theorem "Newman polynomials have
+  min modulus o(√k) on the circle" would settle the whole class (R -> 1/√2).
+- Status found: open. Mercer (Integers / "Newman polynomials not vanishing on the unit circle", via math.colgate.edu
+  m67) defines µ(n) = max over n-term Newman polynomials of min_{|z|=1}|P| and conjectures µ(n) -> ∞, perhaps like a
+  power of n; known: n-term Newman polynomials without unimodular roots exist for every n > 2; Boyd's degree-12
+  example with min > 1; smallest degree with min > 2 is 38 (Springer s40598-019-00102-1). No o(√n) upper bound known
+  to us. So no free result: SNZ-weak must be proved using the Sidon property (E8/E12/E15/E29 numerics: c -> 0).
+- Contrast: flat ±1 (Littlewood) polynomials exist, δ√n <= |P| <= Δ√n (Balister–Bollobás–Morris–Sahasrabudhe–Tiba,
+  arXiv:1907.09464). Their autocorrelations are not 0/1, so this does not transfer to cosine sums with unit
+  coefficients; it does show "flat from below" is not forbidden by L²/L⁴ considerations alone.

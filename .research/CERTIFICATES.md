@@ -30,6 +30,11 @@ points + 4th-order Taylor remainder (rigorous lower bound on min over ALL real x
    q = 61: N = 3782, max 10707, min f >= −37.1485, R <= 0.60406
    q = 101: N = 10302, max 30575, min f >= −59.7566, R <= 0.58874
    q = 151: N = 22952, R <= 0.57770;  q = 199: N = 39800, R <= 0.56630;  q = 251: N = 63252, max 189688, R <= 0.56272
+   q = 307: N = 94556, max 278751, min f >= −171.2117, R <= 0.55679;  q = 401: N = 161202, max 483272, R <= 0.55476
+   (q = 307, 401 certified 2026-10-18 on the laptop with chowla.certify_lower_bound_blocked(A, oversample=16, blocks=64):
+   same arb-DFT + Taylor certificate computed in 64 decimated residue blocks; validated bit-identical to the unblocked
+   certifier on q = 61, 101 and N = 45. q = 401: grid estimate 0.55358, certificate loses 0.0012 to the Taylor remainder
+   at oversample 16 — rerun at oversample 32 to tighten.)
 
 ## C-N45 (2026-10-18): N = 45, max 61 (E27; examples/milp/N45_best.json)
 A = [1..13, 15..35, 37, 39, 40, 41, 45, 50, 52, 57, 58, 60, 61].

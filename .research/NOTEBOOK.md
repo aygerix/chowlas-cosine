@@ -359,3 +359,17 @@
   "pointwise gap inequality + nonnegative test function" the bound is |B_t| <~ K^2·||H||_1^2; K^3 (=> exponent 1/4)
   needs a test H >= |Q|, Q̂ ≈ 1 on B_t in L^2, with ||H||_1 <~ K^{1/2} — e.g. if run-top sets B_t had small Fourier
   L^1 norm relative to K. Not pursued further now; recorded so the next attempt starts from the right bottleneck.
+- Bu's construction in dense-profile coordinates (PROVED at profile level, elementary; HEURISTIC only in reading c_E as
+  the residual's skew). For a dense Sidon S ⊂ [−v/2, v/2] (k² ≈ v, profile u on S), A(S) has a p.d. profile W with
+  period-3 structure: on n ≡ 0 (mod 3) density w_d(n/3v) = (u⋆ũ)-profile (positive differences), on n ≡ 1, 2 density
+  w_s/2 (sums s+t, unordered pairs; sign of 3(s+t)+1 sorts m >= 0 / m < 0 into residues 1 / 2). Since ŵ_d = |û|², ŵ_s = û²,
+  ∫w_d² = ∫w_s² = ∫|û|⁴ and
+      ρ_Bu = ΣW²/ΣW = (3/4)·∫(u⋆ũ)²/((u⋆ũ)(0)∫u⋆ũ) <= (3/4)ρ*_{h>=0} ≈ 0.543;   uniform u (Singer): ρ_Bu = 1/2 exactly.
+  With σ_E² = (1−ρ)N/2 and P16 (M >= (1/2 − o(1))k, N = k(k−1)), the residual skew constant is FORCED:
+      c_E = M/σ_E = 1/√(2(1−ρ)) + o(1)       (= 1 for Singer, i.e. the residual ≈ P² − k/2 dips exactly one σ).
+  So squares realise the curve R = 1/2 for every attainable ρ, and C½ is EQUIVALENT (tautologically, via R = c_E√((1−ρ)/2))
+  to the skew–profile tradeoff  c_E >= 1/√(2(1−ρ))  for every decomposition f_A = profile + residual. Records: dense box
+  optima sit above the curve (N=36: ρ ≈ 0.83?, c_E ≈ 1.6–1.8 — re-measure ρ with the same convention before using).
+  Beating 1/2 = finding residual skew below the square curve; the dense SA/MILP optima never did, P16 forbids it for
+  squares at any profile. Note also that Bu's profile has spikes at x = ±2π/3 (φ̂(±1) = 1/2 > 0): mod-3 structure is
+  harmless because the period-3 pattern (1, 1/2, 1/2) is p.d. on Z_3.

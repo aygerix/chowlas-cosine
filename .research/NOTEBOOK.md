@@ -2771,3 +2771,19 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
 5. Kill test running: E106, a Pareto search for spiky AND small-R sets in sparse boxes (X = 20n, 50n). If sparse spiky
    small-R sets exist, the lemma is in danger and the construction track revives. If the sparse Pareto front looks like
    the dense one (E68: min β ≈ 0.18 at R ≈ 0.65), the lemma survives this test.
+6. Same day, after writing items 2–5: the window-domination input checked against C*. VERDICT: reduces to C*.
+   - P28 domination at window scale H, with n_H window elements, forces every window's MACROSCOPIC spikes (height
+     >= c·n_H > 2M) onto the front's spikes. There are at most 1/(c²ρ_H) of these per scale (Chebyshev on the front, ρ_H
+     = window density): a bounded frame per scale.
+   - That kills piecewise-Bohr. But a MESOSCOPIC global spike (height h with √n << h << n, coherent over [1, X]) has the
+     same relative height h/n inside every window. It is mesoscopic at every scale and invisible to domination at every
+     scale. That is C* verbatim (ROUTES core statement).
+   - Uncertainty principles were also checked: Nazarov–Turán, Logvinenko–Sereda/Kovrijkine, Amrein–Berthier–Nazarov.
+     They need |A|·|U| >~ log(1/η) or are exponential in the spike count m ~ ε^{3/2}X. Empty in this regime.
+   - Shape of a counterexample (HEURISTIC, from Carathéodory weak-L¹). P(|f| > s) ≈ cM/s on M <~ s <~ √n/ε, i.e. the
+     positive measure (M + f)dx is maximally heavy-tailed (multifractal). Riesz-type products are the natural such
+     measures, but their coefficients are products c^{#factors}: not two-valued (= the tensor renormalization
+     obstruction, ROUTES).
+   - Status of the plan's proof track. The dissociated half is proved (item 3). The many-spike case with window
+     domination IS C*. No new tool has appeared; the plan's main bet stands only as a precise statement, not as a
+     route with a handle.

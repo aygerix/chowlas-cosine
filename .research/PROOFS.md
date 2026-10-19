@@ -2418,7 +2418,8 @@ Consequences.
   - Exact identity: ∫g(1 − g) = Σ_{|k|>L} 1̂_Ω(k)² (the unresolved mass U), since ∫gh = 0 and ∫h = 0 for h = 1_Ω − g.
   - So U >= δ²|Ω|/3 whenever g(0) = Σ_{|k|<=L} 1̂_Ω(k) <= (4 − 5δ)/3.
   - The conjectured extremizers have g(0) ≈ 1.137 (half-density square wave) and ≈ 1.18 (arc of radius 1/(2L)), so
-    both sit in this regime (δ ≈ 0.04, giving c >= 5·10^{-4}; not sharp).
+    both sit in this regime. The arc allows δ <= 0.092, i.e. U >= 2.8·10^{-3}|Ω|; the square wave allows δ <= 0.118,
+    i.e. U >= 4.6·10^{-3}|Ω|. Not sharp (conjectured 0.0947).
   - The large-peak case g(0) >= 4/3 is OPEN. Example: Ω = {D_L > 0} has g(0) ~ (2/π²)log L and still U/|Ω| ≈ 0.30, so a
     large peak does not by itself contradict PR.
 Status: PROVED on paper; elementary; not kernel-checked. A fact, not a C* tool.

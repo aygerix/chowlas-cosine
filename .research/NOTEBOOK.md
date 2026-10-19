@@ -1315,3 +1315,17 @@ Strategic decision:
   - Coset (rational) point sets vanish for free but have flat moduli on their dilate lattices: the wrong shape, giving
     exactly the Dirichlet sidelobes.
   - A quantitative "positive-bump uncertainty principle" along these lines is a candidate missing ingredient.
+
+## 2026-10-19 (late night) — CORRECTION: SB is P30; P40 restates E47's identity
+- The spike–bulk conjecture SB (∫_{f <= K√n} f² >= cn) is the session-2 conjecture P30 (spike share above K·M
+  bounded by ρ < 1) with the threshold moved from K·M to K√n.
+- P40 is the Bhatia–Davis form of the identity share_{>KM} >= 1 − 2(1+K)R² used in E47.
+- The twisted-profile, Bessel-budget and "front-full forbids twisted peaks" heuristics in today's entries repeat
+  NOTEBOOK items 756–830 (P30 heuristic support; DECISIVE TARGET G3, a coupling inequality without constant loss;
+  route R1).
+- What is NEW today on this line:
+  - P41 (first theorem obtained from the spike/bulk mechanism, via exact exponential sums);
+  - E67: the bulk fraction equals the rounding-energy share for curved/random roundings; SB/P30 minimised by
+    intervals;
+  - E68 (Pareto front).
+- Lesson: re-read the NOTEBOOK index before re-deriving a reformulation.

@@ -1084,7 +1084,9 @@ Lesson. Independent arithmetic structures need PRODUCT filters Π(1 − cos q_i 
 (3/8)^J, so the third-moment route loses n^{−O(1/log log n)} on (ii) unless the statistic changes. The truth for
 (ii) comes from the bulk (Gaussian rounding noise), which the third moment cannot see behind tall positive spikes.
 
-## P40. Spike-truncation reduction (Bhatia–Davis) — PROVED (lead 2026-10-19; elementary)
+## P40. Spike-truncation reduction (Bhatia–Davis) — PROVED (lead 2026-10-19; elementary). NOT NEW HERE.
+## It restates the session-2 identity behind E47/P30 (share_{>KM} >= 1 − 2(1+K)R², NOTEBOOK "P30"), with threshold
+## λ = K√n instead of K·M. Recorded for the explicit truncation form used in P41.
 For any A, every λ > 0 and every H >= 0 with ‖H‖∞ <= 1 (H = 1 for the basic form):
     ∫_{f<=λ} f² − μ_λ² <= (λ + μ_λ)·M,    μ_λ = ∫(f − λ)₊ <= ∫f₊ = ∫f₋ <= M.
 Proof: Y = min(f, λ) ∈ [−M, λ] has mean −μ_λ. Bhatia–Davis gives Var Y <= (λ + μ)(M − μ), and E[Y²] >= ∫_{f<=λ} f².

@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 evening; newest block: "Session 3, rounds 16–17: all-sets programme, P69–P70")
+# STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -673,3 +673,33 @@ Proved this block:
   (phases), no relaxation of Booleanity opens a sub-½ regime. P72 (robust duality, PROVED). P71.2 KERNEL-CHECKED
   (BohrTaper.lean, lead-audited). Helson–Szegő/A_2 and five other candidates killed on paper (NOTEBOOK cont. 24.5,
   ROUTES). Literature spot-check: no news. C* unchanged and open. Evidence leans further toward Chowla TRUE.
+
+## Handoff 2026-10-19 late (cont. 24–25) — read this first
+(a) Proved / formalized this block.
+- P71.2 KERNEL-CHECKED. Periodic triangular Bohr tapers have M >= 7n/6290 + 1/2 (BohrTaper.lean, lead-audited).
+- P72 PROVED. Robust duality M_τ = max_μ Σ(−c_a − τ|c_a|), the flat lemma, and the slope at τ = 0.
+- P73 PROVED. Robust few-spike lemma: Boolean S is L²-far from PD φ with φ(0) < 4/3 (Z and T); PR(1) small-peak regime.
+  Lean agent RUNNING: .research/agents/lean_p73_brief.md, report lean_p73_report.md, file lean/ChowlaCosine/FewSpike.lean.
+(b) Constructions. Nothing new. Relaxations of Booleanity (weights E103, phases E62) buy only constant factors.
+  Nothing below ½ anywhere.
+(c) Refuted / killed on paper this block (ROUTES rows):
+- Herglotz composition counts;
+- subordination;
+- spectral energy;
+- Helson/Cohen idempotent;
+- integral Gram lattice;
+- Hoffman / vector chromatic number;
+- 2-adic Chowla (equivalent by descent);
+- Spencer discrepancy (= TAPER);
+- Helson–Szegő A_2/BMO (consequence of positivity, satisfied by non-positive random sets).
+(d) Evidence. E104: every known near-extremizer is FLAT (λ_half = |{f <= −M/2}| >= 0.2, β2 >= 0.2) at all reachable n.
+  The C* regime is empty of examples. The evidence leans to Chowla TRUE; the proof needs a C* tool.
+(e) Three active directions.
+- (1) Lower bound (C*): the many-spike front core. "1_B + m₀δ₀ ≈ PD forces m₀ >~ √|B|." P73 settles m₀ < 4/3; nothing
+  for large m₀.
+- (2) PR(1) large-peak case (g(0) >= 4/3). A clean lemma on the architecture's step (d).
+- (3) Robust Chowla_τ (Ruzsa's open question). Construction or a polynomial bound.
+(f) FIRST concrete next derivation.
+- PR(1) large-peak case: if 1̂_Ω(k) >= 0 for |k| <= L and g = P_L1_Ω has g(0) >= 4/3, show U >= cμ.
+- Start by testing whether g(0) >= 4/3 with U/μ < 0.1 is possible (SLSQP over unions of arcs, as in E100b, objective
+  g(0)). If it is impossible numerically, prove it via Bernstein plus the identity ∫g(1 − g) = U.

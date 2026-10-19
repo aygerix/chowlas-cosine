@@ -1516,3 +1516,63 @@ Meaning.
   - So the window family cannot prove T-dense beyond C ≈ 4–7. The escape is real but not a small-R mechanism.
   - The "dip filling" argument is exactly an HBCG-type statement (energy not concentrated). This is consistent with
     HBCG being the right target.
+
+## 2026-10-19 (night, cont. 7) — Round-5 interim check: FTL1 correct; CY2 relation branch uninformative; uniform law-level TL1 (lead)
+Interim verification of .research/agents/tdense5_report.md (agent still running; final record later):
+- FTL1 (finite TL1, error 32R/(πD) + relation term R·U_D) is CORRECT. Lead re-checked every step:
+  - hinge coefficients |a_d| <= 4R/(πd²) (TV of the θ-derivative <= 4R);
+  - CVaR comparison via the degree-D Chebyshev majorant;
+  - centering W = E(aL) − pE L <= Λ_p(L) + pR|Δ_1|.
+- CY1 (cyclic padding, Y > 2X, a = 1_{A∪−A}): 2W >= p(1−p) − (4/Y)(HM + 2M²) − T_N. CORRECT. Bhatia–Davis on the grid
+  gives even (4/Y)HM.
+- SG (stable Gram: h <= 1 − t²/4 + 2δ, b >= m³/12 − 2δm) CORRECT (RKHS triangle inequality + bathtub).
+- The interval example (E_out(μ) <= C/μ for A = [1, n]) correctly kills every QD exponent β > 1/2.
+Two problems make CY2's "unbalanced relation" alternative uninformative as a structure statement:
+- (P1) Profile / central lobe. In the padded model, A ∪ −A sits in [−X, X] ⊂ Z/Y, so b contains the macroscopic
+  profile part b_prof ≈ p(|m|/X)·1_{[−X,X]} − p.
+  - Its analytic signal sits near −p/2 on >= 3/4 of Z/Y, so it is far from rotation invariant (it is not graded).
+  - It carries a fixed fraction (≈ δ) of p(1−p), and its spectrum (the central lobe, |k| <~ K₀Y/X) is an AP full of
+    unbalanced relations with all c_k > 0 (no cancellation).
+  - Its third moment alone already makes E L³ ≍ δ²p, which is the size the relation branch asks for.
+  - So the dichotomy "graded ⇒ 81% ⇒ contradiction, else relations" always lands in "relations" via the profile. It
+    says nothing about the ROUNDING spikes. Fix: apply TL1 to the local pattern minus its local mean (block-local, as in
+    P53/P54's limit object), never to the globally padded indicator.
+- (P2) The central lag. On the grid all c_k > 0, so L = Re Z is positive definite with L(0) = R = Σ_Λ c_k ≈ M (spike
+  mass). Hence:
+  - (E|Z|^D)^{1/D} >= R·Y^{−1/D};
+  - for mesoscopic spikes of height h, R ≈ n/(2h) ≫ √W;
+  - so the agent's radial-moment branch ((E|Z|^D)^{1/D} > L0√(DW)) holds AUTOMATICALLY for fixed D >= 3 as X → ∞.
+  This is P45's "moments are blind behind spikes" in m-space: the cubic count is ≈ R³/Y (the random baseline from
+  m ≈ 0) plus the structured excess. The same R is why FTL1's degree must be D >~ R/p.
+New (lead, PROVED): uniform LAW-LEVEL TL1 by radial truncation (no moment or tail hypothesis, no S or R dependence).
+- Setting: same as FTL1 (any probability space, 0 <= a <= 1, E a = p, b = a − p, Z complex, L = Re Z, W = E[bL]).
+- Write Z = ρe^{iθ}, and let a_d(ρ; λ) be the cosine coefficients in θ of h(ρ, θ) = (ρ cos θ − λ)₊, with
+  |a_d| <= 4ρ/(πd²). Then for every T > 0, D >= 1 and |λ| <= T:
+      E(L − λ)₊ − E(L* − λ)₊ <= 2E|Z|²/T + 4T/(πD) + Σ_{d<=D} |E[a_d(|Z|;λ) cos(dθ); |Z| <= T]|,
+  where L* = Re(e^{iΦ}Z). (On {ρ > T}: |h − θ-average| <= 2ρ; tail beyond D: Σ_{d>D}|a_d| <= 4T/(πD).)
+- If T² > E|Z|²/(2 min(p, 1−p)), the CVaR minimiser of L* lies in [−T, T]. Take T² = πD·E|Z|²/2 (needs
+  D > 1/(π min(p, 1−p))). With P54:
+      W <= k_p √(W + B) + 4√(2(W + B)/(πD)) + A_D + p|E L|,   k_p = √env(p)/π,
+  where A_D = sup_{|λ|<=T} Σ_{d<=D}|E[a_d(|Z|;λ) cos(d·arg Z); |Z| <= T]| <= (4/π) Σ_{d<=D} d^{−2}·δ_d, and
+  δ_d = sup_{|g|<=1 radial} |E[g(|Z|)|Z| e^{id arg Z}; |Z| <= T]| is the d-th angular harmonic of the law of Z,
+  truncated to the disk of radius T ≍ √(DW).
+- Effect: the error is 4√(2/(πD)) relative to √W, uniform in the spike count, R and the tails. The central lag (|Z| ≈ R)
+  is a probability-1/Y event and drops out.
+- Cyclic consequence: the gap √(p(1−p)/2) − k_p >= 0.0705√(p(1−p)). So D ≈ 2100/(p(1−p)) (≈ 1.7·10⁴·C after
+  padding) forces A_D >= c·p in any counterexample. This is the uniform D = D(C) the brief asked for, but at the
+  level of the LAW of Z (phase coherence), not of polynomial relation counts.
+- Caveats.
+  - (P1) applies here too: in the padded model the profile alone produces the angular defect, so this must be run
+    block-locally with the local mean removed.
+  - The missing bridge is "truncated angular defect of the local spike signal ⇒ exploitable structure". Polynomial
+    relation counts cannot serve, because of (P2).
+Where this leaves the finite TL1 programme (lead assessment):
+- Block-local framework. Blocks of length ℓ (1 ≪ ℓ ≪ X). The local spike signal Z_B consists of the spikes merged at
+  resolution 1/ℓ; frequencies within 1/ℓ of 0 are profile.
+  - P40 transfers to the blocks: Σ_B ℓ·W_B ≈ global spike energy, because P_U b is locally Σ_s w_s(t_B)e^{−imx_s}.
+  - FTL1-rad then gives a uniform local angular defect on a positive proportion of blocks.
+- Remaining exact gap (one statement): a local [0,1] pattern whose spike signal has a truncated angular defect >= c
+  must carry structure that P53/SG can use with negative-mass bounds independent of the number of spikes (HBSC-type).
+  - Rotation invariance of the law ⟸ approximate alignment shifts (τ with τ x_s ≈ φ for most spike weight;
+    bounded rank) or Gaussianity (GTL1; high rank, small energies).
+  - The mixed, mesoscopic, growing-complexity regime is exactly where no regularity lemma reaches.

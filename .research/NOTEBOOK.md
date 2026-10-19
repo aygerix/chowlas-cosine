@@ -1046,3 +1046,35 @@ Status: a recorded tool, not a route. Parked.
      (a) Erdélyi's Theorem 1.2-type sparse sums Σ A_j cos(λ_j t) under a flat-profile hypothesis (P31 criterion);
      (b) Littlewood-type polynomials with coefficients in a finite set (e.g. {0, ±1} with density);
      (c) multivariate / Steinhaus-random-phase versions.
+
+## 2026-10-19 (night, cont.) — Frequency-localized P31 and why it is exactly critical (lead; PROVED, elementary)
+1. **Localized window inequality (PROVED).** Let K >= 0 be a trigonometric polynomial with K̂(0) = 1 and spectrum Σ_K.
+   For x₀ ∈ ℝ put h_{x₀} = [(f + M)·K_w(· − x₀)] ∗ K, which is >= 0 with spectrum ⊂ Σ_K. Let
+   ρ(Σ) := sup{‖h‖²/ĥ(0)² : h >= 0, spec h ⊂ Σ}. Averaging over x₀ as in P31 gives
+       M²Ψ(0) + ½Σ_{a∈A}Ψ(a) <= ρ(Σ_K)·(M² + ½S_A(w)),   Ψ := K̂² ∗ κ_w²,
+   because ĥ(0) = M + g(x₀) as before, and avg_{x₀}‖h‖² = Σ_j|c_j|²Ψ(j) by orthogonality.
+   - K = Fejér of degree D gives a P31 "at scale D" whose Nikolskii factor is ρ(D + 1), not ρ(X + w). This is the
+     truncation-free localization.
+   - It coincides with the low-pass recursion up to lower-order terms.
+2. **No-go (exact criticality).** Suppose A is full on K's positive spectrum near 0 (A ⊇ [1, w] and A ⊇ Σ_K ∩ (0, ∞)
+   on the support of Ψ). Then:
+   - the left side is ≈ W_w‖K‖²/4;
+   - the right side is >= ρ(Σ_K)·w/6 ≈ ρ(Σ_K)W_w/4;
+   - and ‖K‖² <= ρ(Σ_K), since K is itself a competitor in the sup.
+   So the inequality carries NO information for every choice of K:
+   - single bands: Fejér attains 2/3, the extremal kernel attains ρ;
+   - multi-band Riesz-product kernels: Nikolskii cost (3/2)^m against side-band weight Σ4^{−|S|} = (3/2)^m;
+   - any spectrum.
+   Physical reason: the low-pass of a locally full set IS a nearly nonnegative kernel (g = (K_D − 1)/2 for A ⊇ [1, D]).
+   Low-passing genuinely destroys the information. This explains, in one line:
+   - why the dense threshold ρ/2 = 0.4055 cannot be lowered by localization;
+   - why the low-pass recursion was "killed by 0.687 vs 2/3";
+   - why every window-shape tweak gains only O(θ³).
+3. **Consequence for dense sets A ⊂ [1, Cn], C > 2.466.**
+   - Window methods prove √n only when the profile is not front-loaded.
+   - The front-loaded dense case needs information above every localization scale. Candidates are run/boundary structure
+     (Bu et al. Prop. 9.1 gives n^{1/4} for all C) or P32-type spike support.
+   - Target T-dense: λ_A >= c(C)√n for all A ⊂ [1, Cn].
+     - Remark 9.8(iii) of Bu et al. leaves this open. We have it for C < 2.466 (kernel-checked).
+     - Plan: dichotomy. Either the profile is not front-loaded (P31), or the front is dense at all scales and has
+       long runs. Then bound run-tops Z-specifically (P27-style: long t = 1 runs in an interval-like front).

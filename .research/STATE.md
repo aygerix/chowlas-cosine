@@ -178,6 +178,9 @@ in parallel.
   - Proof: the P31 chain with complex coefficients. Only |b_j|² enters.
   - Note: .research/notes/littlewood_onesided_P34.md. E61 adversarial optimum ≈ 0.61√n.
   - The 0/1 instance is kernel-checked. The complex form is the NEXT Lean task.
+- **Dense comparison:** Bu et al. Prop. 9.7 (Oct 2026) gives only n^{1/4} for A ⊂ [1, Cn] and leaves √n open. Our
+  kernel-checked dense theorem gives √n for C < 2.466. New lead target T-dense: all C. Note that localized windows are
+  exactly critical (NOTEBOOK no-go), so it needs run/boundary input.
 - **E60:** the escape class contains R -> ½ families. Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within
   +0.026 of Bu. P31's barrier is purely methodological. Profile methods are exhausted for Chowla.
 

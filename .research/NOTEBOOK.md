@@ -1576,3 +1576,48 @@ Where this leaves the finite TL1 programme (lead assessment):
   - Rotation invariance of the law ⟸ approximate alignment shifts (τ with τ x_s ≈ φ for most spike weight;
     bounded rank) or Gaussianity (GTL1; high rank, small energies).
   - The mixed, mesoscopic, growing-complexity regime is exactly where no regularity lemma reaches.
+
+## 2026-10-19 (night, cont. 8) — Strategic review after round 5; dimension barrier; HBSC accounting (lead)
+1. PD ⇒ Wiener budget (limit object, PROVED there; P53's mechanism made quantitative).
+   - If every character profile ĥ_χ(t) of the local pattern is PD in t, then ĥ_χ(0) >= 0, and Fejér positivity at
+     θ = 0 gives Σ_χ ĥ_χ(0) <= h(0, 0) <= 1.
+   - PD also gives ĥ_χ(0) >= |ĥ_χ(t)| >= (average amplitude) ≈ h_χ/X. Energy gives S·h²/X ≈ n/2, so
+     Σ_χ ĥ_χ(0) >~ n/(2h).
+   - So PD at ALL levels forces h >~ n/2: every spike is macroscopic. Mesoscopic spikes cannot all be PD-profiled.
+2. Finite version ("front Riesz test", PROVED identity). For ψ(m) = Π_{s<=S}(1 + λcos(m x_s)) and Fejér weights
+   κ_w:
+       Σ_{ε∈{−1,0,1}^S} (λ/2)^{|ε|} (f ∗ K_w)(ε·x) = Σ_m a_m κ_w(m) ψ(m) ∈ [0, Σ_m κ_w(m)ψ(m)].
+   - With (g ∗ K_w)(y) >= 0, where g = f + M, this gives
+         λ Σ_s (g ∗ K_w)(x_s) <= (w/2)(1 − p_front) + M[(1 + λ)^S − 1] + (non-dissociation error).
+   - The M(1 + λ)^S term is the price of combinations where g ≈ 0. It is a real loss, not slack: in a counterexample
+     g ≈ 0 on most of the circle.
+   - So the finite Wiener budget only controls O(log(w/M)) dissociated spikes. The quadratic test |u_0 + Σu_s e^{imx_s}|²
+     reproduces only Bessel.
+   - DIMENSION BARRIER: ℓ¹ (Wiener) budgets need positivity at all combination levels, with cost exponential in the
+     number of characters. The dimension-free tools (TL1 rotation, SG Krein/Gram, P40) are ℓ²/law-level and do not
+     combine to give it.
+3. HBSC accounting (lead, HEURISTIC-rigorous).
+   - Near each spike χ, f ≥ −M gives ν_χ(y) >= −M/X only on its dominated region |y| <= Y_χ, where
+     Σ_χ Y_χ <= πX (disjoint windows).
+   - Hence the natural bound on the lift's negative mass is δ <= M (in units where h ∈ [0,1]). The radius-1/X windows
+     of HBCG give δ <~ 3εM.
+   - HBSC demands δ <= B·M/H = Bε^{3/2}, which is smaller by a factor ≍ √n·√ε. That is massive cancellation that no
+     known constraint supplies.
+   - HBSC may be false as stated, or as hard as T-dense. Round 6 tests this adversarially.
+4. Global reflection (skill §3).
+   - Distance. The lower-bound track is reduced to one mesoscopic statement (HBCG/HBSC). Rounds 3–5 produced correct
+     tools (P47, P53, SG, TL1, FTL1, FTL1-rad, CY1), and each sharpened the same gap without closing it.
+   - Theory of success. Needed: a dimension-free mechanism converting collective PD-ness of many mesoscopic spikes into
+     a binary contradiction. None of the known mechanisms is dimension-free at the ℓ¹ level.
+   - Construction line. E73 kills the simplest growing-rank Bohr class. E72c shows escaping the window family is cheap
+     (C ≈ 5) but small R is not (R ≈ 1).
+   - Decision.
+     - (i) Round 6 is ADVERSARIAL: build a "formal escape", i.e. an object satisfying every proved constraint (binary
+       local patterns, P40 spike domination, local PD to depth −M/X on dominated regions, TL1, SG, Bessel) with
+       mesoscopic spikes and M ≪ √n. If one exists, the missing constraint is identified and it becomes a
+       construction lead. If the constraints are inconsistent, that is a proof.
+     - (ii) The lead looks at alternative mechanisms: averaged run-tops in Z (Bu et al. Prop. 9.7: λ³‖f‖₁ ≳ n/C; any
+       K^{3−δ}μ on AVERAGE over t gives a dense exponent > 1/4), and Cayley translation rigidity (cliques through 0
+       come in |B| translates). JMTZ cap at 1/6 for general graphs; Paley in Z_q shows graph theory alone cannot
+       separate Z.
+     - (iii) Keep the construction line alive through (i).

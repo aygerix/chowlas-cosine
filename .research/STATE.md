@@ -1,18 +1,20 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 9 + P61: the second-order reach 1/D ≈ 8.571")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 10: T-dense(7.5); DC barrier")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
 - (L) Chowla: M(A) >= c0 sqrt|A|. NOT ACHIEVED. Best known: >> n^{1/5} (Shankar 2609.05338, cited, checked).
 - (L-dense) T-dense(C) := M >= c(C)√n for all A with max A <= C|A|.
-  - PROVED on paper for every C < 6.9366, ineffective c(C) (P58–P60; lead-verified, exact certificates C-R9). With only
-    the elementary P31-E constant: C < 6.584.
+  - PROVED for every C < 10000/1333 = 7.5019, ineffective c(C) (P61 + P62: second-order reduction plus the exact
+    support-coupled certificate D <= 1333/10000; two independent exact verifications, C-R10 and E84).
+    - Earlier: C < 6.9366 (P60).
   - EXPLICIT constants for every C < 6.156 (P60.7); c(3) = 10^{−6000005} (P59.6).
   - Kernel-checked effective: C <= 2.44 (P31).
   - P61 (lead, paper; awaiting adversarial check): T-dense(C) for every C < 1/D, where D = sup ∫_0^1 φ(|w|²) over PD w
     supported in [−1, 1] with w(0) = 1, and φ(x) = (1 − √(1 − x))/2.
     - This is SHARP for positivity + two binary moments (weighted packet escapes).
-    - Numerically 1/D ≈ 8.5708 (E82). Rigorous so far: D <= rκ/4, i.e. 6.9366.
-    - Beyond 1/D: only third-or-higher binary information helps.
+    - Numerically 1/D ≈ 8.5708 (E82). Rigorous D <= 0.1333 (P62).
+    - Beyond 1/D: three moments are free (P62.3). The fourth moment / approximate binarity is the open layer.
+    - Higher-order positivity is DC-blind in the √n regime (NOTEBOOK cont. 14).
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
   algorithm cannot exist. Not assumed: both tracks stay open.
 
@@ -290,7 +292,25 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 9 + P61: the second-order reach 1/D ≈ 8.571 (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 10: T-dense(7.5); DC barrier (2026-10-19 night, NEWEST — read this first)
+- Round 10 DONE, lead-verified (PROOFS P62; E84).
+  - D <= 1333/10000 (t-dependent support-coupled potentials plus a continuum Schur test), so T-dense(C < 7.5019).
+  - P61 audited and repaired for complex w.
+  - Three binary moment profiles are free: sparse gadgets, ℓ¹ cost X^{7/15}.
+- Lead (NOTEBOOK cont. 14):
+  - The DC barrier: an order-j anchored positivity statement carries m^j/ℓ, so it is blind unless M << n^{1/j}. This
+    explains n^{1/4} (Bu et al.).
+  - Subgroup restrictions A ∩ qZ are counterexamples too, so rational atoms vanish when a = ½.
+  - Kurtosis heuristic for the fourth-moment layer.
+  - Cyclic-PDS (Ma) connection.
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 11 (.research/agents/tdense11_brief.md; report tdense11_report.md).
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 11:
+  - certificate push toward 8;
+  - the fourth-moment / approximate-binarity layer (escape or inequality);
+  - test the DC-barrier meta-statement.
+## Session 3, round 9 + P61: the second-order reach 1/D ≈ 8.571 (2026-10-19 night)
 - Round 9 DONE, lead-verified (PROOFS P60; E81 re-checks every certificate by a different exact method).
   - T-dense(C < 6.9366) (κ <= 0.749089).
   - The two-profile witness at 7.2674.
@@ -303,14 +323,14 @@ in parallel.
 - So the macroscopic / second-order theory of T-dense is SOLVED up to certificates. Beyond 8.571 the question is
   BINARISATION: can binary coefficient sequences have a residual made of positive packets? (NOTEBOOK cont. 12: subgroup
   lemma, Bohr failure, cubic skew.)
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 10; superseded)
 - Codex MATH agent, round 10 (.research/agents/tdense10_brief.md; report tdense10_report.md).
 - Lead, done while waiting:
   - E83: escape-seeded binary sets show NO advantage over random seeds at C ≈ 8.6 (R ≈ 1.1–1.3, search-limited).
   - NOTEBOOK cont. 13: binarisation heuristics. The subgroup lemma needs macroscopic atoms. The coefficient-square
     hierarchy gives only n^{1/4}. Anchored versus Gabor information. Spikiness ⇔ additive energy. Binary ⇔ the spike
     measure is a WEIGHTED PARTIAL DIFFERENCE SET. Random packets cost Θ(K) non-binarity.
-## First concrete next step (2026-10-19 night, newest)
+## First concrete next step (2026-10-19 night, round 10; superseded)
 - Verify round 10 when it lands:
   - P61 adversarial check;
   - rigorous D₁ (target T-dense(7.5–8));

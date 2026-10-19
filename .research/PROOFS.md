@@ -1791,3 +1791,46 @@ Meaning.
   which seeded this). External priority unchecked.
 Status: paper proof (lead). Needs: (i) an adversarial codex check of every step (round 10, Task 1); (ii) a rigorous
 D₁ < rκ/4 (round 10, Task 2); (iii) Lean, later.
+
+## P62. Round-10 agent results (report .research/agents/tdense10_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ P61 AUDIT. P61(a) has no gap (normalizations, uniform limits, continuous Jensen with weights λ_u, dilation,
+   ε → 0).
+   - P61(b) REPAIRED for complex Hermitian w by the reflected-translate formula
+         g_X = c Σ_j [S_X(x − θ_j) + S_X(−x − θ_j) − 2],
+     with cosine coefficients r_k = 4c Σ_j Re(w(k/X)e^{−ikθ_j}) and the same moments.
+   - P58's actual smoothing diagonal (h = X^{2/5}) is verified for the escape.
+   - The Boas–Kac WLOG is valid as an equality of the two suprema (Ehm–Gneiting–Richards Thm 2.1(a)).
+   - Scope (agreed): sharpness concerns physical-space positivity. The escape's coefficients are not nonnegative or
+     bounded by 1, which is additional binary information.
+2. ✓ D <= 1333/10000, hence T-dense(C) for EVERY C < 10000/1333 = 7.501875… (including C = 7.5). INEFFECTIVE constant;
+   computer-assisted.
+   - Certificate (support-coupled, t-dependent): for w = G ⋆ G̃, G >= 0, the pointwise inequality is
+         φ(x²) <= a(t)x + B(2t, y) − B(t, x)/2,   x = w(t), y = w(2t),
+     where:
+     - a and B are piecewise constant in t on 64 cells (B(t, ·) = β_j, monotone, degree 10, β_j(0) = 0; B = 0 for
+       t >= 1);
+     - x <= cos(π/(k + 2)) with k = ⌈1/t_lo⌉ − 1 (Egerváry–Szász on the sampled sequence w(nt));
+     - y >= max(0, 2x² − 1, x − √(1 − x)).
+   - Integration cancels the potentials (∫B(2t, w(2t)) = ½∫B(s, w(s)), and B = 0 beyond 1), so
+     ∫_0^1 φ(w²) <= ∫_0^1 a w = ½⟨G, T_a G⟩.
+   - Schur test with U = 1 + (4/5)x(1 − x): T_a U <= (1333/5000)U on [0, 1], exactly.
+   - Lead's independent check (E84): Arb ball arithmetic directly in x, the max over all valid branches, mean-value
+     enclosures and adaptive bisection, versus the agent's u-substitution, squared form and Bernstein. Results: 2475
+     leaves, 0 failures; all 64 Schur cells pass, with cubics re-derived by my own exact integration; β_j monotone with
+     β_j(0) = 0; a_j >= 0; power form agrees. The agent's own independent QQ/FLINT check also passed (527 leaves, 127 CF
+     caps, 64 Schur cells).
+3. ✓ THIRD-ORDER SHARPNESS (NEW, paper; lead re-derived).
+   - Sparse gadget: for any continuous s on [0, 1], put L = ⌊X^{4/5}⌋ and z_k = L^{1/3}s(k/X)^{1/3} on multiples of
+     L (zero elsewhere). Its first and second coefficient profiles tend to 0, its third tends to s, and
+     |Σz_k cos kx| <= X^{7/15} = o(√X).
+   - Adding it to the P61(b) escape with s = e(1 − 2p) matches the first THREE binary raw-moment profiles
+     (a, a², a³ → p).
+   - So "positivity + three moment profiles" has the same reach 1/D. Round 9's cubic target (Σr³ <= BM² + o(X)) is
+     dead for weighted coefficients.
+   - The gadget's fourth moment diverges like L^{1/3}.
+   - Four matching raw profiles force normalized coefficient L² proximity to {0,1}: a²(a − 1)² = a⁴ − 2a³ + a² → 0.
+     Three suffice if the coefficients are nonnegative.
+4. Rounding evidence: threshold rounding of the X = 2²⁰ examples gives R > 2.079 and R > 2.081 (Arb point
+   certificates). Failed, as predicted (NOTEBOOK cont. 13.5).
+Status: 1 and 3 paper proofs (lead-checked); 2 computer-assisted exact with two independent verifications; none
+kernel-checked.

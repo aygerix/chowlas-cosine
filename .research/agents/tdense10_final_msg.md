@@ -1,0 +1,9 @@
+Completed all three round-10 deliverables. The full proofs, corrections, failed attempts, and reproduction commands are in [tdense10_report.md](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense10_report.md).
+
+- **Task 1 — PROVED, paper audit:** P61(a) passes. P61(b) needs a reflected-translate formula to cover complex Hermitian generators; the report supplies that repair and verifies the moment limits and P58 smoothing diagonal.
+- **Task 2 — PROVED, exact computer-assisted:** D ≤ 1333/10000. Hence **T-dense(C) holds for every C < 10000/1333 ≈ 7.501875**, including C = 7.5. For each such C, some c(C) > 0 satisfies M(A) ≥ c(C)√|A| for every nonempty admissible A with max A ≤ C|A|. The [exact certificate](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense10_scratch/certificate_td.json) passed an independent reconstruction of all 527 pointwise leaves and 64 continuum Schur intervals.
+- **Task 3 — PROVED, paper:** The first-three-profile reach remains exactly 1/D for the unrestricted weighted class. Sparse coefficient corrections carry the required cubic profile while preserving the first two profiles and the −o(√X) minimum bound. Their fourth moments diverge. Four matching binary moment profiles force normalized coefficient L2 proximity to {0,1}; three suffice when coefficients are nonnegative.
+
+The exact four-profile reach and an actual binary escape remain open. The new dense constant is ineffective, and no Lean verification is claimed. Numerical rounding failures and rigorous point certificates are preserved.
+
+All computation ran on the specified VM with at most four cores. Writes were confined to the report and round-10 scratch directory; no commits or subagents were created.

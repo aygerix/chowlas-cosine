@@ -1862,3 +1862,54 @@ E83 (VM, running) probes it numerically: binary sets seeded from the D-extremal 
      Self-destructs, so binary residuals are necessarily of mesoscopic type, consistent with Q(0) = 2M.
    - Construction target: a family of weighted PDS spike measures σ_t, constant on k-windows of length << X/M, with
      PD envelopes in t and the D-profile. Obstruction target: show that weighted-PDS rigidity forbids PD envelopes.
+
+## 2026-10-19 (night, cont. 14) — Round 10 verified: T-dense(7.5); three moments are free; the DC barrier for higher-order positivity (lead)
+1. Verified (PROOFS P62; E84 is an independent Arb re-check).
+   - D <= 1333/10000, so T-dense(C) holds for every C < 7.5019. Rigorous now 7.50; numerical second-order truth 8.571.
+   - P61 audited, with (b) repaired for complex w.
+   - Third-order sharpness: sparse gadgets z_k = L^{1/3}s^{1/3} on LZ (L = X^{4/5}) add any cubic profile at ℓ¹ cost
+     X^{7/15}. So positivity + three moment profiles still stops at 1/D. The fourth moment is where things break.
+2. NEW lead observation — the DC BARRIER (why every higher-order positivity argument stalls at n^{1/j}).
+   - Binarity beyond second order lives in ANCHORED single-index statistics Σ_k τ(k)ĥ(k)^j (cont. 13.3). To have
+     a positive integrand in x-space (h^{*j} >= 0 tested against τ̌), τ must be doubly positive, so τ(0) >= max τ >= 1/ℓ.
+   - The k = 0 term τ(0)m^j >= m^j/ℓ then swamps the O(1) signal from k ≠ 0, unless m^j << ℓ <= X, i.e.
+     M << n^{1/j}.
+     - j = 2: M << √n, which is exactly our regime. This is why P61 works.
+     - j = 3: n^{1/3}. j = 4: n^{1/4}, which is the Bu et al. Prop. 9.7 exponent (and our cont. 13.2 hierarchy).
+   - Translation-invariant higher-order forms (Gabor polyspectra) avoid the DC term but do not see binarity.
+   - Consequence (heuristic meta-statement, to be tested in round 10's successor): in the √n regime, positivity is
+     effective only at second order. Any proof of T-dense beyond 1/D must apply second-order positivity to
+     BINARY-DERIVED auxiliary objects, or use non-positivity (arithmetic) structure.
+3. Binary-derived positive objects available.
+   - (i) SUBGROUP RESTRICTIONS: f_{A∩qZ} = q⁻¹Σ_j f_A(x + 2πj/q) >= −M, so A_q = (A ∩ qZ)/q is again a dense
+     counterexample (when |A ∩ qZ| >= cn).
+   - In the limit, its profile is p_q = p + Σ_{j≠0}W_{2πj/q} (rational macroscopic atoms). Applying P59 and P61 to A_q:
+     a + Σ_{j≠0}W_{2πj/q}(0) <= ½ and ∫p_q <= D.
+   - Consequence: if a = ½ (the D-extremal value), ALL rational macroscopic atoms vanish (each W(0) >= 0 and PD).
+   - The escapes have no atoms, so this does not move the reach. It does constrain how binary sets could fix their
+     kurtosis.
+4. KURTOSIS heuristic (the fourth-moment layer).
+   - Binary local kurtosis is 1/e − 3: equal to 1 at e = ¼, below 3 for e > 1/6.
+   - Positive-amplitude cosine structures have kurtosis >= 1.5 (all additive quadruples count with weight >= 0; the
+     minimum is a single cosine), unless rational (subgroup) atoms are present.
+   - Mesoscopic positive structures tend to 3 − o(1) in "excess over random". But the DC barrier says the anchored
+     fourth moment is swamped by m⁴/ℓ, so this is NOT a proof; it needs m << X^{1/4}.
+   - Near t = 0 with a = ½, binary needs an almost two-valued ±½ residual, and item 3 forbids the π-atom. So the
+     two-valuedness must come from mesoscopic structure. Is it possible?
+     - Cyclic analogue: sparse partial difference sets give two-valued sequences with min ≈ −√J/4.
+     - In Z_p, nontrivial PDS are essentially Paley only (Ma), which is NOT sparse.
+     - So the integer problem beyond 1/D may hinge on a Ma-type rigidity in Z.
+5. Strategic review.
+   - Done: the second-order theory, both reach and certificate machinery (7.50 proven, 8.571 the truth). The
+     third-order layer is free.
+   - Live:
+     - (a) the certificate push 7.5 → 8.5 (bounded, mechanical);
+     - (b) the fourth-moment / approximate-binarity layer: either a weighted escape with four Bernoulli moments (then
+       its rounding cost is the last gap to a dense counterexample), or a second-order inequality on a binary-derived
+       object forcing d < D;
+     - (c) arithmetic rigidity (A ∩ qZ, PDS in Z).
+   - Theory of success: a counterexample needs a weighted-PDS spike structure with PD envelopes. A proof needs to show
+     its impossibility. Both are now concrete.
+   - Bias check: we have only ever found R >= ~0.55 numerically, and every rounding attempt failed by bulk energy. But
+     the DC barrier means the analytic tools we have cannot see this obstruction, so absence of a proof is expected,
+     not evidence of a counterexample.

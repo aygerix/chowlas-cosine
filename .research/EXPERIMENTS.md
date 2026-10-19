@@ -1222,3 +1222,18 @@ Reading:
   - This matches NOTEBOOK cont. 13.5: rounding random-centre packets costs O(1) non-binarity per coefficient, i.e. bulk
     energy, so P40 applies.
   - Binarisation needs weighted-PDS structure in the spike positions, not random packets.
+
+## E84 (2026-10-19) Lead's independent re-check of the round-10 certificate D <= 1333/10000 (src/e84_r10_verify.py; examples/e84/e84_verify.json)
+- Method:
+  - Arb ball arithmetic (200 bits) directly in x, on [0, cap_jj] for each of the 128 half-cells; cap = cos(π/(k + 2))
+    enclosed in Arb.
+  - F(x) = a_j x + β_child(L) − β_j(x)/2 − φ(x²) >= 0, with L the max over the valid branches 0, 2x² − 1, x − √(1 − x)
+    (each used only where it lies in [0, 1]).
+  - Mean-value enclosures with adaptive bisection. On [0, 0.6] the check is on F(x)/x, since F(0) = 0.
+  - Schur: my own exact piecewise-cubic integration of (T_a U)(x) for U = 1 + (4/5)x(1 − x), checked by exact rational
+    Taylor models.
+- Result:
+  - betas monotone with β(0) = 0; a_j >= 0; power form equals Bernstein form;
+  - 2475 pointwise leaves, 0 failures;
+  - all 64 Schur cells pass with λ = 1333/5000.
+  - So D <= 1333/10000 is confirmed, and T-dense(C < 7.5019) follows from P61(a).

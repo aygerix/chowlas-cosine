@@ -214,3 +214,16 @@ Archived copies are in examples/r7_certificates/. The originals, runnable from t
 - manifest.json: hashes and versions.
 - Lead's independent re-check: E81 (src/e81_r9_verify.py; exact-rational Taylor models; all pass).
 - NOT a certificate: E82's D ≈ 0.11667 (numerical lower bound on D; an upper bound needs a certificate, round 10).
+
+## C-R10 (2026-10-19) Exact certificate for P62 (D <= 1333/10000; T-dense(7.5019)); archived in examples/r10_certificates/
+- coupled_td.py → coupled_td_d10_K64_s0.2.json: Gurobi discovery of the 64 kernel values a_j and degree-10 potentials.
+- certify_td.py → certificate_td.json:
+  - a_j rounded up to 10⁻⁹, plus 1/2000;
+  - β_j Bernstein coefficients at denominator 10¹⁰;
+  - 128 half-cells of pointwise leaves in u = √(1 − x) (squared form u²(2 − u²)/4 − A² >= 0);
+  - 64 exact Schur cubics; minimum Schur margin 18576429767/491520000000000.
+- independent_verify.py → independent_verification.json: the agent's QQ/FLINT reconstruction (527 leaves, 127 CF caps,
+  64 Schur cells).
+- Lead's independent re-check: E84 (src/e84_r10_verify.py; Arb in x plus my own Schur integration). All pass.
+- third_direct.py/json and third_probe.py/json: the sparse cubic-gadget probes, with Arb point certificates for the
+  failed rounded candidates (R > 2.079, R > 2.081).

@@ -825,3 +825,28 @@ P31(c), multi-scale form (inequality PROVED; claimed consequence RETRACTED, see 
   This class is now the precise target for both tracks:
   - lower bound: a new argument for self-similar front-loaded sets;
   - construction: optimize within power-law profiles (E49 follow-up).
+
+## P32. Two-scale spike-support inequality (route R3) — PROVED (lead 2026-10-19; elementary from P31's window step)
+Setup: A ⊂ Z_{>0} finite, X = max A, f = f_A >= −M. w >= 1, F = Fejér kernel of degree w with F̂(0) = 1, κ(k) the
+same Fejér weights as in P31, g = f ∗ F (so g(x) = Σ_{a∈A} κ(a)cos(ax), g >= −M, mean 0). W = (1/2π)∫F², L = X + w,
+C_L = ρ_L(L + 1).
+Local window inequality (pointwise in x₀; P31's step before integrating):
+    (1/2π)∫F(x − x₀)²(f(x) + M)²dx <= C_L(M + g(x₀))².
+Integrate over x₀ ∈ E with dx₀/2π. Let S be any set with S + [−c/w, c/w] ⊂ E. Then
+    (W − τ_c)·(1/2π)∫_S (f + M)² <= C_L·(1/2π)∫_E (M + g)²,
+where τ_c := (1/2π)∫_{|y|>c/w} F² <= π³w/(3c³). Use F(y) <= π²/((w + 1)y²) on |y| <= π. So τ_c/W <= 15.5/c³.
+Splitting g: (1/2π)∫_{g <= K'M} g² <= (K' + 1)M², as for f. Hence for any η > 0:
+    (1/2π)∫_S (f + M)² <= [C_L/(W − τ_c)]·[(1 + η)((1/2π)∫_{E ∩ {g > K'M}} g² + (K' + 1)M²) + (1 + 1/η)M²|E|/2π].
+Numbers: C_L/(W − τ_c) ≈ (3ρ/2)(1 + X/w)/(1 − 15.5/c³). With w = X and ρ = 0.7698 + o(1), this is 2.31/(1 − 15.5/c³).
+Meaning: f's spike mass on S is at most a constant times g's spike mass on a c/w-neighbourhood, plus O(M²(1 + |E|)).
+Choosing S outside the central region (|x| >= C/w) removes g's own profile peak from the right side.
+FULL-FRONT COROLLARY (PROVED). If A ⊇ [1, w], then g = (F − 1)/2 exactly, with g <= −1/2 + O(w/(C²w²)·…) on |x| >= C/w,
+so it has no spikes there. Hence f's spike mass above KM outside |x| < (C + c)/w is O_ρ(M²(1 + K)), and so
+    (1/2π)∫_{|x| >= (C + c)/w} f² = O(M²(1 + K + |E|)).
+So for a full-front set with M = R√n and R -> 0, ‖f‖₂² concentrates in the central window |x| < (C + c)/w.
+Remaining step for full-front sets (OPEN, but it looks tractable):
+- Central-window mass is ≈ (n/2)·d_loc, where d_loc is A's average local density at scale w/(C + c).
+- Concentration forces d_loc -> 1: A is a union of long full runs at scale w/C. Such sets should have large M, by a
+  localized Turán/Gibbs argument (to be proved: P24/P29 localized to runs).
+General fronts: need the recursion f -> g -> g ∗ F' … to contract. The constant 2.31 per step must be beaten by
+g's spike mass on E being a fraction <= 1/2.31 of f's, i.e. a "noise-transfer ratio". To be measured and bounded.

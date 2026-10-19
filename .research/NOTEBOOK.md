@@ -852,3 +852,46 @@ Squares are the canonical locally deterministic, front-loaded family, and filter
   - FIRST CONCRETE STEP: write the two-scale inequality with all constants
         m_sec(f) <= [ρ(X + w + 1)/((1 − O(c^{−3}))W)]·[(1 + η) noise_E(g) + (1 + 1/η)M²|E|],
     and test it numerically on Bu, dense records and triangle-random: how much of g's noise actually lies on E?
+
+## 2026-10-19 (cont.) — Per-spike contraction criterion, subgroup rigidity, and the self-reducibility conjecture (lead)
+1. Per-spike contraction (from P32, profile model).
+   - A secondary spike at x₀ with twisted profile ψ(t) (t = a/X) has m_f ≈ X∫|ψ|².
+   - Its low-pass image has m_g ≈ X∫|ψ|²κ(tX)². So the P32 step multiplies spike mass by
+         Γ(ψ) := (3ρ/2)(1 + X/w)·∫|ψ|²κ²/∫|ψ|².
+   - Uniform |ψ| with w = εX: Γ = (ρ/2)(1 + ε) < 1. CONTRACTS.
+   - Front-loaded ψ (mass near t = 0): Γ -> (3ρ/2)(1 + 1/ε) > 1. P31's obstruction, now per spike.
+   - So the recursion can fail only through spikes whose twisted profiles are front-loaded: the FRONT A ∩ [1, εX]
+     carries the twisted bias at x₀ disproportionately.
+2. What front-loaded twisted profiles force.
+   - x₀ = 2πr/q rational: A's front is biased mod q, and the spike sign condition (all large spikes positive, else
+     M is linear) asks the local residue pattern P ⊂ Z_q to be (nearly) positive definite.
+   - LEMMA (classical; PROVED). If 1_P on a finite abelian group G is positive definite with 0 ∈ P, then P is a
+     subgroup.
+     Proof: K(x, y) = 1_P(x − y) is PSD with unit diagonal and 0/1 entries. K(x, y) = 1 gives
+     ‖e_x − e_y‖_K² = 0, so rows x and y agree. Hence x ~ y ⟺ x − y ∈ P is an equivalence relation.
+   - Stability version = Sanders' dense-group Chowla theorem (0807.5104): near-p.d. dense patterns are close to
+     subgroups. So locally A ≈ union of cosets of dZ_q: a LOCAL DILATION.
+   - Irrational x₀: the analogue is Bohr-type patterns. Sharp Bohr windows give sinc-signed spikes (E46: linear M).
+     Tapered windows need thinning, i.e. noise.
+   - Unions of different progressions are not p.d. modulo the lcm (inclusion–exclusion puts negative spikes at the
+     lcm frequencies). Nested chains collapse to one progression.
+   - Pieces dZ ∩ [Y₁, Y₂] not starting near 0 rotate in phase (P29(b)), giving linear dips.
+   So the arithmetic structure must be ONE dilation d, front-loaded from 0.
+3. SELF-REDUCIBILITY CONJECTURE (SR). For every ε > 0 there are η(ε) -> 0 and c > 0 such that, if R(A) <= ε, then
+   either:
+   - (i) A is not front-loaded at some scale, so P31 gives R >= c (contradiction for small ε); or
+   - (ii) all but an η-fraction of A lies in dZ for some d >= 2, and A' = (A ∩ dZ)/d has R(A') <= ε + η.
+   Iterating (ii) raises the density by a factor d each time (max A' = X/d, |A'| ≈ |A|). Eventually density > 1/2 + ε,
+   and P29 (Kolountzakis) gives linear M. Contradiction, hence Chowla (SR ⇒ Chowla, modulo summable η-losses).
+   Ingredients:
+   - P31/P32 (have);
+   - per-spike contraction (above; profile model, to make rigorous);
+   - Sanders-type local stability at rational spikes (cite + localize);
+   - a Bohr-pattern analogue for irrational spikes (open);
+   - control of the η-losses through the iteration (each junk element costs at most 1 in M: M(B ∪ T) >= M(B) − |T|).
+4. Next concrete steps:
+   - (a) make the per-spike contraction rigorous from P32, choosing E as a neighbourhood of ONE spike cluster at a time;
+   - (b) state and prove a localized Sanders lemma: a spike at 2πr/q with height P >> M and a front-loaded twisted
+     profile forces A's front to be near a union of cosets of a subgroup mod q, with explicit dependence;
+   - (c) numerics: compute Γ(ψ) for the actual secondary spikes of Bu sets, dense records and arithmetic-front test
+     sets (e.g. A = tapered(3Z ∩ [1, Y]) ∪ random tail).

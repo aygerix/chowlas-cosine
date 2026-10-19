@@ -122,33 +122,37 @@ Compute (user rule 2026-10-18): ALL calculations, lead and agents, on the GCP VM
 Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex CLI, Sol 6.1 at xhigh reasoning
 (`codex exec -m gpt-6.1-sol -c model_reasoning_effort="xhigh" ...`), still at most one at a time.
 
-## Running now (2026-10-18, VM restarted on c2d-standard-8)
-- E44 (src/e44_grb_dense.sh): Gurobi lazy-cut box MILP, warm-started, N=45 X=64 → N=50 X=72 → N=55 X=79;
-  progress in examples/gurobi/e44.jsonl (N=45 bound 3.23 vs incumbent 3.836 at 1500 s).
-- E37g (src/e37g_batch.sh): Gurobi group run-top ILP, 18 instances → examples/cyclic_ilp/e37g.jsonl.
-- Codex agent queue (one at a time):
-  1. DONE: P31 adversarial check (report verified by lead). Main inequality survives, with 4 corrections.
-     P31-N is proved (ρ_L <= β(1 + 2/√(L+1))³). Kolountzakis 1996 is prior art for P29.
-  2. RUNNING (started 2026-10-19): ONE combined Lean project, .research/agents/lean_p31_brief.md.
-     - T1–T4: Fejér–Riesz, Lemma P31-E, main inequality, dense corollary with the elementary constant.
-     - T5: Beckner sharp Young (lean_beckner_brief.md M1–M5) + P31-N, for the sharp threshold 2/(3√3).
-     - User request: Beckner formalized. The local mathlib has neither Young convolution nor Fejér–Riesz.
-- E49 DONE: steeper front-loading gives larger R at equal search effort (n = 150: 0.754 / 0.801 / 0.875 for
-  p = 1 / 2 / 3). P31's escape class looks unfavourable for constructions (heuristic).
+## Running now (2026-10-19 late)
+- E52 (src/e52_batch.sh; 6 cores). Two-level front-loaded profiles: density 3δ on [1, εX], then sparse. These are the
+  simplest P31-escape-class shapes. A non-escape control uses front density 2δ. Output: examples/profile_sa/e52.jsonl.
+- grb_group_bt.py (Gurobi, 2 threads), E37g successor.
+- Codex agent (one at a time): Lean P31 + Beckner (.research/agents/lean_p31_brief.md).
+  - The conditional T3 chain is KERNEL-CHECKED (23 declarations; only propext / Classical.choice / Quot.sound).
+    Its one extra hypothesis is `FejerRiesz (X+w)`, stated as a definition, not an axiom.
+  - Now on T1 (finite Fejér–Riesz); then T2, T4, T5. Verify the report before recording anything as kernel-checked.
+- DONE this session:
+  - E50: power-law profiles are worse than the triangle.
+  - E51: P32 does not contract (B >= 1.7), and the Bu spikes are the mod-3 dilation.
+  - E53: P31 efficiency; flat fronts sit exactly at the recursion borderline 2/3.
 
-## Active lines (>= 3) (updated 2026-10-19)
-1. [lower bound, dense/profile] NEW lead line. P29 (Turán), then P31 (window–Nikolskii): Chowla for non-front-loaded
-   and dense (>= 0.39) sets. Next:
-   - finish Lemma P31-N;
-   - attack the front-loaded escape class (multi-scale/effective-degree P31);
-   - P30/E47 spike-share as the diagnostic.
-2. [lower bound, Z-specific run-top] OR(2)-weak. P27 Theorems A/B/C (bounded unions of translated dilates). The codex
-   agent OR3 is on spread residues, the k^{3/2} loss and structure vs randomness.
-3. [C½ for construction classes] P16/P16′ (Bu class, kernel-checked). Line D Z_p half-set data.
-4. [construction] Every known mechanism is pinned at >= 1/2. E47 quantifies the target: >= 28% of ‖f‖₂² must sit in
-   secondary spikes far above M; no known family does this. P31(iii): a counterexample must be front-loaded beyond
-   2.9δ. That is where to search (core + sparse-tail designs).
-5. [verification] Lean T0–T3 done. Next: P27 Theorem C, P31 after review.
+## Active lines (>= 3) (updated 2026-10-19 late; strategic review in NOTEBOOK)
+1. [lower bound, structural SR] P31 gives Chowla for every non-front-loaded set: δ > 0.385, or any A ⊂ [εX, X].
+   - The whole window/Nikolskii family stops at front-loading. Its recursion would need an effective constant
+     < 2/3 < 0.687; KILLED.
+   - The remaining lever is arithmetic. Idealized SR is rigorous in the toy model: spike set = subgroup ⇒ PD residue
+     pattern ⇒ subgroup ⇒ dilated full interval ⇒ P31.
+   - NEXT: a robust "near-PD 0/1 pattern ⇒ near subgroup" lemma with √-type loss (localized Sanders), plus a transfer
+     from tall spikes at a/q to residue structure.
+2. [lower bound, Z-specific run-top] P27 Theorems A–D, bounded unions of translated dilates.
+3. [construction] Every known mechanism is pinned at >= ½.
+   - Bu = dilation (3D) + phase-rotated square (sums in 1 + 3Z). It saturates M(A ∩ 3Z) <= M(A).
+   - Counting: real-square identities with lag multiplicity m give R >= 1/(2√m), so a sub-½ square identity needs
+     multiplicity m >= 2 with aligned weights.
+   - E52 probes the escape class.
+4. [verification] Lean: conditional P31 kernel-checked. Fejér–Riesz, P31-E, the dense corollary and Beckner are in
+   progress (agent).
+KILLED this session: R3/P32 recursion (Λθ > 1; E51 B >= 1.7); low-pass P31 recursion (needs Nikolskii < 2/3);
+window-shape/divisibility tweaks of the dense threshold (O(θ³) gain).
 
 ## Compute policy
 Gurobi 13.0.3 full distribution at /opt/gurobi1303/linux64 on dirichlet with the user's licence
@@ -157,13 +161,13 @@ All calculations on GCP VM dirichlet via src/dirun.sh; never the laptop or fejer
 Process rule (user, 2026-10-18): computations are fire-and-forget; foreground time goes to mathematics, one codex agent
 in parallel.
 
-## First concrete next step (updated 2026-10-19)
-(1) P31 is now unconditional on paper via the ELEMENTARY Lemma P31-E: ρ_L <= 0.8110 + 0.2367/(L + 1) (Cauchy–Schwarz,
-    Abel summation, one explicit integral). The codex agent P31 is running an adversarial check. Next agent: Lean
-    formalization of P31 + P31-E (plan L1–L4 in PROOFS). The verification route is the kernel check, never an
-    outside review.
-(2) Attack the escape class of P31, front-loaded sets: steep profiles (1 − t)^p with p >= 1.91, and core + sparse tail.
-    Candidate: a multi-scale P31, with the window degree replaced by an effective degree. A sparse tail inflates
-    L + 1 without carrying mass.
-(3) Verify the OR3 agent report when it lands. Then Lean for P27 Theorem C / P31.
-
+## First concrete next step (updated 2026-10-19 late)
+(1) L1: state and prove a quantitative pattern lemma on Z_q.
+    - Hypothesis: P ⊂ Z_q, 0 ∈ P, and the residue-weight vector c (c_r = |A_r|/max) has DFT >= −η·|P| at every nonzero
+      frequency.
+    - Conclusion: P is O(η)-close to a subgroup.
+    - Test it against Bu, where the pattern mod 3 is {0: differences, 1: sums} with spikes at 1/3 and 1/6.
+(2) Collect E52. If two-level escape profiles beat the triangle at equal n, that is the first construction-side signal
+    in the escape class; otherwise record it as further evidence.
+(3) When the Lean agent reports: verify T1 (Fejér–Riesz) and the unconditional T3, then record them in
+    PROOFS/CERTIFICATES.

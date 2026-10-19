@@ -1627,8 +1627,20 @@ Reading:
 |---|---|---|---|---|---|---|
 | Singer differences q = 5 | 15 | 29 | 2.90254 | 2.97287 | 1.024 | 26, 17 |
 | interval [1, 30] | 30 | 30 | 7.13162 | 7.13162 | 1.000 | 29, 29 |
-- FULL RUN: NOT YET DONE. Next command:
-  `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 8 -t 7200 python src/e110_dnn.py examples/e110/e110.jsonl`
+- FULL RUN (cont. 29, examples/e110/e110.jsonl; X = 180 rows by SCS). DNN at MINIMAL degree [0, X] against M:
+| set | n | X | R | R_DNN | ratio |
+|---|---|---|---|---|---|
+| N50_x72 | 50 | 72 | 0.570 | 0.570 | 1.0000 |
+| N50_x71 | 50 | 68 | 0.573 | 0.589 | 1.029 |
+| dense X30 / X50 / X80 / X120 / X180 (2 seeds each) | 20–122 | 28–180 | 0.60–0.75 | — | 1.000–1.099 |
+| Singer differences q = 5 / 7 / 11 / 13 | 15–91 | 29–181 | 0.73–0.75 | — | 1.024 / 1.000 / 1.000 / 1.000 |
+| random X = 80, p = ½ | 46 | 80 | 1.414 | 1.414 | 1.000 |
+- Reading:
+  - With an unbounded index set, DNN = PSD (P76(a)). Even at minimal degree the gap is <= 10%, and it is ZERO for
+    N50_x72.
+  - Together with E111 (flat CP 1.50×M for N50_x72): the cheapest certificate of the best dense set is entrywise
+    nonnegative but NOT completely positive. The required cancellation lives in the DNN \ CP gap (odd-cycle-type
+    structure of the difference graph), not in negative Gram entries.
 
 ## E111 (2026-10-19, cont. 29) Flat completely-positive certificate costs (codex agent; src/e111_cp.py; examples/e111/)
 - Method: flat-block CP LP (Σ_B w_B m_B = 1_A, cost Σ w_B|B|), solved by column generation with Gurobi max-weight

@@ -65,7 +65,7 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
 | F10 | Variance conservation. For ANY random A with marginals w_a = P(a ∈ A), and any correlations: ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a). Rounding noise cannot be destroyed, only moved in x. | IDENTITY proved (∫cos(2πax)cos(2πbx)dx = δ_ab/2). The reading "noise must sit under the spikes of E f" is HEURISTIC: large Var(f(x)) where E f ≈ 0 forces negative values only with an anti-concentration input, which is not proved | this file, 2026-10-19 |
 | F11 | No flat multiplicative orbits (torsion-freeness, quantified). For every x ∈ T and K >= 1, with Fejér weights w_k = 1 − abs(k)/(K+1): Σ_{0<abs(k)<=K} w_k f(kx)² >= ½n(K+1) − n². Proof: Σ_k w_k f(kx)² = ½Σ_{a,a'}F_K((a−a')x) + ½Σ_{a,a'}F_K((a+a')x) >= ½n(K+1), from the diagonal a = a' with F_K >= 0. So every orbit segment {kx : 0 < k <= 4n} carries orbit-L² >= n²/2. In F_p^r the quadric's off-cone LINES are exactly flat (f ≡ −M). In Z no orbit is flat. Mild: it holds for any random-like E and kills only line-aligned spike sets (with D8) | proved (elementary) | this file, A3 |
 
-| F12 | C* needs PHASE CANCELLATION. The cheapest cancellation-free (flat completely positive, P76) certificate of the best known dense set N50_x72 has R_CP = 0.857 against R = 0.570 (lead-verified: exact rational primal identity; Gurobi-optimal dual pricing, max reduced cost 2e−16). Dense near-optima: R_CP 0.81–0.94 against R 0.60–0.65. Singer differences: R_CP = R (one Sidon block). No flat-CP certificate below R_CP ≈ 0.754 for X <= 39 (adversarial). The quadric's certificate is CP; Z's is not (spread principle, A6). CP½ (R_CP >= 1/√2) is conjectured; equal-size case proved (NOTEBOOK cont. 29.8) | numerical (E111) + partial proof | this file, A6 |
+| F12 | C* needs PHASE CANCELLATION. The cheapest cancellation-free (flat completely positive, P76) certificate of the best known dense set N50_x72 has R_CP = 0.857 against R = 0.570 (lead-verified: exact rational primal identity; Gurobi-optimal dual pricing, max reduced cost 2e−16). Dense near-optima: R_CP 0.81–0.94 against R 0.60–0.65. Singer differences: R_CP = R (one Sidon block). No flat-CP certificate below R_CP ≈ 0.754 for X <= 39 (adversarial). The quadric's certificate is CP; Z's is not (spread principle, A6). E110: the same N50_x72 has a DNN (entrywise-nonnegative PSD) certificate at exactly M even at minimal degree. So the cancellation lives in the DNN \ CP gap (odd-cycle structure of Cay(Z, ±A)), not in negative Gram entries. CP½ (R_CP >= 1/√2) is conjectured; equal-size case proved (NOTEBOOK cont. 29.8) | numerical (E111) + partial proof | this file, A6 |
 ## 3. DESIGN — constructive side (build the object on purpose)
 Design rules implied by §2. A candidate that violates one is dead before it is run.
 - D1 (F1, F2): concentrated. Mass on a set of measure ~ε² (or on high spikes), not flat.
@@ -350,6 +350,29 @@ The prize is (c). Everything else is support.
   Equivalently, C* in Z would need a spread whose blocks have flat multiplicities, and Z-blocks never do (P76(c)).
   (L3) is the most concrete link. If E111 supports it, attempt a proof next.
   Numbers: Bu has cliques (Sidon translates) of size k ≈ √n against n/M ≈ 1.8√n.
+
+- A6′ (cont. 29, after E110 + E111). REFORMULATED CHAIN: Chowla ⇐ SCP(T) + CP-CHOWLA(Z).
+  - SCP(T), group-agnostic: in any abelian group, a symmetric S with |S| <= |G|/2 and ratio |S|/K² > T has a
+    completely positive certificate of cost <= C(T)·K.
+  - CP-CHOWLA(Z): C_CP(A) >= c√n (P76; CP½ conjectures c = 1/√2·2).
+  - Proof of the implication: if ratio > T, then K >= C_CP/C(T) >= c√n/C(T). So ratio <= max(T, 2C(T)²/c²), which
+    is bounded, i.e. Chowla.
+  - Status:
+    - SCP(2) is FALSE. Paley has ratio ≈ 2, cliques O(√p) (conjecturally polylog), so CP cost >~ p/log p against
+      K ≈ √p.
+    - SCP(T) for large T is consistent with every known object: all ratio → ∞ objects are spreads and CP (quadrics,
+      semiprimitive cyclotomy, Latin-square partial spreads, subgroup unions).
+    - E41's Z_p half-sets (ratio ≈ 2.14, p = 71–89) have not been tested for CP-efficiency. That is the first
+      falsification check for SCP at T slightly above 2.
+  - Meaning for C*: a Z counterexample needs a CANCELLATION object (non-CP, F12) with ratio → ∞. No such object is
+    known in ANY abelian group: all known cancellation objects (Paley, Gauss periods) sit at ratio <= ~2. So the
+    constructive search should target "high-ratio non-spread objects in finite groups" first. Finding one would
+    break SCP; finding none supports Chowla.
+  - Caveat: inside Z, SCP(T) is essentially Chowla-strength (vacuous if Chowla holds with ratio <= T). Its value is
+    as a GROUP-AGNOSTIC statement, which could be attacked in F_p^r / Z_N where the spreads live.
+  - Next discriminating experiment (E112): optimize the ratio in moderate finite groups (F_p², Z_{p²}², Z_N
+    composite, Z_p) for sets FAR from unions of subgroups, and measure their CP-efficiency. Also test the E41 Z_p
+    half-sets.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

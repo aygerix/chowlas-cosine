@@ -9,20 +9,20 @@ fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T
 - A4: the blueprint (continuum) level is consistent, so C* lives entirely in the 0/1 fine structure.
 - A5 (cont. 28): regime split at n^{1/3} (additive structure is visible only for M <~ n^{1/3}; the C* core is
   random-dominated). Hoffman bound recorded as a fact. The rank dichotomy (rigorous E73) is DEPRIORITISED.
-- cont. 29:
-  - P76 (proved): DNN = PSD on an unbounded index set; CP certificates satisfy C >= 2n/(ω − 1); extreme-lag
-    multiplicities.
-  - A6 SPREAD PRINCIPLE: every known R → 0 object is a union of subgroups, and every subgroup-free one sits at
-    |S|/K² ≈ 2.
-  - CLIQUE CHAIN L1 (sharp clique theorem) → L2 (near-CP design) → L3 (CP-Chowla). L3's one-block case is "no
-    approximate difference sets in Z" (a block with flat multiplicity ρ makes B − B a ratio-ρ object).
-  - E110 (minimal-degree DNN) partial: ratios 1.00–1.07.
-  - E111 (codex, flat-block CP column generation) is RUNNING.
+- cont. 29 (E110 + E111 done, lead-verified):
+  - F12 (C* needs phase cancellation; numerical). N50_x72 has R = 0.570, flat-CP R_CP = 0.857 (optimum verified by
+    exact primal identity and Gurobi dual pricing), and DNN at minimal degree = M exactly. So the cancellation lives
+    in the DNN \ CP gap.
+  - P76 (proved): DNN = PSD on an unbounded index set; C_CP >= 2n/(ω − 1); extreme-lag multiplicities; sublattice
+    restriction.
+  - CP½ conjecture: equal-size case proved; rank and coverage give only log.
+  - A6/A6′ SPREAD PRINCIPLE and the reformulated chain Chowla ⇐ SCP(T) + CP-Chowla(Z). SCP(2) is false (Paley).
+    All known ratio → ∞ objects are spreads (CP).
 - FIRST NEXT STEP:
-  - Read .research/agents/e111_report.md and verify it.
-  - If R_CP stays >= ~0.7 while R ≈ 0.57: near-extremizers need cancellation (F12 numerical), and CP-Chowla is the
-    target. Attack it via multi-scale cluster recursion (NOTEBOOK cont. 29).
-  - If R_CP is near R: test L1 (clique sizes vs n/M) on Singer–Bu sets.
+  - E112: in moderate finite groups, search for high-ratio sets FAR from unions of subgroups and measure their
+    CP-efficiency.
+  - Test the E41 Z_p half-sets (ratio ≈ 2.14) first.
+  - A high-ratio non-spread object would break SCP and be the first candidate mechanism for C* in Z.
 
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 

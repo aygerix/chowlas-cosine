@@ -2190,3 +2190,59 @@ Lead's reading.
 - Every density-transfer of Sanders tried here ends at ¼. Both the centred powers and the half-set
   small-spectrum branch fail through the same estimate, ‖P^{(r)} − F^{(r)}‖ <= rKL^{r−1}.
 - An exponent above ¼ needs an estimate of the peak Λ that is better than O(KL²). This is the QU(2) wall of P65.
+
+## P68. Round-15 agent results: P66 audited CORRECT and extended to C < 1000/73; the cyclic ¼ equality case made exact (report .research/agents/tdense15_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ P66 AUDIT: every step CORRECT, with these qualifications (lead read all of them).
+   - The cubic weak limit at fixed ε has the cross term (p − Q_ε)(1 − 3Q_ε + 3Q_ε²). It vanishes as ε -> 0,
+     bounded by 2‖Q_ε − p‖_∞‖ψ‖₁.
+   - Normalization: Ĥ(0) = m and Ĥ(k) = r_k/2, so Σ r_k³ cos kx >= −4m³ exactly.
+   - The front cap needs only p(0) <= ½, continuity and p(1) = 0, not p(0) = max p. But p = φ(4e) needs p <= ½
+     EVERYWHERE, which follows from P58/P59 or from a second IVT on e.
+   - The Gabor/Jensen weights and σ-monotonicity are as stated.
+   - Complex w ∈ 𝒲 are majorized by |G|⋆|G|~ (Boas–Kac root), so P63 and Beckner apply to the SAME w.
+2. ✓ E94b re-proved by a DIFFERENT method.
+   - Put s = √(1 − x); the inequality becomes √((1 + 2s²)/3) >= R(s) with R > 0.
+   - Squaring gives (1 − s)T(s) with T a cubic. Exact Sturm: T has no roots in [0, 1].
+   - Lead re-ran it on the VM: reproduced (examples/r15_certificates/mixing_sturm.*).
+3. ✓ D_{2/3} <= 73/1000 (exact rational certificate, computer-assisted). Hence:
+       THEOREM (P66 range): for every C < 1000/73 = 13.6986…, M(A) >= c(C)|A|^{1/3} for all finite
+       A ⊂ Z_{>0} with max A <= C|A|; c(C) is ineffective.
+   - The P63 certificate is ported: the only change is the radical, u²(2 − u²)/4 -> 1/12 + u²/3 − u⁴/6, i.e.
+     √(1 − (2/3)(1 − u²)²)/2 squared; the lead checked the algebra.
+   - Input: the E95 K = 64, degree 10, shape 0.1 discovery, with monotone rational repair.
+   - Schur test: U = 1 + (2/5)s(1 − s), with T_aU <= (73/500)U. Minimum margin 1704250072843/1966080000000000.
+   - Checks: 767 leaves, 127 caps, 188 support lines, 18 long lines, 64 Schur cells.
+   - Lead re-ran BOTH the certifier and the independent verifier on the VM: PROVED by both
+     (src/r15_rerun_lead.sh).
+4. ✓ EXACT FLAT MODEL for cyclic half-sets (quoted from P26, renormalized; lead re-derived).
+   - Definitions: t = K − ½, h(0) = t, h(γ) = λ(γ) + K (γ ≠ 0).
+   - Then ȟ = b − ½ + Kδ_0 and h⋆h = (q²/4)δ_0 + qK(K − 1)·1 (unnormalized convolution). Hence:
+     - (Λ + K)² <= qK(K − 1);
+     - the endpoint defect E = Σ_{γ≠0}(Λ − λ)(λ + K) = (q − 1)[tL − t² − q/4] >= 0.
+   - Together: (q − 1)t⁴ − (3q/4)t² − q²/16 >= 0, i.e.
+         K >= ½ + √(q[3 + √(4q + 5)]/(8(q − 1))) = (½ + o(1))q^{1/4}.
+     This is the best explicit constant in the record (cf. 0.42q^{1/4} in P64); the exponent is unchanged.
+   - Correction to NOTEBOOK 18.5: P̌ − Ň = b − (q − 1)/(2q), not b − ½. The exactly flat object is h, not P.
+5. ✓ Parity lemma (elementary; lead checked).
+   - For any D ⊂ Z_q with 0 < |D| < q − 1: r_D(ξ) ≡ 1_D(ξ/2) (mod 2). So r_D − c is non-constant: some
+     |r_D(ξ) − c| >= ½. This is the odd-order case of Brualdi 1965 (cyclic reversible difference sets are trivial).
+   - Robust form: E + t² >= L²/[4(√(s + ½) + √s)²] for the rounded heavy core D = {h >= L/2}, s = |D|. At the ¼
+     scale this forces only E >~ q: no power gain.
+6. Quantitative rounding, saturation and zero-spike bounds (B3) are proved with explicit constants; they are not
+   re-derived line by line by the lead.
+   - Retained limitations:
+     - thresholded-core support only;
+     - a scalar counterexample with q^{3/4} weak positive modes;
+     - the cos^{2d}(πx/q) counterexample: positivity plus sparse frequencies gives no polynomial size bound on half
+       the group.
+     - Galois separation is only exponentially small.
+     - Exact Tao uncertainty gives |supp h| >= (q − 1)/2.
+7. ✓ Missing lemma, stated exactly (CONJECTURED), and its conditional theorem.
+   - WRS(η): max_{γ≠0} h <= A q^{(1−η)/2} t^{1+η} whenever h >= 0 is even with h(0) = t, Σh = qt,
+     h⋆h = (q²/4)δ_0 + q(t² − ¼)·1 and ½ < t <= δ0√q. These hypotheses reconstruct exactly the Boolean half-sets.
+   - WRS(η) ⇒ K >~ q^{(1+η)/(4+2η)}. Lead check: L >= q/(4t) gives t^{2+η} >= q^{(1+η)/2}/(4A).
+   - η = 1 is Λ <~ K², i.e. PK(0) = QU(2), Sanders' 1/3.
+8. Obstruction (proved algebra). Excluding equality by a fixed defect changes only the constant. A power gain needs
+   1 − Δ_a <= (4/3)A²(t/√q)^{2η}, i.e. a defect that DECAYS with t/√q.
+Status: items 1–3 are rigorous (paper plus exact certificates; P66 is now independently audited, not
+kernel-checked). Items 4–8 are paper proofs or conjectures as labeled. No cyclic exponent above ¼.

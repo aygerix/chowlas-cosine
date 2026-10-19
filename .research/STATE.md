@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 14: Sanders transfers end at ¼; P66 range 13.25")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 15: P66 audited, C < 13.699; WRS isolated")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -23,7 +23,7 @@
       - Integer side: CSFG(20) ⇒ T-dense(C < min(20, 1/D_σ)), beyond 1/D (R12-B).
       - Cyclic side: the peak lemma PK(η) (Λ <= CK^{2−η}) beats Sanders' 1/3; PK(1) gives √q.
       - Scalar moments provably cannot do it (R12-S). The full convolution identity λ⋆λ = qλ is needed.
-- (L-dense, exponent 1/3) PROVED (P66, lead, paper): M >= c(C)|A|^{1/3} for every C < 13.2548 (computer-assisted: P63 + E94b mixing), ineffective; fully analytic for C < 9(1 + √3)/2 = 12.294 (Beckner).
+- (L-dense, exponent 1/3) PROVED (P66, lead; AUDITED CORRECT by round 15, P68): M >= c(C)|A|^{1/3} for every C < 1000/73 = 13.6986 (computer-assisted: dedicated σ = 2/3 certificate D_{2/3} <= 73/1000, re-run by lead), ineffective; 13.2548 via E94b mixing; fully analytic for C < 9(1 + √3)/2 = 12.294 (Beckner).
   This is the cubic front cap: under M = o(n^{1/3}), the cubic Schur profile g(p) = p(1 − p)(1 − 2p) is PD, so
   a <= (3 − √3)/6. Numerical reach ≈ 15.6 (E93b). Bu et al. have exponent ¼ for all C.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
@@ -325,7 +325,39 @@ in parallel.
   - JMTZ give ¼ − ε at every density; Bu et al. dense ¼.
   - So a density-INDEPENDENT cyclic exponent θ > ¼ would give DENSE CHOWLA EXPONENT θ FOR EVERY C, via the embedding
     q ∈ (2X, 4X]. That beats the 2026 literature for C > 7.72.
-## Session 3, round 14: Sanders transfers end at ¼; P66 range 13.25 (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 14: Sanders transfers end at ¼; P66 range 13.25 (2026-10-19 night)
+- Round 14 DONE, lead-verified (PROOFS P67; examples/r14_certificates/).
+  - R14-CENTER: centred convolution powers regenerate the δ term at every order, U^{(r)} = A_rU + qm_rδ. The first
+    favourable order is ≍ 1/α, and even then the norm estimate gives K^{r+1} >> q.
+  - R14-UNION: union with a fixed dilate creates order-q negativity.
+  - Sanders' half-set 1/3 is not reconstructed in the small-spectrum branch: Λ = O(KL²) = O(K³) gives ¼ only.
+  - Embedding correction: use q ∈ (4X, 8X].
+- Lead.
+  - E94b (RIGOROUS): P66 now holds for C < 13.2548 (mixing P63 and Beckner on 𝒲).
+  - E95: the dedicated D_{2/3} LP saturates near 13.8.
+  - E96: degree-3 SOS / Sherali–Adams gives K = O(1) for half-sets (two-point pseudo-marginals): dead end.
+  - NOTEBOOK cont. 18.2: profile and moment methods at θ > ¼ are capped by the third-order reach.
+  - NOTEBOOK cont. 18.5: the equality case of the cyclic ¼ argument is a flat ±½ PD function with spectrum Π, |Π| ~ √q,
+    and Π + Π covering Z_q uniformly, i.e. a weighted REVERSIBLE difference set. Exact versions are impossible
+    (Galois ⇒ Paley; cyclic reversible difference sets are trivial). Making this quantitative is the new route past ¼.
+## Session 3, round 15: P66 audited, C < 13.699; WRS isolated (2026-10-19 night, NEWEST — read this first)
+- Round 15 DONE, lead-verified (PROOFS P68; examples/r15_certificates/).
+  - P66 audited step by step: CORRECT. E94b re-proved by Sturm.
+  - Dedicated certificate D_{2/3} <= 73/1000, so exponent 1/3 for every C < 1000/73 = 13.699. The lead re-ran the
+    certifier and the independent verifier.
+  - Cyclic half-sets.
+    - Exact flat model h⋆h = (q²/4)δ_0 + qK(K − 1)·1 (P26), giving K >= (½ + o(1))q^{1/4} explicitly.
+    - Parity lemma: cyclic reversible difference sets are trivial (Brualdi).
+    - Precise missing lemma WRS(η) ⇒ exponent (1 + η)/(4 + 2η). Its η = 1 case is PK(0): Λ <~ K².
+- Lead: NOTEBOOK cont. 18.5–18.8, the corrected equality case and the clustered-peak heuristic. 18.7(a) is
+  refuted (difference sets are flat).
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 16 (.research/agents/tdense16_brief.md): PK(0) adversarial search and proof attempt.
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 16. A family with Λ/K² -> ∞ and K = o(√q) refutes PK(0), which is important either way. A proof of
+  PK(0) or of any WRS(η > 0) is a new half-set exponent above ¼: re-derive it, run the adversaries, and check the
+  literature.
+## Session 3, round 14: Sanders transfers end at ¼; P66 range 13.25 (2026-10-19 night)
 - Round 14 DONE, lead-verified (PROOFS P67; examples/r14_certificates/).
   - R14-CENTER: centred convolution powers regenerate the δ term at every order, U^{(r)} = A_rU + qm_rδ. The first
     favourable order is ≍ 1/α, and even then the norm estimate gives K^{r+1} >> q.

@@ -1409,3 +1409,10 @@ Reading:
     second-order argument needs the PEAK γ, i.e. a non-symmetric (max) step; in SOS form that means weighting by λ,
     which is third moments (the R12-S world).
 - Conclusion: low-degree, symmetric SOS certificates cannot give growth. Do not use them as a Chowla route.
+## E97 (2026-10-19) Round-15 certificate re-run by the lead (src/r15_rerun_lead.sh; examples/r15_certificates/)
+- On the VM:
+  - mixing_sturm.py: Sturm certificate for E94b reproduced;
+  - certify_sigma.py (E95 K = 64, degree 10, shape 0.1 input): PROVED, D_{2/3} <= 73/1000, minimum Schur margin
+    1704250072843/1966080000000000, 43 s;
+  - verify_sigma.py (independent reconstruction): PROVED, 767 leaves, 127 caps, 64 Schur cells, 55 s.
+- So P66 holds for C < 1000/73 = 13.6986 (P68.3).

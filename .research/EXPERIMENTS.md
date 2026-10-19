@@ -603,3 +603,33 @@ Reading:
 - Every known family's profile lies OUTSIDE the escape class (front/average ratio ≈ 2 < 2/ρ). So P31 already proves
   that any family with the Bu, Singer or triangle profile has R >= c(profile) > 0 (about 0.04–0.2).
 - Constructions must change the profile class, not tune parameters.
+
+## E52 (2026-10-19) Two-level front-loaded profiles: escape-class probe (src/e52_batch.sh; examples/profile_sa/e52.jsonl)
+Profile: density d1 on [1, εX], a linear ramp over 0.05X, then d2. Same SA as E49 (3e6 iterations × 6 restarts ×
+2 seeds). HEURISTIC.
+   config (δ, d1, ε)           escape?   n≈150 R   n≈300 R
+   δ=0.30, d1=0.90, ε=0.15     yes       0.970     1.362
+   δ=0.25, d1=0.75, ε=0.20     yes       1.100     1.789
+   δ=0.15, d1=0.45, ε=0.25     yes       1.659     2.613
+   δ=0.25, d1=0.50, ε=0.20     no (2δ)   1.073     1.232
+   (E49 triangle: 0.754 / 0.781)
+Reading:
+- Everything is far worse than the triangle, and R grows like √n, i.e. M is LINEAR.
+- Cause: the kinks of the ramp. The smooth part P(x) = Σ p(a)cos(ax) has dips of size about (d1 − d2)·(ramp width)
+  ∝ X at x ~ 1/(ramp width), via the cosine transform of p' jumps.
+- Lesson: escape-class probes must use C¹-smooth profiles. E49's (1 − t)^p, p = 2, 3 are smooth and in the escape
+  class; there R ≈ 0.8–0.9, growing slowly.
+- Within the escape class, nothing beats the triangle so far (E49, E50, E52).
+
+## E56 (2026-10-19) Multiplicative self-similar sets: smooth numbers (src/e56_multiplicative.py; examples/e56/e56.jsonl)
+Motivation: y-smooth numbers are front-loaded at every scale and dilation-self-similar (S ∩ pZ = p·S(X/p, y) for p <= y),
+the structure the SR picture predicts.
+Results (X = 2^12 … 2^18, UNCERTIFIED grid minima):
+- smooth(y) for y = 3 … 61: R grows with X (e.g. y = 19: 1.40 -> 3.34). The minimum is at x/2π = a/p with p the first
+  prime > y.
+- odd smooth: M = n, minimum at x = π.
+- smooth with y = √X: R = 1.4 -> 22.5, minimum near x = 0: the Dickman profile has a kink at a = y (E52 lesson).
+- rough numbers: M ~ n, all odd.
+Mechanism, PROVED: the dilation pinch (NOTEBOOK). y-smooth numbers avoid pZ for every prime p > y. Averaging f over the
+p-th roots of unity gives M >= n/(p − 1), which is LINEAR. So multiplicative self-similarity is not enough: a
+counterexample must keep its fair share in EVERY qZ with q <~ n/M, not only for small primes.

@@ -129,9 +129,10 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 - Codex agent queue (one at a time):
   1. DONE: P31 adversarial check (report verified by lead). Main inequality survives, with 4 corrections.
      P31-N is proved (ρ_L <= β(1 + 2/√(L+1))³). Kolountzakis 1996 is prior art for P29.
-  2. NEXT: Lean formalization of P31 core (Fejér–Riesz, Lemma P31-E, window inequality; plan L1–L4 in PROOFS).
-  3. THEN: Lean Beckner sharp Young (.research/agents/lean_beckner_brief.md, user request 2026-10-19; milestones
-     M1 non-sharp Young -> M4 sharp constant). The local mathlib has neither Young convolution nor Fejér–Riesz.
+  2. RUNNING (started 2026-10-19): ONE combined Lean project, .research/agents/lean_p31_brief.md.
+     - T1–T4: Fejér–Riesz, Lemma P31-E, main inequality, dense corollary with the elementary constant.
+     - T5: Beckner sharp Young (lean_beckner_brief.md M1–M5) + P31-N, for the sharp threshold 2/(3√3).
+     - User request: Beckner formalized. The local mathlib has neither Young convolution nor Fejér–Riesz.
 - E49 (src/e49_batch.sh, 6 cores): profile-constrained SA, triangle vs (1−t)^2, (1−t)^3 vs free, n = 150/300
   -> examples/profile_sa/e49.jsonl.
 

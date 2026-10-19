@@ -34,6 +34,15 @@
   enough, |A| >= (41/100)(1 + small)·X ⇒ M² >= c·n with explicit c. Choose explicit rational ε, η and state the
   finite-X fallback M >= 1/2.
 
+- T5 (sharp constant; same project, after T1–T4 are kernel-checked). Formalize Beckner's sharp Young inequality and
+  Lemma P31-N, giving ρ_L <= β(1 + 2/√(L+1))³ with β = 4/(3√3). This upgrades the dense threshold from ≈ 0.41 to any
+  δ > 2/(3√3).
+  - Follow `.research/agents/lean_beckner_brief.md`, milestones M1–M5. Put those files under
+    `lean/ChowlaCosine/Beckner/`; its rules apply there.
+  - Then formalize the sinc-interpolation proof of P31-N from `.research/agents/p31_report.md`, section "P31-N by
+    exact sinc interpolation".
+  - Partial progress is fine: report exactly which milestones are kernel-checked.
+
 ## Rules
 - Lean project `lean/` (lakefile there). New files under `lean/ChowlaCosine/P31/`. Do not modify existing
   kernel-checked files. Append AxiomCheck entries.
@@ -42,6 +51,6 @@
 - No silent weakening: no finite grid for "all real x", no multiset for set, no restriction of L or n. If you need a
   hypothesis (e.g. state T3 with C as a hypothesis), say so; T2 then discharges it.
 - Builds local (`lake build` in lean/). Numerics, if any, on dirichlet via src/dirun.sh. Never touch the VM fejer.
-- Edit only `lean/ChowlaCosine/P31/`, `lean/AxiomCheck.lean` (append), `lean/ChowlaCosine.lean` (append imports),
+- Edit only `lean/ChowlaCosine/P31/`, `lean/ChowlaCosine/Beckner/`, `lean/AxiomCheck.lean` (append), `lean/ChowlaCosine.lean` (append imports),
   `.research/agents/lean_p31_report.md`, `.research/agents/lean_p31_scratch/`. Do not commit.
-- Report early, update after each target. Order: T3 with C as hypothesis, then T1, then T2, then T4.
+- Report early, update after each target. Order: T3 with C as hypothesis, then T1, then T2, then T4, then T5 (Beckner M1–M5, then P31-N).

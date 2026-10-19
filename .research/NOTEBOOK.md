@@ -895,3 +895,53 @@ Squares are the canonical locally deterministic, front-loaded family, and filter
      profile forces A's front to be near a union of cosets of a subgroup mod q, with explicit dependence;
    - (c) numerics: compute Γ(ψ) for the actual secondary spikes of Bu sets, dense records and arithmetic-front test
      sets (e.g. A = tapered(3Z ∩ [1, Y]) ∪ random tail).
+
+## 2026-10-19 (late) — Strategic review: R3 killed; the P31 family is exhausted at "front-loading"; next mechanisms (lead)
+1. R3 (P32 noise-transfer recursion) is KILLED.
+   (a) Analytic. The bare recursion m_f <= Λ m_g <= … ends at a trivial bound. Each step costs
+       Λθ = (3ρ/2)(1 + θ) > 1 for every θ, since ρ > 2/3. The chain grows.
+   (b) E51. The P32 bound on secondary mass is B >= 1.7·(n/2) on every test set; Bu gives 2.7 at all n.
+       τ ≈ 0.5–0.6 on Bu: g's mass really does sit on f's secondary spikes, since they come from the mod-3 dilation.
+   The full-front step (STATE item) inherits P32's factor (1 + X/w). It only bites when R² << w₀/X, so it is useless for
+   sparse fronts. Parked.
+2. What the P31 family can and cannot give (all checked this session):
+   - Statement. Any nonneg window Φ of degree D, and any PD reweighting ν̂ of f, give
+         Σ_{a∈A}|Φ̂(a)|² >= (n/(ρ(X + D + 1)))·‖Φ̂‖² − 2M².
+     This includes dilated Fejér windows (qZ), GAP windows J − J, Fejér×comb, L^p Nikolskii (p ≠ 2), 2-D lifting via
+     triple products, and low-pass recursions.
+   - Every such inequality is a FRONT-LOADING constraint:
+     - A's weighted density near 0, along every PD pattern (APs qZ, Bohr/GAP sets), must be >= 2δ/ρ ≈ 2.6–2.9δ at
+       every scale u in [3ρR²X, εX].
+     - The low-pass recursion adds: front density is almost non-increasing in the scale, i.e. d(θw)/d(w) >= 0.97/(1 + θ).
+   - Why the recursion cannot close. Each step multiplies the admissible density ratio by 2/(3ρ_eff(1 + θ)).
+     It would force geometric growth, hence dense Chowla with M >= δ^C √n, iff the effective Nikolskii constant were
+     < 2/3. But Fejér attains 2/3. A flat front makes the central window exactly Fejér-shaped, so eff -> (2/3)/(1 + θ)
+     (E53). The gap 0.687 vs 2/3 cannot be closed by Nikolskii arguments alone. KILLED as a route to dense Chowla.
+   - The constant 0.385 (0.344 numerical) is sharp for this method up to window-shape tweaks. The divisibility
+     constraint (U vanishes at the (w+1)-th roots of unity) costs O(θ³) at small θ: no gain.
+3. Front-loaded sets reduce to signed (Littlewood-type) problems.
+   - Write f = P + N: P is the smooth profile part, N the fluctuation.
+   - Smooth decreasing profiles have P >= −O(1). By Euler–Maclaurin the cosine transform is −φ'(0)/(Xx²) + …, plus
+     the boundary term −φ(0)/2.
+   - So all the difficulty sits in N, a SIGNED sum with two-valued coefficients {1 − p(a), −p(a)}.
+   - Flat front of density 1/2: the low-pass fluctuation is a ±½ cosine sum with full support on [1, w]. Chowla for such
+     fronts needs min <= −c√w for Littlewood-type cosine sums: Erdélyi's problem (his n^{1/3} claim has a gap, see
+     LITERATURE).
+   - This explains why window methods stall: they cannot see sign patterns.
+4. Arithmetic is the only lever left. Two observations:
+   - Bu saturates the dilation inequality exactly: M(A ∩ 3Z) <= M(A), |A ∩ 3Z| = n/2, R(D) = √2·R(A) = 1/√2 (E51).
+   - Idealized SR. Suppose the spike set of f is a subgroup of order N_s ≈ R²X with spikes of height ≈ √n/R. Parseval
+     on that subgroup gives Σ_c|A_c|² ≈ n/R², with A_c = A ∩ (c + N_s Z). This is (1/δ)× the equidistributed value, so
+     A ≈ a union of δN_s FULL residue classes mod N_s. Spike signs force the class pattern P ⊂ Z_{N_s} to be PD. A PD
+     0/1 pattern is a subgroup, so A ≈ dZ ∩ [1, X] with d = 1/δ: a dilated FULL interval, which P31 kills (M >> √n).
+   - So in the idealized spike model, small R is contradictory. The real theorem needs a robust (Bohr / approximate-group)
+     version. That is the SR program; the losses per step are the issue.
+5. Active lines going forward (>= 3):
+   - L1 (lower bound, structural): a robust SR₀. If many tall secondary spikes lie at rationals of one denominator q,
+     then A is close to a union of residue classes mod q with a PD pattern. Combine with P31 on A_q.
+     First derivation: a quantitative "near-PD 0/1 pattern on Z_q ⇒ near subgroup" lemma with √-loss, a localized
+     Sanders. Test on Bu (pattern = {0} ∪ {1} mod 3 with weights).
+   - L2 (construction): escape-class probes (E52, two-level profiles running), and a multiplicity-m generalisation of Bu.
+     The counting bound for real-square identities ρ² with K terms and lag multiplicity m is R >= 1/(2√m), so m > 1 is
+     REQUIRED to beat ½. Search for weighted Θ with all difference and sum multiplicities equal to m and aligned weights.
+   - L3 (formalization): the Lean P31 chain. The conditional T3 is kernel-checked; T1 (Fejér–Riesz) is in progress.

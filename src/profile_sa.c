@@ -1,7 +1,9 @@
 /* profile_sa.c — E49: does steep front-loading help? P31 proves M >> √n unless A is front-loaded beyond ~2.5–2.9δ
  * (density near 0 vs average). Simulated annealing on M(A) = −min_x Σ_{a∈A} cos(a x) over sets whose density profile
  * is PRESCRIBED: [1, X] is cut into blocks of length b, and block k holds exactly round(Σ_{a∈block} c(1 − a/X)^p)
- * elements (total n); p < 0 means the power law min(1, c(a/X)^p) (front-loaded at every scale, E50). Moves swap an element with a non-element of the same block, so the profile is exact.
+ * elements (total n); p < 0 means the power law min(1, c(a/X)^p) (front-loaded at every scale, E50); 100 < p < 101 means the
+ * two-level profile (E52): density c on [1, eX], d2 (optional 9th argument) on [eX + 0.05X, X], linear ramp between, e = p - 100.
+ * Moves swap an element with a non-element of the same block, so the profile is exact.
  * mode 1 (free) instead swaps any element with any non-element in [1, X] (calibration).
  * f is even, so it is evaluated on a grid of G = 8X + 1 points in [0, π], with an O(G) incremental update per move.
  * HEURISTIC: grid minimum only; refine/certify winners separately (src/chowla.py).
@@ -21,13 +23,19 @@ static int X, G, n, b, nb, mode;
 static double *ctab, *f, *g;
 static int *in, *blk_lo, *blk_hi, *cnt;
 
+static double dens(int a, double p, double c, double d2) {   /* prescribed density profile at a */
+    double t = (double)a / X;
+    if (p > 100 && p < 101) { double e = p - 100, r = 0.05; return t <= e ? c : t >= e + r ? d2 : c + (d2 - c) * (t - e) / r; }
+    return p >= 0 ? c * pow(1.0 - t, p) : fmin(1.0, c * pow(t, p));
+}
 static inline void addfreq(double *h, int a, double s) { const double *c = ctab + (size_t)(a - 1) * G; for (int j = 0; j < G; j++) h[j] += s * c[j]; }
 static inline double gridM(const double *h) { double m = 1e300; for (int j = 0; j < G; j++) if (h[j] < m) m = h[j]; return -m; }
 
 int main(int argc, char **argv) {
-    if (argc < 9) { fprintf(stderr, "usage: profile_sa mode X p c b iters restarts seed\n"); return 2; }
+    if (argc < 9) { fprintf(stderr, "usage: profile_sa mode X p c b iters restarts seed [d2]\n"); return 2; }
     mode = atoi(argv[1]); X = atoi(argv[2]); double p = atof(argv[3]), c = atof(argv[4]); b = atoi(argv[5]);
     long iters = atol(argv[6]); int restarts = atoi(argv[7]); rs = strtoull(argv[8], 0, 10) * 2654435761ULL + 88172645463325252ULL;
+    double d2 = argc > 9 ? atof(argv[9]) : 0.0;
     G = 8 * X + 1;
     ctab = malloc(sizeof(double) * (size_t)X * G); f = malloc(sizeof(double) * G); g = malloc(sizeof(double) * G);
     for (int a = 1; a <= X; a++) for (int j = 0; j < G; j++) ctab[(size_t)(a - 1) * G + j] = cos(a * M_PI * j / (G - 1));
@@ -35,7 +43,7 @@ int main(int argc, char **argv) {
     n = 0; double carry = 0;
     for (int k = 0; k < nb; k++) {
         blk_lo[k] = 1 + k * b; blk_hi[k] = (k + 1) * b < X ? (k + 1) * b : X;
-        double want = carry; for (int a = blk_lo[k]; a <= blk_hi[k]; a++) want += p >= 0 ? c * pow(1.0 - (double)a / X, p) : fmin(1.0, c * pow((double)a / X, p));
+        double want = carry; for (int a = blk_lo[k]; a <= blk_hi[k]; a++) want += dens(a, p, c, d2);
         int ck = (int)floor(want + 0.5); int len = blk_hi[k] - blk_lo[k] + 1; if (ck > len) ck = len; if (ck < 0) ck = 0;
         carry = want - ck; cnt[k] = ck; n += ck;
     }

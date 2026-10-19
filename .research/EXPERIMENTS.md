@@ -571,3 +571,18 @@ Reading:
    - So the noise-transfer route (R3 recursion) is KILLED as stated (see NOTEBOOK).
 2. Bu exactly saturates the dilation inequality. Averaging over cube roots of unity gives M(A ∩ 3Z) <= M(A), with
    |A ∩ 3Z| = n/2. So R(D) <= √2·R(A), and asymptotically 1/√2 = √2·(1/2). Equality.
+
+## E53 (2026-10-19) Realised P31 efficiency for f and along the low-pass recursion (src/e53_efficiency.py; examples/e53/e53.jsonl)
+Definitions:
+- eff_f(w) = W(n/2 + M²)/((X + w + 1)(M² + s_A/2)). P31 says eff_f <= ρ_L.
+- eff_g(w, θ) is the same quantity for G = g_w at window θw.
+Results:
+- eff_f(X) = 0.37–0.51 on every set (Bu 0.42–0.44, Singer 0.45, dense N50 0.51, SA 0.38–0.44).
+- eff_f(X/16) = 0.05–0.11.
+- eff_g ranges 0.06–0.31 over all (w, θ).
+Reading:
+- Every realised value is far below ρ ≈ 0.687, but only because M² ~ n here.
+- For hypothetical R -> 0 sets the M² terms vanish and eff becomes a pure profile quantity. Then:
+  - triangle profile: eff_f(X) -> 2/3;
+  - flat front: eff_g(w, θ) -> (2/3)/(1 + θ), exactly the recursion's borderline (NOTEBOOK 2026-10-19 late).
+- Not evidence for or against Chowla. It locates where the slack is not.

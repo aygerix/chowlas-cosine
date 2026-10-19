@@ -1046,7 +1046,8 @@ Cauchy–Schwarz on T + m >= 0 gives
     V² <= m²V + mW,    V = mean T², W = mean T³.                                (TD4.moment)
 Hence V >= ηn and W <= B·V^{3/2} imply m >= √(ηn)(√(B²+4) − B)/2.
 For H_q = 1 − cos qx (so m = 2M − a_q/2), put S = A ∪ (−A) and g_q = D_q 1_S = 2·1_S − 1_{S+q} − 1_{S−q}:
-    V_q = ‖g_q‖₂²/16,
+    V_q = (‖g_q‖₂² − 4a_q)/16   (CORRECTED by the round-2 agent, lead-checked: g_q(0) = −2a_q is the mean, which
+                                  centering removes; for A = {1}, q = 1 this gives V = 5/8, not 7/8),
     W_q = Δ_q/32 + (3a_q/2)V_q + a_q/8,
     Δ_q = 10c(0) − 15c(q) + 6c(2q) − c(3q) = ½·Σ_{x+y+z=0} g_q(x)g_q(y)g_q(z),
 with c = 1_S∗1_S∗1_S. So Δ_q is the signed Schur-triple count of the second difference g_q. Equivalently
@@ -1104,7 +1105,8 @@ Hypotheses: [0,1] = 𝒢 ∪ ℬ (disjoint), where:
 - 𝒢 is a union of N_G closed intervals, on each of which p ∈ C² with c₁ <= |p'| <= c₂ and |p''| <= c₃
   ("curved part");
 - ℬ is a union of N_B intervals, on each of which p <= ½ or p >= ½;
-- γ := ∫_𝒢 min(p, 1−p)² − 24·∫_ℬ min(p, 1−p) > 0.
+- γ := ∫_𝒢 p(1−p) − 24·∫_ℬ min(p, 1−p) > 0. (Both terms are linear in the density, so the hypothesis is not weak at
+  small densities.)
 Theorem. There are c = c(c₁, c₂, c₃, N_G, γ) > 0 and X₀ = X₀(p) such that for every σ and every X:
 - M(A) >= c√X >= c√n when X >= X₀;
 - M(A) >= ½ >= √n/(2√X₀) when X < X₀.
@@ -1137,8 +1139,10 @@ Proof.
 6. Spike truncation (P40). Let λ = 2C₆√(KX) and f_bad = f_ρ + Q + f_ℬ.
    - On G* = {|x| >= x₀, |f_bad| <= λ/2} we have f <= λ.
    - Chebyshev on B* = {|x| >= x₀, |f_bad| > λ/2} gives ∫_{B*} f² <= 4‖f_bad 1_{|x|>=x₀}‖².
-   - Hence ∫_{G*} f² >= ½Σ_𝒢 β² − 12‖…‖² − o(X) >= X(½∫_𝒢 min² − 12∫_ℬ min − 6/K) − o(X) >= γX/8 for
-     K = ⌈24/γ⌉ (using β_m² >= min(p_m, 1−p_m)²).
+   - Hence ∫_{G*} f² >= ½Σ_𝒢 β² − 12‖…‖² − o(X) >= X(½∫_𝒢 p(1−p) − 12∫_ℬ min − 6/K) − o(X) >= γX/8 for
+     K = ⌈24/γ⌉.
+   - Here Σ_I β² = Σ_I p(1−p) ± (1 + V(p|_I)) on each curved piece I, exactly: Σβ² = Σa(1−2p) + Σp², and Abel
+     summation with β = s(m−1) − s(m) gives |Σ_I β(1−2p)| <= 1 + V(p|_I).
    - P40: ∫_{G*} f² <= (λ + M)M + M². So M >= min(√γ/8, 3γ/(64C₆√K))·√X. ∎
 Covers:
 - every cumulative rounding of a C² profile with p' ≠ 0, at ANY start density (irrational included), e.g.

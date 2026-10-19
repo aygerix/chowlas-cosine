@@ -1216,7 +1216,7 @@ Verification (lead):
   min coefficients 1/90 and 7/396; E, m1, m2 identical.
 - TD4: closed form for W_q equals the direct rational Fourier cube; 0 mismatches (src/scratch_lm/lead_td4_check.py).
 Physical-space form (P39). With g_q = 2·1_S − 1_{S+q} − 1_{S−q}:
-- V_q = ‖g_q‖²/16;
+- V_q = (‖g_q‖² − 4a_q)/16 (corrected; the zero-frequency term g_q(0) = −2a_q is the mean);
 - Δ_q = ½·T₃(g_q), the signed Schur-triple count of g_q;
 - W_q = (third moment of (1 − cos qx)f).
 - LM asks for one q at which the second difference of S is large while its signed Schur count is <= B·‖g‖³.
@@ -1254,3 +1254,37 @@ Strategic decision:
   - (a) Make P39-O(ii) rigorous at a computable size, or refute it.
   - (b) Decide whether 5th/7th-moment Stieltjes certificates recover a constant on Bohr unions.
   - (c) Extend P38 from cumulative to bounded-local-discrepancy rounding (agent line 3).
+
+## 2026-10-19 (late) — P41 (curved cumulative rounding) and what it says about the escape class
+- P41 (PROOFS) is the first theorem driven by P40 (spike truncation) rather than by a computable moment.
+  - For cumulative rounding, β = s(m−1) − s(m) with s = {σ + Φ} − ½ exactly.
+  - Vaaler plus van der Corput make the curved part's transform uniformly O(√(KX)): a BULK of energy
+    Σp(1−p) ≍ X that no spike can hide.
+  - Front-loading is irrelevant. E66: curved profiles have R ≈ 1.4–3.0 (irrational start density included);
+    kinked or oscillating profiles have linear M.
+- What escapes P41 inside cumulative rounding: rounding energy on FLAT pieces (Sturmian words of fixed slope α), whose
+  energy sits on the spikes 2πkα (height ≈ L/(πk), width 1/L).
+- P41+ (CONJECTURED extension, plausible): flat pieces can be EXCLUDED rather than counted against the bulk.
+  - Remove W/L-neighbourhoods of the first K spikes of each flat piece: total measure ~ K·W/L.
+  - Off-spike, a flat piece is uniformly <= L·log K/W <= √X for W = √X·log K, with L² ~ (log K)²L/W.
+  - So any cumulative rounding with an η-fraction of its rounding energy on curved pieces should satisfy
+    M >= c(η)√n, whatever its flat pieces are.
+  - Gap: the Vaaler truncation on a flat piece needs equidistribution of mα at scale 1/K. α near a rational with
+    denominator <= K needs the exact periodic expansion instead. This is Diophantine bookkeeping, not a new idea.
+- Remaining cumulative-rounding core: staircase profiles with few steps (all energy flat).
+  - The steps give kink sidelobes ~0.22·Δα·m_step (linear M unless compensated; E52), and compensation by later steps
+    is hard because wider steps have narrower lobes.
+  - With >= √X steps the staircase acts like a chirp (bulk).
+  - HEURISTIC: no cumulative rounding beats √n.
+- Round-2 agent: TD5 (in progress) disproves LM-dense rigorously by random rounding of a positive Fejér mixture with
+  J ≍ log X bumps; M >= √n/128 at x = π.
+  - P40 (spike truncation) still gives √n on that family: the noise Z is a bulk off the bumps.
+  - So the failure is specific to the third-moment certificate, not to the spike/bulk mechanism.
+- Conjecture SB (spike–bulk; implies Chowla by P40): there are K, c > 0 with ∫_{f_A <= K√n} f_A² >= c·n for every A.
+  - Intervals satisfy it through their negative sidelobes; Bu/Singer sets through their Exp-distributed bulk.
+  - A violator must put almost all of its L² mass on tall positive spikes with no negative sidelobes, i.e.
+    1_A ≈ Σ_j w_j(m)e^{−imx_j} with every twisted envelope w_j positive-definite (front-loaded) AND 1_A ∈ {0,1}.
+  - The rounding of such a sum must itself be spike-dominated (else bulk), recursively.
+  - First derivation to attempt: a two-level version. ρ = front-loaded profile times a q-periodic pattern; show its
+    0/1 rounding has either bulk >= cn or a kink sidelobe >= c√n. This generalizes P38 + P41 to arbitrary
+    (non-cumulative) roundings of a two-level structure.

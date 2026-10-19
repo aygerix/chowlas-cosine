@@ -833,3 +833,22 @@ Two concrete routes to try next:
   exactly what a multi-scale Bessel lacked.
 Test sets for both: Bu q = 61–401, dense records, triangle-random, squares {k²} (linear M through Gauss-sum peaks).
 Squares are the canonical locally deterministic, front-loaded family, and filter 3 must explain their negative peaks.
+- (R3) Cross-scale spike support (lead, same day). This sharpens R2 and is the current best bet.
+  Local P31 at x₀:
+      (1/2π)∫F_w(x − x₀)²(f + M)² <= ρ(X + w + 1)(M + g(x₀))²,   g = f ∗ F_w.
+  Integrate x₀ over E = (secondary spike set of f) + [−c/w, c/w], EXCLUDING |x₀| < C/w. This gives
+      (1 − O(c^{−3}))·W·m_sec(f) <= ρ(X + w + 1)·(1/2π)∫_E (M + g)².
+  - The central profile peak of g sits at |x| < C/w, so it no longer appears on the right. The front-loading
+    obstruction to low-pass P31 came exactly from that peak.
+  - The right side sees only g's NOISE on E. P29(b) says every secondary spike of f needs a matching spike of g.
+  - Recursion: g >= −M with mean 0 obeys the same spike inequality at its own scale, with its own central share
+    <= ρ*-type and its own noise.
+  - Extreme case, full front A ⊇ [1, w]: g = (F_w − 1)/2 has no noise. Then f has (almost) no secondary spike mass,
+    so f's noise (>= 1 − ρ* of ‖f‖² by the central-share bound) lies below K·M, and (a) forces M >~ √n.
+    CANDIDATE PROOF for full-front sets.
+  - General fronts (density d < 1 near 0): the low part carries noise mass ~ Σκ²d(1 − d) that can support f's
+    secondary spikes. Need the constants across consecutive scales to give a contracting recursion, using the
+    exact P31 constant (no Bessel loss) and the central-share bound at every scale.
+  - FIRST CONCRETE STEP: write the two-scale inequality with all constants
+        m_sec(f) <= [ρ(X + w + 1)/((1 − O(c^{−3}))W)]·[(1 + η) noise_E(g) + (1 + 1/η)M²|E|],
+    and test it numerically on Bu, dense records and triangle-random: how much of g's noise actually lies on E?

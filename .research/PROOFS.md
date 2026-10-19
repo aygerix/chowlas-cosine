@@ -775,3 +775,18 @@ LEAN PLAN (verification route = kernel check; no outside review):
 - (L3) The window inequality: x₀-integration of finite trig sums, Fubini for finite sums, the Fejér kernel F_{w+1} >= 0
   and its coefficients.
 - (L4) Corollaries with explicit constants.
+P31(c), multi-scale form (PROVED, lead 2026-10-19; same proof applied to a low-passed polynomial).
+- For H >= 1, g_H := f_A ∗ F_H = Σ_{a∈A} (1 − a/H)₊ cos(a x) satisfies g_H >= −M (F_H >= 0 has mass 1) and has
+  degree < H.
+- Run the P31 argument on h = F_{w+1}(· − x₀)(g_H + M) >= 0, of degree <= H − 1 + w. This gives
+      W(n_H/2 + M²) <= ρ_{H−1+w}(H + w)(M² + S_H/2),
+  with n_H = Σ_{a∈A} (1 − a/H)₊² and S_H = Σ_{a∈A} (1 − a/H)₊² κ(a)².
+- Consequence: M² >~ ε n_H (1 − ρ(1 + ε)d_ε(H)/(2δ_H)), with δ_H = n_H/H and d_ε(H) the weighted density of A in
+  [1, εH]. So M >> √(n_H) as soon as A is not front-loaded AT SCALE H.
+- "Core + sparse tail" sets are covered whenever the core (the scale H carrying most of the weighted mass) is not
+  front-loaded at its own scale.
+- REMAINING ESCAPE CLASS for P31/P31(c): sets front-loaded at EVERY scale H with every ε. Model case: power-law
+  density profiles φ(t) ∝ t^{−α}, 0 < α < 1. These are Turán-compatible (|t|^{−α} is p.d.) and scale-invariant.
+  This class is now the precise target for both tracks:
+  - lower bound: a new argument for self-similar front-loaded sets;
+  - construction: optimize within power-law profiles (E49 follow-up).

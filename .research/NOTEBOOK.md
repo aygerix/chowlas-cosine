@@ -1913,3 +1913,23 @@ E83 (VM, running) probes it numerically: binary sets seeded from the D-extremal 
    - Bias check: we have only ever found R >= ~0.55 numerically, and every rounding attempt failed by bulk energy. But
      the DC barrier means the analytic tools we have cannot see this obstruction, so absence of a proof is expected,
      not evidence of a counterexample.
+6. (cont. 14, added while round 11 runs) ROUNDING REDUCTION: boundedness is the binary-sensitive core.
+   - Let c ∈ [0,1]^X with min Σc_k cos kx >= −M and variance V := Σ_k c_k(1 − c_k).
+   - Random rounding (b_k ~ Bernoulli(c_k), independent): at each of 4X grid points the error is a sum of independent
+     centred terms with variance <= V. A union bound plus the Bernstein/Marcinkiewicz grid bound for degree-X
+     polynomials gives max_x |Σ(b_k − c_k)cos kx| = O(√(V log X)) w.h.p.
+   - Better: first freeze the coordinates within ε of {0,1}, then use partial-colouring discrepancy (Spencer,
+     Lovett–Meka) on the F = O(V/ε) remaining coordinates, at cost O(√(F log(N/F)))). This is polylog-lossy at worst.
+   - Hence: a [0,1]-valued "escape" with M = o(√X) and V = o(X/polylog X), at density >= 1/C, yields a BINARY dense
+     counterexample. Conversely binary sets have V = 0. So, up to logarithms:
+         binary problem ⟺ positivity + coefficients in [0,1] + approximate integrality.
+   - For c ∈ [0,1], c² <= c, so "second-moment profile = first" already forces approximate integrality (Bhatia–Davis
+     equality ⇒ two-point law). The FOUR-moment layer of round 10 is therefore NOT a relaxation: with boundedness it is
+     the binary problem itself.
+   - The P61 escapes fail precisely by being UNBOUNDED (Gaussian r_k, |r| > ½ with probability about 32% at p = ½).
+   - So any proof of T-dense beyond 1/D must use coefficient BOUNDEDNESS (a convex constraint) together with the
+     second-moment identity. Any construction must produce a bounded (two-point-law) residual made of positive packets,
+     i.e. weighted-PDS spike structure.
+   - This sharpens round 11's Task 2. The cleanest obstruction target is now: positivity + |r_k| <= max(p, 1 − p) +
+     e = p(1 − p) ⇒ d <= D' < D. Bounded random variables with the Bhatia–Davis maximal variance are two-point, so the
+     residual's local law is forced.

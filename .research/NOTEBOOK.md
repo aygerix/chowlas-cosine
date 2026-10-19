@@ -2900,3 +2900,44 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    - Checked: for r >= 6 quadrics the subgroup structure sits at the RANDOM triple level (pairs y ⊥ z are the generic
      solutions; r = 4 has excess/random = O(1)). So the C* core (M >> n^{1/3}) is invisible to this programme, as
      A5(i) says.
+5. AP-block CP certificates (flat APs; P76 subclass), lead, proved:
+   - Write g_d(j) = Σ_L w_{d,L}(L − j)₊ (convex, decreasing, g_d(0) = c_d, C = Σ_d c_d). Coverage is
+     1_A(k) = Σ_{d|k} g_d(k/d).
+   - (a) g_d vanishes from the first j with jd ∉ A on. So step-d blocks cover only the initial run
+     {d, …, r_d·d} ⊂ A.
+   - (b) n <= Σ_d c_d(r_d + 1)/2, so C >= 2n/max_d(r_d + 1). C << √n needs homogeneous APs of length >> √n
+     inside A.
+   - (c) Every prime p ∈ A has c_p >= 1 − g_1(p): primes beyond the step-1 run each cost ~1.
+   - Hence C << √n forces A to be a smoothly front-loaded union of long homogeneous runs d·[1, r_d], mostly of
+     divisor-rich elements, with exactly flat divisor-weighted coverage (multiplication-table type). Not finished;
+     the representation-count fluctuation is the expected obstruction.
+6. L1 corrected: the Paley graph (n/M ≈ √p, clique number O(√p), conjecturally polylog) shows the sharp clique
+   theorem can hold only above ratio 2 (CSTAR A6).
+7. E111 partial (codex, flat-block CP column generation; table in EXPERIMENTS once the report is verified):
+   - Near-extremal dense sets have R ≈ 0.57–0.65 but R_CP ≈ 0.81–0.94. N50_x72: 0.570 against 0.857, with the
+     pricing proved optimal.
+   - Singer differences: R_CP = R (one Sidon block).
+   So the best known sets NEED phase cancellation (F12, numerical), and flat CP never went below ≈ 0.74.
+8. CP½ CONJECTURE (lead): every flat CP certificate has C >= √(2n)·(1 − o(1)), i.e. R_CP >= 1/√2 = the Sidon
+   square value.
+   - ROW DECOMPOSITION (proved). For block B = {b_1 < … < b_s}, the rows L_i = {b_l − b_i : l > i} have distinct
+     lags, L_{i+1} = (L_i − (b_{i+1} − b_i)) ∩ Z_{>0}, and m_B(k) = #{i : k ∈ L_i}.
+     A flat CP certificate is therefore a fractional exact PARTITION of A by rows: Σ_{(j,i)} w_j 1_{L_{j,i}} = 1_A,
+     C = Σ_{(j,i)} w_j, n = Σ w_j|L_{j,i}|.
+   - TOP-LAG WEIGHT (proved). k* = max A lies only in rows L_{j,1} of blocks of diameter k*, each with multiplicity
+     1, so W := Σ_j w_j >= 1.
+   - Equal block sizes s: C² = W²s² >= W·s(s − 1) = 2n. So CP½ holds when all blocks have the same size.
+   - Unequal sizes: OPEN. The worry is small blocks at the top plus big low-weight blocks. Big blocks need fillers at
+     their own top lags (each block's top lag D_j has m_j = 1), which is the recursive version of the top-lag
+     argument.
+9. CP½ proof attempts (lead):
+   - Rank lemma (proved). In any clique B = {b_1 < … < b_s}, rank_A(b_l − b_i) >= s − (l − i), so at most
+     ρ(ρ+1)/2 pairs of B have lag-rank <= ρ.
+     - Exact coverage of the top-ρ lags gives Σ_j w_j·min(ρ(ρ+1)/2, s_j(s_j − 1)/2) >= ρ for all ρ.
+     - As an LP over the size distribution (tail G(t), ψ' = ρG) this allows G = 1/t and C ≈ log n. So rank plus
+       coverage gives only Littlewood strength.
+   - Top-window cost is O(1): bipartite end-structures (a star end gives flat cross-differences).
+   - Equivalent form: CP½ ⇔ ∫G² <= 2(∫G)² for G = Σ_j w_j|F_{B_j}|² = C + 2f_A, an L⁴/L² ratio of a CP sum. A single
+     non-Sidon block has E(B)/s² up to s, so flatness of the sum is the whole content.
+   CP½ remains a CONJECTURE, supported by E111 (no flat-CP certificate below R_CP ≈ 0.754 at X <= 39; single Sidon
+   blocks hit (1/√2)√(k/(k − 1)) exactly). It is a side lemma: its value is to make F12 a theorem.

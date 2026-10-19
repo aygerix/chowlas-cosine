@@ -1629,3 +1629,27 @@ Reading:
 | interval [1, 30] | 30 | 30 | 7.13162 | 7.13162 | 1.000 | 29, 29 |
 - FULL RUN: NOT YET DONE. Next command:
   `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 8 -t 7200 python src/e110_dnn.py examples/e110/e110.jsonl`
+
+## E111 (2026-10-19, cont. 29) Flat completely-positive certificate costs (codex agent; src/e111_cp.py; examples/e111/)
+- Method: flat-block CP LP (Σ_B w_B m_B = 1_A, cost Σ w_B|B|), solved by column generation with Gurobi max-weight
+  clique pricing; two-level blocks optional. Brief: .research/agents/e111_cp_brief.md. Report:
+  .research/agents/e111_report.md (when complete).
+- LEAD VERIFICATION (src/e111_verify.py, independent code):
+  - N50_x72 primal identity holds exactly in rationals, cost 12.11522.
+  - Dual pricing re-solved to Gurobi optimality, max reduced cost 2.2e−16, so the flat-class optimum is 12.1152.
+  - R_CP = 0.857 against R = 0.570.
+- Suite (numerical; "opt" = pricing proved optimal):
+| set | n | X | R | R_CP (flat) |
+|---|---|---|---|---|
+| N50_x72 | 50 | 72 | 0.570 | 0.857 (opt, lead-verified) |
+| N50_x71 | 50 | 68 | 0.573 | <= 0.836 (time limit) |
+| dense X30 s0 / s1 | 20 | 28–30 | 0.607 / 0.601 | 0.808 / 0.842 (opt) |
+| dense X50 s0 / s1 | 34 / 31 | 49 / 45 | 0.604 / 0.635 | 0.842 / 0.823 (opt) |
+| dense X80 s0 / s1 | 54 / 49 | 80 | 0.640 / 0.653 | <= 0.912 / 0.937 |
+| dense X120 s0 / s1 | 73 | 115 / 120 | 0.673 / 0.679 | <= 1.02 / 1.03 (pricing time limit) |
+| Singer q = 5 / 7 / 11 | 15 / 28 / 66 | 29 / 55 / 131 | 0.749 / 0.756 / 0.738 | 0.775 / 0.756 / 0.739 (one Sidon block) |
+| interval [1, 20] | 20 | 20 | 1.110 | 1.112 |
+- Adversarial local search over A ⊂ [1, X], X = 10…39 (20 s per X, seed 20271109): best R_CP 0.754 (X = 12, 13).
+  The X = 23, 24 and 30 optima are single Sidon blocks.
+- Reading: the best known sets need phase cancellation (CSTAR F12). Flat CP stays above ≈ 0.75 at these sizes,
+  consistent with CP½.

@@ -2519,4 +2519,7 @@ Side lemma (CSTAR A5). Setting: f_A + λ = v*Qv with v = (e(iθ))_i and diagonal
 (c) Extreme-lag multiplicities. If B = {b_1 < … < b_s} ⊂ Z, then #{(b, b') ∈ B² : b' − b = b_s − b_i} <= i.
     Consequence: no finite B ⊂ Z has flat multiplicities (contrast the subgroup blocks of F_p^r quadrics). Also
     |A ∩ (a* − Δ, a*]| <= C·(|A ∩ [1, Δ]| + 1) for any CP certificate.
+(d) Sublattice restriction: C_CP(A_q) <= C_CP(A), where A ∩ qZ = q·A_q. Proof: replace each P_j by its q
+    residue-class parts. Their autocorrelations are exactly the qZ-lags, and Σ‖·‖₂² is unchanged. This is the CP
+    form of P13. Hence C_CP(A) >= max_q 2|A_q|/(ω(A_q) − 1).
 Open: CP-Chowla, C_CP >= c√n (E111).

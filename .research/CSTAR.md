@@ -65,6 +65,7 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
 | F10 | Variance conservation. For ANY random A with marginals w_a = P(a ∈ A), and any correlations: ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a). Rounding noise cannot be destroyed, only moved in x. | IDENTITY proved (∫cos(2πax)cos(2πbx)dx = δ_ab/2). The reading "noise must sit under the spikes of E f" is HEURISTIC: large Var(f(x)) where E f ≈ 0 forces negative values only with an anti-concentration input, which is not proved | this file, 2026-10-19 |
 | F11 | No flat multiplicative orbits (torsion-freeness, quantified). For every x ∈ T and K >= 1, with Fejér weights w_k = 1 − abs(k)/(K+1): Σ_{0<abs(k)<=K} w_k f(kx)² >= ½n(K+1) − n². Proof: Σ_k w_k f(kx)² = ½Σ_{a,a'}F_K((a−a')x) + ½Σ_{a,a'}F_K((a+a')x) >= ½n(K+1), from the diagonal a = a' with F_K >= 0. So every orbit segment {kx : 0 < k <= 4n} carries orbit-L² >= n²/2. In F_p^r the quadric's off-cone LINES are exactly flat (f ≡ −M). In Z no orbit is flat. Mild: it holds for any random-like E and kills only line-aligned spike sets (with D8) | proved (elementary) | this file, A3 |
 
+| F12 | C* needs PHASE CANCELLATION. The cheapest cancellation-free (flat completely positive, P76) certificate of the best known dense set N50_x72 has R_CP = 0.857 against R = 0.570 (lead-verified: exact rational primal identity; Gurobi-optimal dual pricing, max reduced cost 2e−16). Dense near-optima: R_CP 0.81–0.94 against R 0.60–0.65. Singer differences: R_CP = R (one Sidon block). No flat-CP certificate below R_CP ≈ 0.754 for X <= 39 (adversarial). The quadric's certificate is CP; Z's is not (spread principle, A6). CP½ (R_CP >= 1/√2) is conjectured; equal-size case proved (NOTEBOOK cont. 29.8) | numerical (E111) + partial proof | this file, A6 |
 ## 3. DESIGN — constructive side (build the object on purpose)
 Design rules implied by §2. A candidate that violates one is dead before it is run.
 - D1 (F1, F2): concentrated. Mass on a set of measure ~ε² (or on high spikes), not flat.
@@ -340,6 +341,9 @@ The prize is (c). Everything else is support.
   CLIQUE CHAIN (each link a research problem):
   - (L1) SHARP CLIQUE THEOREM: M <= ε√n ⇒ A's difference structure is covered by cliques of size ~n/M. Current
     status: JMTZ gives d^{1−O(γ)} with unspecified O(·), which is not sharp.
+    CORRECTION (cont. 29): L1 is FALSE at ratio |S|/K² ≈ 2. The Paley graph has n/M ≈ √p but clique number O(√p)
+    (conjecturally polylog). So L1 can hold only for ratio >= 2 + η, i.e. in the C* regime proper. Bu's cliques
+    (≈ 0.55·n/M) are consistent with either reading.
   - (L2) Cliques + exact two-valuedness ⇒ a near-CP block design (the quadric's certificate IS CP).
   - (L3) CP-CHOWLA in Z (P76): extreme-lag multiplicities forbid flat block designs. E111 is testing this
     numerically.

@@ -504,3 +504,79 @@ open ChowlaCosine
 #print axioms ChowlaCosine.Beckner.integral_partial_x_eq_zero
 #print axioms ChowlaCosine.Beckner.integral_partial_y_eq_zero
 #print axioms ChowlaCosine.Beckner.parabolic_integral_derivative_nonneg
+
+-- 24. P34: arbitrary complex coefficients, full-circle windows and Littlewood bounds.
+#check @ChowlaCosine.P34.circleMean_trigSum_mul
+#print axioms ChowlaCosine.P34.circleMean_trigSum_mul
+#check @ChowlaCosine.P34.circleMean_trigSum_add_sq
+#print axioms ChowlaCosine.P34.circleMean_trigSum_add_sq
+#check @ChowlaCosine.P34.circleMean_fejer_mul_re
+#print axioms ChowlaCosine.P34.circleMean_fejer_mul_re
+#check @ChowlaCosine.P34.circleMean_window_mean_sq
+#print axioms ChowlaCosine.P34.circleMean_window_mean_sq
+#check @ChowlaCosine.P34.p34_main
+#print axioms ChowlaCosine.P34.p34_main
+#check @ChowlaCosine.P34.p34_main_bounded
+#print axioms ChowlaCosine.P34.p34_main_bounded
+#check @ChowlaCosine.P34.p34_elementary
+#print axioms ChowlaCosine.P34.p34_elementary
+#check @ChowlaCosine.P34.p34_main_real
+#print axioms ChowlaCosine.P34.p34_main_real
+#check @ChowlaCosine.P34.p34_main_real_bounded
+#print axioms ChowlaCosine.P34.p34_main_real_bounded
+#check @ChowlaCosine.P34.p34_A
+#print axioms ChowlaCosine.P34.p34_A
+#check @ChowlaCosine.P34.p34_A_real
+#print axioms ChowlaCosine.P34.p34_A_real
+#check @ChowlaCosine.P34.p34_A_phases
+#print axioms ChowlaCosine.P34.p34_A_phases
+#check @ChowlaCosine.P34.p34_A_exists_le
+#print axioms ChowlaCosine.P34.p34_A_exists_le
+#check @ChowlaCosine.P34.p34_A_exists_ge
+#print axioms ChowlaCosine.P34.p34_A_exists_ge
+#check @ChowlaCosine.P34.p34_B
+#print axioms ChowlaCosine.P34.p34_B
+#check @ChowlaCosine.P34.p34_C
+#print axioms ChowlaCosine.P34.p34_C
+#check @ChowlaCosine.P34.p34_C_real
+#print axioms ChowlaCosine.P34.p34_C_real
+
+-- 25. P33 ratio and dilation pinch, with exact finite-root averaging.
+#check @ChowlaCosine.P34.p33_ratio
+#print axioms ChowlaCosine.P34.p33_ratio
+#check @ChowlaCosine.P34.p33_ratio_min_max
+#print axioms ChowlaCosine.P34.p33_ratio_min_max
+#check @ChowlaCosine.P34.dilation_identity
+#print axioms ChowlaCosine.P34.dilation_identity
+#check @ChowlaCosine.P34.dilation_pinch
+#print axioms ChowlaCosine.P34.dilation_pinch
+
+-- 26. P34 supporting lemmas: audit every new public theorem as well.
+#print axioms ChowlaCosine.P34.energy_eq_card
+#print axioms ChowlaCosine.P34.windowMass_le_succ
+#print axioms ChowlaCosine.P34.circleCharacter_norm
+#print axioms ChowlaCosine.P34.trigSum_le_card
+#print axioms ChowlaCosine.P34.energy_le_two_card_mul
+#print axioms ChowlaCosine.P34.trigSum_periodic
+#print axioms ChowlaCosine.P34.trigSum_exists_min
+#print axioms ChowlaCosine.P34.trigSum_neg
+#print axioms ChowlaCosine.P34.littlewoodSum_eq
+#print axioms ChowlaCosine.P34.re_character_mem_trigBand
+#print axioms ChowlaCosine.P34.trigSum_add_mem_trigBand
+#print axioms ChowlaCosine.P34.nikolskii_constant_one_le
+#print axioms ChowlaCosine.P34.windowEnergy_le
+#print axioms ChowlaCosine.P34.nonneg_of_trigSum_ge
+#print axioms ChowlaCosine.P34.continuous_trigSum
+#print axioms ChowlaCosine.P34.circleMean_trigSum
+#print axioms ChowlaCosine.P34.re_mul_re
+#print axioms ChowlaCosine.P34.circleMean_re_character_mul
+#print axioms ChowlaCosine.P34.circleCharacter_re
+#print axioms ChowlaCosine.P34.circleCharacter_im
+#print axioms ChowlaCosine.P34.circleMean_window
+#print axioms ChowlaCosine.P34.coefficients_norm_sq
+#print axioms ChowlaCosine.P34.trigSum_coefficients
+#print axioms ChowlaCosine.P34.energy_coefficients
+#print axioms ChowlaCosine.P34.windowEnergy_interval
+#print axioms ChowlaCosine.P34.phaseCoefficients_norm_sq
+#print axioms ChowlaCosine.P34.trigSum_phase
+#print axioms ChowlaCosine.P34.fejerKernel_zero

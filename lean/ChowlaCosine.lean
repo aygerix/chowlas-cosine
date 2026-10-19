@@ -17,6 +17,8 @@ import ChowlaCosine.P31.WindowBound
 import ChowlaCosine.P31.Main
 import ChowlaCosine.P31.ElementaryConvolution
 import ChowlaCosine.P31.Corollaries
+import ChowlaCosine.P34.Littlewood
+import ChowlaCosine.P34.Secondary
 
 import ChowlaCosine.Beckner.Young
 import ChowlaCosine.Beckner.YoungSpecial

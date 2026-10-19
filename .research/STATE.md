@@ -177,7 +177,8 @@ in parallel.
   - Supersedes Erdélyi 2607.21877v1's claimed n^{1/3}/60.
   - Proof: the P31 chain with complex coefficients. Only |b_j|² enters.
   - Note: .research/notes/littlewood_onesided_P34.md. E61 adversarial optimum ≈ 0.61√n.
-  - The 0/1 instance is kernel-checked. The complex form is the NEXT Lean task.
+  - **KERNEL-CHECKED** (lead-audited): p34_A_phases (√n/4, all n, all phases), p34_B (±1) and p34_C. P33 and the
+    dilation pinch are kernel-checked too.
 - **Dense comparison:** Bu et al. Prop. 9.7 (Oct 2026) gives only n^{1/4} for A ⊂ [1, Cn] and leaves √n open. Our
   kernel-checked dense theorem gives √n for C < 2.466. New lead target T-dense: all C. Note that localized windows are
   exactly critical (NOTEBOOK no-go), so it needs run/boundary input.

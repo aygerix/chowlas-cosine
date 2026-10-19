@@ -20,6 +20,7 @@
 \author{DRAFT --- Chowla cosine project}
 \date{October 2026 (draft)}
 
+\begin{document}
 \begin{abstract}
 Let $T(x)=\sum_{j=1}^{n}\operatorname{Re}(b_je^{ijx})$ with $|b_j|\le 1$. We prove a window--Nikolskii inequality relating
 $M=-\min_{x\in\R}T(x)$ to the coefficient energy $E=\sum|b_j|^2$ and to the energy in low frequencies. Two consequences
@@ -34,8 +35,6 @@ in frequency (it is exactly critical on locally full sets) and show that the exc
 sets with $-\min f_A/\sqrt{|A|}\to 1/2$. The 0/1 case of the main inequality and the dense theorem are formalized in
 Lean~4 (kernel-checked, standard axioms only).
 \end{abstract}
-
-\begin{document}
 \maketitle
 
 \section{Introduction}
@@ -174,9 +173,11 @@ computation, recorded to explain why the density threshold $0.4055$ cannot be lo
 The following are checked in Lean~4 with Mathlib (no \texttt{sorry}, only the axioms \texttt{propext},
 \texttt{Classical.choice}, \texttt{Quot.sound}): the finite Fej\'er--Riesz theorem for every degree; the elementary
 Nikolskii constant of Lemma~\ref{lem:nik}; Theorem~\ref{thm:main} for $0/1$ coefficients (\texttt{p31\_elementary});
-Corollary~\ref{cor:dense} with constant $1/1000$ (\texttt{dense\_elementary}).
-% FILL AFTER AUDIT: complex-coefficient Theorem 2 (p34_main, p34_elementary), Corollary 3 (p34_A: sqrt(n)/4 for every
-% n and all phases; p34_B for +-1 polynomials), P33 and the dilation pinch.
+Corollary~\ref{cor:dense} with constant $1/1000$ (\texttt{dense\_elementary}); Theorem~\ref{thm:main} for complex
+coefficients with $|b_j|\le1$ (\texttt{p34\_elementary}); Corollary~\ref{cor:littlewood} in the form
+$-\min\ge\sqrt n/4$ for every $n\ge1$ and all phases (\texttt{p34\_A\_phases}) and for $\pm1$ polynomials with both
+signs (\texttt{p34\_B}); the dense complex-coefficient version (\texttt{p34\_C}); and two auxiliary facts,
+$M(A)\ge|A|\min A/\max A$ and $|A\cap q\N|\ge|A|/q-(1-1/q)M(A)$.
 
 \begin{thebibliography}{9}
 \bibitem{Bedert} B.~Bedert, \emph{Polynomial bounds for the Chowla cosine problem}, arXiv:2509.05260.

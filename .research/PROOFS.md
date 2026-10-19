@@ -954,8 +954,9 @@ Relation to the literature: Erdélyi arXiv:2607.21877v1 claims n^{1/3}/60 for bo
 the trivial two-sided √n. Its v1 proof has a gap (LITERATURE). P34 gives the sharp order.
 Novelty: one web search plus Erdélyi's own 2026 survey of prior results. No √n one-sided bound was found.
 Checks: E61 adversarial search (phases best −min T/√n ≈ 0.61, flat in n; ±1 signs >= 0.73). All above the bound.
-Lean: the 0/1 instance is kernel-checked (`p31_elementary`, `dense_elementary`). The complex-coefficient
-generalization and Corollaries A–C are the NEXT Lean task.
+Lean: **KERNEL-CHECKED 2026-10-19 (lead-audited, CERTIFICATES).** The complex-coefficient window inequality is
+`p34_elementary`. Corollaries: `p34_A`, `p34_A_phases` (√n/4 for every n >= 1 and all phases), `p34_B` (±1, both
+signs, ∓1 for the constant term) and `p34_C` (dense complex, √n/1000).
 Meaning for Chowla: the window method is phase-blind and sees only the energy profile |b_j|². Unit amplitudes on [1, n]
 are the flattest profile, so the one-sided Littlewood problem is exactly the δ = 1 instance of dense Chowla. Sparse
 0/1 sets (Chowla proper) are hard precisely because their profile can be front-loaded (escape class).

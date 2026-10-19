@@ -102,3 +102,24 @@ NOT done:
 - M5 and the sinc P31-N constant.
 - Consequently P31-N (Beckner constant 0.7698) is still a paper result. The kernel-checked chain uses P31-E (0.811).
 Report: .research/agents/lean_p31_report.md.
+
+## 2026-10-19 (night) P34 + P33 + dilation pinch — KERNEL-CHECKED (codex Lean agent; lead-audited)
+Lead audit:
+- `lake build` passes (8745 jobs).
+- `lake env lean AxiomCheck.lean` gives 321/321 entries, each depending only on [propext, Classical.choice, Quot.sound],
+  with 0 sorryAx. 49 entries are new P34-namespace declarations.
+- grep finds no sorry/axiom/native_decide in lean/ChowlaCosine/P34.
+- Definitions checked: trigSum A b x = Σ_{j∈A} Re(b_j e^{ijx}); energy = Σ‖b_j‖²; windowFreq n = [1, n];
+  littlewoodSum n ε x = Σ_{j=0}^n ε_j cos(jx).
+Headline statements (exact; lean/ChowlaCosine/P34/):
+- `p34_elementary` (Main.lean). For A ⊂ [1, n] positive, ‖b_j‖² <= 1 and ∀x, −M <= trigSum A b x:
+  windowMass w·(M² + energy/2) <= elementaryC(n + w)·(M² + (windowMass w − 1)/4).
+  `p34_main` is the general version, with explicit Fejér–Riesz/Nikolskii hypotheses.
+- `p34_A` (Corollaries.lean). n >= 1, ‖b_j‖² = 1 on [1, n], ∀x, −M <= trigSum ⇒ √n/4 <= M.
+- `p34_A_phases` (RealForm.lean). n >= 1, any θ : ℕ → ℝ, ∀x, −M <= Σ_{j=1}^n cos(jx − θ_j) ⇒ √n/4 <= M.
+- `p34_B` (Littlewood.lean). n >= 1, ε_j ∈ {−1, 1} ⇒ (∃x, Σ_{j=0}^n ε_j cos jx <= 1 − √n/4) ∧
+  (∃x, Σ_{j=0}^n ε_j cos jx >= √n/4 − 1).
+- `p34_C` (Corollaries.lean). ‖b_j‖² <= 1, energy >= (41/100)n, ∀x, −M <= trigSum ⇒ √n/1000 <= M.
+- `p33_ratio` (Secondary.lean). A nonempty, 1 <= m <= a <= X for all a ∈ A, ∀x, −M <= cosSum A x ⇒ |A|·m/X <= M.
+- `dilation_pinch` (Secondary.lean). q >= 1, ∀x, −M <= cosSum A x ⇒ |A|/q − (1 − 1/q)M <= |A ∩ qℕ|.
+Report: .research/agents/lean_p34_report.md.

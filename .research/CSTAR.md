@@ -278,8 +278,29 @@ The prize is (c). Everything else is support.
       - Bohr corollary: K >= |S|δ/(1 − δ), with δ = sup_θ min_{s∈S}‖sθ‖.
       - So C* needs every θ to be o(|S|^{−1/2})-approximable by S. Random S satisfy this, so it is a FACT, not a route.
   (iii) OVERDETERMINATION COUNT (heuristic). The spike measure has ~2δX = 4ε²X free parameters but must satisfy ~X
-      two-valuedness equations on [−X, X]. INV's tolerance η ~ √ε exceeds the random level √(n/X) for sparse sets,
-      so INV alone yields no rigidity there (the exact identity lives in the bulk cancellation).
+      two-valuedness equations on [−X, X].
+      CORRECTED (cont. 29): the original reading compared per-frequency levels and was WRONG.
+      - In L², INV forces off-S mass <= η² × on-S mass, whereas a random m-point measure has off/on ≈ X/n. So INV
+        does force strong spectral concentration.
+      - But that concentration is just ν ≈ p, so it is tautological, not new rigidity.
+  CORRECTION (cont. 29, PROVED). DNN with an UNBOUNDED index set is NO restriction.
+  - Q_T = (1/T)·Toep_T(λδ + ½1_{±A}) is entrywise >= 0 (since 1_A >= 0) and PSD for λ >= M (Toeplitz form of the
+    symbol λ + f_A >= 0).
+  - Its diagonal sums are ½ − k/(2T). Adding (k/(2T))·[[1,1],[1,1]] on {0, k} for each k ∈ A makes them exact, at
+    extra trace ΣA/T → 0. So inf DNN cost = M.
+  - E110 (index set [0, X]) therefore measures only a minimal-degree edge effect, not cancellation.
+  - The genuinely restrictive class is COMPLETELY POSITIVE (CP): 2f_A + C = Σ_j|P_j|², P_j >= 0 coefficientwise.
+  - Each supp P_j is a clique of Cay(Z, ±A) (B − B ⊂ ±A ∪ {0}). Hence Σ‖P_j‖₁² = 2n + C <= ω·C, i.e.
+    C_CP >= 2n/(ω − 1) with ω the clique number (PROVED).
+  - The dual cone is copositive Toeplitz kernels.
+  - Z-specific EXTREME-LAG FACT (proved): in any finite B ⊂ Z with elements b_1 < … < b_s, the lag b_s − b_i has
+    multiplicity <= i. So no block has flat multiplicity, unlike the subgroup blocks of F_p^r.
+    - Corollary (proved): |A ∩ (a* − Δ, a*]| <= C_CP·(|A ∩ [1, Δ]| + 1).
+  - OPEN sub-question CP-CHOWLA: C_CP >= c√n for every A? This would make "C* needs phase cancellation" a theorem
+    (F12) and cap Bu's square-identity paradigm.
+    - Sidon squares give C = √(2n).
+    - Interval, Singer⊗interval and AP blocks all fail flatness (convex triangle sums).
+  - The text below is kept for the record; read "DNN" there as "CP".
   NEW CLASS (route-checked; not in ROUTES): DNN certificates.
   - Definition. f_A + λ = v*Qv with Q ⪰ 0 AND Q >= 0 entrywise. Equivalently (CP form) 2f_A + C = Σ_j|P_j|² with
     nonnegative-coefficient P_j: 1_A is a nonnegative combination of autocorrelations of nonnegative sequences.
@@ -300,6 +321,33 @@ The prize is (c). Everything else is support.
     - If large: C* objects must use complex or signed factors, which is a new forced feature F12.
   - Smoke (2 sets): Sidon differences q = 5: M_DNN/M = 1.024. Interval [1, 30]: 1.000.
 
+- A6 (2026-10-19, cont. 29). SPREAD PRINCIPLE and the clique chain (programme; heuristic links marked).
+  Survey of every known R → 0 object (lead; standard finite-geometry facts, not re-verified in detail):
+  - F_p^r quadrics (r even, η = +1): union of totally singular subspaces.
+  - Semiprimitive uniform cyclotomy C_0 ⊂ F_{p^{2s}} (p ≡ −1 mod e). Ŝ is two-valued, with values
+    ((e − 1)√q − 1)/e and (−√q − 1)/e. So |S|/K² ≈ e and R ≈ √(2/e) → 0. C_0 ∪ {0} is a union of F_{p^s}-lines.
+  - Latin-square-type partial spreads (m subgroups of order q in a group of order q²): |S|/K² = (q − 1)/m.
+  - Unions of coprime-order subgroups in Z_N.
+  ALL are unions of additive subgroups (spreads). Every known subgroup-free object (Paley in Z_p, Singer differences,
+  Bu) sits at |S|/K² ≈ 2, i.e. R ≈ 1/2. Small Z_p half-sets reach 2.08 (E41, p = 71–89), so the constant 2 is not
+  sharp in Z_p. Z has no finite subgroups.
+  SPREAD CONJECTURE (heuristic): |S|/K² >> 1 forces S to be close to a union of subgroups.
+  - In Z: approximate subgroups only, each paying Gibbs.
+  - Its sharp form would give C½.
+  Why energy methods cannot see the spread in the C* core (A5(i)): for r >= 6 the subgroup structure sits at the
+  random triple level. It IS visible as CLIQUES of Cay(G, S): the totally singular subspaces are cliques of size
+  ≈ n/M, which is Delsarte-maximal (ω <= 1 + n/M).
+  CLIQUE CHAIN (each link a research problem):
+  - (L1) SHARP CLIQUE THEOREM: M <= ε√n ⇒ A's difference structure is covered by cliques of size ~n/M. Current
+    status: JMTZ gives d^{1−O(γ)} with unspecified O(·), which is not sharp.
+  - (L2) Cliques + exact two-valuedness ⇒ a near-CP block design (the quadric's certificate IS CP).
+  - (L3) CP-CHOWLA in Z (P76): extreme-lag multiplicities forbid flat block designs. E111 is testing this
+    numerically.
+  Equivalently, C* in Z would need a spread whose blocks have flat multiplicities, and Z-blocks never do (P76(c)).
+  (L3) is the most concrete link. If E111 supports it, attempt a proof next.
+  Numbers: Bu has cliques (Sidon translates) of size k ≈ √n against n/M ≈ 1.8√n.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
+P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).
 P75 (automatic sets: domination-or-twin ⇒ Re μ̂ < 0 ⇒ linear M; 28.5% coverage) + E108 (FPC: all 71,840 small automata certified dead). T-A2 open.

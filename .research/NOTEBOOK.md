@@ -2872,3 +2872,31 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    noise-free.
    E110 smoke: ratios 1.024 (Sidon q = 5) and 1.000 (interval). Full run next.
 6. Stopped here at the user's request (account switch).
+
+## 2026-10-19 cont. 29 — DNN = PSD (correction), CP class, conditional n^{1/3} programme (lead)
+1. PROVED: a nonnegative Gram matrix (DNN) on an unbounded index set is no restriction. The Toeplitz sections
+   (1/T)Toep(λδ + ½1_{±A}) are entrywise >= 0, and 2×2 all-ones blocks repair the k/(2T) defect at trace ΣA/T → 0.
+   E110 (index [0, X]) therefore only measures a minimal-degree edge effect.
+   The restrictive class is CP (nonnegative-coefficient SOS):
+   - C_CP >= 2n/(ω − 1) (cliques of Cay(Z, ±A));
+   - the dual cone is copositive;
+   - extreme-lag fact: lag b_s − b_i has multiplicity <= i.
+   CP-Chowla is OPEN; E111 (codex) computes flat-block CP costs.
+2. Correction to A5(iii): INV does force spectral concentration in L², but that is ν ≈ p (tautological).
+3. Top-window local problem (Q-factor). The top L lags of A are (H·T*) mod z^L, with H = head and T* = the reversed,
+   conjugated tail of the Fejér–Riesz factor. A full top interval costs only K >~ (2/π)log L (power-series square root
+   of 1/(1 − z)). So top-window constraints are Littlewood-strength (log), and √n must be global.
+4. CONDITIONAL n^{1/3} PROGRAMME (heuristic chain; not a proof).
+   - (a) If M << n^{1/3}, on E: Kp⋆Kp = Kp + K(K − 1) with Kp ≈ K/δ >> K². So the normalized spike measure g
+     satisfies g⋆g ≈ g/K on supp g: every spike is a sum of ≈ m/K spike pairs, against a random level m²/X.
+   - (b) MODEL: a union of ~K pairwise-generic approximate subgroups, each of measure δ/K. This is the F_p^4 quadric
+     (2(p+1) planes) at threshold. Caveat: a rank-log₂K Bohr set also gives fraction 1/K, so (b) is not forced
+     combinatorially. Two-valuedness should exclude smooth Bohr sets (their transforms are not 0/1); that is the
+     missing sharp step.
+   - (c) In Z each piece pays Gibbs ≈ c·n/K, so M >~ n/K, i.e. M >~ √n, contradicting M << n^{1/3}.
+   - Conclusion IF (b) holds with K^{1+o(1)} pieces of bounded rank: M >~ n^{1/3} for all A, which beats 1/5.
+     Polynomial-loss versions (pieces K^α, Gibbs K^{−β}) give exponent 1/(1 + α + β), and still beat 1/3 iff
+     α + β < 2.
+   - Checked: for r >= 6 quadrics the subgroup structure sits at the RANDOM triple level (pairs y ⊥ z are the generic
+     solutions; r = 4 has excess/random = O(1)). So the C* core (M >> n^{1/3}) is invisible to this programme, as
+     A5(i) says.

@@ -2508,3 +2508,15 @@ dead by the advisor's finite-prefix certificate (E108a): each has a certified t 
 value is −0.0106).
 Status: PROVED on paper; elementary. It is a construction-class obstruction (CSTAR DESIGN), NOT a C* proof step: it
 kills automatic families at the MACROSCOPIC level, before the mesoscopic (depth-dependent) question arises.
+
+## P76. Nonnegative-Gram and completely positive square certificates (PROVED, lead 2026-10-19 cont. 29; elementary)
+Side lemma (CSTAR A5). Setting: f_A + λ = v*Qv with v = (e(iθ))_i and diagonal sums Σ_iQ_{i,i+k} = ½·1_A(k), k >= 1.
+(a) DNN = PSD on an unbounded index set: inf{tr Q : Q ⪰ 0, Q >= 0 entrywise} = M(A).
+    Proof: Q_T = (1/T)Toep_T(λδ + ½1_{±A}) is >= 0 entrywise and PSD for λ >= M. Add (k/(2T))·J₂ on {0, k} for each
+    k ∈ A. The extra trace is ΣA/T → 0.
+(b) CP bound. If 2f_A + C = Σ_j|P̂_j|² with every P_j >= 0 coefficientwise, then each supp P_j is a clique of
+    Cay(Z, ±A), and C >= 2n/(ω − 1). Proof: Σ‖P_j‖₁² = 2n + C, and ‖P_j‖₁² <= |supp P_j|·‖P_j‖₂² <= ω‖P_j‖₂².
+(c) Extreme-lag multiplicities. If B = {b_1 < … < b_s} ⊂ Z, then #{(b, b') ∈ B² : b' − b = b_s − b_i} <= i.
+    Consequence: no finite B ⊂ Z has flat multiplicities (contrast the subgroup blocks of F_p^r quadrics). Also
+    |A ∩ (a* − Δ, a*]| <= C·(|A ∩ [1, Δ]| + 1) for any CP certificate.
+Open: CP-Chowla, C_CP >= c√n (E111).

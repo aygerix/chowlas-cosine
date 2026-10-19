@@ -9,13 +9,20 @@ fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T
 - A4: the blueprint (continuum) level is consistent, so C* lives entirely in the 0/1 fine structure.
 - A5 (cont. 28): regime split at n^{1/3} (additive structure is visible only for M <~ n^{1/3}; the C* core is
   random-dominated). Hoffman bound recorded as a fact. The rank dichotomy (rigorous E73) is DEPRIORITISED.
-- NEW CLASS: DNN (nonnegative-Gram) square certificates. They contain Bu's core and the F_p^r quadric, and pose the
-  taper problem exactly. E110 script works (smoke ratios 1.024, 1.000).
-- FIRST NEXT STEP: run the full E110 batch
-  `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 8 -t 7200 python src/e110_dnn.py examples/e110/e110.jsonl`.
-  - If M_DNN/M ≈ 1 on near-extremizers (N50, dense rows, Singer differences): attack "Chowla for DNN-certified
-    sets" (clique cover + band edge).
-  - If the ratio is large: record F12 ("C* needs cancellation").
+- cont. 29:
+  - P76 (proved): DNN = PSD on an unbounded index set; CP certificates satisfy C >= 2n/(ω − 1); extreme-lag
+    multiplicities.
+  - A6 SPREAD PRINCIPLE: every known R → 0 object is a union of subgroups, and every subgroup-free one sits at
+    |S|/K² ≈ 2.
+  - CLIQUE CHAIN L1 (sharp clique theorem) → L2 (near-CP design) → L3 (CP-Chowla). L3's one-block case is "no
+    approximate difference sets in Z" (a block with flat multiplicity ρ makes B − B a ratio-ρ object).
+  - E110 (minimal-degree DNN) partial: ratios 1.00–1.07.
+  - E111 (codex, flat-block CP column generation) is RUNNING.
+- FIRST NEXT STEP:
+  - Read .research/agents/e111_report.md and verify it.
+  - If R_CP stays >= ~0.7 while R ≈ 0.57: near-extremizers need cancellation (F12 numerical), and CP-Chowla is the
+    target. Attack it via multi-scale cluster recursion (NOTEBOOK cont. 29).
+  - If R_CP is near R: test L1 (clique sizes vs n/M) on Singer–Bu sets.
 
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 

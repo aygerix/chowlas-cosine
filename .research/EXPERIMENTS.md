@@ -835,6 +835,18 @@ E65 (annealing, src/e65_driver.py, Singer q = 11, k = 12, nD = 66; grid M refine
 - λ = 1.25, 1.5, 1.75, 2.0 give M = 11.03, 10.98, 11.67, 11.69 (ratio 1.35–1.44).
 Conclusion (HEURISTIC, supports T9/T10): the one-Bu-step class closes onto Bu as k grows; λ -> 1.
 
+E65 extended (q = 13, 17, 19; 2·10^7 iterations, 2 restarts). M(λ)/M_Bu at λ = 1.25 / 1.5 / 1.75 / 2.0:
+- q = 11: 1.36 / 1.35 / 1.44 / 1.44
+- q = 13: 1.39 / 1.42 / 1.45 / 1.52
+- q = 17: 1.51 / 1.64 / 1.68 / 1.73
+- q = 19: 1.63 / 1.70 / 1.71 (λ = 2 pending)
+The penalty for λ > 1 GROWS with q. Every λ > 1 has R >= 0.83 against R_Bu ≈ 0.67–0.72. This is stronger evidence for
+T9/T10: the one-step class closes onto Bu.
+E64 second level (D = a Bu set itself, k = 6, |D| = 30, M(D) = 4.0045, R(D) = 0.7311; Mt = 1.05·M(D); 2400 s):
+- No nonempty E is feasible in the time limit (bound 68, not closed). k = 7 (|D| = 42) is running, with no E found
+  after 600 s.
+- Bu sets behave like equioscillating optima: no Bu step can be stacked on them at small slack.
+
 ## E66 (2026-10-19) Cumulative rounding of profiles: R = M/√n vs X (src/e66_cumround.py; examples/e66/e66.jsonl)
 NUMERICAL (box_minlam.true_min, over = 16: grid + Newton; not certified). Phases σ ∈ {0, 0.37, 0.71}; entries are
 min/max of R over σ. g = (√5 − 1)/2.

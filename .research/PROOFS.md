@@ -1458,3 +1458,46 @@ Meaning for Chowla (NOTEBOOK 2026-10-19 night, cont. 2).
   - Bu sets have an exact macroscopic residue atom f_A(2π/3) = n/4 (3-adic structure, known as T8). They do NOT have
     uniform local patterns at every fixed frequency.
   - "P31 is the h = 0 case of P47's filter" is literally false (H_0 = 0). P31 is the identity-multiplier case.
+
+## P56. Round-5 agent results (.research/agents/tdense5_report.md; lead re-checked the items marked ✓) — 2026-10-19
+- ✓ FTL1 (finite TL1, PROVED). Setting: any 0 <= a_m <= 1 on m = 1..Y with mean p, b = a − p, arbitrary angles x_s,
+  c_s = mean b_m e^{imx_s}, W = Σ|c_s|², R = Σ|c_s|, Z_m = Σ c̄_s e^{imx_s}, L = Re Z. Then
+      2W <= 2env(p)/π² + 2B_abs + 32R/(πD) + (16/π + 4p)·R·U_D,
+  where:
+  - B_abs is the pair large-sieve term;
+  - U_D = Σ_{d<=D}|Δ_d|/d² measures the Chebyshev moment defects against the rotated law. These expand into
+    phase-coherent UNBALANCED moments E Z^jZ̄^k, j ≠ k.
+  - Positive-count form: U_D <= C_D Q_D, C_D = Σ3^d/d².
+  - Proof (checked): hinge (Rcosθ − λ)₊ has |a_d| <= 4R/(πd²); Chebyshev majorant of degree D; CVaR comparison with
+    L* = Re(e^{iΦ}Z); P54's rotation bound; W = E(aL) − pE L.
+  The error is R/D, so the degree must grow with R = Σ|c_s|.
+- FTL1-tail: R can be replaced by any T, at the price of the radial moment q_D(T) = E(|Z|/T)^D. This gives a
+  dimension-free version under (E|Z|^D)^{1/D} <= L0√(DW). Binary obstruction: graded spike sets with divergent 4th
+  moment ((1,j) on T², realized by actual words).
+- GTL1 (Gaussian regime, Lindeberg): constant φ(Φ^{−1}(1 − p)), i.e. 2/π at p = ½, with explicit E_D errors.
+- ✓ CY1 (exact cyclic P40 → TL1 bridge). Y even > 2X, a = 1_{A∪−A} on Z/Y, c_k = 2f_A(2πk/Y)/Y,
+  Λ = {k < Y/2 : f > H}. Then
+      2W >= p(1−p) − (4/Y)(HM + 2M²) − T_N,
+  with B = 0 and E L = 0 exactly. CY2 = CY1 + FTL1 gives the relation alternative R·U_D >= (π/16)[γp(1−p) − … ].
+  - LEAD CAVEATS (NOTEBOOK cont. 7):
+    - (P1) The padded support/profile (central lobe, an AP with all c_k > 0) is never graded and supplies E L³ ≍ δ²p
+      by itself, so the relation branch carries no information on the rounding spikes. It must be run block-locally,
+      with the local mean removed.
+    - (P2) L(0) = R ≈ M, so (E|Z|^D)^{1/D} >= R·Y^{−1/D}, and the radial-moment branch holds automatically for
+      mesoscopic spikes.
+- ✓ SG (stable Gram, PROVED). Let h be continuous on R × K, 0 <= h <= 1, h = 0 for |t| > 1, and the transform of a
+  signed measure with negative mass δ. Then h <= 1 − t²/4 + 2δ and b >= m³/12 − 2δm. No rank or J dependence.
+- HBSC (CONJECTURED; agent's single sufficient lemma). Height-uniform binary spectral completion: the tall windows
+  of a counterexample sequence admit [0,1] lifts h_j with captured energy, mass n/X + o(1) and negative spectral
+  mass <= B(C)M/H + o(1). HBSC ⇒ (SG) HBCG ⇒ T-dense (✓ chain).
+- ✓ Interval obstruction: E_out([1,n]; μ) <= C/μ. So QD with any exponent β > ½ is FALSE (μ = n^{−a},
+  1/(2β) < a < 1). This replaces the invalid Singer-at-μ=1 sharpness remark.
+- Fixed-period residue families: M >= 2dX/(3π) − (q + 1)(1 + 3π/2) (Abel at x = 3π/(2X)). Bu sets have the torsion
+  atom f(2π/3) = n/4 but are excluded rigorously by P16 and P31.
+- NUMERICAL: 90 saved sets, 360 tall-spectrum and 360 cyclic rows (tdense5_scratch/). The golden half-window has
+  two-sided mass 0.81066 → 8/π². Cosine-majority words with S = 4, 16, 64: 0.656, 0.640, 0.6395 → 2/π.
+  No zoo row approaches ε → 0.
+- Lead addition (PROVED, NOTEBOOK cont. 7): uniform LAW-LEVEL TL1 by radial truncation.
+      W <= k_p√(W + B) + 4√(2(W + B)/(πD)) + A_D + p|E L|,
+  where A_D is the angular-harmonic defect of the law of Z truncated to |Z| <= √(πD E|Z|²/2). The relative error
+  4√(2/(πD)) is uniform in S, R and the tails. The bridge from the angular defect to usable structure is the gap.

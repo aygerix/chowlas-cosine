@@ -96,3 +96,16 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   Galois-ring relative difference sets are classical (Hammons–Kumar–Calderbank–Sloane–Solé 1994; Ma–Schmidt on
   (2^a,2^a,2^a,1)-RDS, which as I recall need exponent <= 4, so they are not cyclic for a >= 2; this recollection is NOT
   verified). Their use as run-top extremisers was not found in these two papers. No wider search was done.
+
+## Dense case in Z (quick novelty check 2026-10-19, one extended web search)
+- No Chowla-type √n (or any power better than the general n^{1/5}) lower bound was found specifically for dense
+  A ⊂ [1, N] with |A| >= δN.
+- Closest results: Sanders 0807.5104 (dense symmetric sets in finite groups: M_G(A) >= |A △ H|^{Ω(1)} for some
+  subgroup H) and Spencer's half-sets of Z/pZ with M = O(p^{1/2}).
+- A proofatlas.ai collaboration page on the conjecture exists (not read).
+- So the heuristic dense-Chowla argument (NOTEBOOK 2026-10-19 item 5: Turán + Bessel + doubly positive) would be new
+  if made rigorous. This is not a thorough survey: re-check before claiming novelty.
+- Sources:
+  - https://arxiv.org/pdf/0807.5104
+  - https://arxiv.org/pdf/2509.03490
+  - https://www.proofatlas.ai/collaboration/chowla-cosine-conjecture/

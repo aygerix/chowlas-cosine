@@ -1933,3 +1933,55 @@ E83 (VM, running) probes it numerically: binary sets seeded from the D-extremal 
    - This sharpens round 11's Task 2. The cleanest obstruction target is now: positivity + |r_k| <= max(p, 1 − p) +
      e = p(1 − p) ⇒ d <= D' < D. Bounded random variables with the Bhatia–Davis maximal variance are two-point, so the
      residual's local law is forced.
+
+## 2026-10-19 (night, cont. 15) — While round 11 runs: front rigidity, taper coupling, and what binarisation really needs (lead)
+Context: round 11 (report, partial) has D₁ = 259/2000 (pending lead verification), the quantified DC barrier, the
+full-Haar kurtosis inequality, and the Paley boundary (positive packets at quadratic-residue positions give a two-valued
+residual off qZ, but half the variance sits on the exceptional class qZ with unbounded values).
+1. Kurtosis is the wrong proxy; two-pointness is the right one (HEURISTIC + elementary checks).
+   - One bounded packet r_k = W(k/X)cos(kθ) is a positive configuration with m = O(1) and local kurtosis 3/2.
+     J equal incommensurable packets give 3 − 3/(2J). So bounded positive configurations can be platykurtic.
+   - What they cannot be is TWO-POINT. A finite non-order-2 positive configuration has kurtosis >= 3/2 (full-Haar), and
+     binary at p = ½ needs 1. The order-2 character (−1)^k is the only exception, and it is the θ = π rational atom.
+2. Front rigidity in the exact (macroscopic) model (PROVED in that model; consistent with P53, different emphasis).
+   - Model: the local residual at t is 1_{E_t} − p_t on a compact abelian H (closure of k ↦ (kθ)_θ), Haar-equidistributed
+     windows, with expansion Σ_θ a_θ m_θ(t) χ_θ, a_θ >= 0 (positive spikes), m_θ continuous PD in t, m_θ(0) = 1.
+   - t = 0: ĝ >= 0 for g = 1_{E_0}. Fejér summation gives Σĝ = g(0) <= 1, so g is continuous, E_0 is clopen and 0 ∈ E_0.
+     A {0,1}-valued continuous PD function with g(0) = 1 is the indicator of an open subgroup H_0 (|g(x+z) − g(z)|² <=
+     2(1 − g(x))). So a_θ = (1/ℓ)·1[θ ∈ H_0^⊥], ℓ = 1/p_0.
+   - t > 0: the spectrum of 1_{E_t} lies in the finite group H_0^⊥, so E_t is a union of H_0-cosets and p_t ∈ (1/ℓ)Z.
+     Continuity forces p_t ≡ 1/ℓ. But energy-PD makes e = p(1 − p) PD with support [−1, 1], so e(1) = 0 and p(1) = 0.
+     Contradiction.
+   - At p_0 = ½ the subgroup has index 2: the pattern is (−1)^k, a θ = π atom of weight ½. This also contradicts round
+     11's total rational-atom budget Σ W_θ(0) <= ½ − a at a = ½.
+3. The Z-specific lever is the TAPER COUPLING (Fourier domination).
+   - All local patterns share one spike set, and the envelopes are PD, so |m_θ(t)| <= 1. Hence |1̂_{E_t}(θ)| <=
+     1̂_{E_0}(θ) for every θ ≠ 0 and every t. The binary pattern at every frequency position is Fourier-dominated, with the
+     same signs, by the front pattern.
+   - Z_p has no analogue. Embedding (round 11): Z_p-Chowla at density δ ⇒ T-dense(1/δ). The cyclic problem is HARDER,
+     since Sanders 0807.5104 Thm 1.2 has only exponent 1/3 for half-sets. The taper is what makes Z easier, and
+     second-order theory already exploits it up to 1/D.
+4. Mesoscopic version: what a proof beyond 1/D must supply.
+   - The front step needs "ε-approximately PD indicator ⇒ near open subgroup" in the mesoscopic closure group. The
+     tolerance is ε·N ≈ M = o(√N) in eigenvalue normalization (N ≈ X resolvable points), i.e. a √-strength Sanders
+     dichotomy at density ½. That is open even for Z_p.
+   - Either the coupling (3) substitutes for √-Sanders, or the front must have p(0) < ½ for a different reason.
+   - Candidate lemma (TD-COUPLE, CONJECTURED). Let E_0 ⊂ G (|G| = N) have density ½ and λ_min(E_0) >= −K. Let E_t,
+     t ∈ [0, 1], be sets with 1̂_{E_t} = 1̂_{E_0}·m(t), each m(·, θ) PD in t, and |E_1| = 0. Then K >= c√N.
+     - The coupling alone (no taper) is vacuous.
+     - Falsification test: cyclic G = Z_q with E_0 = Paley. Ask whether any dominated family tapers to density 0 with
+       PD envelopes up to tolerance o(√q)/q.
+5. Staircase-taper cost (HEURISTIC). Consider a residue-pattern family A = {k : k mod q ∈ E_{k/X}}, q <= X, built by
+   removing residues one at a time.
+   - Each spike's envelope Ê_t(r) is a staircase of about q steps of size about 1/q. Its Dirichlet tails at offset y
+     add up to about √q/(q|y|) for random removal times, which is X/√q at y ≈ 1/X.
+   - So uncoordinated binary tapers cost M ≳ X/√q >= √X. Single-modulus mesoscopic designs need COORDINATED removal
+     times across all spikes. That is the integer form of the coupling in (3).
+6. Capacity check (elementary): binary completion of round 11's Paley escape fails.
+   - The QNR spikes of the binary pattern on Z∖qZ have height about −X/(2√q).
+   - The only compensator at primitive positions 2πs/q is A ∩ qZ, whose spike height is <= |A ∩ qZ| <= X/q.
+   - Hence M >= X/(2√q) − X/q, i.e. R ≳ const for every q <= X. In general, a position s with gcd(s, N) = g has capacity
+     about gX/N.
+Decision: the binarisation layer is a coupled (taper + front) problem, not a free cyclic one. Round 12 candidates:
+(a) TD-COUPLE in Z_q and in mesoscopic Bohr models (prove or construct); (b) quantify (2) with tolerances (a finite
+P53 at the front with explicit √-type loss); (c) continue certificate tightening only if cheap.

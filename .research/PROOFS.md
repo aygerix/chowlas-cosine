@@ -2086,3 +2086,47 @@ Status: paper proofs (agent), lead spot-checked items 1–3. None kernel-checked
 - full-frequency incidence (adaptive, not prescribed frequencies);
 - growing-degree or full Galois arithmetic;
 - block-free coordinated q ≈ X binary tapers.
+
+## P66. CUBIC FRONT CAP: dense Chowla with exponent 1/3 for every C < 3000/259 = 11.583 (lead, 2026-10-19; paper proof)
+Theorem. For every C < 3000/259 there is c(C) > 0 with M(A) >= c(C)|A|^{1/3} for every finite A ⊂ Z_{>0} with
+max A <= C|A|. The constant is INEFFECTIVE. Numerically the method reaches C ≈ 15.1 (E88, E93).
+Position.
+- Bu et al. 2610.17160v1 Prop. 9.7 gives exponent ¼ for every C.
+- T-dense (P63) gives exponent ½ for C < 7.722.
+- So the range 7.722 <= C < 11.583 newly gets exponent 1/3 > ¼.
+Proof.
+1. Contradiction sequence: X_j <= Cn_j, M_j = o(X_j^{1/3}). P58 steps 1–3: p is continuous and PD with
+   a = p(0) = max p <= ½ (P59.1), p(±1) = 0, d = ∫_0^1 p >= 1/C.
+   - High-pass: T = (1 − κ_h)f_A >= −M, where κ_h ∈ [0, 1] is the normalized Fejér multiplier. Then h = T − r_0/2 + m
+     is >= 0 with ĥ(0) = m <= M, ĥ(k) = r_k/2 for k ≠ 0, r = a − k_h⋆a.
+2. Cubic Schur. ĥ is a PD sequence (h >= 0), so ĥ³ is PD: m³ + 2Σ_{k>=1}(r_k/2)³cos kx >= 0, i.e.
+       Σ_{k>=1} r_k³ cos kx >= −4m³   for every x.
+3. Cubic profile. For binary a (a² = a³ = a):
+       r³ = a − 3aq + 3aq² − q³ = r(1 − 3q + 3q²) + g(q),   g(u) = u(1 − u)(1 − 2u).
+   The scaled q -> p strongly (P58.3), so (1/X)Σ_k r_k³δ_{k/X} -> g(p(t))dt.
+4. Put x = y/X in step 2 and divide by X. Since 4m³/X -> 0, ∫_0^1 g(p(t))cos(ty)dt >= 0 for all y.
+   - So the even extension of g∘p (continuous, bounded, >= 0) is PD, and g(p(t)) <= g(a) for all t.
+5. On [0, ½], g has its unique maximum at u* = (3 − √3)/6 = 0.21132…, where g(u*) = √3/18.
+   - If a > u*, the intermediate value theorem (p continuous, p(0) = a, p(1) = 0) gives t with p(t) = u*. Then
+     g(p(t)) > g(a), contradicting step 4.
+   - Hence a <= u*, and e(0) = a(1 − a) <= 1/6.
+6. P61 with x ↦ φ(σx), as in R12-B (P64.5): p = φ(4e) <= φ(σ·e/e(0)) with σ = 4e(0) <= 2/3. Jensen over the Gabor
+   mixture gives d <= D_{2/3} <= (2/3)D <= (2/3)(259/2000) = 259/3000. This contradicts d >= 1/C for
+   C < 3000/259. ∎
+Remarks.
+- Why it was missed. NOTEBOOK cont. 13.3 used only the anchored total (x = 0), Σĥ(k)³ >= −m³, which binarity does not
+  contradict. The PROFILE version (all x) costs m³/X: it is invisible at exponent ½ (consistent with the DC barrier,
+  P63.2) but available at exponent 1/3.
+- The exact identity r³ = r(1 − 3q + 3q²) + g(q) shows the cubic information is "g(p) is PD up to a residual
+  fluctuation". The fluctuation is o(X), so m³ ~ X is the true limit: the method stops at exponent 1/3.
+- The cubic constraint binds beyond the cap: at the D_{2/3} optimiser, FT[g(p)] dips to −0.0022 (E93). So the
+  numerical reach exceeds 15.11; E93b gives the constrained value.
+- Higher orders. M = o(X^{1/j}) makes the j-th central Bernoulli moment profile PD. j = 4 gives e(1 − 3e), whose
+  maximum is again at e = 1/6. NOTEBOOK cont. 13.2's square hierarchy at exponent ¼ gives a <= 0.146. Both are
+  dominated by Bu's ¼ for all C.
+- Rigorous improvement path: a dedicated certificate for D_{2/3} (the P63 machinery with φ(2x/3)), and the cubic PD
+  constraint inside the certificate. That would move 11.58 towards ≈ 15.
+Status: paper proof (lead). Its inputs are P58, P59.1, P61(a) and P63's rigorous D <= 259/2000; it adds only steps 2–5.
+Not kernel-checked; codex adversarial check pending. Novelty: grep of PROOFS/NOTEBOOK for cubic profile, Schur cube,
+X^{1/3} and u* found only the anchored-total remark (cont. 13.3) and the exponent-¼ square hierarchy (cont. 13.2).
+External priority is unchecked.

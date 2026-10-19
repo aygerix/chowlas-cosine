@@ -1346,3 +1346,16 @@ Reading:
   - Gurobi rounding at X = 128, 256: R ≈ 0.90, 1.18.
   - The smooth profile contributes only −0.25 … −0.20 at each dip; the residual carries the whole dip.
 - No new record. The constructive track's best certified R is unchanged (0.5537, E25).
+## E92–E93 (2026-10-19) Third-order profiles and the cubic front cap (src/e92_third_profile_pd.py, src/e93_cubic_cap.py, src/e93b_cubic_reach.py; examples/e92, e93)
+- E92 (NUMERICAL). At the P61 optimiser (E82, N = 320) the third-profile defect s = e(1 − 2p) is NOT PD: min FT −0.0195
+  at ξ = 8.25, relative −0.23. The triangle gives −0.0123.
+  - So PD gadgets (NOTEBOOK cont. 17.8) cannot supply it. p, e and p³ + 3pe are PD.
+- E93 (NUMERICAL). At the D_{2/3} optimiser (E82 λ = 2/3, N = 160; a = 0.211325 = u*), the cubic profile
+  g(p) = p(1 − p)(1 − 2p) has min FT −0.0022 at ξ = 9.1, against FT(0) = 0.084. So P66's cubic PD constraint binds
+  beyond the front cap.
+- E93b (NUMERICAL). Maximise ∫φ(σw²) over step G (N = 80) and σ <= 2/3, subject to FT[g(p)] >= 0 on ξ ∈ [0, 120], by a
+  penalty method (μ = 1e2 … 1e6, L-BFGS-B, warm start from the E82 λ = 2/3 row).
+  - Result: d = 0.064013, i.e. C = 15.62, with residual FT violation −7e−7.
+  - The optimum keeps σ = 2/3 (a = u*).
+  - Reading: the exponent-1/3 reach of "second order + cubic profile PD" is ≈ 15.6 numerically. The rigorous value
+    is C < 11.583 (P66) via D_{2/3} <= (2/3)·259/2000.

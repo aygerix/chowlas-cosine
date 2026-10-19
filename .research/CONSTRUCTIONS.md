@@ -24,3 +24,12 @@ Sidon-type cosine sums — the same missing lemma as SNZ (STATE line 1).
 ## Dense family status (E14, E16–E18)
 Best certified finite R = 0.56481 (N=36). Theory (E16): ρ <= ρ* ≈ 0.7239 for doubly-positive profiles; unless rounding
 errors are positively skewed the dense limit is >~ 0.5255. LNS/SA data rise with N past 36.
+
+## Bu step as a map; the bi-flat target (2026-10-19; NOTEBOOK "Construction track")
+- Dilation pinch (PROVED): |A ∩ qZ| >= n/q − (1 − 1/q)M. One dilation level gains at most √q in R. Bu: √2 at q = 3.
+- Map. If D admits a BI-FLAT factor V (autocorrelation 0/1 off 0, autoconvolution 0/2, up to junk), then
+  A = 3D ∪ (3Σ + 1) has R(A)² = R(D)²/(1.5 + R(D)²) + (junk). Iterating gives R -> 0.
+  - Only known bi-flat family: unimodular Sidon (Bu, R -> ½).
+  - Any bi-flat V with R(D) < 1/√2 beats ½. Multiplicity >= 2 is necessary; exact versions are impossible in Z, so it
+    must be approximate.
+- Status: OPEN target. No candidate yet.

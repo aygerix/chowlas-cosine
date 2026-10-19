@@ -945,3 +945,51 @@ Squares are the canonical locally deterministic, front-loaded family, and filter
      The counting bound for real-square identities ρ² with K terms and lag multiplicity m is R >= 1/(2√m), so m > 1 is
      REQUIRED to beat ½. Search for weighted Θ with all difference and sum multiplicities equal to m and aligned weights.
    - L3 (formalization): the Lean P31 chain. The conditional T3 is kernel-checked; T1 (Fejér–Riesz) is in progress.
+
+## 2026-10-19 (late, cont.) — Construction track: dilation pinch, Bu as one step of a map, the BI-FLAT target (lead)
+1. Dilation pinch (PROVED; elementary).
+   - Statement. For every q >= 1: Σ_{j=0}^{q−1} f_A(2πj/q) = q|A ∩ qZ|, hence
+         |A ∩ qZ| >= n/q − (1 − 1/q)M.
+     A small-M set has at least its fair share in EVERY qZ, up to M.
+   - An L² version (average (f + M)² over the q shifts, use Σg² <= (Σg)² for g >= 0) gives the weaker
+     n <= q|A ∩ qZ| + 2(q − 1)M².
+   - Consequences:
+     - With A ∩ qZ = qD and E = A \ qZ: |E| <= (q − 1)|D| + (q − 1)M.
+     - So R(A) >= R(D)/√q·(1 − o(1)): ONE dilation level gains at most √q.
+     - Bu (q = 3, |E| = |D|) gains √2; the ceiling is √3.
+2. The q = 3 geometry.
+   - Write P(x) = f_D(3x) + M >= 0 and Z = Ẽ₁ + conj(Ẽ₂), with Ẽ_r the exponential sum over E ∩ (r + 3Z).
+     Then f_A >= −M at x, x + 2π/3, x + 4π/3 iff Z(x) lies in the equilateral triangle {Re(ω^j z) >= −P(x)}: inradius
+     P, circumradius 2P.
+   - ‖Z‖² = |E|, since the cross term vanishes: positive vs negative frequencies.
+   - Bu: Z = ½e^{ix}F(3x)² with F = F_S, so |Z| = P exactly. The incircle is safe for EVERY phase.
+     Bu saturates the "phase-blind" bound |E| <= ‖P‖² = M² + |D|/2. For Sidon differences, M² = |D|/2, so |E| = |D|.
+   - Beating the incircle needs phase control: Z near the vertices whenever |Z| > P. Polynomial phases are continuous, so
+     exact vertex-locking is impossible; approximate locking is open.
+3. Bu as a map, and the BI-FLAT target (precise).
+   - Suppose V = Σ v_θ e^{iθy} satisfies, up to junk J₁, J₂:
+         |V|² = 2M + 2f_D + J₁   (autocorrelation 1 on ±D, 0 elsewhere off 0)
+         V²   = 2Ẽ_Σ + J₂       (autoconvolution 2 on Σ, 0 elsewhere).
+   - Then A = 3D ∪ (3Σ + 1) has f_A = (Re(e^{ix/2}V(3x)))² − M − J₁(3x)/2 − ½Re(e^{ix}J₂(3x)).
+     So M(A) <= M + (junk); Bu bounds the junk more cleverly than by ℓ¹.
+   - Size: |Σ| = ‖½V²‖² = ∫P² = M² + |D|/2. Hence
+         R(A)² = R(D)²/(1.5 + R(D)²).
+     So R(A) < ½ iff R(D) < 1/√2.
+   - Iterating, with every level admitting a bi-flat factor, gives R² -> 0 geometrically (factor 2/3 per level).
+   - Known instance: Sidon S with v ≡ 1. Here R(D)² = k/(2(k − 1)) -> ½⁺ and R(A) -> ½ (Bu).
+   - Obstruction to the naive iteration. A Bu set's natural factor is real/symmetric (ρ = Re(e^{ix/2}F)). Symmetric
+     supports have autoconvolution = autocorrelation: ratio 1, but 2 is needed. The resulting next level is the
+     (1 + cos x)-blow-up, with coefficients ½.
+   - Counting. For a real v >= 0 with lag multiplicity m and aligned weights, R(A) >= ½√(‖v‖²/K) ~ 1/(2√m). So
+     multiplicity m >= 2 is REQUIRED.
+   - Small cases:
+     - The parallelogram support {0, a, b, a + b} is infeasible: it forces v₀² + v₀^{−2} = 1.
+     - Exact uniform multiplicity in Z is impossible for difference-set lifts: a difference set inside half the cyclic
+       group would be a perfect Golomb ruler (K <= 4).
+     - So any bi-flat V with m >= 2 must be APPROXIMATE, with Bu-style junk control.
+4. NEXT (construction):
+   - (a) Numerically search for approximate bi-flat V. Variables: complex v on a structured support (union of a Sidon
+     set and its translate, GAP × Sidon, Singer-mod lifts with two weights). Objective: ℓ¹ deviation of the
+     autocorrelation from {0, 1} plus that of the autoconvolution from {0, 2}, against ‖v‖²/Σ-count.
+   - (b) Phase-locking: can Z = ½e^{ix}F² + δZ, with δZ supported on the class-2 frequencies, push |E| above ‖P‖²
+     while staying in the triangle?

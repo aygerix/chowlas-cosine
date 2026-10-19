@@ -128,19 +128,19 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 - E37g (src/e37g_batch.sh): Gurobi group run-top ILP, 18 instances → examples/cyclic_ilp/e37g.jsonl.
 - Codex agent: see NOTEBOOK for the current brief (one at a time).
 
-## Active lines (>= 3) (updated 2026-10-18 late night)
-1. [lower bound, dense] Line D (above). The finite model Z_p has no subgroups. E10 shows that in the sparse regime
-   Z_p still allows grid-R ≈ 0.31, so any Z proof needs continuity. Only the dense regime might be provable in Z_p.
-2. [lower bound, universal] Run-top route mapped:
-   - group exponent exactly 4 (P22);
-   - the two-step scheme is capped at 1/3 in Z;
-   - JMTZ capped at 1/6 with an optimal clique theorem.
-   No Z-specific run-top mechanism yet; OR(2) gave only the rotation sweep.
-3. [C½ for construction classes] P16/P16′ (Bu class, kernel-checked); λ-rulers killed (P23). Line D's half-set data
-   doubles as dense-regime evidence.
-4. [construction] Dense FR supports: the agent's report is the next input. Every other known mechanism is pinned at
-   >= 1/2.
-5. [verification] Lean: P21 and the negative-definite fibre lemma done; next O4⁺ via codex.
+## Active lines (>= 3) (updated 2026-10-19)
+1. [lower bound, dense/profile] NEW lead line. P29 (Turán), then P31 (window–Nikolskii): Chowla for non-front-loaded
+   and dense (>= 0.39) sets. Next:
+   - finish Lemma P31-N;
+   - attack the front-loaded escape class (multi-scale/effective-degree P31);
+   - P30/E47 spike-share as the diagnostic.
+2. [lower bound, Z-specific run-top] OR(2)-weak. P27 Theorems A/B/C (bounded unions of translated dilates). The codex
+   agent OR3 is on spread residues, the k^{3/2} loss and structure vs randomness.
+3. [C½ for construction classes] P16/P16′ (Bu class, kernel-checked). Line D Z_p half-set data.
+4. [construction] Every known mechanism is pinned at >= 1/2. E47 quantifies the target: >= 28% of ‖f‖₂² must sit in
+   secondary spikes far above M; no known family does this. P31(iii): a counterexample must be front-loaded beyond
+   2.9δ. That is where to search (core + sparse-tail designs).
+5. [verification] Lean T0–T3 done. Next: P27 Theorem C, P31 after review.
 
 ## Compute policy
 Gurobi 13.0.3 full distribution at /opt/gurobi1303/linux64 on dirichlet with the user's licence

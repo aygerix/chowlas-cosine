@@ -1501,3 +1501,44 @@ Meaning for Chowla (NOTEBOOK 2026-10-19 night, cont. 2).
       W <= k_p√(W + B) + 4√(2(W + B)/(πD)) + A_D + p|E L|,
   where A_D is the angular-harmonic defect of the law of Z truncated to |Z| <= √(πD E|Z|²/2). The relative error
   4√(2/(πD)) is uniform in S, R and the tails. The bridge from the angular defect to usable structure is the gap.
+
+## P57. Round-6 agent results (.research/agents/tdense6_report.md; adversarial "formal escape" round) — 2026-10-19
+Lead re-checked the items marked ✓.
+- ✓ Tent-lift identity (PROVED). Let X = max A, Y = X + 1, φ = (1 − |u|)₊, and
+  h_θ(t) = Σ_a [e^{iaθ}φ(Yt − a) + e^{−iaθ}φ(Yt + a)]. Then
+      Q_θ(y) = (2/Y) sinc²(y/(2Y)) f_A(θ + y/Y),
+  and the total negative spectral mass is exactly mean_circle|f_A| >= n/(n + M), for every center θ.
+  - Proof: the triangle transform plus the periodization Σ_k 4sin²(u/2)/(u + 2πk)² = 1.
+  - On |y| <= T the negative mass is <= 2TM/(πY). So the negative mass ESCAPES to spectral infinity (microscopic
+    scales). It is invisible to compact-frequency limits, yet ≍ 1.
+  - Singer differences with H = n^α (½ < α < 1) have M/H → 0 but negative mass >= 1 − o(1). This refutes O(M/H)
+    negative mass for these natural lifts.
+- ✓ Binary-faithful lifts: from SG, b = o(1) forces δ >= m²/24 − o(1). Any lift preserving the microscopic binary
+  pattern fails the HBSC bound. HBSC must coarse-grain, i.e. become fractional.
+- ✓ Weighted Gram (sharpens SG; PROVED). D_N(u) = (1 − cos u) − (1 − cos Nu)/N² is >= 0 (and <= 2), from
+  |1 − e^{iNu}| <= N|1 − e^{iu}|. Then:
+      h(z) <= 1 − 1/N(t)² + ∫D_N(arg χ_ξ(z)) dν₋(ξ),   b >= m³/12 − G(h).
+  D_N vanishes to fourth order at u = 0, so only high-phase negative mass counts. WGC (CONJECTURED) is HBSC with
+  G(h) in place of δ; WGC ⇒ T-dense.
+- ✓ Fractional relaxation (PROVED, elementary). Over weights 0 <= a_m <= 1 with Σa = n <= (X+1)/2, min(−min F) = n/X
+  EXACTLY.
+  - Lower bound: Σ_j F(2πj/(X+1)) = 0.
+  - Attained by the Fejér weights a_m = (2n/X)(1 − m/(X+1)), F = (n/X)(K_X − 1).
+  - Missing binary energy fraction → 1 − 4/(3C) >= 1/3.
+  So the fractional problem has CONSTANT M, and all of Chowla's difficulty is the 0/1 constraint. The (1 − t) Fejér
+  profile is the fractional extremiser.
+- Exact energy audit: replacing words by conditional means loses Σa(1 − a) of binary energy (Parseval). Exact phase
+  conditioning (gcd 1) recovers the word, so no fractional completion arises from it.
+- Central-lobe audit: a literal model with all energy in mesoscopic windows (heights o(X)) is inconsistent, because
+  the central peak forces >= cos(¼)²n/(4πC) energy outside. Valid formal tests must keep the central profile.
+- OBSF (CONJECTURED): "ordered Boolean spectral floor" on the padded grid, i.e. HBCG on the exact idempotent array.
+  OBSF ⇒ T-dense (✓; via P40 on the grid).
+- Run-tops:
+  - sharpened count Σ_{t>0}|B_t| = N(N−1)/2 − T₃ >= n² (ordered-rank count);
+  - explicit averaged sufficient inequality Σ_t[‖Q2_t‖² + Kμ‖Q1_t‖₁²] <= D n K^{3−η}μ for Bu et al.'s Lemma 9.3
+    split. LEAD (E76): this is FALSE on Bu sets, see NOTEBOOK cont. 9.
+- NUMERICAL: 21 real sets, 515 component profiles, 21 genuine joint block lifts (negative mass 2–37, growing with q),
+  7 endpoint LPs. Smallest R seen 0.606 (existing E68 set). No formal escape and no inconsistency proof.
+- Verdicts:
+  - HBSC is false for natural and binary-faithful lifts; the existential HBSC remains unresolved.
+  - T-dense, WGC and OBSF remain open.

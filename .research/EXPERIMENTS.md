@@ -846,6 +846,13 @@ E64 second level (D = a Bu set itself, k = 6, |D| = 30, M(D) = 4.0045, R(D) = 0.
 - No nonempty E is feasible in the time limit (bound 68, not closed). k = 7 (|D| = 42) is running, with no E found
   after 600 s.
 - Bu sets behave like equioscillating optima: no Bu step can be stacked on them at small slack.
+- Final (2400 s each, status 9 = time limit):
+  - k = 6, Mt = 1.15·M(D): |E| = 2 ({64, 80}), bound 69;
+  - k = 7, Mt = 1.05·M(D): E = ∅, bound 94;
+  - k = 7, Mt = 1.15·M(D): |E| = 1 ({157}).
+  Stacking a second Bu step buys at most 1–2 elements even at 15% slack.
+- E65 completed: q = 19, λ = 2: 1.80. q = 23: 1.72 / 1.75 / 1.80 / 1.84. The penalty for λ > 1 keeps growing with q,
+  and every λ > 1 has R >= 0.98 (q = 19, 23).
 
 ## E66 (2026-10-19) Cumulative rounding of profiles: R = M/√n vs X (src/e66_cumround.py; examples/e66/e66.jsonl)
 NUMERICAL (box_minlam.true_min, over = 16: grid + Newton; not certified). Phases σ ∈ {0, 0.37, 0.71}; entries are

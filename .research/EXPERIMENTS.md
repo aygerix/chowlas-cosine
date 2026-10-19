@@ -1278,3 +1278,19 @@ Reading:
     lines), not by the Schur step.
   - Reaching 1/D ≈ 8.57 rigorously needs constraints coupling non-commensurable t (non-lattice Gram triples). The
     dilation family cannot supply them.
+## E88 (2026-10-19) What FRONT-½ would buy: reach under a front cap p(0) <= a* (src/e82_cp_reach.py, E82_MODE=lam; src/e82_lam_batch.sh)
+- NUMERICAL. Computes sup_w ∫_0^1 φ(λw²) with λ = 4a*(1 − a*), by E82's L-BFGS-B over step factors G (N = 80, 160).
+  This is the second-order reach when the front density is capped (NOTEBOOK cont. 16.1). N = 160 values sit about 0.3%
+  above the N -> ∞ limit, as for E82.
+| a* | λ | sup ∫φ(λw²) | reach C |
+|---|---|---|---|
+| ½ (P61) | 1 | 0.11667 | 8.571 |
+| 0.45 | 0.99 | 0.11418 | 8.758 |
+| 0.40 | 0.96 | 0.10804 | 9.256 |
+| 1/3 | 8/9 | 0.09598 | 10.419 |
+| 0.30 | 0.84 | 0.08869 | 11.276 |
+| 0.25 | 0.75 | 0.07648 | 13.075 |
+| 0.2113 (Gaussian-kurtosis threshold) | 2/3 | 0.06617 | 15.114 |
+- Reading:
+  - A front cap is cheap to state and buys a lot: a* = 1/3 (the full-Haar kurtosis-3/2 threshold) gives T-dense(10.4).
+  - The front is exactly where the cyclic barrier sits (cont. 16.3, 16.7).

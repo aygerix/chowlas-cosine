@@ -100,7 +100,28 @@ The prize is (c). Everything else is support.
     unavoidable. A counterexample must keep every trajectory that passes through B at growth < √λ, or map it back
     into K. Tool candidate: Rugh's complex-cone Perron–Frobenius (contraction of complex cones under perturbations
     of a positive matrix).
-  Experiment E107 (running): exhaustive screen of small automata (b <= 5, S <= 4) for R_L trends; follow-up to X ~ 2^21.
+  E107 RESULT (small automata, exhaustive): no automaton has R_L decreasing (168k screened). The exact sector
+  violation has min D = 0.102 over 11.9k automata (b <= 5, S <= 4), and the binding constraint is the MAIN profile
+  (front, h₀ >= 0.085).
+  E107c (annealing, S <= 10, b <= 6): D >= 0.06. The violation of Re ν̂ >= 0 is SCALE-INVARIANT: min Re ν̂ ≈ −0.06 to
+  −0.09 equally at s ≈ 0.75, s ∈ [3, 30] and s ∈ [30, 400].
+  - Mechanism: a finite-state Parry measure is singular and non-Rajchman, so ν̂(b^m σ) does not decay and repeats its
+    negative excursions at every b-adic scale. Equivalently, the stationary Parry measure μ_P on T is not positive
+    definite.
+  - Contrast: a pure power-law front u^{α−1} on [0, 1] IS PD for α <~ 0.68 (E107 plaw). Sparsity is not the obstruction;
+    finite-state singularity is.
+  VERDICT A2: dead for finite automata (S <= 10, b <= 6), with linear M; the mechanism is recorded above.
+  What survives (the reduction):
+  - ×b-invariant PD measures exist, e.g. the Riesz product Π_{i>=0}(1 + a·cos 2πb^i x), 0 < a <= 1, b >= 3, with
+    nonnegative coefficients and invariance (μ̂(bj) = μ̂(j)).
+  - A set whose distribution at every scale is such a Riesz density would satisfy ALL macroscopic conditions.
+  - But it is not finite-state: realizing it as a set means ROUNDING a multifractal PD density, which is the taper
+    tree again. The density is explicit: R(a/X) = Π_j (1 + a·cos 2π(a/b^j)), a Gibbs weight on digit strings.
+    "Riesz rounding" is the sharpest constructive form of C* found so far.
+  Side fact (Mahler, classical): exp∫log(f_A + M) >= 1/2 (z^X(f + M) has leading coefficient ½). Gives only θ <=
+  log(2M)/log(1/δ) for {p <= δ}; logarithmic, not a C* tool.
+  Side fact (unimodular factors): the extreme lag max(B) − min(B) has multiplicity 1, so a unimodular Fejér–Riesz
+  factor has an exactly two-valued autocorrelation only with λ = 1 (Sidon). Phased digit-cube designs are dead.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

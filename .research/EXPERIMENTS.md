@@ -1557,3 +1557,27 @@ Reading:
 - Result: every low-β set is a BEATTY DILATE of a dense near-interval, with one macroscopic spike pair of 0.85–0.98·n at an irrational-looking x₀ (e.g. A ≈ round(j/0.0916)). β = 0.24–0.42 with R = 0.85–1.06. The only R < 0.85 row is gcd(A) = 2, a dilated dense set (R = 0.635, β = 0.20, spike at ½).
 - The sparse front (min R ≈ 0.85) is WORSE than the dense one (E68: β ≈ 0.18 at R ≈ 0.65). No mesoscopic spikes appear anywhere.
 - Reading: the annealer reaches spikiness only through ONE macroscopic real dilation (bounded frame, F4). At n <= 128 there is no room for mesoscopic heights (√n = 8–11, n = 64–128), so E106 cannot probe C*. The kill test passed vacuously. Mesoscopic probes need structured families with large n → E107 (automatic sets).
+
+## E107 (2026-10-19) Automatic sets: R screen and exact sector violation (src/e107_automatic.py, e107_sector.py, e107_batch.sh, e107_sector_batch.sh; examples/e107/)
+- Class (CSTAR A2): A_L = {1 <= k < b^L : the base-b digits of k (MSB first, leading zeros allowed) are accepted by a
+  deterministic automaton}, with δ(0,0) = 0 (nested family) and 1.05 < λ < b (sparse, n = X^α).
+- R screen (grid minima, UNCERTIFIED; R at two depths L1 < L2):
+  - Coverage: all automata with b = 2 (S <= 4), b = 3 (S <= 3), b = 4 (S = 2; S = 3 partial, ~100k), b = 5 (S = 2).
+    168,226 sparse automata in total.
+  - Result: NO automaton has R decreasing from L1 to L2. Best R(L2) ≈ 2.8 at n ≈ 150, and every R grows (linear M).
+  - Fibbinary (no "11"): minimum at x ≈ 0.2506, next to the depth-2 spike ¼.
+- Exact sector scan (asymptotic, no grid in x). D = max over (main profile, b-adic spikes of depth <= K) of
+  −min_s Re[μ̂_k(j)ν̂(s)], and M_L >= (D − o(1))n_L.
+  - Validation: Cantor D = 0.300 vs measured M/n = 0.299; Fibbinary D = 0.203 vs 0.21.
+  - 11,868 automata, b <= 5, S <= 3 or 4.
+  - min D = 0.102 overall:
+    | class | min D |
+    |---|---|
+    | b=2, S=4 | 0.111 |
+    | b=3, S=3 | 0.102 |
+    | b=4, S=2 | 0.111 |
+    | b=5, S=2 | 0.233 |
+  - The binding constraint is almost always the MAIN profile h₀ = −min Re ν̂ >= 0.085. The front (top-digit Parry
+    measure ν) is never PD. The best rows have λ close to b (b = 3, λ = 2.618).
+- Reading: in small automata the FRONT already forces linear M. The b-adic sector conditions are not yet binding.
+  E107c anneals larger automata (S = 4–10) to test whether D → 0 is reachable at all.

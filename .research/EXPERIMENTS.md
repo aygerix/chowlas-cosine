@@ -541,3 +541,33 @@ Reading:
 - The escape class is empirically the worst region for constructions: the obstruction is not just P31.
 - Supports the self-reducibility picture (NOTEBOOK 2026-10-19): sets that evade P31 through front-loading pay through
   Gibbs/rotation cost. HEURISTIC; not certified.
+
+## E51 (2026-10-19) R3 noise-transfer ratio and secondary-spike anatomy (src/e51_transfer.py; dirichlet; examples/e51/e51.jsonl)
+Setup:
+- g = f ∗ F_w with w ∈ {X/4, X/2, X}.
+- S = {f > 2M, |x| >= 4/w} (secondary spikes); E = S + c/w with c ∈ {3, 4, 6}.
+- τ = (1/2π)∫_E (M + g)² / (M² + s_A/2).
+- B = Λ·m_g(E)/(n/2), the P32 bound on f's secondary mass, normalised. B < 1 would be a nontrivial bound.
+- FFT grid; UNCERTIFIED quadrature.
+Results (w = X, c = 4 unless noted):
+   set              n     R      sec.share_f   τ      m_f/m_g   Λ      B
+   Bu q101          380   0.764  0.405         0.52   0.99      3.05   2.7   (c=3, w=X/4: B=9.6)
+   Bu q199          1560  0.701  0.476         0.58   1.06      3.05   2.7
+   Bu q401          6320  0.657  0.521         0.63   1.09      3.05   2.7
+   Singer diff q31  496   0.718  0.088         0.39   0.31      3.05   1.8
+   Singer diff q61  1891  0.713  0.078         0.37   0.28      3.05   1.7
+   E49/E50 SA sets  300   0.78–1.1  0.00–0.05  0.1–0.3  0.01–0.4  3.05   1.1–1.9
+Spike anatomy:
+- Bu: the tallest secondary spikes sit at x/2π = 1/3 and 1/6, height 10–20√n, i.e. ≈ n/4.
+  - This is the mod-3 dilation: A ∩ 3Z = 3D with D the Sidon differences; the sums lie in 1 + 3Z.
+  - Further spikes of height ≈ 7–9√n sit at other rationals (1/8, 22/59, …).
+  - The secondary share GROWS with n (0.40 -> 0.52) as R falls.
+- Singer differences: no secondary spike above 3√n.
+- SA sets: essentially no secondary spikes. Their L² mass sits at moderate heights, consistent with R ≈ 1.
+Reading:
+1. P32 is far from contracting: B >= 1.7 on every test set and B ≈ 2.7 on Bu at every n.
+   - The realised m_f/m_g (≈ 1) is 3× below Λ.
+   - τ ≈ 0.5–0.6 on Bu: g's mass DOES sit on f's secondary spikes.
+   - So the noise-transfer route (R3 recursion) is KILLED as stated (see NOTEBOOK).
+2. Bu exactly saturates the dilation inequality. Averaging over cube roots of unity gives M(A ∩ 3Z) <= M(A), with
+   |A ∩ 3Z| = n/2. So R(D) <= √2·R(A), and asymptotically 1/√2 = √2·(1/2). Equality.

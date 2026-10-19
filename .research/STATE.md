@@ -126,7 +126,13 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 - E44 (src/e44_grb_dense.sh): Gurobi lazy-cut box MILP, warm-started, N=45 X=64 → N=50 X=72 → N=55 X=79;
   progress in examples/gurobi/e44.jsonl (N=45 bound 3.23 vs incumbent 3.836 at 1500 s).
 - E37g (src/e37g_batch.sh): Gurobi group run-top ILP, 18 instances → examples/cyclic_ilp/e37g.jsonl.
-- Codex agent: see NOTEBOOK for the current brief (one at a time).
+- Codex agent queue (one at a time):
+  1. RUNNING: P31 adversarial check + Nikolskii lemma (.research/agents/p31_brief.md).
+  2. NEXT: Lean formalization of P31 core (Fejér–Riesz, Lemma P31-E, window inequality; plan L1–L4 in PROOFS).
+  3. THEN: Lean Beckner sharp Young (.research/agents/lean_beckner_brief.md, user request 2026-10-19; milestones
+     M1 non-sharp Young -> M4 sharp constant). The local mathlib has neither Young convolution nor Fejér–Riesz.
+- E49 (src/e49_batch.sh, 6 cores): profile-constrained SA, triangle vs (1−t)^2, (1−t)^3 vs free, n = 150/300
+  -> examples/profile_sa/e49.jsonl.
 
 ## Active lines (>= 3) (updated 2026-10-19)
 1. [lower bound, dense/profile] NEW lead line. P29 (Turán), then P31 (window–Nikolskii): Chowla for non-front-loaded

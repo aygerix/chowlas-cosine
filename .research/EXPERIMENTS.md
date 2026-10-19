@@ -740,3 +740,17 @@ Reading:
 - Under equal effort, steeper (front-loaded) profiles are worse, and R rises with n.
 - This is search-limited: Bu reaches 0.66 at n = 6320, and Bu + outliers (E60) is front-loaded with R ≈ 0.67.
 - So E59 does NOT show that escape profiles are intrinsically bad. It shows SA cannot find their good members.
+
+## E63 (2026-10-19) Are near-optimal DENSE sets front-loaded? (src/e63_batch.sh, src/e63_post.py; examples/e63/)
+Free SA (profile_sa mode 1: any element can move anywhere in [1, X]) at density 1/C, C ∈ {2.5, 3, 4, 6, 8}, X box
+150/300, 2 seeds, 3e6 iterations × 6 restarts. Optima are post-processed for R (16× grid, UNCERTIFIED), the front ratio
+and the P31 lower bound.
+Results (20 optima, n = 19–120):
+- R = 0.65–1.02. Search-limited for n >= 50.
+- Front ratio at w = X: 1.09–1.55. At w = 0.05X: 0.0–2.5, mostly < 1.6.
+- P31 lower bound on R: 0.13–0.26 (P31-E), 0.18–0.35 (numerical ρ). It is POSITIVE for every optimum.
+Reading:
+- Every near-optimal dense set SA finds is NOT front-loaded, and P31 already proves R >= 0.13–0.26 for it.
+- The hard case of target T-dense (front-loaded A ⊂ [1, Cn]) contains no good sets that search can find (also E52:
+  R ≈ 1–1.8 there).
+- The good sets in the escape class are SPARSE (E60: Bu + outliers).

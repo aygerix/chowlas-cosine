@@ -1078,3 +1078,35 @@ Status: a recorded tool, not a route. Parked.
      - Remark 9.8(iii) of Bu et al. leaves this open. We have it for C < 2.466 (kernel-checked).
      - Plan: dichotomy. Either the profile is not front-loaded (P31), or the front is dense at all scales and has
        long runs. Then bound run-tops Z-specifically (P27-style: long t = 1 runs in an interval-like front).
+
+## 2026-10-19 (night, cont. 2) — Exact identities for real-square identities (Bu's class); where ½ comes from (lead)
+Setting:
+- h(x) = Σ_{u∈U} c_u cos(b_u x), real c_u ≠ 0, distinct b_u > 0.
+- Suppose the off-diagonal part of h² is exactly f_A: every |b_u − b_{u'}| and every b_u + b_{u'} (u ≠ u') carries total
+  coefficient 1 on its frequency, the difference and sum frequencies are disjoint, and both are disjoint from {2b_u}.
+1. **Identity (trivial).** f_A(x) = h(x)² − E(x), where E(x) := Σ_u c_u² cos²(b_u x).
+   - So M(A) = max_x (E − h²).
+   - mean E = mean h² = Σc²/2.
+   - M >= max over real zeros z of h of E(z).
+2. **Count identity (PROVED, exact).** |A| = (Σc_u²)² − Σc_u⁴.
+   Proof: write Q = Σ_{u≠u'} c_u c_{u'}. Then |A_diff| = |A_sum| = Q/2. The weighted additive energy is
+   - difference side: (Σc²)² + Q;
+   - sum side: 2Q + Σc⁴, since the diagonal sums 2b_u are disjoint from the off-diagonal ones.
+   Equating gives Q = (Σc²)² − Σc⁴. Bu: k(k − 1) ✓.
+3. **Consequence.** R = max_x(E − h²)/√((Σc²)² − Σc⁴) ≈ max(E − h²)/Σc².
+   - Generic zeros of h sit at E ≈ Σc²/2. That is the ½.
+   - It is not a multiplicity effect: with uniform multiplicities μ_d (differences) and μ_s (sums), the energy identity
+     forces μ_d + 1 = 2μ_s. So equal coefficients force μ = 1. Uniform multiplicity >= 2 is impossible for REAL squares,
+     independently of P4's Z-lift obstruction. P8's sub-½ scenario (μ >= 2) is therefore void in this class.
+   - Complex squares (differences only) have no such identity: R = 1/√(2μ) with uniform difference multiplicity μ.
+     Their obstruction is only Z-specific (unique extreme differences, P4, triangle multiplicity profiles of lifts).
+     Note: δ₀ + (μ/K)1_S is p.d. with |S| = K(K − 1)/μ, so Chowla itself forces μ = O(1) for them.
+4. **What beating ½ in the real-square class needs.** E(z) <= (1 − γ)Σc²/2 at EVERY zero z of h. In other words, every
+   zero of h must be a near-common zero of the terms.
+   - Bu's half-integer frequencies b = 3s + ½ = odd·½ make x = π a common zero (E = 0). All other zeros are generic
+     (P16: large sieve gives E ≈ Σc²/2 at some zero).
+   - Forcing all zeros to be common, h = cos(βy)·P(cos βy) with P > 0, needs Σ_{u} sin((m_u + ½)ψ) >= 0 on (0, π) for a
+     Sidon-like set {m_u}. That is a Chowla-type positivity for half-integer sine sums, false generically.
+   - Status: the real-square class is pinned at ½ by "generic zeros" (P16 for Bu's family). A general P16 for all
+     ±-Sidon frequency sets would need many well-spaced zeros of h. "Few-zero" h is the only loophole, and E63/E52
+     give no hint it is realizable.

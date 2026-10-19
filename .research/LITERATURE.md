@@ -157,3 +157,22 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   - Open even for us: A ⊂ [1, Cn] with C > 2.466 and a front-loaded profile. That is exactly where their n^{1/4} is the
     best known.
 - Also from the same search: the Epoch page's remark that no example with c <= 1/20 is known. Unchanged.
+
+## Ruzsa, Acta Arith. 111 (2004) 179–186 — read in full 2026-10-19 (free PDF from impan.pl); Bourgain, Acta Arith. 45 (1986) via Ruzsa's account
+- Result: min Σ_{a∈A} e(ax) < −c₄ exp(c₅√log n) with c₅ = √((log 2)/8). Bourgain (1986) had exp((log n)^c).
+- Lemma 2.1 (Bourgain's structure step).
+  - Small K ⇒ B + {Σ_{i<=k} ε_iβ_i} ⊂ A, with distinct cube sums, k = ⌊log n/(4 log K + c₆)⌋ and |B| >= √n.
+  - Iteration B' = B ∩ (B − α), carrying g = h₁ + h₂ + h₃ with |h₁| <= f + K, ‖h₂‖_∞ <= 4^jK^{j+1} and
+    ‖h₃‖₁ <= (8K²)^j n^{−1/2}.
+  - Propagation: |h₁∗h₁e_α| <= (f+K)∗(f+K) = f + K². This is the exact-mixing identity (NOTEBOOK cont. 19.5(a)).
+  - Size loss per level: E(B) >= |B|³/(2K²), from Hölder with ‖g − h₂‖₁ <= K + η. So |B'| >= |B|/(4K²).
+  - h₂∗h₂e_α is handled by AVERAGING over α (Parseval). h₁∗h₁e_α is NOT averaged; that is where K² − K enters.
+- Lemma 3.1 (boundary certificate). U ⊂ A, V ∩ A = ∅, 0 ∉ V, U − V ⊂ A ⇒ K >= (1/|U| + 1/|V|)^{−1/2}.
+  - Proof: h = avg_U e(u·) − avg_V e(v·), with ∫h(f + K) = 1 and ∫|h|²f <= 0, then Cauchy–Schwarz.
+  - Lead: this is P9 on W = {0} ∪ U ∪ V. It is found from S + T + {0, d} ⊂ A by walking the run along d until it ends
+    (torsion-freeness), i.e. the run-top mechanism.
+  - Lead's weighted form: with D = 2δ(U,V) − ρ(U) − ρ(V) (cross minus internal A-difference densities),
+        M >= (D + √(D² + 4σ²))/(4σ²),   σ² = 1/|U| + 1/|V|.
+- Ledger verdict (ROUTES): structure step = group-agnostic energy/Hilbert-cube iteration with loss K² per level;
+  certificate = P9/run-top. The scale-combining loss is by design: O(1) loss per level needs ‖g‖₁ = O(1), i.e.
+  K = O(1). Not a tool for C*.

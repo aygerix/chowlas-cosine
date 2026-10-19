@@ -2648,3 +2648,31 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    a tenth, high-rank balls) were stopped before any compute. C* = mesoscopic, structured, multi-level selection
    remains the whole problem. The next lower-bound work must bring a tool that controls structured selections
    uniformly in depth. That tool is not in the record, and none surfaced today.
+
+## 2026-10-19 (cont. 23) — Bourgain–Ruzsa read in full; model-set self-duality; towers predicted dead (lead)
+1. Bourgain–Ruzsa (LITERATURE).
+   - The only classical Z-specific multi-scale lower bound. It extracts Hilbert cubes by iterated self-intersection
+     and closes with a boundary-pair certificate (U in A, V out of A, U − V ⊂ A).
+   - Its levels are PHYSICAL-space directions β_j (dual to our spectral Bohr levels).
+   - Each level costs K² because the energy step only knows ‖g‖₁ <= K. Loss is intrinsic; no lossless tool here.
+   - Kept: the weighted boundary-pair bound M >= (D + √(D² + 4σ²))/(4σ²).
+   - For counterexample candidates the natural balanced choice (U = ±A, V = window complement) has D < 0. Its
+     quadratic form is ∫2f|balanced F_A|², which away from 0 is the Schur-triple count, and that is LARGE for any
+     counterexample (star condition). So a boundary pair must be chosen locally; that design problem is P9 = C*.
+2. Model sets (HEURISTIC). A = {a <= X : (a/X, aθ₁, …, aθ_r) ∈ E} gives
+       f_A ≈ (n/μ) Σ_k 1̂_E(k) · (long-coordinate kernel at x − k·θ).
+   So M(A) ≈ n·max_k(−1̂_E(k))/μ, plus realization noise.
+   - A Boolean E ⊂ T^r of positive measure is never PD (T^r is connected, so no open subgroups).
+   - Gibbs can, however, decay with rank: the d-ball has first negative lobe ~(2/e)^{d/2}.
+   - The realization at size n caps the resolution at K_r ~ X^{1/r}. Boundary energy beyond K_r is noise.
+   - Balls: Gibbs needs r >~ (log n)/α; noise needs r <~ log n/log log n. Incompatible, consistent with E73.
+   - In general the first term is "dual Chowla" for a band-limited Boolean function on T^r with N ~ n/μ
+     frequencies, and it has the same √ scaling (μN ~ n). The problem is self-dual under cut-and-project, so the
+     model-set class is C* in dual costume, not an escape.
+3. Towers predicted dead on paper (round 18's recommended next test).
+   - Hierarchical towers with linear tapers make each marginal profile a PD triangle, by giving the last cutoff a
+     uniformly distributed radius.
+   - The joint window is an averaged cross-polytope (2-level slice = diamond = rotated square, transform =
+     sinc·sinc). Flat facets give O(1) relative Gibbs that does not decay with rank: blown-up P3 packets along facet
+     normals, as in P71.2.
+   - Curved windows are E73. Not run; recorded so it is not proposed again.

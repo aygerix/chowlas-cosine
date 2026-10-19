@@ -523,3 +523,21 @@ Reading:
 - Consistent with the heuristic that front-loading only adds Gibbs-like cost.
 - Not a proof, and not a certified minimum. The next probe is power-law and Bohr-type locally deterministic profiles
   (filter 3).
+
+## E50 (2026-10-19) Power-law profiles: front-loaded at EVERY scale (src/profile_sa.c, p < 0; src/e50_batch.sh; dirichlet)
+Setup:
+- Density min(1, c(a/X)^{−α}), i.e. front-loaded at every scale: P31's full escape class.
+- Same SA as E49 (3e6 iterations × 6 restarts × 2 seeds, block-constrained, grid objective). HEURISTIC.
+Results (best grid R over 2 seeds; examples/profile_sa/e50.jsonl):
+   α      c      X      n     R        front density (a <= X/10) / avg
+   0.5    0.2    417    150   0.927    0.88 / 0.36
+   0.5    0.2    833    299   1.001    0.88 / 0.36
+   0.7    0.1    610    150   1.018    0.79 / 0.25
+   0.7    0.1    1220   300   1.096    0.80 / 0.25
+   0.85   0.05   900    149   1.079    0.69 / 0.17
+Reading:
+- Every power-law profile is worse than the triangle at equal n (0.754 / 0.781).
+- R grows with α and with n (0.93 -> 1.00 for α = 0.5; 1.02 -> 1.10 for α = 0.7).
+- The escape class is empirically the worst region for constructions: the obstruction is not just P31.
+- Supports the self-reducibility picture (NOTEBOOK 2026-10-19): sets that evade P31 through front-loading pay through
+  Gibbs/rotation cost. HEURISTIC; not certified.

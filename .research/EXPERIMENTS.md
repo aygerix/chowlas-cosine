@@ -1036,3 +1036,27 @@ Reading:
   route. This matches the heuristic PD/Hermite tension: PD up to level K needs τ >~ 2√K, which puts the variance at
   degree ~τ² > K, i.e. in the bulk.
 - Best rows at X = 2^18 are all Bernoulli (r = 0, γ = 1–2): R = 2.72–3.10.
+
+## E74 (2026-10-19) Run-top counts against K² (src/e74_runtops.py; examples/e74/e74.jsonl, 45 sets)
+- Definitions: A' = A ∪ −A, B_t = right endpoints of maximal t-progressions in A' (Bu et al. Prop. 9.1),
+  K = 2λ (λ from the grid), μ = ‖F‖₁.
+- Purpose: test the alternative mechanism. For dense sets, T-dense ⟺ mean_{t<=2X}|B_t| <~ K², because
+  Σ_t|B_t| >= N²/4 (Lemma 9.6). Bu et al. bound each |B_t| by C₁K³μ.
+- NUMERICAL (grid λ):
+| family | mean_t|B_t|/K² | max_t|B_t|/K² |
+|---|---|---|
+| Bu q = 7…43 | 0.11–0.15 | 0.24–0.33 (stable in q) |
+| Singer differences q = 13…61 | 0.158–0.163 | 0.33–0.34 |
+| small-N optima N = 24, 30, 36 | 0.28–0.32 | 0.60–0.65 |
+| E68 rows | 0.06–0.22 | 0.13–0.50 |
+| E72c rows (C = 2.4–10) | 0.014–0.08 | 0.05–0.18 |
+| intervals / uniform random (linear M) | <= 0.01 | <= 0.02 |
+- max|B_t|/(K³μ) <= 0.027 everywhere (Bu et al.'s constant is C₁ = 2·10⁵).
+- Reading:
+  - On every near-optimal set, even the PER-t run-top count stays below 0.65K².
+  - A Z-specific per-t bound |B_t| <~ K² would give exponent 1/3 for all A (Shankar's averaging) and √n for dense A.
+    But it contains the open OR(2) two-run problem (A = S ∪ (S + t)), and P22 shows its group analogue is false
+    (K⁴).
+  - Consistent with T-dense; no new obstruction.
+  - Uniform random subsets have LINEAR M (flat profile ⇒ Dirichlet sidelobes; R = 0.217√n), so their small ratios
+    carry no information.

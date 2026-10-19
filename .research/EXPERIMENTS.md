@@ -1599,3 +1599,13 @@ Reading:
 - Reading: the finite class has NO survivor, rigorously. The general T-A2 needs a base-2 descent for the b = 4 ties
   and a >= 3-point Gram test for the strictly-dominated cases. A2 is closed as a design class (CSTAR A2 (viii)).
 
+## E109 (2026-10-19) Residue-staircase profile check (src/e109_residue_taper.py Q X seed; dirichlet; grid M UNCERTIFIED)
+- Class: W₀ ⊂ Z_Q random symmetric (density ½); u_r ~ U[0, 1] with u_{−r} = u_r; A = ∪_{r∈W₀}{a <= X : a ≡ r (mod Q), a < u_r X}.
+- Prediction f(t/Q + τ/X) ≈ (X/(2πQτ))Σ_{r∈W₀}cos(2πrt/Q)sin(2πτu_r), checked at 16 points (t, τ) per run:
+  | Q | X | n | max abs error | typical values | grid M | R | √(X/Q) |
+  |---|---|---|---|---|---|---|---|
+  | 31 | 2·10⁴ | 7264 | 1.65 | ~100 | 2762 | 32.4 | 25.4 |
+  | 101 | 4·10⁴ | 16760 | 5.27 | ~100–300 | 3210 | 24.8 | 19.9 |
+- Reading: the formula holds. Random staircases have R ≈ 1.3√(X/Q): rounding noise confined to the Q rational columns
+  is amplified, not diluted (CSTAR A3, design rule D8).
+

@@ -74,6 +74,8 @@ Design rules implied by §2. A candidate that violates one is dead before it is 
 - D5 (F3): sparse, X/n -> ∞ or at least > 7.72.
 - D6 (F10 reading, heuristic): if randomized, the rounding noise must be spectrally confined under the spikes of E f.
 - D7 (O5): the band edge must be tapered inside the construction, not by truncation.
+- D8 (A3, heuristic + E109): aperiodic at every scale Q << X (periodicity amplifies rounding noise by √(X/Q)).
+- D9 (A3, heuristic): spectrally irreducible (disjoint-spike sub-pieces would each need R <~ R/√J).
 Open design question Q-D: which point configurations {x_j} (m = o(X)) have exponential sums on [1, X] that are
 two-valued, carry additive relations (D2), and are not Bohr-like at scale ε² (D3)?
 
@@ -196,6 +198,35 @@ The prize is (c). Everything else is support.
            repeats its negative excursion at every scale, which gives linear M. So a C* set cannot carry the same
            finite-state law at all scales: its mesoscopic statistics must CHANGE with depth (the Riesz-rounding
            reduction above). A2 is CLOSED as a design class. Its general theorem T-A2 is a side lemma (§6).
+
+- A3 (2026-10-19, after A2). RATIONAL-SPIKE (Ẑ) ANATOMIES. Every A ⊂ Z is a model set over R × Ẑ (Z is a lattice there).
+  Spikes at rationals t/Q see the Ẑ-structure (residues); irrational spikes see the R-structure (Bohr). The quadric's
+  "lines through 0" exist in T only as finite subgroups (1/Q)Z/Z. So the F_p^r anatomy, copied into Z, has RATIONAL spikes.
+  Test class: residue staircases. W₀ ⊂ Z_Q symmetric, and A ∩ (r + QZ) is the initial segment {a < u_r X} (u_{−r} = u_r).
+  - Exact profile (continuous-u model; verified numerically, E109, errors ~1% of values):
+        f(t/Q + τ/X) ≈ (X/(2πQτ))·Σ_{r∈W₀} cos(2πrt/Q)·sin(2πτu_r),   1 <~ τ <~ X/(2Q).
+    It equals (X/Q)·Re R̂(t, τ), where R̂ is the transform of the staircase window {(r/Q, u) : 0 <= u <= u_r} in Z_Q × R.
+  - Where it broke. All three choices of the graph r ↦ u_r fail:
+    - Smooth graph: Sturmian/Bohr level sets, Bessel-signed profiles, linear M.
+    - Random graph: the rounding noise is confined to the Q columns of width 1/X, so it is AMPLIFIED. Measured
+      R ≈ 1.3·√(X/Q): R = 32.4 at Q = 31, X = 2·10⁴ (√(X/Q) = 25), and R = 24.8 at Q = 101, X = 4·10⁴ (√(X/Q) = 20).
+    - Structured graph: dual Chowla for the staircase window in Z_Q × R. This is the model-set row ("= C*, dual
+      costume") with a finite internal group.
+  - Extracted design rules:
+    - D8 (heuristic, with E109 numbers): no exact periodicity with Q << X. Periodicity concentrates F10 noise onto
+      measure Q/X and multiplies its height by √(X/Q). A Z-C* must be aperiodic at every scale Q << X.
+    - D9 (HEURISTIC, union descent). Suppose A = ⊔_j B_j with pairwise disjoint spike sets and independent
+      backgrounds. Then the background means add: M >~ Σ_j μ_j, with μ_j ≈ (L² of f_{B_j} on its spikes)/(its spike
+      height). With J equal pieces this forces R(B_j) <~ R(A)/√J: every piece must be a BETTER C* than the whole.
+      The quadric escapes because its pieces (totally singular planes, p + 1 per ruling) are subgroups with M_j = 1.
+      Z has no such pieces, so a Z-C* must be spectrally irreducible: its spike set cannot split into the spike sets
+      of independent sub-pieces.
+  - Route check this session: three further re-derivations were caught and are NOT new:
+    - cut-and-project / high-rank balls (ROUTES model-set row, E73);
+    - clique covers / stabilizers (cont. 19.8);
+    - lower-flat Sidon squares (E8, E15, E29; Bu et al. Prop 8.2).
+    The one new quantitative point is E73's mechanism. Window perimeter puts L² ≈ Per/(2π²ρ) beyond radius ρ. That
+    forces N·vol >= (c·log X/δ²)^D significant frequencies, whereas a ball's Gibbs is only (2/e)^{D/2}.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

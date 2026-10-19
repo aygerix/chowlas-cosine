@@ -1609,3 +1609,23 @@ Reading:
 - Reading: the formula holds. Random staircases have R ≈ 1.3√(X/Q): rounding noise confined to the Q rational columns
   is amplified, not diluted (CSTAR A3, design rule D8).
 
+## E110 (2026-10-19, cont. 28) DNN vs PSD square certificates (src/e110_dnn.py; examples/e110/)
+- Computes, for A ⊂ [1, X]:
+  - M_PSD = min tr Q subject to Q ⪰ 0 and diagonal sums Σ_iQ_{i,i+k} = ½·1_A(k). This equals M(A) up to solver
+    tolerance.
+  - M_DNN = the same with Q >= 0 entrywise added.
+  NUMERICAL SDP (Clarabel for X <= 130, SCS beyond), not a certificate.
+- Sets in the script:
+  - N50_x72 / N50_x71;
+  - dense_certified rows with max <= 200;
+  - Singer Sidon differences q = 5, 7, 11, 13;
+  - random sets (seed 20261019);
+  - intervals [1, 30] and [1, 60].
+- Usage: `python src/e110_dnn.py out.jsonl [names]`.
+- SMOKE (dirichlet, examples/e110/e110_smoke.jsonl). M_psd matches the FFT-grid M to 1e−6 in both rows (sanity):
+| set | n | X | M | M_DNN | ratio | rank(Q_psd, Q_dnn) |
+|---|---|---|---|---|---|---|
+| Singer differences q = 5 | 15 | 29 | 2.90254 | 2.97287 | 1.024 | 26, 17 |
+| interval [1, 30] | 30 | 30 | 7.13162 | 7.13162 | 1.000 | 29, 29 |
+- FULL RUN: NOT YET DONE. Next command:
+  `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 8 -t 7200 python src/e110_dnn.py examples/e110/e110.jsonl`

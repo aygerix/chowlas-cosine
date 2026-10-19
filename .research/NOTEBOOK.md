@@ -2857,3 +2857,18 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
      derivation is to replace that assumption by an ℓ²-decomposition of the INV measure ν into pieces with
      controlled overlaps.
 
+## 2026-10-19 cont. 28 — reflection; regime split at n^{1/3}; DNN certificate class (lead)
+1. A4 committed (453b697). The rank-dichotomy target (rigorous E73) is deprioritised: it extends step (d) only.
+2. Regime split: the additive excess of the spike measure is ≈ ∫p²/K = 1/(4ε³√n), so it dominates the random
+   baseline only for M <~ n^{1/3}. This is the BSG/Bedert–Shankar zone. The C* core is random-dominated at every
+   order (p^{⋆r} = 1 − K^{1−r} + K^{1−r}p exactly). Details in CSTAR A5(i).
+3. Hoffman bound (proved; standard): K >= |S|α/(1 − α) for S-difference-free sets of density α. A fact, not a
+   route.
+4. Rejected on route check (already recorded): smooth numbers (E56 dilation pinch); Riesz rounding = taper tree;
+   unions of dilated pieces whose spikes tile T (= D9: each piece's bulk fluctuation adds); OR(2) (open, P27).
+5. NEW: DNN / nonnegative-Gram certificates (CSTAR A5). Both known mechanisms are DNN. Q >= 0 kills every diagonal
+   outside A, and the normalized Gram has λ_min >= −1, which gives weighted cliques of Cay(Z, ±A). C <~ √n needs
+   cliques of size >> √n whose triangle-like autocorrelations sum to a flat indicator: the taper problem, exact and
+   noise-free.
+   E110 smoke: ratios 1.024 (Sidon q = 5) and 1.000 (interval). Full run next.
+6. Stopped here at the user's request (account switch).

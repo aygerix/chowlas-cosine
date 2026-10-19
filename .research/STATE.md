@@ -7,8 +7,15 @@ fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T
 - A3 (rational-spike anatomies) adds design rules D8 and D9 and the proved feature F11.
 - Step (c) is unchanged. D9 made rigorous reduces to M >= ½‖f‖₁ (L¹ additivity over separated pieces), which is too weak.
 - A4: the blueprint (continuum) level is consistent, so C* lives entirely in the 0/1 fine structure.
-- NEXT: the rank dichotomy for INV's Bohr pieces. First lemma: rigorous E73 (model sets with convex windows in T^d
-  have M >= c√n uniformly in d).
+- A5 (cont. 28): regime split at n^{1/3} (additive structure is visible only for M <~ n^{1/3}; the C* core is
+  random-dominated). Hoffman bound recorded as a fact. The rank dichotomy (rigorous E73) is DEPRIORITISED.
+- NEW CLASS: DNN (nonnegative-Gram) square certificates. They contain Bu's core and the F_p^r quadric, and pose the
+  taper problem exactly. E110 script works (smoke ratios 1.024, 1.000).
+- FIRST NEXT STEP: run the full E110 batch
+  `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 8 -t 7200 python src/e110_dnn.py examples/e110/e110.jsonl`.
+  - If M_DNN/M ≈ 1 on near-extremizers (N50, dense rows, Singer differences): attack "Chowla for DNN-certified
+    sets" (clique cover + band edge).
+  - If the ratio is large: record F12 ("C* needs cancellation").
 
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 

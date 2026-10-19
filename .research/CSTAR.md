@@ -258,6 +258,48 @@ The prize is (c). Everything else is support.
     First lemma: a rigorous E73, i.e. M >= c√n·g(d) for model sets with convex windows in T^d, with g(d) bounded
     below uniformly in d.
 
+- A5 (2026-10-19, cont. 28). REFLECTION and a new discriminating class: NONNEGATIVE-GRAM (DNN) CERTIFICATES.
+  Mandatory review (number-theory skill §3). A0–A4 all reduce to the same open step: "deterministic ⇒ Gibbs" in the
+  random-dominated regime. The rank-dichotomy target (rigorous E73) was re-examined. It only extends step (d), and only
+  pays off once step (c)'s structure theorem exists, so it is DEPRIORITISED (not killed).
+  Three facts derived this session:
+  (i) REGIME SPLIT at n^{1/3} (exact identity plus heuristic reading).
+      - Set ν = p·1_U. Since ν <= p, ∫ν·(ν⋆ν) <= (1 − 1/K)ν(T) + (1/K)∫_U p². The random baseline is ν(T)³ and the
+        additive EXCESS is ≈ ∫p²/K = 1/(4ε³√n).
+      - The excess dominates iff ε <~ n^{−1/6}, i.e. M <~ n^{1/3}. The F_p^4 quadric (M ≍ n^{1/3}) sits exactly at the
+        threshold; r >= 6 quadrics are random-dominated.
+      - So BSG/Freiman-type structure (the Bedert/Shankar mechanism) can only see M <~ n^{1/3}.
+      - The C* core (n^{1/3} << M = o(√n)) has an additive excess that is a vanishing relative perturbation at every
+        order: the (r+1)-fold excess is K^{1−r}/(2ε²), from the exact p^{⋆r} = 1 − K^{1−r} + K^{1−r}p.
+      - Any C* proof must therefore use something other than additive energy.
+  (ii) HOFFMAN BOUND (proved, elementary, standard Delsarte LP). If I ⊂ Z has density α and (I − I) ∩ S = ∅, then
+      K >= |S|α/(1 − α). Proof: the autocorrelation of I is PD with spectral mass α and atom α² at 0, and
+      0 = Σ_{s∈S}φ(s) >= |S|α² − K(α − α²).
+      - Bohr corollary: K >= |S|δ/(1 − δ), with δ = sup_θ min_{s∈S}‖sθ‖.
+      - So C* needs every θ to be o(|S|^{−1/2})-approximable by S. Random S satisfy this, so it is a FACT, not a route.
+  (iii) OVERDETERMINATION COUNT (heuristic). The spike measure has ~2δX = 4ε²X free parameters but must satisfy ~X
+      two-valuedness equations on [−X, X]. INV's tolerance η ~ √ε exceeds the random level √(n/X) for sparse sets,
+      so INV alone yields no rigidity there (the exact identity lives in the bulk cancellation).
+  NEW CLASS (route-checked; not in ROUTES): DNN certificates.
+  - Definition. f_A + λ = v*Qv with Q ⪰ 0 AND Q >= 0 entrywise. Equivalently (CP form) 2f_A + C = Σ_j|P_j|² with
+    nonnegative-coefficient P_j: 1_A is a nonnegative combination of autocorrelations of nonnegative sequences.
+  - Both known C*-type mechanisms are DNN:
+    - Sidon squares (Bu's core);
+    - F_p^r quadrics (blocks = totally singular subspaces, i.e. subgroups).
+  - Q >= 0 forces every diagonal k ∉ A to vanish entrywise. N = D^{−1/2}QD^{−1/2} − I is nonnegative with
+    λ_min(N) >= −1, hence weighted-clique structure (cliques of Cay(Z, ±A), cf. JMTZ).
+  - Uniform-clique form: C/n = 2/(s − 1), so C <~ √n needs cliques B with B − B ⊂ ±A ∪ {0} and |B| >> √n. Their
+    autocorrelations (triangle-like near the band edge) must sum to a FLAT indicator: the taper problem, exactly
+    posed, with no rounding noise.
+  - AP-block subclass: 1_A = Σ_d Σ_L u_{d,L}(1 − k/(dL))₊·1[d | k]. Every prime element of A needs its own step-p
+    block (cost 1 − v_1(p)).
+  - E110 (running next) asks whether near-extremal sets need PHASE CANCELLATION (M_DNN/M large) or are DNN-certified
+    (ratio ≈ 1).
+    - If ≈ 1: a Chowla theorem for DNN-certified sets (clique cover + band edge) is a precise, attackable sub-C*
+      target that contains both known mechanisms.
+    - If large: C* objects must use complex or signed factors, which is a new forced feature F12.
+  - Smoke (2 sets): Sidon differences q = 5: M_DNN/M = 1.024. Interval [1, 30]: 1.000.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P75 (automatic sets: domination-or-twin ⇒ Re μ̂ < 0 ⇒ linear M; 28.5% coverage) + E108 (FPC: all 71,840 small automata certified dead). T-A2 open.

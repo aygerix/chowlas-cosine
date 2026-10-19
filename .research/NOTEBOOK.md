@@ -1464,26 +1464,25 @@ Reduction (HEURISTIC until (A) is proved with explicit errors):
   attackable statements: an analytic inequality (A) and an inverse-theorem step (B).
 - Round-5 agent brief (.research/agents/tdense5_brief.md): (A) first, then (B).
 
-## 2026-10-19 (night, cont. 5) — QD-½: a sharp self-similar form of the missing ingredient (lead)
-Definition. For A ⊂ [1, X] and J >= 1 let E_out(A; J, K) be the infimum, over J windows {|x − θ_l| <= K/X}, of the
-energy ∫ f_A² outside them (the round-4 agent's notation).
-Conjecture QD-½. For every C there are c, c', K > 0 such that every A ⊂ [1, Cn] and every 1 <= J <= X satisfy
-      M(A) <= c·X/√J   ⇒   E_out(A; J, K) >= c'X.
-Lemma (QD-½ ⇒ T-dense; PROVED, elementary).
-- Suppose M <= ε√n with n ≍ X.
-- P40: energy at heights < λ = √(n/ε) is O(√ε)X.
-- The energy at heights >= λ lives in at most J_λ <= X²/(2Kλ²) ≍ εX/K windows of width K/X: each window with
-  peak >= λ carries energy >~ λ²K/X, and the total is <= X/2.
-- Take J = J_λ. The hypothesis M <= cX/√J holds since X/√J ≍ √(KX/ε) >> ε√X. QD-½ then gives E_out >= c'X, but
-  E_out(A; J_λ, K) <= O(√ε)X. Contradiction for ε < ε₀. ∎
-- An exponent η(J) = c/J^a with a > ½ is NOT enough. The range needs J <= (c√X/ε)^{1/a}, which is < εX/K for large X.
-Sharpness (round-4 agent): Singer/Bu-type difference sets have M ≍ √X and E_out = 0 at J ≍ 4X windows, i.e.
-M ≍ 2X/√J. So the exponent ½ in QD-½ is optimal and the extremal family sits exactly on the threshold, consistent
-with Chowla being true and with ½ (Bu) being the sharp constant scale.
+## 2026-10-19 (night, cont. 5) — QD-½: the sharp scale-invariant form of SB (lead; CORRECTED same night)
+Measure form. For A with |A| = n and μ ∈ (0,1], put E_out(A; μ) = inf_{|U| <= μ} ∫_{U^c} f_A².
+Conjecture QD-½: there are c, c' > 0 with M(A) <= c√(n/μ) ⇒ E_out(A; μ) >= c'n, for all A ⊂ [1, Cn] and all μ.
+- μ ≍ J/X (J windows of width K/X): this is the round-4 agent's fixed-J theorem (ineffective, J fixed). At J = O(1)
+  it is P53.
+- μ = 1: E_out = 0, so QD-½ contains Chowla. It is a STRENGTHENING (Chowla with energy localization), not a reduction
+  to something weaker.
+- Sharpness: Singer/Bu difference sets have M ≍ √n and E_out(1) = 0, i.e. M ≍ √(n/μ) at μ = 1. The exponent ½ is
+  optimal, and the extremal family sits exactly on the threshold.
+What T-dense actually needs:
+- P40 gives U = {f > λ} with |U| <= ε^{3/2} and E_out(A; ε^{3/2}) <= O(√ε)n. So T-dense follows from QD at the single
+  scale μ = μ₀ (any fixed small constant) with ANY constant c_{μ₀} >= c₀ > 0: "energy outside some set of measure μ₀
+  is < c'n ⇒ M >= c₀√n". This is SB/P30 again.
+- In window language: QD at J ≍ μ₀X/K, i.e. J PROPORTIONAL TO X. The agent's fixed-J theorem is far from that.
+- CORRECTION: an earlier draft of this entry claimed a window-counting lemma (tall energy lives in <= εX/K windows of
+  fixed width K/X). That is unproved. The reproducing-kernel bound gives a far-field term ~X/√K (Dirichlet) or
+  ~X/K^{1.5} (de la Vallée-Poussin), which swamps λ ≍ √(n/ε). Use the measure form only.
 Meaning.
-- QD-½ is the statement "when all energy is in J spikes (typical height X/√J), M is at least a constant times the
-  typical spike height". It is the scale-invariant version of P53, which is the case J = O(1), heights ≍ X.
-- The round-4 agent proved QD at every FIXED J (η(J) > 0, ineffective). The defect b >= m³/12 of the limit object is
-  uniform in the rank. All J-dependence comes from the finite-X ↔ limit passage (equidistribution in a J-dimensional
-  torus).
-- Routes: (A)+(B) of cont. 4 (TL1 + structure), or a direct finite Krein/PD argument with J-uniform errors.
+- The useful content is the interpolation: P53 (μ ~ 1/X, linear M) → QD-½ → Chowla (μ ~ 1). It suggests a
+  multiscale induction on μ. A loss of a constant factor per dyadic scale would cost ~ log n, so the losses must be
+  summable.
+- Routes: (A)+(B) of cont. 4 (TL1 + structure), or a finite, J-uniform version of the Krein/Gram argument.

@@ -63,15 +63,15 @@ Then pursue the structured side:
 Identify exactly where constants degrade. Does the argument close for small ε, or does it need a recursion (growing
 rank)? If it needs a recursion, state the single missing inequality.
 
-## Task 3: QD-½ (the sharp self-similar form; NOTEBOOK "night, cont. 5")
-- Conjecture QD-½: for every C there are c, c', K with M(A) <= cX/√J ⇒ E_out(A; J, K) >= c'X, for all A ⊂ [1, Cn]
-  and 1 <= J <= X. Here E_out is your round-4 window-energy residual.
-- QD-½ ⇒ T-dense (lead, elementary; check it). Your Singer example shows the exponent ½ is optimal.
-- Your fixed-J theorem is the case J = O(1). The limit-object defect b >= m³/12 is uniform in the rank.
-- Attempt either:
-  - a finite, J-uniform version of the Krein/Gram argument (g <= 1 − t²/4) that avoids equidistribution in a
-    J-dimensional torus; or
-  - η(J) >= c/J^a for some explicit a. (Any a <= ½ proves T-dense. Report the best a you can get, even if a > ½.)
+## Task 3: QD-½ (the sharp scale-invariant form of SB; NOTEBOOK "night, cont. 5", corrected)
+- Measure form: E_out(A; μ) = inf_{|U| <= μ} ∫_{U^c} f_A².
+- Conjecture QD-½: M(A) <= c√(n/μ) ⇒ E_out(A; μ) >= c'n, for all A ⊂ [1, Cn] and all μ.
+  - It contains Chowla (μ = 1). Your Singer example shows the exponent ½ is optimal.
+  - Your fixed-J theorem is the regime μ ≍ J/X with J fixed.
+  - T-dense needs only the regime μ = μ₀ fixed (J ∝ X) with any constant.
+- Attempt a finite, J-uniform (or μ-uniform) version of your Krein/Gram argument (g <= 1 − t²/4) that avoids
+  equidistribution in a J-dimensional torus. Or a multiscale induction on μ with summable losses. Report the best
+  dependence of η on J you can prove.
 
 ## Falsification first
 - Bu/Singer sets (src/e67_zoo.py bu(q)): no tall spikes, so the dichotomy must be vacuous there. Check this.

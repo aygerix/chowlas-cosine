@@ -2384,12 +2384,21 @@ For a probability measure μ on T write c_a(μ) = ∫cos(ax) dμ(x).
 (c) Slope at τ = 0. τ ↦ M_τ is a maximum of affine functions, hence convex. Its right derivative at 0 is
     −min over μ ∈ Opt₀ of Σ_a |c_a(μ)| (Danskin), where Opt₀ = probability measures on argmin f_A.
     In particular M_τ >= M_0 − τ·min_{Opt₀} Σ|c_a|.
-(d) Certificate spread. Any μ certifying M_τ >= m satisfies Σ_a |c_a(μ)| <= (M_0 − m)/τ. A ROBUST √n certificate
-    (m >= c√n with M_0 <= C√n) is therefore A-spread: Σ|c_a| = O(√n/τ), whereas a point mass has Σ|c_a| ≈ (2/π)n.
+(d) Certificate spread (for 0 < τ < 1 only). Any μ certifying M_τ >= m satisfies Σ_a |c_a(μ)| <= (M_0 − m)/τ. A
+    ROBUST √n certificate (m >= c√n with M_0 <= C√n) is therefore A-spread: Σ|c_a| = O(√n/τ). Compare the spatial
+    AVERAGE ∫Σ_a|cos(2πax)|dx = (2/π)n. [Audit 2026-10-19: "a point mass has Σ|c_a| ≈ (2/π)n" is FALSE pointwise:
+    δ_0 gives n, and δ_{1/4} on odd A gives 0. Only the average holds.]
 (e) Weighted intervals stay linear (continuum form; the discrete statement needs a compactness argument, not written).
     A bounded φ on R, supported in [−1, 1], with φ >= 1 − τ > 0 there, has a jump at ±1. If φ̂ >= 0, the Fejér means at
     0 bound ∫φ̂ <= sup φ, so φ̂ ∈ L¹ and φ is continuous: contradiction. Hence the weighted Dirichlet profile has Gibbs
     >= c(τ)n.
+    [Audit 2026-10-19: the qualitative claim (each such φ has some φ̂ < 0) is CORRECT. A uniform depth c(τ) is NOT proved,
+    and is FALSE without the common upper bound φ <= 1 + τ: take φ_B = c·1_[−1,1] + B(1 − |x|)_+. Then
+    φ̂_B = B[y + c·cos(t)/B]² − c²cos²(t)/B >= −c²/B, with t = πξ and y = sin t/t. For the intended box-bounded class the
+    compactness argument and the discrete passage remain unwritten. Status of "Gibbs >= c(τ)n": GAP.]
+Adversarial audit 2026-10-19 (codex, .research/agents/adv_p72_74_report.md): (a)–(c) CORRECT; (d) GAP (domain τ > 0;
+point-mass remark false); (e) GAP (qualitative only). The lead checked both counterexamples by hand (δ_{1/4}: cos(πa/2) = 0
+for odd a; φ_B: completing the square).
 Reading (HEURISTIC): Chowla_τ (√n for all [1−τ, 1+τ] weights) is a strictly stronger statement than Chowla. On flat
 sets (negative region of positive measure) it holds by (b); E103 measures only constant-factor losses there. In the
 spiky regime (the C* regime) (b) is empty, and (d) says a proof must either use exact Booleanity or find an A-spread
@@ -2422,7 +2431,7 @@ Consequences.
     i.e. U >= 4.6·10^{-3}|Ω|. Not sharp (conjectured 0.0947).
   - The large-peak case g(0) >= 4/3 is OPEN. Example: Ω = {D_L > 0} has g(0) ~ (2/π²)log L and still U/|Ω| ≈ 0.30, so a
     large peak does not by itself contradict PR.
-Status: PROVED on paper; elementary. A fact, not a C* tool.
+Status: PROVED on paper; elementary. A fact, not a C* tool. Adversarial audit 2026-10-19: Z and T versions CORRECT (5,005 T-tests, no violation).
 KERNEL-CHECKED (Z version) 2026-10-19: lean/ChowlaCosine/FewSpike.lean (sha256 204985…c032731).
 - Theorems: `fewSpike_core` (bad-set count >= (#S − 1)/3) and `fewSpike` (E >= δ²(#S − 1)/3).
 - PD is defined by finite sums plus Hermitian symmetry.
@@ -2445,3 +2454,4 @@ Scope.
   extremal arcs of E100 (radius 1/(2L)).
 - For μL >> 1 with a large peak it is OPEN: case (B) gives only ~1/L. Numerically E105 finds U/μ >= 0.104 there (L <= 16).
 - Not a C* tool: PR is step (d) of the cont. 20 architecture, rank 1 only.
+- Adversarial audit 2026-10-19: CORRECT; both constants re-derived; 4,358 accepted numerical cases, no violation.

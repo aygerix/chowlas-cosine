@@ -2799,3 +2799,28 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    - So the two constraints are compatible. No contradiction here.
    - Kept as a FACT: mesoscopic concentration sets must be additively random-like at their own scale. This is the
      dual of the macroscopic picture, where structure is forced.
+
+## 2026-10-19 (cont. 26) — Restructure around C* (CSTAR.md); A1 noise shaping; A2 automatic sets (lead)
+0. User directive: C* is the problem; side lemmas are not the prize. New central file .research/CSTAR.md holds:
+   - the fixed object (O1–O5);
+   - the forced features (F1–F10);
+   - the design rules (D1–D7);
+   - the proof chain (a)–(d), with step (c) as the prize;
+   - the attack log.
+   STATE and ROUTES now point to it.
+1. O3 (identity, noticed today): exact mixing p⋆p = (1 − 1/K) + p/K IS Booleanity (p̂² = p̂/K ⇔ p̂ ∈ {0, 1/K}).
+   - Probabilistic form: a sum of two iid p-samples is uniform w.p. 1 − 1/K and p-distributed w.p. 1/K.
+   - cont. 25.7's "mixing vs Booleanity" non-contradiction concerned the restriction ν_E, which is a different
+     statement; no conflict.
+2. F10 (PROVED, exact): ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a) for ANY random A with marginals w. Rounding noise is conserved;
+   correlations only move it in x. A1 (noise shaping) reduces to the taper tree; see CSTAR A1.
+3. A2: automatic sets as the C* design class (CSTAR A2 has the derivation).
+   - Exact asymptotics: f(j/b^k + b^{−L}s)/n → Re[μ̂_k(j)ν̂(s)], with ONE universal profile ν (Parry measure from the
+     initial state).
+   - So D := max over spikes of −min_s Re[μ̂_k(j)ν̂(s)] gives M >= (D − o(1))n.
+   - Validated: Cantor predicted 0.300 vs measured M/n 0.299; Fibbinary 0.203 vs 0.21.
+   - Fibbinary fails twice: h₀ = 0.19 (main profile not PD), and Φ₂(1) = 1 + 2.618i at x = ¼ lies 69° off-axis.
+   - Structural: b-adic spikes at fixed depth are MACROSCOPIC (∝ n). The L² sits at depth ≈ L (√n scale). So this
+     class tests C* at the macroscopic-hierarchy level. It reaches the mesoscopic regime only if the deep spectrum
+     concentrates.
+   - E107 (R screen) and E107b (exact D for all automata with b <= 5, S <= 4) are running.

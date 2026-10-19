@@ -1551,3 +1551,9 @@ Reading:
 - Next: a paper proof of the large-peak case. Route: Bernstein (a peak >= 4/3 forces |g − 1_Ω| >= 1/6 on an arc of
   length ~1/L) plus the identity ∫g(1 − g) = U. This closes the case when |Ω| <~ 1/L. For |Ω| >> 1/L, show a peak >= 4/3
   needs scale-1/L structure whose energy straddles k = L.
+
+## E106 (2026-10-19) Sparse Pareto search β_K + μR (src/e106_batch.sh, src/e68_pareto_sa.c; analysis src/e106_anal.py; examples/e106/e106.jsonl, 24 rows)
+- Boxes: n = 64 at X = 1280 (K = 1, 2) and X = 3200 (K = 2); n = 128 at X = 2560 (K = 2). μ ∈ {0.1, 0.2, 0.5}, 6e6 SA iterations, 2 restarts. Grid M (UNCERTIFIED).
+- Result: every low-β set is a BEATTY DILATE of a dense near-interval, with one macroscopic spike pair of 0.85–0.98·n at an irrational-looking x₀ (e.g. A ≈ round(j/0.0916)). β = 0.24–0.42 with R = 0.85–1.06. The only R < 0.85 row is gcd(A) = 2, a dilated dense set (R = 0.635, β = 0.20, spike at ½).
+- The sparse front (min R ≈ 0.85) is WORSE than the dense one (E68: β ≈ 0.18 at R ≈ 0.65). No mesoscopic spikes appear anywhere.
+- Reading: the annealer reaches spikiness only through ONE macroscopic real dilation (bounded frame, F4). At n <= 128 there is no room for mesoscopic heights (√n = 8–11, n = 64–128), so E106 cannot probe C*. The kill test passed vacuously. Mesoscopic probes need structured families with large n → E107 (automatic sets).

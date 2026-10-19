@@ -38,7 +38,7 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
 | F6 | Dissociated spike sets (order 6) are impossible when m <~ √X | proved in outline | cont. 25.3 |
 | F7 | Weak-L¹ (Carathéodory): P(f > s) ≈ cM/s on M <~ s <~ √n/ε (multifractal, maximally heavy-tailed) | heuristic | cont. 25.6 |
 | F8 | Flat sets (negative region of positive measure) lose only constant factors under weight perturbation | proved (P72(b)) + E103 | — |
-| F9 | Every known near-extremizer is flat: β_K ≈ 0.18+ and R >= ½ | numerical | E68, E104 |
+| F9 | Every known near-extremizer is flat: β_K ≈ 0.18+ and R >= ½. Sparse SA (E106, n <= 128) finds only Beatty dilates of dense sets (one macroscopic spike, R >= 0.85) | numerical | E68, E104, E106 |
 | F10 | Variance conservation. For ANY random A with marginals w_a = P(a ∈ A), and any correlations: ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a). Rounding noise cannot be destroyed, only moved in x. A random construction must move all of it under the positive spikes of E f | proved (exact: ∫cos(2πax)cos(2πbx)dx = δ_ab/2) | this file, 2026-10-19 |
 
 ## 3. DESIGN — constructive side (build the object on purpose)
@@ -72,6 +72,35 @@ The prize is (c). Everything else is support.
   This is the taper tree (ROUTES), and the earlier E23 and round-13 numerics (R growing) are its first-order instance.
   Extracted: F10 (exact) and D6. Open sub-question: can the recursion depth grow while the loss per level is
   summable? That is the construction form of C*, taken up in A2.
+
+- A2 (2026-10-19). AUTOMATIC SETS as the design class (new; not in ROUTES before today). Reason: they are the
+  taper tree with unbounded depth L = log_b X, built in by construction. Their spectrum is a matrix Riesz product
+  F_L(x) = e₀ᵀ M(b^{L−1}x)···M(x) 1, with M(y) = Σ_d C_d e(dy) and C_d the digit-d transition 0/1 matrices. It is
+  multifractal, with spikes at b-adic rationals of every depth k: mesoscopic for 1 << k < L/2. For λ < b
+  (n = X^α, α = log_b λ) the front is power-law loaded (density ~ u^{α−1}). Booleanity is automatic: it is a set.
+  Derivation (lead, asymptotic L → ∞, C primitive; C^m ≈ λ^m r πᵀ):
+  - Spike values. f(j/b^k) ≈ n·μ̂_k(j). Here Φ_k(j) := πᵀ M(j/b)···M(j/b^k) 1 and μ̂_k(j) = Φ_k(j)/Φ_k(0) is the
+    DFT on Z_{b^k} of the π-weighted low-digit language.
+  - Spike profiles. F_L(j/b^k + y) ≈ Σ_t F^{(t)}_{L−k}(b^k y)·(w_{jk})_t, with w_{jk} = M(j/b)···M(j/b^k)1. Under the
+    Parry measure every top-language profile ν_t equals ONE measure ν on [0, 1], with ν([d₁…d_p]) = λ^{−p}
+    r_{s(d₁…d_p)}/r₀. So the twisted profile at every b-adic spike is Re[Φ_k(j)·ν̂(s)], s ∈ R.
+  - NECESSARY for R_L bounded (let alone → 0): the negativity there is λ^{L−k}|min_s Re[Φ_k(j)ν̂(s)]|, which must be
+    O(λ^{L/2}) for every FIXED k. So EXACTLY Re[Φ_k(j)ν̂(s)] >= 0 for all s, j, k. With θ_ν := π/2 − sup_s|arg ν̂(s)|,
+    this says: every b-adic spike value Φ_k(j) lies in the sector |arg| <= θ_ν (or is 0), and Re ν̂ >= 0 (the main
+    profile is PD).
+    - The power-law front gives ν̂(s) ~ Γ(α)(−2πis)^{−α}, so θ_ν <= (1 − α)π/2.
+    - Sparse automata get a SECTOR condition, not reality: less rigid than the exact-PD conditions that kill dense
+      or rational templates.
+  - Dichotomy: an automatic family either satisfies this sector condition at every b-adic rational, or has
+    M >= c·n·λ^{−k₀} (linear in n).
+  - Periodic orbits. For x of exact ×b-period p, F_L(x) ~ ρ(Q_x)^{L/p} with Q_x = M(b^{p−1}x)···M(x). If
+    |ρ(Q_x)|^{1/p} > √λ, then ρ(Q_x) must be REAL POSITIVE; otherwise the phase rotates with L and M >= |ρ|^{L/p} >> √n.
+  - Global cone obstruction (PROVED, two lines). If every M(y) mapped one complex cone K ∋ 1 (with e₀ᵀK in the right
+    half-plane) into itself, then Re F_L >= 0 everywhere, so f >= −1: impossible (M → ∞). So a "bad" set B ⊂ T is
+    unavoidable. A counterexample must keep every trajectory that passes through B at growth < √λ, or map it back
+    into K. Tool candidate: Rugh's complex-cone Perron–Frobenius (contraction of complex cones under perturbations
+    of a positive matrix).
+  Experiment E107 (running): exhaustive screen of small automata (b <= 5, S <= 4) for R_L trends; follow-up to X ~ 2^21.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

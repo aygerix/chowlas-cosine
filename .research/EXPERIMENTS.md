@@ -886,3 +886,18 @@ So for curved cumulative roundings ALL rounding energy is bulk (P41's mechanism)
 Intervals (share 0): β = sidelobe energy ≈ 0.05–0.1. Bu/Singer (share ≈ 0.67): β2 ≈ 0.45, so part of Bu's rounding is
 structured (spiky). Small optima: 0.23–0.41.
 Heuristic form of SB: β_K >= c·[rounding share] + [negative-sidelobe energy].
+
+## E68 (2026-10-19) Pareto search β_K + μ·R on dense boxes X = 3n (src/e68_pareto_sa.c, src/e68_batch.sh; examples/e68/)
+NUMERICAL (grid; 3·10^6 swaps, 2 restarts). Question: can a dense set be spike-dominated (β small) AND have small R?
+| n | μ = 0.05 | 0.1 | 0.2 | 0.5 |
+|---|---|---|---|---|
+| 64 (K=1) | β .13–.14, R 1.16–1.26 | β .18, R .66–.67 | β .18, R .63–.64 | β .25–.28, R .67–.78 |
+| 64 (K=2) | β .19, R 1.17–1.20 | β .21–.22, R .89–.98 | β .19–.25, R .65–.79 | β .20–.27, R .61–.73 |
+| 128 (K=1) | β .17, R .76–.77 | β .19–.20, R .68–.72 | β .19, R .67 | (pending) |
+| 128 (K=2) | β .17, R .89–1.54 | β .19, R .66–.70 | β .26, R .79 | (pending) |
+Reading:
+- The Pareto front has min β rising as R falls: ≈ 0.11 at R 1.8 (interval), ≈ 0.13 at R 1.2, ≈ 0.18 at R ≈ 0.65.
+  No drift towards β -> 0 from n = 64 to 128.
+- The low-(β, R) sets are very dense and front-heavy (max A ≈ 86–93 at n = 64, density ≈ 0.7). Their spike energy is
+  mostly the central spike; they are not a new structural regime.
+- Consistent with SB; small R costs bulk.

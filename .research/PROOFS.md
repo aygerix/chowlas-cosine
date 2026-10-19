@@ -681,6 +681,10 @@ P29(b), twisted form: spectral front-loading (PROVED, same proof with the grid s
   P29(b) bounds the whole sum instead, at the cost of a factor X/h.
 
 ## P31. Window–Nikolskii inequality: Chowla for every set that is not front-loaded
+**Consolidated clean write-up (2026-10-19): .research/notes/dense_chowla_P31.md.**
+- Theorem 1, Lemma 2 (P31-E) and Theorem 3 with explicit (a)/(b).
+- Corollaries: dyadic 0.370; dense c(δ) table, threshold 0.4055 with the elementary constant.
+- The text below keeps the history and the corrections.
 (lead 2026-10-19; PROVED modulo the constant ρ_L, see "Status")
 Definitions.
 - ρ_L := sup ‖v ∗ v‖₂² / ((L + 1)‖v‖₂⁴) over v >= 0 supported on {0, …, L}.

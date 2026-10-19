@@ -2712,6 +2712,21 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    - Two-sided-sum (2-adic) Chowla, M >= c√|A_odd|. A counterexample to it yields D = A_even/2 with R(D) <= ε(1 + O(ε²))
      (the pinch plus P13a). So it is equivalent to Chowla up to descent; no independent content.
    - Spencer-type discrepancy on a PD profile. The rounding error must be ONE-sided small, so this is TAPER = C*.
+   - Helson–Szegő / A_2 / BMO (new to the record; killed on paper, same block).
+     - Since M + F_A is zero-free in the disk with |arg| <= π/2, we have the exact identity
+       log|M + F_A| = log M − θ̃ (θ = arg). Hence |M + F_A|^p ∈ A_2 for |p| < 1 with absolute constants, and
+       log|M + F_A| ∈ BMO. These hold at EVERY arc, a nonlinear interior localization.
+     - Kill test: they are consequences of positivity that are MODULUS statements. A random set with M replaced by a
+       too-small constant has |F|^p ∈ A_2 as well (log of a Gaussian analytic modulus is BMO, with zeros giving
+       log|x| singularities). So they cannot discriminate.
+     - The argument-winding picture of the curve M + F(e^{ix}) (spikes = clockwise excursions with Cauchy tails,
+       returns through near-zeros) is cont. 9.3's zero-set view, already refuted as a strengthening (E77).
+   - Ruzsa's weighted question, checked against Bedert's paper (arXiv 2509.05260v2, §1 and §6).
+     - Bedert proves polynomial bounds for every FIXED finite coefficient set S, via level sets and a Vandermonde
+       argument.
+     - The continuum [0.99, 1.01] is open (log n). Its power trick (convolution powers (f_w + K)^{⋆ℓ}) costs K^ℓ with
+       ℓ ~ log n, i.e. only log-type bounds.
+     - A polynomial bound for Chowla_τ needs new ideas too; it is not pursued (not a C* tool, ROUTES).
 6. Strategic review (skill §3).
    - Distance to result: unchanged; C* is open.
    - New this block: the robustness dimension (P72/E103), and the conclusion that relaxations do not help

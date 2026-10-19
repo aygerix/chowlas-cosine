@@ -669,3 +669,7 @@ Proved this block:
 - Round 18 results verified/recorded as P71: periodic triangular Bohr tapers have linear M (transverse packets);
   bounded-occupancy selectors give √n w.h.p.; tapered Singer–Bu (R ≈ 0.77, sparse) is the only sub-1 adversary.
 - New fact P71.1 (arc-mass bound), weak. C* unchanged and open.
+- (cont. 24) E103: near-Boolean weights buy only constant factors on Singer/Bu (R_{0.3}/R_0 -> 0.70 plateau). With E62
+  (phases), no relaxation of Booleanity opens a sub-½ regime. P72 (robust duality, PROVED). P71.2 KERNEL-CHECKED
+  (BohrTaper.lean, lead-audited). Helson–Szegő/A_2 and five other candidates killed on paper (NOTEBOOK cont. 24.5,
+  ROUTES). Literature spot-check: no news. C* unchanged and open. Evidence leans further toward Chowla TRUE.

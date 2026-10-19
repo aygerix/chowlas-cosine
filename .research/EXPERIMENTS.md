@@ -492,3 +492,15 @@ Reading:
 - No set puts noise mass into secondary spikes above 4M.
 - A construction with R -> 0 needs >= 1 − ρ* of the mass in secondary spikes far above M. This is the quantitative
   target for the construction track.
+
+## E44 closed (2026-10-19): Gurobi full-box N=45, X=64, warm-started at 3.836.
+- After 3600 s: bound 3.358, 2.4e7 nodes, no better incumbent.
+- Stopped by the lead. Low value after P29: the dense small-N sets are pre-asymptotic (density 0.7 cannot persist).
+  N=50/55 stages were not run.
+
+## E48 (2026-10-19) ρ_L = sup_{v>=0 on L+1 points} ‖v∗v‖²/((L+1)‖v‖⁴) (src/scratch/rhoL.py, L-BFGS, 12 starts, dirichlet)
+   L+1:    2      3        5        10       20       50       120
+   ρ_L:    0.75   0.71429  0.69669  0.68940  0.68758  0.68708  0.68700
+   const:  0.75   0.7037   0.68     0.67     0.6675   0.6668   0.66669
+- The optimizer is dome-shaped: ends at ≈ 0.62 of the peak.
+- Limit ≈ 0.687 < Beckner–Hölder 0.7698. This is the constant in P31.

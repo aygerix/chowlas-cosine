@@ -663,3 +663,52 @@ P29(b), twisted form: spectral front-loading (PROVED, same proof with the grid s
 - Compare P25, which bounds one window by the same low part:
   |Σ_a F̂_H(a − m)e^{iax₀}| <= 2M + 2(f ∗ F_H)(x₀).
   P29(b) bounds the whole sum instead, at the cost of a factor X/h.
+
+## P31. Window–Nikolskii inequality: Chowla for every set that is not front-loaded
+(lead 2026-10-19; PROVED modulo the constant ρ_L, see "Status")
+Definitions.
+- ρ_L := sup ‖v ∗ v‖₂² / ((L + 1)‖v‖₂⁴) over v >= 0 supported on {0, …, L}.
+  Equivalently ‖U‖₄⁴ <= ρ_L (L + 1)‖U‖₂⁴ for every trigonometric polynomial U of degree <= L (pass to |coefficients|).
+- For an integer w >= 1, κ(k) = (1 − |k|/(w + 1))₊ (Fejér kernel F = Σ κ(k)e^{ikx} >= 0), W = Σ_k κ(k)², and
+  S_A = Σ_{a∈A} κ(a)².
+Theorem. For every finite A ⊂ Z_{>0} with X = max A, n = |A|, M = M(A), and L = X + w:
+    W·(n/2 + M²) <= ρ_L (L + 1)·(M² + S_A/2).                                                    (P31)
+Proof.
+- Fix x₀. h(x) = F(x − x₀)(f_A(x) + M) is >= 0 and is a trigonometric polynomial of degree <= L.
+- Fejér–Riesz gives h = |U|² with deg U <= L. So (1/2π)∫h² = ‖U‖₄⁴ <= ρ_L(L + 1)‖U‖₂⁴ = ρ_L(L + 1)((1/2π)∫h)².
+- Integrate over x₀ ∈ [0, 2π) with (1/2π)dx₀:
+  - left side: [(1/2π)∫F²]·[(1/2π)∫(f + M)²] = W(n/2 + M²);
+  - right side: (1/2π)∫h = s(x₀) = M + Σ_{a∈A} κ(a)cos(a x₀), and (1/2π)∫s² = M² + S_A/2. ∎
+Corollary (the bound). If ρ := ρ_L, then
+    M² >= [W n/2 − ρ(L + 1) S_A/2] / [ρ(L + 1) − W],   and   ρ(L + 1) > W always.
+Take w = εX. Then W ≈ (2/3)εX. Let d_ε := 2S_A/W ∈ [0, 1], the Fejér²-weighted density of A in [1, εX], and
+δ = n/X. This gives
+    M² >~ (ε/3)·n·(1 − ρ(1 + ε)d_ε/(2δ)) / (ρ(1 + ε) − 2ε/3).
+So M >= c(ε, η)√n whenever d_ε <= (1 − η)·2δ/(ρ(1 + ε)).
+Consequences (given ρ_L <= ρ):
+- (i) CHOWLA (M >> √n) for every A that is NOT FRONT-LOADED: the density near 0 at some fixed proportional scale ε
+  is below 2δ/ρ ≈ 2.9δ (numerical ρ) or 2.6δ (ρ = 0.7698). This includes all sets of roughly uniform density, at
+  any sparsity.
+- (ii) DENSE SETS: d_ε <= 1, so every A ⊂ [1, X] with |A| >= (ρ/2)(1 + ε)(1 + η)X has M >> √n. Thresholds:
+  δ > 0.344 (numerical ρ_∞) or δ > 0.385 (ρ = 0.7698).
+- (iii) Any counterexample family (R -> 0) must have d_ε >= (2/ρ − o(1))δ at EVERY fixed scale ε. With P29 (which
+  needs d >= 2δ), it must be strictly more front-loaded than Turán requires.
+Relation to P29.
+- P29 gives linear M when δ > d'/2 (linear Fejér weights). P31 gives √n on the larger range δ > ρd/2.
+- With ρ = 1, P31 is weaker than P29. All new content comes from ρ_L < 1, i.e. from the doubly-positive/Nikolskii
+  gap: a nonnegative polynomial cannot be as peaked in L² as Fejér's bound max <= (deg + 1)·mean allows on average.
+Status.
+- The identity/inequality chain is PROVED (elementary). Numerically checked on 5 sets × 2 values of w: all implied
+  lower bounds lie below the true M, and the needed ρ (0.14–0.51) stays below the per-window ratios (0.35–0.60).
+- ρ_L (E48, src/scratch/rhoL.py): 1 (L=0), 0.75, 0.714, 0.6967 (L=4), 0.6894 (L=9), 0.6876 (L=19), 0.6871 (L=49),
+  0.6870 (L=119). Optimizer is dome-shaped, not constant (constant gives -> 2/3).
+- RIGOROUS bounds available:
+  - ρ_∞ := lim ρ_L <= A_{4/3}⁴ = 0.7698 (Beckner sharp Young for complex ĝ on an interval, plus Hölder). The
+    convergence ρ_L -> ρ_∞ should follow from Levin–Lubinsky's theorem that normalized polynomial Nikolskii constants
+    converge to the entire-function constant (p = 2, q = 4). CITED-UNVERIFIED: check the exact statement and
+    normalization.
+  - A uniform bound for all L, sketch: with the cumulative mass a(s) = Σ_{j<=s} v_j² and C–S per s,
+    Σ_s (v∗v)_s² <= 1 − 2∫A(1 − A) (continuum form). Splitting on the shortest interval carrying 1 − θ of the mass
+    gives ρ_L <= ~0.95. Needs a careful discrete write-up; too weak for (ii), but enough for a nonempty (i).
+- NOT kernel-checked, not externally reviewed, novelty unchecked. Next: an independent review (codex agent) plus a
+  rigorous ρ_L lemma; then Lean (Fejér–Riesz and the integration step are mathlib-friendly).

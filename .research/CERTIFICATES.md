@@ -80,3 +80,25 @@ Theorems (statements read by the lead):
   small-X case uses the earlier checked bound M >= ½).
 Meaning: Chowla's conjecture is KERNEL-VERIFIED for all sets of density >= 0.41 in [1, max A], with c₀ = 1/1000.
 The constants are not optimized; the paper constants are in .research/notes/dense_chowla_P31.md (C3).
+
+## 2026-10-19 (night) Beckner track T5 (Lean, codex agent; lead-audited)
+Lead audit:
+- `lake build` passes (8739 jobs).
+- `lake env lean AxiomCheck.lean` gives 272/272 entries, each depending only on [propext, Classical.choice, Quot.sound].
+- 0 sorryAx, and grep finds no sorry/axiom/native_decide in ChowlaCosine/Beckner or ChowlaCosine/P31.
+KERNEL-CHECKED:
+- `Beckner.young_finite`: Young's convolution inequality on ℝ for complex L^p functions. Every finite admissible triple
+  1/p + 1/q = 1 + 1/r, constant 1.
+- `young_conjugate`: the L^∞ boundary.
+- `young_four_thirds`: L^{4/3} ∗ L^{4/3} ⊂ L², constant 1.
+- Gaussian computations: `integral_gaussian_rpow`, `gaussian_convolution`, and exact attainment of 4/(3√3) by Gaussians,
+  i.e. the sharpness lower bound.
+- M4 infrastructure (51 declarations): heat-flow time/space derivatives, the heat equation for heat-flow
+  convolutions, score/moment bounds, the weighted-frame variance identity, and the pointwise frame heat-defect
+  nonnegativity (`frame_heat_defect_nonneg`).
+NOT done:
+- The sharp Young / Beckner upper bound (the global Brascamp–Lieb monotonicity application, the rescaling limits and
+  density passage).
+- M5 and the sinc P31-N constant.
+- Consequently P31-N (Beckner constant 0.7698) is still a paper result. The kernel-checked chain uses P31-E (0.811).
+Report: .research/agents/lean_p31_report.md.

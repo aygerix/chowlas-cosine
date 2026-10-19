@@ -1414,3 +1414,32 @@ Strategic decision:
   - Proof: the Steinhaus rotation trick, Re Z = |Z|cos Φ, plus the concave envelope of sin²(πx).
   - Constant 8/π², sharp at p = ½ with one coordinate.
   - Torsion characters are excluded, and must be: a Z_2 dictator has 100% level-1 weight.
+
+## 2026-10-19 (night, cont. 3) — The TL1 dichotomy: a counterexample's spike set must be additively structured (lead)
+1. Goal statement (TL1-finite, CONJECTURED; the bridge from P54 to actual sets).
+   - Setting: a ∈ {0,1}^Y with mean p; frequencies x_1..x_S; â(x) = (1/Y)Σ_m a_m e^{imx}.
+   - Graded D-dissociation at scale Y: every UNBALANCED combination Σ_{i<=j} x_{s_i} − Σ_{i<=k} x_{r_i} with j ≠ k,
+     j + k <= D, has ‖·‖ >= 1/(ηY). Every balanced cross term x_s − x_r (s ≠ r) also has ‖·‖ >= 1/(ηY).
+   - Claim: Σ_s |â(x_s)|² <= (8/π² + o_{D→∞, η→0}(1))·p(1 − p).
+   - Proof route (P54's, made finite):
+     - L_m = Re Σ_s c_s e^{imx_s} with c_s = conj(â(x_s)). Then Σ|â(x_s)|² ≈ (1/Y)Σ a_m L_m <= the top-p superquantile
+       of L over the window.
+     - Balanced separation gives ‖L‖² ≈ ½Σ|c_s|².
+     - Unbalanced separation makes the empirical law of Z_m = Σc_s e^{imx_s} rotation-invariant in all moments of
+       degree <= D. Moment matching then gives a superquantile within o(1) of the rotation-invariant bound.
+2. Consequence (HEURISTIC until TL1-finite is proved). Let Λ be the tall-spike set of a counterexample (heights >= λ,
+   P40). Apply TL1 to Λ in windows of length Y.
+   - If Λ is D-dissociated, at least 19% of the local variance lies off Λ, i.e. in the bulk. Then SB holds with
+     c ≈ 0.19·(rounding energy), contradicting P40.
+   - So Λ must carry short unbalanced relations: either
+     - (I) torsion: rational spikes 2πr/q with q <= D, i.e. residue-class structure, the SR/pinch route; or
+     - (II) additive relations x_s + x_r ≈ x_u, etc.: approximate-group/Bohr structure, the localized-Sanders route.
+3. In case (II) with bounded rank r, the local pattern is a 0/1 function on [0,1] × T^r. The P53 limit object then
+   keeps it 0/1, so it contradicts M = o(X), whatever the box sizes are.
+   - The only escapes are growing rank r_X → ∞, or windows E_X(t) ⊂ T^r with features at scale → 0 (perimeter → ∞).
+     Both make the limit non-0/1, and both push variance into fine harmonics of decaying height.
+   - So a counterexample must be MULTISCALE Bohr with growing complexity. Each level costs a fixed fraction: TL1 leakage
+     19%, PD defect >= t²/4 (agent's quantitative P53).
+   - The open question is whether these costs sum to a contradiction before the heights reach √(n/ε). This is the
+     precise form of the descent.
+4. Next: TL1-finite (a clean, provable lemma), then the case (I)/(II) structure lemmas. Candidate for the round-5 agent.

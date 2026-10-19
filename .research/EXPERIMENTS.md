@@ -504,3 +504,22 @@ Reading:
    const:  0.75   0.7037   0.68     0.67     0.6675   0.6668   0.66669
 - The optimizer is dome-shaped: ends at ≈ 0.62 of the peak.
 - Limit ≈ 0.687 < Beckner–Hölder 0.7698. This is the constant in P31.
+
+## E49 (2026-10-19) Does steep front-loading help? Profile-constrained SA (src/profile_sa.c, src/e49_batch.sh; dirichlet)
+Setup:
+- [1, X] in blocks of 10, each block's count fixed by c(1 − a/X)^p with c = 1 (density 1 at 0, d/δ = p + 1).
+- Swaps only within blocks; mode 1 = free swaps from the same start.
+- 3e6 iterations × 6 restarts × 2 seeds; grid objective (G = 8X + 1 on [0, π]).
+- HEURISTIC and search-limited: absolute values are far above the records (calibration: at N = 36 random-start SA
+  reaches 0.60 vs the 0.565 optimum).
+Results (best grid R over seeds; examples/profile_sa/e49.jsonl):
+   n     triangle p=1 (X=2n)   p=2 (X=3n)   p=3 (X=4n)   free, X=2n   free, X=3n
+   150   0.754                 0.801        0.875        0.762        0.916
+   300   0.781                 0.886        0.922        0.843        1.014
+Reading:
+- At equal effort, R increases with steepness p. Steep profiles, which form P31's escape class, are WORSE
+  constructions than the triangle (P31-covered) at n = 150–300.
+- The profile constraint helps the search (free < constrained at the same span).
+- Consistent with the heuristic that front-loading only adds Gibbs-like cost.
+- Not a proof, and not a certified minimum. The next probe is power-law and Bohr-type locally deterministic profiles
+  (filter 3).

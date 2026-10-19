@@ -133,8 +133,8 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
      - T1–T4: Fejér–Riesz, Lemma P31-E, main inequality, dense corollary with the elementary constant.
      - T5: Beckner sharp Young (lean_beckner_brief.md M1–M5) + P31-N, for the sharp threshold 2/(3√3).
      - User request: Beckner formalized. The local mathlib has neither Young convolution nor Fejér–Riesz.
-- E49 (src/e49_batch.sh, 6 cores): profile-constrained SA, triangle vs (1−t)^2, (1−t)^3 vs free, n = 150/300
-  -> examples/profile_sa/e49.jsonl.
+- E49 DONE: steeper front-loading gives larger R at equal search effort (n = 150: 0.754 / 0.801 / 0.875 for
+  p = 1 / 2 / 3). P31's escape class looks unfavourable for constructions (heuristic).
 
 ## Active lines (>= 3) (updated 2026-10-19)
 1. [lower bound, dense/profile] NEW lead line. P29 (Turán), then P31 (window–Nikolskii): Chowla for non-front-loaded

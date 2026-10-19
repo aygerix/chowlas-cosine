@@ -996,3 +996,43 @@ Reading (NUMERICAL):
   high-pass windows beat P31.
 - Lowering R costs window bound, as in E68. The μ = 1 runs at n = 256 did not reach low R (the search is harder).
 - The question whether P31 + P47 close T-dense beyond C = 2.466 is OPEN. See E72c.
+
+## E72c (2026-10-19) P47-escape Pareto at box ratios C = 4, 6, 10 (n = 128) and C = 3 (n = 512) (src/e72c_batch.sh)
+NUMERICAL (SA, 10^7 swaps, 2 restarts per μ; B = max over the P31/P47 window family with numerical ρ = 0.687;
+R on the 8X grid).
+| n, C | μ | max A/n | B/√n | grid R |
+|---|---|---|---|---|
+| 128, 10 | 0.1 / 0.3 | 9.7–9.98 | 0.014–0.017 | 1.27–1.29 |
+| 128, 6 | 0.1 / 0.3 | 4.65–4.95 | 0.020–0.025 | 0.92–0.99 |
+| 128, 4 | 0.1 / 0.3 | 1.95–2.79 | 0.030–0.099 | 0.85–0.93 |
+| 512, 3 | 0.1 | 2.41–2.73 | 0.159 | 0.95–0.96 |
+Reading:
+- At C = 6 and 10 the optimiser keeps max A ≈ 4.8n and 9.8n: these are genuine box-filling sets, and the whole window
+  family certifies only ≈ 0.02√n.
+- Yet R ≈ 0.9–1.3: escape from the window family is cheap, but small R is not.
+- C₁ (the reach of P31 + P47) is between 2.466 and ≈ 4.8. This matches the explicit escape set (NOTEBOOK cont. 6,
+  C ≈ 4–7).
+- At C = 4 the optimiser shrinks max A back into P31's range, so C = 4 is not decided.
+
+## E73 (2026-10-19) Gaussian-threshold ("multiscale Bohr") sets (src/e73_gauss_threshold.py, src/e73_batch.sh;
+## examples/e73/e73.jsonl, 480 rows)
+- Construction: A = {m <= X : Φ(m) > τ(m/X)}, with Φ = √(2/r)Σ_{j<r} cos(2πα_j m + φ_j) (random α, φ) and front-loaded
+  density p(t) = p0(1 − t)^γ. r = 0 is independent Bernoulli rounding of p.
+- Grid: X = 2^14, 2^16, 2^18; seeds 1–2; r ∈ {0, 1, …, 1024}; p0 ∈ {0.3, 0.5}; γ ∈ {0, 0.5, 1, 2}.
+- M is from the 8X FFT grid plus golden-section refinement (UNCERTIFIED).
+| r (γ >= 1) | R at X = 2^14 → 2^16 → 2^18 | β₃ (bulk share at <= 3√n) |
+|---|---|---|
+| 0 (Bernoulli) | 2.3–2.8 → 2.5–2.8 → 2.9–3.0 | 0.63–0.80 |
+| 1 | 17–51 → doubles → doubles (linear M) | 0.03–0.10 |
+| 4 | 20–25 → ×2 → ×2 | 0.13–0.30 |
+| 64 | 6–8 → 11–14 → 22–26 | 0.30–0.57 |
+| 1024 | 3.1–3.9 → 4.7–6.0 → 8–11 | 0.35–0.80 |
+Reading:
+- Every fixed rank gives linear M: R ∝ √X, as P53 predicts for macroscopic non-PD profiles. Front-loading the
+  density τ(t) makes level 1 PD but not the higher Hermite levels. Those levels' sidelobes have height ~X·r^{−k/2}.
+- High rank approaches the Bernoulli baseline from above and never beats it.
+- Spike domination (small β₃) comes only with linear M.
+- So the simplest member of the reduction's escape class (multiscale Bohr, growing rank) is NOT a construction
+  route. This matches the heuristic PD/Hermite tension: PD up to level K needs τ >~ 2√K, which puts the variance at
+  degree ~τ² > K, i.e. in the bulk.
+- Best rows at X = 2^18 are all Bernoulli (r = 0, γ = 1–2): R = 2.72–3.10.

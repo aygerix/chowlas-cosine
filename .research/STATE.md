@@ -42,7 +42,7 @@ KERNEL-CHECKED 2026-10-18 night (codex agent, lead re-verified: rebuild + 33 sta
 products; P20 Thm 2 (order 3) and its run-top corollary |B_t| <= |E| + (K+u₀)³ + 1; O4⁺ (order 4); line-D half-set
 identities T3(a)–(e) incl. the spectral gap (PROOFS 'Lean status update').
 
-NEW (session 2): P17 rigorous bounds on the doubly-positive profile constant: ρ* <= 0.9057 (all profiles), <= 0.7698 for
+NEW (session 2): P17 rigorous bounds on the doubly-positive profile constant: ρ* <= 0.9057 (all profiles), <= 4/(3√3)≈0.76980 for
 w = h⋆h̃ with h >= 0 (Beckner + Hölder); numerical sup 0.7239.
 
 NEW 2026-10-19 (lead):
@@ -53,7 +53,7 @@ NEW 2026-10-19 (lead):
   - M >> √n for every A that is not front-loaded (front density below 2δ/ρ);
   - dense Chowla in Z: |A| >= 0.39·max A ⇒ M >> √n;
   - any counterexample must be front-loaded beyond 2.9δ at every scale.
-  Numerical ρ_∞ ≈ 0.687 (E48); rigorous ρ_∞ <= 0.7698 via Beckner. Elementary constant ρ_L <= 0.811 + 0.237/(L + 1) (Lemma P31-E), so it is unconditional on paper. Not kernel-checked. Novelty unchecked
+  Numerical ρ_∞ ≈ 0.687 (E48); rigorous ρ_∞ <= 4/(3√3)≈0.76980 via Beckner. Elementary constant ρ_L <= 0.811 + 0.237/(L + 1) (Lemma P31-E), so it is unconditional on paper. Not kernel-checked. Novelty unchecked
   beyond one search.
 - P30 (CONJECTURED reformulation): uniform cap on the share of ‖f‖₂² above K·M implies Chowla. E47 measures it.
 

@@ -503,7 +503,7 @@ Reading:
    ρ_L:    0.75   0.71429  0.69669  0.68940  0.68758  0.68708  0.68700
    const:  0.75   0.7037   0.68     0.67     0.6675   0.6668   0.66669
 - The optimizer is dome-shaped: ends at ≈ 0.62 of the peak.
-- Limit ≈ 0.687 < Beckner–Hölder 0.7698. This is the constant in P31.
+- Limit ≈ 0.687 < Beckner–Hölder 4/(3√3)≈0.76980. This is the constant in P31.
 
 ## E49 (2026-10-19) Does steep front-loading help? Profile-constrained SA (src/profile_sa.c, src/e49_batch.sh; dirichlet)
 Setup:
@@ -716,7 +716,7 @@ E61b (src/e61b_littlewood_large.py; examples/e61/e61b.jsonl). Baselines, −min 
    2048   1.166               1.411           2.72
 Optimized phases: n = 384: 0.6087; 512: 0.6074; 768: 0.6088 (n = 1024 running).
 - The optimal unit-amplitude one-sided constant (HEURISTIC) is stable at ≈ 0.608 for n = 64..768.
-- The proved P34 constant is 0.28, or 0.31 once P31-N/Beckner is complete (ρ <= 0.7698), or 0.385 with the
+- The proved P34 constant is 0.28, or 0.31 once P31-N/Beckner is complete (ρ <= 4/(3√3)≈0.76980), or 0.385 with the
   numerical ρ_∞ = 0.687. The gap to 0.608 is a constant factor ≈ 1.6–2.2.
 
 ## E62 (2026-10-19) Phase relaxation of the best 0/1 supports (src/e62_phase_relax.py; examples/e62/e62.jsonl)

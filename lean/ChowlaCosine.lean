@@ -35,3 +35,6 @@ import ChowlaCosine.Beckner.HeatFlowProductLimit
 import ChowlaCosine.Beckner.HeatFlowInitial
 import ChowlaCosine.Beckner.HeatFlowDensity
 import ChowlaCosine.Beckner.YoungFrame
+
+import ChowlaCosine.Beckner.YoungSharp
+import ChowlaCosine.Beckner.YoungSharpSpecial

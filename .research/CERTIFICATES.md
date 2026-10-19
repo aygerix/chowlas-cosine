@@ -100,7 +100,7 @@ NOT done:
 - The sharp Young / Beckner upper bound (the global Brascamp–Lieb monotonicity application, the rescaling limits and
   density passage).
 - M5 and the sinc P31-N constant.
-- Consequently P31-N (Beckner constant 0.7698) is still a paper result. The kernel-checked chain uses P31-E (0.811).
+- Consequently P31-N (Beckner constant 4/(3√3)≈0.76980) is still a paper result. The kernel-checked chain uses P31-E (0.811).
 Report: .research/agents/lean_p31_report.md.
 
 ## 2026-10-19 (night) P34 + P33 + dilation pinch — KERNEL-CHECKED (codex Lean agent; lead-audited)
@@ -154,3 +154,22 @@ tokens in Beckner/.
   explicit Young frame for interior exponents and the exact Beckner factor Π A_{p_i}.
 - NOT yet: the Lp change-of-variables passage to the sharp Young inequality, M5, P31-N
   (.research/agents/lean_m4_report.md).
+
+## 2026-10-19 Beckner's sharp Young inequality on ℝ — KERNEL-CHECKED (codex Lean agent; lead-audited); M5
+Lead audit:
+- `lake build` passes (8759 jobs). AxiomCheck gives 447/447 entries, all [propext, Classical.choice, Quot.sound],
+  with 0 sorryAx and no forbidden tokens.
+- The P31-N drafts lean/ChowlaCosine/P31/FourierL2.lean and SincInterpolation.lean are NOT imported or audited, and
+  are left uncommitted (agent stopped mid-task by user request).
+Statements (lean/ChowlaCosine/Beckner/YoungSharp.lean, YoungSharpSpecial.lean):
+- `sharp_young`. For p, q, r ∈ [1, ∞] (ℝ≥0∞) with 1/p + 1/q = 1 + 1/r and f ∈ L^p(ℝ; ℂ), g ∈ L^q(ℝ; ℂ):
+  f ∗ g ∈ L^r and ‖f ∗ g‖_r <= A_p A_q A_{r'} ‖f‖_p ‖g‖_q, with A_p = becknerA p = (p^{1/p}/p'^{1/p'})^{1/2}
+  (becknerFactor (1/p)). All endpoints are included.
+- `sharp_autocorrelation` (M5). For h ∈ L^{4/3}(ℝ; ℂ), the sharp autocorrelation bound with constant
+  A_{4/3}⁴ = 4/(3√3) (`becknerFactor_three_quarters_fourth`). Interval-support corollaries:
+  `sharp_interval_selfConvolution`, `sharp_interval_autocorrelation`.
+- Proof route: heat-flow geometric Brascamp–Lieb → explicit Young frame → planar change of variables →
+  duality/domination.
+- Correction found by the agent: the constant previously recorded as "0.7698" is a rounding of 4/(3√3) =
+  0.7698003589… and is NOT itself a valid exact upper bound. All records now say 4/(3√3) ≈ 0.76980. The thresholds
+  derived from it are unchanged at displayed precision.

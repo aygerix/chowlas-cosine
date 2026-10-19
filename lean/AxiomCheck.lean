@@ -700,3 +700,32 @@ open ChowlaCosine
 #check @ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct
 #check @ChowlaCosine.Beckner.geometric_brascamp_lieb
 #check @ChowlaCosine.Beckner.youngFrame_sharp_factor
+
+-- 33. M4b: exact planar substitution and sharp Young, all extended exponents.
+#print axioms ChowlaCosine.Beckner.youngFrameMap_det
+#print axioms ChowlaCosine.Beckner.plane_linear_change
+#print axioms ChowlaCosine.Beckner.youngFrameMap_apply
+#print axioms ChowlaCosine.Beckner.youngFrameMap_third
+#print axioms ChowlaCosine.Beckner.young_trilinear_complement
+#print axioms ChowlaCosine.Beckner.young_trilinear_interior
+#print axioms ChowlaCosine.Beckner.memLp_normConvolution
+#print axioms ChowlaCosine.Beckner.young_power_cancel
+#print axioms ChowlaCosine.Beckner.sharp_young_normConvolution_interior
+#print axioms ChowlaCosine.Beckner.becknerFactor_zero
+#print axioms ChowlaCosine.Beckner.becknerFactor_one
+#print axioms ChowlaCosine.Beckner.becknerFactor_mul_complement
+#print axioms ChowlaCosine.Beckner.sharp_young_finite_interior
+#print axioms ChowlaCosine.Beckner.sharp_young_finite
+#print axioms ChowlaCosine.Beckner.sharp_young_ennreal
+#print axioms ChowlaCosine.Beckner.sharp_young
+
+-- 34. M5: exact project constant, autocorrelation, and interval support.
+#print axioms ChowlaCosine.Beckner.becknerFactor_three_quarters_fourth
+#print axioms ChowlaCosine.Beckner.becknerFactor_half
+#print axioms ChowlaCosine.Beckner.sharp_young_four_thirds_sq
+#print axioms ChowlaCosine.Beckner.memLp_reflectConj
+#print axioms ChowlaCosine.Beckner.eLpNorm_reflectConj
+#print axioms ChowlaCosine.Beckner.sharp_autocorrelation
+#print axioms ChowlaCosine.Beckner.interval_four_thirds_le_two
+#print axioms ChowlaCosine.Beckner.sharp_interval_selfConvolution
+#print axioms ChowlaCosine.Beckner.sharp_interval_autocorrelation

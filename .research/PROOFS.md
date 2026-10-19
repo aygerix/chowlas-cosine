@@ -714,10 +714,10 @@ Take w = εX. Then W ≈ (2/3)εX. Let d_ε := 2S_A/W ∈ [0, 1], the Fejér²-w
 So M >= c(ε, η)√n whenever d_ε <= (1 − η)·2δ/(ρ(1 + ε)).
 Consequences (given ρ_L <= ρ):
 - (i) CHOWLA (M >> √n) for every A that is NOT FRONT-LOADED: the density near 0 at some fixed proportional scale ε
-  is below 2δ/ρ ≈ 2.9δ (numerical ρ) or 2.6δ (ρ = 0.7698). This includes all sets of roughly uniform density, at
+  is below 2δ/ρ ≈ 2.9δ (numerical ρ) or 2.6δ (ρ = 4/(3√3)≈0.76980). This includes all sets of roughly uniform density, at
   any sparsity.
 - (ii) DENSE SETS: d_ε <= 1, so every A ⊂ [1, X] with |A| >= (ρ/2)(1 + ε)(1 + η)X has M >> √n. Thresholds:
-  δ > 0.344 (numerical ρ_∞) or δ > 0.385 (ρ = 0.7698).
+  δ > 0.344 (numerical ρ_∞) or δ > 0.385 (ρ = 4/(3√3)≈0.76980).
 - (iii) Any counterexample family (R -> 0) must have d_ε >= (2/ρ − o(1))δ at EVERY fixed scale ε. With P29 (which
   needs d >= 2δ), it must be strictly more front-loaded than Turán requires.
 Relation to P29.
@@ -730,7 +730,7 @@ Status.
 - ρ_L (E48, src/scratch/rhoL.py): 1 (L=0), 0.75, 0.714, 0.6967 (L=4), 0.6894 (L=9), 0.6876 (L=19), 0.6871 (L=49),
   0.6870 (L=119). Optimizer is dome-shaped, not constant (constant gives -> 2/3).
 - RIGOROUS bounds available:
-  - ρ_∞ := lim ρ_L <= A_{4/3}⁴ = 0.7698 (Beckner sharp Young for complex ĝ on an interval, plus Hölder). The
+  - ρ_∞ := lim ρ_L <= A_{4/3}⁴ = 4/(3√3)≈0.76980 (Beckner sharp Young for complex ĝ on an interval, plus Hölder). The
     convergence ρ_L -> ρ_∞ should follow from Levin–Lubinsky's theorem that normalized polynomial Nikolskii constants
     converge to the entire-function constant (p = 2, q = 4). CITED-UNVERIFIED: check the exact statement and
     normalization.
@@ -740,7 +740,7 @@ Status.
 - Literature check: Levin–Lubinsky 2015 prove only a limsup bound for finite q and conjecture the limit, so they do
   not give the needed upper bound. Replaced by a self-contained proof.
 - Lemma P31-N (asymptotic constant; PROOF SKETCH by lead, truncation errors to be written out):
-      ρ_L <= A_{4/3}⁴ + O(1/T + T log T / L) = 0.7698 + o(1).
+      ρ_L <= A_{4/3}⁴ + O(1/T + T log T / L) = 4/(3√3)≈0.76980 + o(1).
   - Choose B̂ smooth with Σ_m |B̂(ξ + 2πm)|² ≡ 1 and B̂ = 1 on [−π + 1/T, π − 1/T] (square-root partition of unity).
     Set h(t) = Σ_j u_j e^{ijθ} B(t − j).
   - Periodization: ∫|h|² = ‖u‖², and ∫|h ∗ h|² = (1/2π)∫|U(x + θ)|⁴ Φ(x)dx with Φ = Σ_m|B̂(x + 2πm)|⁴ >= 1 off the
@@ -748,7 +748,7 @@ Status.
   - Averaging over θ, some θ puts at most (2/(πT))‖U‖₄⁴ in the bands.
   - Beckner's sharp Young inequality on R (complex h, exponents 4/3, 4/3 -> 2, constant A_{4/3}² = 0.87738) plus
     Hölder on supp h. B decays superpolynomially at scale T, so truncate to length O(T log T).
-  - Conclusion: (1 − 2/(πT))‖U‖₄⁴ <= 0.7698‖u‖⁴(L + 1 + O(T log T)).
+  - Conclusion: (1 − 2/(πT))‖U‖₄⁴ <= 4/(3√3)≈0.76980‖u‖⁴(L + 1 + O(T log T)).
   Hence the dense corollary (ii) holds RIGOROUSLY for large X with any threshold δ > 0.385 (once the lemma is written
   out). The numerical ρ_∞ ≈ 0.687 would lower it to 0.344.
 - NOT kernel-checked; novelty unchecked. Next:
@@ -861,7 +861,7 @@ COROLLARIES (exact constants, every X >= 1, no asymptotics):
     In words: once the density of A in [1, w] falls below about (2/2.433)·(1 + w/X)^{−1} ≈ 0.82/(1 + w/X) times the
     global density n/X, Chowla holds for A with an explicit constant.
 Sharper constants:
-- With P31-N (Beckner, ρ_L -> 0.7698) the dyadic constant becomes 0.380 asymptotically.
+- With P31-N (Beckner, ρ_L -> 4/(3√3)≈0.76980) the dyadic constant becomes 0.380 asymptotically.
 - With the numerical ρ_∞ ≈ 0.687 (E48; not proved) it would be 0.402.
 CORRECTION (lead, 2026-10-19, same day; found while testing E54). (a) and (b) are TRUE but TRIVIALLY SUPERSEDED.
 - Sets without small elements have LINEAR M by a one-line test-point argument.
@@ -916,7 +916,7 @@ Integrate over x₀ ∈ E with dx₀/2π. Let S be any set with S + [−c/w, c/w
 where τ_c := (1/2π)∫_{|y|>c/w} F² <= π³w/(3c³). Use F(y) <= π²/((w + 1)y²) on |y| <= π. So τ_c/W <= 15.5/c³.
 Splitting g: (1/2π)∫_{g <= K'M} g² <= (K' + 1)M², as for f. Hence for any η > 0:
     (1/2π)∫_S (f + M)² <= [C_L/(W − τ_c)]·[(1 + η)((1/2π)∫_{E ∩ {g > K'M}} g² + (K' + 1)M²) + (1 + 1/η)M²|E|/2π].
-Numbers: C_L/(W − τ_c) ≈ (3ρ/2)(1 + X/w)/(1 − 15.5/c³). With w = X and ρ = 0.7698 + o(1), this is 2.31/(1 − 15.5/c³).
+Numbers: C_L/(W − τ_c) ≈ (3ρ/2)(1 + X/w)/(1 − 15.5/c³). With w = X and ρ = 4/(3√3)≈0.76980 + o(1), this is 2.31/(1 − 15.5/c³).
 Meaning: f's spike mass on S is at most a constant times g's spike mass on a c/w-neighbourhood, plus O(M²(1 + |E|)).
 Choosing S outside the central region (|x| >= C/w) removes g's own profile peak from the right side.
 FULL-FRONT COROLLARY (PROVED). If A ⊇ [1, w], then g = (F − 1)/2 exactly, with g <= −1/2 + O(w/(C²w²)·…) on |x| >= C/w,

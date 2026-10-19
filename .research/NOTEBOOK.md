@@ -1009,3 +1009,19 @@ Squares are the canonical locally deterministic, front-loaded family, and filter
   - Cayley form: λ_min(Cay(Z, ±A)) = −2M. The neighbourhood of 0 must have edge density >= (1 − 2R²)/(2M).
 - Dense small sets are where L⁴ helps (N50: 0.257 vs 0.208). A combined L²/L⁴ optimisation over windows could sharpen
   the dense constants. That is incremental, so it is parked.
+
+## 2026-10-19 (late, cont. 3) — Weighted window inequality (a nonlinear certificate) and its spike-model reading (lead)
+Statement (PROVED):
+- Integrate P31's pointwise window bound Q(x₀) <= C·s(x₀)² (s = M + g) against the weight 1/s.
+- Then use Jensen in the form ∫F²/s >= W²/(F² ∗ s).
+- Result: with G := f ∗ Φ, Φ = F ∗ F²/W (nonneg, mass 1, degree <= w, so G >= −M),
+      (1/2π)∫(f + M)²/(M + G) <= (C/W)·M,    C = ρ_L(L + 1),  C/W ≈ (3ρ/2)(1 + X/w).
+- Nonlinear in A, because the weight depends on A through G.
+Consequence (PROVED): f's L² mass on {G <= KM} is <= (K + 1)(C/W)M². So as R -> 0, all of f's L² sits where the
+low-pass G is >> M. This is the P32 spike-support statement in one line, with constant (C/W)(K + 1).
+Spike-model reading (HEURISTIC):
+- For isolated spikes, Σ m_i/G_i ≈ (shape constant)·(X/w)·M. The inequality is again a per-spike SHAPE condition
+  (L²/L¹ ratio of the spike against the kernel peak), so no contradiction as R -> 0.
+- Spikes clustered within 1/w raise G and make the inequality EASIER. So the extremal configurations for evading it
+  are clustered spike families, i.e. dilation-like structures again.
+Status: a recorded tool, not a route. Parked.

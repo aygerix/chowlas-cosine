@@ -754,3 +754,22 @@ Reading:
 - The hard case of target T-dense (front-loaded A ⊂ [1, Cn]) contains no good sets that search can find (also E52:
   R ≈ 1–1.8 there).
 - The good sets in the escape class are SPARSE (E60: Bu + outliers).
+
+## E62b/E62c (2026-10-19) Phase relaxation, wider supports and the N50 optimum (src/e62b_phase_relax_wide.py,
+## src/scratch/e62c_n50_phases.py; examples/e62/e62b.jsonl, e62c.json)
+- E62b, best of 4 starts (UNCERTIFIED grid). Bu q199/q401 and the random controls were still running at the time of
+  writing.
+   support            R (0/1)   R (phases)
+   dense N50          0.5696    0.4983
+   Singer diff q31    0.7184    0.5983
+   Singer diff q61    0.7128    0.6329
+   E49 triangle SA    0.7842    0.5499
+- E62c: 10 starts and 5 annealing stages on the N50 support give best R = 0.4916 (values 0.4916–0.5000).
+  - After removing the best linear phase (a pure shift of x), the phases are SMALL PERTURBATIONS OF 0:
+    |θ| mostly < 0.7, mean distance to {0, π} 0.41. They are not a sign pattern.
+- Reading:
+  - Phase-relaxed C½ fails at n = 50 by 0.008 on the best dense support.
+  - Unimodular coefficients are not admissible for Chowla/Epoch (coefficients must be +1).
+  - The relaxation buys ≈ 0.08 at n = 50 and less on larger structured supports (q61: 0.71 -> 0.63, against the
+    0/1 sub-family's 0.5 + O(n^{-1/4})).
+  - Evidence that positivity of coefficients costs only a small constant. No qualitative sub-½ regime appears.

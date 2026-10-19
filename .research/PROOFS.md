@@ -826,6 +826,38 @@ P31(c), multi-scale form (inequality PROVED; claimed consequence RETRACTED, see 
   - lower bound: a new argument for self-similar front-loaded sets;
   - construction: optimize within power-law profiles (E49 follow-up).
 
+## P31-C. Explicit sparse-front corollary of P31 (all scales, all X) — PROVED (lead 2026-10-19), modulo P31's inputs
+Inputs: P31 (window inequality: Fejér window + Fejér–Riesz + analytic Nikolskii) and Lemma P31-E (ρ_L <= 0.8110 + 0.2367/(L + 1)).
+STATEMENT. Let A ⊂ Z_{>0} be finite and nonempty, X = max A, n = |A|, M = −min_R f_A. Then for every integer w with
+0 <= w <= X:
+    M² >= (w + 1)·n / (3·(0.811·(X + w + 1) + 0.2367))  −  ½·|A ∩ [1, w]|.            (C)
+Proof:
+- P31 at window w, with L = X + w and C = ρ_L(L + 1), gives
+      W(n/2 + M²) <= C(M² + S_A/2),   W = 2(w + 1)/3 + 1/(3(w + 1)),   S_A = Σ_{a∈A}(1 − a/(w + 1))₊² <= |A ∩ [1, w]|.
+- C > W: the Fejér kernel shows ρ_L(L + 1) >= W_L >= W, and the gap is strict for X >= 1. So
+      M² >= (Wn − C·S_A)/(2(C − W)).
+- If Wn >= C·S_A, then M² >= (Wn − C·S_A)/(2C) = Wn/(2C) − S_A/2. Otherwise Wn/(2C) − S_A/2 < 0 <= M².
+- Finally use W >= 2(w + 1)/3 and ρ_L <= 0.811 + 0.2367/(L + 1), i.e. C <= 0.811(X + w + 1) + 0.2367. ∎
+COROLLARIES (exact constants, every X >= 1, no asymptotics):
+(a) DYADIC SETS. If A ⊂ (X/2, X], then M(A) >= 0.3701·√|A|.
+    Take w = ⌊X/2⌋, so A ∩ [1, w] = ∅. Then w + 1 >= (X + 1)/2 and X + w + 1 <= (3X + 2)/2, giving
+        M² >= n(X + 1)/(7.299X + 6.286).
+    This is decreasing in X, with limit 1/7.299 = 0.13700 (checked numerically for X <= 2·10⁵, min 0.137005).
+(b) SETS WITHOUT SMALL ELEMENTS. If A ∩ [1, εX] = ∅ (0 < ε <= 1), then
+        M² >= εn/(2.433(1 + ε) + 0.7101/X).
+    (Use w = ⌊εX⌋, w + 1 >= εX, and that the right side of (C) increases in w + 1.) Examples: ε = ¼ gives M >= 0.2867√n;
+    ε = ¾ gives M >= 0.4197√n (asymptotic constants; the 0.7101/X term costs < 1% once X >= 100).
+(c) SPARSE FRONT. M >= c√n whenever, for some w,
+        |A ∩ [1, w]| <= 2(w + 1)n/(3(0.811(X + w + 1) + 0.2367)) − 2c²n.
+    In words: once the density of A in [1, w] falls below about (2/2.433)·(1 + w/X)^{−1} ≈ 0.82/(1 + w/X) times the
+    global density n/X, Chowla holds for A with an explicit constant.
+Sharper constants:
+- With P31-N (Beckner, ρ_L -> 0.7698) the dyadic constant becomes 0.380 asymptotically.
+- With the numerical ρ_∞ ≈ 0.687 (E48; not proved) it would be 0.402.
+Status: paper proof complete given P31 + P31-E. Lean: P31 is kernel-checked conditionally on FejerRiesz (agent T3).
+(C) is the natural T4 target. Literature: no √n bound for dyadic or sparse-front sets was found in the 2026-10-19
+dense-case check. Not a thorough survey.
+
 ## P32. Two-scale spike-support inequality (route R3) — PROVED (lead 2026-10-19; elementary from P31's window step)
 Setup: A ⊂ Z_{>0} finite, X = max A, f = f_A >= −M. w >= 1, F = Fejér kernel of degree w with F̂(0) = 1, κ(k) the
 same Fejér weights as in P31, g = f ∗ F (so g(x) = Σ_{a∈A} κ(a)cos(ax), g >= −M, mean 0). W = (1/2π)∫F², L = X + w,

@@ -275,11 +275,20 @@ in parallel.
   - NEW finite-window QD at fixed complexity: M <= ηX ⇒ energy outside any J windows >= X/(48C³) (ineffective).
 - CURRENT REDUCTION (NOTEBOOK cont. 4): T-dense ⟸ (A) finite TL1 for tall-spike sets, with errors given by weighted
   unbalanced relation counts, + (B) the structured case (torsion / additive relations ⇒ P53 rigidity or recursion).
+- Round 4 DONE (PROOFS P55). HBCG (window QD-½) is the precise missing inequality, and HBCG ⇒ T-dense is proved.
+  PD plus Bessel cannot give it (saturating example), and TL1 (P54) is the binary input that kills that example.
+- E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
+- E72: no C = 3 set escapes the P47 family, and the min bound rises with n. Candidate: P31 + P47 ⇒ T-dense for C < C₁.
 ## Running now (2026-10-19 night, newest)
-- Codex MATH agent, round 4 (.research/agents/tdense4_brief.md, report tdense4_report.md):
-  - Task 1: adversarial check of P47 and P53;
-  - Task 2: quantitative P53 (QD), a mesoscopic P48 (MP48) and the descent (D).
-- VM: E70b (P47 family on Bu q = 37–127; 2 jobs); grb_group_bt; E64 bu2 (D = Bu k6, eps 0.15); E65 (q = 19 SA).
+- Codex MATH agent, round 5 (.research/agents/tdense5_brief.md, report tdense5_report.md):
+  - finite J-uniform TL1;
+  - the dichotomy toward HBCG;
+  - QD-½.
+- VM: E64 bu2 k7; E65 q = 19/23 SA. Free cores available.
+## First concrete next step (2026-10-19 night)
+- Verify round 5 when it lands.
+- Lead foreground: the "P31 + P47 ⇒ T-dense for C < C₁" case analysis (E72 suggests C₁ >= 3), or a direct attack on
+  HBCG via TL1.
 
 ## Running now (2026-10-19, session 3, latest)
 - Codex MATH agent, round 3: .research/agents/tdense3_brief.md (report tdense3_report.md).

@@ -973,3 +973,25 @@ E68 anatomy (n = 64, K = 1, β = 0.176, R = 0.670): A = [1, 52] ∪ {56, 58, 63,
   like ~1.5q ∝ √n.
 - Reading: the extremal known family is NOT in the P47 escape class. Numerically, high-pass windows certify
   M >= 0.22√n on Bu sets uniformly in q, about 38% of the true M.
+
+## E70b (cont.) and E72 (2026-10-19)
+E70b, larger Bu (numerical ρ = 0.687): best/√n = 0.205 (q = 199, n = 39800, best h = 256) and 0.211 (q = 251,
+n = 63252, best h = 384). It levels off at ≈ 0.21. The best h tracks ~1.5q.
+E70b with RIGOROUS ρ_L = (4/(3√3))(1 + 2/√(L+1))³: best/√n = 0.157 (q = 31), 0.166 (q = 61), 0.171 (q = 127).
+- The values RISE with q as ρ_L → ρ_∞, so the high-pass window family gives M >= 0.17√n on Bu q = 127 with the proved
+  Nikolskii constant. E and S are floating sums of rational quantities; making this a certificate needs exact
+  arithmetic.
+- E_h/n for Bu: 0.22 (h = 1), rising to ≈ 0.55–0.60 at h >= 128.
+E72, Pareto search over A ⊂ [1, 3n] minimizing B/√n + μR (src/e72_p47_pareto.c, 10^7 swaps, 2 restarts). B is the
+best P47-family window bound (numerical ρ):
+| n | μ = 0.1 (B/√n, R) | μ = 0.3 | μ = 1 |
+|---|---|---|---|
+| 64 | 0.105–0.106, R 0.96–0.98 | 0.142–0.144, R 0.73–0.75 | 0.178–0.181, R 0.70–0.72 |
+| 128 | 0.122–0.127, R 0.93–0.98 | 0.156–0.164, R 0.80–0.82 | 0.186–0.204, R 0.79–0.82 |
+| 256 | 0.142–0.144, R 0.87–0.94 | 0.176–0.179, R 0.87–0.88 | 0.240–0.244, R 0.95–1.00 |
+Reading (NUMERICAL):
+- No dense set (C = 3) escapes the P47 family. The minimal B/√n RISES with n (0.105 → 0.122 → 0.142).
+- Lowering R costs window bound, as in E68. The μ = 1 runs at n = 256 did not reach low R (the search is harder).
+- Conjecture (NOTEBOOK): P31 + P47 together prove T-dense for C up to some C₁ >= 3, beyond P31's 2.466. The escape
+  class (front-loaded density AND front-loaded local variance at every scale) needs sparser sets: ½(1−t)⁴ has mean
+  density 0.1, i.e. C ≈ 10.

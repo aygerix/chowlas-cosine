@@ -1496,3 +1496,11 @@ Meaning.
   task is a finite, J-uniform TL1 inside HBCG:
   - graded-dissociated tall spikes ⇒ >= 19% residual ⇒ HBCG;
   - otherwise unbalanced phase-coherent relations ⇒ structure.
+- (cont. 6, E72) The P47 family appears to close T-dense at C = 3: no escape set in [1, 3n], and the minimal bound rises
+  with n. Candidate theorem: "P31 + P47 ⇒ T-dense for C < C₁", with an explicit C₁ > 2.466.
+  - Proof sketch needed: if every high-pass window fails, A is front-loaded in density (P31) AND in local variance
+    at every scale h.
+  - Fronts with density near 1 have no variance. A structured (blocky) tail lowers the tail variance only for h below
+    the block length.
+  - Case analysis on the tail structure is required. Worth a separate attack: it would be the first extension of the
+    kernel-checked dense theorem.

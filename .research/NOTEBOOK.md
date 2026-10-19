@@ -1110,3 +1110,101 @@ Setting:
    - Status: the real-square class is pinned at ½ by "generic zeros" (P16 for Bu's family). A general P16 for all
      ±-Sidon frequency sets would need many well-spaced zeros of h. "Few-zero" h is the only loophole, and E63/E52
      give no hint it is realizable.
+
+## 2026-10-19 (night, cont. 3) — One Bu step with D fixed: triangle locking, phase-blind optimum, E64/E65 (lead)
+Setting: A = 3D ∪ E with E ∩ 3Z = ∅. Write P(x) = f_D(3x) + Mt and Z(x) = e^{ix}W(3x), where W is a 0/1 Laurent
+polynomial: frequency m ↔ e = |3m + 1|. Then f_A >= −Mt ⟺ Z(x) ∈ T(P(x)), the equilateral triangle with inradius P,
+circumradius 2P and vertices at 2P·{1, ω, ω²}. λ := |E|/|D|; R(A)² = Mt²/(|D|(1 + λ)).
+- (T1) Ceiling. Full vertex locking means f_A + Mt = 3P·χ_Ω with Ω a 3-tile. Parseval then gives exactly
+  |E| = 4Mt² + 2|D|, i.e. λ = 2 + 4R(D)².
+  - The pinch |E| <= 2|D| + 2Mt is the vertex condition at y = 0, where W(0) = |E| <= 2P(0).
+  - Linear tests (∫ f_A K >= −Mt K̂(0) with K >= 0) cannot beat the pinch: any smoothing of the two-point measure at
+    2π/3, 4π/3 loses on 3D and E alike.
+- (T2) Phase-blind optimum. |Z| <= P everywhere gives |E| <= ‖P‖² = Mt² + |D|/2, i.e. λ <= R(D)² + ½. Equality holds
+  iff W = V² with |V|² = P: a BI-FLAT V, with autocorrelation ½ on ±D and autoconvolution 0/1.
+  - Iterating phase-blind optimal steps would give R² -> R²/(1.5 + R²) -> 0.
+  - Sidon D: V = F/√2 and W = ½F², which is Bu (λ = 1), up to the diagonal junk ½F(2y).
+- (T3) Local vs global locking.
+  - Stationarity at a vertex touch point (|W| = 2P) needs (arg W)' = −1/3 there. At y = 0 this means the mean
+    W-frequency is −1/3: possible for 0/1 W.
+  - Globally, the winding of e^{iy/3}W is 2π(1/3 + w), so the phase must cross a sector boundary, where |W| <= P.
+    That is only a measure-zero obligation, so there is NO topological obstruction to λ near 2.
+  - Exact locking is impossible: zW³ >= 0 would force a symmetric support with 3a + 1 = −(3b + 1).
+- (T4) "F²·u" designs are killed. W = ½F²·Σ_{j∈J} z^{m_j}, with disjoint shifted sumsets, gives λ = |J|.
+  - |J| >= 3 violates the pinch.
+  - |J| = 2 needs phase control of F. That forces S to be symmetric about a centre c, but a symmetric S is not Sidon:
+    the sum 2c has multiplicity k/2.
+  - Even granting phase control (m = −1 − 6c, drift α = m/6, vertices hit at the lobe centres), the LINEAR phase drift
+    violates the triangle. The worst violation is by the factor max_φ 2cos φ·cos(π/3 − φ/3) = 1.1255 at φ ≈ 0.405, and
+    the triangle is violated for |φ| < 0.785, with an excess ∝ P.
+- (T5) Exact Mt = M(D) forces E = ∅ generically. At the minimisers x* of f_D(3x) we have P = 0, so Z(x*) = 0 and
+  (from the double zero of P) W(y*) = W'(y*) = 0. A 0/1 polynomial cannot vanish at an algebraically generic point.
+  E64: D = the N24 optimum at Mt = M(D) gives E = ∅, proved optimal by Gurobi.
+- (T6) Paired sub-class E = 3M₊ + {1, 2}. Here f_A(x) = f_D(3x) + cos(x/2)R(3x), with R(y) = 2Σ_{m∈M₊} cos((m + ½)y).
+  The constraint is −P/cos(y/6) <= R <= P/cos(π/3 − y/6) on [0, 2π]: an asymmetric band, up to 2P at y = 0 and down
+  to −2P at y = 2π. This is a 1-D real formulation, kept for later.
+- Experiments: E64 (Gurobi exact class optimum, small k and dense D) and E65 (annealing at k = 12–24, Singer)
+  measure λ(k) at Bu's M. They discriminate between "λ -> 1: incircle barrier" and "λ > 1: approximate locking".
+- (T7) General q (PROVED; elementary). Let A = qD ∪ E with E ∩ qZ = ∅ and λ = |E|/|D|.
+  - The q-coset values g_j = f_A(x + 2πj/q) + M >= 0 have DFT (qP, ĝ(1), …).
+  - Pinch: λ <= q − 1 + (q − 1)M/|D|.
+  - Phase-blind ball: by Cauchy–Schwarz, g >= 0 holds whenever Σ_{r≠0}|ĝ(r)|² <= (qP)²/(q − 1). This gives
+    λ <= (1 + 2R(D)²)/(q − 1). For q = 3 that is R² + ½, as in (T2).
+  - q = 2: the pinch reads |E| <= |D| + M. So a BINARY step has λ <= 1 + M/|D|, and the "Bu-q2" set
+    2D ∪ {2(s + s') + 1 : s < s'} attains λ = 1. Its proof: f_E = ½Re(e^{ix}(F(2x)² − F(4x))), and
+    |Re(e^{ix}F²)|/2 <= ½|F|² = P.
+  - So q = 2 is pinned at λ = 1 by the pinch. q = 3 is the first modulus with room between phase-blind (λ = 1 at
+    R(D)² = ½) and the pinch (λ = 2). Larger q have a smaller phase-blind ball (2/(q − 1)) but more room up to q − 1.
+  - Efficiency of a step is log(1 + λ)/log q: Bu has log 2/log 3 = 0.63.
+- (T8) Where locking occurs naturally.
+  - At x = 0, Z(0) = |E| is real and positive, so it always points at a vertex, with |Z(0)|/P(0) = |E|/(|D| + M).
+  - A set equidistributed mod 3 has λ ≈ 2. Its central spike (and the spikes at other rationals) are vertex
+    configurations, so the locked excess Λ := ∫(|Z|² − P²)₊ is >= c·n²/X, a constant fraction for dense sets.
+  - Bu's sets are 3-ADICALLY BIASED: |A ∩ 3Z| = |A|/2 instead of |A|/3. Their Z sits on the incircle at y = 0 and
+    has no locking.
+- A 3-adic recursion would follow from a locking bound. If Λ <= η·|D| at every 3-adic level, then
+  n <= 1.5|D| + M² + Λ, which gives R(A)² >= R(D)²/(1.5 + η + R(D)²) level by level. With J ≈ log₃ X levels this is
+  M >= √n·X^{−c(η)}. That is weak, and Λ is NOT small for dense sets (by T8), which P31 handles anyway. Parked as a
+  possible sparse-regime tool.
+
+## 2026-10-19 (night, cont. 4) — Test-set (B-test) form of the dual certificate (lead; reformulation, classical in spirit)
+- Setup. For finite B ⊂ Z and a low-pass multiplier 0 <= K̂_H <= 1 with K̂_H(0) = 1, the measure
+  ν = |F_B|²(1 − K̂_H) is nonnegative. Testing f_A >= −M against it gives
+      M >= (1/(|B| − Σ_m r_B(m)κ_H(m)))·Σ_{a∈A} [(r_B ∗ κ_H)(a) − r_B(a)],
+  where r_B(a) = #{b − b' = a} and κ_H is the coefficient sequence of K̂_H.
+  So a certificate for M >= c√n is a set B with a FINE-SCALE DEFICIT of A-differences of c√n per element, relative to
+  its own smoothed difference profile.
+- Special cases:
+  - B independent in Cay(Z, ±A) (A-avoiding) gives Hoffman's M >= n·dens(B).
+  - B = A gives the localized third moment (fine Schur-triple deficit).
+  - B = an interval of length ≈ 0.48n with H killing the main lobe gives the linear bound for A = [1, n], since the
+    first sidelobe sits on the minimiser 4.49/n.
+- Chowla ⟸ every A admits such a B. The weighted relaxation (Delsarte/theta, arbitrary weights on A) is FALSE in
+  general (weighted Fejér sub-intervals; Belov–Konyagin multisets). So any B-construction must use that all weights
+  are equal to 1.
+- Status: reformulation only. No canonical B(A) is known beyond the three special cases.
+- (T9) Central-spike locking for Sidon D (HEURISTIC barrier λ <= 1 + O(σ/k) + o(1), where σ = Mt − k/2 is the slack).
+  - The pinch allows W(0) up to 2P(0) ≈ k², while Bu uses k²/2.
+  - The central spike is the one region where Z points at a vertex for free (T8). P's spike is ½|F|² ≈
+    ½(k/N)²|D_N(y)|² (Singer, N ≈ k²). It is Fejér-shaped and merges with the chi-square bulk (~k/2) at |y| ≈ k^{−3/2}.
+  - Extra Δ = W − ½F² must satisfy |Δ| <~ P on that profile AND |Δ| <~ σ near the zeros of F (P ≈ σ there).
+    - Interval-like Δ: the Dirichlet tails 1/|y| reach k^{3/2} ≫ P at |y| ≈ k^{−3/2}.
+    - Fejér-shaped Δ: the coefficients are ≈ ½·(triangle), so it is not 0/1. Dithering to 0/1 adds noise ≈ k/2 ≫ σ
+      near the zeros of F.
+    - Δ = ½F̃² for another Sidon set: |Δ| ≈ k/2 at the zeros of F.
+    - Δ ∝ F²·z^m: this is T4.
+  - So every route to λ > 1 must beat "W vanishes doubly at the zeros of F", and the 0/1 constraint forbids the
+    needed smooth spectral shapes.
+  - Prediction for E64/E65: λ(k) -> 1 at Mt = M_Bu. The small-k excess comes from σ/k ≈ 0.3.
+- (T10) Slack budget for beating ½ in the one-step class (HEURISTIC; quantifies T9).
+  - Take Mt = k(½ + ε) and |E| = (1 + f)|D| with |D| ≈ k²/2. Then R(A)² = (½ + ε)²/(1 + f/2), so R(A) < ½ needs
+    f > 8ε + 8ε²: the gain must be LINEAR in the slack.
+  - Extra elements Δ (m = f·k²/2 terms beyond Bu) must have |Δ| <~ σ ≈ εk at the near-zeros of F in the bulk.
+    - A generic (random-like) 0/1 Δ has bulk size ≈ √m = k√(f/2), so f <= 2ε², far short of 8ε.
+    - Edge (Dirichlet) tails 1/|y| exceed εk on |y| < 1/(εk), which contains ≈ k/ε near-zeros of F.
+    - A structured Δ ∝ F²: this is T4.
+  - The central-spike locking seen in E64 at small k is real: P's central spike carries ≈ 1/3 of ∫P² for Singer S
+    (k⁴/(6N) with N ≈ k²), so full central locking alone would give λ up to 2. But it is paid for by the transition
+    region k^{−3/2} <~ |y| <~ 1/(εk).
+  - Prediction: R_opt(k)/R_Bu(k) -> 1 in the one-step class. E64 ratios: 0.80 (k = 6), 0.84 (k = 7), 0.94 (k = 8,
+    under-optimised).

@@ -187,6 +187,24 @@ in parallel.
 - **E60 + P37:** the escape class contains sets with R -> ½ (Bu + o(√k) far outliers; PROVED in P37 modulo Bu et al.'s theorem). Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within
   +0.026 of Bu. P31's barrier is purely methodological. Profile methods are exhausted for Chowla.
 
+## NEW 2026-10-19 (late night, session 3)
+- P36 KERNEL-CHECKED (exact constant). Beckner M4 partial is kernel-checked; the codex M4 agent is running
+  (.research/agents/lean_m4_brief.md).
+- Construction line: the ONE-BU-STEP class A = 3D ∪ E, analysed (NOTEBOOK "One Bu step with D fixed", T1–T8).
+  - Z lies in a triangle of inradius P = f_D(3x) + M.
+  - Ceilings: pinch λ <= 2 + O(M/|D|); phase-blind λ <= R(D)² + ½ (bi-flat iff equality).
+  - q = 2 is pinned at λ <= 1 + M/|D|, attained by "Bu-q2".
+  - Near M = M(D), W must vanish to second order wherever P does. So equioscillating (dense-optimal) D admit almost
+    no E, while Sidon D admit W = ½F².
+  - "F²·u" designs and phase-locked doubles are killed: the parity obstruction (exact locking impossible) and linear
+    phase drift (a violation factor of 1.1255).
+  - Experiments E64 (Gurobi exact class optima: Golomb k = 6–12; dense D; second level D = Bu set) and E65 (annealing
+    at Singer k = 12–24) are running. They decide whether λ > 1 survives as k grows (approximate locking) or λ -> 1
+    (incircle barrier).
+  - First data: N24 at M = M(D) gives E = ∅ (proved optimal). At Mt = M_Bu, k = 6: λ = 2.13; k = 7: λ >= 1.67.
+    These are finite-size slack effects until larger k are in.
+- E61b: the sharp one-sided Littlewood constant is ≈ 0.608 (heuristic, n <= 768), against P34's proved 0.28.
+
 ## Running now (2026-10-19 night, latest)
 - Codex Lean agent (one at a time): P34 complex-coefficient chain and Corollaries A–C, then P33/pinch
   (.research/agents/lean_p34_brief.md; report lean_p34_report.md). Beckner T5 is PAUSED after a partial: M1/M3 and M4

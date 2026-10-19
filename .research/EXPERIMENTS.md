@@ -708,6 +708,16 @@ Reading:
 - The optimal unit-amplitude constant looks like ≈ 0.6, stable in n.
 - Sign-only search is much harder: it is SA-limited, and the values rise with n.
 E61 addendum: n = 256 gives phases 0.6072 and signs 1.155 (bound 0.284).
+E61b (src/e61b_littlewood_large.py; examples/e61/e61b.jsonl). Baselines, −min T/√n:
+   n      chirp θ_j = πj²/n   Rudin–Shapiro   random (median)
+   256    1.188               1.414           2.31
+   512    1.168               1.412           2.64
+   1024   1.172               1.414           2.65
+   2048   1.166               1.411           2.72
+Optimized phases: n = 384: 0.6087; 512: 0.6074; 768: 0.6088 (n = 1024 running).
+- The optimal unit-amplitude one-sided constant (HEURISTIC) is stable at ≈ 0.608 for n = 64..768.
+- The proved P34 constant is 0.28, or 0.31 once P31-N/Beckner is complete (ρ <= 0.7698), or 0.385 with the
+  numerical ρ_∞ = 0.687. The gap to 0.608 is a constant factor ≈ 1.6–2.2.
 
 ## E62 (2026-10-19) Phase relaxation of the best 0/1 supports (src/e62_phase_relax.py; examples/e62/e62.jsonl)
 Question (P34: window methods are phase-blind): is C½ a positivity phenomenon or a support phenomenon?
@@ -778,3 +788,26 @@ Reading:
   - The relaxation buys ≈ 0.08 at n = 50 and less on larger structured supports (q61: 0.71 -> 0.63, against the
     0/1 sub-family's 0.5 + O(n^{-1/4})).
   - Evidence that positivity of coefficients costs only a small constant. No qualitative sub-½ regime appears.
+
+## E64 (2026-10-19) One Bu step with D fixed: exact class optima (src/e64_bu_step.py, Gurobi; examples/e64/)
+Class: A = 3D ∪ E with D fixed and E ⊂ {1 <= e <= XE : 3 ∤ e}, XE = 1.25·max(3·max D, max E_Bu). Maximise |E| subject
+to f_A >= −Mt, with grid cuts plus lazy cuts at the true minimiser of every incumbent (box_minlam.true_min).
+ObjBound is a valid upper bound up to float evaluation: NUMERICAL-EXACT class optimum, not interval-certified.
+Theory: NOTEBOOK "One Bu step with D fixed" (T1–T8). The pinch is λ <= 2 + 2Mt/|D|.
+Dense D (the certified N24 optimum, M(D) = 2.82630, R = 0.5769):
+- Mt = M(D): E = ∅, OPTIMAL (76 s).
+- Mt = 1.05·M(D) (slack 0.141): E = ∅, OPTIMAL (1188 s).
+- So equioscillating optima admit NO one-step extension at small slack: W must vanish at every near-minimiser (T5).
+  A single element needs slack >= ½, since the three coset cosines sum to 0.
+Sidon D (optimal Golomb rulers, best Bu shift), Mt = M_Bu, so Bu's E (λ = 1) is feasible (tl 1800 s, 2 threads):
+   k   |D|  M(D)    M_Bu    |E| (bound)   λ      R(A)    R_Bu    Z-energy outside incircle (central / bulk)
+   6   15   3.000   3.995   32 (35)       2.13   0.583   0.730   (test run, killed at 300 s; anatomy not run)
+   7   21   3.477   4.737   35 (46)       1.67   0.614   0.731   83% (75% / 7%), max|Z|/P 1.84, dev 8.3°
+   8   28   3.946   5.410   35 (67)       1.25   0.681   0.723   59% (43% / 16%), max|Z|/P 1.37, dev 13°
+   (Bu itself: 8.7% / 3.6% outside the incircle, dev 18–23°, with the junk pushing it past the incircle.)
+Anatomy (src/e64_anatomy.py, src/e64_anatomy2.py): the optima USE VERTEX LOCKING, mostly in the CENTRAL SPIKE
+(|y| < 2π/span(W), y = 3x). Here W is DENSE (k = 7: 35 terms in a span of 52), so the central spike carries most of
+the energy. That is the dense-set mechanism (T8), and it is natural at small k.
+The phase-blind cap ∫P² = Mt² + |D|/2 is inflated at small k by the slack (k = 8: 43 > |E| = 35).
+The asymptotic question (T9: can the tails of an inflated central spike be kept under P at large k?) is open. See
+k = 9–12 below and E65.

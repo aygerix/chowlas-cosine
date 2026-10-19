@@ -834,3 +834,21 @@ E65 (annealing, src/e65_driver.py, Singer q = 11, k = 12, nD = 66; grid M refine
 - λ = 1 reproduces Bu, M = 8.13.
 - λ = 1.25, 1.5, 1.75, 2.0 give M = 11.03, 10.98, 11.67, 11.69 (ratio 1.35–1.44).
 Conclusion (HEURISTIC, supports T9/T10): the one-Bu-step class closes onto Bu as k grows; λ -> 1.
+
+## E66 (2026-10-19) Cumulative rounding of profiles: R = M/√n vs X (src/e66_cumround.py; examples/e66/e66.jsonl)
+NUMERICAL (box_minlam.true_min, over = 16: grid + Newton; not certified). Phases σ ∈ {0, 0.37, 0.71}; entries are
+min/max of R over σ. g = (√5 − 1)/2.
+| profile | 2^10 | 2^12 | 2^14 | 2^16 (n) |
+|---|---|---|---|---|
+| a: g(1−t) [irrational start, curved] | 2.14/2.42 | 2.36/2.92 | 2.72/2.92 | 2.72/2.97 (20251) |
+| b: g(1−t)² | 2.13/2.49 | 2.14/2.54 | 2.61/2.63 | 2.83/3.05 (13500) |
+| c: ½(1−t)² [TD2] | 2.27/2.40 | 2.18/2.60 | 2.53/2.71 | 2.49/2.76 (10922) |
+| g: 1−t [starts with long runs] | 1.40/1.52 | 1.42/1.60 | 1.61/1.76 | 1.77/1.79 (32767) |
+| d: g flat on [0,½], then quadratic decay | 3.2/7.0 | 6.4/14.2 | 12.8/28.6 | 25.6/56.5 |
+| e: ½ flat on [0,½], then quadratic decay | 3.2/13.8 | 6.0/28.4 | 12.1/55.9 | 24.4/110.9 |
+| f: 0.35 + 0.25 cos 5πt [oscillating] | 4.4 | 8.8 | 17.5 | 35.0 |
+Reading:
+- Curved profiles (P41's class, including irrational start density, outside P38) stay at R ≈ 1.4–3.0, rising
+  slowly, perhaps ~√log X. This is consistent with P41's M >= c√n.
+- Non-convex profiles (a flat-to-curved kink; oscillation) have LINEAR M (R ∝ √n), as in E52.
+- No cumulative rounding comes near R = ½. The best is the linear profile from density 1 (R ≈ 1.4–1.8).

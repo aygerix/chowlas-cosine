@@ -1094,3 +1094,64 @@ Consequences:
 - (c) Equivalently 1_A is ℓ²-close to its projection onto the characters in U = {f > λ}: ‖P_U 1_A‖² >= (1 − O(√ε))|A|,
   with |U| <= ε^{3/2}. So A must be "almost U-band-limited": a union of long Bohr-type pieces.
 - (d) TD4 (P39) is the computable third-moment surrogate of this distributional statement.
+
+## P41. Curved cumulative rounding: M >= c√n via spike truncation + van der Corput — PROVED on paper (lead
+## 2026-10-19; first application of P40; not kernel-checked; priority unchecked)
+Setting:
+- p: [0,1] -> [0,1] of bounded variation V(p). X >= 1, σ ∈ [0,1), p_m = p(m/X), Φ(m) = Σ_{i<=m} p_i.
+- a_m = ⌊σ + Φ(m)⌋ − ⌊σ + Φ(m−1)⌋ ∈ {0,1}, A = {m <= X : a_m = 1}, n = |A|, β_m = a_m − p_m.
+Hypotheses: [0,1] = 𝒢 ∪ ℬ (disjoint), where:
+- 𝒢 is a union of N_G closed intervals, on each of which p ∈ C² with c₁ <= |p'| <= c₂ and |p''| <= c₃
+  ("curved part");
+- ℬ is a union of N_B intervals, on each of which p <= ½ or p >= ½;
+- γ := ∫_𝒢 min(p, 1−p)² − 24·∫_ℬ min(p, 1−p) > 0.
+Theorem. There are c = c(c₁, c₂, c₃, N_G, γ) > 0 and X₀ = X₀(p) such that for every σ and every X:
+- M(A) >= c√X >= c√n when X >= X₀;
+- M(A) >= ½ >= √n/(2√X₀) when X < X₀.
+NO monotonicity, rationality of densities or front-loading condition is needed.
+Proof.
+1. Sawtooth identity. Let s(m) = {σ + Φ(m)} − ½. Then β_m = s(m−1) − s(m) exactly.
+2. Vaaler (1985; Graham–Kolesnik Thm A.6). There is ψ_K(θ) = Σ_{1<=|k|<=K} c_k e(kθ), |c_k| <= 1/(2π|k|), with
+   |{θ} − ½ − ψ_K(θ)| <= F_K(θ)/(2K+2), where F_K = Σ_{|k|<=K}(1 − |k|/(K+1))e(k·) >= 0.
+   Put s_K(m) = ψ_K(σ + Φ(m)) and r = s − s_K.
+3. Decomposition: f_A = f_ρ + P + Q + f_ℬ.
+   - f_ρ = Σ p_m cos mx.
+   - P = Σ_{m∈𝒢_X} (s_K(m−1) − s_K(m)) cos mx.
+   - Q = Σ_{m∈𝒢_X} (r(m−1) − r(m)) cos mx.
+   - f_ℬ = Σ_{m∈ℬ_X} β_m cos mx.
+4. P is uniformly O(√(KX)).
+   - On a curved piece I = [u, v], summation by parts gives
+     Σ_I (s_K(m−1) − s_K(m))e^{imx} = (e^{ix} − 1)Σ_{u<=m<v} s_K(m)e^{imx} + O(1 + log K).
+   - Midpoint Euler–Maclaurin: Φ(m) = Φ̃(m) + O(c₃/X), where Φ̃(t) = const + X·P̄((t+½)/X), P̄' = p, so that
+     Φ̃'' = p'/X ∈ ±[c₁, c₂]/X.
+   - Van der Corput's 2nd-derivative test (Graham–Kolesnik Thm 2.2) for F(t) = kΦ̃(t) + tx/2π, uniformly in x:
+     |Σ_I e(kΦ(m) + mx/2π)| <= C(c₂ + 1)c₁^{−1/2}√(|k|X) + O(|k|c₃).
+   - So sup_x |P| <= C₆√(KX) for X >= K³, with C₆ = C₆(c₁, c₂, N_G), using Σ_{k<=K} k^{−1/2} <= 2√K.
+5. Small-L² pieces (normalized ∫ dx/2π; x₀ := X^{−0.6}).
+   - Q: |r| <= F_K/(2K+2), so ‖Q‖² <= (1/(2K+2))·Σ_{𝒢_X^+} F_K(σ + Φ(m)). By step 4 the k ≠ 0 terms are
+     O(K^{3/2}√X), so ‖Q‖² <= X/(2K) for large X.
+   - f_ℬ: cumulative rounding has interval discrepancy < 1, and (a − p)² <= a + p (when p <= ½; symmetric otherwise).
+     So Σ_ℬ β² <= 2Σ_ℬ min(p_m, 1−p_m) + N_B and ‖f_ℬ‖² <= X∫_ℬ min(p, 1−p) + o(X).
+   - f_ρ: one Abel summation gives |f_ρ(x)| <= π(1 + V(p))/|x|, so ∫_{|x|>=x₀} f_ρ² <= 2π²(1 + V)²X^{0.6} = o(X).
+   - f_β near 0: |f_β(x)| <= |x|X/2 + 1, so ∫_{|x|<x₀} f_β² = O(X^{0.2}). The bulk lives away from the central spike.
+6. Spike truncation (P40). Let λ = 2C₆√(KX) and f_bad = f_ρ + Q + f_ℬ.
+   - On G* = {|x| >= x₀, |f_bad| <= λ/2} we have f <= λ.
+   - Chebyshev on B* = {|x| >= x₀, |f_bad| > λ/2} gives ∫_{B*} f² <= 4‖f_bad 1_{|x|>=x₀}‖².
+   - Hence ∫_{G*} f² >= ½Σ_𝒢 β² − 12‖…‖² − o(X) >= X(½∫_𝒢 min² − 12∫_ℬ min − 6/K) − o(X) >= γX/8 for
+     K = ⌈24/γ⌉ (using β_m² >= min(p_m, 1−p_m)²).
+   - P40: ∫_{G*} f² <= (λ + M)M + M². So M >= min(√γ/8, 3γ/(64C₆√K))·√X. ∎
+Covers:
+- every cumulative rounding of a C² profile with p' ≠ 0, at ANY start density (irrational included), e.g.
+  g(1 − t) or g(1 − t)²;
+- non-monotone profiles;
+- TD2's ½(1 − t)² (the end region p' -> 0 is in ℬ, with ∫_ℬ min ≈ c₁³/6, small);
+- power-law pieces away from cusps.
+Exactly what escapes: rounding energy on FLAT pieces (p' ≈ 0), i.e. locally Sturmian words of fixed slope α.
+- These are spike-dominated: spikes at 2πkα of height ≈ length/(πk).
+- Rational α: P38's denominator filter (1 − cos qx).
+- Irrational flat α: open (needs a Bohr filter with ‖qα‖ small; agent T3).
+Meaning:
+- Minimal-discrepancy (Sturmian) rounding of a CURVED density carries an O(√X)-bounded bulk of energy ≍ X, so
+  spikes cannot hide it.
+- This is a mechanism different from P31 (linear profile constraint) and P38 (window on filtered energy), and it
+  does not care about front-loading.

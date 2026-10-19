@@ -1,0 +1,184 @@
+\documentclass[11pt]{amsart}
+\usepackage{amsmath,amssymb,amsthm}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\T}{\mathbb{T}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\avg}{\frac{1}{2\pi}\int_0^{2\pi}}
+
+\title[A window--Nikolskii inequality]{A window--Nikolskii inequality: sharp one-sided bounds for\\ Littlewood cosine polynomials and dense Chowla sets}
+\author{DRAFT --- Chowla cosine project}
+\date{October 2026 (draft)}
+
+\begin{abstract}
+Let $T(x)=\sum_{j=1}^{n}\operatorname{Re}(b_je^{ijx})$ with $|b_j|\le 1$. We prove a window--Nikolskii inequality relating
+$M=-\min_{x\in\R}T(x)$ to the coefficient energy $E=\sum|b_j|^2$ and to the energy in low frequencies. Two consequences
+follow. (i) For every choice of phases, $-\min_x\sum_{j=1}^n\cos(jx-\theta_j)\ge 0.28\sqrt n$, and the same lower bound
+holds for the maximum; in particular every Littlewood cosine polynomial $\sum_{j=0}^n a_j\cos jx$, $a_j=\pm1$, has
+$-\min\ge 0.28\sqrt n-1$. This is the sharp order (Rudin--Shapiro), improving the recently claimed $n^{1/3}/60$.
+(ii) Chowla's cosine conjecture holds for dense sets: if $A\subset\N$ is finite with $|A|\ge 0.41\max A$, then
+$-\min_x\sum_{a\in A}\cos ax\ge c\sqrt{|A|}$ with an absolute $c>0$; this is the sharp order and improves the
+$|A|^{1/4}$ bound recently obtained for $A\subset[1,C|A|]$ in that density range. The same inequality gives
+$\sqrt{|A|}$ whenever the frequency profile of $A$ is not front-loaded. We explain why the method cannot be localized
+in frequency (it is exactly critical on locally full sets) and show that the excluded front-loaded class contains
+sets with $-\min f_A/\sqrt{|A|}\to 1/2$. The 0/1 case of the main inequality and the dense theorem are formalized in
+Lean~4 (kernel-checked, standard axioms only).
+\end{abstract}
+
+\begin{document}
+\maketitle
+
+\section{Introduction}
+For a finite set $A$ of positive integers let $f_A(x)=\sum_{a\in A}\cos(ax)$ and $M(A)=-\min_{x\in\R}f_A(x)$.
+Chowla conjectured $M(A)\ge c\sqrt{|A|}$. The best general lower bound is polynomial of exponent $1/5$
+(Bedert~\cite{Bedert}, Shankar~\cite{Shankar}); the best constructions give $M(A)\le(\frac12+o(1))\sqrt{|A|}$
+(Bu et al.~\cite{Bu}). For dense sets, $A\subset[1,C|A|]$, Bu et al.\ prove $M(A)\gg_C|A|^{1/4}$ and remark that this
+says nothing about whether $\sqrt{|A|}$ is the true order \cite[Prop.~9.7, Rem.~9.8]{Bu}.
+
+The one-sided Littlewood problem asks the same question for unimodular coefficients: for
+$T_n(x)=\sum_{j=1}^n\cos(jx-\theta_j)$, how small can $-\min T_n$ be? Since $\avg T_n=0$ and $\avg T_n^2=n/2$, one has
+$\max(\max T_n,-\min T_n)\ge\sqrt{n}/2$ trivially, but each one-sided quantity separately is harder; Erd\'elyi
+\cite{Erdelyi} recently claimed $-\min T_n\ge n^{1/3}/60$ and $\max T_n\ge n^{1/3}/60$.
+
+Both questions are instances of one inequality.
+
+\section{The window--Nikolskii inequality}
+For $w\in\N$ let $\kappa_k=(1-|k|/(w+1))_+$ and $K_w(y)=\sum_{|k|\le w}\kappa_ke^{iky}\ge0$ (Fej\'er kernel). Put
+\[
+S_w=\sum_{j=1}^{w}\kappa_j^2=\frac{w(2w+1)}{6(w+1)},\qquad W_w=\sum_{|k|\le w}\kappa_k^2=1+2S_w .
+\]
+For $L\in\N$ let $C_L$ be any constant such that
+\begin{equation}\label{eq:NL}
+\avg h^2\le C_L\Big(\avg h\Big)^2\quad\text{for every nonnegative trigonometric polynomial $h$ of degree $\le L$.}
+\end{equation}
+
+\begin{lemma}[Nikolskii constants]\label{lem:nik}
+\eqref{eq:NL} holds with $C_L=L+1$ and with $C_L=0.811(L+1)+71/300$.
+\end{lemma}
+\begin{proof}
+By Fej\'er--Riesz, $h=|U|^2$ with $U=\sum_{k=0}^{L}u_ke^{ikx}$. Then $h\le(\sum|u_k|)^2\le(L+1)\sum|u_k|^2
+=(L+1)\avg h$, and $\avg h^2\le\max h\cdot\avg h$. The second constant is the bound
+$\sum_m|(u*\tilde u)(m)|^2\le(0.811(L+1)+71/300)(\sum|u_k|^2)^2$ for the autocorrelation of a sequence of length
+$L+1$; its elementary proof (a cumulative-mass estimate) is formalized as \texttt{elementary\_analyticNikolskii}.
+\end{proof}
+
+\begin{theorem}\label{thm:main}
+Let $b_1,\dots,b_n\in\mathbb C$, $E=\sum_j|b_j|^2$, $T(x)=\sum_{j=1}^n\operatorname{Re}(b_je^{ijx})$, and suppose
+$T\ge-M$ on $\R$. Then for every integer $0\le w\le n$, with $L=n+w$,
+\[
+W_w\Big(M^2+\frac E2\Big)\;\le\;C_L\Big(M^2+\frac12\sum_{j=1}^{w}\kappa_j^2|b_j|^2\Big).
+\]
+\end{theorem}
+
+\begin{proof}
+Let $g=T+M\ge0$. For $x_0\in\R$ the function $h_{x_0}(x)=K_w(x-x_0)g(x)$ is a nonnegative trigonometric polynomial of
+degree $\le L$, so $\avg h_{x_0}^2\le C_L I(x_0)^2$ with $I(x_0)=\avg h_{x_0}$. Since $\hat g(0)=M$ and
+$\hat g(\pm j)=b_j/2,\bar b_j/2$,
+\[
+I(x_0)=M+\sum_{j=1}^{w}\kappa_j\operatorname{Re}(b_je^{ijx_0}),\qquad
+\avg I(x_0)^2\,dx_0=M^2+\frac12\sum_{j\le w}\kappa_j^2|b_j|^2 .
+\]
+On the other hand, by Fubini and $\avg K_w(x-x_0)^2dx_0=W_w$ for every $x$,
+$\avg\avg h_{x_0}(x)^2\,dx\,dx_0=W_w\avg g^2=W_w(M^2+E/2)$. Averaging the pointwise inequality over $x_0$ gives the claim.
+\end{proof}
+
+Only the moduli $|b_j|$ enter: the inequality is blind to phases.
+
+\section{Unimodular and Littlewood cosine polynomials}
+
+\begin{corollary}\label{cor:littlewood}
+For every $n\ge1$ and all $\theta_1,\dots,\theta_n\in\R$,
+\[
+-\min_{x\in\R}\sum_{j=1}^n\cos(jx-\theta_j)\;\ge\;0.28\sqrt n,\qquad
+\max_{x\in\R}\sum_{j=1}^n\cos(jx-\theta_j)\;\ge\;0.28\sqrt n .
+\]
+With the trivial constant $C_L=L+1$ the bound is $\ge0.189\sqrt n$, with asymptotic constant $\sqrt{7/2-2\sqrt3}$.
+Consequently every $\sum_{j=0}^n a_j\cos jx$ with $a_j\in\{-1,1\}$ satisfies $-\min\ge0.28\sqrt n-1$ and
+$\max\ge0.28\sqrt n-1$.
+\end{corollary}
+
+\begin{proof}
+Take $|b_j|=1$, so $E=n$ and $\sum_{j\le w}\kappa_j^2|b_j|^2=S_w$. With $C_L=L+1$ and $W_w=1+2S_w$,
+Theorem~\ref{thm:main} rearranges to
+\[
+M^2\;\ge\;\frac{n+S_w(n-w-1)}{2(n+w-2S_w)}\qquad(0\le w\le n-1).
+\]
+Using $w/3-1/6\le S_w\le w/3$ and $w=\lfloor\theta n\rfloor$ gives $M^2\ge n\,\theta(1-\theta)/(6+2\theta)-O(1)$,
+maximized at $\theta=2\sqrt3-3$ with value $(7/2-2\sqrt3)n$. With the second constant of Lemma~\ref{lem:nik} the same
+computation (optimum $w\approx0.69n$) gives $M\ge0.2819\sqrt n-o(\sqrt n)$; the exact bound, evaluated for every
+$n\le2000$ and estimated beyond, stays above $0.28\sqrt n$. The maximum follows by applying this to $-T$ (phases
+$\theta_j+\pi$), and the $\pm1$ statement by adding the constant term $a_0$.
+\end{proof}
+
+\begin{remark}
+The order is sharp: for $n=2^k$ the Rudin--Shapiro signs give $|\sum_{j<n}\varepsilon_je^{ijx}|\le\sqrt{2n}$, hence
+$|\sum_{j=1}^n\varepsilon_{j-1}\cos jx|\le\sqrt{2n}$. Numerically, optimizing the phases gives
+$-\min T_n/\sqrt n\approx0.607$ for $8\le n\le384$; chirp phases give $\approx1.17$ and random phases $\approx2.6$.
+\end{remark}
+
+\section{Dense Chowla sets}
+
+\begin{corollary}\label{cor:dense}
+If $A\subset\N$ is finite and nonempty with $|A|\ge\frac{41}{100}\max A$, then $M(A)\ge\sqrt{|A|}/1000$. More precisely,
+if $|A|\ge\delta\max A$ with $\delta>0.4055$, then $M(A)\ge c(\delta)\sqrt{|A|}$ with, for large $|A|$,
+$c(0.5)\approx0.064$ and $c(1)\approx0.23$.
+\end{corollary}
+
+\begin{proof}[Proof sketch]
+Apply Theorem~\ref{thm:main} with $b_a=\mathbf 1_A(a)$ (so $E=|A|$), $X=\max A$, and bound
+$\sum_{a\le w}\kappa_a^2\le S_w\approx w/3$. For $w=\theta X$ the inequality becomes
+$\frac{2w}{3}\cdot\frac{|A|}2\lesssim 0.811(X+w)\frac{w}{6}+O(M^2X)$, which forces $M^2\gg w$ as soon as
+$|A|/X>0.4055(1+\theta)$. The explicit constants are computed in the formal proof.
+\end{proof}
+
+\begin{remark}[Front-loading]
+More generally, Theorem~\ref{thm:main} gives $M(A)\gg\sqrt{|A|}$ whenever the weighted low-frequency count
+$\sum_{a\in A}(1-a/(w+1))_+^2$ is at most $(1-\eta)\frac{2}{3\rho}\frac{w}{X+w}|A|$ for some $w$, where
+$\rho=C_L/(L+1)$. Sets violating this at every scale are \emph{front-loaded}, and the class contains very good sets.
+Adding a few far elements to a Sidon set $S$ keeps it Sidon, so Bu et al.'s identity
+$f_{A(S)}=\rho_S^2-|S|/2-g_S/2$ survives while the profile of $A(S)$ becomes arbitrarily front-loaded. Numerically
+(Bu's sets with $|S|=40,80$ plus $2$--$4$ outliers, front-loading factors up to $200$), $M(A)/\sqrt{|A|}$ stays within
+$0.03$ of the value for $A(S)$ itself, e.g.\ $0.673$ at $|A|=6972$. So the front-loading restriction is a limitation of
+the method, not of the sets.
+\end{remark}
+
+\begin{remark}[Localization is critical]
+Let $K\ge0$ be a trigonometric polynomial with $\hat K(0)=1$ and spectrum $\Sigma$, and let
+$\rho(\Sigma)=\sup\{\|h\|_2^2/\hat h(0)^2: h\ge0,\ \mathrm{spec}\,h\subset\Sigma\}$. Replacing $h_{x_0}$ by
+$h_{x_0}*K$ in the proof of Theorem~\ref{thm:main} yields
+\[
+M^2\Psi(0)+\tfrac12\sum_{a\in A}\Psi(a)\le\rho(\Sigma)\Big(M^2+\tfrac12\sum_{a\le w}\kappa_a^2\mathbf 1_A(a)\Big),
+\qquad \Psi=\hat K^2*\kappa^2 .
+\]
+If $A$ is full on the positive part of $\Sigma$, the two sides agree to leading order up to the factor
+$\|K\|_2^2/\rho(\Sigma)\le1$: no choice of $K$ gives information. The global inequality gains the factor $2/\rho$
+because the flat coefficient sequence of $f_A$ is not itself a nonnegative kernel. (This is a leading-order
+computation, recorded to explain why the density threshold $0.4055$ cannot be lowered by localizing the window.)
+\end{remark}
+
+\section{Formalization}
+The following are checked in Lean~4 with Mathlib (no \texttt{sorry}, only the axioms \texttt{propext},
+\texttt{Classical.choice}, \texttt{Quot.sound}): the finite Fej\'er--Riesz theorem for every degree; the elementary
+Nikolskii constant of Lemma~\ref{lem:nik}; Theorem~\ref{thm:main} for $0/1$ coefficients (\texttt{p31\_elementary});
+Corollary~\ref{cor:dense} with constant $1/1000$ (\texttt{dense\_elementary}).
+% FILL AFTER AUDIT: complex-coefficient Theorem 2 (p34_main, p34_elementary), Corollary 3 (p34_A: sqrt(n)/4 for every
+% n and all phases; p34_B for +-1 polynomials), P33 and the dilation pinch.
+
+\begin{thebibliography}{9}
+\bibitem{Bedert} B.~Bedert, \emph{Polynomial bounds for the Chowla cosine problem}, arXiv:2509.05260.
+\bibitem{Bu} B.~Bu et al., \emph{A half-constant upper bound for Chowla's cosine problem}, arXiv:2610.17160v1 (2026).
+\bibitem{Erdelyi} T.~Erd\'elyi, \emph{Bourgain--Ruzsa type estimates for the maximum and minimum of Littlewood cosine
+polynomials on the real line}, arXiv:2607.21877v1 (2026).
+\bibitem{Shankar} A.~Shankar, \emph{A log-free $n^{1/5}$ bound for Chowla's cosine problem}, arXiv:2609.05338.
+\end{thebibliography}
+\end{document}

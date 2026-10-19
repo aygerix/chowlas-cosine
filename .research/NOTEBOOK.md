@@ -1035,7 +1035,7 @@ Status: a recorded tool, not a route. Parked.
    trivial two-sided √n. PROOFS P34, note .research/notes/littlewood_onesided_P34.md. E61: optimum ≈ 0.61√n.
    - Status: proved on paper. The 0/1 instance is kernel-checked. Next Lean task: the complex-coefficient form.
 2. E60: Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within +0.026 of Bu.
-   - So the escape class contains R -> ½ families.
+   - So the escape class contains near-Bu sets (numerically within 0.03 of Bu; R -> ½ expected, unproved because of the cross term 2ρ_Sρ_O).
    - The P31 front-loading barrier says nothing about where good sets live. Profile methods are exhausted for Chowla,
      and any proof must handle front-loaded Bu (P16 does, structurally).
 3. Strategic consequence.

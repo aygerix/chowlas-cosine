@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, newest")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 5 + review")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -280,6 +280,41 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
+## Session 3, round 5 + review (2026-10-19 night, NEWEST — read this first)
+- Round 5 DONE (PROOFS P56; lead re-checked FTL1, CY1, SG and the interval obstruction):
+  - FTL1: a finite TL1 with explicit errors. The error is R/D with R = Σ|c_s|, so it is NOT uniform in the spike count.
+  - CY1: exact cyclic P40 → TL1 bridge.
+  - SG: stable Gram, h <= 1 − t²/4 + 2δ.
+  - HBSC: CONJECTURED single sufficient lemma.
+  - QD with any exponent β > ½ is FALSE (interval example).
+- Lead caveats (NOTEBOOK cont. 7). CY2's relation alternative is uninformative:
+  - the padded profile/central lobe is never graded and supplies the relations itself;
+  - L(0) = R makes Z heavy-tailed, so the radial-moment branch holds automatically for mesoscopic spikes.
+- Lead (PROVED): uniform LAW-LEVEL TL1 by radial truncation, with error 4√(2/(πD)) uniform in S, R and the tails.
+  Its defect is the angular harmonics of the truncated law of the spike signal. Gap: from the law-level defect to
+  usable structure.
+- Lead (NOTEBOOK cont. 8): DIMENSION BARRIER.
+  - PD at all levels ⇒ Wiener budget Σĥ_χ(0) <= 1 ⇒ every spike is macroscopic (limit object).
+  - The finite front Riesz test costs M(1 + λ)^S.
+  - The dimension-free tools (TL1, SG, P40) are ℓ²/law-level and do not give ℓ¹ budgets.
+  - HBSC needs negative mass <= M/H, but natural accounting gives <= M. HBSC may be false.
+- E72c: the window family is escaped at C ≈ 5–10 (B/√n ≈ 0.02) by box-filling sets with R ≈ 0.9–1.3. C₁ ∈ [2.47, 4.8].
+- E73: Gaussian-threshold (growing-rank Bohr) sets have linear M at every fixed rank (R ∝ √X). High rank approaches
+  the Bernoulli baseline (R ≈ 2.9 at X = 2^18) from above. The simplest escape class is dead as a construction.
+## Running now (2026-10-19 night, latest)
+- Codex MATH agent, round 6 (.research/agents/tdense6_brief.md, report tdense6_report.md). ADVERSARIAL:
+  - build a "formal escape" (every proved constraint, mesoscopic spikes, M ≪ √n), or prove the constraints
+    inconsistent;
+  - HBSC verdict;
+  - optionally, averaged run-tops in Z.
+- VM: E74 (src/e74_runtops.py: run-top counts |B_t| against K² and K³μ on the zoo, Bu/Singer, small-N, random and
+  E68/E72c sets); E64 bu2 k7; E65 q23.
+## First concrete next step (2026-10-19 night, latest)
+- Verify round 6.
+- If a formal escape exists, realize it as actual sets (construction lead). If not, its inconsistency proof or
+  missing constraint replaces HBSC.
+- Read E74. If mean_t|B_t| <~ K² holds empirically with room, the averaged run-top route (Bu et al. Prop. 9.7 with
+  K^{3−δ}μ on average) becomes a second lower-bound line.
 ## Running now (2026-10-19 night, newest)
 - Codex MATH agent, round 5 (.research/agents/tdense5_brief.md, report tdense5_report.md):
   - finite J-uniform TL1;

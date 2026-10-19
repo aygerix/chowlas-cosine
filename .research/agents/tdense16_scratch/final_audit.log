@@ -1,0 +1,16 @@
+{
+  "status": "FINAL_REPRODUCIBILITY_AUDIT",
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "sympy": "1.14.0",
+    "python_flint": "0.9.0"
+  },
+  "counts": {
+    "genuine_numerical_halfsets": 23,
+    "old_scalar_fakes": 2,
+    "new_exact_fake_instances": 3,
+    "new_exact_offzero_equations": 30
+  }
+}
+Final reproducibility audit passed; hashed 14 inputs and artifacts.

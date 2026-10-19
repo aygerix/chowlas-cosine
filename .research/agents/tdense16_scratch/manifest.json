@@ -1,0 +1,31 @@
+{
+  "status": "FINAL_REPRODUCIBILITY_AUDIT",
+  "versions": {
+    "python": "3.12.3",
+    "numpy": "2.5.4",
+    "sympy": "1.14.0",
+    "python_flint": "0.9.0"
+  },
+  "counts": {
+    "genuine_numerical_halfsets": 23,
+    "old_scalar_fakes": 2,
+    "new_exact_fake_instances": 3,
+    "new_exact_offzero_equations": 30
+  },
+  "hashes": {
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_report.md": "1115f8d64a63e6965fff000feb2b9e7d6f85bcb62dcc4236942bee89814fa2e2",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/README.md": "eb7e381c6a0f06f4f09fee1affda0d268d4f802e063982a156e9c1f3113caf42",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/adaptive_fake.json": "e28f53329f0596289d49fa950dc036baf5b8482ab3207d387eec93b2fd5d6301",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/adaptive_fake.py": "4fae6dfc6a4ec13627bd6c40814c23f8eeddb0c3686fda5c40c0644092c0ea3d",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/adversaries.json": "b450d20e584e499396e391a7aa55e68c48c819408284ab89de994aa1a45b0293",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/adversaries.py": "3375232b66accb9fd58d1b5d7a74d36b219ddb32e668b6a30bfbf69560b891e9",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/final_audit.py": "278f8041d9bff32d7dfa5cfb0fdabb8726c59e3b209b7644d5a91297b71e81af",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/verification.json": "72afd56becaba3ec9589b4ca354ccd34ea56d9f84df6574b5e957ddd62ebfb01",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense16_scratch/verify_round16.py": "fe3b02b45c7921e720694865cc8d334ac3e72c41af2624172396f298ca2f2b79",
+    ".research/PROOFS.md": "c41ada2195de0d1a891e2acdb2c9e68c2a77007a3fd2cd7daf0ecdfd76a966f0",
+    ".research/agents/tdense15_report.md": "53c5199e8a33d3a224aed715e6c6e40270ca0da591af655b6f50baa1283606fb",
+    ".research/agents/tdense16_brief.md": "07beae35fe72bb9837d6858f0eb3f2a1e5bd8778167a39b000acb1185c69bf39",
+    "examples/r15_certificates/stability_probe.json": "8728dbdf0f91872b3e522dedd812b0fc7c8b787086d8e7711be822267efe3dee",
+    "examples/r15_certificates/support_counterexample.json": "a9fed58a46f6717f8290626c81531bd9c5ba5cb08cd6fff166d85abde1676879"
+  }
+}

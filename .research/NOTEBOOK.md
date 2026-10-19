@@ -2322,3 +2322,84 @@ new relaxation, not finer grids.
      step part's K/|x| profile over |x| <~ q/J. This is unresolved.
    - Net: the clustered extremal configuration reduces to "windowed difference set of peaks + half-interval of −K
      values + period-2 front". It is NOT yet shown inconsistent. Item 6's rigorous part (K >= ½q^{1/4}) stands.
+
+## 2026-10-19 (cont. 19) — FULL CHOWLA: architecture from scratch, and the single core statement (lead)
+Labels: HEURISTIC unless marked. Purpose: replace the cyclic-only view (rounds 12–16) with an all-sets architecture.
+1. Exact reformulations (PROVED, elementary). For finite symmetric S = ±A ⊂ Z \ {0} with N = |S| = 2n, set K = 2M.
+   - (a) ν := (1 + D_S/K)dx/2π, with D_S = Σ_{k∈S} e^{ikx}, is a PROBABILITY measure iff min D_S >= −K. Its Fourier
+     coefficients are 1/K on S and 0 elsewhere off 0. Booleanity is equivalent to
+         ν⋆ν = (1/K)ν + (1 − 1/K)·Haar.
+     Every convolution power is a mixture of ν and Haar (an "exact-mixing" step distribution).
+   - (b) ‖dν/dx‖₂² = 1 + N/K². So Chowla (N <= CK²) is equivalent to "exact-mixing probability measures have bounded
+     L² density".
+   - (c) Equivalently, P = Π_0 + (1/K)Π_S (Π_S the Fourier projection onto S) is positivity preserving iff
+     min D_S >= −K. Chowla says rank Π_S <= CK² for such P. P^{⋆2} = (1/K)P + (1 − 1/K)Π_0: a continuous "strongly
+     regular" Markov operator (cyclic analogue: partial difference sets; Paley is the extremal case there).
+   - (d) Graph form: λ_min(Cay(Z, S)) <= −c√N. For general groups the group-agnostic structure threshold is
+     exponent ¼ (JMTZ; F_p^4 quadric complements have K = 3p ~ N^{1/4}, P20/P21). Beyond ¼ the argument MUST use
+     the absence of subgroups: torsion-freeness and order in Z, primality in Z_q.
+2. Architecture (spectrum of A at resolution 1/X, X = max A).
+   - (i) SPREAD part ⇒ √ (P28 quantified, PROVED form).
+     - M >= (1/4π√(X+1)) ∫ √(Φ_H(x)) dx, with Φ_H = Σ_{m>=H}|V(m,x)|² the K_H²-smoothed power spectrum (RMS over
+       windows ≤ sup).
+     - Hence M >~ √(η_eff·n), where η_eff = (∫√Φ)²/(2π∫Φ) is the effective spectral measure. A counterexample needs
+       η_eff -> 0: SPIKY spectrum. (Consistent with E45: P28 gives ~0.21√n on non-deterministic sets.)
+   - (ii) SPIKES must be Gibbs-free (first-order local argument; extends P29(b)).
+     - Near a spike x₀ with |F_A(x₀)| = R₀ >> M: f(x₀ + y/X) ≈ R₀ Re Ψ̂_{x₀}(y), where ψ_{x₀} is the twisted profile
+       (weak limit of e^{iax₀}1_A(a) at scale X).
+     - f >= −M forces the HERMITIAN extension of ψ_{x₀} to be positive definite.
+     - Consequences: ψ_{x₀}(0) is REAL and >= |ψ_{x₀}(t)|. EVERY spike is visible at the front of A with a real
+       positive amplitude.
+     - Example: 1-dim Bohr/Beatty sets 1[{kθ} ∈ S_{k/X}] force the front window S_0 to have nonnegative Fourier
+       coefficients on the circle. A PD indicator is a subgroup, so these sets are never counterexamples.
+   - (iii) The FRONT B = A ∩ [1, ηX] is L²-approximated (error <~ the spread part) by
+         φ(k) = Σ_j c_j e^{−ikx_j},   c_j >= 0 (the spike amplitudes):
+     φ is positive definite and φ ≈ 1_B.
+     - m₀ := φ(0) = Σc_j satisfies 1 <~ m₀ <~ M, since ∫(tapered front)⁺ = ∫(tapered front)⁻ <= 2πM.
+   - (iv) FEW-SPIKE regime (PROVED in the pointwise form). ψ = m₀ − Re φ is conditionally negative definite, so √ψ is
+     subadditive. If |φ − 1_B| <= δ pointwise and m₀ < 4/3 − 5δ/3, then B is closed under ±, i.e. B = dZ ∩ window.
+     - Then A' = (A ∩ dZ)/d has M(A') <= M(A) (P13a) and front density ≈ 1, contradicting the second-order front
+       cap a <= ½ (P59.1) when A' is dense.
+     - Needs an L² (Freiman-type) robust version. Since m₀ <~ M, this regime only matters for M = O(1); it closes the
+       AP/subgroup alternative.
+   - (v) MANY-SPIKE regime (m₀ >> 1): the CORE.
+3. THE CORE (one statement; it is cyclic WRS/QU in integer form). "A {0,1}-function of density a <= ½ on a window
+   of length Y, L²-approximated by a NONNEGATIVE combination φ of characters, must have φ(0) >~ √(aY), unless it is
+   close to an AP."
+   - Equivalently: 1_B + m₀δ_0 ≈ positive definite forces m₀ >~ √|B|.
+   - The reduction is TIGHT: the front of a counterexample is again a near-counterexample. So no machinery avoids the
+     core; it must be proved directly with a tool that sees the absence of subgroups:
+     - robust uncertainty principles (Tao/Chebotarev in Z_p; sign-uncertainty);
+     - Freiman 3k−4 / Vosper-type linear structure in Z and Z_p (sharp precisely because there is no torsion);
+     - multiplicative / Gauss-sum structure (round 16).
+   - The AP alternative is self-limiting: renormalization pushes the front density to 1 > ½.
+4. Decision: the core is the only missing ingredient for full Chowla in this architecture. Items 2(i), 2(ii) and 2(iv)
+   are to be written as precise lemmas. Round 17 attacks the core with the no-subgroup tools above if round 16 (WRS
+   via adaptive displacements + Gauss sums) does not land.
+5. Three new exact tools (lead, 2026-10-19; elementary; PROVED unless marked). Notation: S = ±A, d = |S| = 2n,
+   K = 2M, G = K + D_S >= 0, p = G/K (probability density for dx/2π), X = max A.
+   - (a) SUB-MULTIPLICATIVITY OF SPIKES (uses Booleanity). p⋆p = p/K + (1 − 1/K)Haar. Hence for all x, y and r > 0:
+         p(B(x, r/2))·p(B(y, r/2)) <= p(B(x + y, r))/K + r/π.
+     Proof: P(Y + Y' ∈ B(x+y, r)) >= P(Y ∈ B(x, r/2))P(Y' ∈ B(y, r/2)).
+     Meaning: spikes of mass τ >> √r at x and y force mass >= K(τ² − r/π) at x + y. The spike set must be an
+     approximate subgroup of T. At resolution 1/R the inequality is non-trivial only at frequency scales R >~ C²K²
+     for dense sets of density 1/C. For Sidon-difference sets this is exactly borderline.
+   - (b) BOUNDARY (TORSION-FREE) CONSTRAINT: ∫ log G dx/2π >= 0, i.e. ∫ log(M + f_A) >= −log 2.
+     Proof: G = |U|² with U outer of degree X. The top coefficient gives u_X·conj(u_0) = 1, and |u_0| >= |u_X|
+     because all roots have modulus >= 1. So 2 log|u_0| >= 0.
+     Equivalent form: in L²(G dx/2π) the distance from e_0 to span{e_j : j >= 1} is >= 1 (Szegő–Kolmogorov). The
+     Toeplitz inverse corner satisfies (T_N^{-1})_{00} <= 1 for every N.
+     There is NO analogue in Z_q (no top frequency). This is the first constraint in the record that uses the ORDER
+     of Z. Consequence: |{G <= ε}| <= log K/log(1/ε). Weak alone.
+   - (c) GRAPH / GRAM FORM. KI + A_S is the Gram matrix of the characters e_k in L²(G). The star vector Σ_{s∈S} e_s
+     gives d² <= K(dK + T), with T = #{(s, s') ∈ S² : s − s' ∈ S}. So T >= d²/K − dK: a counterexample has
+     neighbourhoods of edge density >~ 1/K (many additive triples). Same content as the local star bound.
+6. Round 16 (P69) closed the "heavy-core sumset" route with an exact fake. Decision: the next mechanism must use 5(a)
+   + 5(b) together: spikes form an approximate group (a), and Z has no finite subgroups, so the dual Bohr set has a
+   BOUNDARY; (b) is the boundary constraint.
+   CONJECTURED "Bohr-boundary Gibbs lemma": a set S whose exact-mixing measure has its L² excess on an approximate
+   subgroup of rank r must have min D_S <= −c·√d, with c independent of r.
+   - First discriminating experiment: LIFT the F_p^4 elliptic-quadric complement (K ~ |S|^{1/4} in F_p^4, P20/E31) to
+     Z through a rank-4 GAP/Bohr embedding, with and without tapered boundaries. Measure M/√n.
+     - If the boundary costs only o(√n), we have a construction lead (Epoch track).
+     - If the cost is >~ √n, the mechanism is identified for the lower-bound track.

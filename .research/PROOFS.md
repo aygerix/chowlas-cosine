@@ -2246,3 +2246,25 @@ Lead's reading.
    1 − Δ_a <= (4/3)A²(t/√q)^{2η}, i.e. a defect that DECAYS with t/√q.
 Status: items 1–3 are rigorous (paper plus exact certificates; P66 is now independently audited, not
 kernel-checked). Items 4–8 are paper proofs or conjectures as labeled. No cyclic exponent above ¼.
+
+## P69. Round-16 agent results: WRS still open; the heavy-core-sumset route is closed by an exact fake (report .research/agents/tdense16_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ OBSTRUCTION (paper proof; finite instances exact/Arb-verified by the agent).
+   - Parameters: g = ceil(log q), m = g², s = 2m, t = q^{1/4}g, L = √(C0/(4s)), D = ±{10m+1,…,11m}.
+   - There is a nonnegative even h with h(0) = t, Σh = qt, Σh² = V, max h = L, and D EXACTLY the core {h >= L/2}.
+   - h⋆h = C0 holds at EVERY ξ ∈ (D+D)∖0, but h⋆h(100m) − C0 = (¼ + o(1))q².
+   - The construction uses separated 4-site clusters for each needed displacement plus an AP repair of mass and
+     energy.
+   - Lead re-derived it: the core–core term is <= L²s = C0/4; clusters have no cross differences in S; h vanishes on
+     S; the repair run's adjacent products give ~E0 at displacement B0.
+   - It violates WRS(η) for every fixed η > 0. Equations on the sumset of the maximum-relative core cannot force a
+     power-decaying defect.
+2. ✓ Mellin anti-concentration (proved; lead checked). X = (λ + ½)/√q satisfies X̂(χ) = θ·F̂(χ̄) with |θ| = 1 (Gauss
+   sums). X >= −t/√q gives max|F̂| <= t/√q, so the Mellin support has >= q/(4t²) characters. Booleanity is exactly the
+   Jacobi-weighted quadratic system Σ J̄·u u = 0. Unweighted Deligne phase bounds do not control these data-dependent
+   weights (explicit algebraic counterexample).
+3. Sign uncertainty (Gonçalves–Oliveira e Silva–Ramos, Thm 3.1) gives no t-dependence. Uniform r_D does not
+   contradict Booleanity (Paley). All 23 genuine half-sets pass every new identity (NUMERICAL).
+4. Next threshold proposed by the agent: A = {h >= V/(2qt)} carries >= ½ of Parseval and sees the fake's missing
+   displacement. With cardinality bounds alone it still gives only ¼.
+Status: no exponent gain. WRS remains CONJECTURED. The cyclic-WRS line is PAUSED in favour of the all-sets
+architecture (NOTEBOOK cont. 19): sub-multiplicativity + the torsion-free boundary constraint.

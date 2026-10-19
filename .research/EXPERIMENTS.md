@@ -1457,3 +1457,17 @@ Reading:
   n^{−1/6} in units of √n. This is the "intermediate region" of the external review, confirmed with exponent 1/3.
 - These sets are not counterexamples: R ≈ 3, from random fluctuations (P28).
 - On W0 = A the certificate tracks the noise bulk ≈ 2√(αn) on flat sets (E99b: 0.62√n at n = 1000, e = 1/3).
+
+## E100 / E100b (2026-10-19) Positivity versus resolution for window arcs (src/e100_arc_resolution.py, src/e100b_pr_search.py; VM)
+NUMERICAL.
+- E100 (exact mpmath series): an arc of radius ρ = c/(2L) with all coefficients >= 0 up to L (true iff c <= 1) leaves
+  a fraction δ_L of its ℓ² mass above frequency L:
+  - c = 1: 0.09717 (L = 10), then 0.09718 for L = 100, 1000, 10⁴;
+  - c = ½: 0.207 → 0.226;
+  - c = ¼: 0.513 → 0.533.
+- E100b: SLSQP, 300 random starts for each J = 1 … 6 symmetric arc pairs, L = 16, constraints 1̂(k) >= 0 for
+  k <= 16 and |Ω| <= ½.
+  - Minimum δ = 0.09713 at J = 2 (arcs at 0 and ½, a dilate of one arc).
+  - Minimum δ = 0.0947 at J = 6 (period 1/11 with half density, i.e. the dilate of the L' = 1 problem:
+    δ = ½ − 4/π²).
+  - No window below 0.0947 was found. This supports PR(1) with c* = ½ − 4/π² (NOTEBOOK cont. 20.3).

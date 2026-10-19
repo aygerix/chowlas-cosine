@@ -2485,3 +2485,58 @@ Labels: HEURISTIC unless marked. Purpose: replace the cyclic-only view (rounds 1
       - Optimizing α, the worst case is ≈ 2.2n^{1/3} at α ≈ 0.45n^{−1/3}.
     - Refined adversary target: a PD-tapered set at density ~n^{−1/3} WITH a spiky spectrum (to defeat P28) and no
       sharp-boundary clusters.
+
+## 2026-10-19 (cont. 20) — Lead's own derivation of the tapering core: POSITIVITY versus RESOLUTION
+(Process change, user 2026-10-19: the lead does the core derivation; agents only falsify, verify and side-compute.)
+1. IDENTIFICATION (lead; no new mathematics, but it fixes the target).
+   - The Bhatia–Davis "bulk" route of cont. 19.7 is the graph analogue of P40 (spike truncation).
+   - P40(c), applied to S = ±A: under M <= ε√n, 1_S keeps >= (1 − O(√ε))|S| of its ℓ² mass on the spike set
+     U = {f > √(n/ε)}, with |U| <= ε^{3/2}.
+   - So the tapering core is exactly: BOOLEAN + ONE-SIDED + BAND-LIMITED TO A SMALL SET U ⇒ contradiction. Round 17's
+     four conditions are this statement plus bookkeeping.
+2. PROVED (standard PD Cauchy–Schwarz, via GNS). For every positive-definite g on an abelian group and all x, y:
+       |g(y) − g(y − x)|² <= 2g(0)(g(0) − Re g(x)).
+   Consequences:
+   - A PD window that is nearly Boolean is nearly invariant under translation by its own near-maximal set {g ≈ g(0)}.
+   - On a CONNECTED torus, positivity plus a fat near-maximal set forces near-invariance under everything, i.e. the
+     window is ≈ the full torus.
+   - Fine structure is possible only through finite subgroups. Those reduce by dilation (P13a) or lower the rank.
+3. MODEL CONSTANT (E100, E100b; NUMERICAL from exact series and searches).
+   - For an arc Ω = [−ρ, ρ] ⊂ T = R/Z, all coefficients for 1 <= k <= L are >= 0 iff ρ <= 1/(2L). At ρ = 1/(2L),
+     the fraction δ_L of ‖1_Ω‖² carried by |k| > L is 0.09717–0.09718 for L = 10 … 10⁴. Smaller arcs are worse
+     (0.226 at ρ = 1/(4L), 0.53 at ρ = 1/(8L)).
+   - SLSQP search over symmetric unions of <= 6 arc pairs with |Ω| <= ½, L = 16: the minimum is δ = 0.0947.
+     Minimizers are DILATES of a single arc: the period-1/11 half-density pattern, i.e. the L' = 1 case,
+     δ = ½ − 4/π² = 0.0947. Pairs at {0, ½} give 0.09713.
+   - CONJECTURED PR(r = 1). If Ω = −Ω ⊂ T has 1̂_Ω(k) >= 0 for 1 <= k <= L and |Ω| <= ½, then δ_L(Ω) >= c* with
+     c* = ½ − 4/π² ≈ 0.0947. Finite-subgroup windows reduce to this by dilation.
+   - CONJECTURED PR(r): the same on T^r with c*_r > 0. Uniformity in the rank r is UNKNOWN and is the first danger.
+4. ARCHITECTURE (how PR would close Chowla), with each step's status:
+   - (a) [PROVED, P40(c)] Counterexample ⇒ 1_S band-limited to U up to O(√ε) relative ℓ² error.
+   - (b) [MISSING: the inverse step] Band-limited Boolean ⇒ Bohr model: S ≈ {s : sθ ∈ Ω}·env(s/X'), with θ ∈ T^r,
+     resolution L, and an absolutely continuous envelope at a chosen scale X'. Errors must be o(1) in relative ℓ².
+   - (c) [PROVED in the dense case (P29(b), P48, P53); needs the density-normalized version] At every RESOLVED spike
+     kθ, the twisted profile is PD, so 1̂_Ω(k) >= −O(ε/√n).
+   - (d) [CONJECTURED PR(r)] Positivity on all resolved k leaves >= c*_r of Ω's mass unresolved, unless Ω ≈ T^r or Ω
+     is invariant under a subtorus (lower the rank) or a finite subgroup (dilate). Unresolved mass contradicts (a)
+     once √ε << c*_r.
+   - (e) Ω ≈ T^r means no fine structure: S is a rounding of env alone. Then:
+     - env ∈ {0,1} gives a sharp boundary (P70.2);
+     - otherwise the rounding is not band-limited — contradicting (a) — or it is covered by P41 (deterministic) or
+       P70.3 (independent).
+   - The levels do NOT regress: a multi-level hierarchy of Bohr structures is ONE Bohr frame of higher rank. The cost
+     moves into the rank.
+5. HONEST RISK ASSESSMENT.
+   - Step (b) is the hard part. P40 gives |U| <= ε^{3/2}, but U can consist of ~ε^{3/2}X narrow spikes with no
+     additive structure. Spike sub-multiplicativity (cont. 19.5(a)) forces approximate-group structure only when
+     individual spike masses are >~ 1/√K.
+   - So the Bohr frame may have rank growing with n, and PR(r) must then be rank-uniform. If c*_r -> 0 with r, this
+     route reduces to bounded-rank structure and FAILS for high-rank spike sets.
+   - The first test is c*_r for r = 2, 3, 4 (balls, boxes, anisotropic windows).
+6. Next derivations, by the lead:
+   - (i) a paper proof of PR(1) with an explicit constant, via item 2 plus the Bernstein smoothness of the degree-L
+     projection;
+   - (ii) compute c*_r for small r (does it decay?);
+   - (iii) state the density-normalized version of (c) precisely for the Bohr model;
+   - (iv) attack (b) for spike sets of bounded "spike count per unit mass".
+   An agent may adversarially test PR(r) and (iii) once the lead has stated them.

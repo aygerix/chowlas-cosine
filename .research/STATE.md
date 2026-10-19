@@ -241,7 +241,14 @@ in parallel.
   - (3) Every 0/1 sequence factors into maximal Sturmian (balanced) pieces via the taut string. Study whether pieces
     of length <= K√n plus long Sturmian pieces give SB.
 ## Running now (2026-10-19, session 3, latest)
-- Codex MATH agent, round 2: .research/agents/tdense2_brief.md (report tdense2_report.md).
+- Codex MATH agent, round 3: .research/agents/tdense3_brief.md (report tdense3_report.md).
+  - T1: spike-dominated dense sets (P40 + twisted profiles / positive-bump uncertainty / multiscale).
+  - T2: rigorous P41+ (flat pieces) and P41-B (Bohr-modulated).
+  - T3: falsification against E67/E68.
+  Round 2 (tdense2) is DONE and recorded as P42–P46.
+- VM: E68 Pareto search β_K + μR on dense boxes X = 3n (src/e68_pareto_sa.c, examples/e68/): can spike domination
+  and small R coexist?
+- (superseded) Codex MATH agent, round 2: .research/agents/tdense2_brief.md (report tdense2_report.md).
   - T1: decide LM-dense on Bohr unions (exact triple counts).
   - T2: a certificate surviving Bohr unions (Stieltjes 5/7 moments, spike-masking multipliers).
   - T3: P38 for bounded local discrepancy.

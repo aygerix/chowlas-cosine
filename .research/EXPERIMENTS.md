@@ -1471,3 +1471,33 @@ NUMERICAL.
   - Minimum δ = 0.0947 at J = 6 (period 1/11 with half density, i.e. the dilate of the L' = 1 problem:
     δ = ½ − 4/π²).
   - No window below 0.0947 was found. This supports PR(1) with c* = ½ − 4/π² (NOTEBOOK cont. 20.3).
+
+## E103 (2026-10-19) Near-Boolean weight robustness (Ruzsa's [0.99, 1.01] question) (src/e103_weight_robust.py; VM; Gurobi)
+NUMERICAL. The minimum is FFT + Newton (grid 2^⌈log₂ 32X⌉), not interval-certified. Gurobi LP with cutting planes, iterated
+until LP value = true minimum to 1e-6 relative.
+- Quantity. For fixed support A: M_τ = min over w ∈ [1−τ, 1+τ]^A of max_x −Σ w_a cos(ax). Normalization R_τ = M_τ/√(Σw²).
+- Output: examples/e103/e103.jsonl (all rows; the first run's partial rows are kept too).
+- Table of R_τ/R_0:
+
+| family | n | X | R_0 | τ = 0.01 | τ = 0.1 | τ = 0.3 |
+|---|---|---|---|---|---|---|
+| Singer diff q = 13 | 91 | 181 | 0.734 | 0.969 | 0.842 | 0.770 |
+| q = 19 | 190 | 379 | 0.726 | 0.972 | 0.865 | 0.736 |
+| q = 23 | 276 | 551 | 0.722 | 0.969 | 0.856 | 0.735 |
+| q = 31 | 496 | 991 | 0.718 | 0.972 | 0.845 | 0.701 |
+| q = 43 | 946 | 1891 | 0.715 | 0.972 | 0.849 | 0.702 |
+| Bu q = 61, k = 9 | 72 | 9468 | 0.911 | 0.958 | 0.919 | 0.919 |
+| Bu q = 83, k = 20 | 380 | 16407 | 0.791 | 0.913 | 0.851 | 0.851 |
+| random half, n = 100…800 | | 2n | 1.5 → 5.4 | 0.96–0.97 | 0.73 → 0.68 | 0.58 → 0.26 |
+| interval [1, 200] | 200 | 200 | 3.12 | 0.973 | 0.720 | 0.236 |
+
+- Weight pattern (Singer): about 55% of weights at 1 − τ; at the upper bound 15% (τ = 0.1) and about 2% (τ = 0.3).
+- Reading.
+  - On the flat algebraic families (Singer, Bu) near-Boolean weights buy only a CONSTANT factor. At τ = 0.3 the ratio
+    plateaus at 0.70 (q = 31 → 43: 0.701 → 0.702). At τ = 0.1 it is 0.85 with no trend; at τ = 0.01 it is 0.97.
+  - The initial slope gives min_{μ ∈ Opt₀} Σ_a |c_a(μ)| >= (M_0 − M_τ)/τ ≈ 2.1–2.4·√n on Singer (P72(c)). The optimal
+    dual measures are A-spread: a point mass would give ≈ (2/π)n.
+  - Random and interval sets drop a lot because their M_0 is boundary Gibbs (linear) and the weights partly taper it.
+    In the continuum limit this is still linear for every τ < 1 (P72(e)).
+  - The regime that matters for C* (spiky sets with M << √n) cannot be probed: no such sets are known.
+- E103c (Singer q = 61, 83) was not run: the τ = 0.3 plateau was already flat from q = 31 to q = 43.

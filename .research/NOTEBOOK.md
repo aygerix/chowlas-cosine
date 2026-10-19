@@ -2676,3 +2676,49 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
      sinc·sinc). Flat facets give O(1) relative Gibbs that does not decay with rank: blown-up P3 packets along facet
      normals, as in P71.2.
    - Curved windows are E73. Not run; recorded so it is not proposed again.
+
+## 2026-10-19 (cont. 24) — E103 read; robust duality P72; P71.2 kernel-checked; strategic review (lead)
+1. E103 (near-Boolean weights, Ruzsa's question). The √n law is robust on every known near-extremal family.
+   - Singer: R_τ/R_0 = 0.97 (τ = 0.01), 0.85 (τ = 0.1), 0.70 (τ = 0.3), with no trend from q = 13 to q = 43.
+   - Bu: 0.85–0.92.
+   - Large drops occur only where M_0 is boundary Gibbs (random, interval). There the weights partly taper the boundary,
+     but in the continuum limit it stays linear for every τ < 1 (P72(e)).
+   - Together with E62 (free phases: gains 0.05–0.23, best 0.4916 at n = 50), BOTH natural relaxations of
+     Booleanity buy only constant factors on known supports. No relaxation produces a sub-½ regime that a Boolean
+     construction could then imitate.
+2. P72 (PROVED, elementary): M_τ(A) = max_μ Σ_a(−c_a(μ) − τ|c_a(μ)|).
+   - Flat lemma: M_τ >= s − τ√(n/(2λ_s)).
+   - Slope at τ = 0 = min over optimal measures of Σ|c_a|. E103 gives ≈ 2.2√n on Singer.
+   - Reading: Chowla_τ is a strictly stronger, ROBUST statement. It holds on flat sets. In the C* regime (spiky, negative
+     region of tiny measure) the flat lemma is empty. A proof there must use exact Booleanity, or else an A-spread
+     certificate that is not a level-set measure.
+   - Ledger row added: a fact, not a C* tool.
+3. P71.2 is kernel-checked (BohrTaper.lean; lead rebuilt it and audited the axioms).
+4. Literature spot-check (one search, 2026-10-19). Nothing beyond the record: no √n or n^{>1/5} lower bound, no
+   sub-½ construction.
+5. Candidates examined this block and REJECTED by mechanism before any work, so they are not re-proposed:
+   - Herglotz / Carathéodory coefficients of 1/(t + F_A). The coefficients are signed composition counts
+     Σ_k(−1/t)^k r_k(m), each bounded by 2. This is equivalent to t >= M, so it is a restatement.
+   - Its dual density ρ = t(t + f)/|t + F|² is a probability density concentrated where F ≈ −t. Nothing new.
+   - Subordination / Kolmogorov weak-L¹ (|{|F| > s}| <~ M/s) = P28's spread/spike split. Already noted in cont. 9.3.
+   - Spectral additive energy of the spike part. E(f) = ‖f‖²/2 is just Parseval for Boolean coefficients; vacuous.
+   - Helson / Cohen idempotent theorem. The infinite-A analogue is SOLVED by it: finite M forces A to be eventually
+     periodic with a PD residue pattern. Quantitative versions (Green–Sanders, Sanders) only see ‖1 + D_S‖₁ <= 4M,
+     i.e. log-type bounds. Classical; not a route.
+   - Integral Gram lattice (K = 2M an integer: KI + Adj is an integral PSD Gram matrix). This gives only Hoffman/ADE
+     theory for bounded K, the classical qualitative M -> ∞.
+   - Hoffman ratio and vector chromatic number: restatements. The independence ratio of Cay(Z, ±A) is <= M/(n + M),
+     and intervals show the Hoffman route is weak.
+   - Two-sided-sum (2-adic) Chowla, M >= c√|A_odd|. A counterexample to it yields D = A_even/2 with R(D) <= ε(1 + O(ε²))
+     (the pinch plus P13a). So it is equivalent to Chowla up to descent; no independent content.
+   - Spencer-type discrepancy on a PD profile. The rounding error must be ONE-sided small, so this is TAPER = C*.
+6. Strategic review (skill §3).
+   - Distance to result: unchanged; C* is open.
+   - New this block: the robustness dimension (P72/E103), and the conclusion that relaxations do not help
+     constructions.
+   - Theory of success:
+     - Lower bound: needs a tool that controls multi-level structured selections without per-level loss. None is in the
+       record or the literature.
+     - Construction: every known mechanism closes onto Bu's ½ (E64/E65); relaxations give constant factors only.
+   - Evidence balance: leans further toward Chowla being TRUE. Both relaxations are robust; no family below ½
+     asymptotically.

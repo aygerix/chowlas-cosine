@@ -2336,7 +2336,9 @@ variance without creating a sharp ambient boundary.
      must have half-length > πτ²/4.
    - Limits (checked): vacuous at the origin. There it reads Σ_{a∈A} sin(aρ)/a < 2π for ρ <= 4π/K², which every
      A satisfies up to the harmonic tail. As an L² bound it gives only n <~ XK (P33 territory). A FACT, not a route.
-2. ✓ PERIODIC TRIANGULAR BOHR TAPERS HAVE LINEAR M (agent; lead re-derived every step).
+2. ✓ PERIODIC TRIANGULAR BOHR TAPERS HAVE LINEAR M (agent; lead re-derived every step). KERNEL-CHECKED 2026-10-19:
+   lean/ChowlaCosine/BohrTaper.lean (sha256 749641df…7e93fa), theorems `lower_bound` and `lower_bound_card`, exact
+   statement with no added hypotheses; axioms propext, Classical.choice, Quot.sound only (rebuilt and audited by lead).
    - Set-up. L ∈ 20Z_{>0}, P >= 100, q >= 4L + 1, r_q = centred residue. A(L,q,P) = {1 <= a <= Pq : |r_q(a)| <= L(1 − a/(Pq))}.
    - Packets. With h = L/20 and J = ⌊P/8⌋:
        U = {jq + r : 1 <= j <= J, −16h <= r < −14h},  V: −h <= r < h,  W: 14h <= r < 16h.
@@ -2368,3 +2370,27 @@ variance without creating a sharp ambient boundary.
      - n = 72: certified M ∈ [7.427, 7.444], so R = 0.876.
    - All other families have R >= 2.
    - The best adversaries are ALGEBRAIC (square/difference-set) objects, not roundings.
+
+## P72. Robust duality for near-Boolean weights (lead, 2026-10-19; PROVED, elementary; context E103, Ruzsa's question)
+Setting: finite A ⊂ Z_{>0}, n = |A|, τ ∈ [0, 1). M_τ(A) := min over w ∈ [1−τ, 1+τ]^A of max_x −Σ_a w_a cos(ax).
+For a probability measure μ on T write c_a(μ) = ∫cos(ax) dμ(x).
+(a) Duality. M_τ(A) = max over μ of Σ_a (−c_a(μ) − τ|c_a(μ)|).
+    Proof: the payoff Σ_a w_a(−c_a(μ)) is bilinear. The box and P(T) (weak-*) are compact and convex, so Sion's minimax
+    applies. The inner minimum over the box is coordinatewise: min over w_a of w_a(−c_a) is −c_a − τ|c_a|.
+(b) Flat lemma. If λ_s := |{x : f_A(x) <= −s}|/2π > 0, then M_τ(A) >= s − τ√(n(1/λ_s − 1)/2).
+    Proof: take μ = normalized Lebesgue measure on that set. Then −Σc_a = −∫f_A dμ >= s. Also c_a² <= |μ̂(a)|², and
+    Σ_{a>=1}|μ̂(a)|² = (‖dμ/dx‖²_{L²(dx/2π)} − 1)/2 = (1/λ_s − 1)/2, since μ is real. Finish with Cauchy–Schwarz over
+    the n frequencies.
+(c) Slope at τ = 0. τ ↦ M_τ is a maximum of affine functions, hence convex. Its right derivative at 0 is
+    −min over μ ∈ Opt₀ of Σ_a |c_a(μ)| (Danskin), where Opt₀ = probability measures on argmin f_A.
+    In particular M_τ >= M_0 − τ·min_{Opt₀} Σ|c_a|.
+(d) Certificate spread. Any μ certifying M_τ >= m satisfies Σ_a |c_a(μ)| <= (M_0 − m)/τ. A ROBUST √n certificate
+    (m >= c√n with M_0 <= C√n) is therefore A-spread: Σ|c_a| = O(√n/τ), whereas a point mass has Σ|c_a| ≈ (2/π)n.
+(e) Weighted intervals stay linear (continuum form; the discrete statement needs a compactness argument, not written).
+    A bounded φ on R, supported in [−1, 1], with φ >= 1 − τ > 0 there, has a jump at ±1. If φ̂ >= 0, the Fejér means at
+    0 bound ∫φ̂ <= sup φ, so φ̂ ∈ L¹ and φ is continuous: contradiction. Hence the weighted Dirichlet profile has Gibbs
+    >= c(τ)n.
+Reading (HEURISTIC): Chowla_τ (√n for all [1−τ, 1+τ] weights) is a strictly stronger statement than Chowla. On flat
+sets (negative region of positive measure) it holds by (b); E103 measures only constant-factor losses there. In the
+spiky regime (the C* regime) (b) is empty, and (d) says a proof must either use exact Booleanity or find an A-spread
+certificate that is not a level-set measure.

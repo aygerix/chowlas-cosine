@@ -926,3 +926,38 @@ E68 anatomy (n = 64, K = 1, β = 0.176, R = 0.670): A = [1, 52] ∪ {56, 58, 63,
     too large below X ~ 10^6.
 - Round-3 agent T3 audit (.research/agents/tdense3_scratch/summary.json): 121 zoo sets plus 45 flat/curved and Bohr
   extensions. No set has both β₁ < 0.13 and R < 0.60. The refined R of E68's best row (n = 64) is 0.60619.
+
+## E71 (2026-10-19) Torus level-1 inequality TL1 (src/e71_tl1.py; NUMERICAL, exact grid quadrature)
+θ*(p) = sup over level-1 L = Σ_s b_s cos U_s of Λ_p(L)²/(‖L‖²p(1−p)), where Λ_p(L) = E[L·1{L > q_p}]
+(= sup over E ⊂ T^S with |E| = p of the level-1 Fourier mass of 1_E, divided by p(1−p)).
+| p | S=1 | S=2 (best b) | S=3 (best b) | Gaussian (S→∞) |
+|---|---|---|---|---|
+| 0.02 | 0.041 | 0.077 | 0.098 | 0.120 |
+| 0.1 | 0.215 | 0.322 | 0.336 | 0.342 |
+| 0.3 | 0.632 | 0.632 | 0.632 | 0.576 |
+| 0.5 | 0.8106 | 0.8106 | 0.8106 | 0.637 |
+- Maximum 8/π² = 0.81057, at S = 1, p = ½.
+- Small p favours many coordinates, but every value stays below the Gaussian limit and below 8/π².
+- Conjecture TL1 (NOTEBOOK): W¹(1_E) <= (8/π²)|E|(1 − |E|) for every measurable E ⊂ T^S, S <= ∞.
+  For p = ½ it is equivalent to the Khintchine-type bound E|Σb_s cos U_s| <= (2√2/π)‖Σb_s cos U_s‖₂.
+
+## E70/E70b (2026-10-19) The P47 high-pass window family on the zoo and on Bu/Singer sets (src/e70_p47_scan.py,
+## src/e70b_bu_scan.py; examples/e70/). NUMERICAL (ρ = 0.687; true M by grid + Newton)
+- For each set: max over h ∈ {0,1,2,…,512} (h = 0 is P31) and θ ∈ {0.02,…,1} of the P47 window bound.
+- E70 (159 sets: tdense3 zoo, E68, E68b):
+  - best/√n >= 0.106 everywhere; the minimum is the curved quadratic rounding.
+  - Near-optimal sets (R = 0.57–0.70): best/M = 0.33–0.52.
+  - Intervals and random sets: P31 (h = 0) is optimal. Roundings and Bu: h > 0 wins.
+- E70b, Bu/Singer with best shift (n = q(q+1)):
+| q | n | R | best/√n | best/M | best h |
+|---|---|---|---|---|---|
+| 37 | 1406 | 0.649 | 0.230 | 0.355 | 48 |
+| 53 | 2862 | 0.758 | 0.228 | 0.301 | 96 |
+| 73 | 5402 | 0.607 | 0.230 | 0.378 | 96 |
+| 89 | 8010 | 0.692 | 0.224 | 0.324 | 128 |
+| 113 | 12882 | 0.593 | 0.226 | 0.382 | 128 |
+| 127 | 16256 | 0.586 | 0.225 | 0.384 | 192 |
+- best/√n levels off at ≈ 0.225 (0.29 at q = 7, 0.237 at q = 31, then flat; q = 101 gives 0.202). The best h grows
+  like ~1.5q ∝ √n.
+- Reading: the extremal known family is NOT in the P47 escape class. Numerically, high-pass windows certify
+  M >= 0.22√n on Bu sets uniformly in q, about 38% of the true M.

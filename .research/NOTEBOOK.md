@@ -1385,3 +1385,28 @@ Strategic decision:
 4. E70 (P47 high-pass family on the zoo): every set has best bound >= 0.106√n. The window family captures 33–52% of M
    on near-optimal sets. Bu/Singer best/√n drifts 0.29 (q=7) to 0.237 (q=31); E70b (q up to 127) is running to see
    whether it levels off.
+
+## 2026-10-19 (night, cont. 2) — Descent analysis: what 0/1 does below macroscopic scale; TL1 (lead)
+1. Bohr-window sets are spike-dominated in the POSITIVE-part sense: harmonics k·α have heights X|sin(πkp)|/(πk), and
+   the energy at heights <= K√n is only ~K√n/π. They still satisfy SB, because their non-PD profiles create NEGATIVE
+   atoms (P53 ⇒ linear M).
+   Lesson: below macroscopic scale the 0/1 constraint acts through two channels.
+   - (i) PD rigidity: a positive atom needs a PD profile, else it is a negative atom.
+   - (ii) Leakage: a 0/1 pattern cannot keep its variance on a "level-1" set of frequencies, so it leaks to
+     combinations and harmonics, whose heights decay, eventually into the bulk.
+2. TL1 (CONJECTURED; E71 numerics up to S = 3 plus the Gaussian limit): for E ⊂ T^S, the Fourier mass of 1_E on the
+   characters e^{±iω_s} is <= (8/π²)|E|(1 − |E|).
+   - Proof route at p = ½: W¹ = E[1_E L] <= ½E|L| <= ½c_K‖L‖, with c_K = sup E|L|/‖L‖₂ over cosine sums. This needs
+     c_K = 2√2/π (attained at S = 1).
+   - General p: sup_L Λ_p(L)²/‖L‖², with Λ_p the top-p superquantile.
+   - Use: a 0/1 local pattern relative to S independent spike frequencies keeps <= 81% of its variance on those
+     spikes; >= 19% goes to combination frequencies Σk_s x_s or to continuous spectrum.
+     - If the spike set is dissociated and the spikes have amplitude δ (height δX), level-2 combinations have
+       amplitude ~δ². They reach the bulk once δ² <= K√n/X.
+     - So a counterexample's tall-spike set must be approximately additively CLOSED (combinations of spikes are spikes):
+       a Bohr/approximate-group structure. Then PD rigidity (P53-type) applies to that structure. This is session 2's
+       SR/Sanders line, now with a concrete mechanism.
+   - Caveat: TL1 needs the window to equidistribute in T^S, so it serves only for few, tall spikes. Many small spikes
+     are "random-like" and need a bulk argument instead (Bu sets live there).
+3. Decision: the round-4 agent pursues QD/MP48 (quantitative P53, mesoscopic PD). The lead keeps TL1 + additive
+   closure as the structured half of the descent.

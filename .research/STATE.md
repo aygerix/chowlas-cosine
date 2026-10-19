@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-18 late night)
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, newest")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -240,6 +240,39 @@ in parallel.
   - (2) Two-level arbitrary rounding (front-loaded profile × q-periodic pattern): bulk or kink sidelobe.
   - (3) Every 0/1 sequence factors into maximal Sturmian (balanced) pieces via the taut string. Study whether pieces
     of length <= K√n plus long Sturmian pieces give SB.
+## Session 3, newest (2026-10-19 night): P47–P53, E69–E70
+- P47 (lead, PROVED on paper; E69b audit passes on 144 rows): the P31 window applied to H_h·f_A, with the high-pass
+  multiplier H_h = 1 − K_h/K_h(0).
+  - Chowla holds for EVERY bounded-discrepancy rounding (non-cumulative, any D₀ <= cX^{3/4}) of a Lipschitz profile p
+    whose rounding energy e = p(1−p) is not front-loaded: e(0) < 2.6ē, or more generally Γ(θ) > 0 for some θ.
+  - This covers every profile starting at density 1 and TD2's ½(1−t)². No LO, curvature or Diophantine hypothesis.
+  - The nonlinear input is a² = a: ‖1_A − p‖² = Σp(1−p) + O(D₀(1+V)).
+- Escape class of the whole P47 family (NOTEBOOK): local variance front-loaded at EVERY scale h, i.e. a front with
+  density in (0,1) plus a sparse tail. The tail would have to fill the front's dips (|B| >= 2c²|D_F||F|).
+- P48–P51 (round-3 agent, verified): TD9 macroscopic PD twisted profiles; TD10 fixed fractional flat piece ⇒ LINEAR M;
+  TD11/TD12/TD12-F (P41+, P41-B incl. finite Fourier Bohr profiles); TD13/TD14 bump obstructions.
+- P52 (lead): local Bessel budget Σ_{θ≠0}|q_θ|² <= p(1 − p).
+- P53 MACRO-SB (lead, PROVED on paper, adversarial check running): M = o(X) ⇒ the local spectrum is NOT purely
+  atomic for any countable nondegenerate frequency family.
+  - Proof: joint PD of the local pattern density g on [0,1] × K, plus continuity, plus g ∈ {0,1}.
+  - Corollaries: TD10; every Bohr-window set {m : {mα} ∈ E(m/X)} and every residue-pattern set has LINEAR M.
+  - Meaning: macroscopic structure alone can never give a counterexample. The remaining mass must sit in spikes of
+    height o(X), which motivates the descent (D).
+- E70 (P47 family scanned on 159 zoo/E68/Bu sets): best bound >= 0.106√n on every set, and 33–52% of M on near-optimal
+  sets. On Bu/Singer, best/√n drifts 0.29 to 0.237 (q = 7 to 31). E70b (q up to 127) is running.
+- E69: bounded-discrepancy roundings, R ∈ [1.6, 3.0] (walk); adversarial blocks give linear M.
+- Next derivation (lead, foreground): the descent below macroscopic scale.
+  - Candidate 0/1 input: a torus level-1 inequality (TL1). For E ⊂ T^S, the Fourier mass of 1_E on the characters
+    e^{±iω_s} is at most (8/π²)|E|(1 − |E|), conjecturally sharp at S = 1, |E| = ½.
+  - TL1 would force ≥ 19% of a 0/1 local pattern's variance onto COMBINATION frequencies. A counterexample's spike set
+    must then be approximately additively closed. This is the robust SR/Sanders line L1 in a cleaner form.
+  - Caveat: it applies only where the window equidistributes in T^S, i.e. few, tall spikes.
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 4 (.research/agents/tdense4_brief.md, report tdense4_report.md):
+  - Task 1: adversarial check of P47 and P53;
+  - Task 2: quantitative P53 (QD), a mesoscopic P48 (MP48) and the descent (D).
+- VM: E70b (P47 family on Bu q = 37–127; 2 jobs); grb_group_bt; E64 bu2 (D = Bu k6, eps 0.15); E65 (q = 19 SA).
+
 ## Running now (2026-10-19, session 3, latest)
 - Codex MATH agent, round 3: .research/agents/tdense3_brief.md (report tdense3_report.md).
   - T1: spike-dominated dense sets (P40 + twisted profiles / positive-bump uncertainty / multiscale).

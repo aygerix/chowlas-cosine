@@ -63,6 +63,7 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
 | F8 | Flat sets (negative region of positive measure) lose only constant factors under weight perturbation | proved (P72(b)) + E103 | — |
 | F9 | Every known near-extremizer is flat: β_K ≈ 0.18+ and R >= ½. Sparse SA (E106, n <= 128) finds only Beatty dilates of dense sets (one macroscopic spike, R >= 0.85) | numerical | E68, E104, E106 |
 | F10 | Variance conservation. For ANY random A with marginals w_a = P(a ∈ A), and any correlations: ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a). Rounding noise cannot be destroyed, only moved in x. | IDENTITY proved (∫cos(2πax)cos(2πbx)dx = δ_ab/2). The reading "noise must sit under the spikes of E f" is HEURISTIC: large Var(f(x)) where E f ≈ 0 forces negative values only with an anti-concentration input, which is not proved | this file, 2026-10-19 |
+| F11 | No flat multiplicative orbits (torsion-freeness, quantified). For every x ∈ T and K >= 1, with Fejér weights w_k = 1 − abs(k)/(K+1): Σ_{0<abs(k)<=K} w_k f(kx)² >= ½n(K+1) − n². Proof: Σ_k w_k f(kx)² = ½Σ_{a,a'}F_K((a−a')x) + ½Σ_{a,a'}F_K((a+a')x) >= ½n(K+1), from the diagonal a = a' with F_K >= 0. So every orbit segment {kx : 0 < k <= 4n} carries orbit-L² >= n²/2. In F_p^r the quadric's off-cone LINES are exactly flat (f ≡ −M). In Z no orbit is flat. Mild: it holds for any random-like E and kills only line-aligned spike sets (with D8) | proved (elementary) | this file, A3 |
 
 ## 3. DESIGN — constructive side (build the object on purpose)
 Design rules implied by §2. A candidate that violates one is dead before it is run.

@@ -2824,3 +2824,36 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
      class tests C* at the macroscopic-hierarchy level. It reaches the mesoscopic regime only if the deep spectrum
      concentrates.
    - E107 (R screen) and E107b (exact D for all automata with b <= 5, S <= 4) are running.
+
+## 2026-10-19 (cont. 27) — A2 closed for the advisor; A3 rational-spike anatomies; global reflection (lead)
+1. A2 answered as far as it goes (CSTAR A2 (viii), E108, P75).
+   - All 71,840 small automata are interval-certified to fail the finite-prefix certificate (Re ν̂(t) < −0.084).
+   - P75 (domination-or-twin ⇒ Re μ̂ < 0 ⇒ linear M) covers 28.5% of the class. T-A2 in general stays open; it is a
+     side lemma.
+2. A3 (CSTAR): every Z-set is a model set over R × Ẑ, and the quadric's lines exist in T only as (1/Q)Z.
+   - Residue staircases have the exact profile f(t/Q + τ/X) ≈ (X/2πQτ)Σ cos(2πrt/Q)sin(2πτu_r) (E109 verifies it).
+   - Smooth graphs give Gibbs. Random graphs give noise amplified to R ≈ 1.3√(X/Q). Structured graphs are dual
+     Chowla.
+   - Design rules: D8 (aperiodic at every scale Q << X) and D9 (spectrally irreducible: independent sub-pieces would
+     each need R_j <~ R/√J).
+   - F11 (proved): no flat multiplicative orbits in Z, unlike the quadric's off-cone lines.
+3. Route check worked. Cut-and-project/balls, clique covers and lower-flat Sidon squares were each re-derived and
+   matched existing rows (E73 / cont. 23.2, cont. 19.8, E8 / E15 / E29). None was re-recorded as new.
+4. GLOBAL REFLECTION (skill §3), after A1, A2, A3.
+   - Distance to result: step (c) is unchanged. A1–A3 are construction-class obstructions. Each ends in the same
+     dichotomy: a 0/1 taper is either a sharp structural switch (Gibbs) or a fractional thinning (F10 noise,
+     conserved by Parseval at every level, including the residue level). Exact subgroups escape both. That is the
+     only reason the F_p^r quadric exists.
+   - Theory of success, construction side: a Z-C* must be aperiodic (D8), spectrally irreducible (D9), orbit-thick
+     (F11) and additively random-like (F5), and still have an exactly two-valued spectrum. No known object has all
+     four. Every known two-valued object (quadrics, uniform cyclotomy, Galois-ring difference sets) needs
+     elementary-abelian torsion. Cyclic PDS are trivial or Paley (Ma).
+   - Theory of success, proof side: the missing statement is a ROBUST form of "two-valued spectrum ⇒ union of
+     subgroups". In Z the subgroups become Bohr/GAP pieces with boundary (Gibbs), and D9 then forces each piece to
+     be a better C* than the whole (descent). Both the robust structure step and the rigorous descent are open.
+     Galois-based proofs (Ma, Baumert–Mills–Ward) are not robust.
+   - Decision: keep the proof line on step (c) via the structure-plus-descent route. Formulate D9 as a rigorous
+     lemma with explicit cross-term control. Its weakest point is the assumption of disjoint spike sets. The next
+     derivation is to replace that assumption by an ℓ²-decomposition of the INV measure ν into pieces with
+     controlled overlaps.
+

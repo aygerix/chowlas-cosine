@@ -184,6 +184,20 @@ in parallel.
 - **E60:** the escape class contains R -> ½ families. Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within
   +0.026 of Bu. P31's barrier is purely methodological. Profile methods are exhausted for Chowla.
 
+## Running now (2026-10-19 night, latest)
+- Codex Lean agent (one at a time): P34 complex-coefficient chain and Corollaries A–C, then P33/pinch
+  (.research/agents/lean_p34_brief.md; report lean_p34_report.md). Beckner T5 is PAUSED after a partial: M1/M3 and M4
+  infrastructure are kernel-checked (CERTIFICATES). Resume M4 in the next Lean slot after P34.
+- VM:
+  - grb_group_bt (2 threads);
+  - E61b (sharp unit-amplitude constant, n up to 1024; baselines done: chirp 1.17, Rudin–Shapiro 1.41, random 2.3–2.7);
+  - E62b (phase relaxation on larger supports; so far N50 0.498, Singer q31 0.598, q61 0.633, triangle 0.550).
+- New tools this block:
+  - P34 (one-sided Littlewood);
+  - P36 (truncation at gaps, quadratic error);
+  - the frequency-localization no-go (NOTEBOOK);
+  - exact real-square identities: |A| = (Σc²)² − Σc⁴, and multiplicity >= 2 is impossible for real squares.
+
 ## First concrete next step (updated 2026-10-19, end of session block)
 Proved this block:
 - P33: M(A) >= |A|·min A/max A. The linear-test optimum (E58); folklore-level.

@@ -143,3 +143,17 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   - https://arxiv.org/html/2609.05338
   - https://arxiv.org/html/2610.01657
   - https://www.quantamagazine.org/networks-hold-the-key-to-a-decades-old-problem-about-waves-20260128/
+
+## Dense sets: Bu et al. 2610.17160v1 Prop. 9.7 vs our P31 (checked 2026-10-19)
+- Bu et al., arXiv:2610.17160v1 (12 Oct 2026), Proposition 9.7 ("Frequencies O(n)"), quoted via the arXiv HTML. For C >= 1
+  and A ⊂ [1, Cn] with |A| = n >= 2:
+      λ_A³‖f_A‖₁ >= (n − 1)/(32CC₁),   hence λ_A >= ((n − 1)/(64CC₁))^{1/4},   C₁ = 2·10⁵.
+  - Method: an L¹-sensitive boundary (run-top) estimate, Prop. 9.1, summed over t ∈ [1, 2Cn].
+  - Remark 9.8(iii): the proposition "says nothing about whether √n is the true order for dense sets".
+- Ours:
+  - **Kernel-checked** (`dense_elementary`): |A| >= 0.41·max A ⇒ λ_A >= √|A|/1000. Paper constants c(δ)√n with
+    c(0.5) = 0.064, c(1) = 0.23. This is the sharp order √n for every C < 1/0.4055 ≈ 2.466.
+  - P31: the sharp order for every C whenever the profile is not front-loaded.
+  - Open even for us: A ⊂ [1, Cn] with C > 2.466 and a front-loaded profile. That is exactly where their n^{1/4} is the
+    best known.
+- Also from the same search: the Epoch page's remark that no example with c <= 1/20 is known. Unchanged.

@@ -729,3 +729,14 @@ Reading:
   - It is weaker evidence than C½ itself: only 2 starts per support, small n.
   - If true, any C½ proof may be phase-blind except at the level of supports. But P31-type profile methods are already
     known to fail on front-loaded supports (E60).
+
+## E59 (2026-10-19) Smooth escape profiles at n ≈ 600/1200 (src/e59_batch.sh; examples/profile_sa/e59.jsonl)
+SA (profile_sa mode 0, 6e6 iterations × 4 restarts) with prescribed profiles c(1 − t)^p. HEURISTIC, grid minimum.
+   p (profile)       n≈600 R    n≈1200 R
+   1 (triangle)      0.828      0.885
+   2 (escape)        0.920      0.980
+   3 (escape)        0.970      1.015
+Reading:
+- Under equal effort, steeper (front-loaded) profiles are worse, and R rises with n.
+- This is search-limited: Bu reaches 0.66 at n = 6320, and Bu + outliers (E60) is front-loaded with R ≈ 0.67.
+- So E59 does NOT show that escape profiles are intrinsically bad. It shows SA cannot find their good members.

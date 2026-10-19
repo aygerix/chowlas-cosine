@@ -1311,3 +1311,23 @@ Reading:
     −32574 (257, n = 264192).
   - R12-U probe (seed 2026101913): M/H = 0.0730, 0.0360, 0.0342 at H = 2^16, 2^18, 2^20. Uncertified upper estimates.
   - independent_check.py: 980 exact second-moment count checks; 4 scalar-fake (R12-S) arithmetic checks.
+## E90 (2026-10-19) Large-q search for symmetric half-sets of Z_q with small K (src/e90_zp_tabu.c; src/e90_calib*.sh, src/e90_prod.sh; examples/e90/)
+- HEURISTIC (upper bounds on min K only). Same objective as E41: K = max_γ −λ(γ) over symmetric half-sets.
+  - Method: tabu search with a soft-max surrogate at inverse temperature β/√q, best of 48 sampled swaps per step,
+    200000 steps.
+  - Seeds 2026101990+i.
+  - Calibration: it reproduces the exact E41 optima at q = 79 (0.49064), 83 (0.48267) and 89 (K = 4.630072, β = 3).
+  - CORRECTION to E41's printed q = 89 value 4.630071582: the pair list evaluates to 4.6300723 (the round-13 agent's
+    Arb enclosure, 4.630072322; E90 agrees). The E41 file is unchanged.
+- Production best K/√q, with Paley (1 + √q)/(2√q) in brackets:
+  - 149: 0.5131 [0.5410]; 151: 0.5163; 197: 0.5296 [0.5356];
+  - 293: 0.5524 [0.5292]; 401: 0.5756 [0.5250]; 601: 0.5774; 797: 0.5933; 1009: 0.6228;
+  - 1201: 0.6289; 1601: 0.6122; 2003: 0.6575.
+- Reading:
+  - The search is weaker than E41c's core-plus-tail SA, which reached 0.4825 at q = 149. It finds nothing better than
+    Paley for q >= 293.
+  - Its sets have the profiled anatomy (Λ/q ≈ 0.25) with K/√q drifting up, like R13-PK's random profile rounding
+    (K ~ √(q log q)). Paley's structured texture wins at large q.
+  - INCONCLUSIVE about the asymptotics of min K/√q. Not continued.
+  - Bug note: production runs did not record the seed state itself, so mode-2 rows show the best set after leaving
+    Paley. This is fixed in the source.

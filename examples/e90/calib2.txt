@@ -1,0 +1,6 @@
+q=83 k=21 mode=0 beta=3.00 bestK=4.397358 K/sqrtq=0.48267 Lambda=13.101 Lambda/q=0.1578 LambdaK/q=0.6941 paley/sqrtq=0.55488 P=2 3 5 6 7 11 13 17 18 20 23 24 26 29 31 34 36 37 39 40 41 
+q=89 k=22 mode=0 beta=3.00 bestK=4.630072 K/sqrtq=0.49079 Lambda=13.395 Lambda/q=0.1505 LambdaK/q=0.6968 paley/sqrtq=0.55300 P=3 6 8 9 11 12 15 17 18 19 21 25 26 27 30 33 34 36 37 38 42 44 
+q=83 k=21 mode=0 beta=10.00 bestK=4.605289 K/sqrtq=0.50550 Lambda=14.246 Lambda/q=0.1716 LambdaK/q=0.7905 paley/sqrtq=0.55488 P=3 6 7 9 12 13 15 16 18 19 20 24 25 27 31 32 33 34 36 39 40 
+q=83 k=21 mode=0 beta=20.00 bestK=4.397358 K/sqrtq=0.48267 Lambda=13.101 Lambda/q=0.1578 LambdaK/q=0.6941 paley/sqrtq=0.55488 P=2 4 6 8 9 10 12 13 18 20 22 26 30 31 32 33 35 38 39 40 41 
+q=89 k=22 mode=0 beta=10.00 bestK=4.630072 K/sqrtq=0.49079 Lambda=13.395 Lambda/q=0.1505 LambdaK/q=0.6968 paley/sqrtq=0.55300 P=2 3 9 11 13 14 16 17 18 20 23 25 26 27 29 34 35 36 37 38 40 43 
+q=89 k=22 mode=0 beta=20.00 bestK=4.757500 K/sqrtq=0.50429 Lambda=24.119 Lambda/q=0.2710 LambdaK/q=1.2893 paley/sqrtq=0.55300 P=2 4 6 7 9 11 13 15 17 19 20 21 24 26 28 30 33 35 37 39 41 44 

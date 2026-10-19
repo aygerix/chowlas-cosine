@@ -2117,3 +2117,63 @@ new relaxation, not finer grids.
      of binary escapes.
    - Lead, foreground: write P61 for sparse sets in full (cont. 16.6c). It is a second-order front-loading criterion
      for ALL sets, the first T-dense-type statement with no density hypothesis.
+6. (cont. 17) P61 for sparse sets, written out (lead). It is second-order TRIVIAL apart from the front shape.
+   - Setting.
+     - A_j with n -> ∞, M = o(√n), X = max A.
+     - ν_j = (1/n)Σ_{a∈A}δ_{a/X} -> ν weakly. Assume ν has a bounded density near 0 (the regular case).
+     - High-pass energy measures ε_j = (1/n)Σ_m r_m²δ_{m/X} -> ε, along a subsequence, with r = a − k_h⋆a as in P58.3.
+   - Then:
+     - (i) ν̂ >= 0 (the limit of f_A(y/X)/n >= −M/n). Gaussian testing plus the bounded density at 0 gives ν̂ ∈ L¹.
+       So ν = π dt with π continuous and PD, π(0) = max π.
+     - (ii) r² <= a + q² <= a + q, and the smoothed q has the same limit ν. So ε <= 2ν, and ε is regular at 0 too.
+     - (iii) P61 steps 4–8 verbatim (normalize by √n instead of √X; the only input is m² <= M² = o(n)) give
+           ẽ/ẽ(0) ∈ 𝒦 := closed conv{|w|² : w ∈ 𝒲},
+       where ẽ is the density of ε. Jensen's φ step is one consequence; the convex-hull statement is the full content.
+   - Sparse case: if also max_m q_m -> 0 (no locally dense clumps), then r² = a − 2aq + q² gives ε = ν. So
+         π/π(0) ∈ 𝒦.
+   - Consequences.
+     - ∫_0^1 π/π(0) <= N₂ := sup_{w∈𝒲}∫_0^1|w|² ≈ 0.34349 (E82). So, with ∫_0^1 π = 1, π(0) >= 1/N₂ ≈ 2.911.
+       This is EXACTLY P31(iii): ρ_∞ = 2N₂, since ρ_L's continuum form is sup∫_{−1}^{1} w² over w = v⋆ṽ/‖v‖²,
+       v >= 0. The E48 value 0.687 = 2 × 0.3435 is consistent.
+     - Example: the triangle profile π ∝ 1 − t has ∫ π/π(0) = ½ > N₂, so it is excluded.
+   - SHARPNESS (P61(b) at sparsity δ). The packets give E r = 0 and E r² = cw². Adding the PD smooth part δw² gives
+     first moment = second moment = δw². So sparse weighted escapes exist for every profile w² ∈ 𝒦, with
+     M = O(√J), J = X^{0.9}, which is o(√(δX)) when δ >> X^{−0.1}.
+   - OBSTRUCTION (preserved).
+     - For sparse sets, second-order information is exhausted by the front-shape constraint 𝒦.
+     - Binary coefficients have r^k = r for all k, while packet escapes are Gaussian. Third moments are free
+       (DC barrier, P63.2).
+     - So any sparse Chowla proof must use binarity at order >= 4, the same layer as T-dense beyond 1/D and as
+       Bedert's run-tops (P20–P22, where group-agnostic arguments cap at 1/5).
+   - Status: PROVED on paper (lead), modulo the regularity hypotheses stated above. Not recorded in PROOFS as a theorem,
+     because its scalar content is P31(iii) and the rest is a shape constraint.
+7. (cont. 17) Lead side observations while round 13 runs.
+   - (a) PROVED (elementary). Scale-independence forces linear M ("2-D obstruction").
+     - Setting: A = {v1 + L·v2 : (v1, v2) ∈ V}, V ⊂ [0, N)² with |V| >= δN², L >> N.
+       - The curve x ↦ (x, Lx) mod 2π resolves T² at scale 1/N. So f_A >= −M gives
+         F(θ) = Σ_V cos(v·θ) >= −M − o(n) on all of T².
+       - The coefficient profile p on [0,1]², evenly extended, lives in the two opposite quadrants O+ ∪ O−. If
+         M = o(n), it is PD on R².
+       - A bounded PD density is continuous with p(0) = max p > 0, so it is positive on a full neighbourhood of 0.
+         O+ ∪ O− contains no such neighbourhood. Contradiction.
+     - Hence M >= c(δ)n: LINEAR.
+     - Same for d >= 2 independent lacunary scales. More generally, M is additive over lacunary-separated dilates
+       (cf. P27).
+     - Meaning: a counterexample is "one-dimensional at every scale". Its mass must sit at a single scale or across
+       dependent scales.
+     - The dangerous regime is single-scale density below D ≈ 0.117, i.e. C > 8.57. Bu's sets live there (C ≈ 25,
+       R -> ½).
+   - (b) Dilation-deficit form of the cyclic problem.
+     - For every dilate t and Fejér scale h: K >= (h/2 − Σ_{c∈B}ψ_h(tc))·q/(q − h), by P29 on Z_q.
+     - So K is at least the one-sided, Fejér-smoothed discrepancy of g = 2·1_B − 1 over homogeneous progressions
+       t·[−h, h]. These are exactly the rank-1 Bohr tests.
+     - Paley: these deficits are smoothed character sums, of size ≍ √q·|L(1, χ)|. So rank-1 tests are tight up to
+       L(1, χ).
+     - Over all t the deficits have mean ≈ 0 and second moment ≈ (4/3)hq plus multiplicative correlations
+       Σ_r Φ_h(r)·Σ_c g(c)g(rc).
+     - The one-sided issue reappears: deficits are bounded below by −K, but positive deviations (biased dilates)
+       are free.
+   - (c) Correction of a slip, recorded so it is not repeated. Comparing Gaussian moments (2k−1)!!‖ν⁺‖^{2k} of the
+     positive spectrum with the binary side does NOT improve with k. The c = 0 spike contributes (2K)^{2k}/q, so order
+     2k gives only K >~ q^{1/(2k)}. The best is k = 2: q^{1/4}, the kurtosis route; the round-13 agent reached the same
+     conclusion independently.

@@ -2428,3 +2428,20 @@ KERNEL-CHECKED (Z version) 2026-10-19: lean/ChowlaCosine/FewSpike.lean (sha256 2
 - PD is defined by finite sums plus Hermitian symmetry.
 - The proof uses the 3-point test (1, −2, 1), i.e. ψ(k + l) <= 2ψ(k) + 2ψ(l), in place of the GNS square root.
 - Axioms: propext, Classical.choice, Quot.sound. Rebuilt and audited by the lead.
+
+## P74. PR(1) at the resolution scale: U >= 2.5·10^{-4}·min(|Ω|, 1/L) (lead, 2026-10-19; PROVED, elementary)
+Setting: Ω = −Ω ⊂ T = R/Z measurable, μ = |Ω| ∈ (0, ½], and a_k := 1̂_Ω(k) >= 0 for |k| <= L. Put g = P_L1_Ω (PD, real,
+γ := g(0) = ‖g‖_∞) and U := Σ_{|k|>L} a_k² = ‖1_Ω − g‖²₂ = ∫g(1 − g).
+Theorem. U >= 2.5·10^{-4}·min(μ, 1/L).
+Proof. Take δ = 1/10 in P73(T), so γ₀ = (4 − 5δ)/3 = 7/6.
+- (A) If γ < 7/6, P73 gives U >= δ²μ/3 = μ/300.
+- (B) If γ >= 7/6, apply Bernstein twice to the degree-L polynomial g: ‖g''‖_∞ <= (2πL)²γ. Since g is even with its
+  maximum at 0,
+      g(x) >= γ(1 − 2π²L²x²) >= (7/6)(1 − 2π²L²x²).
+  For |x| <= h := √(3/56)/(πL) this gives g(x) >= 25/24, so (g − 1_Ω)² >= 1/576 there (1_Ω <= 1). Hence
+      U >= 2h/576 = √(3/56)/(288πL) >= 2.5·10^{-4}/L. ∎
+Scope.
+- This is PR(1) with a non-sharp constant for every window at the resolution scale (μ <= 1/L). That includes the
+  extremal arcs of E100 (radius 1/(2L)).
+- For μL >> 1 with a large peak it is OPEN: case (B) gives only ~1/L. Numerically E105 finds U/μ >= 0.104 there (L <= 16).
+- Not a C* tool: PR is step (d) of the cont. 20 architecture, rank 1 only.

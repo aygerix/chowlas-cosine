@@ -298,7 +298,7 @@ in parallel.
 - E79: the ρ*-extremal shape violates energy-PD, so the enlarged class's reach is > 6.63. E80 (running) estimates it.
 ## Running now (2026-10-19 night, newest)
 - VM: E80 (src/e80_enlarged_reach.py): SLSQP over autocorrelation profiles with e-PD and window constraints.
-- No agent running (round 9 being planned).
+- Codex MATH agent, round 9 (.research/agents/tdense9_brief.md; report tdense9_report.md).
 ## First concrete next step (2026-10-19 night, newest)
 - Round 9 (one codex agent): the exact reach of the enlarged macroscopic class, with certificates, giving T-dense(C₉);
   extra macroscopic constraints (measure-valued PD of σ_t, atoms, Boolean); effective constants.

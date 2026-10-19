@@ -1439,3 +1439,21 @@ Reading:
 - The star (vertex 0) adds nothing on near-extremal sets (w0 = 0). It dominates only for sparse random sets.
 - The AP is the clique case: H = J − I has λ_min = −1, so its large M (Gibbs) is invisible to Cay[A]. This is the
   structured alternative.
+
+## E99b / E99c (2026-10-19) Graph certificates on random sets of density α: flat versus PD-tapered profiles (src/e99b_sparse_gap.py, src/e99c_tapered.py; examples/e99/e99b.jsonl, e99c.jsonl; VM)
+NUMERICAL. Random A of density α = n^{−e} in [1, X]. E99b uses a flat profile; E99c uses P(a ∈ A) = 2α(1 − a/X), a
+triangle profile, which is PD. λ_min is computed on W0 = A and W2 = {0} ∪ ±A (P9: 2M >= −λ_min).
+| profile | e | n ≈ 1000 / 4000 / 16000: λ_min(W2)/√n | λ_min(W2)/n^{1/3} | true R |
+|---|---|---|---|---|
+| flat | 1/2 | −0.89 / −0.89 / −0.88 | −2.8 / −3.6 / −4.4 | 6 / 15 / 28 |
+| flat | 1/3 | −0.93 / −0.98 / −1.20 | −3.0 / −3.9 / −6.0 | 8 / 14 / 28 |
+| flat | 1/4 | −1.52 / −1.75 / −2.56 | −4.8 / −7.0 / −12.8 | 7 / 14 / 28 |
+| triangle | 1/2 | −0.74 / −0.75 / −0.74 | −2.4 / −3.0 / −3.7 | 2.7 / 3.0 / 3.6 |
+| triangle | 1/3 | −1.04 / −0.78 / −0.62 | **−3.30 / −3.09 / −3.09** | 2.6 / 3.1 / 3.2 |
+| triangle | 1/4 | −1.36 / −1.19 / −0.94 | −4.3 / −4.8 / −4.7 | 2.3 / 2.8 / 3.1 |
+Reading:
+- On flat sets, W2 certifies >~ √n at every density. A macroscopic negative eigenvalue (boundary/Gibbs) grows like αn.
+- On PD-tapered sets at α = n^{−1/3}, the certificate is ≈ 3.1n^{1/3}: constant in units of n^{1/3}, decaying like
+  n^{−1/6} in units of √n. This is the "intermediate region" of the external review, confirmed with exponent 1/3.
+- These sets are not counterexamples: R ≈ 3, from random fluctuations (P28).
+- On W0 = A the certificate tracks the noise bulk ≈ 2√(αn) on flat sets (E99b: 0.62√n at n = 1000, e = 1/3).

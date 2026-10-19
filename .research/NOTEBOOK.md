@@ -2435,3 +2435,53 @@ Labels: HEURISTIC unless marked. Purpose: replace the cyclic-only view (rounds 1
    |C| <= c₁K + c₂.
    - Tight examples: Sidon differences (B is a clique of size k = K) and Bu sets (3B is a clique, K ≈ k).
    - CLIQUE-S alone does not give Chowla. It is the rigidity input the structured branch of item 7 needs.
+10. CORRECTIONS to items 7–9 (lead, 2026-10-19, after external review and round-17 interim findings). The originals
+    are kept above; these supersede them.
+    - (a) The BULK-vs-PSD dichotomy of item 7 is FALSE as stated, in three independent ways.
+      - SPARSE (external review): ‖Cay[A]‖_F² = αn², so a √n-bulk of mass βn² needs β <= α. For random sum-free
+        A ⊂ (N, 2N], Cay[A] = 0, and the trace split's "structured" branch is vacuous (P = 0). Their certificate is the
+        star on {0} ∪ ±A: M >= √(n/2) (P9).
+      - INTERMEDIATE (lead): random A of density α has bulk edge ≈ 2√(αn) and star certificate ≈ 1/α (the star couples
+        to the top eigenvector αn). Both are ~n^{1/3} at α ~ n^{−1/3}. So P9 on A, {0} ∪ A and {0} ∪ ±A certifies only
+        ~n^{1/3} there; this is the same exponent as the moment cap R12-S. The true M ~ √(n log n) comes from P28
+        (Fourier spread). Check: E99b.
+      - LARGE-M (round 17, PROVED): shifted intervals {m+1, …, 3m} have bipartite Cay[A] with macroscopic negative
+        spectrum, an o(n²) √n-bulk, and Frobenius distance >~ n from the PSD cone. The dichotomy must be conditioned
+        on λ_min >= −ε√n.
+    - (b) CLIQUE-S (item 9) is FALSE (round 17; certified at L = 4096: clique/K >= 6.67; ~21 numerically at
+      L = 262144). Smooth PD-profile roundings with a forced prefix interval of length L^{5/6}: cliques >> K. A
+      cluster inside a smooth taper costs nothing. The structured branch needs a boundary-SHARPNESS condition, not
+      clique size.
+    - (c) "C½ is a semicircle edge" is DOWNGRADED to a suggestive analogy.
+      - The measured edge −0.72√n certifies 0.36√n, not ½.
+      - Simple random-matrix theory overshoots on Singer–Bu by 12–25%.
+      - About 40% of M comes from vertices outside A.
+    - (d) Corrected programme: a FOUR-WAY COVER under M = ε√n.
+      - Mechanisms: (i) P28 spread; (ii) star/moment (P9 on {0} ∪ ±A, T₃); (iii) bulk (P9 on A + Bhatia–Davis);
+        (iv) PD-profile/Gibbs with a sharpness condition.
+      - Either their joint necessary conditions are inconsistent for small ε, or there is an explicit family on which
+        all four are o(√n). The search for the latter (minimize the max of the four certificates, not M) is the
+        decisive experiment.
+    - (e) Process failure, recorded so it is not repeated. Before launching round 17 the lead did not adversarially
+      test items 7–9 against:
+      - the trivial cases (an empty graph, P = 0);
+      - the Frobenius budget αn²;
+      - the sparse rows of E99 itself (they were read for M, not for certificate strength);
+      - the project's own smooth-profile roundings (E66), which already contained the CLIQUE-S counterexample shape.
+      CLAUDE.md requires this step.
+11. CORRECTION of item 10(a) "INTERMEDIATE" (E99b, E99c; NUMERICAL).
+    - P9 on W2 = {0} ∪ ±A certifies roughly max(1/α, c(φ)αn, 3√(αn)) on random sets of density α with profile
+      shape φ:
+      - 1/α is the star;
+      - c(φ)αn is a macroscopic negative eigenvalue (the graphon of W2 is ρ(|x − y|) on [−1, 1]); c(φ) > 0 iff φ is
+        not PD (Gibbs in graph form; the boundary at max A);
+      - 3√(αn) is the noise bulk.
+    - FLAT profile: >~ √n at every density (E99b, n <= 16000: W2/√n ≈ 0.9 at α = n^{−1/2} and n^{−1/3}, up to 2.6 at
+      α = n^{−1/4}). So item 10(a)'s "only n^{1/3} on {0} ∪ ±A" was WRONG for flat sets. It holds only for W = A and
+      {0} ∪ A.
+    - PD-TAPERED profile (triangle) at α = n^{−1/3}: W2/n^{1/3} = 3.30, 3.09, 3.09 at n ≈ 1000, 4000, 16000, while
+      W2/√n = 1.04, 0.78, 0.62. So the gap is REAL, at exponent 1/3, but only for PD-tapered sets.
+      - The true M of these sets is R ≈ 2.6–3.6 (Fourier fluctuations; P28 covers them).
+      - Optimizing α, the worst case is ≈ 2.2n^{1/3} at α ≈ 0.45n^{−1/3}.
+    - Refined adversary target: a PD-tapered set at density ~n^{−1/3} WITH a spiky spectrum (to defeat P28) and no
+      sharp-boundary clusters.

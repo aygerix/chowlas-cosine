@@ -89,3 +89,47 @@ The report contains one of:
 - a precise obstruction (an explicit family defeating the dichotomy as stated, with what it violates).
 Also include adversarial tables, the CLIQUE-S verdict (best ω/K found), and a strategic recommendation. Say exactly
 what is new versus quoted.
+
+## CORRECTION (lead, added mid-round; SUPERSEDES the framing of Tasks 1–2 above). Read this first.
+Your interim report already found two of these problems. The lead's statements in NOTEBOOK cont. 19.7–9 were wrong
+in four ways:
+1. Sparse regime (external review). Cay[A] carries only ‖H‖_F² = 2T₃ = αn² of spectral mass, so BULK(β, γ) needs
+   β <= α. It is false for every sparse set.
+   - For random sum-free A ⊂ (N, 2N], H = 0, and the trace split calls it "structured" with P = 0, which is vacuous.
+   - Their certificate is the star on {0} ∪ ±A: P9 gives M >= √(n/2).
+2. Intermediate density (lead; CORRECTED by E99b/E99c). P9 on W2 = {0} ∪ ±A gives roughly
+   max(1/α, c(φ)·αn, 3√(αn)), where:
+   - 1/α is the star, coupled to the top eigenvector;
+   - c(φ)·αn is a macroscopic negative eigenvalue. The graphon of W2 is the kernel ρ(|x − y|) on [−1, 1], so
+     c(φ) > 0 iff the profile shape φ is NOT positive definite. This is Gibbs in graph form.
+   - 3√(αn) is the noise bulk.
+   Consequences:
+   - FLAT random sets get >~ √n at every density (E99b: W2/√n ≈ 0.9–2.6 for n <= 16000).
+   - PD-TAPERED random sets (triangle profile) at α ~ n^{−1/3} get only ≈ 3.1n^{1/3} (E99c: W2/n^{1/3} = 3.30,
+     3.09, 3.09 at n ≈ 1000, 4000, 16000). Their true M ~ √(n log n) comes from Fourier spread (P28).
+   - So the advisor's "intermediate region" is real: tapered profile, density ~n^{−1/3}, exponent 1/3 (the same as
+     the moment cap R12-S).
+3. Large-M sets (your shifted-interval obstruction). The dichotomy must be CONDITIONED on λ_min >= −ε√n.
+4. CLIQUE-S is FALSE (your forced-prefix smooth-profile roundings; certified clique/K >= 6.67 at L = 4096). Clusters
+   much shorter than X that sit inside a smooth taper cost nothing. Clique rigidity cannot drive the structured branch.
+
+Revised targets (replace Tasks 1–2; Task 3 stays):
+- T1 (main): FOUR-WAY COVER.
+  - Assume M = ε√n. Write down the JOINT necessary conditions that each certificate imposes on A, with explicit
+    dependence on ε:
+    - (i) P28 Fourier spread forces a spiky spectrum;
+    - (ii) the star / P9 on {0} ∪ ±A forces T₃ >~ n^{3/2};
+    - (iii) P9 on A plus Bhatia–Davis bounds the √n-bulk of Cay[A];
+    - (iv) PD-profile / Gibbs constraints (P29(b), P48, P53).
+  - Then EITHER prove these conditions are jointly inconsistent for small ε (a cover lemma with constants independent
+    of n), OR construct an explicit family on which all four certificates are simultaneously o(√n).
+  - The latter is the decisive adversarial test. Run a multi-objective search: minimize the maximum of the four
+    certificates divided by √n, not M. Seed it with structured candidates: tapered rank 2–4 Bohr sets, quadric lifts,
+    forced-prefix roundings, and TAPERED random sets of density n^{−1/3}
+    (src/e99c_tapered.py), where the graph certificates are already only ~n^{1/3}. The open question is whether some
+    structure there ALSO defeats P28.
+- T2: write up the CLIQUE-S refutation rigorously (asymptotic proof plus certified instances). Then state the correct
+  structured-branch input: what kind of cluster forces Gibbs. The forced-prefix example says a cluster inside a smooth
+  taper does not, so the condition must involve the SHARPNESS of the cluster's boundary relative to the ambient
+  profile.
+- Keep your shifted-interval obstruction and its proof in the report.

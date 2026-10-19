@@ -654,3 +654,12 @@ Proved this block:
   an equivalent restatement. Concretely: try to build a correlated rounding with small P28 window variance and
   D_d(k) >~ k at every scale (the tapering heuristic), or prove that low window variance at every scale forces a
   sharp boundary somewhere.
+
+## 2026-10-19 late: circling acknowledged; ROUTES ledger
+- Audit: since day 2 (P53), no progress on the core obstruction C* (.research/ROUTES.md). CSFG, WRS, the four-way
+  cover, TAPER and PR are all C* restated. Real results since then are on sub-problems (dense C, Bu class,
+  obstructions).
+- Round 18 STOPPED (TAPER = C*). Its partial report .research/agents/tdense18_report.md is kept unverified.
+- New rule: every route gets a ROUTES.md row first (mechanism-level equivalence check) plus a cheap kill test.
+- The only route currently claimed NOT to be C*: Fejér–Riesz factor windowing (sign-preserving interior
+  localization). Kill test E102 is next.

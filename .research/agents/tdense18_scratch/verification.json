@@ -1,0 +1,242 @@
+{
+  "exhaustive_boundary_sets": 255,
+  "full_window_coefficient_checks": 283,
+  "block_theorem": {
+    "blocks": [
+      [
+        [
+          1,
+          2
+        ],
+        [
+          1,
+          3
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      [
+        [
+          7,
+          8
+        ],
+        [
+          7,
+          10
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      [
+        [
+          14,
+          15
+        ],
+        [
+          14,
+          18
+        ],
+        [
+          16,
+          18
+        ]
+      ]
+    ],
+    "probabilities": [
+      "1/6",
+      "1/3",
+      "1/2"
+    ],
+    "states": 27,
+    "expected_size": "6",
+    "variable_occupancy": false,
+    "v": "143/180",
+    "symmetrized_L2": "143/90",
+    "symmetrized_L4": "5398799/810000",
+    "fourth_upper": "6292/45",
+    "mean_numerical": 0.6416451541365109,
+    "variance_numerical": 0.0019136381534744056,
+    "theoretical_mean_lower": 0.042344031165072626,
+    "theoretical_variance_upper": 1.0,
+    "numerical_quadrature_grid": 16384
+  },
+  "variable_occupancy_blocks": {
+    "blocks": [
+      [
+        [],
+        [
+          1
+        ],
+        [
+          2,
+          4
+        ]
+      ],
+      [
+        [],
+        [
+          7
+        ],
+        [
+          9,
+          10
+        ]
+      ],
+      [
+        [],
+        [
+          14
+        ],
+        [
+          16,
+          18
+        ]
+      ]
+    ],
+    "probabilities": [
+      "1/6",
+      "1/3",
+      "1/2"
+    ],
+    "states": 27,
+    "expected_size": "4",
+    "variable_occupancy": true,
+    "v": "2677/3600",
+    "symmetrized_L2": "2677/1800",
+    "symmetrized_L4": "9159929/1620000",
+    "fourth_upper": "21416/225",
+    "mean_numerical": 0.5120108038650873,
+    "variance_numerical": 0.028099060829148943,
+    "theoretical_mean_lower": 0.046475694444444444,
+    "theoretical_variance_upper": 1.0,
+    "numerical_quadrature_grid": 16384
+  },
+  "fractional_H_interpolation_checks": 3648,
+  "packet_theorem": [
+    {
+      "L": 20,
+      "P": 100,
+      "q": 81,
+      "n": 2000,
+      "m": 24,
+      "quadratic": -4440,
+      "exact_difference_checks": 621,
+      "norm2": 408,
+      "P9_rational_lower": "185/34",
+      "density": "20/81"
+    },
+    {
+      "L": 20,
+      "P": 100,
+      "q": 400,
+      "n": 2000,
+      "m": 24,
+      "quadratic": -4440,
+      "exact_difference_checks": 621,
+      "norm2": 408,
+      "P9_rational_lower": "185/34",
+      "density": "1/20"
+    },
+    {
+      "L": 20,
+      "P": 199,
+      "q": 81,
+      "n": 3983,
+      "m": 48,
+      "quadratic": -16944,
+      "exact_difference_checks": 1269,
+      "norm2": 816,
+      "P9_rational_lower": "353/34",
+      "density": "3983/16119"
+    },
+    {
+      "L": 20,
+      "P": 199,
+      "q": 400,
+      "n": 3980,
+      "m": 48,
+      "quadratic": -16944,
+      "exact_difference_checks": 1269,
+      "norm2": 816,
+      "P9_rational_lower": "353/34",
+      "density": "1/20"
+    },
+    {
+      "L": 40,
+      "P": 200,
+      "q": 161,
+      "n": 8000,
+      "m": 100,
+      "quadratic": -71700,
+      "exact_difference_checks": 3087,
+      "norm2": 1700,
+      "P9_rational_lower": "717/34",
+      "density": "40/161"
+    },
+    {
+      "L": 40,
+      "P": 200,
+      "q": 1600,
+      "n": 8000,
+      "m": 100,
+      "quadratic": -71700,
+      "exact_difference_checks": 3087,
+      "norm2": 1700,
+      "P9_rational_lower": "717/34",
+      "density": "1/40"
+    },
+    {
+      "L": 60,
+      "P": 1000,
+      "q": 241,
+      "n": 60000,
+      "m": 750,
+      "quadratic": -3950250,
+      "exact_difference_checks": 24651,
+      "norm2": 12750,
+      "P9_rational_lower": "5267/34",
+      "density": "60/241"
+    },
+    {
+      "L": 60,
+      "P": 1000,
+      "q": 3600,
+      "n": 60000,
+      "m": 750,
+      "quadratic": -3950250,
+      "exact_difference_checks": 24651,
+      "norm2": 12750,
+      "P9_rational_lower": "5267/34",
+      "density": "1/60"
+    },
+    {
+      "L": 80,
+      "P": 6400,
+      "q": 321,
+      "n": 512000,
+      "m": 6400,
+      "quadratic": -286828800,
+      "exact_difference_checks": 215865,
+      "norm2": 108800,
+      "P9_rational_lower": "44817/34",
+      "density": "80/321"
+    },
+    {
+      "L": 80,
+      "P": 6400,
+      "q": 6400,
+      "n": 512000,
+      "m": 6400,
+      "quadratic": -286828800,
+      "exact_difference_checks": 215865,
+      "norm2": 108800,
+      "P9_rational_lower": "44817/34",
+      "density": "1/80"
+    }
+  ],
+  "flint": "0.9.0"
+}

@@ -1208,3 +1208,49 @@ circumradius 2P and vertices at 2P·{1, ω, ω²}. λ := |E|/|D|; R(A)² = Mt²/
     region k^{−3/2} <~ |y| <~ 1/(εk).
   - Prediction: R_opt(k)/R_Bu(k) -> 1 in the one-step class. E64 ratios: 0.80 (k = 6), 0.84 (k = 7), 0.94 (k = 8,
     under-optimised).
+
+## 2026-10-19 (session 3, late) — T-dense agent results verified; the third-moment line and its limits
+Verification (lead):
+- TD1: re-derived line by line; it is P38.
+- TD3: Bernstein/moment certificate reproduced by an independent Fraction script (src/scratch_lm/lead_td3_check.py):
+  min coefficients 1/90 and 7/396; E, m1, m2 identical.
+- TD4: closed form for W_q equals the direct rational Fourier cube; 0 mismatches (src/scratch_lm/lead_td4_check.py).
+Physical-space form (P39). With g_q = 2·1_S − 1_{S+q} − 1_{S−q}:
+- V_q = ‖g_q‖²/16;
+- Δ_q = ½·T₃(g_q), the signed Schur-triple count of g_q;
+- W_q = (third moment of (1 − cos qx)f).
+- LM asks for one q at which the second difference of S is large while its signed Schur count is <= B·‖g‖³.
+- 6th differences of the triple count kill quadratic pieces. Intervals and single Bohr sets are fine at
+  q ≈ (scale)/4: Δ = 0 to leading order for σ = step/scale <= 1/3.
+- For the step function 1_{[−1,1]}, the 6th difference 10p(0) − 15p(σ) + 6p(2σ) − p(3σ) of the triple density is
+  NEGATIVE for σ ∈ (1/3, ≈0.77) (−0.047 at σ = ½, −0.075 at 0.6) and positive beyond (3.75·… as σ → ∞).
+Obstructions (P39-O):
+- (i) Multi-dilate interval unions ∪ p·[1, L_p] kill every multiplier of degree < P/3. This is for general sets of
+  density ~1/log n, where M is linear anyway.
+- (ii) Unions of J ~ log X/log log X independent Bohr sets kill every single (1 − cos qx) on dense sets. Pure
+  excesses are positive and cannot be cancelled; the Pólya envelope is >= 0 for convex decreasing profiles.
+- So LM-dense (one q) is very probably false. The family has M >= √n by other means (anti-spikes, or random
+  rounding noise).
+- Product filters Π_{i<=J}(1 − cos q_i x) kill all components but lose (3/8)^{J/2} in √V, i.e. n^{−O(1/log log n)}.
+Spike-truncation (P40, Bhatia–Davis) is the TRUE criterion:
+- A counterexample must be spike-dominated for every H.
+- Equivalently, 1_A is ℓ²-close to its projection onto a set U of characters of measure <= ε^{3/2}.
+- The third moment is only a computable surrogate. It fails exactly when tall positive spikes (structure) coexist
+  with a Gaussian-like bulk (rounding noise). Truncation would see the bulk; the third moment sees the spikes.
+Failed idea (recorded): physical-space approximate-group argument from f ⊛ f = ½f.
+- With φ = f₊ one gets |φ⊛φ − ½φ| <= 2M² + M pointwise (exact).
+- But spike heights relevant to a counterexample are only >= √(n/ε) ≪ M² = ε²n once n > ε^{−5}. The constant floor
+  swamps the identity, so no "U + U ≈ U" can be extracted at that resolution.
+- The identity is equivalent to f̂ ∈ {0, ½} and gives nothing beyond it without positivity at the spike scale.
+Hoffman bound (recorded, weak): M(A) >= n·δ*(A)/(1 − δ*(A)), where δ*(A) is the largest upper density of a set with no
+difference in A (Hoffman on Følner pieces of Cay(Z, ±A)). For A = [1, n] it gives only M >= 1. Useful only when A
+avoids a positive-density "independent" set.
+Strategic decision:
+- Continue the multiplier line, but with ADAPTIVE multipliers.
+  - Each independent structure gets its own factor.
+  - The statistic must see the bulk behind tall spikes: e.g. Stieltjes/Hankel conditions with 5–7 moments of the
+    filtered T, or truncation-like polynomials.
+- Discriminating question for the next agent:
+  - (a) Make P39-O(ii) rigorous at a computable size, or refute it.
+  - (b) Decide whether 5th/7th-moment Stieltjes certificates recover a constant on Bohr unions.
+  - (c) Extend P38 from cumulative to bounded-local-discrepancy rounding (agent line 3).

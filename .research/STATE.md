@@ -206,12 +206,32 @@ in parallel.
     These are finite-size slack effects until larger k are in.
 - E61b: the sharp one-sided Littlewood constant is ≈ 0.608 (heuristic, n <= 768), against P34's proved 0.28.
 
+## Session 3, latest block (2026-10-19 late): T-dense round 1 verified; third-moment line; one-step class closes
+- NEW, PROVED (lead-verified; PROOFS):
+  - P38 (agent TD1/TD2): denominator filters prove Chowla for cumulative rounding of decreasing profiles with
+    rational start density. This includes a front-loaded, run-free family with M >= √n/1000.
+    The first √n theorem inside the P31 escape class.
+  - P39 (agent TD4): third-moment reduction V² <= m²V + mW for any positive multiplier. Physical form: Δ_q is the
+    signed Schur count of the second difference g_q = D_q 1_S. LM-dense would imply T-dense.
+  - P40 (lead): spike-truncation (Bhatia–Davis). Any counterexample is spike-dominated for every multiplier,
+    i.e. 1_A is ℓ²-close to a band-limited function on a set U of characters with |U| <= ε^{3/2}.
+- OBSTRUCTIONS (P39-O):
+  - (i) Multi-dilate interval unions defeat every multiplier of degree < P/3 (general sets, linear M).
+  - (ii) Bohr unions with J ~ log X/log log X probably defeat LM-dense with one filter (HEURISTIC; agent T1 tests it).
+    Product filters lose (3/8)^{J/2}.
+- E64/E65 (one Bu step): R_opt/R_Bu = 0.84, 0.94, 0.97, 0.98, 1.00 at k = 7, 8, 9, 11, 12 (time-limited MILP).
+  At k = 12 the class optimum IS Bu. E65 annealing at k = 12 with λ > 1 raises M by 35–44%.
+  The one-step class closes onto Bu (T9/T10 prediction confirmed). Dense optima are rigid: E = ∅.
 ## Running now (2026-10-19, session 3, latest)
-- Codex MATH agent (user request 2026-10-19: Lean has a break; the agent helps with the mathematics): target T-dense
-  (.research/agents/tdense_brief.md, report tdense_report.md).
+- Codex MATH agent, round 2: .research/agents/tdense2_brief.md (report tdense2_report.md).
+  - T1: decide LM-dense on Bohr unions (exact triple counts).
+  - T2: a certificate surviving Bohr unions (Stieltjes 5/7 moments, spike-masking multipliers).
+  - T3: P38 for bounded local discrepancy.
+  - T4: energy-increment lemma.
+- Round 1 (tdense_brief.md, tdense_report.md) is DONE and recorded.
 - Lean: sharp Young (Beckner) and M5 are KERNEL-CHECKED. Only P31-N remains; its drafts are uncommitted
   (P31/FourierL2.lean, P31/SincInterpolation.lean).
-- VM: E64 (k = 11, 12; dense N36/N50; second level D = Bu), then E65 (Singer k = 12–24); grb_group_bt; E61b n = 1024.
+- VM: E64 second level (D = Bu, k = 6, 7) and dense N50 eps; E65 (Singer q = 13–23); grb_group_bt; e37g.
 
 ## Running now (2026-10-19 night, earlier)
 - Codex Lean agent (one at a time): P34 complex-coefficient chain and Corollaries A–C, then P33/pinch

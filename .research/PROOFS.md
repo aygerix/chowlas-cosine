@@ -1007,3 +1007,90 @@ Escape:
 - Only structural arguments (P16) see these sets. P16 still gives R >= ½ − o(1) for them, being a statement about
   every Sidon set.
 Meaning: profile and gap methods are provably insufficient for Chowla, even near the conjectured extremal constant.
+
+## P38. Denominator filters: Chowla for cumulative rounding of decreasing profiles (TD1/TD2) — PROVED on paper
+## (codex T-dense agent 2026-10-19, report .research/agents/tdense_report.md §TD1–TD2; every step of TD1 re-derived by
+## the lead; not kernel-checked; priority unchecked)
+Statement (TD1). Fix integers q >= 1, 1 <= r <= q. Let p: [0,1] -> [0, r/q] be nonincreasing with p(0) = r/q, and
+assume:
+- (a) 0 <= r/q − p(t) <= L·t on [0,1];
+- (b) there is t0 < 1 with p <= 1/(q+1) on [t0, 1] and μ := ∫_{t0}^1 p > 0.
+For any X >= 1 and phase σ ∈ [0,1), let U_j = ⌊σ + Σ_{i<=j} p(i/X)⌋ (U_0 = 0), a_j = U_j − U_{j−1} ∈ {0,1} and
+A = {j <= X : a_j = 1}, n = |A| >= 1. Then M(A) >= c(p,q)·√n, with explicit
+c = min(1/(2√X0), √(θμ/192)), where:
+- θ = min(1/4, μ/(100q(L+1)));
+- X0 = ⌈max(100, 2q/θ, 2(q+3)/μ, 72q/(θμ))⌉.
+Proof skeleton (lead-checked):
+1. Positive multiplier. T = (1 − cos qx)·f_A + a_q/2 = Σ_j b_j cos jx, with b_j = a_j − (a_{j−q} + a_{j+q})/2
+   (a extended evenly, a_0 = 0). T >= −2M + a_q/2 =: −m.
+2. Coefficient window inequality (P31's chain applies to ANY real coefficients; it uses only T + m >= 0, Fejér–Riesz/
+   Nikolskii and Parseval): W(m² + E/2) <= C(m² + S/2), with E = Σb_j² and S = Σ_{j<=w} b_j²(1 − j/(w+1))².
+3. Tail. Where p <= 1/(q+1), cumulative rounding puts at most one element in any q+1 consecutive indices, so b_j = 1
+   on A ∩ [t0X + q, X] and E >= μX − q − 3.
+4. Front (the arithmetic ingredient). Let d_j = U_{j+q} − U_j <= r and z_j = r − d_j >= 0. Then
+   (a_{j+q} − a_j)² = |d_j − d_{j−1}| <= z_j + z_{j−1}. Telescoping with the rounding errors gives
+   Σ_{j<=w} z_j <= qL(w+1)(w+q)/X + q, hence S <= 3q + 2qL(w+1)(w+q)/X.
+5. Window w = ⌊θX⌋: WE − CS >= θμX²/12, so (2M)² >= m² >= θμX/48. Small X: M >= ½.
+TD2 (explicit instance). p_j = ½(1 − j/X)², q = 2: M(A_X) >= √n/1000 for all X >= 8. Here n ≈ X/6, A_X has NO
+two consecutive elements, and the profile escapes the original P31 at every proportional scale. The agent's exact
+audit is tdense_scratch/verify_exact.py; the lead checked TD1, of which TD2 is an instance with tuned constants.
+Meaning:
+- The first √n theorem for a front-loaded (P31-escaping) dense family, via a NONLINEAR certificate: b_j² contains
+  products of membership indicators.
+- It refutes the shortcut "front-loaded ⇒ long runs".
+
+## P39. Third-moment reduction (TD4) and its physical-space form — PROVED (TD4: agent; identities re-verified by
+## the lead in exact arithmetic, src/scratch_lm/lead_td4_check.py: 0 mismatches over 300 random A and all q)
+For H >= 0 and G = f_A + M >= 0: with T = H·f − mean(H·f) and m = M·‖H‖∞ + mean(H·f), we have T >= −m and mean T = 0.
+Cauchy–Schwarz on T + m >= 0 gives
+    V² <= m²V + mW,    V = mean T², W = mean T³.                                (TD4.moment)
+Hence V >= ηn and W <= B·V^{3/2} imply m >= √(ηn)(√(B²+4) − B)/2.
+For H_q = 1 − cos qx (so m = 2M − a_q/2), put S = A ∪ (−A) and g_q = D_q 1_S = 2·1_S − 1_{S+q} − 1_{S−q}:
+    V_q = ‖g_q‖₂²/16,
+    W_q = Δ_q/32 + (3a_q/2)V_q + a_q/8,
+    Δ_q = 10c(0) − 15c(q) + 6c(2q) − c(3q) = ½·Σ_{x+y+z=0} g_q(x)g_q(y)g_q(z),
+with c = 1_S∗1_S∗1_S. So Δ_q is the signed Schur-triple count of the second difference g_q. Equivalently
+Δ_q = ½·∫(2 − 2cos qξ)³·1̂_S(ξ)³. It vanishes to leading order whenever the triple count c is a quadratic on [0, 3q].
+- Intervals: c is a quadratic spline with knots ±X, ±3X, so Δ_q = O(n) for q < X/3. LM holds with q ≈ X/4.
+- Sets of multiples dZ: take q ∈ dZ.
+LM-dense (CONJECTURED, agent): for every C there are η(C), B(C) such that every A ⊂ [1, Cn] has some q <= max A with
+V_q >= ηn and W_q <= B·V_q^{3/2}. It implies T-dense. Exhaustively true for max A <= 18 (agent, exact).
+STATUS: probably FALSE as stated (P39-O below); the reduction itself is proved.
+
+## P39-O. Obstructions to single-filter third-moment certificates (lead 2026-10-19; (i) PROVED modulo routine
+## error terms, (ii) HEURISTIC)
+Pure-component excess. Write A as a union of pieces A_p, with S_p = ±A_p. For any H >= 0 of degree d,
+∫(H f)³ = (1/8)Σ_k (H³)^(k)·c(k). If every pure triple sum of A_p lies in pZ and 3d < p, the pure-p part of this
+sum is (H³)^(0)·c_p(0)/8 = mean(H³)·c_p(0)/8 > 0: H cannot see it.
+(i) General sets: A = ∪_{p ∈ 𝒫} p·[1, L_p], with 𝒫 the primes in [P, 2P], P = L^θ (0 < θ < 1/2), and lengths making
+    the total profile convex decreasing.
+    - For H = 1 − cos qx: at most O(1/θ) of the p divide q. Every other p contributes 10·c_p(0) = 30L_p(L_p − 1) to Δ_q.
+    - Mixed triples give the profile envelope, which is >= 0 by Pólya, plus errors O(J³L).
+    - So W_q >= c·J·L² while V_q <= 2n = 2JL. Then W_q/V_q^{3/2} ≳ √(L/J) → ∞ for every q.
+    - The same holds for EVERY multiplier H of degree < P/3, since mean H³ >= (mean H²)²/mean H.
+    - Density ~ 1/log P, and M is LINEAR (sidelobes of the dilated Dirichlet kernels align). So this only blocks the
+      certificate, not Chowla.
+(ii) Dense sets (C fixed): A = union of J randomly thinned Bohr sets {m <= X : ‖mα_i‖ < ε} with ε ≈ 1/(4CJ),
+     α_i chosen so that for every q <= X at most J/2 indices have min_{j<=3} ‖jqα_i‖ < 3ε. This needs
+     J·log(1/ε) ≫ log X, i.e. J ~ log X/log log X.
+     - "Inactive" components contribute +10·env_i(0)(κ_i(0) − 1) ≈ +5n²/J in total.
+     - Active ones contribute at least −5/10 of that.
+     - The envelope is >= 0 when the profile is convex decreasing.
+     - So W_q ≳ n²/J ≫ n^{3/2} for every q: LM-dense fails.
+     M is still >= √n·(something): >= n/J with sharp Bohr cut-offs (negative sinc weights give anti-spikes), or
+     ≈ √(n log n) for positive-definite modulation with random thinning.
+Lesson. Independent arithmetic structures need PRODUCT filters Π(1 − cos q_i x). Their normalized variance decays like
+(3/8)^J, so the third-moment route loses n^{−O(1/log log n)} on (ii) unless the statistic changes. The truth for
+(ii) comes from the bulk (Gaussian rounding noise), which the third moment cannot see behind tall positive spikes.
+
+## P40. Spike-truncation reduction (Bhatia–Davis) — PROVED (lead 2026-10-19; elementary)
+For any A, every λ > 0 and every H >= 0 with ‖H‖∞ <= 1 (H = 1 for the basic form):
+    ∫_{f<=λ} f² − μ_λ² <= (λ + μ_λ)·M,    μ_λ = ∫(f − λ)₊ <= ∫f₊ = ∫f₋ <= M.
+Proof: Y = min(f, λ) ∈ [−M, λ] has mean −μ_λ. Bhatia–Davis gives Var Y <= (λ + μ)(M − μ), and E[Y²] >= ∫_{f<=λ} f².
+Consequences:
+- (a) If M <= √n/4, then ∫_{f > n/(8M)} f² >= n/4, on a set of measure <= 8M²/n.
+- (b) A Chowla counterexample (M = ε√n) is SPIKE-DOMINATED: ∫_{f > √(n/ε)} f² >= (½ − √ε − 2ε²)n on a set of
+  measure <= ε^{3/2}. The same holds for H·f for every admissible H (with m = M + mean(H·f)).
+- (c) Equivalently 1_A is ℓ²-close to its projection onto the characters in U = {f > λ}: ‖P_U 1_A‖² >= (1 − O(√ε))|A|,
+  with |U| <= ε^{3/2}. So A must be "almost U-band-limited": a union of long Bohr-type pieces.
+- (d) TD4 (P39) is the computable third-moment surrogate of this distributional statement.

@@ -1,0 +1,19 @@
+{"completed_X":1,"sets_at_X":1,"sets_checked":1}
+{"completed_X":2,"sets_at_X":2,"sets_checked":3}
+{"completed_X":3,"sets_at_X":4,"sets_checked":7}
+{"completed_X":4,"sets_at_X":8,"sets_checked":15}
+{"completed_X":5,"sets_at_X":16,"sets_checked":31}
+{"completed_X":6,"sets_at_X":32,"sets_checked":63}
+{"completed_X":7,"sets_at_X":64,"sets_checked":127}
+{"completed_X":8,"sets_at_X":128,"sets_checked":255}
+{"completed_X":9,"sets_at_X":256,"sets_checked":511}
+{"completed_X":10,"sets_at_X":512,"sets_checked":1023}
+{"completed_X":11,"sets_at_X":1023,"sets_checked":2046}
+{"completed_X":12,"sets_at_X":2047,"sets_checked":4093}
+{"completed_X":13,"sets_at_X":4095,"sets_checked":8188}
+{"completed_X":14,"sets_at_X":8191,"sets_checked":16379}
+{"completed_X":15,"sets_at_X":16383,"sets_checked":32762}
+{"completed_X":16,"sets_at_X":32767,"sets_checked":65529}
+{"completed_X":17,"sets_at_X":65535,"sets_checked":131064}
+{"completed_X":18,"sets_at_X":131071,"sets_checked":262135}
+{"status":"EXACT EXHAUSTIVE PASS","cap":18,"density_condition":"X<=10n","sets_checked":262135,"failures":0,"seconds":0.694067}

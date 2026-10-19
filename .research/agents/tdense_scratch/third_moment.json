@@ -1,0 +1,1034 @@
+{
+  "status": "NUMERICAL, uncertified",
+  "records": [
+    {
+      "name": "quadratic_exact_beatty_X384",
+      "n": 63,
+      "X": 297,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.8134920634920635,
+          "third_over_V_threehalves": 0.11907384798608166,
+          "third_moment_M_lower_bound": 3.372683847575685,
+          "third_moment_R_lower_bound": 0.42491822435855886
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5674603174603174,
+          "third_over_V_threehalves": 0.13333089390322844,
+          "third_moment_M_lower_bound": 2.7969003568271686,
+          "third_moment_R_lower_bound": 0.3523763231425001
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.5257936507936508,
+          "third_over_V_threehalves": -0.06097602804070261,
+          "third_moment_M_lower_bound": 3.216789092609018,
+          "third_moment_R_lower_bound": 0.40527733138993255
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5357142857142857,
+          "third_over_V_threehalves": 0.26106776629990736,
+          "third_moment_M_lower_bound": 2.550213363495195,
+          "third_moment_R_lower_bound": 0.32129668333151673
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5277777777777778,
+          "third_over_V_threehalves": 0.2762690598389818,
+          "third_moment_M_lower_bound": 2.512256209419026,
+          "third_moment_R_lower_bound": 0.31651453141907365
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5714285714285714,
+          "third_over_V_threehalves": 0.6857638888888888,
+          "third_moment_M_lower_bound": 2.14280687015036,
+          "third_moment_R_lower_bound": 0.2699682898123108
+        }
+      ]
+    },
+    {
+      "name": "quadratic_exact_beatty_X1536",
+      "n": 255,
+      "X": 1316,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.8156862745098039,
+          "third_over_V_threehalves": 0.11178800716821166,
+          "third_moment_M_lower_bound": 6.819300620699617,
+          "third_moment_R_lower_bound": 0.4270411696894138
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5598039215686275,
+          "third_over_V_threehalves": 0.07783417999797647,
+          "third_moment_M_lower_bound": 5.745936852058438,
+          "third_moment_R_lower_bound": 0.3598245231800331
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.5259803921568628,
+          "third_over_V_threehalves": -0.12420870800685725,
+          "third_moment_M_lower_bound": 6.411396280738173,
+          "third_moment_R_lower_bound": 0.40149720907712266
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5352941176470588,
+          "third_over_V_threehalves": 0.27682224714751225,
+          "third_moment_M_lower_bound": 5.088800652146017,
+          "third_moment_R_lower_bound": 0.31867305808637864
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5245098039215687,
+          "third_over_V_threehalves": 0.36389096604776205,
+          "third_moment_M_lower_bound": 4.8253473499962105,
+          "third_moment_R_lower_bound": 0.3021749723490982
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5205882352941177,
+          "third_over_V_threehalves": 0.016304260979707733,
+          "third_moment_M_lower_bound": 5.714087456265503,
+          "third_moment_R_lower_bound": 0.357830036649841
+        }
+      ]
+    },
+    {
+      "name": "quadratic_exact_beatty_X6144",
+      "n": 1023,
+      "X": 5590,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.8164711632453568,
+          "third_over_V_threehalves": 0.004178869618283612,
+          "third_moment_M_lower_bound": 14.420184503823801,
+          "third_moment_R_lower_bound": 0.45085096158746324
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5576735092864125,
+          "third_over_V_threehalves": -0.07316181303253781,
+          "third_moment_M_lower_bound": 12.387428862829923,
+          "third_moment_R_lower_bound": 0.3872963076805448
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.5287145650048876,
+          "third_over_V_threehalves": -0.09965286816646036,
+          "third_moment_M_lower_bound": 12.472185191523346,
+          "third_moment_R_lower_bound": 0.38994623717915283
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5312805474095796,
+          "third_over_V_threehalves": 0.07873996335829814,
+          "third_moment_M_lower_bound": 11.206655630241118,
+          "third_moment_R_lower_bound": 0.35037911378554043
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5239491691104594,
+          "third_over_V_threehalves": 0.1168126189045504,
+          "third_moment_M_lower_bound": 10.91946248946684,
+          "third_moment_R_lower_bound": 0.34139994270454127
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5246823069403714,
+          "third_over_V_threehalves": 0.09880600964907639,
+          "third_moment_M_lower_bound": 11.025779336137376,
+          "third_moment_R_lower_bound": 0.3447239676184838
+        }
+      ]
+    },
+    {
+      "name": "quadratic_beatty",
+      "n": 255,
+      "X": 1316,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.8156862745098039,
+          "third_over_V_threehalves": 0.11178800716821166,
+          "third_moment_M_lower_bound": 6.819300620699617,
+          "third_moment_R_lower_bound": 0.4270411696894138
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5598039215686275,
+          "third_over_V_threehalves": 0.07783417999797647,
+          "third_moment_M_lower_bound": 5.745936852058438,
+          "third_moment_R_lower_bound": 0.3598245231800331
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.5259803921568628,
+          "third_over_V_threehalves": -0.12420870800685725,
+          "third_moment_M_lower_bound": 6.411396280738173,
+          "third_moment_R_lower_bound": 0.40149720907712266
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5352941176470588,
+          "third_over_V_threehalves": 0.27682224714751225,
+          "third_moment_M_lower_bound": 5.088800652146017,
+          "third_moment_R_lower_bound": 0.31867305808637864
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5245098039215687,
+          "third_over_V_threehalves": 0.36389096604776205,
+          "third_moment_M_lower_bound": 4.8253473499962105,
+          "third_moment_R_lower_bound": 0.3021749723490982
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5205882352941177,
+          "third_over_V_threehalves": 0.016304260979707733,
+          "third_moment_M_lower_bound": 5.714087456265503,
+          "third_moment_R_lower_bound": 0.357830036649841
+        }
+      ]
+    },
+    {
+      "name": "quadratic_random_seed20261019",
+      "n": 261,
+      "X": 1285,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.4976053639846743,
+          "third_over_V_threehalves": -0.26913468198686036,
+          "third_moment_M_lower_bound": 6.766279126182226,
+          "third_moment_R_lower_bound": 0.4188221635122452
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5181992337164751,
+          "third_over_V_threehalves": -0.07897347421717112,
+          "third_moment_M_lower_bound": 6.048992693886963,
+          "third_moment_R_lower_bound": 0.3744232479739519
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.46120689655172414,
+          "third_over_V_threehalves": -0.010292830676903071,
+          "third_moment_M_lower_bound": 5.764081798142691,
+          "third_moment_R_lower_bound": 0.35678770626209877
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5153256704980843,
+          "third_over_V_threehalves": 0.0736247678824423,
+          "third_moment_M_lower_bound": 5.589170266222628,
+          "third_moment_R_lower_bound": 0.3459609542384447
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.48323754789272033,
+          "third_over_V_threehalves": -0.43199937672422767,
+          "third_moment_M_lower_bound": 7.207665161575017,
+          "third_moment_R_lower_bound": 0.44614327321520936
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5047892720306514,
+          "third_over_V_threehalves": 0.2268337904742109,
+          "third_moment_M_lower_bound": 5.125001283301536,
+          "third_moment_R_lower_bound": 0.31722961548683454
+        }
+      ]
+    },
+    {
+      "name": "quartic_beatty",
+      "n": 153,
+      "X": 1081,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.8055555555555556,
+          "third_over_V_threehalves": 0.16203992352651447,
+          "third_moment_M_lower_bound": 5.119355961276615,
+          "third_moment_R_lower_bound": 0.4138753992839004
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5915032679738562,
+          "third_over_V_threehalves": -0.05281291587957267,
+          "third_moment_M_lower_bound": 4.883836772472718,
+          "third_moment_R_lower_bound": 0.3948348013956993
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.5433006535947712,
+          "third_over_V_threehalves": 0.02375062363411119,
+          "third_moment_M_lower_bound": 4.754831719536637,
+          "third_moment_R_lower_bound": 0.38440536101346673
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5604575163398693,
+          "third_over_V_threehalves": 0.1244401982148248,
+          "third_moment_M_lower_bound": 4.350935325941659,
+          "third_moment_R_lower_bound": 0.3517522729233072
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5571895424836601,
+          "third_over_V_threehalves": 0.18842398047336115,
+          "third_moment_M_lower_bound": 4.2020550485619115,
+          "third_moment_R_lower_bound": 0.33971601588001393
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5490196078431373,
+          "third_over_V_threehalves": 0.4706540991976065,
+          "third_moment_M_lower_bound": 3.6293507788299597,
+          "third_moment_R_lower_bound": 0.29341561987320874
+        }
+      ]
+    },
+    {
+      "name": "quartic_random_seed20261019",
+      "n": 152,
+      "X": 923,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.5822368421052632,
+          "third_over_V_threehalves": 0.08569214759057858,
+          "third_moment_M_lower_bound": 4.506501447443811,
+          "third_moment_R_lower_bound": 0.3655255345660867
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5394736842105263,
+          "third_over_V_threehalves": 0.15478931131984977,
+          "third_moment_M_lower_bound": 4.19081340298343,
+          "third_moment_R_lower_bound": 0.33991985296290955
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.53125,
+          "third_over_V_threehalves": -0.052842187520093245,
+          "third_moment_M_lower_bound": 4.61332945681869,
+          "third_moment_R_lower_bound": 0.37419043031476834
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.5608552631578947,
+          "third_over_V_threehalves": 0.2825168657919169,
+          "third_moment_M_lower_bound": 4.010251882602146,
+          "third_moment_R_lower_bound": 0.32527437974401807
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5386513157894737,
+          "third_over_V_threehalves": -0.33610299123026294,
+          "third_moment_M_lower_bound": 5.597986044625257,
+          "third_moment_R_lower_bound": 0.4540566258146428
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.46875,
+          "third_over_V_threehalves": 0.024785124095709453,
+          "third_moment_M_lower_bound": 4.168507191816332,
+          "third_moment_R_lower_bound": 0.33811058032512475
+        }
+      ]
+    },
+    {
+      "name": "twolvl_beatty",
+      "n": 181,
+      "X": 1532,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.8977900552486188,
+          "third_over_V_threehalves": 0.7825486367710021,
+          "third_moment_M_lower_bound": 4.350410586687692,
+          "third_moment_R_lower_bound": 0.32336347228566625
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.2638121546961326,
+          "third_over_V_threehalves": 0.8503895786545358,
+          "third_moment_M_lower_bound": 2.2853452195865764,
+          "third_moment_R_lower_bound": 0.1698683723872647
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.6457182320441989,
+          "third_over_V_threehalves": 0.3857524188829275,
+          "third_moment_M_lower_bound": 4.712483228275971,
+          "third_moment_R_lower_bound": 0.3502761197865478
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.35220994475138123,
+          "third_over_V_threehalves": 1.0702909869105306,
+          "third_moment_M_lower_bound": 2.391482399924221,
+          "third_moment_R_lower_bound": 0.17775748687167983
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.7624309392265194,
+          "third_over_V_threehalves": 1.0900363008336718,
+          "third_moment_M_lower_bound": 3.4881411658145423,
+          "third_moment_R_lower_bound": 0.25927149098337154
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.3736187845303867,
+          "third_over_V_threehalves": 0.29720948934770197,
+          "third_moment_M_lower_bound": 3.795852204748731,
+          "third_moment_R_lower_bound": 0.2821434723809132
+        }
+      ]
+    },
+    {
+      "name": "twolvl_random_seed20261019",
+      "n": 196,
+      "X": 1500,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.4419642857142857,
+          "third_over_V_threehalves": -0.04639586762570375,
+          "third_moment_M_lower_bound": 5.012834155485754,
+          "third_moment_R_lower_bound": 0.3580595825346967
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.45471938775510207,
+          "third_over_V_threehalves": -0.05894237540634507,
+          "third_moment_M_lower_bound": 5.11146426667219,
+          "third_moment_R_lower_bound": 0.365104590476585
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.45153061224489793,
+          "third_over_V_threehalves": -0.24412690667066253,
+          "third_moment_M_lower_bound": 5.312786432210039,
+          "third_moment_R_lower_bound": 0.37948474515785996
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.47767857142857145,
+          "third_over_V_threehalves": -0.18141176405074563,
+          "third_moment_M_lower_bound": 5.546697426974714,
+          "third_moment_R_lower_bound": 0.39619267335533676
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.45982142857142855,
+          "third_over_V_threehalves": -0.09839651037346432,
+          "third_moment_M_lower_bound": 5.2359803640652895,
+          "third_moment_R_lower_bound": 0.373998597433235
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.4968112244897959,
+          "third_over_V_threehalves": -0.09307830052162751,
+          "third_moment_M_lower_bound": 5.418900198613551,
+          "third_moment_R_lower_bound": 0.38706429990096797
+        }
+      ]
+    },
+    {
+      "name": "powerlaw_alpha0.5_beatty",
+      "n": 251,
+      "X": 1532,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.7858565737051793,
+          "third_over_V_threehalves": 0.1540789850085096,
+          "third_moment_M_lower_bound": 6.5021007042251835,
+          "third_moment_R_lower_bound": 0.41040895728852206
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.6578685258964143,
+          "third_over_V_threehalves": -0.16643614598729223,
+          "third_moment_M_lower_bound": 7.231937946441328,
+          "third_moment_R_lower_bound": 0.4564758755344387
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.7111553784860558,
+          "third_over_V_threehalves": 0.25119720561613007,
+          "third_moment_M_lower_bound": 5.893655390272299,
+          "third_moment_R_lower_bound": 0.3720042296127074
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.6100597609561753,
+          "third_over_V_threehalves": -0.2344213594818796,
+          "third_moment_M_lower_bound": 7.204744270123026,
+          "third_moment_R_lower_bound": 0.4547594259052621
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5273904382470119,
+          "third_over_V_threehalves": -0.2625930139168677,
+          "third_moment_M_lower_bound": 6.80740137923361,
+          "third_moment_R_lower_bound": 0.4296793650212521
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.5821713147410359,
+          "third_over_V_threehalves": -0.2109173727149356,
+          "third_moment_M_lower_bound": 6.965029415274411,
+          "third_moment_R_lower_bound": 0.43962875843327726
+        }
+      ]
+    },
+    {
+      "name": "powerlaw_alpha0.5_random_seed20261019",
+      "n": 264,
+      "X": 1510,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.578125,
+          "third_over_V_threehalves": -0.34610222775997135,
+          "third_moment_M_lower_bound": 7.58783336897231,
+          "third_moment_R_lower_bound": 0.4669988613447675
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.5767045454545454,
+          "third_over_V_threehalves": -0.06193085929834529,
+          "third_moment_M_lower_bound": 6.363479099081398,
+          "third_moment_R_lower_bound": 0.39164506506087515
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.6027462121212122,
+          "third_over_V_threehalves": -0.1702398327943793,
+          "third_moment_M_lower_bound": 7.116917461601797,
+          "third_moment_R_lower_bound": 0.4380159907627066
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.6041666666666666,
+          "third_over_V_threehalves": -0.054498825180234724,
+          "third_moment_M_lower_bound": 6.489080375695721,
+          "third_moment_R_lower_bound": 0.39937528926455745
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.5553977272727273,
+          "third_over_V_threehalves": -0.31724089227647867,
+          "third_moment_M_lower_bound": 7.340491627097454,
+          "third_moment_R_lower_bound": 0.4517760294503668
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.571969696969697,
+          "third_over_V_threehalves": 0.20937537498847375,
+          "third_moment_M_lower_bound": 5.534467382793709,
+          "third_moment_R_lower_bound": 0.34062292096228153
+        }
+      ]
+    },
+    {
+      "name": "powerlaw_alpha0.75_beatty",
+      "n": 183,
+      "X": 1527,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.7513661202185792,
+          "third_over_V_threehalves": 0.08076430773216628,
+          "third_moment_M_lower_bound": 5.631036855739534,
+          "third_moment_R_lower_bound": 0.416258222129182
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.7513661202185792,
+          "third_over_V_threehalves": -0.027735475009534424,
+          "third_moment_M_lower_bound": 5.9448902616643835,
+          "third_moment_R_lower_bound": 0.4394589334913009
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.7506830601092896,
+          "third_over_V_threehalves": -0.14468919864339397,
+          "third_moment_M_lower_bound": 6.549634827345167,
+          "third_moment_R_lower_bound": 0.4841629381358428
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.7663934426229508,
+          "third_over_V_threehalves": 0.16854146900125094,
+          "third_moment_M_lower_bound": 5.443350554185312,
+          "third_moment_R_lower_bound": 0.4023840514916145
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.6031420765027322,
+          "third_over_V_threehalves": -0.2602472674591091,
+          "third_moment_M_lower_bound": 6.230797021996396,
+          "third_moment_R_lower_bound": 0.4605937693660143
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.6775956284153005,
+          "third_over_V_threehalves": -0.04039761392613322,
+          "third_moment_M_lower_bound": 5.681362245694695,
+          "third_moment_R_lower_bound": 0.41997838200157583
+        }
+      ]
+    },
+    {
+      "name": "powerlaw_alpha0.75_random_seed20261019",
+      "n": 167,
+      "X": 1535,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.6841317365269461,
+          "third_over_V_threehalves": 0.2273903433685035,
+          "third_moment_M_lower_bound": 4.771189749481907,
+          "third_moment_R_lower_bound": 0.3692057474977828
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.6833832335329342,
+          "third_over_V_threehalves": -0.03591012948841579,
+          "third_moment_M_lower_bound": 5.688232440492502,
+          "third_moment_R_lower_bound": 0.440168641450745
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.6669161676646707,
+          "third_over_V_threehalves": -0.08263222676558642,
+          "third_moment_M_lower_bound": 5.749233012042598,
+          "third_moment_R_lower_bound": 0.44488900739707754
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.6497005988023952,
+          "third_over_V_threehalves": 0.03807495113682538,
+          "third_moment_M_lower_bound": 5.109960019021443,
+          "third_moment_R_lower_bound": 0.39542057800393726
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.688622754491018,
+          "third_over_V_threehalves": 0.20776105768375905,
+          "third_moment_M_lower_bound": 4.833758320535771,
+          "third_moment_R_lower_bound": 0.37404744888857705
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.657185628742515,
+          "third_over_V_threehalves": 0.0894480980661684,
+          "third_moment_M_lower_bound": 5.0090495814018166,
+          "third_moment_R_lower_bound": 0.38761189390041184
+        }
+      ]
+    },
+    {
+      "name": "examples/construct/N50_certified.json:N50_x72",
+      "n": 50,
+      "X": 72,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.1425,
+          "third_over_V_threehalves": -0.09858798016649409,
+          "third_moment_M_lower_bound": 1.6520447841872765,
+          "third_moment_R_lower_bound": 0.23363441394453793
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.1575,
+          "third_over_V_threehalves": 0.3139259031987209,
+          "third_moment_M_lower_bound": 1.4500628653312144,
+          "third_moment_R_lower_bound": 0.20506985704449943
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.1225,
+          "third_over_V_threehalves": 0.09895371865001255,
+          "third_moment_M_lower_bound": 1.4277260492292563,
+          "third_moment_R_lower_bound": 0.20191095421733712
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.1325,
+          "third_over_V_threehalves": -0.08796551206254467,
+          "third_moment_M_lower_bound": 1.594801734763253,
+          "third_moment_R_lower_bound": 0.2255390242598332
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.1475,
+          "third_over_V_threehalves": 0.21532084283045544,
+          "third_moment_M_lower_bound": 1.4695076961762903,
+          "third_moment_R_lower_bound": 0.20781977139441513
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.1425,
+          "third_over_V_threehalves": 0.34012853157440487,
+          "third_moment_M_lower_bound": 1.3768235876600072,
+          "third_moment_R_lower_bound": 0.19471225906639641
+        }
+      ]
+    },
+    {
+      "name": "examples/construct/N50_certified.json:N50_x71",
+      "n": 50,
+      "X": 68,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.1425,
+          "third_over_V_threehalves": 0.039435192066597666,
+          "third_moment_M_lower_bound": 1.5585784088714967,
+          "third_moment_R_lower_bound": 0.22041627238479494
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.1525,
+          "third_over_V_threehalves": -0.004452577674222213,
+          "third_moment_M_lower_bound": 1.6337473191864382,
+          "third_moment_R_lower_bound": 0.23104676162841467
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.1375,
+          "third_over_V_threehalves": 0.031204230193492045,
+          "third_moment_M_lower_bound": 1.5407160721348483,
+          "third_moment_R_lower_bound": 0.21789015649793061
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.1475,
+          "third_over_V_threehalves": 0.01404266366285596,
+          "third_moment_M_lower_bound": 1.5983471330142613,
+          "third_moment_R_lower_bound": 0.22604041928889215
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.1625,
+          "third_over_V_threehalves": 0.024287760534656203,
+          "third_moment_M_lower_bound": 1.6580166764635067,
+          "third_moment_R_lower_bound": 0.23447896704954552
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.1625,
+          "third_over_V_threehalves": 0.3926521286436084,
+          "third_moment_M_lower_bound": 1.4226186723230785,
+          "third_moment_R_lower_bound": 0.20118866204845035
+        }
+      ]
+    },
+    {
+      "name": "examples/smallN_best.json:4",
+      "n": 4,
+      "X": 4,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.09375,
+          "third_over_V_threehalves": -0.8164965809277259,
+          "third_moment_M_lower_bound": 0.7057189138830737,
+          "third_moment_R_lower_bound": 0.35285945694153686
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.15625,
+          "third_over_V_threehalves": -0.7589466384404111,
+          "third_moment_M_lower_bound": 0.8227883631321941,
+          "third_moment_R_lower_bound": 0.41139418156609703
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.28125,
+          "third_over_V_threehalves": -0.8642416214502247,
+          "third_moment_M_lower_bound": 1.0568926926609183,
+          "third_moment_R_lower_bound": 0.5284463463304592
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.34375,
+          "third_over_V_threehalves": 0.11629129983033311,
+          "third_moment_M_lower_bound": 0.8032013436101161,
+          "third_moment_R_lower_bound": 0.40160067180505804
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.625,
+          "third_over_V_threehalves": 1.4230249470757705,
+          "third_moment_M_lower_bound": 0.4077609185162515,
+          "third_moment_R_lower_bound": 0.20388045925812576
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.75,
+          "third_over_V_threehalves": 2.165063509461097,
+          "third_moment_M_lower_bound": 0.33878611604138353,
+          "third_moment_R_lower_bound": 0.16939305802069177
+        }
+      ]
+    },
+    {
+      "name": "examples/smallN_best.json:10",
+      "n": 10,
+      "X": 13,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.2875,
+          "third_over_V_threehalves": 0.6346414634493402,
+          "third_moment_M_lower_bound": 0.8704290442886161,
+          "third_moment_R_lower_bound": 0.27525383215156035
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.2375,
+          "third_over_V_threehalves": -0.6915755321890404,
+          "third_moment_M_lower_bound": 1.3317658338923704,
+          "third_moment_R_lower_bound": 0.4211413345093355
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.1625,
+          "third_over_V_threehalves": -0.4525756964727325,
+          "third_moment_M_lower_bound": 1.0477233206748537,
+          "third_moment_R_lower_bound": 0.3313192051007521
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.25,
+          "third_over_V_threehalves": 1.1147028752093535,
+          "third_moment_M_lower_bound": 0.46444427393708376,
+          "third_moment_R_lower_bound": 0.1468701751864363
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.2125,
+          "third_over_V_threehalves": -0.48423129922590735,
+          "third_moment_M_lower_bound": 1.176398497111948,
+          "third_moment_R_lower_bound": 0.3720098686872769
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.4,
+          "third_over_V_threehalves": 1.7460937500000004,
+          "third_moment_M_lower_bound": 0.454436023551716,
+          "third_moment_R_lower_bound": 0.1437052885253343
+        }
+      ]
+    },
+    {
+      "name": "examples/smallN_best.json:20",
+      "n": 20,
+      "X": 30,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.26875,
+          "third_over_V_threehalves": 0.9479253086255749,
+          "third_moment_M_lower_bound": 0.9833950229412597,
+          "third_moment_R_lower_bound": 0.2198938120031622
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.18125,
+          "third_over_V_threehalves": 8.043002760952344e-18,
+          "third_moment_M_lower_bound": 1.2019716382329886,
+          "third_moment_R_lower_bound": 0.26876902901157473
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.24375,
+          "third_over_V_threehalves": 0.3832322269412478,
+          "third_moment_M_lower_bound": 1.1625160392354372,
+          "third_moment_R_lower_bound": 0.259946488866425
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.21875,
+          "third_over_V_threehalves": 0.0102448166514377,
+          "third_moment_M_lower_bound": 1.2904816109570347,
+          "third_moment_R_lower_bound": 0.2885604605813367
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.2625,
+          "third_over_V_threehalves": 1.0443284747008206,
+          "third_moment_M_lower_bound": 0.6942099215925308,
+          "third_moment_R_lower_bound": 0.15523005753356978
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.25625,
+          "third_over_V_threehalves": 0.12120533349678272,
+          "third_moment_M_lower_bound": 1.315402273844397,
+          "third_moment_R_lower_bound": 0.2941328902073865
+        }
+      ]
+    },
+    {
+      "name": "examples/smallN_best.json:30",
+      "n": 30,
+      "X": 44,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.1625,
+          "third_over_V_threehalves": 0.27871434686636215,
+          "third_moment_M_lower_bound": 1.210792190664412,
+          "third_moment_R_lower_bound": 0.22105939842599814
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.17083333333333334,
+          "third_over_V_threehalves": -0.34745528935744413,
+          "third_moment_M_lower_bound": 1.5955239605381992,
+          "third_moment_R_lower_bound": 0.29130148807558476
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.1625,
+          "third_over_V_threehalves": 0.3483929335829525,
+          "third_moment_M_lower_bound": 1.1782869036638886,
+          "third_moment_R_lower_bound": 0.21512477211654277
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.225,
+          "third_over_V_threehalves": 0.7163420006612023,
+          "third_moment_M_lower_bound": 0.914571275739971,
+          "third_moment_R_lower_bound": 0.16697710605635313
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.1375,
+          "third_over_V_threehalves": -0.41403501511230106,
+          "third_moment_M_lower_bound": 1.497264160305698,
+          "third_moment_R_lower_bound": 0.27336178504782066
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.2125,
+          "third_over_V_threehalves": -0.12813674085580504,
+          "third_moment_M_lower_bound": 1.5959088170980735,
+          "third_moment_R_lower_bound": 0.2913717529486671
+        }
+      ]
+    },
+    {
+      "name": "examples/smallN_best.json:50",
+      "n": 50,
+      "X": 70,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.1475,
+          "third_over_V_threehalves": 0.1404266366285579,
+          "third_moment_M_lower_bound": 1.5158514965254568,
+          "third_moment_R_lower_bound": 0.21437377449298536
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.1375,
+          "third_over_V_threehalves": 0.05200705032248689,
+          "third_moment_M_lower_bound": 1.527363318125064,
+          "third_moment_R_lower_bound": 0.21600179191636376
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.1425,
+          "third_over_V_threehalves": -0.07887038413319536,
+          "third_moment_M_lower_bound": 1.6383037255097246,
+          "third_moment_R_lower_bound": 0.23169113479022208
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.1275,
+          "third_over_V_threehalves": 0.06989276773952992,
+          "third_moment_M_lower_bound": 1.4690911111367515,
+          "third_moment_R_lower_bound": 0.20776085737313538
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.1575,
+          "third_over_V_threehalves": 0.1060560483779461,
+          "third_moment_M_lower_bound": 1.5806881419966508,
+          "third_moment_R_lower_bound": 0.2235430608293992
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.1775,
+          "third_over_V_threehalves": 0.30139612164176866,
+          "third_moment_M_lower_bound": 1.5318938626310659,
+          "third_moment_R_lower_bound": 0.21664250766489604
+        }
+      ]
+    },
+    {
+      "name": "Singer_Bu_q61",
+      "n": 3782,
+      "X": 10707,
+      "moments": [
+        {
+          "q": 1,
+          "V_over_n": 0.40401903754627183,
+          "third_over_V_threehalves": 6.269071482869309,
+          "third_moment_M_lower_bound": 3.0421278166613455,
+          "third_moment_R_lower_bound": 0.0494671278254563
+        },
+        {
+          "q": 2,
+          "V_over_n": 0.3948638286620835,
+          "third_over_V_threehalves": 6.332413502661188,
+          "third_moment_M_lower_bound": 3.228782531109681,
+          "third_moment_R_lower_bound": 0.05250226414296091
+        },
+        {
+          "q": 3,
+          "V_over_n": 0.33755288207297723,
+          "third_over_V_threehalves": 1.6525576336303265,
+          "third_moment_M_lower_bound": 8.663041800376394,
+          "third_moment_R_lower_bound": 0.14086712390894765
+        },
+        {
+          "q": 4,
+          "V_over_n": 0.41019962982548913,
+          "third_over_V_threehalves": 6.212380220403301,
+          "third_moment_M_lower_bound": 3.341940638770208,
+          "third_moment_R_lower_bound": 0.054342294185575374
+        },
+        {
+          "q": 8,
+          "V_over_n": 0.39949101004759385,
+          "third_over_V_threehalves": 6.252279129549213,
+          "third_moment_M_lower_bound": 3.282771338113032,
+          "third_moment_R_lower_bound": 0.053380159937658204
+        },
+        {
+          "q": 16,
+          "V_over_n": 0.4093072448439979,
+          "third_over_V_threehalves": 6.2510837473820136,
+          "third_moment_M_lower_bound": 3.0703647413996604,
+          "third_moment_R_lower_bound": 0.04992627998789271
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "k": 2,
+    "gridsize": 8193,
+    "status": "NUMERICAL continuum diagnostic",
+    "best": {
+      "lb2_over_X": 0.0003623503278633396,
+      "shift_over_X": 1e-05,
+      "w_over_X": 0.07866760456889486,
+      "E_over_X": 0.17500000000001914
+    },
+    "scales_tested": 49500
+  },
+  {
+    "k": 4,
+    "gridsize": 8193,
+    "status": "NUMERICAL continuum diagnostic",
+    "best": {
+      "lb2_over_X": 0.0
+    },
+    "scales_tested": 49500
+  },
+  {
+    "k": 8,
+    "gridsize": 8193,
+    "status": "NUMERICAL continuum diagnostic",
+    "best": {
+      "lb2_over_X": 0.0
+    },
+    "scales_tested": 49500
+  }
+]

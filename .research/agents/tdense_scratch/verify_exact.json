@@ -1,0 +1,171 @@
+{
+  "status": "EXACT FINITE CHECKS; all-X proof in report",
+  "rows": [
+    {
+      "X": 100,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 16,
+      "E": "18",
+      "S": "1/16",
+      "C": "126871/1500",
+      "w": 1,
+      "transformed_M_squared_lower_bound": "74447/569696",
+      "transformed_M_squared_lower_bound_decimal": 0.13067846711228445,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 384,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 63,
+      "E": "143/2",
+      "S": "5/32",
+      "C": "47479/150",
+      "w": 3,
+      "transformed_M_squared_lower_bound": "706405/3012256",
+      "transformed_M_squared_lower_bound_decimal": 0.23451028066671625,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 1536,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 255,
+      "E": "571/2",
+      "S": "197/512",
+      "C": "472699/375",
+      "w": 15,
+      "transformed_M_squared_lower_bound": "492724297/479939776",
+      "transformed_M_squared_lower_bound_decimal": 1.0266377609010677,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 6144,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 1023,
+      "E": "1141",
+      "S": "3601/7688",
+      "C": "7552387/1500",
+      "w": 61,
+      "transformed_M_squared_lower_bound": "516739092413/115172066512",
+      "transformed_M_squared_lower_bound_decimal": 4.486670319136454,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 20000,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 3333,
+      "E": "3718",
+      "S": "23228/40401",
+      "C": "49154609/3000",
+      "w": 200,
+      "transformed_M_squared_lower_bound": "29621886548074/1969653955209",
+      "transformed_M_squared_lower_bound_decimal": 15.03913236623883,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 100000,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 16666,
+      "E": "18588",
+      "S": "7160883/4008004",
+      "C": "245741009/3000",
+      "w": 1000,
+      "transformed_M_squared_lower_bound": "147390910073305053/1953813838048072",
+      "transformed_M_squared_lower_bound_decimal": 75.43754026256345,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 150000,
+      "phase": [
+        0,
+        1
+      ],
+      "n": 24999,
+      "E": "55759/2",
+      "S": "5859832/2253001",
+      "C": "368607509/3000",
+      "w": 1500,
+      "transformed_M_squared_lower_bound": "93201656495855006/823709575881509",
+      "transformed_M_squared_lower_bound_decimal": 113.14868641185022,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 6144,
+      "phase": [
+        1,
+        10
+      ],
+      "n": 1023,
+      "E": "4567/4",
+      "S": "3207/7688",
+      "C": "7552387/1500",
+      "w": 61,
+      "transformed_M_squared_lower_bound": "520072271391/115172066512",
+      "transformed_M_squared_lower_bound_decimal": 4.515611181959756,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 6144,
+      "phase": [
+        3,
+        10
+      ],
+      "n": 1024,
+      "E": "4567/4",
+      "S": "3605/15376",
+      "C": "7552387/1500",
+      "w": 61,
+      "transformed_M_squared_lower_bound": "1061359197865/230344133024",
+      "transformed_M_squared_lower_bound_decimal": 4.607711010179777,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 6144,
+      "phase": [
+        7,
+        10
+      ],
+      "n": 1024,
+      "E": "1142",
+      "S": "267/7688",
+      "C": "7552387/1500",
+      "w": 61,
+      "transformed_M_squared_lower_bound": "542395468671/115172066512",
+      "transformed_M_squared_lower_bound_decimal": 4.709435934402434,
+      "finite_checks": "PASS"
+    },
+    {
+      "X": 6144,
+      "phase": [
+        9,
+        10
+      ],
+      "n": 1024,
+      "E": "1142",
+      "S": "0",
+      "C": "7552387/1500",
+      "w": 61,
+      "transformed_M_squared_lower_bound": "1097604750/232201747",
+      "transformed_M_squared_lower_bound_decimal": 4.72694441011247,
+      "finite_checks": "PASS"
+    }
+  ],
+  "constant_checks": "PASS"
+}

@@ -819,3 +819,18 @@ E64 continued (Mt = M_Bu; tl 1800 s; none proved optimal):
   M_Bu/M(D) (1.50 at k = 10), which the optimum spends on central-spike locking.
 - A clean asymptotic test must fix the relative slack: E65 measures M(λ)/M(D) at fixed λ.
 Dense D = N36 optimum, Mt = M(D): no nonempty E found in 1500 s (bound 64, not closed). The ε = 0.05 run is running.
+
+E64 results through k = 12 (Gurobi status 9 = time limit, so the optima are NOT proven except where status = 2).
+| k | nD | R_Bu | R_opt (class) | λ = nE/nD | R_opt/R_Bu |
+|---|---|---|---|---|---|
+| 7 | 21 | 0.7309 | 0.6143 | 1.67 | 0.840 |
+| 8 | 28 | 0.7229 | 0.6808 | 1.25 | 0.942 |
+| 9 | 36 | 0.7212 | 0.6982 | 1.11 | 0.968 |
+| 10 | 45 | 0.7906 | 0.6475 | 1.96 | 0.819 (Bu's k = 10 Golomb shift is poor) |
+| 11 | 55 | 0.6993 | 0.6862 | 1.07 | 0.981 |
+| 12 | 66 | 0.6866 | 0.6866 | 1.00 | 1.000 |
+Dense D (N24 status 2; N36, N50 status 9): E = ∅ at eps 0 and 0.05.
+E65 (annealing, src/e65_driver.py, Singer q = 11, k = 12, nD = 66; grid M refined by true_min):
+- λ = 1 reproduces Bu, M = 8.13.
+- λ = 1.25, 1.5, 1.75, 2.0 give M = 11.03, 10.98, 11.67, 11.69 (ratio 1.35–1.44).
+Conclusion (HEURISTIC, supports T9/T10): the one-Bu-step class closes onto Bu as k grows; λ -> 1.

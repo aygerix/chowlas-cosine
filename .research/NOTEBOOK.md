@@ -993,3 +993,19 @@ Squares are the canonical locally deterministic, front-loaded family, and filter
      autocorrelation from {0, 1} plus that of the autoconvolution from {0, 2}, against ‖v‖²/Σ-count.
    - (b) Phase-locking: can Z = ½e^{ix}F² + δZ, with δZ supported on the class-2 frequencies, push |E| above ‖P‖²
      while staying in the triangle?
+
+## 2026-10-19 (late, cont. 2) — Why the P31 family stops; the nonlinear requirement (lead)
+- Meta-observation (rigorous in form). Every window/Nikolskii argument that integrates SECOND moments over x₀
+  (P29, P31, P32, general PD windows Φ, PD reweightings, dilated windows) reduces, via Parseval and 1_A² = 1_A, to
+  inequalities LINEAR in 1_A: W·|A| <= C·Σ_{a∈A}|Φ̂(a)|² + O(CM²). These are profile constraints.
+  - The escape class satisfies them all, so any proof for it must use NONLINEAR information (additive structure).
+  - E57: the first nonlinear upgrade (L⁴ window) is weaker than P31 on random-like profiles.
+- Classical nonlinear facts for reference (third moment; probably folklore):
+  - Cauchy–Schwarz (∫(f + M)²)² <= ∫(f + M)·∫(f + M)³ gives
+        n²/4 <= M²n/2 + (3/4)M·T,   T = #{(a, b, c) ∈ A³ : a + b = c}.
+  - So M >= min(½√n, n²/(6T)), and sum-free sets have M >= √(n/2).
+  - A counterexample family needs T >= n^{3/2}/(6R): many Schur triples. This is automatic for dense sets, so it is no
+    help there.
+  - Cayley form: λ_min(Cay(Z, ±A)) = −2M. The neighbourhood of 0 must have edge density >= (1 − 2R²)/(2M).
+- Dense small sets are where L⁴ helps (N50: 0.257 vs 0.208). A combined L²/L⁴ optimisation over windows could sharpen
+  the dense constants. That is incremental, so it is parked.

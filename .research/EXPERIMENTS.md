@@ -633,3 +633,23 @@ Results (X = 2^12 … 2^18, UNCERTIFIED grid minima):
 Mechanism, PROVED: the dilation pinch (NOTEBOOK). y-smooth numbers avoid pZ for every prime p > y. Averaging f over the
 p-th roots of unity gives M >= n/(p − 1), which is LINEAR. So multiplicative self-similarity is not enough: a
 counterexample must keep its fair share in EVERY qZ with q <~ n/M, not only for small primes.
+
+## E57 (2026-10-19) L⁴ window inequality vs P31 (src/e57_l4window.py; examples/e57/e57.jsonl)
+- L⁴/L¹ Nikolskii constant for nonneg polynomials: C₄(L) = sup ‖u∗u∗u∗u‖²/((L + 1)³‖u‖⁸).
+  - Values: 0.48872 (L = 8), 0.48688, 0.48636, 0.48622, 0.48618, 0.48617 (L = 256). Decreasing in L.
+  - Fejér gives 151/315 = 0.47937. Same pattern as ρ (0.687 vs 2/3).
+- Window step at L⁴, integrated over x₀: mean(F⁴)·mean((f + M)⁴) <= C₄(L + 1)³·mean((M + g)⁴).
+  The left side contains Schur triples and additive energy, so it is NONLINEAR in 1_A.
+- Least M allowed (as R), best over w:
+   set              true R   L⁴ LB    L² (P31) LB
+   dense N50        0.565    0.257    0.208      <- L⁴ beats P31
+   Singer q61       0.713    0.125    0.136
+   Singer q31       0.718    0.106    0.155
+   E49 triangle     0.779    0.037    0.122
+   Bu q101/q199     0.76/0.70  0      0.08
+   E49 p=3, E50     0.93–1.1  0       0          (escape class: both vacuous)
+- Reading:
+  - The nonlinear window helps only for small dense sets.
+  - On random-like and escape-class sets the L⁴ front condition is WEAKER than P31's: the front must carry
+    (energy ratio)^{1/4} instead of the density ratio.
+  - Not a route to the escape class as is.

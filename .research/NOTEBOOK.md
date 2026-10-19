@@ -2737,3 +2737,37 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
      - Construction: every known mechanism closes onto Bu's ½ (E64/E65); relaxations give constant factors only.
    - Evidence balance: leans further toward Chowla being TRUE. Both relaxations are robust; no family below ½
      asymptotically.
+
+## 2026-10-19 (cont. 25) — The inverse step made precise; what is provable; P74; kill test E106 (lead)
+1. P74 (PROVED): PR(1) holds with constant 2.5·10^{-4} whenever |Ω| <= 1/L, i.e. for every window at the resolution
+   scale (P73 + Bernstein). E105 says the large-peak regime with |Ω|L >> 1 is numerically no worse (U/μ >= 0.104).
+2. The inverse step (architecture step (b)) in exact form. Notation: S = ±A, K = 2M, p = 1 + D_S/K (a probability
+   density), U = {f > √(n/ε)}, ν := p·1_U.
+   - P40(c) gives ‖Kν̂ − 1_S‖²_{ℓ²} <= η|S| with η = O(√ε). Also ν >= 0, ν(T) <= 1 and |U| <= ε^{3/2}.
+   - (INV) So 1_S is ℓ²-approximated, to relative error η, by K times the Fourier transform of a positive measure of
+     mass <= 1 carried by a set of measure <= ε^{3/2}.
+   - INV keeps Gibbs. A PD truncation profile must be realized inside the error budget, and its rounding share
+     (>= 0.276, E16) exceeds η. Atomic rational ν gives exactly periodic 1_S on all of Z (K = 1 for dZ), but those are
+     excluded by the finite support [−X, X], i.e. the profile.
+   - Target (MANY-SPIKE LEMMA). Under INV and positivity, either K >= c√|S| or ν is concentrated near a Bohr-dual
+     structure (a GAP of rank r <= r(ε)). The structured alternative then goes to PR(r) and Gibbs (P71-type packets).
+3. What is provable now: the DISSOCIATED half (moment method; PROVED in outline, routine).
+   - Let F(k) = Kν̂(k) restricted to [1, X] (real, since ν is symmetric), G = F − mean.
+   - If the non-central spike positions have no nontrivial additive relations of order <= 2r at scale 1/X, then the
+     empirical moments of G over k match Gaussian moments up to order 2r, up to diagonal corrections
+     O(Σm_j⁴/(Σm_j²)²).
+   - A {0, 1}-valued F of density q has centred kurtosis (1 − 3q + 3q²)/(q(1 − q)). This equals 3 only at
+     q = (3 ± √3)/6. The 6th moment separates even there.
+   - Hence order-6 dissociated spike sets violate Booleanity by a constant fraction of n.
+   - LIMITATION. This covers only m <~ √X spikes. With m ~ ε^{3/2}X spikes, accidental quadruples at scale 1/X number
+     ~m⁴/X >> m², so dissociation fails generically and the moment argument is empty.
+4. Why Booleanity plus spikiness alone cannot give structure: PIECEWISE BOHR sets.
+   - Pieces of length L ~ C√X, each a different rank-1 Bohr set, have a spiky spectrum (measure ~X/(δL²)), are exactly
+     Boolean, and have NO global low-rank structure.
+   - They are killed by POSITIVITY, not Booleanity: P28's pointwise domination |V_m(x)| <= 2(M + W₀(x)) forces every
+     window's spikes to lie on the front's spike set, so all pieces must share the front's frequencies.
+   - So the many-spike lemma must use P28 domination (local-to-global) as an input. That is the honest form of the
+     target: Booleanity + spikiness + window domination ⇒ shared low-rank frame, or K >= c√|S|.
+5. Kill test running: E106, a Pareto search for spiky AND small-R sets in sparse boxes (X = 20n, 50n). If sparse spiky
+   small-R sets exist, the lemma is in danger and the construction track revives. If the sparse Pareto front looks like
+   the dense one (E68: min β ≈ 0.18 at R ≈ 0.65), the lemma survives this test.

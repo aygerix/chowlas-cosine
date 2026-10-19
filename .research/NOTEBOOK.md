@@ -2063,3 +2063,22 @@ new relaxation, not finer grids.
      - It is a sharp second-order front-loading criterion for ALL sets, ineffective. It sharpens P31/P47 qualitatively.
      - It says nothing about sets whose front lives at scales << X* (an atom of the limit at t = 0).
      - Status: SKETCH. Not recorded in PROOFS until the sparse normalization of every P61 step is written out.
+7. (cont. 16) The cyclic barrier is robust under every positive operation (lead, PROVED-level remarks).
+   - Positive convolutions are exactly "PD weight × front taper".
+     - Any K >= 0 on T has a PD coefficient sequence κ with |κ_k| <= κ_0. Writing K = ν ⋆ F_Y (ν >= 0) gives
+       κ_k = τ_k ν̂(k).
+     - So positive convolutions access individual binary coefficients only as PD-weighted FRONT tapers: Fejér fronts,
+       subgroup combs (A_q), and Bohr-tapers ν̂(k) = τ'(kθ).
+     - Away from the front, binary information beyond second order is reachable only through x-space localization
+       (Gabor), and is CLT-aggregated or DC-anchored (P63.2).
+   - The partial-period lemma (6b) transfers to each of these.
+     - Subgroup restriction of a cyclic pattern is again cyclic (q prime, so dilation permutes the spectrum).
+     - Bohr-tapers in Z_q are dilated-interval tapers, and the same root-of-unity filter applies.
+     - Multi-scale fronts (all Y <= q at once) are covered as well.
+   - So every positive-operation route to binary information beyond 1/D meets the cyclic half-set problem.
+   - Separately, by the embedding with q ≈ 2X + 1: cyclic dense Chowla at density 1/C ⇒ T-dense(C).
+   - Strategic reading.
+     - Beyond 1/D, T-dense lies between "second-order + taper" (exhausted) and cyclic dense Chowla (sufficient, open).
+     - Unless a genuinely non-positive, Z-specific mechanism appears, the next lever is the CYCLIC DENSE PROBLEM itself
+       (improve Sanders' exponent).
+     - The alternatives are to finish the second-order program rigorously (8.57, effective constants, Lean).

@@ -11,6 +11,7 @@ EXACT limit of arguments using positivity + the two binary moment profiles. Tria
 NUMERICAL: L-BFGS-B over step functions G (N cells), w = exact PWL interpolation of the discrete autocorrelation,
 objective by 16-point Gauss-Legendre per cell. Starts: constant, half-sine, random, centre-peaked.
 Output: examples/e82/e82.jsonl.  Usage: python src/e82_cp_reach.py N1 N2 ...
+Mode E82_MODE=lam with E82_LAM=4a(1-a): sup int phi(lam w^2), the reach under a front cap p(0) <= a (cont. 16.1).
 """
 import json
 import os
@@ -40,6 +41,9 @@ def objective(g, N):
         return objective_f(g, N, phi, dphi)
     if MODE == "N2":
         return objective_f(g, N, lambda x: x, lambda x: np.ones_like(x))
+    if MODE == "lam":  # front cap a* <= 1/2: p = phi(lam w^2), lam = 4a*(1 - a*)  (NOTEBOOK cont. 16.1)
+        lam = float(os.environ["E82_LAM"])
+        return objective_f(g, N, lambda x: phi(lam * x), lambda x: lam * dphi(lam * x))
     F1, G1 = objective_f(g, N, phi, dphi)
     F2, G2 = objective_f(g, N, lambda x: x, lambda x: np.ones_like(x))
     return F1 / F2, (G1 * F2 - F1 * G2) / F2 ** 2
@@ -120,6 +124,8 @@ def main():
     Ns = [int(a) for a in sys.argv[1:]] or [40, 80, 160]
     os.makedirs("examples/e82", exist_ok=True)
     out = "examples/e82/e82.jsonl" if MODE == "D" else f"examples/e82/e82_{MODE}.jsonl"
+    if MODE == "lam":
+        out = f"examples/e82/e82_lam{os.environ['E82_LAM']}.jsonl"
     # sanity: triangle value
     N = 400
     print("triangle check", objective(np.ones(N), N)[0], (1 - np.pi / 4) / 2, flush=True)

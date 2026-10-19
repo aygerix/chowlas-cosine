@@ -1501,3 +1501,29 @@ until LP value = true minimum to 1e-6 relative.
     In the continuum limit this is still linear for every τ < 1 (P72(e)).
   - The regime that matters for C* (spiky sets with M << √n) cannot be probed: no such sets are known.
 - E103c (Singer q = 61, 83) was not run: the τ = 0.3 plateau was already flat from q = 31 to q = 43.
+
+## E104 (2026-10-19) Do near-extremizers drift into the spiky (C*) regime? (src/e104_spikiness_trend.py; VM; examples/e104/e104.jsonl)
+NUMERICAL (FFT grid 2^⌈log₂ 64X⌉, Newton-polished minimum). Quantities:
+- β_K = ∫_{f<=K√n} f²/∫f² (SB);
+- λ_half = |{f <= −M/2}|, the bimodality / flatness of the negative region;
+- η = (∫|f|)²/∫f², the effective support.
+Families: all stored small-N optima (n = 4…100), dense_certified (n = 20–150), Singer differences q = 7…61
+(n = 28–1891), Bu q = 61, 83, 101.
+
+| family | n range | R | β₁ | β₂ | λ_half | η |
+|---|---|---|---|---|---|---|
+| small-N optima | 20 → 100 | 0.60 → 0.565 (n = 36) → 0.665 | 0.20–0.30, no trend | 0.21–0.37 | 0.39 → 0.27 | 0.38 → 0.24–0.27 |
+| dense_certified | 20 → 150 | 0.60 → 0.82 | 0.21–0.34 | 0.24–0.43 | 0.39 → 0.23 | 0.27–0.38 |
+| Singer diff | 28 → 1891 | 0.756 → 0.713 | 0.31 → 0.24 | 0.35–0.43 | 0.25 → 0.20 | 0.355 → 0.205 |
+| Bu | 72 → 506 | 0.91 → 0.79 | 0.31–0.34 | 0.55–0.59 | 0.23–0.32 | 0.47–0.50 |
+
+Reading:
+- No known near-extremizer drifts toward β -> 0. The bulk fraction stays at 0.2–0.6.
+- Every known near-extremizer is FLAT: f <= −M/2 on 20–40% of the circle. P72(b) and P28 apply to all of them, and their
+  √n is "flat" √n.
+- The large top-1% share on dense sets (up to 0.75) is the CENTRAL spike (f(0) = n at width 1/X), not mesoscopic
+  spikes.
+- Singer's λ_half (0.25 -> 0.20) and η (0.36 -> 0.21) drift down slowly with q. Its |F_B|²/k value distribution is not
+  converging fast to Exp(1), which would give λ_half = 0.39 and η = 0.54. Watch at larger q; R is unaffected.
+- So the C* regime (spiky, M << √n) is empty of examples at every scale we can reach, consistent with SB and with
+  Chowla being true.

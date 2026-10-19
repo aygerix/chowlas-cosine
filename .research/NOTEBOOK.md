@@ -802,3 +802,34 @@
    That is a multi-scale large sieve with p.d. weights. Not attempted further today.
    Status: HEURISTIC with the gap located precisely. Novelty of the dense-Z question: to check before investing
    days (Z_p dense is open: Sanders p^{1/3} vs p^{1/2}).
+
+## 2026-10-19 — The decisive target (lead): everything now reduces to one statement about secondary spikes
+Already in hand (PROVED unless noted):
+- (a) Spike inequality: (1/2π)∫_{f > KM} f² >= (n/2)(1 − 2(1 + K)R²). If R -> 0, almost all of ‖f‖₂² sits in spikes
+  far above M.
+- (b) Filter 2, window-noise lemma (PROVED, Hölder applied inside P28). For every window m >= H and c > 0, with
+  U = {|x| > c/H} (outside the window's own profile spike):
+      M >= ½√(ν_m/κ_m),
+  - ν_m = (1/2π)∫_U |L_m|² is the noise mass;
+  - κ_m = (1/2π)∫_U |L_m|⁴ / ν_m² is the noise kurtosis (≈ 2 for Gaussian noise).
+  So M >= c√n unless EVERY window's noise is spiky.
+- (c) P31: the central profile peak plus front-loading is handled unless A is front-loaded at every scale.
+- (d) E47: in every known family the central peak carries <= ~0.72 of the mass. Nobody has put mass into
+  secondary spikes.
+DECISIVE TARGET (P30 restated): secondary spikes far above M cannot carry the remaining >= 1 − ρ* ≈ 28% of ‖f‖₂².
+- Each secondary spike at x₀ has a twisted profile that must be p.d. up to M/X (Turán/P29(b) at x₀).
+- The profiles of different spikes are Fourier coefficients of the SAME 0/1 sequence.
+- Missing piece (G3): a coupling inequality that loses no constant. Single-resolution Bessel (β -> 1) works.
+  Multi-scale needs a joint budget.
+Two concrete routes to try next:
+- (R1) P31-style averaging instead of Bessel. P31 avoided Bessel entirely by integrating window inequalities over
+  x₀. Do the same with a weight μ(x₀) >= 0 concentrated on the spike set S = {f > KM}:
+      ∫(f + M)²(F² ∗ μ) <= ρ(L + 1)∫μ(x₀)(M + g(x₀))²dx₀,   g = f ∗ F.
+  The left side sees spike mass. The right side is the low-pass value on S, whose Parseval budget is S_A. Question:
+  can μ be chosen so the right side uses only part of the low budget, giving share < 1? First check: what μ does
+  P31's proof implicitly use (uniform), and how much slack is there when spikes occupy measure <= 2π/K?
+- (R2) Local P31 at each spike with a window of width matched to the spike's profile, then sum. The windows overlap
+  only on a set of small measure (spikes cover <= 2π/K). Hope: the overlap error is O(1/K), not O(1), which is
+  exactly what a multi-scale Bessel lacked.
+Test sets for both: Bu q = 61–401, dense records, triangle-random, squares {k²} (linear M through Gauss-sum peaks).
+Squares are the canonical locally deterministic, front-loaded family, and filter 3 must explain their negative peaks.

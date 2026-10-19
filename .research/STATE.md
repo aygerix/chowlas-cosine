@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 5 + review")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 6 + cont. 9")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -240,7 +240,7 @@ in parallel.
   - (2) Two-level arbitrary rounding (front-loaded profile × q-periodic pattern): bulk or kink sidelobe.
   - (3) Every 0/1 sequence factors into maximal Sturmian (balanced) pieces via the taut string. Study whether pieces
     of length <= K√n plus long Sturmian pieces give SB.
-## Session 3, newest (2026-10-19 night): P47–P53, E69–E70
+## Session 3 (2026-10-19 night): P47–P53, E69–E70
 - P47 (lead, PROVED on paper; E69b audit passes on 144 rows): the P31 window applied to H_h·f_A, with the high-pass
   multiplier H_h = 1 − K_h/K_h(0).
   - Chowla holds for EVERY bounded-discrepancy rounding (non-cumulative, any D₀ <= cX^{3/4}) of a Lipschitz profile p
@@ -280,7 +280,31 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 5 + review (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 6 + cont. 9 (2026-10-19 night, NEWEST — read this first)
+- Round 6 DONE (PROOFS P57; adversarial "formal escape" round). No formal escape and no inconsistency proof.
+  - Tent-lift identity: the negative spectral mass of the natural lift is exactly mean|f| >= n/(n + M), and it escapes
+    to microscopic scales.
+  - Binary-faithful lifts have δ >= m²/24. Natural and binary-faithful lifts FAIL HBSC; existential HBSC is open.
+  - Weighted Gram D_N ⇒ WGC (CONJECTURED) ⇒ T-dense. OBSF (CONJECTURED) ⇒ T-dense.
+  - Fractional relaxation optimum is exactly n/X (Fejér weights): all of Chowla's difficulty is the 0/1 constraint.
+- Run-tops CLOSED as a T-dense route (NOTEBOOK cont. 9; E74–E76).
+  - |B_t| = r(t) − T₃(t), so the averaged statement IS T-dense.
+  - Per-t RT2 contains OR(2)-weak.
+  - E76: Bu et al.'s per-t split loses the factor Kμ on Bu sets, and averaging cannot recover it.
+  - E75: annealing finds no RT2 violation (max |B_t|/K² <= 0.39).
+- Zero-set strengthening S(A) <= M(A) REFUTED (E77): S([1, n]) = 1 exactly. On near-extremal sets S ≈ M (the minimum
+  sits on a negative-axis crossing of G).
+- Round 7 (RUNNING): the C₁ programme. Extend the kernel-checked dense theorem (C <= 2.44) to T-dense(3), and compute
+  the reach C₁* of windows + near-0/1 lemmas (NOTEBOOK cont. 9 §4).
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 7 (.research/agents/tdense7_brief.md, report tdense7_report.md, log tdense7_codex.log).
+- VM: free apart from the agent's jobs (E75/E76/E77 done).
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 7 when it lands. If T-dense(3) is proved: lead re-check, then hand the proof to Lean (P31 is already
+  kernel-checked). If it fails: record the obstruction at C = 3 and the extremal escaping profile.
+- Lead foreground meanwhile: the construction line (escaping profiles at C₁* as test objects), and WGC/OBSF as the
+  deep targets.
+## Session 3, round 5 + review (2026-10-19 night)
 - Round 5 DONE (PROOFS P56; lead re-checked FTL1, CY1, SG and the interval obstruction):
   - FTL1: a finite TL1 with explicit errors. The error is R/D with R = Σ|c_s|, so it is NOT uniform in the spike count.
   - CY1: exact cyclic P40 → TL1 bridge.
@@ -301,7 +325,7 @@ in parallel.
 - E72c: the window family is escaped at C ≈ 5–10 (B/√n ≈ 0.02) by box-filling sets with R ≈ 0.9–1.3. C₁ ∈ [2.47, 4.8].
 - E73: Gaussian-threshold (growing-rank Bohr) sets have linear M at every fixed rank (R ∝ √X). High rank approaches
   the Bernoulli baseline (R ≈ 2.9 at X = 2^18) from above. The simplest escape class is dead as a construction.
-## Running now (2026-10-19 night, latest)
+## Running now (2026-10-19 night, superseded)
 - Codex MATH agent, round 6 (.research/agents/tdense6_brief.md, report tdense6_report.md). ADVERSARIAL:
   - build a "formal escape" (every proved constraint, mesoscopic spikes, M ≪ √n), or prove the constraints
     inconsistent;
@@ -309,13 +333,13 @@ in parallel.
   - optionally, averaged run-tops in Z.
 - VM: E74 (src/e74_runtops.py: run-top counts |B_t| against K² and K³μ on the zoo, Bu/Singer, small-N, random and
   E68/E72c sets); E64 bu2 k7; E65 q23.
-## First concrete next step (2026-10-19 night, latest)
+## First concrete next step (2026-10-19 night, superseded)
 - Verify round 6.
 - If a formal escape exists, realize it as actual sets (construction lead). If not, its inconsistency proof or
   missing constraint replaces HBSC.
 - Read E74. If mean_t|B_t| <~ K² holds empirically with room, the averaged run-top route (Bu et al. Prop. 9.7 with
   K^{3−δ}μ on average) becomes a second lower-bound line.
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 5; superseded)
 - Codex MATH agent, round 5 (.research/agents/tdense5_brief.md, report tdense5_report.md):
   - finite J-uniform TL1;
   - the dichotomy toward HBCG;

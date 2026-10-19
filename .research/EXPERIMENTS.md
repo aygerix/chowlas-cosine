@@ -1067,3 +1067,61 @@ Reading:
   - Consistent with T-dense; no new obstruction.
   - Uniform random subsets have LINEAR M (flat profile ⇒ Dirichlet sidelobes; R = 0.217√n), so their small ratios
     carry no information.
+
+## E75 (2026-10-19) Adversarial annealing against per-t RT2 (src/e75_runtop_sa.c, src/e75_batch.sh; examples/e75/e75.jsonl)
+- Objective: MAXIMISE Q(A) = max_t |B_t(A')| / K_grid² over A ⊂ [1, X], |A| = n, by swap annealing (200k moves, 3
+  restarts per (X, n), seeds in the batch file). Grid λ on 8X + 1 points: UNCERTIFIED, HEURISTIC search.
+- Results (best Q per (X, n); R_grid of that set):
+| X | n | best Q | R_grid |
+|---|---|---|---|
+| 60 | 20 | 0.389 | 0.76 |
+| 120 | 30 | 0.230 | 0.93 |
+| 120 | 60 | 0.348 | 0.76 |
+| 200 | 40 | 0.224 | 0.94 |
+| 200 | 100 | 0.361 | 0.74 |
+| 300 | 60 | 0.171 | 1.06 |
+| 400 | 80 | 0.144 | 1.12 |
+- Reading: no RT2 violation. The annealer does WORSE than the small-N optima of E74 (max 0.65), so maximising |B_t|
+  pushes K up faster than |B_t|. Q falls with X at density 1/5. Weak evidence only (search-limited).
+
+## E76 (2026-10-19) Fourier anatomy of run-tops: is Bu et al.'s per-t split saturated? (src/e76_q1q2.py;
+## examples/e76/e76.jsonl, 23 sets)
+- Per t <= 2X: g = 1̂_{B_t} on a 16(2X+1)-point grid, u = F + K >= 0 (mean K), proxy split Q1 = min(|g|, 3u),
+  Q2 = (|g| − 3u)₊ (a clipping proxy for Lemma 9.3, NOT its exact split). Averages over t. NUMERICAL.
+| family | n | R | mean|B_t|/K² | mean‖g‖₁/K | s1 = mean‖Q1‖₁²/K² | budget use |
+|---|---|---|---|---|---|---|
+| small-N 24 / 36 | 24 / 36 | 0.58 / 0.57 | 0.29 / 0.32 | 0.39 / 0.41 | 0.161 / 0.161 | 0.077 / 0.063 |
+| Bu q = 7…31 | 56…992 | 0.80…0.66 | 0.10…0.15 | 0.22…0.26 | 0.062…0.085 | 0.019 → 0.0016 |
+| Singer diff q = 13/23/43 | 91…946 | 0.73…0.72 | 0.162 | 0.27 | 0.080…0.088 | 0.018 → 0.0022 |
+| E68 rows | 64 | 1.17–1.26 | 0.06–0.07 | 0.12–0.14 | 0.015–0.022 | 0.034–0.049 |
+| E72c rows (C ≈ 2.4–5) | 128/512 | 0.94–0.99 | 0.04–0.08 | 0.12–0.18 | 0.025–0.043 | 0.002–0.007 |
+| tapered random | 128/518 | 1.51/1.71 | 0.027/0.023 | 0.11/0.10 | 0.017/0.014 | 0.005/0.001 |
+| interval | 128/512 | 2.5/4.9 | 0.020/0.005 | 0.048/0.015 | 0.002/0.0002 | 0.047/0.028 |
+- s2 = mean‖Q2‖₂²/(K³μ) <= 5·10⁻⁴ everywhere: Q2 is negligible, Q1 ≈ g.
+- Reading:
+  - ‖1̂_{B_t}‖₁ ≈ 0.24K ≈ 0.7·√|B_t| on Bu sets: 1̂_{B_t} is NOT concentrated (a Gaussian-like spread would give 0.89).
+  - Hence Σ_t Kμ‖Q1_t‖₁² ≈ 0.45·nK³μ on Bu sets (q = 7…31), with no decay in K. The round-6 "averaged sufficient
+    inequality" Σ_t[‖Q2_t‖² + Kμ‖Q1_t‖₁²] <= D n K^{3−η}μ is FALSE for this split on the sets nearest the conjectured
+    extremum.
+  - Actual |B_t| uses 0.2%–8% of the per-t budget Kμ‖Q1‖₁² + ‖Q2‖², falling like 1/(Kμ). The loss sits in the
+    per-t inequality itself (the factor Kμ), not in a lack of averaging.
+
+## E77 (2026-10-19) Zero-set strengthening S(A) = sup{μ : μ + Σ_{a∈A} z^a has a zero in |z| < 1} (src/e77_winding.py;
+## examples/e77/e77.jsonl)
+- S <= M always (G(D) ⊂ {Re w > −M}). W(μ) is computed by the argument principle on a 64X-point sample of
+  G(e^{ix}); S by a 600-point μ-scan from M down, then bisection. NUMERICAL.
+  - Cross-check for X <= 120: numpy.roots at 0.98S / 1.02S gives (zeros inside > 0, 0) on every row.
+  - A first version based on crossing bookkeeping was WRONG: grid points landed on exact zeros of G for intervals.
+    It was replaced, and the results below are from the corrected run.
+| family | S/√n | S/M |
+|---|---|---|
+| small-N optima N = 10…100 | 0.55–0.66 | 0.82–1.00 (mostly >= 0.95) |
+| Bu q = 7…31; Singer diff q = 13/23/43 | 0.63–0.80; 0.72–0.73 | 0.95–1.00; 0.995–1.000 |
+| E68, E72c (C = 3, 6) | 0.91–1.26 | 0.90–1.00 |
+| random C = 1.5 / 3 / 10 (n = 64…1024) | 1.4–2.7 | 0.22–0.98 (falls with n) |
+| interval [1, n] (n = 64, 256) | 1/√n exactly (S = 1.000) | 0.069, 0.018 |
+| evens ∪ {1} (n = 64, 256) | 0.32, 0.16 (S ≈ 2.6) | 0.17, 0.05 |
+| interval far [5n, 6n) | 7.9, 15.8 | 1.000 |
+- Reading:
+  - Chowla-S (S >= c√n) is FALSE: exactly for intervals (Re G = −1 at every nontrivial zero of Im G).
+  - On every near-extremal set S ≈ M: the global minimum sits at a crossing of the negative real axis by G(e^{ix}).

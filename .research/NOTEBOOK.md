@@ -1621,3 +1621,50 @@ Where this leaves the finite TL1 programme (lead assessment):
        come in |B| translates). JMTZ cap at 1/6 for general graphs; Paley in Z_q shows graph theory alone cannot
        separate Z.
      - (iii) Keep the construction line alive through (i).
+
+## 2026-10-19 (night, cont. 9) — Run-tops closed as a T-dense route; the zero-set strengthening is false; round 7 = C₁ programme (lead)
+1. E76 verdict (Bu et al. §9 split, averaged).
+   - On Bu/Singer sets ‖1̂_{B_t}‖₁ ≈ 0.24K ≈ 0.7√|B_t|: no Fourier concentration of the run-top sets.
+   - So for the clipping split, Σ_t Kμ‖Q1_t‖₁² ≈ 0.45·nK³μ with no decay in K. Round 6's averaged sufficient inequality
+     (a power saving K^{3−η}) is FALSE for that split on the sets nearest the conjectured extremum.
+   - The actual |B_t| ≈ 0.13K² uses only 0.2%–8% of the per-t budget. The loss is the factor Kμ inside the per-t
+     inequality, not a missing average.
+2. The averaged run-top statement is T-dense itself (PROVED, one line). |B_t| = r(t) − T₃(t), where r(t) = #{a ∈ A' :
+   a − t ∈ A'} and T₃(t) = #{a : a − t, a, a + t ∈ A'}. Hence Σ_{t>0}|B_t| = N(N−1)/2 − T₃ ∈ [n², N²/2].
+   - "mean_{t<=2X}|B_t| <= cK²" is equivalent to K² >~ n/C up to the T₃ slack, i.e. to T-dense.
+   - E74's mean|B_t|/K² <= 0.32 is the statement R >~ 1/√(8C·0.32) in disguise.
+   - Only PER-t bounds carry content. Per-t RT2 contains OR(2)-weak (NOTEBOOK 2026-10-18: A = S ∪ (S + t) has
+     |B_t| = 2|S|), so it is Chowla-hard on that class. Bedert's per-t K⁴ gives M >~ (#maximal t-runs of length >= 2
+     in A)^{1/4} for every t. That corollary is old (OR(2) analysis), not new.
+   - Decision: run-tops are CLOSED as a T-dense route. They remain the literature's mechanism for sparse exponents
+     (1/5); any Z-specific per-t gain must prove OR(2)-weak first.
+3. Zero-set reformulation (lead; REFUTED as a strengthening, E77).
+   - G(z) = Σ_{a∈A} z^a maps the disk into {Re w > −M} (minimum principle). So μ + G is zero-free in |z| < 1 for
+     μ >= M. Put S(A) := sup{μ : −μ ∈ G(D)} = sup{μ : μ + G has a zero in D} <= M(A).
+   - By the argument principle, #zeros = winding of G(e^{ix}) around −μ. "Chowla-S" (S >= c√n) would imply Chowla.
+   - FALSE. For A = [1, n], Im G = sin((n+1)x/2) sin(nx/2)/sin(x/2). At its nontrivial zeros x = 2πj/(n+1),
+     Re G = −1 EXACTLY. So the curve meets the negative axis only at −1 (and at 0), and S([1, n]) = 1 while
+     M ≈ 0.217n. E77 confirms S = 1.000 (n = 64, 256; numpy.roots: 64 zeros inside at 0.98S, 0 at 1.02S).
+   - Also small: evens ∪ {1} gives S ≈ 2.6; random C = 1.5 gives S/M = 0.22.
+   - Observation (NUMERICAL): on every near-extremal set (small-N optima, Bu, Singer, E68, E72c), S/M = 0.95–1.00.
+     The extremal minimum is attained where G(e^{ix}) crosses the negative real axis (Im G = 0 at the minimiser).
+     That is a shift-stationarity property: A → A + s multiplies G by e^{isx}.
+   - Classical by-products, recorded only for completeness:
+     - Littlewood subordination G ≺ 2Mz/(1 − z) gives M >= Mahler(G)/2 and M >= ‖G‖_p/(2c_p^{1/p}) for p < 1.
+     - Similarly S >= Mahler(G)/4 (subordination to the Koebe slit map).
+     - Szegő's sum rule for the measure (1 + f/M)dx/2π (moments 1_A(k)/(2M)): −∫log(1 + f/M) = Σ −log(1 − |α_k|²).
+       This needs control of ∫log(f + M), which spiky counterexamples need not have.
+4. Strategic decision (skill §3).
+   - Closed this night: run-top averaging (circular in the dense regime), the zero-set strengthening (false), and
+     natural/binary-faithful HBSC lifts (round 6).
+   - Open sufficient lemmas: HBSC (existential), WGC, OBSF. These are the deep, multiscale form of the gap.
+   - Round 7 takes the CONCRETE milestone first: extend the kernel-checked dense theorem (P31, C <= 2.44) to C <= 3,
+     the "C₁ programme" proposed in cont. 6.
+     - θ → 0 computation (lead): at C = 3, escaping P31 forces p(0) >= 0.866. Then e(0) <= 0.116, and escaping P47
+       forces ē <= 0.0447. A front + tail escape needs φ >= 0.369 and a tail of <= ~0.002X elements, i.e. a
+       near-interval front, where linear sidelobes should win.
+     - At C ≈ 4–7 the window family genuinely fails (cont. 6). So the reach C₁ of "windows + near-0/1 lemma" is
+       plausibly between 3 and 4.8.
+   - The round also computes the reach C₁* and its extremal profile with Gurobi. The escaping sets at C₁* are the
+     next test objects for both tracks.
+   - Brief: .research/agents/tdense7_brief.md.

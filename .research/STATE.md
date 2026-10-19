@@ -1,20 +1,24 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 10: T-dense(7.5); DC barrier")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 11: T-dense(7.72); FRONT-½ and the cyclic barrier")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
 - (L) Chowla: M(A) >= c0 sqrt|A|. NOT ACHIEVED. Best known: >> n^{1/5} (Shankar 2609.05338, cited, checked).
 - (L-dense) T-dense(C) := M >= c(C)√n for all A with max A <= C|A|.
-  - PROVED for every C < 10000/1333 = 7.5019, ineffective c(C) (P61 + P62: second-order reduction plus the exact
-    support-coupled certificate D <= 1333/10000; two independent exact verifications, C-R10 and E84).
-    - Earlier: C < 6.9366 (P60).
+  - PROVED for every C < 2000/259 = 7.7220, ineffective c(C) (P61 + P63: second-order reduction plus the exact
+    support-line certificate D <= 259/2000; two independent exact verifications, C-R11 and E85).
+    - Earlier: C < 7.5019 (P62), C < 6.9366 (P60).
   - EXPLICIT constants for every C < 6.156 (P60.7); c(3) = 10^{−6000005} (P59.6).
   - Kernel-checked effective: C <= 2.44 (P31).
   - P61 (lead, paper; awaiting adversarial check): T-dense(C) for every C < 1/D, where D = sup ∫_0^1 φ(|w|²) over PD w
     supported in [−1, 1] with w(0) = 1, and φ(x) = (1 − √(1 − x))/2.
     - This is SHARP for positivity + two binary moments (weighted packet escapes).
-    - Numerically 1/D ≈ 8.5708 (E82). Rigorous D <= 0.1333 (P62).
+    - Numerically 1/D ≈ 8.5708 (E82). Rigorous D <= 0.1295 (P63). The certificate family saturates near 0.129.
     - Beyond 1/D: three moments are free (P62.3). The fourth moment / approximate binarity is the open layer.
-    - Higher-order positivity is DC-blind in the √n regime (NOTEBOOK cont. 14).
+      - Gaussian packet escapes are order-X away from any four-profile escape (P63.3).
+      - Anchored tests of every fixed order >= 3 are provably blind (P63.2).
+    - Cleanest binary target FRONT-½: a = p(0) <= a* < ½ gives T-dense(C < 1/(4a*(1 − a*)D)).
+      - A front-only proof would prove cyclic half-set Chowla, which is open (NOTEBOOK cont. 16.3).
+      - So it must use the taper coupling.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
   algorithm cannot exist. Not assumed: both tracks stay open.
 
@@ -292,7 +296,30 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 10: T-dense(7.5); DC barrier (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 11: T-dense(7.72); FRONT-½ and the cyclic barrier (2026-10-19 night, NEWEST — read this first)
+- Round 11 DONE, lead-verified (PROOFS P63; E85 re-derives all 188 support lines, 22615 leaves, 0 failures).
+  - D <= 259/2000, so T-dense(C < 7.7220). New support-specific symbol lines (P63.1).
+  - DC-barrier theorem: Re Στ(k)ĥ(k)^j >= τ(0)(m^j − 2^{1−j}Σ|r|^j). Three-profile escapes pass every anchored test.
+  - Repair-energy lemma: four-profile escapes are order-X far from Gaussian packet escapes.
+  - Torsion budget: Σ_{rational θ ≠ 0} W_θ(0) <= ½ − a.
+  - Full-Haar kurtosis >= 3/2. The Paley boundary: positive Paley escapes put half the variance on qZ (unbounded);
+    deleting qZ costs X/√q.
+  - Literature: Sanders' half-set exponent 1/3; nontrivial strongly regular circulants are Paley graphs.
+- Lead (NOTEBOOK cont. 15–16):
+  - Exact front rigidity: in the macroscopic model, PD indicator ⇒ subgroup ⇒ no taper.
+  - Taper coupling = Fourier domination.
+  - FRONT-½: a <= a* < ½ would beat 1/D.
+  - CYCLIC BARRIER: the front-only lemma TBS implies cyclic half-set Chowla (open).
+  - Parseval roughness: nested tapers force Hölder-½ envelopes. M >~ X/N is proved for locally N-periodic
+    families; X√(p/N) is heuristic.
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 12 (.research/agents/tdense12_brief.md; report tdense12_report.md): the coupled front problem.
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 12:
+  - FRONT-½ via coupling, or the precise obstruction;
+  - the rigorous Parseval-roughness theorem;
+  - the Paley-front taper construction probe (R values, certificates).
+## Session 3, round 10: T-dense(7.5); DC barrier (2026-10-19 night)
 - Round 10 DONE, lead-verified (PROOFS P62; E84).
   - D <= 1333/10000 (t-dependent support-coupled potentials plus a continuum Schur test), so T-dense(C < 7.5019).
   - P61 audited and repaired for complex w.
@@ -303,13 +330,8 @@ in parallel.
   - Subgroup restrictions A ∩ qZ are counterexamples too, so rational atoms vanish when a = ½.
   - Kurtosis heuristic for the fourth-moment layer.
   - Cyclic-PDS (Ma) connection.
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 11; superseded)
 - Codex MATH agent, round 11 (.research/agents/tdense11_brief.md; report tdense11_report.md).
-## First concrete next step (2026-10-19 night, newest)
-- Verify round 11:
-  - certificate push toward 8;
-  - the fourth-moment / approximate-binarity layer (escape or inequality);
-  - test the DC-barrier meta-statement.
 ## Session 3, round 9 + P61: the second-order reach 1/D ≈ 8.571 (2026-10-19 night)
 - Round 9 DONE, lead-verified (PROOFS P60; E81 re-checks every certificate by a different exact method).
   - T-dense(C < 6.9366) (κ <= 0.749089).

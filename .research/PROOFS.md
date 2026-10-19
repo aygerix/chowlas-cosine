@@ -1388,3 +1388,37 @@ Corollaries and meaning.
   bulk. This is the first step of a descent: macroscopic structure alone cannot produce a counterexample.
 - Not quantitative: compactness, and the defect is upper semicontinuous in the wrong direction for a direct
   finite-X version. A quantitative, multiscale form is the next target (NOTEBOOK).
+
+## P54. Torus level-1 inequality (TL1) — PROVED (lead 2026-10-19; elementary; uses the classical Steinhaus rotation
+## trick; priority unchecked)
+Statement.
+- Let K be a compact abelian group with Haar probability measure and Γ = K^.
+- Let Λ ⊂ Γ be a set of characters on which some homomorphism ψ: Γ → R is ≡ 1 (a level set of a real grading). For
+  example, Λ = rationally independent irrational frequencies, or any subset of a free basis. Torsion characters are
+  excluded.
+- Then for every measurable E ⊂ K with |E| = p:
+      W_Λ(E) := Σ_{λ∈Λ∪(−Λ)} |1̂_E(λ)|² <= θ(p)·p(1 − p),   θ(p) := 2·env(p)/(π² p(1 − p)) <= 8/π² = 0.8106,
+  where env = the concave envelope of sin²(πx) on [0,1]:
+  - env(x) = (sin²(πx₀)/x₀)·x for x <= x₀, with tan(πx₀) = 2πx₀, x₀ ≈ 0.371;
+  - env(x) = sin²(πx) on [x₀, 1 − x₀];
+  - env is symmetric.
+- Equality θ = 8/π² iff p = ½ and E is a half-circle in a single coordinate.
+Proof.
+1. L := P_Λ(1_E − p) = Re Z with Z = Σ_{λ∈Λ} c_λ χ_λ, and W_Λ = ‖L‖² = E[1_E L].
+2. Rotation invariance. φ ↦ τ_φ with χ(τ_φ) = e^{iφψ(χ)} is a continuous one-parameter subgroup of K. Translating by τ_φ
+   multiplies Z by e^{iφ}, and Haar measure is invariant, so Z has a rotation-invariant law. Hence (Z, E) can be coupled
+   as Re Z = R cos Φ with R = |Z| and Φ uniform and independent of R.
+3. For any F with P(F) = p, conditional on R, the best set in Φ is an arc. So
+   E[1_F R cos Φ] <= E[R·sin(π π_R)/π], with π_R = P(F | R) and E π_R = p.
+4. Cauchy–Schwarz: <= (1/π)√(E R²)·√(E sin²(π π_R)) <= (1/π)·√(2‖L‖²)·√(env(p)).
+5. Hence ‖L‖² = E[1_E L] <= (1/π)√(2 env(p))·‖L‖, i.e. W_Λ <= 2 env(p)/π². ∎
+Checks.
+- E71: the numerical sup is 0.8106 (p = ½), 0.7637 (p = 0.4; bound 0.764), 0.632 (p = 0.3; bound 0.659),
+  0.34 (p = 0.1; bound 0.51). The bound holds and is sharp for p ∈ [x₀, 1 − x₀] at S = 1.
+- Without the grading hypothesis the inequality fails. For Z_2 characters (Rademacher), a dictator has W = 100%.
+Meaning for Chowla (NOTEBOOK 2026-10-19 night, cont. 2).
+- A 0/1 local pattern can keep at most 81% of its variance on any graded-homogeneous set of spike frequencies (e.g.
+  rationally independent spikes). At least 19% must sit at other levels (combinations Σk_s x_s with Σk_s ≠ ±1,
+  including differences and torsion) or in continuous spectrum.
+- Finite-window use needs the window to equidistribute in the relevant torus (length >> (1/η)^S), so it serves only for
+  boundedly many tall spikes.

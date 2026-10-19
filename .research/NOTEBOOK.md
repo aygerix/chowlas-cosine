@@ -1410,3 +1410,7 @@ Strategic decision:
      are "random-like" and need a bulk argument instead (Bu sets live there).
 3. Decision: the round-4 agent pursues QD/MP48 (quantitative P53, mesoscopic PD). The lead keeps TL1 + additive
    closure as the structured half of the descent.
+- UPDATE (same night): TL1 is PROVED (PROOFS P54) for any set of characters on which a real grading ψ is ≡ 1.
+  - Proof: the Steinhaus rotation trick, Re Z = |Z|cos Φ, plus the concave envelope of sin²(πx).
+  - Constant 8/π², sharp at p = ½ with one coordinate.
+  - Torsion characters are excluded, and must be: a Z_2 dictator has 100% level-1 weight.

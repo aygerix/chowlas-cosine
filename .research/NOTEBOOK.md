@@ -2082,3 +2082,38 @@ new relaxation, not finer grids.
      - Unless a genuinely non-positive, Z-specific mechanism appears, the next lever is the CYCLIC DENSE PROBLEM itself
        (improve Sanders' exponent).
      - The alternatives are to finish the second-order program rigorously (8.57, effective constants, Lean).
+
+## 2026-10-19 (night), cont. 17 — after round 12: where the missing ingredient sits
+1. Round 12 verified (PROOFS P64; E89). Unconditional T-dense is unchanged at C < 7.722. Two exact reductions now pin
+   the missing ingredient:
+   - integer side: CSFG(20), a uniform front gap for support-restricted cyclic sets ⇒ T-dense beyond 1/D (R12-B);
+   - cyclic side: TBS ⇒ cyclic half-set √-Chowla (R12-H plus the root filter). The scalar barrier R12-S shows that
+     any proof must use the full off-zero convolution (binarity), not moments.
+2. Why weak limits cannot finish the cyclic problem (lead).
+   - Positivity algebra in Z_q: (r + Kδ_0) is PD, and so is its k-th Schur power. The cost is
+     (1 + K)^k − 1 against q. So order-k information survives a weak limit only for K = o(q^{1/k}).
+   - At order 2 (K = o(√q)), the limit objects at half density are consistent: p ≡ ½ (R12-H). Order 3 would need
+     K = o(q^{1/3}), Sanders' range.
+   - Hence a √q proof must be QUANTITATIVE at finite q. Parseval gives Λ >= (q/4 − K²)/K exactly, so √q follows from
+     a peak lemma Λ <= CK (PK(1)). PK(η) for any η > 0 beats Sanders.
+   - The finite second-order identity at γ = 2 gives only Λ <= √(2q)K (exponent 1/4; P64.12). The loss is the bound
+     |Σ mixed pairs| <= 2KΣλ⁺, tight only if the large positive spectrum pairs with near-threshold negative values
+     at 2 − β for every β. The next derivation must show that this pairing cannot hold at every γ at once.
+3. Arithmetic view (lead remark, not yet used).
+   - For prime q, {λ(γ)} is the Galois orbit of α = λ(1) ∈ Z[ζ + ζ⁻¹]. α + K is a totally positive algebraic integer
+     whose trace/degree is K − ½. The Schur–Siegel–Smyth trace bound gives only K >= 2.27.
+   - The power sums Σλ^k = q·T_k(B) − λ(0)^k are additive k-counts. Moments up to k = 3 cannot beat 1/3 (R12-S).
+   - OPEN, and the first test for round 13: do the k >= 4 power-sum constraints, i.e. integrality and actual counts,
+     already kill the R12-S fake?
+4. Construction side (Track C, dormant since E42). P61 is sharp for positivity plus two binary moments.
+   - So the WEIGHTED escapes at density up to D exist; the only open question is binarization.
+   - A binary realization with M = o(√X) at density d < D would disprove Chowla. A realization with M ≈ c√X and small
+     c would lower the record R.
+   - Round 11's Paley escapes binarize badly: nearest rounding costs (X/8)∫w², and deleting qZ costs X/√q.
+   - Not tried: structured binary local laws such as dilated near-intervals or sub-Paley sets (E41 optima) under a
+     PD envelope, with error diffusion done in the spectral domain. Round 13 Task 2 probes this.
+5. Plan.
+   - Round 13 (codex): Task 1, PK(η) through full convolution, tested on exact cyclic optima. Task 2, a bounded probe
+     of binary escapes.
+   - Lead, foreground: write P61 for sparse sets in full (cont. 16.6c). It is a second-order front-loading criterion
+     for ALL sets, the first T-dense-type statement with no density hypothesis.

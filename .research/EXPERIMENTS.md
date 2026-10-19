@@ -1294,3 +1294,20 @@ Reading:
 - Reading:
   - A front cap is cheap to state and buys a lot: a* = 1/3 (the full-Haar kurtosis-3/2 threshold) gives T-dense(10.4).
   - The front is exactly where the cyclic barrier sits (cont. 16.3, 16.7).
+## E89 (2026-10-19) Round 12: lead's falsification test of R12-N, plus the agent's probes (src/e89_r12n_check.py; examples/e89/e89.json; examples/r12_certificates/)
+- Lead (NUMERICAL, falsification only; seed 2026101989). The test checks M(A) >= n/((3π + 2)r), or 2n/((3π + 2)r) for
+  symmetric counts, when A ∩ NZ is an initial progression. Grid minima (FFT oversample 16, then golden-section
+  refinement) only under-estimate M.
+  - 538 cases: random nested and offset schedules (N = 3 … 101), adversarial l0 at the proof's balance point
+    (symmetric and not), and l0 scans.
+  - 0 violations. Worst ratio M_grid/bound = 1.262: a single class, i.e. a pure progression, where M ≈ 0.22n against the
+    bound 0.175n. The balance-point families sit higher.
+- Agent (VM; reproduction commands in the report):
+  - roughness_probe.py (seed 2026101912): 36 structured removal schedules (coset, multiplicative, Bohr, random,
+    Paley-front) at N = 29 … 257. Sampled μ√N runs 0.25–0.64. All keep square-root-sized dips.
+  - schedule_milp.py (Gurobi 13.0.3, seed 1912): N = 29 optimal at 0.046092; N = 61 incumbent 0.033427, with lower
+    bound 0.013233 at the 55 s limit.
+  - Arb point certificates (220 bits) of actual dips: −5474 (N = 29, n = 28671), −8351 (61), −10139 (64),
+    −32574 (257, n = 264192).
+  - R12-U probe (seed 2026101913): M/H = 0.0730, 0.0360, 0.0342 at H = 2^16, 2^18, 2^20. Uncertified upper estimates.
+  - independent_check.py: 980 exact second-moment count checks; 4 scalar-fake (R12-S) arithmetic checks.

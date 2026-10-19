@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 11: T-dense(7.72); FRONT-½ and the cyclic barrier")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 12: the missing ingredient pinned (CSFG / PK)")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -17,8 +17,12 @@
       - Gaussian packet escapes are order-X away from any four-profile escape (P63.3).
       - Anchored tests of every fixed order >= 3 are provably blind (P63.2).
     - Cleanest binary target FRONT-½: a = p(0) <= a* < ½ gives T-dense(C < 1/(4a*(1 − a*)D)).
-      - A front-only proof would prove cyclic half-set Chowla, which is open (NOTEBOOK cont. 16.3).
+      - A front-only proof would prove cyclic half-set Chowla, which is open (NOTEBOOK cont. 16.3; P64.4).
       - So it must use the taper coupling.
+    - Round 12 (P64) pins the missing ingredient.
+      - Integer side: CSFG(20) ⇒ T-dense(C < min(20, 1/D_σ)), beyond 1/D (R12-B).
+      - Cyclic side: the peak lemma PK(η) (Λ <= CK^{2−η}) beats Sanders' 1/3; PK(1) gives √q.
+      - Scalar moments provably cannot do it (R12-S). The full convolution identity λ⋆λ = qλ is needed.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
   algorithm cannot exist. Not assumed: both tracks stay open.
 
@@ -296,7 +300,32 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 11: T-dense(7.72); FRONT-½ and the cyclic barrier (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 12: the missing ingredient pinned (CSFG / PK) (2026-10-19 night, NEWEST — read this first)
+- Round 12 DONE, lead-verified (PROOFS P64; E89: R12-N falsification, 538 cases, 0 violations).
+  - No new unconditional endpoint: T-dense stays at C < 7.722.
+  - R12-N (proved): if A ∩ NZ is an initial progression, M >= n/((3π + 2)r). This excludes dense nested schedules with
+    N = o(√X).
+  - R12-U: nonnested 2-periodic sets with M = O(X^{3/4}√log X). So X/N is false without a bound on the number of
+    changes.
+  - R12-H (proved): symmetric half-sets of Z_q with K = o(√q) are balanced on all intervals of all dilates. Lead
+    corollary: they are Fourier-uniform, max|λ| = o(q).
+  - Cyclic barrier with exact quantifiers: TBS ⇒ cyclic √ (normalization corrected: H_γ = 2λ_γ).
+  - CSFG(20) (conjectured) ⇒ T-dense beyond 1/D (R12-B, proved).
+  - PK(η) ⇒ exponent 1/(3 − η). R12-S: scalar moments cannot beat 1/3.
+- Lead (NOTEBOOK cont. 17):
+  - weak-limit positivity at order k needs K = o(q^{1/k}), so a cyclic √q proof must be quantitative at finite q;
+  - the finite second-order identity gives exponent 1/4;
+  - the spectrum is a Galois orbit (unused so far);
+  - the construction side is reduced to binarizing P61's weighted escapes.
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 13 (.research/agents/tdense13_brief.md; report tdense13_report.md).
+  - Task 1: PK(η) through full convolution, tested on exact cyclic optima.
+  - Task 2: a binary-escape construction probe.
+- Lead (foreground): P61 for sparse sets, written out in full (NOTEBOOK cont. 16.6c).
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 13. Then: does any k >= 4 power-sum (additive-count) constraint kill the R12-S fake? This decides whether
+  PK can come from counts or needs the full identity.
+## Session 3, round 11: T-dense(7.72); FRONT-½ and the cyclic barrier (2026-10-19 night)
 - Round 11 DONE, lead-verified (PROOFS P63; E85 re-derives all 188 support lines, 22615 leaves, 0 failures).
   - D <= 259/2000, so T-dense(C < 7.7220). New support-specific symbol lines (P63.1).
   - DC-barrier theorem: Re Στ(k)ĥ(k)^j >= τ(0)(m^j − 2^{1−j}Σ|r|^j). Three-profile escapes pass every anchored test.
@@ -312,9 +341,9 @@ in parallel.
   - CYCLIC BARRIER: the front-only lemma TBS implies cyclic half-set Chowla (open).
   - Parseval roughness: nested tapers force Hölder-½ envelopes. M >~ X/N is proved for locally N-periodic
     families; X√(p/N) is heuristic.
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 12; superseded)
 - Codex MATH agent, round 12 (.research/agents/tdense12_brief.md; report tdense12_report.md): the coupled front problem.
-## First concrete next step (2026-10-19 night, newest)
+## First concrete next step (2026-10-19 night, round 12; superseded)
 - Verify round 12:
   - FRONT-½ via coupling, or the precise obstruction;
   - the rigorous Parseval-roughness theorem;

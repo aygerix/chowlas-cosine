@@ -1918,3 +1918,114 @@ Status:
 - The four-moment alternative (A)/(B) is UNRESOLVED. The missing statement is either a positive-packet configuration
   with bounded fourth moment and the non-symmetric local Bernoulli law, or a binary-specific second-order inequality
   excluding all of them.
+
+## P64. Round-12 agent results (report .research/agents/tdense12_report.md; lead re-checked every item marked ✓) — 2026-10-19
+No new unconditional T-dense endpoint: it stays C < 2000/259 (P63). Round 12 gives the coupled reduction, the nested
+exclusion theorem, cyclic homogenization, and a precise barrier for scalar cyclic arguments.
+1. ✓ R12-N, NESTED PERIODIC SCHEDULES (paper proof; lead re-derived; E89: 538 cases, 0 violations).
+   - Statement. Let N >= 1, A finite with n = |A|, r = #{a mod N}, l0 = |A ∩ NZ|. If A ∩ NZ = {N, 2N, …, l0·N}
+     (possibly empty), then M(A) >= n/((3π + 2)r). With symmetric residue counts (l_c = l_{−c}), M >= 2n/((3π + 2)r).
+   - Proof.
+     - Let v_s = f_A(2πs/N). Then Σ_s v_s = N·l0 and Σ_s v_s² = NΣ_c((l_c + l_{−c})/2)² >= N n²/(2r).
+     - From (v_s + M)(n − v_s) >= 0: n²/(2r) <= n(l0 + M).
+     - Averaging over the N shifts restricts f_A to A ∩ NZ. The progression at t = 3π/(2l0 + 1) has value
+       −(1 + csc(3π/(4l0 + 2)))/2 <= −2l0/(3π), so M >= 2l0/(3π). Combine the two bounds.
+   - Corollary (nested model A = {k <= H : k <= U_{k mod N}}): M >= dX/((3π + 2)p0·N). So dense nested schedules
+     with N = o(√X) have M/√X -> ∞. The bound survives o(X/N) Hamming perturbations.
+   - General form (lead): M(A) >= max(n/(2r_N) − l0(N), M((A ∩ NZ)/N)) for every N. This is useless when residues are
+     equidistributed, which P63.4 forces for dense counterexamples at every fixed N.
+2. ✓ EXACT FRONT AND CYCLIC IDENTITIES.
+   - Front: S_Y(x) = Σ_{k<Y}(1 − k/Y)(2·1_A(k) − 1)cos kx = 2(F_Y ⋆ f_A)(x) − (F_Y(x) − 1)/2 (normalized
+     convolution). So S_Y >= −2M − (π² − 1)/2 on Y^{−1/2} <= |x| <= π.
+   - Cyclic: for even s: Z_q -> {±1} with H_γ = Σ_c s_c e(−γc/q),
+         S_Y(x) = (1/(2q))Σ_γ H_γ F_Y(x + 2πγ/q) − s_0/2.
+   - Root filter: Σ_γ F_Y(x + 2πγ/q) = q for 1 <= Y <= q; it equals qF_L(qx) for Y = Lq.
+   - CORRECTION to NOTEBOOK cont. 16 (6b): H_γ = 2λ_γ (γ ≠ 0) and H_0 = 2|S| − q. The partial-period bound is
+     S_Y >= −max(2K, 1)/2 − ½, not −K/2 − ½.
+3. ✓ R12-H, CYCLIC HOMOGENIZATION (lead re-derived every step).
+   - Statement. Let q_j -> ∞ be odd primes and B_j = −B_j ⊂ Z_{q_j} with |B_j|/q_j -> ½ and K_j = o(√q_j). Then every
+     dilate is balanced on every cyclic interval: sup_I |Σ_{k∈I}(1_{B_j}(bk) − ½)|/q_j -> 0 for each fixed b ≠ 0.
+     Also every fixed rational twist with continuous weight is o(q_j).
+   - Proof.
+     - Weak limits p of the coefficient measures have Fourier coefficients >= 0, so p is continuous and PD.
+     - Energy-PD: r = b − smooth_h(b) has r̂ = (1 − L)λ >= −K, so r + Kδ_0 is PD. Its Schur square gives
+       (r²)^ >= −K² − 2K. Strong smoothing gives r² -> p(1 − p) weakly, and K² = o(q) makes e = p(1 − p) PD.
+     - At half density, p(0) = max p and e(0) = max e force p ≡ ½.
+   - COROLLARY (lead): K = o(√q) ⇒ max_{γ≠0}|λ(γ)| = o(q), i.e. Fourier uniformity. Dilate by γ_j:
+     λ_{γ_j B}(1) = λ_B(γ_j), and apply R12-H to the dilates.
+   - Fourier form of the last step (lead): at p̂(0) = ½, ê(γ) = −Σ_{j≠0,γ} p̂(j)p̂(γ − j) <= 0 for γ ≠ 0. So
+     energy-PD forces p̂(j)² = 0 (take γ = 2j).
+   - Novelty: new to the project record. External priority unchecked. Compare Jin–Milojević–Tomon–Zhang (item 10):
+     they get proximity to a subgroup for K <= q^γ with γ < 1/4; R12-H gets uniformity, a weaker conclusion, for all
+     K = o(√q).
+4. ✓ CYCLIC BARRIER, EXACT QUANTIFIERS. Asymptotic TBS (balanced sign sequences without rational atoms have
+   front dips >= c√Y) ⇒ some c' > 0 with −min_{γ≠0} λ_B(γ) >= c'√q for every symmetric half-set B of Z_q (q >= 5).
+   - Proof: take Y_j = q_j; R12-H supplies both TBS hypotheses, and item 2 gives S >= −max(2K, 1)/2 − ½.
+   - Integer side: with p(0) = ½, a slow diagonal Y_j = ε_j X_j shows TBS excludes the exact endpoint a = ½.
+   - A UNIFORM a* < ½ needs a stability statement, because p(0) is not weakly continuous (narrowing PD bumps).
+5. CSFG(20) (CONJECTURED) and ✓ R12-B (conditional theorem).
+   - CSFG(20). There is η ∈ (0, ½) such that, for symmetric B_j ⊂ {|c| <= q_j/4} ⊂ Z_{q_j} with |B_j|/q_j >= 1/80
+     and K_j = o(√q_j), every weak profile has P(0) <= ½ − η.
+   - R12-B. CSFG(20) ⇒ T-dense(C) for every C < min(20, 1/D_σ), where σ = 1 − 4η² and
+     D_σ = sup ∫φ(σw²) <= σD < D.
+   - Proof: embed B = A ∪ (−A) into Z_q with a prime q ∈ (4X, 8X]. Then λ_B(γ) = 2f_A(2πγ/q) >= −2M and
+     P(t) = p(u|t|). Run P61 with x ↦ φ(σx), using 4a(1 − a) <= σ.
+   - CSFG is a cyclic statement about an integer-shaped object; it implies the integer FRONT gap. Its value is that
+     it isolates exactly what is needed.
+6. ✓ FINITE EXACT TD-COUPLE IS VACUOUS. On a fixed finite group, continuous binary tapers are constant. A usable
+   finite-envelope lemma needs an explicit approximation norm and rate.
+7. ✓ ROUGHNESS IDENTITIES.
+   - General (no nestedness): Σ_{s≠0}|Z_s(ξ)|² = ∬(|E_t ∩ E_v|/N)e^{iξ(t−v)} − |∫p e^{iξt}|².
+   - Real part: Σ_s(Re Z_s)² = (1/(2N))Σ_c(|B_c|² + Re B_cB_{−c}).
+   - Nested case: ξ²·(complex energy) -> 2p0 − p0², not 2p0 (the brief's version was wrong). Symmetric real energy
+     -> p0/2.
+   - The L²-vector increment identity Σ_s|e_s(t) − e_s(v)|² = |p(t) − p(v)| holds. Individual envelopes are NOT
+     Hölder-½ (they are staircases).
+   - Positive energy does not give negative spikes. Counterexample: a subgroup pattern at ξ = 0.
+8. ✓ R12-U, NONNESTED COUNTEREXAMPLE TO X/N.
+   - Random full/empty cells of length L ≍ √X with probabilities following (1 − t)/2. The cells are locally
+     2-periodic and not nested.
+   - Hoeffding on an O(X³) grid gives M = O(X^{3/4}√log X) = o(X).
+   - So M >= c·X/N and M >= c·X√(p0/N) are false for general nonnested schedules. A bound on the number of time changes
+     is indispensable.
+9. ✓ PK(η) AND THE SCALAR BARRIER R12-S (cyclic half-set exponent).
+   - PK(η) (CONJECTURED): max h <= Cλ^{2−η} for h = ĝ + λ, where λ is the actual negative threshold. Then
+     λ >= (p/C)^{1/(3−η)}, because p² <= Σh² <= max h·Σh <= max h·pλ.
+   - R12-S. At λ = p^{1/3}, a symmetric nonnegative h with h(0) = λ − 1 matches EXACTLY:
+     - mass and energy;
+     - the off-zero bound h(γ)² <= pλ(λ − 2);
+     - max h <= λ³/2.
+     Its values are H ± √v on m = 4⌈T'²/(4E')⌉ points.
+   - Lead check: m >= T'²/E' gives v >= 0, and m < T'²/E' + 4 <= 2T'²/E' gives v <= H².
+   - So no argument that keeps only these scalar deductions beats exponent 1/3. The FULL off-zero convolution
+     (equivalently, binarity) is required.
+10. LITERATURE (quoted, versions checked by the agent).
+    - Sanders 0807.5104v2 Thm 1.2: exponent 1/3 for half-sets.
+    - Jin–Milojević–Tomon–Zhang 2509.03490v2 Thm A.1: K <= |G|^γ with γ < 1/4 ⇒ δ|G|-close to a subgroup, in any
+      finite group; polynomial proximity for γ < 1/6.
+    - Bu et al. 2610.17160v1 Prop. 9.7: M >= ((n − 1)/(64·C·200000))^{1/4} for A ⊂ [1, Cn]. Our T-dense gives exponent
+      ½ for C < 7.72.
+    - Bedert v3 (1/5 − o(1)); Shankar v1 (log-free 1/5).
+    - No 2024–2026 improvement of the half-set exponent beyond 1/3 was found (bounded search).
+11. NUMERICAL (VM; archived in examples/r12_certificates/).
+    - Structured removal schedules: coset, multiplicative, Bohr and random removals at N <= 257.
+    - Gurobi schedule MILPs: N = 29 optimal; N = 61 incumbent 0.0334.
+    - Every tested schedule keeps a square-root-sized dip. Arb point certificates: −5474 (N = 29), −8351 (61),
+      −10139 (64), −32574 (257).
+    - Nonnested probe: M/H = 0.073, 0.036, 0.034 at H = 2^16, 2^18, 2^20.
+12. Lead additions (finite cyclic spectral bounds; for symmetric B ⊂ Z_q with |B| = (q − 1)/2, 0 ∉ B,
+    Λ = max_{γ≠0} λ, K = −min_{γ≠0} λ).
+    - Exact off-zero identity: Σ_{β≠0,γ} λ(β)λ(γ − β) = λ(γ) for γ ≠ 0. This is b² = b, i.e. λ⋆λ = qλ, with the
+      β ∈ {0, γ} terms removed.
+    - Parseval: Σλ⁺ <= (K − ½)(q − 1), so Λ >= ((q + 1)/4 − K²)/(K − ½).
+    - Second order: dilate so Λ = λ(1), and read the identity at γ = 2. Mixed-sign pairs are >= −2KΣλ⁺, so
+      Λ² <= Λ + 2K(K − ½)(q − 1), hence Λ <= √(2q)K + 1. Combined with Parseval this gives K >~ 0.42q^{1/4} (the
+      elementary exponent).
+    - PK(1), i.e. Λ <= CK, would give √q. Paley has Λ ≈ K ≈ √q/2.
+Status:
+- Items 1–4, 6–9, 12: paper proofs, lead-checked. Item 5: R12-B is proved and CSFG is CONJECTURED. None
+  kernel-checked.
+- Missing statement, in its sharpest form:
+  - integer side: a uniform front gap (CSFG);
+  - cyclic side: PK(η) for some η > 0, which beats Sanders.
+  Both need the full convolution identity, not scalar moments.

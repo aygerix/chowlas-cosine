@@ -703,3 +703,6 @@ Proved this block:
 - PR(1) large-peak case: if 1̂_Ω(k) >= 0 for |k| <= L and g = P_L1_Ω has g(0) >= 4/3, show U >= cμ.
 - Start by testing whether g(0) >= 4/3 with U/μ < 0.1 is possible (SLSQP over unions of arcs, as in E100b, objective
   g(0)). If it is impossible numerically, prove it via Bernstein plus the identity ∫g(1 − g) = U.
+- (cont. 25) E105: in the PR(1) large-peak regime (g(0) >= 4/3) the best unresolved fraction found is 0.104–0.157 at
+  L = 8, 16, above c* = 0.0947 and growing with the peak. L = 32 is a search failure, not evidence. Next: a paper proof of
+  the large-peak case (EXPERIMENTS E105 reading).

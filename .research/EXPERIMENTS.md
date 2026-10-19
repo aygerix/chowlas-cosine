@@ -1527,3 +1527,27 @@ Reading:
   converging fast to Exp(1), which would give λ_half = 0.39 and η = 0.54. Watch at larger q; R is unaffected.
 - So the C* regime (spiky, M << √n) is empty of examples at every scale we can reach, consistent with SB and with
   Chowla being true.
+
+## E105 (2026-10-19) PR(1) large-peak test (src/e105_pr_largepeak.py, src/e105_batch.sh; VM; examples/e105/e105.jsonl)
+NUMERICAL, heuristic search: SLSQP over symmetric unions of J <= 8 arc pairs, 150 random starts per J.
+- Minimize the unresolved fraction δ_L = U/|Ω| subject to: 1̂_Ω(k) >= 0 for 1 <= k <= L; |Ω| <= ½; peak g(0) >= γ,
+  where g = P_L1_Ω.
+- This is the case P73 does not cover.
+
+| L | γ = 1.25 | γ = 4/3 | γ = 1.5 | γ = 2 |
+|---|---|---|---|---|
+| 8 | 0.0971 | 0.1037 | 0.1506 | no feasible point |
+| 16 | 0.1179 | 0.1568 | 0.1552 | no feasible point |
+| 32 | no feasible point | no feasible point | no feasible point | no feasible point |
+
+Reading:
+- In the large-peak regime the unresolved fraction is LARGER than the conjectured c* = ½ − 4/π² = 0.0947 and grows with
+  γ. So the large-peak case is not where PR(1) could fail.
+- γ = 2 was never reached. The witnesses at L = 8 are dilated half-density square waves (period ≈ 1/8, |Ω| = ½) whose
+  fundamental sits at k ≈ L. That matches the cont. 24 analysis: a large peak needs structure at scale 1/L, which puts
+  energy just above L.
+- L = 32 found no feasible point at all. That is a SEARCH failure with <= 8 arcs, since peak >= 1.25 at L = 32 needs
+  many arcs; it is inconclusive, not evidence.
+- Next: a paper proof of the large-peak case. Route: Bernstein (a peak >= 4/3 forces |g − 1_Ω| >= 1/6 on an arc of
+  length ~1/L) plus the identity ∫g(1 − g) = U. This closes the case when |Ω| <~ 1/L. For |Ω| >> 1/L, show a peak >= 4/3
+  needs scale-1/L structure whose energy straddles k = L.

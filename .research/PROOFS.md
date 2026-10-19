@@ -682,6 +682,10 @@ P29(b), twisted form: spectral front-loading (PROVED, same proof with the grid s
 
 ## P31. Window–Nikolskii inequality: Chowla for every set that is not front-loaded
 **Consolidated clean write-up (2026-10-19): .research/notes/dense_chowla_P31.md.**
+**KERNEL-CHECKED (lead-audited 2026-10-19):**
+- Fejér–Riesz, P31-E and P31 with the elementary constant.
+- Dense theorem |A| >= 0.41·max A ⇒ M >= √|A|/1000.
+- See CERTIFICATES.md.
 - Theorem 1, Lemma 2 (P31-E) and Theorem 3 with explicit (a)/(b).
 - Corollaries: dense c(δ) table, threshold 0.4055 with the elementary constant.
 - The dyadic and no-small-elements corollaries are void: linear M holds trivially there (P31-C correction).

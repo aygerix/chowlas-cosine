@@ -57,3 +57,26 @@ Certificate 2: chowla.sturm_certify(A, B, 10^7), PARI/GP 2.15.4 on dirichlet:
 Hence M(A72) ∈ [4.0309354, 4.0309358] and **R <= 0.5700604**; M(A68) ∈ [4.0483104, 4.0483108] and R <= 0.5725176.
 Status: INTERVAL-CERTIFIED finite case, two independent methods.
 Reproduce with `src/dirun.sh -c 1 python .research/agents/construct_scratch/cert_n50.py`.
+
+## KERNEL-CHECKED: P31 chain and the dense theorem (2026-10-19; Lean agent, lead-audited)
+Files: lean/ChowlaCosine/P31/*.lean (2764 lines): WindowMoments, Averaging, Fejer, WindowBound, FejerRiesz, Main,
+ElementaryConstant, ElementaryConvolution, AnalyticNikolskii, Corollaries.
+Lead audit:
+- `lake env lean` on a separate file, using the built .oleans as of 22:05. Every theorem below depends only on
+  [propext, Classical.choice, Quot.sound].
+- grep finds no sorry / axiom / admit / native_decide in the P31 sources.
+Theorems (statements read by the lead):
+- `finite_fejerRiesz (L) : FejerRiesz L`. Every real h whose complexification is a trigonometric polynomial of degree
+  <= L and which is >= 0 everywhere equals |Σ_{j<=L} u_j e^{ijx}|² for some u ∈ C^{L+1}. This is the FULL finite
+  Fejér–Riesz theorem, including zeros on the circle; the local mathlib has no version.
+- `elementary_convolution_bound`: v >= 0 on Fin (L+1), Σv² = 1 ⇒ Σ_k (v∗v)_k² <= (811/1000)(L + 1) + 71/300
+  (Lemma P31-E). The integral constant is certified by a 32-term geometric expansion with exact tail.
+- `elementary_analyticNikolskii`: the same bound for all complex analytic coefficient vectors, as circle means of
+  |U|⁴ and |U|².
+- `p31_elementary` (Theorem 1 with the elementary constant). For every w, every finite A ⊂ N with all a > 0, and
+  every M with ∀ real x, −M <= Σ_{a∈A} cos(ax):
+      windowMass w·(|A|/2 + M²) <= ((811/1000)(max A + w + 1) + 71/300)·(M² + windowEnergy w A/2).
+- `dense_elementary`. Same hypotheses plus (41/100)·max A <= |A| ⇒ √|A|/1000 <= M. Holds at every finite size (the
+  small-X case uses the earlier checked bound M >= ½).
+Meaning: Chowla's conjecture is KERNEL-VERIFIED for all sets of density >= 0.41 in [1, max A], with c₀ = 1/1000.
+The constants are not optimized; the paper constants are in .research/notes/dense_chowla_P31.md (C3).

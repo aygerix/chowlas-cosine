@@ -125,8 +125,12 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 ## Running now (2026-10-19 late)
 - grb_group_bt.py (Gurobi, 2 threads), E37g successor.
 - Codex agent (one at a time): Lean P31 + Beckner (.research/agents/lean_p31_brief.md).
-  - The conditional T3 chain is KERNEL-CHECKED (hypothesis `FejerRiesz (X+w)`, a definition).
-  - Now on T1 (Fejér–Riesz). Verify its report before recording.
+  - T1–T4 KERNEL-CHECKED, lead-audited 2026-10-19 (CERTIFICATES):
+    - full finite Fejér–Riesz (`finite_fejerRiesz`);
+    - P31-E;
+    - unconditional P31 (`p31_elementary`);
+    - `dense_elementary`: |A| >= 0.41·max A ⇒ M >= √|A|/1000 at every size.
+  - Now on T5 (Beckner M1: Young on R).
   - NEXT agent after it: Lean for P31-C (explicit (C) and the dense c(δ) table). The dyadic statement is VOID:
     linear M is trivial there.
 - DONE this session (2026-10-19 late):

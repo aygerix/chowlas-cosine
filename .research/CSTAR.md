@@ -28,11 +28,13 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
      exactly two-valued transform on all of Z is periodic (K = 1, S = qZ). The band edge X is what costs Gibbs.
 
 (O6) THE OBJECT EXISTS IN FINITE GROUPS: quadrics in F_p^r (lead, 2026-10-19; standard Gauss-sum computation).
-     Take A = {x ∈ F_p^r \ 0 : Q(x) = 0}, Q a nondegenerate quadratic form, r >= 3, p odd.
-     - Spectrum (exact): 1̂_Q(ξ) = p^{r/2−1}(p − 1)·η on the dual cone Q*(ξ) = 0, and −p^{r/2−1}·η off it
-       (η = ±1, the Gauss sign for even r; analogous for odd r). Up to the trivial character it is TWO-VALUED.
-     - With the sign right: M = p^{r/2−1}, n ≈ p^{r−1}, so R = M/√n ≈ p^{−1/2} → 0 (fixed r, p → ∞). This is the
-       group-agnostic n^{1/4} at r = 3.
+     Take A = {x ∈ F_p^r \ 0 : Q(x) = 0}, Q a nondegenerate quadratic form, r EVEN >= 4, p odd.
+     - Spectrum (exact): Σ_{x∈Q} e(ξ·x/p) = η p^{r/2−1}(p − 1) on the dual cone Q*(ξ) = 0, and −η p^{r/2−1} off it.
+       Here η = ±1 is the Gauss sign χ((−1)^{r/2} det Q). Up to the trivial character it is TWO-VALUED.
+     - Choose Q with η = +1. Then M = p^{r/2−1} + 1, n ≈ p^{r−1}, so R ≈ p^{−1/2} → 0 (fixed r, p → ∞), and
+       M ≍ n^{(r−2)/(2(r−1))}: n^{1/3} at r = 4.
+     - Odd r gives no gain (the off-cone values ±p^{(r−1)/2} carry both signs).
+     - η = −1 puts the spikes NEGATIVE (M ≍ p^{r/2}).
      - Anatomy, matching F1–F7 exactly:
        - spikes on the dual cone, of measure ε² ≈ 1/p, at height ≈ √(np) = √n/ε (mesoscopic);
        - a flat negative background −ε√n;

@@ -188,8 +188,9 @@ in parallel.
   +0.026 of Bu. P31's barrier is purely methodological. Profile methods are exhausted for Chowla.
 
 ## NEW 2026-10-19 (late night, session 3)
-- P36 KERNEL-CHECKED (exact constant). Beckner M4 partial is kernel-checked; the codex M4 agent is running
-  (.research/agents/lean_m4_brief.md).
+- P36 KERNEL-CHECKED (exact constant). Planar geometric Brascamp–Lieb (rank one, arbitrary L¹ data) KERNEL-CHECKED,
+  with the explicit Young frame and the exact Beckner factor (CERTIFICATES). Remaining for sharp Young: the Lp
+  substitution step, then M5 and P31-N (next codex agent).
 - Construction line: the ONE-BU-STEP class A = 3D ∪ E, analysed (NOTEBOOK "One Bu step with D fixed", T1–T8).
   - Z lies in a triangle of inradius P = f_D(3x) + M.
   - Ceilings: pinch λ <= 2 + O(M/|D|); phase-blind λ <= R(D)² + ½ (bi-flat iff equality).

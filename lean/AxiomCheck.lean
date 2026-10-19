@@ -653,3 +653,50 @@ open ChowlaCosine
 
 #print axioms ChowlaCosine.P36.continuous_squareKernel
 #print axioms ChowlaCosine.P36.continuous_sineKernel
+
+-- 30. M4: whole-plane large-time limit and the initial-time Fatou passage.
+#print axioms ChowlaCosine.Beckner.weightedFrame_sum_weights
+#print axioms ChowlaCosine.Beckner.geometricHeatProduct_rescale
+#print axioms ChowlaCosine.Beckner.rescaled_heatFlow_gaussian_bound
+#print axioms ChowlaCosine.Beckner.integrable_plane_gaussian
+#print axioms ChowlaCosine.Beckner.integral_plane_gaussian
+#print axioms ChowlaCosine.Beckner.integral_plane_dilate
+#print axioms ChowlaCosine.Beckner.planePoint_smul
+#print axioms ChowlaCosine.Beckner.frame_heatKernel_product
+#print axioms ChowlaCosine.Beckner.integral_frame_heatKernel_product
+#print axioms ChowlaCosine.Beckner.tendsto_integral_rescaled_geometricHeatProduct
+#print axioms ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct_sq
+#print axioms ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct
+#print axioms ChowlaCosine.Beckner.integral_geometricHeatProduct_le_mass
+#print axioms ChowlaCosine.Beckner.heatFlow_initial_rescale
+#print axioms ChowlaCosine.Beckner.tendsto_heatFlow_initial_sq
+#print axioms ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit
+#print axioms ChowlaCosine.Beckner.tendsto_geometricHeatProduct_initial_sq
+#print axioms ChowlaCosine.Beckner.geometric_brascamp_lieb_bounded_continuous
+
+-- 31. M4: compact density, null-set pullback, and unrestricted planar geometric BL.
+#print axioms ChowlaCosine.Beckner.geometric_brascamp_lieb_continuous_compact
+#print axioms ChowlaCosine.Beckner.ae_plane_linear
+#print axioms ChowlaCosine.Beckner.ae_plane_inner
+#print axioms ChowlaCosine.Beckner.exists_positive_compact_datum
+#print axioms ChowlaCosine.Beckner.exists_positive_compact_approximation
+#print axioms ChowlaCosine.Beckner.exists_positive_compact_approximation_seq
+#print axioms ChowlaCosine.Beckner.exists_common_support_radius
+#print axioms ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit_bounds
+#print axioms ChowlaCosine.Beckner.geometric_brascamp_lieb
+
+-- 32. M4: explicit interior Young frame, determinant, and exact Beckner factors.
+#print axioms ChowlaCosine.Beckner.isWeightedFrame_plane_of_coefficients
+#print axioms ChowlaCosine.Beckner.youngFrameMatrix_det
+#print axioms ChowlaCosine.Beckner.youngFrame_coordinate_relation
+#print axioms ChowlaCosine.Beckner.young_scalar_factor
+#print axioms ChowlaCosine.Beckner.young_scalar_factor_beckner
+#print axioms ChowlaCosine.Beckner.youngFrame_sharp_factor
+#print axioms ChowlaCosine.Beckner.youngFrame_matrix
+#print axioms ChowlaCosine.Beckner.youngFrame_isWeightedFrame
+#print axioms ChowlaCosine.Beckner.youngFrame_unit
+#print axioms ChowlaCosine.Beckner.youngFrame_relation
+#print axioms ChowlaCosine.Beckner.geometric_brascamp_lieb_youngFrame
+#check @ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct
+#check @ChowlaCosine.Beckner.geometric_brascamp_lieb
+#check @ChowlaCosine.Beckner.youngFrame_sharp_factor

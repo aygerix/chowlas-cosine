@@ -30,3 +30,8 @@ import ChowlaCosine.Beckner.HeatFlowRelative
 import ChowlaCosine.Beckner.GeometricHeat
 
 import ChowlaCosine.Beckner.HeatFlowRescale
+
+import ChowlaCosine.Beckner.HeatFlowProductLimit
+import ChowlaCosine.Beckner.HeatFlowInitial
+import ChowlaCosine.Beckner.HeatFlowDensity
+import ChowlaCosine.Beckner.YoungFrame

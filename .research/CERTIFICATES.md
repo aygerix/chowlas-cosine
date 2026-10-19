@@ -140,3 +140,17 @@ Beckner M4 (partial, NOT the sharp Young theorem):
 - `tendsto_sqrt_mul_heatFlow`: scalar large-time Gaussian asymptotic for every signed L¹ datum.
 - Remaining: the product large-time limit, the initial-time passage, density, and the 2×2 frame algebra
   (.research/agents/lean_next_report.md).
+
+## 2026-10-19 Geometric Brascamp–Lieb (planar, rank one) — KERNEL-CHECKED (codex Lean agent; lead-audited)
+Lead audit: `lake build` passes (8757 jobs); AxiomCheck gives 422/422 standard-axiom entries, 0 sorryAx; no forbidden
+tokens in Beckner/.
+- `ChowlaCosine.Beckner.geometric_brascamp_lieb` (HeatFlowDensity.lean:211). Hypotheses: E is a real inner-product
+  space with an orthonormal basis b : Fin 2; ι finite; f_i >= 0 integrable on ℝ; c_i >= 0; ‖u_i‖ = 1; and the frame
+  identity Σ_i c_i⟨u_i, x⟩⟨u_i, y⟩ = ⟨x, y⟩ for all x, y. Conclusion: z ↦ Π_i f_i(⟨u_i, z⟩)^{c_i} is integrable on ℝ²
+  and ∫ Π_i f_i(⟨u_i, z⟩)^{c_i} dz <= Π_i (∫ f_i)^{c_i}.
+  There are no support, continuity or positive-mass hypotheses. This is the Ball–Barthe geometric Brascamp–Lieb
+  inequality in the plane, proved by heat flow: large-time limit, initial-time Fatou passage and L¹ density.
+- `youngFrame_isWeightedFrame`, `youngFrameMatrix_det` (= √a√b√d) and `youngFrame_sharp_factor`. These give the
+  explicit Young frame for interior exponents and the exact Beckner factor Π A_{p_i}.
+- NOT yet: the Lp change-of-variables passage to the sharp Young inequality, M5, P31-N
+  (.research/agents/lean_m4_report.md).

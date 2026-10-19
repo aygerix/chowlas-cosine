@@ -33,3 +33,17 @@ errors are positively skewed the dense limit is >~ 0.5255. LNS/SA data rise with
   - Any bi-flat V with R(D) < 1/√2 beats ½. Multiplicity >= 2 is necessary; exact versions are impossible in Z, so it
     must be approximate.
 - Status: OPEN target. No candidate yet.
+
+## One-Bu-step class A = 3D ∪ E with D fixed (2026-10-19 night; NOTEBOOK T1–T10; E64, E65)
+- Geometry. Z(x) = e^{ix}W(3x) must lie in the equilateral triangle of inradius P(x) = f_D(3x) + M.
+- Ceilings:
+  - pinch λ <= 2 + 2M/|D|;
+  - phase-blind λ <= R(D)² + ½, attained iff W = V² with V bi-flat; for Sidon D this is Bu;
+  - for general q: pinch λ <= q − 1, phase-blind λ <= (1 + 2R²)/(q − 1);
+  - q = 2 is pinned at λ <= 1 + M/|D|, attained by "Bu-q2" 2D ∪ {2(s + s') + 1}.
+- Beating ½ from Sidon D needs a gain f > 8ε in λ at slack εk. Generic extras give f <= 2ε² (T10, heuristic).
+- Exact optima (E64):
+  - dense optimal D admit no E at slack <= 5% (rigid: W must vanish at every near-minimiser);
+  - Sidon D at small k beat Bu at equal k by central-spike vertex locking (R(A)/R_Bu = 0.80–0.94 for k = 6–8);
+  - the larger-k trend (k = 9–24) is pending.
+- Status: OPEN, under test. If R_opt/R_Bu -> 1, the class is exhausted at ½, as predicted.

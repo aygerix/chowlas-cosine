@@ -1,7 +1,7 @@
 /* profile_sa.c — E49: does steep front-loading help? P31 proves M >> √n unless A is front-loaded beyond ~2.5–2.9δ
  * (density near 0 vs average). Simulated annealing on M(A) = −min_x Σ_{a∈A} cos(a x) over sets whose density profile
  * is PRESCRIBED: [1, X] is cut into blocks of length b, and block k holds exactly round(Σ_{a∈block} c(1 − a/X)^p)
- * elements (total n). Moves swap an element with a non-element of the same block, so the profile is exact.
+ * elements (total n); p < 0 means the power law min(1, c(a/X)^p) (front-loaded at every scale, E50). Moves swap an element with a non-element of the same block, so the profile is exact.
  * mode 1 (free) instead swaps any element with any non-element in [1, X] (calibration).
  * f is even, so it is evaluated on a grid of G = 8X + 1 points in [0, π], with an O(G) incremental update per move.
  * HEURISTIC: grid minimum only; refine/certify winners separately (src/chowla.py).
@@ -35,7 +35,7 @@ int main(int argc, char **argv) {
     n = 0; double carry = 0;
     for (int k = 0; k < nb; k++) {
         blk_lo[k] = 1 + k * b; blk_hi[k] = (k + 1) * b < X ? (k + 1) * b : X;
-        double want = carry; for (int a = blk_lo[k]; a <= blk_hi[k]; a++) want += c * pow(1.0 - (double)a / X, p);
+        double want = carry; for (int a = blk_lo[k]; a <= blk_hi[k]; a++) want += p >= 0 ? c * pow(1.0 - (double)a / X, p) : fmin(1.0, c * pow((double)a / X, p));
         int ck = (int)floor(want + 0.5); int len = blk_hi[k] - blk_lo[k] + 1; if (ck > len) ck = len; if (ck < 0) ck = 0;
         carry = want - ck; cnt[k] = ck; n += ck;
     }

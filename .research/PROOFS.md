@@ -929,3 +929,33 @@ Remaining step for full-front sets (OPEN, but it looks tractable):
   localized Turán/Gibbs argument (to be proved: P24/P29 localized to runs).
 General fronts: need the recursion f -> g -> g ∗ F' … to contract. The constant 2.31 per step must be beaten by
 g's spike mass on E being a fraction <= 1/2.31 of f's, i.e. a "noise-transfer ratio". To be measured and bounded.
+
+## P34. One-sided Littlewood bound: −min Σ_{j=1}^n cos(jt − θ_j) >= 0.28√n (sharp order) — PROVED (lead 2026-10-19)
+Full statement and proof: .research/notes/littlewood_onesided_P34.md.
+Theorem. Let T(x) = Σ_{j=1}^n Re(b_j e^{ijx}) with b_j ∈ ℂ, |b_j| <= 1, E = Σ|b_j|², and T >= −M on ℝ. Then for every
+0 <= w <= n:
+    W_w(M² + E/2) <= C_L(M² + S_w/2),
+where:
+- L = n + w;
+- S_w = Σ_{j=1}^w (1 − j/(w+1))²;
+- W_w = 1 + 2S_w;
+- C_L is any constant in the Nikolskii inequality (N_L) for nonnegative degree-L polynomials:
+  - L + 1 (trivial);
+  - 0.811(L + 1) + 0.2367 (P31-E, kernel-checked).
+Proof. This is P31's chain with general coefficients. Fejér window K_w(x − x₀)(T + M) >= 0, (N_L), average over x₀.
+Only |b_j|² enters, so phases are free.
+Corollaries.
+- (A) Unit amplitudes, any phases, every n: −min T >= 0.189√n (trivial C_L; asymptotic √(7/2 − 2√3)) and
+  >= 0.282√n (P31-E). The same holds for max T.
+- (B) ±1 Littlewood cosine polynomials: −min Σ_{j=0}^n a_j cos jt >= 0.282√n − 1.
+- (C) |b_j| <= 1 with E >= δn, δ > 0.4055: −min T >= c(δ)√n. This is the complex form of dense Chowla.
+Sharp order: Rudin–Shapiro gives |T| <= √(2n).
+Relation to the literature: Erdélyi arXiv:2607.21877v1 claims n^{1/3}/60 for both one-sided quantities and records only
+the trivial two-sided √n. Its v1 proof has a gap (LITERATURE). P34 gives the sharp order.
+Novelty: one web search plus Erdélyi's own 2026 survey of prior results. No √n one-sided bound was found.
+Checks: E61 adversarial search (phases best −min T/√n ≈ 0.61, flat in n; ±1 signs >= 0.73). All above the bound.
+Lean: the 0/1 instance is kernel-checked (`p31_elementary`, `dense_elementary`). The complex-coefficient
+generalization and Corollaries A–C are the NEXT Lean task.
+Meaning for Chowla: the window method is phase-blind and sees only the energy profile |b_j|². Unit amplitudes on [1, n]
+are the flattest profile, so the one-sided Littlewood problem is exactly the δ = 1 instance of dense Chowla. Sparse
+0/1 sets (Chowla proper) are hard precisely because their profile can be front-loaded (escape class).

@@ -170,6 +170,17 @@ All calculations on GCP VM dirichlet via src/dirun.sh; never the laptop or fejer
 Process rule (user, 2026-10-18): computations are fire-and-forget; foreground time goes to mathematics, one codex agent
 in parallel.
 
+## NEW 2026-10-19 (night)
+- **P34 (PROVED on paper, lead): one-sided Littlewood.** −min_t Σ_{j=1}^n cos(jt − θ_j) >= 0.282√n for all phases and all
+  n. The trivial Nikolskii constant gives 0.189√n. The same holds for max T and for ±1 Littlewood cosine polynomials.
+  - Sharp order (Rudin–Shapiro).
+  - Supersedes Erdélyi 2607.21877v1's claimed n^{1/3}/60.
+  - Proof: the P31 chain with complex coefficients. Only |b_j|² enters.
+  - Note: .research/notes/littlewood_onesided_P34.md. E61 adversarial optimum ≈ 0.61√n.
+  - The 0/1 instance is kernel-checked. The complex form is the NEXT Lean task.
+- **E60:** the escape class contains R -> ½ families. Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within
+  +0.026 of Bu. P31's barrier is purely methodological. Profile methods are exhausted for Chowla.
+
 ## First concrete next step (updated 2026-10-19, end of session block)
 Proved this block:
 - P33: M(A) >= |A|·min A/max A. The linear-test optimum (E58); folklore-level.
@@ -186,4 +197,5 @@ Proved this block:
     - Bu is optimal among phase-blind square identities (single class; incircle).
     - Beating ½ needs either phase-locking or lag multiplicity >= 2 with approximate bi-flatness.
     - E59 (running) gives the R(n) trend for smooth escape-class profiles.
-(3) Lean. The agent is on T5 (Beckner M1–M5). Next agent: P33, the dilation pinch and P29, all short.
+(3) Lean. The agent is on T5 (Beckner M1–M5). Next agent: P34 in complex-coefficient form (generalize p31_elementary to
+    Σ(a_j cos jx + c_j sin jx) with a_j² + c_j² <= 1; Corollaries A–C), then P33, the dilation pinch and P29.

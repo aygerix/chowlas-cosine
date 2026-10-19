@@ -674,3 +674,36 @@ Results (Y = 40 and 80 agree):
 - c(K) = 1/K for K >= 2. PROOFS P33 proves the matching bound M(A) >= (min A/max A)|A| by an explicit Fejér measure
   on the (Y + Z)-th roots of unity.
 - The optimal atoms sit near multiples of 2π/((K + 1)Y), matching P33's construction.
+
+## E60 (2026-10-19) The escape class contains near-½ sets: Bu + far outliers (src/e60_bu_frontloaded.py; examples/e60/e60.jsonl)
+Bu's identity f = ρ² − k/2 − g/2 holds for EVERY Sidon S. Take Bu's certified S (q = 199, k = 40; q = 401, k = 80) and add
+k_out = 2–4 far elements ±(T·L + 7m), keeping S Sidon.
+Core differences and sums stay near 0 while X grows by a factor ≈ T.
+M is a grid minimum: 16× oversampled, capped at 2^28 points (≥ 6× for the largest X). UNCERTIFIED.
+   base     T   k_out  n     X          R (grid)  front ratio (w/X = 0.001 / 0.01 / 0.1 / 1)  P31 LB (all constants)
+   199_40   0   0      1560  97738      0.701     1.7 / 2.4 / 2.0 / 1.65                        0.068–0.126
+   199_40   8   2      1722  833247     0.727     20.5 / 15.5 / 13.5 / 2.6                      0
+   199_40   96  4      1892  9998376    0.727     177 / 139 / 23 / 2.6                          0
+   401_80   0   0      6320  432979     0.657     1.7 / 2.4 / 2.2 / 1.67                        0.042–0.105
+   401_80   32  4      6972  14612712   0.673     71 / 64 / 23 / 2.7                            0
+   401_80   96  4      6972  43837800   0.673     201 / 153 / 26 / 2.8                          0
+Reading:
+- Front-loading by a factor up to 200 costs Bu only +0.016 to +0.026 in R.
+- The escape class is NOT "empty of good sets": it contains R -> ½ families (Bu + outliers; P16 still applies to them).
+- P31's front-loading barrier is a method limitation, not evidence that front-loaded sets have large M.
+- Any lower-bound proof must handle front-loaded Bu sets. Profile-only arguments cannot reach Chowla.
+- (E50/E52 SA found R ~ 1–1.8 for smooth front-loaded profiles. That was search difficulty, not structure.)
+
+## E61 (2026-10-19) Adversarial test of P34 (one-sided Littlewood) (src/e61_littlewood.py; examples/e61/e61.jsonl)
+Maximize min_x T over (a) all phases θ_j (annealed soft-min L-BFGS, 3–6 restarts) and (b) ±1 signs (SA, 2e5–4e5
+iterations). Refine the minimum on a 64n grid with Newton. HEURISTIC search; the bound is the theorem.
+   n     phases −min T/√n   signs −min T/√n   P34 bound (P31-E)
+   8     0.647              0.730             0.350
+   16    0.624              0.749             0.317
+   32    0.610              0.864             0.300
+   64    0.609              0.979             0.291
+   128   0.607              1.040             0.286
+Reading:
+- Consistent with P34: no optimum gets near the bound.
+- The optimal unit-amplitude constant looks like ≈ 0.6, stable in n.
+- Sign-only search is much harder: it is SA-limited, and the values rise with n.

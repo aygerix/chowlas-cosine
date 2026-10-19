@@ -1,0 +1,12 @@
+{"kind": "phases", "n": 8, "best_minT": -1.8299, "negmin_over_sqrt_n": 0.647, "P31_elem_LB": 0.3496}
+{"kind": "signs", "n": 8, "best_minT": -2.0645, "negmin_over_sqrt_n": 0.7299, "P31_elem_LB": 0.3496, "signs": "-+--+-+-"}
+{"kind": "phases", "n": 16, "best_minT": -2.4958, "negmin_over_sqrt_n": 0.624, "P31_elem_LB": 0.3167}
+{"kind": "signs", "n": 16, "best_minT": -2.9974, "negmin_over_sqrt_n": 0.7494, "P31_elem_LB": 0.3167, "signs": "-+--+-+-+-++-+-+"}
+{"kind": "phases", "n": 32, "best_minT": -3.4499, "negmin_over_sqrt_n": 0.6099, "P31_elem_LB": 0.2996}
+{"kind": "signs", "n": 32, "best_minT": -4.8855, "negmin_over_sqrt_n": 0.8636, "P31_elem_LB": 0.2996, "signs": "++++--+-+++++++++++---+-++++++-+"}
+{"kind": "phases", "n": 64, "best_minT": -4.8743, "negmin_over_sqrt_n": 0.6093, "P31_elem_LB": 0.2909}
+{"kind": "signs", "n": 64, "best_minT": -7.8318, "negmin_over_sqrt_n": 0.979, "P31_elem_LB": 0.2909, "signs": "+-----++-++------++-++----++++++--+--+++-++-----+++----+++-+++--"}
+{"kind": "phases", "n": 128, "best_minT": -6.8633, "negmin_over_sqrt_n": 0.6066, "P31_elem_LB": 0.2864}
+{"kind": "signs", "n": 128, "best_minT": -11.761, "negmin_over_sqrt_n": 1.0395, "P31_elem_LB": 0.2864, "signs": "---+---++---++--++++++-++----+-+++-+-++--+++-++-+++-+++--+-+--++--+++-+++++---+--++-++++--++++-++-+----++++---+-+++-++--+--+-+-+"}
+{"kind": "phases", "n": 256, "best_minT": -9.7148, "negmin_over_sqrt_n": 0.6072, "P31_elem_LB": 0.2842}
+{"kind": "signs", "n": 256, "best_minT": -18.4846, "negmin_over_sqrt_n": 1.1553, "P31_elem_LB": 0.2842, "signs": "--++--+--++-+----+---+-+++----+-+-+-+-+++-+--+---+-----++--+--+--++++------++++--+--+-+-+-++-++----+--++-++--+-++-++-+++-+--+---+-++++++++----+--+----+--+++---++-+--+-+++--+--+++----------+-+--+++-++++-+++-+-+-+-+--+--+---++---++-++--+++++-++--++-+-+-++-++"}

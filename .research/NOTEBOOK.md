@@ -1025,3 +1025,24 @@ Spike-model reading (HEURISTIC):
 - Spikes clustered within 1/w raise G and make the inequality EASIER. So the extremal configurations for evading it
   are clustered spike families, i.e. dilation-like structures again.
 Status: a recorded tool, not a route. Parked.
+
+## 2026-10-19 (night) — P34: the one-sided Littlewood problem falls to P31; the escape class contains Bu (lead)
+1. The P31 window chain only sees the coefficient-energy profile |b_j|². For T = Σ_{j<=n} cos(jt − θ_j) (unit amplitudes,
+   any phases) the profile is flat, so the chain closes:
+   - −min T >= 0.282√n (P31-E constant) and >= 0.189√n with the trivial Nikolskii constant;
+   - the same for max T.
+   Sharp order (Rudin–Shapiro). Erdélyi 2607.21877 (July 2026) claims n^{1/3}/60 for this exact class and records only the
+   trivial two-sided √n. PROOFS P34, note .research/notes/littlewood_onesided_P34.md. E61: optimum ≈ 0.61√n.
+   - Status: proved on paper. The 0/1 instance is kernel-checked. Next Lean task: the complex-coefficient form.
+2. E60: Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within +0.026 of Bu.
+   - So the escape class contains R -> ½ families.
+   - The P31 front-loading barrier says nothing about where good sets live. Profile methods are exhausted for Chowla,
+     and any proof must handle front-loaded Bu (P16 does, structurally).
+3. Strategic consequence.
+   - Lower-bound line L1 (SR / arithmetic) remains the only Chowla route.
+   - The window/Nikolskii technology is now best exported: it settles the one-sided Littlewood problem and the dense /
+     flat-profile cases with general coefficients.
+   - Next exports to check:
+     (a) Erdélyi's Theorem 1.2-type sparse sums Σ A_j cos(λ_j t) under a flat-profile hypothesis (P31 criterion);
+     (b) Littlewood-type polynomials with coefficients in a finite set (e.g. {0, ±1} with density);
+     (c) multivariate / Steinhaus-random-phase versions.

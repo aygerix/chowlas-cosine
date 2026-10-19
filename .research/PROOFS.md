@@ -2394,3 +2394,31 @@ Reading (HEURISTIC): Chowla_τ (√n for all [1−τ, 1+τ] weights) is a strict
 sets (negative region of positive measure) it holds by (b); E103 measures only constant-factor losses there. In the
 spiky regime (the C* regime) (b) is empty, and (d) says a proof must either use exact Booleanity or find an A-spread
 certificate that is not a level-set measure.
+
+## P73. Robust few-spike lemma: Boolean sets are L²-far from PD functions with peak < 4/3 (lead, 2026-10-19; PROVED, elementary)
+This supplies the L² (Freiman-type) robust version that NOTEBOOK cont. 19.2(iv) asked for, in Z and on T.
+Statement (Z). Let S ⊂ Z be finite and nonempty, and φ: Z -> C positive definite with φ(0) = m₀. Let
+E = ‖φ − 1_S‖²_{ℓ²(Z)}. For every δ ∈ (0, ½): if m₀ < (4 − 5δ)/3, then E >= δ²(|S| − 1)/3.
+Statement (T). Let Ω ⊂ T be measurable with 0 < |Ω| <= ½, and g ∈ C(T) positive definite with g(0) < (4 − 5δ)/3. Then
+‖g − 1_Ω‖²₂ >= δ²|Ω|/3.
+Proof (Z; T is identical, with Macbeath |A + B| >= min(1, |A| + |B|) in place of Cauchy–Davenport).
+1. ψ := m₀ − Re φ >= 0 is conditionally negative definite. Indeed, the GNS vectors e_k with ⟨e_k, e_l⟩ = φ(k − l) give
+   ‖e_k − e_l‖² = 2ψ(k − l). So √ψ is subadditive: √ψ(k + l) <= √ψ(k) + √ψ(l).
+2. Let G = {k : |φ(k) − 1_S(k)| <= δ}. Chebyshev gives |Z \ G| <= E/δ².
+3. Take k, l ∈ S ∩ G with k + l ∈ G \ S. Then ψ(k), ψ(l) <= m₀ − 1 + δ and ψ(k + l) >= m₀ − δ, so subadditivity forces
+   3m₀ >= 4 − 5δ. Under the hypothesis this is impossible, hence (S_G + S_G) ⊂ S ∪ (Z \ G), where S_G = S ∩ G.
+4. Cauchy–Davenport in Z: 2|S_G| − 1 <= |S| + |Z \ G|. With |S_G| >= |S| − |Z \ G| this gives |Z \ G| >= (|S| − 1)/3,
+   hence E >= δ²(|S| − 1)/3. ∎
+Consequences.
+- (a) Chowla architecture, cont. 19.2(iii)–(iv). If the front S' = ±B ∪ {0} is ℓ²-approximated by the PD spike sum φ
+  within δ²(|S'| − 1)/3, then the total front spike amplitude is m₀ >= 4/3 − 5δ/3. This closes the few-spike/AP
+  alternative ROBUSTLY. The core (m₀ >~ √|B|) is untouched: for large m₀ the CND metric no longer separates S' from
+  its complement (ratio (m₀ − 1)/m₀ -> 1). That is exactly the Chowla Gram problem again.
+- (b) PR(1) in its small-peak regime (cont. 20.3). For Ω = −Ω with 1̂_Ω(k) >= 0 for |k| <= L and g = P_L1_Ω:
+  - Exact identity: ∫g(1 − g) = Σ_{|k|>L} 1̂_Ω(k)² (the unresolved mass U), since ∫gh = 0 and ∫h = 0 for h = 1_Ω − g.
+  - So U >= δ²|Ω|/3 whenever g(0) = Σ_{|k|<=L} 1̂_Ω(k) <= (4 − 5δ)/3.
+  - The conjectured extremizers have g(0) ≈ 1.137 (half-density square wave) and ≈ 1.18 (arc of radius 1/(2L)), so
+    both sit in this regime (δ ≈ 0.04, giving c >= 5·10^{-4}; not sharp).
+  - The large-peak case g(0) >= 4/3 is OPEN. Example: Ω = {D_L > 0} has g(0) ~ (2/π²)log L and still U/|Ω| ≈ 0.30, so a
+    large peak does not by itself contradict PR.
+Status: PROVED on paper; elementary; not kernel-checked. A fact, not a C* tool.

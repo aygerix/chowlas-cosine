@@ -2403,3 +2403,35 @@ Labels: HEURISTIC unless marked. Purpose: replace the cyclic-only view (rounds 1
      Z through a rank-4 GAP/Bohr embedding, with and without tapered boundaries. Measure M/√n.
      - If the boundary costs only o(√n), we have a construction lead (Epoch track).
      - If the cost is >~ √n, the mechanism is identified for the lower-bound track.
+7. (lead, after E99) C½ IS A SEMICIRCLE EDGE. HEURISTIC, with two PROVED inequalities.
+   - Heuristic: if the self-difference graph H = Cay(Z,±A)[A] looks like a density-α random graph, its bottom edge is
+     −2√(α(1−α)n). At α = ½ this is −√n, i.e. exactly M = √n/2 (C½). The star/sum-free extreme (P9) gives the same
+     √n/2. E99 confirms a soft edge at ≈ −0.72√n on every near-extremal set, with delocalized bottom vectors.
+   - (a) PROVED (Bhatia–Davis). Let H be any finite real symmetric matrix with tr H = 0 (e.g. Cay[W] for any W). Fix
+     τ > 0; let μ_τ, v_τ be the mean and variance of the eigenvalues <= τ. Then
+         −λ_min(H) >= v_τ/(τ + |μ_τ|) + |μ_τ|.
+     (Those eigenvalues lie in [λ_min, τ], with μ_τ <= 0.) With P9, 2M >= the same quantity.
+     So a √n-scale BULK — eigenvalues of size ~√n carrying a constant fraction of ‖H‖_F² = 2e — forces M >= c√n.
+   - (b) PROVED (trace split). If λ_min(H) >= −K and tr H = 0, write H = P − N (spectral split). Then ‖N‖ <= K,
+     tr P = tr N <= nK, and
+         ‖H − P‖_F² <= nK².
+     If K = ε√n, then H is ε-close in normalized Frobenius norm to a PSD matrix of trace <= εn^{3/2}; its effective rank
+     is <= ε²n/α. So a counterexample's self-difference graph is, up to o(n²) entries, a PSD Gram matrix of vectors of
+     squared norm <= εn^{1/2} on average, with inner products in {0,1}: a near-"clique-cover / Hoffman" structure.
+   - Dichotomy to prove:
+     - NOISE (a √n-scale bulk) ⇒ (a) ⇒ √n.
+     - Otherwise (b) ⇒ near-PSD Boolean structure ⇒ approximate-group (clique) clusters ⇒ Gibbs (AP-type, P27/P29).
+     - The AP is exactly the clique extreme: H = J − I.
+8. Stabilizer heuristic, WITH ITS CORRECTION.
+   - Translation-invariant linear spaces on Z: lines are translates of finite types L_j, and every finite set has
+     trivial stabilizer. So each point lies on r = Σ|L_j| lines and d = Σ|L_j|(|L_j| − 1) <= r·max|L_j| <= r².
+   - In groups with subgroups, cosets have stabilizer L, so lines per point = #types. That is how the F_p^4 quadric
+     cone (a union of p² + 1 lines through 0) reaches K ~ d^{1/4}.
+   - CORRECTION: λ_min = −r + min_θ Σ_j |F_{L_j}|², so λ_min >= −K does NOT give r <= K once K -> ∞. Hoffman theory
+     gives r <= K only for BOUNDED K, which is the qualitative M -> ∞.
+   - Exact model kept: S = ⊔_j (L_j − L_j)∖0 (a perfect difference family). There K = r − min Σ_j |F_{L_j}|², and
+     Chowla ⟺ the sum of squared moduli dips >~ √(Σ|L_j|²) below its mean.
+9. Clean falsifiable lemma (CONJECTURED, round 17), CLIQUE-S: every clique C of Cay(Z, S) (C − C ⊂ S ∪ {0}) satisfies
+   |C| <= c₁K + c₂.
+   - Tight examples: Sidon differences (B is a clique of size k = K) and Bu sets (3B is a clique, K ≈ k).
+   - CLIQUE-S alone does not give Chowla. It is the rigidity input the structured branch of item 7 needs.

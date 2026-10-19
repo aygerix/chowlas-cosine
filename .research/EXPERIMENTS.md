@@ -1416,3 +1416,26 @@ Reading:
     1704250072843/1966080000000000, 43 s;
   - verify_sigma.py (independent reconstruction): PROVED, 767 leaves, 127 caps, 64 Schur cells, 55 s.
 - So P66 holds for C < 1000/73 = 13.6986 (P68.3).
+
+## E99 (2026-10-19) Self-difference graph of near-extremal sets: a √n soft spectral edge (src/e99_selfgraph.py; examples/e99/e99.jsonl; VM, 4 cores)
+NUMERICAL. M: FFT + Newton estimate (uncertified; it matches the stored certificates to ~1e-4). H = Cay(Z, ±A)[A]: vertices A, a ~ a' iff
+|a − a'| ∈ A. P9 gives K = 2M >= −λ_min(H). Eigenvalues: LAPACK for n <= 3000, else Lanczos with an exact FFT matvec.
+| family | n | max A/n | R | α (edge density of H) | λ_min(H)/√n | ρ = −λ_min(H)/K | IPR·n of bottom vector |
+|---|---|---|---|---|---|---|---|
+| small-N optimum | 36 / 50 / 80 / 100 | 1.4–1.5 | 0.565–0.665 | 0.79–0.90 | −0.58 … −0.72 | 0.47–0.61 | 2.2–4.0 |
+| Singer–Bu (q = 61, 101, 151, 199) | 3782 → 39800 | 2.8–3.0 | 0.604 → 0.566 | 0.51–0.56 | −0.739, −0.732, −0.712, −0.721 | 0.611, 0.622, 0.616, 0.637 | 3.8–4.1 |
+| Sidon differences (q = 31, 61) | 496 / 1891 | 2.0 | 0.718 / 0.713 | 0.66–0.69 | −0.623 / −0.613 | 0.434 / 0.430 | 2.8–2.9 |
+| random, density ½ | 500 / 2000 | 2.0 | 4.0 / 9.0 (Gibbs) | 0.51 | −1.37 / −1.28 | 0.17 / 0.07 | 2.3 |
+| random sparse, X = n^1.5 | 500 / 2000 | 22 / 45 | 4.3 / 8.7 | 0.04 / 0.02 | −0.43 / −0.30 | 0.05 / 0.02 | 4.0 |
+| AP [1, n] | 500 / 2000 | 1 | 4.9 / 9.7 | 1 | −0.045 / −0.022 (H = J − I) | 0.005 | localized |
+- (The row labelled `sumfree_odd` in the jsonl is a BUG: the list is the step-2 AP of EVEN numbers. Ignore it.)
+Reading:
+- On EVERY near-extremal set, the self-difference graph alone has a bottom edge ≈ −0.72√n (stable from n = 36 to 39800).
+  - The bottom spectrum is a soft cluster (gaps 0.1–0.4), not an isolated outlier.
+  - Its eigenvectors are delocalized (IPR·n ≈ 3–4, Gaussian-like) and orthogonal to 1_A (overlap ~1e-8).
+  - So Cay[A] alone certifies ≈ 0.6K, i.e. M >= 0.36√n, on these sets.
+  - This is a random-matrix SEMICIRCLE EDGE. The naive RMT prediction 2√(α(1−α)n) over-predicts by a factor ≈ 0.72/1.0
+    for Singer–Bu, and is accurate (±15%) on the small-N optima.
+- The star (vertex 0) adds nothing on near-extremal sets (w0 = 0). It dominates only for sparse random sets.
+- The AP is the clique case: H = J − I has λ_min = −1, so its large M (Gibbs) is invisible to Cay[A]. This is the
+  structured alternative.

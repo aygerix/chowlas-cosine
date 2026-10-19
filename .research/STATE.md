@@ -1,3 +1,8 @@
+# >>> READ FIRST: .research/CSTAR.md <<<
+C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed object, the forced features, the design
+rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
+and kills. Side results are not the prize (user, 2026-10-19).
+
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 
 ## Targets

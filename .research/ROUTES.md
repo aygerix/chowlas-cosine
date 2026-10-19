@@ -4,7 +4,9 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
-## The core obstruction C* (first recorded 2026-10-18: NOTEBOOK "localization" note ~l.700, P24/P25, P28's open step; restated P53, day 2)
+## The core obstruction C* — worked in .research/CSTAR.md (object, design rules, chain, attack log). A row reading "= C*" is a reason to push C* in CSTAR, not to leave it.
+
+### Original statement (first recorded 2026-10-18: NOTEBOOK "localization" note ~l.700, P24/P25, P28's open step; restated P53, day 2)
 - Sign-preserving operations on f_A + M >= 0 localize only at the FRONT. PD multipliers satisfy |ψ(m)| <= ψ(0); the
   available family is front windows, dilation-restrictions, products of these, and test measures (P29(b) = M, P70.6).
 - Interior (mesoscopic) information is reachable only through the MODULUS (P24/P25/P28), which loses the sign.
@@ -49,3 +51,4 @@ route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 | Robust few-spike lemma (CND subadditivity + Cauchy–Davenport/Macbeath) | P73 | closes the m₀ < 4/3 (AP) alternative in L²; for large m₀ the CND metric degenerates into the Chowla Gram problem | fact (PROVED); not a C* tool |
 | Many-spike lemma via INV + P28 window domination (inverse step (b)) | cont. 25 | dissociated half PROVED by moments (m <~ √X); domination controls only a bounded set of MACROSCOPIC window spikes per scale; mesoscopic global spikes are mesoscopic at every scale = C* | open = C* |
 | Uncertainty principles (Nazarov–Turán, Logvinenko–Sereda, Amrein–Berthier–Nazarov) for spiky Boolean spectra | cont. 25.6 | need only |A|·|U| >~ log(1/η), or are exponential in the spike count | killed on paper |
+| Noise shaping / co-designed rounding (Σ-Δ with noise under the spikes of E f) | CSTAR A1 | = taper tree (shaped noise is a structured selection at the next scale); gave the exact variance-conservation identity F10 | absorbed into CSTAR A2 |

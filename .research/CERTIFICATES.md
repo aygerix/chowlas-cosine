@@ -188,3 +188,15 @@ Archived copies are in examples/r7_certificates/. The originals, runnable from t
   - The lead re-ran `witness.py certify 48` on the VM (2026-10-19): PD_proved true; every density/energy cell ok.
 - point_certificates.json: 192-bit Arb point evaluations f_A(x) + r√n < 0 for the 16 adversarial/realised sets.
   These prove R >= 1.82 for the realised witness sets; they are point certificates, not global minima.
+
+## C-R8 (2026-10-19) Exact certificates for P59 (ρ* <= 0.815276; T-dense(6.156)); archived in examples/r8_certificates/
+- potential_g4_d8_exact.json (degree 8) and potential_g4_d4_exact.json (degree 4, fallback ρ = 0.815371): Bernstein
+  coefficients of the increasing potential β and the per-region polynomial checks.
+- verify.py → independent_verification.json:
+  - SymPy (QQ) reconstruction, Sturm root counts 0 on all four intervals, positive endpoints;
+  - exact T-dense reach checks: 4(2 − ρ) − (1539/250)r = 261/250000000 > 0 with r = 0.769801;
+  - the round-7 witness's energy-PD violation at t = 7/48.
+- effective_checks.py/json: exact Fraction comparisons for the explicit c(3) proof (P59.6), plus float sanity checks
+  of the Gaussian identities (the float checks are not proofs).
+- Lead's independent re-check (E79, src/e79_r8_checks.py): ρx − x² + β(y_min(x)) − β(x)/2 >= 0 on a 2·10⁵-point float
+  grid and a 2001-point exact-rational grid (minimum 0 at x = 0), and β' > 0.

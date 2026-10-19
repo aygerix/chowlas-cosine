@@ -1606,3 +1606,62 @@ Obstruction to this method (PROVED, exact; lead re-ran the verifier).
 Supplementary (PROVED, elementary): dip filling M(F ∪ B) >= u − √(|B|/(2α)) when {f_F <= −u} has measure α. P31's
 minimum bound alone gives no dip measure (interval: measure O(N^{−1/2})).
 Status: paper proof, lead-verified, ineffective constant, NOT kernel-checked. Effective version and sharp ρ* OPEN.
+
+## P59. Round-8 agent results (report .research/agents/tdense8_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ ENERGY-PD ("product window"; NEW, short).
+   - Setting: in P58's setting, T = H_h f = r_0/2 + g with g >= −m, 0 <= m <= M. Then g + m >= 0 POINTWISE, so its
+     autocorrelation is >= 0 everywhere:
+         m² + ½ Σ_{k>=1} r_k² cos(kx) >= 0   for all x.
+   - Put x = y/X and divide by X. Since m² = o(X), the limiting residual energy profile e = p(1 − p) has a
+     nonnegative cosine transform. So e is PD (continuous, compact support).
+   - Consequence: e(t) <= e(0) for all t. If a = p(0) > ½, the continuous p crosses ½ (p(1) = 0), where e = ¼ > a(1 − a).
+     Hence a <= ½.
+   - The same identity for any filter 0 <= H <= 1 of degree o(X) makes every filtered energy marginal PD in t.
+     For H = 1 it is trivial (f/2 + M² >= 0).
+2. ✓ T-dense(C) for C < 4(2 − ρ)/r, where ρ is any rigorous doubly-positive constant.
+   - Proof: P58's bound d <= (r/2)a(1 − a)/(1 − ρa), with a <= ½. The function is increasing on [0, ½], since its
+     derivative has numerator 1 − 2a + ρa² >= 0.
+   - Without ρ at all: a >= 2d/r (density window) and a <= ½ give T-dense(C) for C < 4/r = 5.196.
+3. ✓ ρ* <= (2 + √2)/4 = 0.85355 (NEW, two lines). With s = 1/√2, w(t)² <= s·w(t) + (1 − s)·w(2t) pointwise:
+   - for x = w(t) <= s use x² <= sx;
+   - for x >= s use y = w(2t) >= 2x² − 1 >= 0, and (2s − 1)(x − s)(x − 1) <= 0.
+   Integrate, using ∫w(2t)dt = ½∫w.
+4. ρ* <= 203819/250000 = 0.815276 (computer-assisted; agent's exact Bernstein + Sturm certificates; lead's independent
+   float grid (2·10⁵ points) and exact-rational grid (2001 points) re-check, E79: min exactly 0 at x = 0, β' > 0).
+   - Separable potential: ρx − x² + β(y_min(x)) − β(x)/2 >= 0 on [0,1], with β increasing, β(0) = 0, β of degree 8,
+     and y_min = max(0, 2x² − 1, x − √(1 − x)).
+   - The last branch is the 4-point Toeplitz antisymmetric block [1 − z, x − y; x − y, 1 − x] ⪰ 0 (lead re-derived it).
+   - Integrating, the β terms cancel (∫β(w(2t)) = ½∫β(w)).
+   - P58 alone with this ρ gives T-dense(5.311).
+5. ✓ STRONGEST (paper, ineffective): T-dense(C) for every C < 4(2 − ρ)/r = 6.156001…
+   - Rational check: 4(2 − ρ) − (1539/250)r = 261/250000000 > 0, with r = 0.769801 > 4/(3√3).
+   - With the elementary r = 0.811 the same proof gives C < 5.843.
+6. ✓ EXPLICIT c(3) = 10^{−6000005} (paper; compactness-free; inputs: elementary P31-E plus Gaussian/Poisson lemmas).
+   - Setup: Gaussian smoothings k_s at scales s_j = βX·K^j (K = J = 10⁶, β = 10^{−6000003}).
+   - Pigeonhole on the identity values Q_s(0) of the PD sequences Q_s = k_s∗a + 2M·k_s (transform 2L_s(f + M) >= 0)
+     gives a scale with sup_m |q_s − q_{Ks}| <= 2/J + 42c.
+   - Approximate binary energy: |k_s∗(a − q)² − q(1 − q)| <= 4ω, with ω = 1.8·10⁻⁵.
+   - The finite product window applied to (1 − L_s)f gives q(m)(1 − q(m)) <= q(0)(1 − q(0)) + 8ω + 2β (EM).
+   - P31-E at one window (w + 1 = ⌊4s⌋) gives q(0) > 0.53 when X <= 3n.
+   - A discrete crossing of ½ (steps of order 10⁻⁵) contradicts (EM).
+   - Lead's note: the stated step bound "< 7·10⁻⁶" should read "<= 2(2/J + 42c) + 3/S <= 7.1·10⁻⁶ or so". This is
+     immaterial: the margin is 9·10⁻⁴ against 1.5·10⁻⁴.
+   - This is the first EFFECTIVE (explicit-constant) dense theorem beyond P31's C = 2.44. It is a natural Lean target:
+     finite sums, trigonometric-polynomial positivity, P31-E (already kernel-checked), Gaussian/Poisson facts
+     (mathlib has the Jacobi-theta functional equation).
+7. Two-scale bookkeeping (PROVED, exact).
+   - A height-tagged measure records the tall residual energy (P40 on g).
+   - Cell decomposition: c_k = (2/X)Σ_s h_s e^{−ikx_s}w_s(k/X), with Hermitian-PD cell profiles w_s.
+   - This identifies the HBSC support/tightness issue precisely.
+   - Quantitative P32 local window: θ²/(2π)∫sinc(θy/2)⁴Φ² <= r(1 + θ)[Re∫_0^θ(1 − t/θ)v_s]² for isolated packets.
+   - Finite L⁶ window with the trivial constant: mesoscopic parts are erased at proportional windows.
+8. NUMERICAL.
+   - ρ* lower bounds: autocorrelation class 0.7238796 (N = 800); general PWL 0.723864 (B = 160). The general class does
+     not beat the autocorrelation class at a common resolution.
+   - E79 (lead): the ρ*-extremal shape p = a·q (half-sine autocorrelation) VIOLATES energy-PD (min of the FT of e is
+     −0.0094 near y ≈ 7.8, a = ½). So the enlarged class {p PD, e PD, windows} has reach STRICTLY above
+     4(2 − ρ*)/r ≈ 6.63. E80 estimates it.
+Correction of the lead's NOTEBOOK cont. 10: the "macroscopic barrier ≈ 6.05" was the reach of the two scalar windows
+only. Energy-PD is a further MACROSCOPIC constraint (the product window), and it defeats the round-7 witness: at
+t = 7/48, e(t) − e(0) ≈ 0.024 > 0.
+Status: items 1–3 and 5–6 paper proofs, lead-verified; 4 computer-assisted exact; none kernel-checked.

@@ -1,0 +1,119 @@
+{
+  "status": "EXACT",
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "certificates": [
+    {
+      "degree": 4,
+      "rho": "815371/1000000",
+      "checks": [
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 3
+        },
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 3
+        },
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 8
+        },
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 8
+        }
+      ],
+      "reaches": [
+        {
+          "r": "769801/1000000",
+          "reach_exact": "4738516/769801",
+          "reach_numeric": 6.155507722125589,
+          "C": "1231/200",
+          "margin": "78169/200000000"
+        },
+        {
+          "r": "811/1000",
+          "reach_exact": "1184629/202750",
+          "reach_numeric": 5.842806411837238,
+          "C": "2921/500",
+          "margin": "327/500000"
+        }
+      ]
+    },
+    {
+      "degree": 8,
+      "rho": "203819/250000",
+      "checks": [
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 7
+        },
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 7
+        },
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 16
+        },
+        {
+          "roots": 0,
+          "positive": true,
+          "degree": 16
+        }
+      ],
+      "reaches": [
+        {
+          "r": "769801/1000000",
+          "reach_exact": "4738896/769801",
+          "reach_numeric": 6.156001356194653,
+          "C": "1539/250",
+          "margin": "261/250000000"
+        },
+        {
+          "r": "811/1000",
+          "reach_exact": "592362/101375",
+          "reach_numeric": 5.8432749691738595,
+          "C": "5843/1000",
+          "margin": "223/1000000"
+        }
+      ]
+    }
+  ],
+  "finite_convolution_checks": [
+    {
+      "X": 19,
+      "h": 3,
+      "n": 7,
+      "identity": true
+    },
+    {
+      "X": 47,
+      "h": 8,
+      "n": 13,
+      "identity": true
+    },
+    {
+      "X": 80,
+      "h": 11,
+      "n": 19,
+      "identity": true
+    }
+  ],
+  "witness_violation": {
+    "node": 7,
+    "t": "7/48",
+    "p": "2055915027/4000000000",
+    "e0": "220277375272123594039/976562500000000000000",
+    "gap": "6060140520267442285391/250000000000000000000000",
+    "gap_float": 0.02424056208106977
+  }
+}

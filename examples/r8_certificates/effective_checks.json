@@ -1,0 +1,130 @@
+{
+  "status": "EXACT CONSTANTS; NUMERICAL KERNEL AUDIT",
+  "exact": {
+    "beta_exponent": 6000003,
+    "c_exponent": 6000005,
+    "K": 1000000,
+    "J": 1000000,
+    "density_Nikolskii_margin": "12919/1500000",
+    "increment_bound": "100000021/50000000000000",
+    "delta": "3/1000000",
+    "density_lower_bound": "799999999997/1500000000000",
+    "omega": "9/500000",
+    "crossing_error": "6000003/1000000000000",
+    "required_energy_gap": "899999951/1000000000000",
+    "available_error": "72000001/500000000000"
+  },
+  "kernel_numeric": [
+    {
+      "s": 1.0,
+      "Z": 3.544907701811032,
+      "Z_lower": 3.5449077018110318,
+      "Z_upper": 5.0,
+      "first_abs_moment": 1.0801110753164596,
+      "moment_upper": 4.0,
+      "min_L_float": 0.0001034463724076673,
+      "max_L_float": 1.0,
+      "gaussian_difference_float": 5.172318620385496e-05
+    },
+    {
+      "s": 2.0,
+      "Z": 7.0898154036220635,
+      "Z_lower": 7.0898154036220635,
+      "Z_upper": 9.0,
+      "first_abs_moment": 2.2331012748962604,
+      "moment_upper": 8.0,
+      "min_L_float": -1.1102229905637114e-16,
+      "max_L_float": 1.0000000000000002,
+      "gaussian_difference_float": 2.220446049250313e-16
+    },
+    {
+      "s": 5.0,
+      "Z": 17.724538509055158,
+      "Z_lower": 17.724538509055158,
+      "Z_upper": 21.0,
+      "first_abs_moment": 5.6324832501248485,
+      "moment_upper": 20.0,
+      "min_L_float": -3.330669336012847e-16,
+      "max_L_float": 1.0000000000000002,
+      "gaussian_difference_float": 3.330669336012847e-16
+    },
+    {
+      "s": 10.0,
+      "Z": 35.449077018110316,
+      "Z_lower": 35.449077018110316,
+      "Z_upper": 41.0,
+      "first_abs_moment": 11.279088914997011,
+      "moment_upper": 40.0,
+      "min_L_float": -4.998737670766104e-16,
+      "max_L_float": 1.0,
+      "gaussian_difference_float": 5.205075384252637e-16
+    },
+    {
+      "s": 30.0,
+      "Z": 106.34723105433096,
+      "Z_lower": 106.34723105433095,
+      "Z_upper": 121.0,
+      "first_abs_moment": 33.84980777604172,
+      "moment_upper": 120.0,
+      "min_L_float": -1.301192451809576e-15,
+      "max_L_float": 0.9999999999999997,
+      "gaussian_difference_float": 1.301192451809576e-15
+    }
+  ],
+  "finite_numeric": [
+    {
+      "X": 100,
+      "s": 2.0,
+      "energy_approx_max_error": 0.05870704294624721,
+      "coefficient_variation": 0.14379764604061085
+    },
+    {
+      "X": 100,
+      "s": 10.0,
+      "energy_approx_max_error": 0.013235361506532012,
+      "coefficient_variation": 0.015989002276573794
+    },
+    {
+      "X": 100,
+      "s": 30.0,
+      "energy_approx_max_error": 0.02520526966494202,
+      "coefficient_variation": 0.007445948405144981
+    },
+    {
+      "X": 300,
+      "s": 2.0,
+      "energy_approx_max_error": 0.09902399299570028,
+      "coefficient_variation": 0.197092371456922
+    },
+    {
+      "X": 300,
+      "s": 10.0,
+      "energy_approx_max_error": 0.030494166084548552,
+      "coefficient_variation": 0.024335640034167383
+    },
+    {
+      "X": 300,
+      "s": 30.0,
+      "energy_approx_max_error": 0.028250033241533024,
+      "coefficient_variation": 0.0077148421518831445
+    },
+    {
+      "X": 800,
+      "s": 2.0,
+      "energy_approx_max_error": 0.1459888059069626,
+      "coefficient_variation": 0.25545861807872855
+    },
+    {
+      "X": 800,
+      "s": 10.0,
+      "energy_approx_max_error": 0.01641226361627149,
+      "coefficient_variation": 0.016896446564461653
+    },
+    {
+      "X": 800,
+      "s": 30.0,
+      "energy_approx_max_error": 0.009335151856917107,
+      "coefficient_variation": 0.004539813240439089
+    }
+  ]
+}

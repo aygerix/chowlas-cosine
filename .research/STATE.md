@@ -1,12 +1,14 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 7: T-dense(4.4393)")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 8: T-dense(6.156), explicit c(3)")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
 - (L) Chowla: M(A) >= c0 sqrt|A|. NOT ACHIEVED. Best known: >> n^{1/5} (Shankar 2609.05338, cited, checked).
-- (L-dense) T-dense(C) := M >= c(C)√n for all A with max A <= C|A|. PROVED on paper for every C < 4.4393, with an
-  INEFFECTIVE c(C) (P58, round 7, lead-verified; C < 4.2138 using only the kernel-checked elementary P31-E). Effective
-  and kernel-checked: C <= 2.44 (P31). The macroscopic method's reach is ≈ 6.05 (exact obstruction witness);
-  beyond it is the mesoscopic problem.
+- (L-dense) T-dense(C) := M >= c(C)√n for all A with max A <= C|A|.
+  - PROVED on paper for every C < 6.156, ineffective c(C) (P58 + P59; lead-verified). With only the elementary P31-E
+    constant: C < 5.843.
+  - EXPLICIT c(3) = 10^{−6000005} (P59.6, compactness-free).
+  - Kernel-checked effective: C <= 2.44 (P31).
+  - Macroscopic class {p PD, p(1 − p) PD, windows}: reach above 6.63 (E79/E80). Beyond that, the mesoscopic problem.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
   algorithm cannot exist. Not assumed: both tracks stay open.
 
@@ -284,7 +286,24 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 7: T-dense(4.4393) (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 8: T-dense(6.156), explicit c(3) (2026-10-19 night, NEWEST — read this first)
+- Round 8 DONE, lead-verified (PROOFS P59; NOTEBOOK cont. 11).
+  - ENERGY-PD: in any dense counterexample limit, the residual energy profile e = p(1 − p) is PD (autocorrelation of
+    g + m >= 0). Hence p(0) <= ½. This alone with the density window gives T-dense(5.196).
+  - ρ* <= 0.815276 (exact certificate; 4-point Toeplitz plus separable potential). Hand proof: ρ* <= (2 + √2)/4.
+  - T-dense(C) for every C < 4(2 − ρ)/r = 6.156 (ineffective).
+  - EXPLICIT c(3) = 10^{−6000005}: a finite Gaussian-scale pigeonhole replaces compactness. First effective result
+    beyond P31; Lean candidate.
+- cont. 10's "macroscopic barrier 6.05" is RETRACTED (it covered only the two scalar windows).
+- E79: the ρ*-extremal shape violates energy-PD, so the enlarged class's reach is > 6.63. E80 (running) estimates it.
+## Running now (2026-10-19 night, newest)
+- VM: E80 (src/e80_enlarged_reach.py): SLSQP over autocorrelation profiles with e-PD and window constraints.
+- No agent running (round 9 being planned).
+## First concrete next step (2026-10-19 night, newest)
+- Round 9 (one codex agent): the exact reach of the enlarged macroscopic class, with certificates, giving T-dense(C₉);
+  extra macroscopic constraints (measure-valued PD of σ_t, atoms, Boolean); effective constants.
+- Then a Lean round for the effective T-dense(3) (P59.6), with P31-E already kernel-checked.
+## Session 3, round 7: T-dense(4.4393) (2026-10-19 night)
 - Round 7 DONE, lead-verified (PROOFS P58; NOTEBOOK cont. 10).
   - THEOREM (paper, ineffective constant): M(A) >= c√|A| for every A with max A <= 4.4393|A| (<= 4.2138|A| with the
     elementary Nikolskii constant).
@@ -299,9 +318,9 @@ in parallel.
 - Beyond 6.05 a counterexample's residual (about half the energy) must sit in MESOSCOPIC spikes (P40 applied to the
   high-passed function). The rest of T-dense is the mesoscopic problem, now with an explicit adversary profile.
 - E75–E77 recorded (run-tops closed; zero-set strengthening refuted).
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 8; superseded)
 - Codex MATH agent, round 8 (.research/agents/tdense8_brief.md; report tdense8_report.md). VM: E78 finishing.
-## First concrete next step (2026-10-19 night, newest)
+## First concrete next step (2026-10-19 night, round 8; superseded)
 - Round 8 (one codex agent):
   - (1) sharpen ρ* rigorously, reaching T-dense up to ≈ 6.04;
   - (2) test whether any other √n-scale inequality survives the macroscopic limit and kills the 6.05 witness (P32 local

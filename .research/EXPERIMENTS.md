@@ -1140,3 +1140,10 @@ Reading:
   - So the general class does not beat the autocorrelation class at these resolutions.
 - Reading: ρ* ≈ 0.7239, so the sharp macroscopic reach is C ≈ 2.598·(1 + √0.2761)² ≈ 6.046. That matches the round-7
   exact witness at 6.0539.
+
+## E79 (2026-10-19) Lead's independent checks of round 8 (src/e79_r8_checks.py; examples/e79/e79_checks.json)
+- (A) ρ* potential certificate (P59.4), re-evaluated independently of the agent's code: the inequality holds on a
+  200001-point float grid and on a 2001-point exact-rational grid (min = 0 at x = 0); β' >= 0.304 on [−0.001, 1].
+- (B) Energy-PD on the ρ*-extremal shape p = a·q (q = half-sine autocorrelation, support [0,1]): min_y ∫_0^1 e(t)cos(ty)dt
+  = −0.0094 (a = ½), −0.0073 (a = 0.45), −0.0055 (a = 0.4), all near y ≈ 8. So the doubly-positive extremiser is NOT
+  admissible in the enlarged class {p PD, p(1 − p) PD}, and that class's reach exceeds 4(2 − ρ*)/r ≈ 6.63.

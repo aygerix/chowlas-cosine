@@ -1711,3 +1711,38 @@ Where this leaves the finite TL1 programme (lead assessment):
    - Also check whether other √n-scale inequalities survive in the macroscopic limit and could kill the witness:
      P32 local windows on f and on filtered T; L⁶ Nikolskii (third-moment) windows; product windows on
      (f + M)(f(· + θ) + M) >= 0. If one does, the macroscopic reach exceeds 6.05.
+
+## 2026-10-19 (night, cont. 11) — Round 8 verified: energy-PD lifts the "barrier"; T-dense(6.156); explicit c(3) (lead)
+1. Correction of cont. 10. I called ≈ 6.05 "a genuine barrier for MACROSCOPIC arguments" because the limit "only sees
+   p, atoms and total residual energy". That was wrong.
+   - The limit sees the residual energy PROFILE e(t). The trivial product window (autocorrelation of g + m >= 0) makes
+     e PD. That kills the round-7 witness: its a = 0.656 > ½ is impossible.
+   - Lesson: before declaring a limit-object barrier, list ALL positivity statements that survive the limit, not just
+     the windows already in use. Every filtered function H f (0 <= H <= 1) gives two: its P31 window, and its
+     autocorrelation positivity.
+2. What the macroscopic limit sees now (lead synthesis).
+   - Objects: p (PD); the local spectral measures σ_t of the residual (σ_t(T) = e(t) = p − p²); macroscopic atoms.
+   - For every continuous 0 <= H <= 1 on T: t ↦ H(0)²p(t)² + ∫H²dσ_t is PD (product window) and front-loaded
+     (P31 window).
+   - Taking H with H(0) = 0: σ is PD as a measure-valued function (every σ_t(U) is PD in t) and front-loaded.
+   - For the shape-independent family σ_t = e(t)ν, everything reduces to: p PD, e PD, and windows on p and e.
+   - E80 estimates that class's reach. The ρ*-extremal shape already fails energy-PD (E79), so the reach is above 6.63.
+3. Simple consequences worth keeping.
+   - a = p(0) <= ½ ALWAYS (any dense counterexample sequence).
+   - Density window plus a <= ½ gives T-dense(C) for C < 4/r = 5.196 with no doubly-positive input. This is the
+     mechanism of the explicit c(3) proof.
+   - With ρ*: C < 4(2 − ρ)/r. That is 6.156 with the certified ρ = 0.8153, and ≈ 6.63 with the numerical ρ* = 0.7239.
+4. Effective proof (P59.6). The compactness diagonal is replaced by a pigeonhole over geometric Gaussian scales, and
+   the limit e-PD by a finite (EM) inequality. Its constant 10^{−6000005} is absurd, but it is explicit, finite and
+   formalisable, with only P31-E (kernel-checked) as a non-elementary input.
+5. Distance and direction.
+   - The dense range went 2.44 (effective, kernel-checked) → 4.44 (round 7) → 6.156 (round 8), with an explicit
+     constant at C = 3.
+   - A macroscopic counterexample must have a <= ½, both p and p(1 − p) PD, and front-loaded p and e. Beyond the
+     enlarged reach, the residual's mesoscopic spike structure is the only remaining freedom.
+   - Next:
+     - (i) the exact reach of the enlarged class, with certificates (E80 → T-dense(C₈) with C₈ maybe ≈ 7);
+     - (ii) effective constants on the whole proved range, plus a Lean round for the effective theorem (c(3), then
+       c(5.19));
+     - (iii) mesoscopic: aggregated PD of every filtered marginal plus P40 spike domination, against the new extremal
+       profile.

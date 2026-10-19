@@ -663,3 +663,9 @@ Proved this block:
 - New rule: every route gets a ROUTES.md row first (mechanism-level equivalence check) plus a cheap kill test.
 - The only route currently claimed NOT to be C*: Fejér–Riesz factor windowing (sign-preserving interior
   localization). Kill test E102 is next.
+- (cont. 22) Ledger audit: factor windowing, quadric lift, SR, Kronecker phases, anticoncentration, low-degree
+  SOS, tensor renormalization, Mahler/Galois and high-rank ball windows all reduce to C* or to recorded dead ends
+  (ROUTES.md). E102 cancelled.
+- Round 18 results verified/recorded as P71: periodic triangular Bohr tapers have linear M (transverse packets);
+  bounded-occupancy selectors give √n w.h.p.; tapered Singer–Bu (R ≈ 0.77, sparse) is the only sub-1 adversary.
+- New fact P71.1 (arc-mass bound), weak. C* unchanged and open.

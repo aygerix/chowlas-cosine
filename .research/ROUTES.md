@@ -17,7 +17,7 @@ route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 |---|---|---|---|
 | "deterministic ⇒ Gibbs" quantitative | P28 open step, day 1 | = C* | open |
 | Localization + 2-run structure (OR(2)-weak) | NOTEBOOK day 1, P27 | partial C* (bounded unions of dilates done, P27) | open in general |
-| Self-reducibility SR | NOTEBOOK day 1 | NOT AUDITED | audit before reuse |
+| Self-reducibility SR | NOTEBOOK cont. (2026-10-19) §3 | = C*: open ingredient is the irrational (Bohr) spike case, plus per-step losses | audited 2026-10-19 (cont. 22) |
 | Spike truncation / bulk fraction (SB) | P40, E67/E68 | = C* (spike-dominated ⇔ band-limited, P40(c)) | open |
 | Macro twisted profiles | P48, P53 | C* at MACROSCOPIC scale: PROVED (qualitative, any rank) | done; mesoscopic = C* |
 | Dense second/third order | P59–P66 | sub-problem; proven barrier: second-order reach 1/D (P61), bounded-M sharpness | T-dense C < 7.72 (½), 13.7 (1/3) |
@@ -31,4 +31,13 @@ route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 | Positivity–resolution PR | cont. 20 | = P53 step 5, quantitative | dropped |
 | Szegő / OPUC (Verblunsky energy <= log K) | cont. 21.1(c) | P40(c) band-limitation, plus a log loss | dropped |
 | Window-variance bound VB | cont. 21.1(d), E101 | weak L² form of P28 | dropped |
-| Hardy/Fejér–Riesz factor WINDOWING | cont. 21.3 | CLAIMED not C*: a sign-preserving INTERIOR localization (|U_I|² >= 0) | UNTESTED; kill test E102 |
+| Hardy/Fejér–Riesz factor WINDOWING | cont. 21.3, 22.1 | = C*: factor Gram = exact SDP primal (dual = test measures, P29(b)); one window sees only |m| < L; interior lags come only from cross-blocks, bounded by Cauchy–Schwarz moduli | killed on paper 2026-10-19; E102 cancelled |
+| F_p^r quadric lift with layered taper | cont. 19.6 proposal, cont. 22.2 | = TAPER (construction form): every character's envelope E_c(x) = F_{λ(x)}(c) must be smooth AND >= −κ with κ << (p/m)^{r/2}; layer switches are sharp level sets (Gibbs, R >~ 0.1 m^{r/2}), random increments give κ ~ p^{r/2} | not run; reduced on paper |
+| Multi-window Kronecker phase freedom | cont. 22.3 | = P28 coarse sum: windows at AP positions lock phases (rank 1); free (independent) positions are lacunary (M ~ n); the coarse sequence is again a counterexample (self-similar) | dropped |
+| Anticoncentration of f(x), x uniform | cont. 22.3 | = P28 spread/spike dichotomy: f >= −M forces P(f ∈ [−M, CM]) >= 1 − 1/C; APs are concentrated yet satisfy Chowla | dropped |
+| Low-degree SOS in the indicators x_a | E96 | dead: two-point pseudo-marginals fool level 1.5; growth needs the PEAK (non-symmetric) step | dead (E96) |
+| Product / tensor renormalization | day 1, cont. 22.3 | no gain: two-valuedness not preserved (marginal coefficients 1/K, 1/K', 1/(KK')); splitting multiplicities is the rounding problem | dead |
+| Iterated spike sub-multiplicativity | cont. 19.5(a), cont. 22.4 | new small PROVED lemma (arc-mass bound); vacuous at the origin | fact, not a route |
+| Integrality / Mahler / Galois norms | cont. 19.5(b), cont. 22.3 | gives only AM–GM over conjugates (the test-point average) | fact, not a route |
+| High-rank ball / threshold model sets | E73, cont. 22.5 | dead: the main Bragg peaks of a d-ball window have Gibbs ~(2/e)^{d/2}, but high rank turns the window boundary into Bernoulli-type √n noise (E73: approaches the Bernoulli baseline from above, never beats it) | dead (E73) |
+| Taper tree / graphon trichotomy (random selection → semicircle √; deterministic Boolean window → Sanders rigidity → Gibbs; structured selection → next level) | cont. 22.6 | = C* (open case: unbounded depth/rank with structured selections) = HBCG/BBG | open; no new tool yet |

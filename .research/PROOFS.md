@@ -2321,3 +2321,50 @@ architecture (NOTEBOOK cont. 19): sub-multiplicativity + the torsion-free bounda
 Status: items 1–6 are paper proofs (1 also has two independent finite certificates). The FOUR-WAY COVER remains
 OPEN. The remaining adversary class: CORRELATED (selected) roundings at vanishing density that hide P28 window
 variance without creating a sharp ambient boundary.
+
+## P71. Arc-mass bound (lead), and round-18 agent results (report .research/agents/tdense18_report.md, completed before the stop; items marked ✓ lead-checked) — 2026-10-19
+1. ✓ ARC-MASS BOUND (lead; PROVED, elementary). Let K >= 2M(A), K > 1, p = 1 + D_S/K (density w.r.t. λ = dx/2π).
+   Then for every x ∈ T and every ρ ∈ (0, π):
+       p(B(x, ρ)) < max(4/K, 2√(ρ/π)).
+   In f-terms (K = 2M): ∫_{x−ρ}^{x+ρ} (M + f) dy < max(4π, 4M√(πρ)).
+   - Proof. Y, Y' iid ~ p; Y + Y' has density p⋆p = p/K + (1 − 1/K) (P-exact mixing). Y, Y' ∈ B(x, ρ) gives
+     Y + Y' ∈ B(2x, 2ρ). So τ' := p(B(2x, 2ρ)) >= K(τ² − 2ρ/π), with τ = p(B(x, ρ)).
+   - Set τ_k = p(B(2^k x, 2^k ρ)), so τ_{k+1} >= K(τ_k² − 2^{k+1}ρ/π). If τ_0 >= 4/K and τ_0² >= 4ρ/π, induction gives
+     τ_k >= 2^k τ_0 and τ_k² >= 2^{k+2}ρ/π: the second makes the bracket >= τ_k²/2, so τ_{k+1} >= (Kτ_0/2)τ_k >= 2τ_k.
+     Hence τ_k > 1 for 2^k > 1/τ_0, while the arcs still have radius < π (2^kρ <= πτ_0/2). Contradiction. ∎
+   - Content: iterated form of the spike sub-multiplicativity (NOTEBOOK cont. 19.5(a)). A heavy arc (p-mass τ >= 4/K)
+     must have half-length > πτ²/4.
+   - Limits (checked): vacuous at the origin. There it reads Σ_{a∈A} sin(aρ)/a < 2π for ρ <= 4π/K², which every
+     A satisfies up to the harmonic tail. As an L² bound it gives only n <~ XK (P33 territory). A FACT, not a route.
+2. ✓ PERIODIC TRIANGULAR BOHR TAPERS HAVE LINEAR M (agent; lead re-derived every step).
+   - Set-up. L ∈ 20Z_{>0}, P >= 100, q >= 4L + 1, r_q = centred residue. A(L,q,P) = {1 <= a <= Pq : |r_q(a)| <= L(1 − a/(Pq))}.
+   - Packets. With h = L/20 and J = ⌊P/8⌋:
+       U = {jq + r : 1 <= j <= J, −16h <= r < −14h},  V: −h <= r < h,  W: 14h <= r < 16h.
+     - All three lie in A, since a/(Pq) <= 0.127 and the residue radius is >= 0.873L > 0.8L.
+     - U, V, W are cliques, U–V and V–W are complete, and U–W has no edges:
+       - every pairwise difference has |d| <= 0.129Pq, so the allowed radius is >= 0.871L;
+       - residue differences are < 0.85L inside packets and across U–V and V–W, and >= 1.4L across U–W;
+       - there is no wrap, since 1.6L < q/2.
+   - Certificate. The vector (2, −3, 2) has norm² 17m and form −7m² − 17m. P9 gives M >= 7m/34 + 1/2.
+   - Counting. m >= LP/90 and n <= (41/20)LP, so M >= 7n/6290 + 1/2. This holds uniformly in density: q = P = L²
+     gives n = L³ and density n^{−1/3}.
+   - Mechanism: tapering along the long coordinate does not smooth the TRANSVERSE Boolean cutoff (Gibbs seen by a
+     blown-up induced P3). This matches the per-character-envelope reduction of the quadric lift (NOTEBOOK cont. 22).
+3. BOUNDED-OCCUPANCY BLOCK SELECTORS (agent; lead checked the fourth-moment pairing E|ΣY_j|⁴ <= 3Q² + ΣE|Y_j|⁴ and
+   the logic of the Efron–Stein step, but not every constant).
+   - Set-up. Blocks are independent with arbitrary dependence inside each block, at most b selections per block,
+     and v = Σp_a(1 − p_a)w_a².
+   - Statement:
+       E B >= v/(2√(6bμ + 4b²)),   Var B <= b/2.
+     Hence M >= c√|A|/(4√(20b)) with probability >= 1 − (80b²/c² + b)/μ.
+   - This extends P70.3 to antithetic pairs and to one-point-per-cell sampling. It does not cover globally selected
+     outcomes.
+   - Exact identity (any correlated selector): the circle average of E|centred window sum|² equals v. Hidden variance
+     must therefore mean SPECTRAL CONCENTRATION, not smaller variance.
+4. NUMERICAL (agent; uncertified FFT/Newton R, certificates exact).
+   - Of 11 adversary families (cumulative, antithetic, Thue–Morse, nested Bohr of rank 1 and 2, dilation unions,
+     forced-prefix thinning), only TAPERED SINGER–BU gets R < 1:
+     - n = 756, X/n = 54: R ≈ 0.77, with W2 = 0.215√n and P28 = 0.245√n;
+     - n = 72: certified M ∈ [7.427, 7.444], so R = 0.876.
+   - All other families have R >= 2.
+   - The best adversaries are ALGEBRAIC (square/difference-set) objects, not roundings.

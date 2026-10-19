@@ -2585,3 +2585,66 @@ Labels: HEURISTIC unless marked. Purpose: replace the cyclic-only view (rounds 1
      whether G's spikes are carried by few windows of u (localizable), or are spread over all of u (no gain).
    - Kill criterion: if spikes of G are always spread uniformly over u's windows, this route is dead too; record it
      and stop.
+
+## 2026-10-19 (cont. 22) — Ledger audit of every remaining candidate route; round-18 results verified (lead)
+Process: each candidate below was checked against ROUTES.md by MECHANISM before any work. Nine of them reduce to C* or
+to a recorded dead end on paper. No agent round and no VM time was spent on any of them.
+1. Factor windowing (cont. 21.3) = C*.
+   - The Gram matrix of the factor's shifts, KI + Adj(Cay(Z, ±A)), is the primal of the exact SDP. Its dual is the
+     test-measure family, P29(b) = M.
+   - Windowing u gives principal minors.
+     - A single window of length L has Fourier support |m| < L, so it is front-only.
+     - Interior lags come only from cross-blocks U_I·conj(U_J). Their size is bounded only by |U_I||U_J|
+       (Cauchy–Schwarz), so they are modulus-only.
+   - The rank-one factor adds no constraint on G beyond G >= 0.
+   - The cont. 21.3 claim conflated factor-INDEX localization with FREQUENCY localization. E102 cancelled.
+2. F_p^r quadric lift (cont. 19.6's unrun experiment) = TAPER, in construction form. Lift A ⊂ F_p^r through a box of
+   side pm in Z^r and a generic embedding:
+       g(y) = p^{−r} Σ_c Ê_c(y + c/p),   E_c(x) = F_{λ(x)}(c)   (per-character envelope, λ = layer index).
+   - The c = 0 envelope must be PD-tapered down to density 0.
+   - Each c ≠ 0 bump contributes ≈ −κ m^r, so R ≈ κ m^{r/2}/p^{r/2}. This needs κ << (p/m)^{r/2}.
+   - Layers built from spreads flip a character's coefficient by p^{r/2} at a sharp level set. That is Gibbs:
+     R >~ 0.1 m^{r/2}.
+   - Uniform random increments give κ ~ p^{r/2}.
+   - Quadric level-interval layers have κ ~ p^{r/2} log p (Kloosterman completion).
+   - The elliptic complement (κ = p^{r/2−1}) is special, and no family interpolating its density down to 0 is known.
+   - Verdict: a Gibbs-free lift needs smooth per-character envelopes, which is the correlated-rounding problem.
+     Not run.
+3. Reduced on paper.
+   - SR: open ingredient = the irrational/Bohr spike case, plus per-step losses.
+   - Kronecker multi-window phase freedom. Window positions on an AP lock phases. Free positions are lacunary,
+     with M ~ n. The coarse sum Σ_j w_j e^{ijθ} is P28's object and is again a counterexample, so the reduction is
+     self-similar.
+   - Anticoncentration: f >= −M gives P(f ∈ [−M, CM]) >= 1 − 1/C, and APs are concentrated yet satisfy Chowla. This
+     is P28's spread/spike split.
+   - Low-degree SOS in the x_a: E96 (two-point pseudo-marginals).
+   - Product/tensor renormalization: (K + D)(K' + D') has coefficients K', K, 1, i.e. multiplicities. Splitting
+     them is the rounding problem.
+   - Mahler/Galois: cont. 19.5(b); only AM–GM over the conjugates.
+   - A "spike amplification by fronts" iteration I tried fails arithmetically. P28 loses the window count X/H, so
+     the relative spike height falls by >= 4 per step instead of growing.
+4. New small fact: the ARC-MASS BOUND (P71.1, PROVED). p(B(x, ρ)) < max(4/K, 2√(ρ/π)). It comes from iterating the
+   spike sub-multiplicativity along doubling, and is vacuous at the origin. A fact, not a route.
+5. High-rank ball windows.
+   - The normalized d-ball transform Γ(ν+1)(2/s)^ν J_ν(s), ν = d/2, has first negative lobe ~(2/e)^{d/2}·poly(d).
+   - So the main Bragg peaks of a rank-r ball-window model set have exponentially small Gibbs.
+   - E73 (threshold of Σcos, essentially the same window) shows the boundary turns into Bernoulli-type noise:
+     R approaches the Bernoulli baseline from above.
+   - Dead. Recorded so it is not re-proposed.
+6. Round 18 completed its report before the stop (P71.2–4).
+   - Lead re-derived the PERIODIC TRIANGULAR BOHR TAPER theorem: three transverse packets with vector (2, −3, 2),
+     giving M >= 7n/6290. This is the first rigorous mesoscopic Gibbs result that needs no 1-D sharp boundary: a
+     TRANSVERSE cutoff suffices.
+   - Graphon reading (heuristic). For a Bohr-structured part with transverse profile ρ,
+         Cay ≈ ρ(t − t') + selection noise,   so   λ_min ≈ m·min_k ρ̂(k) − c√(m∫ρ(1−ρ)).
+     A Boolean ρ is never PD (Sanders rigidity: only subgroups), so it pays m·|ρ̂_−|. A PD ρ is fractional, which
+     forces selection.
+     - Random-like selection pays the semicircle edge √m (P70.3, P71.3).
+     - Structured selection is a NEW Bohr direction, i.e. the next level.
+   - The open case is unbounded depth/rank with structured selections: exactly HBCG/BBG = C*.
+   - Adversary table: the only family with R < 1 is tapered Singer–Bu (R ≈ 0.77 at X/n = 54). Rounding families all
+     have R >= 2. The best adversaries are ALGEBRAIC squares, not roundings.
+7. Honest state. Today produced no new mechanism against C*. The ledger did its job: nine re-dressed routes (and
+   a tenth, high-rank balls) were stopped before any compute. C* = mesoscopic, structured, multi-level selection
+   remains the whole problem. The next lower-bound work must bring a tool that controls structured selections
+   uniformly in depth. That tool is not in the record, and none surfaced today.

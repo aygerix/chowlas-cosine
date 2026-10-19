@@ -2540,3 +2540,48 @@ Labels: HEURISTIC unless marked. Purpose: replace the cyclic-only view (rounds 1
    - (iii) state the density-normalized version of (c) precisely for the Bohr model;
    - (iv) attack (b) for spike sets of bounded "spike count per unit mass".
    An agent may adversarially test PR(r) and (iii) once the lead has stated them.
+
+## 2026-10-19 (cont. 21) — Circularity audit of this session's routes; the single obstruction under all of them (lead)
+1. COSTUME VERDICTS. Each route checked against the record. None is a new mechanism; record them so they are not
+   re-tried.
+   - (a) Bhatia–Davis "bulk" (cont. 19.7) = P40 spike truncation (graph form).
+   - (b) Positivity–resolution PR (cont. 20) = a quantitative form of step 5 of P53. P53 already handles ANY rank
+     qualitatively, through the compact group K. Rank-uniformity is not the issue. The rank-2 Gurobi computation was
+     DROPPED as costume.
+   - (c) Szegő / OPUC.
+     - PROVED and order-specific: Σ_j −log(1 − |α_j|²) = −∫log(G/K) <= log K, i.e. the Verblunsky (partial
+       autocorrelation) energy is at most log K.
+     - Even granting α ≈ c (unpredictable Boolean moments), it gives only d <~ K² log K.
+     - Predictable sequences are exactly those with log G very negative on a large set, i.e. spectrally
+       concentrated. So it converges to P40(c)'s band-limitation.
+   - (d) Window-variance bound VB (lead, PROVED, elementary from P28's pointwise domination
+     |V_m(x)| <= 2(M + W_0(x)), m >= H). For any set 𝓜 ⊂ [H, ∞) of window centres:
+         4M² >= [avg_{m∈𝓜} E_m − 2E_0] + E_x Var_{m∈𝓜} |V_m(x)|,
+     with E_m = Σ_a ψ_H(a − m)² and E_0 = Σ_a ψ_H(a)².
+     - Per window: E_m <= 2E_0 + 4M², so window density <= front density + 6M²/H.
+     - L²-tight for stationary sets.
+     - E101 (NUMERICAL): it holds on all sets, but certifies only 1–3% of 4M² on near-extremizers (small-N n = 100,
+       Singer–Bu q = 61, 101): Var_m|V_m| is SMALL there, and the front-gap term is negative. Weaker than P28 in
+       practice. DROPPED as a route; kept as a fact.
+2. THE OBSTRUCTION under every route (PROVED, one line). A positive-definite multiplier ψ on Z (the only linear
+   operations preserving f + M >= 0) satisfies |ψ(m)| <= ψ(0). So every sign-preserving localization weights the
+   ORIGIN at least as much as any position m.
+   - The available localizations are therefore: front windows (Fejér), dilation-restrictions (1_{dZ}), their
+     products, and test measures (duality, i.e. everything — which is P29(b) = M itself, P70.6).
+   - Interior windows can only be reached through the MODULUS (P28), which loses the sign.
+   - A mesoscopic spike (height h with √n << h << n) comes from a component spread over [0, X], mixed with
+     incoherent mass of total variation n >> h. No weak limit isolates it with bounded variation, so P48/P53 cannot
+     go mesoscopic.
+   - This is why the dense theory stops at bounded C, why P53 is not quantitative, and why every "missing lemma"
+     since P53 (CSFG, WRS, the four-way cover, TAPER, PR) is this obstruction re-dressed.
+3. Positivity-preserving structures NOT yet exploited for the mesoscopic problem.
+   - The Fejér–Riesz / Hardy factorization G = K + D_S = |U|², with U a POLYNOMIAL of the same degree X. This is
+     analytic, half-line structure: specific to Z and absent in finite groups.
+   - Windowing the factor's coefficients u_I gives |U_I|² >= 0 at ANY interior window I. That is a sign-preserving
+     interior localization, which PD multipliers cannot provide.
+   - The record used the factor only globally: P1, the P8 multiplicity bound, the gain identity, the merit-factor
+     form (Chowla ⟺ the factor's merit factor 2M²/n is bounded below; C½ ⟺ F >= ½). It was never used to localize.
+   - First test (E102): compute the minimum-phase factor u for near-extremizers and for spiky test sets, and ask
+     whether G's spikes are carried by few windows of u (localizable), or are spread over all of u (no gain).
+   - Kill criterion: if spikes of G are always spread uniformly over u's windows, this route is dead too; record it
+     and stop.

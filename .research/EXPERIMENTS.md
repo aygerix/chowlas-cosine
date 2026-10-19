@@ -1358,4 +1358,4 @@ Reading:
   - Result: d = 0.064013, i.e. C = 15.62, with residual FT violation −7e−7.
   - The optimum keeps σ = 2/3 (a = u*).
   - Reading: the exponent-1/3 reach of "second order + cubic profile PD" is ≈ 15.6 numerically. The rigorous value
-    is C < 11.583 (P66) via D_{2/3} <= (2/3)·259/2000.
+    is C < 12.294 (P66, Beckner).

@@ -2199,7 +2199,8 @@ new relaxation, not finer grids.
      binary cubic profile g(p) = p(1 − p)(1 − 2p) is PD.
    - With p continuous from a down to 0, this forces a <= u* = (3 − √3)/6. Then P61 at σ = 2/3 gives
      d <= (2/3)·259/2000.
-   - Result: M >= c(C)n^{1/3} for C < 11.583 rigorously, and C ≈ 15.6 numerically (E93b).
+   - Result: M >= c(C)n^{1/3} for C < 9(1 + √3)/2 = 12.294 rigorously (Beckner: d <= u*·2/(3√3) = (√3 − 1)/9),
+     and C ≈ 15.6 numerically (E93b).
    - The same DC barrier that blinds cubic information at exponent ½ opens it at exponent 1/3. It is the order
      hierarchy read the other way: order j costs m^j/X.
    - Next:

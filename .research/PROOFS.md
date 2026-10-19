@@ -2087,13 +2087,14 @@ Status: paper proofs (agent), lead spot-checked items 1–3. None kernel-checked
 - growing-degree or full Galois arithmetic;
 - block-free coordinated q ≈ X binary tapers.
 
-## P66. CUBIC FRONT CAP: dense Chowla with exponent 1/3 for every C < 3000/259 = 11.583 (lead, 2026-10-19; paper proof)
-Theorem. For every C < 3000/259 there is c(C) > 0 with M(A) >= c(C)|A|^{1/3} for every finite A ⊂ Z_{>0} with
-max A <= C|A|. The constant is INEFFECTIVE. Numerically the method reaches C ≈ 15.1 (E88, E93).
+## P66. CUBIC FRONT CAP: dense Chowla with exponent 1/3 for every C < 9(1 + √3)/2 = 12.294 (lead, 2026-10-19; paper proof)
+Theorem. For every C < 9(1 + √3)/2 = 12.2942… there is c(C) > 0 with M(A) >= c(C)|A|^{1/3} for every finite
+A ⊂ Z_{>0} with max A <= C|A|. The constant is INEFFECTIVE. The proof is fully analytic: no computer assistance.
+Numerically the method reaches C ≈ 15.6 (E93b).
 Position.
 - Bu et al. 2610.17160v1 Prop. 9.7 gives exponent ¼ for every C.
 - T-dense (P63) gives exponent ½ for C < 7.722.
-- So the range 7.722 <= C < 11.583 newly gets exponent 1/3 > ¼.
+- So the range 7.722 <= C < 12.294 newly gets exponent 1/3 > ¼.
 Proof.
 1. Contradiction sequence: X_j <= Cn_j, M_j = o(X_j^{1/3}). P58 steps 1–3: p is continuous and PD with
    a = p(0) = max p <= ½ (P59.1), p(±1) = 0, d = ∫_0^1 p >= 1/C.
@@ -2111,8 +2112,11 @@ Proof.
      g(p(t)) > g(a), contradicting step 4.
    - Hence a <= u*, and e(0) = a(1 − a) <= 1/6.
 6. P61 with x ↦ φ(σx), as in R12-B (P64.5): p = φ(4e) <= φ(σ·e/e(0)) with σ = 4e(0) <= 2/3. Jensen over the Gabor
-   mixture gives d <= D_{2/3} <= (2/3)D <= (2/3)(259/2000) = 259/3000. This contradicts d >= 1/C for
-   C < 3000/259. ∎
+   mixture gives d <= D_{2/3} := sup_{w∈𝒲} ∫_0^1 φ((2/3)|w|²).
+   - Convexity and φ(0) = 0 give φ(σx) <= φ(σ)·x on [0, 1], and φ(2/3) = (1 − 1/√3)/2 = u*. Beckner's sharp Young
+     inequality (P61(d)) gives ∫_0^1 |w|² <= 2/(3√3).
+   - So d <= u*·2/(3√3) = (√3 − 1)/9 = 0.081339…, contradicting d >= 1/C for C < 9/(√3 − 1) = 9(1 + √3)/2. ∎
+   - The weaker route D_{2/3} <= (2/3)D <= (2/3)(259/2000) gives only C < 3000/259 = 11.583.
 Remarks.
 - Why it was missed. NOTEBOOK cont. 13.3 used only the anchored total (x = 0), Σĥ(k)³ >= −m³, which binarity does not
   contradict. The PROFILE version (all x) costs m³/X: it is invisible at exponent ½ (consistent with the DC barrier,
@@ -2124,9 +2128,11 @@ Remarks.
 - Higher orders. M = o(X^{1/j}) makes the j-th central Bernoulli moment profile PD. j = 4 gives e(1 − 3e), whose
   maximum is again at e = 1/6. NOTEBOOK cont. 13.2's square hierarchy at exponent ¼ gives a <= 0.146. Both are
   dominated by Bu's ¼ for all C.
-- Rigorous improvement path: a dedicated certificate for D_{2/3} (the P63 machinery with φ(2x/3)), and the cubic PD
-  constraint inside the certificate. That would move 11.58 towards ≈ 15.
-Status: paper proof (lead). Its inputs are P58, P59.1, P61(a) and P63's rigorous D <= 259/2000; it adds only steps 2–5.
+- Rigorous improvement path:
+  - a rigorous N₂ = sup∫_0^1|w|² (≈ 0.3435 numerically) would give C < 1/(u*N₂) ≈ 13.8;
+  - a dedicated D_{2/3} certificate (P63 machinery with φ(2x/3)) plus the cubic PD constraint would approach 15.6.
+Status: paper proof (lead). Its inputs are P58, P59.1, P61(a) and Beckner's sharp Young inequality; it adds only
+steps 2–6.
 Not kernel-checked; codex adversarial check pending. Novelty: grep of PROOFS/NOTEBOOK for cubic profile, Schur cube,
 X^{1/3} and u* found only the anchored-total remark (cont. 13.3) and the exponent-¼ square hierarchy (cont. 13.2).
 External priority is unchecked.

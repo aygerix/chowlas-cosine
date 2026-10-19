@@ -23,7 +23,7 @@
       - Integer side: CSFG(20) ⇒ T-dense(C < min(20, 1/D_σ)), beyond 1/D (R12-B).
       - Cyclic side: the peak lemma PK(η) (Λ <= CK^{2−η}) beats Sanders' 1/3; PK(1) gives √q.
       - Scalar moments provably cannot do it (R12-S). The full convolution identity λ⋆λ = qλ is needed.
-- (L-dense, exponent 1/3) PROVED (P66, lead, paper): M >= c(C)|A|^{1/3} for every C < 3000/259 = 11.583, ineffective.
+- (L-dense, exponent 1/3) PROVED (P66, lead, paper): M >= c(C)|A|^{1/3} for every C < 9(1 + √3)/2 = 12.294, ineffective; fully analytic (Beckner).
   This is the cubic front cap: under M = o(n^{1/3}), the cubic Schur profile g(p) = p(1 − p)(1 − 2p) is PD, so
   a <= (3 − √3)/6. Numerical reach ≈ 15.6 (E93b). Bu et al. have exponent ¼ for all C.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
@@ -317,7 +317,7 @@ in parallel.
     - 2-D obstruction: independent lacunary scales force linear M, so counterexamples are one-dimensional at every
       scale;
     - the dilation-deficit form of the cyclic problem.
-- NEW (lead, P66): CUBIC FRONT CAP. Dense exponent 1/3 for every C < 11.583 rigorously (≈ 15.6 numerically, E93b).
+- NEW (lead, P66): CUBIC FRONT CAP. Dense exponent 1/3 for every C < 12.294 rigorously (≈ 15.6 numerically, E93b).
   Codex adversarial check pending.
 - Lead read Sanders 0807.5104v2 pp. 1–10.
   - Thm 4.1 gives exponent α/5 at density α, from r = 2⌈1/α⌉ convolution powers in Lemma 3.2; the half-set case is

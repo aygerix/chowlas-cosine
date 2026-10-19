@@ -1,0 +1,10 @@
+Updated [tdense11_report.md](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense11_report.md) with proofs, failed constructions, numerical results, certificates, and the remaining block.
+
+- **PROVED, computer-assisted:** `D ≤ 259/2000`, giving T-dense(C) for every fixed `C < 2000/259 ≈ 7.722007722`, with an ineffective constant. This improves round 10 but does **not** reach 8. Independent verification passed 1,865 pointwise leaves, 188 support lines, and all 192 Schur cells.
+- **PROVED partial fourth-moment obstruction:** repairing a Gaussian packet escape into a four-profile escape requires order-X coefficient L² error. Negligible-energy corrections cannot accomplish it.
+- **PROVED DC-barrier result:** the constructed three-profile escapes automatically satisfy every anchored convolution test of each fixed order ≥ 3. The broader claim excluding every higher-order argument remains unproved.
+- **Certified construction failures:** the positive Paley escape has a small, rigorously bracketed minimum but divergent fourth moment and order-X rounding energy. Deleting its exceptional residue class produces an Arb-certified value below −977 at X = 65,536.
+
+The main four-moment alternative remains **unresolved**: I obtained neither a positive-density four-profile escape nor a uniform `D₄ < D` obstruction. The report identifies the missing statement and distinguishes it from the proved subcase obstructions.
+
+The [exact certificate](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense11_scratch/certificate_td.json), [independent verification](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense11_scratch/independent_verification.json), and [final checks](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense11_scratch/final_checks.json) are saved. All mathematical computation used the specified VM with at most four cores. No commits, subagents, root research-Markdown edits, or LaTeX artifacts were made.

@@ -1,0 +1,26 @@
+{
+  "files": {
+    "certificate_td.json": "811aca865a1f7b9bc6dc32716de736738657eb319ef438f85a99357c926fe5b0",
+    "certify.py": "a14572ed02de2157625f81ea21ba35598165fdcc16007648a1eab939f35057fc",
+    "discover.py": "c2d59faeab4ee4100e4005bc4e9a44b783f987b404bda5e34a034ebaff397f5f",
+    "discovery_K192_d12_s0.2_t0_support.json": "06d78473a0af9b1fbc3e083b3e38a705cdadd3f9c701251b7cde14d15ff344d8",
+    "discovery_K48_d10_s0.2_t1.json": "98f3b291ca0279140750bd6a1b35f6abd23e180ac5ecfd54ae8c65e199da1f94",
+    "discovery_K64_d10_s0.2_t0.json": "40b13ef8df0671cca2655f97579808f055b18cdc690d5f0afa026675fbc3f279",
+    "discovery_K64_d10_s0.2_t0_support.json": "460ed4b7ae5e07b7cb35650205513f1b1006046a6b9ee3aa249e6ef5cad442b4",
+    "failed_certificate_slack_1e4.json": "b4f464d36edbc28979a0d41b0392844dba2501fb5f214737401b4644365197e4",
+    "final_check.py": "91e6f3135835c1654546b7d0815bcbacba6cd062f3ec53afc4ec6a4b3fe0001b",
+    "fourth_probe.json": "45048d5ddd75208bb9eb7a47144b9093028d26ba9684dee967c4cd34277bca2e",
+    "fourth_probe.py": "b7cdaa4cde266715ca29dcc83369edb66c6a2f8946989f35c4c7f86884e9618e",
+    "independent_verification.json": "7c6e449857e76a1251c10a8333ad24251da1f4ff6c5f0f655000c4f8abf82a88",
+    "independent_verify.py": "383bd72dff8a8470d7d2f8203a81f69c4b252e8a62f839903b459cff72efe080",
+    "packet_centres_X4096.json": "a3904b914fd182ae27b01ce6abd824bcaf18457689890a8649e8362c1b7f3644",
+    "packet_centres_X65536.json": "58c42a30094e6d14911ab377103b43268490943464bc166f3ce4a6a3102003d0",
+    "packet_factor.json": "7aab4c285e50aefa8a186cc370969d3c116a21ae58d10a54041e691f7ba691a9",
+    "random_round_X4096.txt": "feaa82cc2ecddb3b4fcf647ee0717e935129fc89208028b0cb93b8d8a16b7713",
+    "random_round_X65536.txt": "2c17c521a5229792465cb72725392a43b2520bd6b873a3d05aa02abc6eac6921",
+    "support_lines.json": "bcf57f9e5e5c4436f36e6f4eaf5652498828e73826687838cdff0a0576049412",
+    "support_lines.py": "0229261af705f5a32b0162ed36f8bb3422ac06c666eb45bf488ffcfe6304fa20"
+  },
+  "python": "3.12.3",
+  "constraint": "All mathematical computation via specified dirun VM; <=4 cores; Gurobi for optimization"
+}

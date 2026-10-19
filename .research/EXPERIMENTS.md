@@ -1237,3 +1237,31 @@ Reading:
   - 2475 pointwise leaves, 0 failures;
   - all 64 Schur cells pass with λ = 1333/5000.
   - So D <= 1333/10000 is confirmed, and T-dense(C < 7.5019) follows from P61(a).
+## E85 (2026-10-19) Lead's independent re-check of the round-11 certificate D <= 259/2000 (src/e85_r11_verify.py; examples/e85/e85_verify.json)
+- Method: E84's Arb-in-x pointwise check (200 bits; mean-value enclosures; adaptive bisection; F/x on [0, 0.6]), but
+  with a branch set I derive myself rather than reading the certificate's per-cell branch list:
+  - 0, Gram 2x² − 1, x − √(1 − x);
+  - the 18 round-9 long lines (verified in E81);
+  - support lines recomputed from the stored nodes and weights (A_n via exact Chebyshev recurrence, R-repair), each
+    allowed only on half-cells with k >= k_jj = ⌈1/t_lo⌉ − 1.
+  - Dominated lines are pruned. On each sub-interval the 6 branches highest at the midpoint are tried.
+- Schur: my own exact piecewise-cubic integration (as E84), with λ = 2D₁ = 259/1000 and U = 1 + (4/5)x(1 − x).
+- Result (VM, about 6 minutes):
+  - all 188 support records re-derive (none bad; every stored line is implied);
+  - β_j monotone with β(0) = 0; a_j >= 0; power form equals Bernstein form;
+  - 22615 pointwise leaves, 0 failures. Branch use: 15256 lines, 131 √-branch, 87 Gram, 7141 zero;
+  - support_k agrees with the certificate;
+  - all 192 Schur cells pass.
+- So D <= 259/2000 is confirmed, and T-dense(C < 2000/259 = 7.7220) follows from P61(a).
+## E86 (2026-10-19, round-11 agent, VM) Fourth-moment and Paley probes (examples/r11_certificates/fourth_probe.*)
+- Setup: E82 N = 320 factor rounded to integers (packet_factor.json); seed 2026101911; FFT grid >= 32(X + 1); Paley
+  moduli 61 and 257.
+- Results at X = 65536:
+  - random packets (J = 776): fourth moment 0.0879 vs binary 0.1167; nearest-rounding energy 0.0508; FFT minimum −10.1;
+  - positive Paley (q = 257): fourth 1.162, energy 0.0656, minimum −3.07 (Arb-bracketed);
+  - Paley with the DC class deleted: fourth 0.058, minimum −977.2 (Arb).
+- Residual cubes: random −0.00006 and Paley 0.187, against the required 0.0427.
+- Nearest roundings of the random family (saved sets) give R > 1.7995 (X = 4096) and R > 1.9944 (X = 65536), with Arb
+  point certificates.
+- Reading: no tested weighted family has four binary profiles with a bounded fourth moment. Positive Paley
+  overconcentrates on qZ; deletion loses both the lower bound and the cubic skew.

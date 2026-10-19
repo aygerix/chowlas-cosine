@@ -227,3 +227,18 @@ Archived copies are in examples/r7_certificates/. The originals, runnable from t
 - Lead's independent re-check: E84 (src/e84_r10_verify.py; Arb in x plus my own Schur integration). All pass.
 - third_direct.py/json and third_probe.py/json: the sparse cubic-gadget probes, with Arb point certificates for the
   failed rounded candidates (R > 2.079, R > 2.081).
+## C-R11 (2026-10-19) Exact certificate for P63 (D <= 259/2000; T-dense(7.7220)); archived in examples/r11_certificates/
+- support_lines.py → support_lines.json: Gurobi LPs for k = 2..16. Each record stores rational nodes and weights; the
+  line is re-derived exactly with the R-repair.
+- discover.py → discovery_K192_d12_s0.2_t0_support.json: discovery of a_j and the degree-12 potentials. The K48/K64
+  discovery files are also kept.
+- certify.py → certificate_td.json:
+  - a_j rounded, plus 1/2000;
+  - 384 half-cells of leaves in u = √(1 − x);
+  - 192 exact Schur cubics.
+  - failed_certificate_slack_1e4.json is the failed 1/10000-slack attempt (fails near u = 0.32398 in half-cell 64),
+    kept as a record.
+- independent_verify.py → independent_verification.json: the agent's QQ/FLINT reconstruction.
+- final_check.py → final_checks.json: hashes, binary algebra, Arb point dips of failed roundings, triangular
+  repair-energy constants.
+- Lead's independent re-check: E85 (src/e85_r11_verify.py → examples/e85/e85_verify.json). All pass.

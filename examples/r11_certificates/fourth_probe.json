@@ -1,0 +1,257 @@
+{
+  "seed": 2026101911,
+  "python": "3.12.3",
+  "rows": [
+    {
+      "raw": [
+        0.11558349591914571,
+        0.1160842857716785,
+        0.07471970404565352,
+        0.08740651874098034
+      ],
+      "target": 0.11661392545769869,
+      "residual": [
+        -0.0010304295385529735,
+        0.08523387585920146,
+        0.0005530460686774653,
+        0.04145688082448095
+      ],
+      "cubic_target": 0.042706908365915515,
+      "fourth_target": 0.041567546980189406,
+      "defect": 0.054051396421351795,
+      "nearest_energy": 0.051198915954093586,
+      "fft": {
+        "min": -4.532190262767481,
+        "index": 110756,
+        "grid": 262144,
+        "angle": 2.654649627235345,
+        "status": "NUMERICAL"
+      },
+      "family": "random",
+      "X": 4096,
+      "J": 147,
+      "seed": 2026101911,
+      "ideal_global_bound": "-sqrt(147/8)-1/4",
+      "rounded": {
+        "n": 480,
+        "X": 2400,
+        "angle": "2*pi*67196/262144",
+        "value_ball": "[-39.42606706003028746035775201050537636467705062877118448 +/- 4.99e-54]",
+        "R_lower": "17995/10000",
+        "status": "PROVED_POINT_DIP",
+        "file": "random_round_X4096.txt"
+      },
+      "correction_energy_lower_bound_from_cubic": 0.0020003373786705108
+    },
+    {
+      "raw": [
+        0.11628253531150907,
+        0.11403518044704074,
+        0.15396287773729794,
+        0.335507967027403
+      ],
+      "target": 0.11661392545769869,
+      "residual": [
+        -0.00033139014618962137,
+        0.0827168665424716,
+        0.08258216042621234,
+        0.20394981995972114
+      ],
+      "cubic_target": 0.042706908365915515,
+      "fourth_target": 0.041567546980189406,
+      "defect": 0.14161739199984785,
+      "nearest_energy": 0.05475514352654534,
+      "fft": {
+        "min": -1.606003712345023,
+        "index": 127998,
+        "grid": 262144,
+        "angle": 3.067913638871661,
+        "status": "NUMERICAL"
+      },
+      "family": "paley_full",
+      "X": 4096,
+      "q": 61,
+      "ideal_global_bound": "-(61-1)/(4*sqrt(2*61))-1/4",
+      "global_lower_bound_ball": "[-1.6080361906377779640423254725423340648588868385657174 +/- 2.64e-53]"
+    },
+    {
+      "raw": [
+        0.11661398029185338,
+        0.11525667370093837,
+        0.07291958263731407,
+        0.05746491245426275
+      ],
+      "target": 0.11661392545769869,
+      "residual": [
+        5.4834154690263986e-08,
+        0.08361647057748144,
+        1.0235392566729733e-07,
+        0.014240946302776395
+      ],
+      "cubic_target": 0.042706908365915515,
+      "fourth_target": 0.041567546980189406,
+      "defect": 0.026882420880572973,
+      "nearest_energy": 0.042592297835678763,
+      "fft": {
+        "min": -125.57824457821937,
+        "index": 77354,
+        "grid": 262144,
+        "angle": 1.8540554666579045,
+        "status": "NUMERICAL"
+      },
+      "family": "paley_DC_removed",
+      "X": 4096,
+      "q": 61,
+      "ideal_global_bound": "NONE; positivity lost"
+    },
+    {
+      "raw": [
+        0.11652134130276821,
+        0.11666428965717462,
+        0.07394265113360167,
+        0.08793211525236096
+      ],
+      "target": 0.11667088836852849,
+      "residual": [
+        -0.00014954706576028107,
+        0.08513723961585179,
+        -5.6145272429676717e-05,
+        0.044016793416068185
+      ],
+      "cubic_target": 0.04270703710924756,
+      "fourth_target": 0.041574699833128524,
+      "defect": 0.05671110264233226,
+      "nearest_energy": 0.050784618026586216,
+      "fft": {
+        "min": -10.097312130539251,
+        "index": 2830517,
+        "grid": 4194304,
+        "angle": 4.240194040804396,
+        "status": "NUMERICAL"
+      },
+      "family": "random",
+      "X": 65536,
+      "J": 776,
+      "seed": 2026101911,
+      "ideal_global_bound": "-sqrt(776/8)-1/4",
+      "rounded": {
+        "n": 7672,
+        "X": 39584,
+        "angle": "2*pi*1860642/4194304",
+        "value_ball": "[-174.695558438236477007323808134654140125008994907040296 +/- 6.23e-52]",
+        "R_lower": "19944/10000",
+        "status": "PROVED_POINT_DIP",
+        "file": "random_round_X65536.txt"
+      },
+      "correction_energy_lower_bound_from_cubic": 0.001994136286834541
+    },
+    {
+      "raw": [
+        0.11662781423605624,
+        0.1160568930364505,
+        0.26073077610710443,
+        1.1621754695488542
+      ],
+      "target": 0.11667088836852849,
+      "residual": [
+        -4.307413247223672e-05,
+        0.08443620517461535,
+        0.1874002189260711,
+        0.9117795405191081
+      ],
+      "cubic_target": 0.04270703710924756,
+      "fourth_target": 0.041574699833128524,
+      "defect": 0.7567708103710957,
+      "nearest_energy": 0.06558227739635522,
+      "fft": {
+        "min": -3.0724206688775606,
+        "index": 2078304,
+        "grid": 4194304,
+        "angle": 3.113357819712773,
+        "status": "NUMERICAL"
+      },
+      "family": "paley_full",
+      "X": 65536,
+      "q": 257,
+      "ideal_global_bound": "-(257-1)/(4*sqrt(2*257))-1/4",
+      "point_certificate": {
+        "angle": "2*pi*2078304/4194304",
+        "value_ball": "[-3.07242066887755174830315100621001527283224240 +/- 5.58e-45]",
+        "status": "PROVED_POINT_VALUE"
+      },
+      "global_lower_bound_ball": "[-3.0729189849038777010105473227513157820854675503393647 +/- 3.23e-53]"
+    },
+    {
+      "raw": [
+        0.11667088835783164,
+        0.11634249058973194,
+        0.07372046034461238,
+        0.05814572035624997
+      ],
+      "target": 0.11667088836852849,
+      "residual": [
+        -1.0696841710875404e-11,
+        0.08467933026200103,
+        4.245963251183566e-09,
+        0.014421974816458426
+      ],
+      "cubic_target": 0.04270703710924756,
+      "fourth_target": 0.041574699833128524,
+      "defect": 0.027047290256757135,
+      "nearest_energy": 0.042760168567913315,
+      "fft": {
+        "min": -977.2081256121708,
+        "index": 652810,
+        "grid": 4194304,
+        "angle": 0.977927732558228,
+        "status": "NUMERICAL"
+      },
+      "family": "paley_DC_removed",
+      "X": 65536,
+      "q": 257,
+      "ideal_global_bound": "NONE; positivity lost",
+      "point_certificate": {
+        "angle": "2*pi*652810/4194304",
+        "value_ball": "[-977.208125612170760617960991463024557487450995163 +/- 7.02e-46]",
+        "status": "PROVED_POINT_VALUE"
+      }
+    }
+  ],
+  "kurtosis": [
+    {
+      "q": 5,
+      "kurtosis_exact": "1",
+      "normalized_exceptional_DC_fourth_mass_exact": "5/16",
+      "individual_cosine_amplitude": "1/sqrt(5)",
+      "status": "PROVED_BY_GAUSS_SUM_FORMULA; exact character checks"
+    },
+    {
+      "q": 13,
+      "kurtosis_exact": "1",
+      "normalized_exceptional_DC_fourth_mass_exact": "13/16",
+      "individual_cosine_amplitude": "1/sqrt(13)",
+      "status": "PROVED_BY_GAUSS_SUM_FORMULA; exact character checks"
+    },
+    {
+      "q": 61,
+      "kurtosis_exact": "1",
+      "normalized_exceptional_DC_fourth_mass_exact": "61/16",
+      "individual_cosine_amplitude": "1/sqrt(61)",
+      "status": "PROVED_BY_GAUSS_SUM_FORMULA; exact character checks"
+    },
+    {
+      "q": 257,
+      "kurtosis_exact": "1",
+      "normalized_exceptional_DC_fourth_mass_exact": "257/16",
+      "individual_cosine_amplitude": "1/sqrt(257)",
+      "status": "PROVED_BY_GAUSS_SUM_FORMULA; exact character checks"
+    },
+    {
+      "q": 1021,
+      "kurtosis_exact": "1",
+      "normalized_exceptional_DC_fourth_mass_exact": "1021/16",
+      "individual_cosine_amplitude": "1/sqrt(1021)",
+      "status": "PROVED_BY_GAUSS_SUM_FORMULA; exact character checks"
+    }
+  ]
+}

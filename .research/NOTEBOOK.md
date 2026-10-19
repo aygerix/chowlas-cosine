@@ -1985,3 +1985,57 @@ residual off qZ, but half the variance sits on the exceptional class qZ with unb
 Decision: the binarisation layer is a coupled (taper + front) problem, not a free cyclic one. Round 12 candidates:
 (a) TD-COUPLE in Z_q and in mesoscopic Bohr models (prove or construct); (b) quantify (2) with tolerances (a finite
 P53 at the front with explicit √-type loss); (c) continue certificate tightening only if cheap.
+
+## 2026-10-19 (night, cont. 16) — Round 11 verified (T-dense(7.72)); FRONT-½ and its cyclic barrier; Parseval roughness (lead)
+Round 11: P63 and E85 (independent check: 22615 leaves, 0 failures). D₁ = 259/2000 ⇒ T-dense(C < 7.7220). The four-moment
+alternative is unresolved. The dilation/support-line certificate family saturates near 0.129 (discovery), so 8.57 needs a
+new relaxation, not finer grids.
+1. FRONT-½ is the cleanest binary target.
+   - P61 step 9 gives d <= 4a(1 − a)D with a = p(0) (φ(sx) <= sφ(x)).
+   - So any universal a* < ½ with a <= a* in binary limits gives T-dense(C < 1/(4a*(1 − a*)D)), BEYOND the
+     second-order reach 1/D.
+   - The exact reach under p(0) <= a* is 1/sup_w ∫φ(4a*(1 − a*)w²).
+   - Thresholds (HEURISTIC, macroscopic full-Haar model): binary kurtosis 1/e − 3 < 3/2, the minimum for positive
+     finite configurations, exactly when p > 1/3. The Gaussian kurtosis 3 threshold is p > 0.211.
+2. The front object (PROVED reduction, lead).
+   - Let a = ½ and ε > 0 be small, Y = εX and s_k = 2·1_A(k) − 1 (k <= Y).
+   - The Fejér low-pass of h = g + m >= 0 at scale Y gives
+         S(x) := Σ_{k<=Y} (1 − k/Y) s_k cos kx >= −4m − o(√Y)   on Y^{−1/2} <= |x| <= π.
+     The profile mismatch (½ − local average) is smooth and lives at |x| <~ 1/h.
+   - The torsion budget (P63.4) at a = ½ says s has no macroscopic rational atoms.
+   - Hence FRONT-½ ⟸ TBS (tapered balanced sign lemma): every locally balanced sign sequence on [1, Y] without
+     macroscopic rational atoms has min_{|x| >= Y^{−1/2}} S(x) <= −c√Y.
+     - Untapered TBS is TRUE with no atom hypothesis: P34 (one-sided Littlewood, kernel-checked) gives 0.28√Y.
+     - The Fejér taper admits s ≡ 1 and s = (−1)^k (rational atoms), so the hypothesis is essential.
+3. CYCLIC BARRIER (PROVED, lead): TBS ⇒ cyclic half-set Chowla.
+   - Let q be prime and S ⊂ Z_q a symmetric half-set with λ_γ >= −K (γ ≠ 0). Put s_c = 2·1_S(c) − 1 and repeat it L
+     times (Y = Lq, L fixed).
+   - Then S(x) = (1/(2q))Σ_γ λ_γ F_Y(x − 2πγ/q) ∓ ½, since the floor terms sum to −s_0/2.
+     - Fejér peaks have width ≈ 1/Y < 2π/q, and their tails cost O(K/L). Hence S >= −O(KL) − O(1).
+     - Correlations with any fixed rational a/b (b < L) are O(q^{−1/2}(b/L)²) -> 0, so there are no macroscopic
+       atoms.
+   - So K = o(√q) would give a TBS counterexample.
+   - Consequence: proving a < ½ from the FRONT ALONE would prove the √-strength cyclic half-set conjecture, which is
+     open (Sanders 0807.5104v2 Thm 1.2: exponent 1/3).
+   - Any proof of FRONT-½ must use the TAPER COUPLING (cont. 15.3). Conversely, cyclic half-set counterexamples (if
+     they exist) are admissible fronts. The open question is then whether they can be tapered.
+4. Parseval roughness: the taper's price for periodic fronts.
+   - Model: a locally N-periodic family, A ∩ window = {k : k mod N ∈ E_t}, with E_t ⊂ Z_N nested and N << window << X.
+   - Then f_A(2πs/N + ξ/X) ≈ X·C_s(ξ), with C_s(ξ) = ∫_0^1 1̂_{E_t}(s)cos(ξt)dt.
+   - Parseval on Z_N with nestedness (|E_t ∩ E_t'| = N p(max(t, t'))) gives the EXACT identity
+         Σ_{s≠0}|∫1̂_{E_t}(s)e^{iξt}dt|² = ∫(−p'(u))·4sin²(ξu/2)/ξ² du − |p̂(ξ)|²  ≈ 2p(0)/ξ²   (ξ >> 1).
+     So the spike envelopes are forced to be Hölder-½ rough ("Brownian"), whatever the removal order.
+   - The values v_s = X·C_s(ξ) have mean O(X/(Nξ)) and RMS ≈ X√(p(0)/N)/ξ, with v_s <= Xd.
+   - From min >= −M: Σv² <= max(v)·Σ|v| gives M >~ X p(0)/(N d ξ²) (PROVED in this model). So periodic structure with
+     N << √X is impossible.
+   - HEURISTIC: M >~ X√(p(0)/N), unless the roughness concentrates on few characters with large POSITIVE values
+     (structured coset removals). This would exclude every periodic front with N << X.
+   - Fronts with N ≈ X are not periodic within the front, so item 3's embedding does not survive a taper. This is the
+     coupling in action.
+5. Decision for round 12: the coupled front problem.
+   - (T1) FRONT-½ via coupling (Fourier domination, PD envelopes, Parseval roughness, torsion budget, the full-Haar
+     bound), with the cyclic barrier as a guard rail.
+   - (T2) The rigorous Parseval-roughness theorem (quantitative P53 for locally periodic families) and its structured
+     evasions.
+   - (T3) A construction probe: Paley-type fronts (q ≈ X) with coordinated tapers, measuring R on the VM. This is
+     Track C: if coupled tapers of strong fronts beat 1/D numerically, that is the first escape signal.

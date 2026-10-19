@@ -1834,3 +1834,87 @@ D₁ < rκ/4 (round 10, Task 2); (iii) Lean, later.
    certificates). Failed, as predicted (NOTEBOOK cont. 13.5).
 Status: 1 and 3 paper proofs (lead-checked); 2 computer-assisted exact with two independent verifications; none
 kernel-checked.
+
+## P63. Round-11 agent results (report .research/agents/tdense11_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ D <= 259/2000, hence T-dense(C) for EVERY C < 2000/259 = 7.722007… INEFFECTIVE constant; computer-assisted.
+   - NEW ingredient: support-specific symbol lines.
+     - Lemma. Let k >= 2, nodes z_l ∈ [−1, 1], weights α_l >= 0, A_n = 2Σ_l α_l T_n(z_l), c = Σ_l α_l and
+       R = Σ_{n=3}^k max(A_n, 0). If A_2 > 0, every normalized nonnegative PD w with w(nt) = 0 for n > k satisfies
+       w(2t) >= (−A_1 w(t) − c − R)/A_2.
+     - Proof. The sampled sequence (w(nt))_n is PD and supported in |n| <= k, so its symbol 1 + 2Σ_{n<=k} w(nt)cos nθ
+       is >= 0. Evaluate at θ_l = arccos z_l, weight by α_l, and use 0 <= w(nt) <= 1 for n >= 3.
+     - Valid on every t-cell with t_lo >= 1/(k + 1), i.e. for k >= k_jj = ⌈1/t_lo⌉ − 1. Example: k = 2 or 3 gives
+       w(2t) >= w(t) − ½.
+   - Certificate: the pointwise inequality φ(x²) <= a(t)x + B(2t, y) − B(t, x)/2 on 384 half-cells.
+     - 192 cells for a and B; B has degree 12, is monotone, with B(t, 0) = 0, and B = 0 for t >= 1.
+     - Branches for y = w(2t): 0, Gram, P59.4, the 18 round-9 long lines, and the support lines.
+     - Schur test with U = 1 + (4/5)x(1 − x): T_a U <= (259/1000)U.
+     - Minimum Schur margin 104315471167/26542080000000000.
+   - Discovery values (Gurobi, not certificates):
+     - K = 192, degree 12: 0.1292047;
+     - long lines alone: 0.1328880;
+     - an extra third-dilation potential: 0.1323699 at K = 48.
+   - Verifications.
+     - Agent: SymPy/FLINT reconstruction (1865 leaves, 383 CF caps, 188 support lines, 18 long lines by Sturm,
+       192 Schur cells).
+     - Lead (E85, a different method): Arb directly in x. I RE-DERIVED all 188 support lines from their stored LP nodes
+       and weights. None is bad, and every stored line is implied by my derivation. I used my own per-half-cell branch
+       set, allowing support lines only with k >= k_jj. Results: 22615 leaves, 0 failures; all 192 Schur cells pass.
+2. ✓ DC-BARRIER THEOREM (precise form of NOTEBOOK cont. 14).
+   - Statement. For every Hermitian PD τ on Z, h = m + Σ_{k=1}^X r_k cos kx and j >= 2:
+         Re Σ_k τ(k)ĥ(k)^j >= τ(0)(m^j − 2^{1−j}Σ|r_k|^j).
+     Proof: |τ(k)| <= τ(0), plus the triangle inequality.
+   - Corollary. Give P62's three-profile escapes a DC offset m with X^{1/3} << m << √X. Then they satisfy EVERY anchored
+     convolution test of every fixed order j >= 3 (and h^{*j} >= 0 pointwise).
+   - Correction to cont. 14: physical positivity of a test needs τ PD, not τ >= 0. Example: τ = (1, −½) gives 1 − cos x.
+   - The meta-claim "every higher-order argument is blind" remains HEURISTIC.
+3. ✓ REPAIR-ENERGY LEMMA (new to the record).
+   - Statement: |avg(u³ − v³)| <= √E(√F_u + (F_uF_v)^{1/4} + √F_v), where E = avg(u − v)² and F = avg(·)⁴.
+   - Consequence. Any weighted escape u with the four binary raw profiles is order-X L²-far from every base escape v
+     with bounded fourth moments and the Gaussian profiles (cube p³ + 3pe, fourth F = ∫(p⁴ + 6p²e + 3e²)):
+         liminf X⁻¹Σ(u − v)² >= S²/(√d + (dF)^{1/4} + √F)²,   S = ∫e(1 − 2p) > 0.
+     Triangle generator: d = (1 − π/4)/2, S = π/64, F = 67/120 − 5π/32, and the bound is > 3/1000 (Arb).
+   - Also |avg z³|² <= avg z² · avg z⁴. This explains why every sparse cubic gadget (P62.3) has a divergent fourth
+     moment.
+   - Base escapes are realizable deterministically, using Q-independent angles such as 2π√prime_i.
+   - Correction: four raw profiles IMPLY normalized L² proximity to {0, 1}. The converse needs uniform integrability
+     of fourth powers.
+4. ✓ TORSION BUDGET (extends cont. 14).
+   - Apply p_q(0) <= ½ (P59.1 for the counterexample A_q) with q = lcm(1, …, L), then let L grow:
+         Σ_{θ ∈ 2πQ/2πZ, θ ≠ 0} W_θ(0) <= ½ − a.
+   - Hence the rational macroscopic part satisfies |R(t)| <= ½ − a, and at a = ½ every rational atom vanishes.
+   - Also ∫p_q <= 4a_q(1 − a_q)D. This constrains rational atoms only; it leaves atom-free P61 escapes untouched.
+   - Classification (classical assembly): a positive linear coefficient mask that maps every binary array to a binary
+     array is restriction to a subgroup qZ. So subgroup restrictions are the only binary-derived objects of that kind.
+5. ✓ KURTOSIS AND THE PALEY BOUNDARY.
+   - Full-Haar inequality: kurtosis >= 3 − (3/2)Σa⁴/(Σa²)², hence >= 3/2. It holds for positive-amplitude finite cosine
+     sums on a compact abelian group, with distinct characters and no order-2 character. Zero-sum quadruples are
+     nonnegative; keep the three pairings.
+   - The DC-subtracted version is FALSE. With S_q(k) = Σ_{a ∈ QR} cos(2πak/q) = (−1 + √q χ(k))/2 (k ≠ 0,
+     q ≡ 1 mod 4), the kurtosis off the DC class is exactly 1.
+   - Positive Paley escape: r_k = w(k/X)S_q(k)/√(2q), q -> ∞, q = o(X).
+     - min >= −(q − 1)/(4√(2q)) − ¼ = o(√X), with profiles (p, p).
+     - (1/(Xq))Σr⁴ -> (1/64)∫w⁴, so the fourth moment diverges.
+     - Nearest-rounding energy >= (X/8)∫w².
+     - Half the variance sits on the exceptional class qZ.
+   - Deleting the class (r' = wχ/2): f(2πa/q) = −(X/(2√q))∫w + O(q) at nonresidues a, so M/√X -> ∞ for
+     q = o(X^{2/3}).
+   - Arb at X = 65536, q = 257: the positive family's minimum lies in [−3.07292, −3.07242]; the deleted family has a
+     value of −977.208.
+6. ✓ LITERATURE (Task 3, quoted).
+   - Sanders arXiv:0807.5104v2, Thm 1.2: polynomial bound for symmetric half-sets of Z_p, with exponent 1/3; Thm 1.3:
+     distance to a subgroup.
+   - Nontrivial strongly regular circulants are the prime Paley graphs (Liu–Zhou, EJC 29(2) P2.9, Thm 259; Bridges–Mena,
+     Hughes–van Lint–Wilson, Ma 1984).
+   - The unqualified cyclic √-statement is false (complete graph).
+   - Embedding: for a prime p > 2X, a cyclic √-bound at density δ implies T-dense(1/δ). The converse does not hold.
+7. NUMERICAL (VM, examples/r11_certificates/fourth_probe.*):
+   - random packets and positive/deleted Paley at X = 4096 and 65536 (table in the report);
+   - nearest roundings fail, with R > 1.7995 and R > 1.9944 (Arb point certificates, re-evaluated at 220 bits).
+Status:
+- Item 1: computer-assisted, with two independent verifications.
+- Items 2–5: paper proofs, lead-checked.
+- None kernel-checked.
+- The four-moment alternative (A)/(B) is UNRESOLVED. The missing statement is either a positive-packet configuration
+  with bounded fourth moment and the non-symmetric local Bernoulli law, or a binary-specific second-order inequality
+  excluding all of them.

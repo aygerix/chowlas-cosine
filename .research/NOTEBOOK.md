@@ -2268,3 +2268,57 @@ new relaxation, not finer grids.
      flatness and Galois / unequal multiplicities.
    - This is a concrete route past ¼ that the R13 fakes need not satisfy. They are not Boolean, so (iii) is unavailable
      to them.
+6. (cont. 18) CORRECTION to item 5 (lead, same night). Item 5(i) drops the NN term of the identity at 2γ₀; the
+   original item 5 is kept above.
+   - Exact form, with Q = N⋆N (unnormalized):
+         ΣPP' + Q(2γ₀) = 2ΣP(β)N(2γ₀ − β) + λ(2γ₀),   sums over β ∉ {0, 2γ₀}.
+   - For x, y ∈ [0, K] we have xy >= K(x + y) − K². So, with T = ΣN = S + m,
+         Q(2γ₀) >= 2K(T − qK/2)₊.
+   - Hence Λ² <= 2K(min(T, qK/2) − m) + Λ. With Parseval (Λ >= (q²/4 − KT)/(T − m)) this gives K⁴ >= q/16, i.e.
+     K >= ½q^{1/4} (crude constant). Item 5's "N ≈ K a.e." is not the equality case.
+   - Equality now needs:
+     - N ≈ K on a symmetric set 𝒩 of density about ½;
+     - 𝒩 ∩ (2γ − 𝒩) ≈ ∅ for every peak γ carrying the Parseval mass;
+     - λ ≈ 0 on most of the rest;
+     - about K² peaks of height ≈ q/(2K).
+   - HEURISTIC consequence. Two non-opposite peaks γ, γ' force 𝒩 ≈ 𝒩 + 2(γ − γ'): approximate translation
+     invariance in Z_q. With several peaks this pushes towards ONE dilation direction d.
+     - 𝒩 ≈ d·{|y| < q/4};
+     - the peaks cluster at y ≈ ±q/4 within a window J << q;
+     - the spectrum of B carries a MACROSCOPIC profile along d.
+   - If made rigorous, this "profile along a dilation direction" structure is where integer-type taper/PD arguments
+     (P58–P66) could enter the cyclic problem. This should be the next step after round 15, unless the agent finds
+     it first.
+7. (cont. 18, HEURISTIC; lead) Following item 6's clustered configuration to the physical side.
+   Dilate so the direction is d = 1, and write y for frequency and x for position.
+   - Spectrum model:
+     - λ ≈ −K on |y| < q/4 (the set 𝒩);
+     - λ ≈ 0 on |y| > q/4;
+     - K² positive peaks of height ≈ q/(2K) in a window of width J around y = ±q/4.
+   - Inverse transform of each part:
+     - step part: −(K/q)·D_{q/4}(x), with D the Dirichlet kernel. It vanishes at even x and is ≈ ∓K/(πx) at odd
+       x: a period-2 front of amplitude K/|x|.
+     - peak part: Re e(x/4)·A(x), with envelope A(x) = Σ_j c_j e(jx/q), c_j >= 0 and A(0) = Σc ≈ S/q.
+   - Flatness b − ½ = ±½ (x ≠ 0) has two consequences.
+     - (a) Away from x = 0, |A(x)| ≈ 1/√2. A positive-coefficient sum of constant modulus is a single term (its
+       autocorrelation would have to vanish off 0). So one peak, Λ ~ q, linear K: a contradiction.
+     - (b) Near x = 0, the envelope spike A(0) ≈ K must be cancelled by the step part, which decays like K/x. A
+       positive window gives A(x) ≈ Λ/(πx), so cancellation needs Λ ≈ K, i.e. q/(2K) ≈ K and K ≈ √(q/2).
+   - So the configuration that the second-order argument cannot rule out is internally inconsistent for K << √q.
+     NOT a proof.
+   - Rigorous version needed:
+     - (1) peaks with Parseval mass force 𝒩 to nearly avoid 2γ − 𝒩, hence approximate translation invariance and a
+       single dilation direction;
+     - (2) a stability form of "c >= 0 and |A| ≈ const ⇒ one dominant term", in L² with explicit errors;
+     - (3) control of the x ≈ 0 front.
+   - Candidate main task for round 16, if round 15 does not already reach it.
+8. (cont. 18) CORRECTION to item 7(a) (lead, immediately).
+   - "A positive-coefficient sum of constant modulus off 0 is a single term" is FALSE.
+     - |A|² constant off 0 means c⋆c̃ = αδ + β·1. Singer difference sets (0/1 coefficients) realize this exactly in Z_v.
+     - In a window of width J it is approximately realizable by Golomb-ruler/difference-set-like clusters.
+   - So 7(a) gives no contradiction. The peak cluster must itself look like a (windowed) difference set Π' with
+     |A(x)|² ≈ |Π'| − λ' + (Fejér bump of height ≈ |Π'|² and width q/J at 0).
+   - 7(b) (front cancellation near x = 0) needs redoing with this envelope. The bump height |Π'|²c₀² must match the
+     step part's K/|x| profile over |x| <~ q/J. This is unresolved.
+   - Net: the clustered extremal configuration reduces to "windowed difference set of peaks + half-interval of −K
+     values + period-2 front". It is NOT yet shown inconsistent. Item 6's rigorous part (K >= ½q^{1/4}) stands.

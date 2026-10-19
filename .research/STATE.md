@@ -278,7 +278,8 @@ in parallel.
 - Round 4 DONE (PROOFS P55). HBCG (window QD-½) is the precise missing inequality, and HBCG ⇒ T-dense is proved.
   PD plus Bessel cannot give it (saturating example), and TL1 (P54) is the binary input that kills that example.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
-- E72: no C = 3 set escapes the P47 family, and the min bound rises with n. Candidate: P31 + P47 ⇒ T-dense for C < C₁.
+- E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
+  4, 6, 10) is running.
 ## Running now (2026-10-19 night, newest)
 - Codex MATH agent, round 5 (.research/agents/tdense5_brief.md, report tdense5_report.md):
   - finite J-uniform TL1;

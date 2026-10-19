@@ -990,8 +990,9 @@ best P47-family window bound (numerical ρ):
 | 128 | 0.122–0.127, R 0.93–0.98 | 0.156–0.164, R 0.80–0.82 | 0.186–0.204, R 0.79–0.82 |
 | 256 | 0.142–0.144, R 0.87–0.94 | 0.176–0.179, R 0.87–0.88 | 0.240–0.244, R 0.95–1.00 |
 Reading (NUMERICAL):
-- No dense set (C = 3) escapes the P47 family. The minimal B/√n RISES with n (0.105 → 0.122 → 0.142).
+- CAVEAT (lead, same night): the optima SHRINK max A, to max A/n ≈ 1.6–1.8 (n = 64) and 2.2–2.9 (n = 128, 256). They
+  mostly sit inside P31's dense range (2.466). So E72 does NOT test C = 3 escape; E72c (box ratios 4, 6, 10) does.
+- Within the explored range the minimal B/√n rises with n (0.105 → 0.122 → 0.142). The best h is usually > 0: the
+  high-pass windows beat P31.
 - Lowering R costs window bound, as in E68. The μ = 1 runs at n = 256 did not reach low R (the search is harder).
-- Conjecture (NOTEBOOK): P31 + P47 together prove T-dense for C up to some C₁ >= 3, beyond P31's 2.466. The escape
-  class (front-loaded density AND front-loaded local variance at every scale) needs sparser sets: ½(1−t)⁴ has mean
-  density 0.1, i.e. C ≈ 10.
+- The question whether P31 + P47 close T-dense beyond C = 2.466 is OPEN. See E72c.

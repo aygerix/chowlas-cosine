@@ -305,6 +305,11 @@ in parallel.
   lemma, Bohr failure, cubic skew.)
 ## Running now (2026-10-19 night, newest)
 - Codex MATH agent, round 10 (.research/agents/tdense10_brief.md; report tdense10_report.md).
+- Lead, done while waiting:
+  - E83: escape-seeded binary sets show NO advantage over random seeds at C ≈ 8.6 (R ≈ 1.1–1.3, search-limited).
+  - NOTEBOOK cont. 13: binarisation heuristics. The subgroup lemma needs macroscopic atoms. The coefficient-square
+    hierarchy gives only n^{1/4}. Anchored versus Gabor information. Spikiness ⇔ additive energy. Binary ⇔ the spike
+    measure is a WEIGHTED PARTIAL DIFFERENCE SET. Random packets cost Θ(K) non-binarity.
 ## First concrete next step (2026-10-19 night, newest)
 - Verify round 10 when it lands:
   - P61 adversarial check;

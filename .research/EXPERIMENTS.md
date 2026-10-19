@@ -1198,3 +1198,27 @@ Reading:
   - N2 = sup ∫_0^1 w²: 0.343456 (N = 40), 0.343482 (80), 0.343488 (160). Beckner's rigorous bound is 0.384900.
   - ratio κ_w = sup ∫φ(w²)/∫w²: 0.354845 (40), 0.355525 (80), 0.355747 (160), still rising; the maximiser's ∫w²
     shrinks (0.268 → 0.255).
+
+## E83 (2026-10-19) Binarising the second-order extremal escape (src/e83_escape_binarise.py, src/e83_sa.c; examples/e83/e83.jsonl)
+- Question: do binary sets seeded from the D-extremal weighted escape (PROOFS P61(b)) keep any of its positivity?
+- Setup:
+  - Profile p = φ(w*²) from the E82 optimiser (C = 1/D ≈ 8.57). Weighted escape with J = X^{0.6} random packets.
+  - Binary seeds with identical block counts round(Σp) per block of 16:
+    - "escape": the top values of p + r in each block;
+    - "random": uniform within each block.
+  - Block-preserving SA: 4·10⁶ moves × 3 restarts (2·10⁶ at X = 4096), T0 = 0.3, grid G = 8X + 1.
+  - HEURISTIC (grid minima).
+  - Run 1 (rows without the "seeding" key) used clipped-Bernoulli seeds that inflated the escape density (C ≈ 5.5–6.2).
+    It is confounded and kept only for the record.
+- Run 2 (fair; C = 8.57–8.61):
+  | X | n | weighted escape R | escape seed: R_init → R_best | random seed: R_init → R_best |
+  | --- | --- | --- | --- | --- |
+  | 1024 | 119 | 0.261 / 0.285 | 1.82 → 1.103, 1.78 → 1.126 | 1.88 → 1.133, 1.95 → 1.125 |
+  | 2048 | 239 | 0.243 / 0.243 | 1.91 → 1.194, 1.53 → 1.189 | 2.08 → 1.217, 2.47 → 1.207 |
+  | 4096 | 478 | 0.208 / 0.208 | 1.85 → 1.338, 1.85 → 1.302 | 2.33 → 1.318, 2.15 → 1.315 |
+- Reading:
+  - Escape seeds start lower but end at the SAME R as random seeds.
+  - R_best rises with X (search-limited, like E59), while the weighted escape falls (0.26 → 0.21).
+  - This matches NOTEBOOK cont. 13.5: rounding random-centre packets costs O(1) non-binarity per coefficient, i.e. bulk
+    energy, so P40 applies.
+  - Binarisation needs weighted-PDS structure in the spike positions, not random packets.

@@ -1804,3 +1804,61 @@ Where this leaves the finite TL1 programme (lead assessment):
      - (T3) the third-order / binarisation problem: moment hierarchy of positive-packet escapes, the subgroup
        lemma, and the reach of "positivity + 3 moments". Construct, or prove an obstruction.
    - Lean later: P61(a) needs Bochner/Gabor on R; P59.6 / P60.7 for the effective range.
+
+## 2026-10-19 (night, cont. 13) — Binarisation beyond 1/D: four heuristics tested, what survives (lead)
+While round 10 runs. Setting: dense counterexample limit, residual r_k = a_k − q_k, h = g + m >= 0 with ĥ(k) = r_k/2.
+1. SUBGROUP heuristic — FAILED for mesoscopic structure (kept as a precise boundary).
+   - Each tall spike has a PD twisted profile W_θ, real and positive at t = 0. So near k ≈ 0 the residual is
+     r_k ≈ Σ_θ 2W_θ(0)cos kθ with nonnegative amplitudes, i.e. b − a + Q(0)δ_0 is PD on Z, with Q(0) = Σ 2W_θ(0).
+   - If Q(0) < √2 − 1, then {0,1}-valued PD forces a subgroup (3×3 Gram) and the recursion A ∩ qZ gives a′ = 1 > ½,
+     a contradiction. So purely MACROSCOPIC atoms near t = 0 are impossible.
+   - But Q(0) = 2M + O(1): "b − a + Q(0)δ_0 PD" is literally f_A >= −M again. Mesoscopic spikes (Q(0) → ∞) evade it.
+     Circular for the real problem.
+2. COEFFICIENT-SQUARE HIERARCHY — LIMITED.
+   - A = h ⋆ h̃ >= 0 has coefficients |ĥ(k)|² = r_k²/4. For binary a, its high-pass residual is ≈ r_k(1 − 2q_k)/4, with
+     energy profile e(1 − 4e)/16.
+   - Energy-PD for A needs (mean of A)²/X = m⁴/X → 0, i.e. M = o(n^{1/4}). Then e(1 − 4e) is PD, so e(0) <= ⅛,
+     a <= (1 − 1/√2)/2 = 0.146 and C >= 17.7.
+   - This is only an n^{1/4}-type statement, dominated by Bu et al. Prop. 9.7 (M >> n^{1/4} for EVERY C). The next level
+     needs M = o(n^{1/8}). Useless for √n: each coefficient-wise power squares the mean.
+3. ANCHORED versus TRANSLATION-INVARIANT information (structural).
+   - Binary identities beyond second order (a^j = a) enter only single-index ("anchored") sums Σ_k r_k^j ψ(k/X).
+   - Gabor/translation-invariant statistics of order >= 3 see them only in lower-order diagonal terms (X versus X³
+     quadruples).
+   - Positivity bounds anchored cubic sums only from BELOW: (h ⋆ h ⋆ h)(0) >= 0 gives Σ_{k≠0}ĥ(k)³ >= −m³. Binary needs
+     POSITIVE skew, so no contradiction.
+   - Positive packets centred on an AP produce skew Σr³ ≈ 0.09√J·X (Dirichlet-type resonances a + b = c). So the
+     round-9 cubic target "Σr³ <= B·M² + o(X)" is FALSE as a positivity-only inequality. Any proof of it must use
+     |r_k| <= 1 or binarity itself.
+4. SPIKINESS ⇔ ADDITIVE ENERGY (survives; a construction target).
+   - P40 (all residual energy in spikes of height >= √(n/ε)) gives ∫g⁴ >= (n/ε)∫g², so the residual's additive
+     energy satisfies E(r) := Σ_{k1+k2=k3+k4} r r r r >~ X²/(Cε). Gaussian / random-sign residuals have ≈ 3e²X².
+   - So a dense counterexample needs about J ~ M² large Fourier coefficients of A, each of size ~X/√J, every one with
+     REAL POSITIVE anchored phase, carrying ALL the residual energy.
+   - Square / difference-set constructions are the opposite: Sidon forces minimal additive energy (flat |F_B|²), so
+     their residual is bulk with m ~ √n. That is the P8/P11/P16 multiplicity obstruction seen from this side.
+   - Chang's lemma gives no constraint at this scale (J large coefficients versus dimension bound ~J log(1/d)).
+Precise open question (for both tracks): is there A ⊂ [1, Cn], C > 1/D, whose large spectrum carries ALL of
+‖1_A − q‖² with real-positive anchored phases? A construction disproves Chowla. An obstruction needs a binary-specific
+inequality about the PHASES of large Fourier coefficients of 0/1 sequences, which positivity alone cannot see.
+E83 (VM, running) probes it numerically: binary sets seeded from the D-extremal escape versus random seeds.
+5. (cont. 13, added) The IDEMPOTENT view of binarity, and rigidity attempts.
+   - For locally constant density p, b² = b is equivalent, in x-space, to h ⋆ h = c₁ + c₂h away from x = 0, with
+     c₂ ∝ (1 − 2p) (the Fourier dual of r² = (1 − 2p)r + p(1 − p)).
+   - With h = spikes on Θ plus a small background, the J² pair sums θ_a + θ_b must land in Θ (weight ∝ c₂W_θ), or else
+     spread EXACTLY uniformly (the constant c₁). So the weighted spike measure must be a WEIGHTED PARTIAL DIFFERENCE
+     SET: σ ⋆ σ = c₂σ + c₁·Haar + c₀δ_0.
+   - Random spike positions are not enough: background fluctuations give Σ(b_k² − b_k)² = Θ(K), i.e. O(1)
+     non-binarity per coefficient, for every J (computed: fluctuation √(J²/K)·K²/J = K^{3/2} per frequency). So random
+     packets can never be rounded cheaply. This is the precise reason the E83-type seeds fail.
+   - Exact subgroup case (c₁ = 0): σ is Haar on a finite subgroup, every spike's profile is ∝ (1 − 2p(t)), which
+     INCREASES in t, so it is not PD. Contradiction (clean, but exact case only).
+   - Cyclic sparse PDS (J = o(K), eigenvalues ≈ ±√J): binary b on Z_K with M ≈ √J/4 = o(√K). Easy on Z_K, where
+     Z_K \ {0} already works. The interval forces PD profiles W_θ(t).
+   - Slick rigidity attempt FAILED. "F(t, k) := p(t) + Σ_θ 2Re W_θ(t)e^{ikθ} continuous in t and binary ⇒ constant" is
+     false, because binarity is needed only on the diagonal t = k/X. Freezing the amplitudes stays accurate only over
+     k-windows of length ~X/M, since Σ_θ|W_θ| ≈ 2M. So the spike configuration may reorganise on the scale X/M.
+   - Finitely many macroscopic atoms ⇒ locally a Bohr set ⇒ atoms at all ℓ·θ with non-summable amplitudes.
+     Self-destructs, so binary residuals are necessarily of mesoscopic type, consistent with Q(0) = 2M.
+   - Construction target: a family of weighted PDS spike measures σ_t, constant on k-windows of length << X/M, with
+     PD envelopes in t and the D-profile. Obstruction target: show that weighted-PDS rigidity forbids PD envelopes.

@@ -28,14 +28,14 @@ Admissible values:
 for every n ≥ 1:
 
     −min_x T(x) >= 0.189·√n     (trivial C_L),
-    −min_x T(x) >= 0.282·√n     (C_L from P31-E; asymptotic value of the optimized bound 0.2820).
+    −min_x T(x) >= 0.28·√n      (C_L from P31-E; the optimized bound decreases to 0.2819 as n -> ∞).
 
 The same holds for max_x T(x), by applying the corollary to −T (phases θ_j + π). Asymptotically, the trivial
 constant is √(7/2 − 2√3) = 0.18947, attained at w/n → 2√3 − 3.
 
 **Corollary B (Littlewood ±1 cosine polynomials).** For every a_j ∈ {−1, 1}:
 
-    −min_t Σ_{j=0}^n a_j cos(jt) >= 0.282√n − 1,
+    −min_t Σ_{j=0}^n a_j cos(jt) >= 0.28√n − 1,
 
 and the same lower bound holds for the max.
 
@@ -45,7 +45,7 @@ and the same lower bound holds for the max.
 
 **Sharpness of the order.** Rudin–Shapiro: for n = 2^k there are ε_j = ±1 with |Σ_{j=0}^{n−1} ε_j e^{ijx}| ≤ √(2n).
 Hence T(x) = Re(e^{ix}Σε_j e^{ijx}) = Σ_{j=1}^n ε_{j−1}cos(jx) has |T| ≤ √(2n). So −min T ≍ √n is the true order,
-with the constant between 0.282 and √2. The best constant found by search is ≈ 0.61 (E61, phases).
+with the constant between 0.28 and √2. The best constant found by search is ≈ 0.61 (E61, phases).
 
 **Comparison.**
 - Erdélyi, arXiv:2607.21877v1 (24 Jul 2026), claims −min T_n ≥ n^{1/3}/60 and max T_n ≥ n^{1/3}/60 for exactly
@@ -80,7 +80,7 @@ h(x) <= (Σ|u_k|)² <= (L + 1)Σ|u_k|² = (L + 1)·(1/2π)∫h, so (1/2π)∫h²
 - The maximum is at θ = 2√3 − 3, with value 7/2 − 2√3 = 0.035898. So M² >= 0.035898n − O(1).
 - The exact maximum over w is checked for n <= 2000 (src/scratch/littlewood_constant.py; minimum ratio 0.1899 at
   n = 2000, decreasing to 0.18947). The O(1) analysis covers n >= 6000.
-- The P31-E constant is handled the same way (ratio 0.2822 at n = 2000, limit 0.2820).
+- The P31-E constant is handled the same way (ratio 0.2822 at n = 2000, decreasing to the limit 0.2819; so 0.28√n holds for all n).
 
 ## Why this was not visible from the Chowla side
 - P31 needs a non-front-loaded energy profile: the energy in the low frequencies [1, w] must be at most the

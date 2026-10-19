@@ -64,7 +64,7 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   all of ∫|T'|^2 with δ = O(1). Whether the n^{1/3} statement is true for unit-amplitude T is open to us. Not used
   anywhere in this project.
   **SUPERSEDED (lead 2026-10-19, P34).** The P31 window–Nikolskii chain with general coefficients gives
-  −min T_n >= 0.282√n and max T_n >= 0.282√n for every T_n = Σ cos(jt − θ_j). Even the trivial Nikolskii constant gives
+  −min T_n >= 0.28√n and max T_n >= 0.28√n for every T_n = Σ cos(jt − θ_j). Even the trivial Nikolskii constant gives
   0.189√n. This is the sharp order (Rudin–Shapiro). Erdélyi's introduction lists only exp(c√log n)-type bounds for ±1
   maxima ([Er11], via Ruzsa [Ru04]) and Theorem 1.2 (L¹ / McGehee–Pigno–Smith). No one-sided √n bound appears there. (An adaptation to dense 0/1 sets A ⊂ [1,X] would have given M(A) >> N^{5/3}/X^{4/3}; it
   fails for the same reason.)

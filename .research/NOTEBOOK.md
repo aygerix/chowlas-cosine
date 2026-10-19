@@ -1029,7 +1029,7 @@ Status: a recorded tool, not a route. Parked.
 ## 2026-10-19 (night) — P34: the one-sided Littlewood problem falls to P31; the escape class contains Bu (lead)
 1. The P31 window chain only sees the coefficient-energy profile |b_j|². For T = Σ_{j<=n} cos(jt − θ_j) (unit amplitudes,
    any phases) the profile is flat, so the chain closes:
-   - −min T >= 0.282√n (P31-E constant) and >= 0.189√n with the trivial Nikolskii constant;
+   - −min T >= 0.28√n (P31-E constant) and >= 0.189√n with the trivial Nikolskii constant;
    - the same for max T.
    Sharp order (Rudin–Shapiro). Erdélyi 2607.21877 (July 2026) claims n^{1/3}/60 for this exact class and records only the
    trivial two-sided √n. PROOFS P34, note .research/notes/littlewood_onesided_P34.md. E61: optimum ≈ 0.61√n.

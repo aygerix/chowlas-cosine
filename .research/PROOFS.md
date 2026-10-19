@@ -946,8 +946,8 @@ Proof. This is P31's chain with general coefficients. Fejér window K_w(x − x�
 Only |b_j|² enters, so phases are free.
 Corollaries.
 - (A) Unit amplitudes, any phases, every n: −min T >= 0.189√n (trivial C_L; asymptotic √(7/2 − 2√3)) and
-  >= 0.282√n (P31-E). The same holds for max T.
-- (B) ±1 Littlewood cosine polynomials: −min Σ_{j=0}^n a_j cos jt >= 0.282√n − 1.
+  >= 0.28√n (P31-E). The same holds for max T.
+- (B) ±1 Littlewood cosine polynomials: −min Σ_{j=0}^n a_j cos jt >= 0.28√n − 1.
 - (C) |b_j| <= 1 with E >= δn, δ > 0.4055: −min T >= c(δ)√n. This is the complex form of dense Chowla.
 Sharp order: Rudin–Shapiro gives |T| <= √(2n).
 Relation to the literature: Erdélyi arXiv:2607.21877v1 claims n^{1/3}/60 for both one-sided quantities and records only

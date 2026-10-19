@@ -171,7 +171,7 @@ Process rule (user, 2026-10-18): computations are fire-and-forget; foreground ti
 in parallel.
 
 ## NEW 2026-10-19 (night)
-- **P34 (PROVED on paper, lead): one-sided Littlewood.** −min_t Σ_{j=1}^n cos(jt − θ_j) >= 0.282√n for all phases and all
+- **P34 (PROVED on paper, lead): one-sided Littlewood.** −min_t Σ_{j=1}^n cos(jt − θ_j) >= 0.28√n for all phases and all
   n. The trivial Nikolskii constant gives 0.189√n. The same holds for max T and for ±1 Littlewood cosine polynomials.
   - Sharp order (Rudin–Shapiro).
   - Supersedes Erdélyi 2607.21877v1's claimed n^{1/3}/60.

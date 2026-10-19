@@ -2128,6 +2128,15 @@ Remarks.
 - Higher orders. M = o(X^{1/j}) makes the j-th central Bernoulli moment profile PD. j = 4 gives e(1 − 3e), whose
   maximum is again at e = 1/6. NOTEBOOK cont. 13.2's square hierarchy at exponent ¼ gives a <= 0.146. Both are
   dominated by Bu's ¼ for all C.
+- ADDENDUM (lead, E94b; RIGOROUS, computer-assisted). The rigorous range is now C < 13.2548.
+  - Mixing. φ(2x/3) <= α1φ(x) + α2x on [0, 1] with α1 = 233809/10⁶ and α2 = 117344/10⁶.
+    - Exact-rational certificate (src/e94b_mix_certify.py): 910 cells of bisection on G = F/x with monotone
+      enclosures and isqrt-directed square roots.
+    - Multipliers found by a Gurobi LP (src/e94_mix_bound.py).
+  - Both bounds hold for the same w ∈ 𝒲 (|w| <= 1). So
+        D_{2/3} <= α1·D + α2·(2√3/9) <= α1(259/2000) + α2(2√3/9) = 0.0754440,
+    hence exponent 1/3 for C < 13.2548 (Beckner alone: 12.294).
+  - Status: the 13.2548 range inherits P63's computer-assisted certificate. 12.294 remains the fully analytic range.
 - Rigorous improvement path:
   - a rigorous N₂ = sup∫_0^1|w|² (≈ 0.3435 numerically) would give C < 1/(u*N₂) ≈ 13.8;
   - a dedicated D_{2/3} certificate (P63 machinery with φ(2x/3)) plus the cubic PD constraint would approach 15.6.
@@ -2136,3 +2145,48 @@ steps 2–6.
 Not kernel-checked; codex adversarial check pending. Novelty: grep of PROOFS/NOTEBOOK for cubic profile, Schur cube,
 X^{1/3} and u* found only the anchored-total remark (cont. 13.3) and the exponent-¼ square hierarchy (cont. 13.2).
 External priority is unchecked.
+
+## P67. Round-14 agent results: Sanders at every density — precise obstructions, no exponent gain (report .research/agents/tdense14_report.md; lead re-checked every item marked ✓) — 2026-10-19
+No unconditional cyclic exponent above ¼ at fixed density, and no dense integer exponent above ¼ for all C. The best
+for every C stays Bu et al.'s ¼; ours is 1/3 for C < 13.2548 (P66).
+1. ✓ R14-CENTER (exact; lead re-derived).
+   - Setup: u = (b − a)/(1 − 2a) is two-valued, so u^r = A_r u + m_r with
+         A_r = ((1 − a)^r − (−a)^r)/(1 − 2a)^{r−1},   m_r = (a(1 − a)^r + (1 − a)(−a)^r)/(1 − 2a)^r.
+     In Fourier: U^{(r)} = A_r U + q m_r δ. So U⋆U = U + qcδ off zero does NOT give U^{(3)} = U; the δ term
+     regenerates at every order.
+     - Witness: q = 17, B = {±1}.
+     - Projecting the zero mode away after each product is non-associative (Z_5 example).
+   - First-order coefficient after deleting the peak atom: A_r − r·m_{r−1}.
+     - At r = 3, 4 it equals 1 − 2c, with c = a(1 − a)/(1 − 2a)². Lead check (exact): −½ at a = ¼; 11/18 at a = ⅛;
+       −3 at a = ⅓.
+     - The first favourable order is ≍ 1/a: exactly m − 1 (m even) or m (m odd) at a = 1/m. Its gap is
+       −(m − 2)^{−(m−3)}.
+   - Even at a favourable r, the truncation norm ‖U‖₁ <= 2K/(1 − 2a) gives only T = O(K^r), so K^{r+1} >> q. That is
+     exponent <= ¼ at r = 3.
+   - So the centred fixed-order Sanders transfer cannot beat ¼ by this estimate at any density.
+2. ✓ R14-UNION (paper proof; lead re-derived the expectation).
+   - Construction: pairs ±x are chosen independently with p_x = a + ε cos(2πx/q).
+   - Then C = B ∪ 3^{−1}B has P(x ∈ C) = 2a − a² + ε(1 − a)(cos x + cos 3x) − (ε²/2)(cos 2x + cos 4x). So
+     λ_C(2) = −ε²q/4 + O(√(q log q)), while K_B = O(√(q log q)) (bounded differences plus a union bound).
+   - So union with a fixed dilate is not a usable density boost: it can create order-q negativity.
+3. ✓ Half-set small-spectrum gap (lead re-derived).
+   - Sanders' Lemma 3.2 mechanism at r = 3 (a = ½) gives 0 <= (1 − 3a)t + 3t³/q² + 3KL² + …, so
+     Λ = O(KL²) = O(K³). This holds when every nonprincipal coefficient is < m/32.
+   - With Parseval Λ >> q/K this gives only K⁴ >> q, the same ¼ as our second-order Λ <= √(2q)K.
+   - Sanders' "1/3 by careful accounting" is NOT reconstructed in this small-spectrum branch; the large-coefficient
+     branch does give 1/3 via Lemma 3.1. No counterexample to Sanders' assertion is claimed.
+4. ✓ Embedding correction. q ∈ (2X, 4X] can give density a > ½ (A = {1, 2}, q = 5). Use q ∈ (4X, 8X]: then
+   1/(4C) <= a < ½ (as P64.5 already did).
+   - A per-density bound c(a) yields the integer corollary only if it is UNIFORM on [1/(4C), ½].
+5. Soft half-density boost (w = ½ + (b − a)/2): any binary rounding has two-sided Fourier error >= √(q/32). This is
+   an absolute-error obstruction only.
+6. Data (examples/r14_certificates/).
+   - Exact K_min for symmetric sets at densities ¼ and ⅛: exhaustive with Arb enclosures for q <= 31; Gurobi
+     (floating point) for q <= 61.
+   - Union probes up to q = 1048583.
+   - Sanders v2 statements quoted with versions in the report. JMTZ, Bu Prop 9.7, Bedert, Shankar and Yip v2 are
+     re-quoted: none has an exponent above ¼ at every density.
+Lead's reading.
+- Every density-transfer of Sanders tried here ends at ¼. Both the centred powers and the half-set
+  small-spectrum branch fail through the same estimate, ‖P^{(r)} − F^{(r)}‖ <= rKL^{r−1}.
+- An exponent above ¼ needs an estimate of the peak Λ that is better than O(KL²). This is the QU(2) wall of P65.

@@ -1359,3 +1359,53 @@ Reading:
   - The optimum keeps σ = 2/3 (a = u*).
   - Reading: the exponent-1/3 reach of "second order + cubic profile PD" is ≈ 15.6 numerically. The rigorous value
     is C < 12.294 (P66, Beckner).
+## E94 (2026-10-19) Rigorous D_{2/3} by mixing the P63 and Beckner bounds (src/e94_mix_bound.py, src/e94b_mix_certify.py)
+- E94 (Gurobi LP; numerical). Minimise α1(259/2000) + α2(2√3/9) subject to φ(2x/3) <= α1φ(x) + α2x on a grid of
+  10⁴ points in [0, 1].
+  - Optimum α1 = 0.233809, α2 = 0.117342, giving bound 0.075443 and C = 13.255.
+  - The fine-grid slack is −7e−7, so the multipliers were bumped for the certificate.
+- E94b (RIGOROUS, exact rationals). With α1 = 233809/10⁶ and α2 = 117344/10⁶:
+  - G(x) = F(x)/x > 0 on [0, 1], certified on 910 bisection cells (minimum lower bound 4.9e−10);
+  - D_{2/3} <= 0.07544399, so P66 holds for C < 13.254866.
+- Rerun: `src/dirun.sh -c 1 python src/e94b_mix_certify.py` (pure Python, < 1 min).
+## E95 (2026-10-19) D_σ discovery LP at σ = 2/3 (src/e95_discover_sigma.py, src/e95_run*.sh; examples/e95/)
+- Code: P63's support-coupled Schur-test LP (examples/r11_certificates/discover.py) with φ(x²) replaced by φ(σx²).
+  Only val, the output path and the σ argument change. Gurobi, 4 threads, about 11 s (K = 64) and 36 s (K = 192).
+- σ = 1 reproduces P63's discovery value 0.1299369 exactly (K = 64, degree 10, shape 0.2).
+- σ = 2/3 (NUMERICAL, discovery LP, not a certificate):
+
+| K | degree | shape | D_{2/3} bound | C |
+|---|---|---|---|---|
+| 64 | 10 | 0.0 | 0.073256 | 13.65 |
+| 64 | 10 | 0.05 | 0.072810 | 13.73 |
+| 64 | 10 | 0.1 | 0.072516 | 13.79 |
+| 64 | 10 | 0.2 | 0.073073 | 13.69 |
+| 64 | 10 | 0.3 | 0.075394 | 13.26 |
+| 64 | 10 | 0.5 | 0.083055 | 12.04 |
+| 192 | 12 | 0.1 | 0.072338 | 13.82 |
+
+- Reading:
+  - The certificate family saturates near 0.0723 (C ≈ 13.8), against the true D_{2/3} ≈ 0.0662 (C ≈ 15.1, E82).
+    The overshoot ratio is 1.09, comparable to σ = 1 (0.1292 against 0.1167).
+  - Certifying it (porting certify.py) would move P66's rigorous range only from 13.25 (E94b) to about 13.8.
+  - Not done. Low value per effort; it is a candidate mechanical task for an agent.
+## E96 (2026-10-19) Degree-3 ("level 1.5") SOS / Sherali–Adams lower bound for cyclic half-sets (src/e96_sos15_halfset.py)
+- Relaxation. Pseudo-moments up to degree 3, made dilation-invariant by averaging over G = Z_q^*/{±1} (legitimate: the
+  problem is G-invariant and the relaxation is convex). Constraints:
+  - Boolean reduction;
+  - cardinality times every monomial of degree <= 2;
+  - Sherali–Adams nonnegativity of all degree-3 products of x and 1 − x;
+  - the degree-<=1 moment matrix is PSD;
+  - ONE localizing matrix Ẽ[(λ(1) + K)·s·t] (s, t ∈ {1, x_j}) is PSD; the other γ follow by G-invariance.
+- K multiplies pseudo-moments, so it is bisected over feasibility SDPs (Clarabel 0.11.1, cvxpy 1.9.3; NUMERICAL,
+  tolerance 1e−3, not a certificate).
+- Results. K_1.5(q) = 1.997, 1.757, 1.739, 1.714 for q = 13, 17, 29, 37. Exact K_min (E41) is 2.30 at q = 13 and
+  2.56 at q = 17.
+- Reading: the level-1.5 bound is O(1).
+  - Mechanism (lead, paper): the product measure is excluded, since localizing with s = λ(1) − c forces K >= σ ≈ √q/2.
+  - But a two-point pseudo-marginal for each λ(γ), with values {−K, ≈ cq} and mass ≈ 2K/(cq) on the top, matches the
+    first two moments (variance q/4) for K ≈ 1/(4c) = O(1). The bound λ <= q/π needs high-degree Booleanity.
+  - Pairwise products (λ(β) + K)(λ(β') + K) >= 0, summed symmetrically over γ, give only K² − K >= ¼. The real
+    second-order argument needs the PEAK γ, i.e. a non-symmetric (max) step; in SOS form that means weighting by λ,
+    which is third moments (the R12-S world).
+- Conclusion: low-degree, symmetric SOS certificates cannot give growth. Do not use them as a Chowla route.

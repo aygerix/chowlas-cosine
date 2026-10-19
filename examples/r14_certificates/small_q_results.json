@@ -1,0 +1,1864 @@
+[
+  {
+    "target_density": "1/4",
+    "q": 5,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.6180339887498947,
+    "objective": 1.6180339887498947,
+    "runtime": 0.00039696693420410156,
+    "certificate": {
+      "q": 5,
+      "cardinality": 2,
+      "density": "2/5",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.6180339887498948482045868343656381177203091798057628621354486227 +/- 7.37e-66]",
+      "Lambda_ball": "[0.61803398874989484820458683436563811772030917980576286213544862271 +/- 7.42e-66]",
+      "K": 1.618033988749895,
+      "Lambda": 0.6180339887498949,
+      "minimum_frequency": 2,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.2180339887498948482045868343656381177203091798057628621354486227 +/- 7.90e-66]",
+        "brief_Parseval_peak": "[1.4944271909999158785636694674925104941762473438446102897083588982 +/- 6.12e-65]",
+        "sharp_Parseval_peak": "[+/- 1.37e-65]",
+        "A_norm_le_2K": "[1.9416407864998738178455042012387657412643710157669154345625383472 +/- 5.82e-65]",
+        "quadratic_with_linear_term": "[4.2360679774997896964091736687312762354406183596115257242708972454 +/- 6.49e-65]"
+      },
+      "exact_equalities": [
+        "sharp_Parseval_peak"
+      ],
+      "cubic_idempotence_defect_ball": "[18.541019662496845446137605030969143531609275394172885864063458681 +/- 3.37e-64]",
+      "centered_first_two_terms_coefficient": "-11",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        2,
+        20,
+        14,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 5,
+      "pair_count": 1,
+      "cases": 2,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2051101757028480383117165331973,
+        2051101757028480383117165331974
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 5,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.6180339887498947,
+    "objective": 1.6180339887498947,
+    "runtime": 8.106231689453125e-05,
+    "certificate": {
+      "q": 5,
+      "cardinality": 2,
+      "density": "2/5",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.6180339887498948482045868343656381177203091798057628621354486227 +/- 7.37e-66]",
+      "Lambda_ball": "[0.61803398874989484820458683436563811772030917980576286213544862271 +/- 7.42e-66]",
+      "K": 1.618033988749895,
+      "Lambda": 0.6180339887498949,
+      "minimum_frequency": 2,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.2180339887498948482045868343656381177203091798057628621354486227 +/- 7.90e-66]",
+        "brief_Parseval_peak": "[1.4944271909999158785636694674925104941762473438446102897083588982 +/- 6.12e-65]",
+        "sharp_Parseval_peak": "[+/- 1.37e-65]",
+        "A_norm_le_2K": "[1.9416407864998738178455042012387657412643710157669154345625383472 +/- 5.82e-65]",
+        "quadratic_with_linear_term": "[4.2360679774997896964091736687312762354406183596115257242708972454 +/- 6.49e-65]"
+      },
+      "exact_equalities": [
+        "sharp_Parseval_peak"
+      ],
+      "cubic_idempotence_defect_ball": "[18.541019662496845446137605030969143531609275394172885864063458681 +/- 3.37e-64]",
+      "centered_first_two_terms_coefficient": "-11",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        2,
+        20,
+        14,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 5,
+      "pair_count": 1,
+      "cases": 2,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2051101757028480383117165331973,
+        2051101757028480383117165331974
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 7,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.801937735804838,
+    "objective": 1.801937735804838,
+    "runtime": 9.202957153320312e-05,
+    "certificate": {
+      "q": 7,
+      "cardinality": 2,
+      "density": "2/7",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.8019377358048382524722046390148901023318383242637143001071248464 +/- 1.25e-65]",
+      "Lambda_ball": "[1.2469796037174670610500097680084796212645494617928042107310988782 +/- 8.92e-66]",
+      "K": 1.8019377358048383,
+      "Lambda": 1.246979603717467,
+      "minimum_frequency": 3,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.5162234500905525381864903533006043880461240385494285858214105607 +/- 2.92e-65]",
+        "brief_Parseval_peak": "[2.2561200079689178972047931627284976077859751253837898117296151986 +/- 4.61e-65]",
+        "sharp_Parseval_peak": "[0.5211062828029164174612498199997969395244929354947722746891927618 +/- 5.49e-65]",
+        "A_norm_le_2K": "[2.3198871266282667557729751248820775639410769560743976226536217624 +/- 2.81e-65]",
+        "quadratic_with_linear_term": "[11.173899093934898235927873505052946867784557370078719385741666179 +/- 2.19e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[3.2329100837119516397592845837256879069821652713146775833769230175 +/- 5.39e-65]",
+      "centered_first_two_terms_coefficient": "-11/9",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        2,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 7,
+      "pair_count": 1,
+      "cases": 3,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2284227452366899864626404430495,
+        2284227452366899864626404430496
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 7,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.801937735804838,
+    "objective": 1.801937735804838,
+    "runtime": 8.606910705566406e-05,
+    "certificate": {
+      "q": 7,
+      "cardinality": 2,
+      "density": "2/7",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.8019377358048382524722046390148901023318383242637143001071248464 +/- 1.25e-65]",
+      "Lambda_ball": "[1.2469796037174670610500097680084796212645494617928042107310988782 +/- 8.92e-66]",
+      "K": 1.8019377358048383,
+      "Lambda": 1.246979603717467,
+      "minimum_frequency": 3,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.5162234500905525381864903533006043880461240385494285858214105607 +/- 2.92e-65]",
+        "brief_Parseval_peak": "[2.2561200079689178972047931627284976077859751253837898117296151986 +/- 4.61e-65]",
+        "sharp_Parseval_peak": "[0.5211062828029164174612498199997969395244929354947722746891927618 +/- 5.49e-65]",
+        "A_norm_le_2K": "[2.3198871266282667557729751248820775639410769560743976226536217624 +/- 2.81e-65]",
+        "quadratic_with_linear_term": "[11.173899093934898235927873505052946867784557370078719385741666179 +/- 2.19e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[3.2329100837119516397592845837256879069821652713146775833769230175 +/- 5.39e-65]",
+      "centered_first_two_terms_coefficient": "-11/9",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        2,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 7,
+      "pair_count": 1,
+      "cases": 3,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2284227452366899864626404430495,
+        2284227452366899864626404430496
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 11,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.918985947228994,
+    "objective": 1.918985947228994,
+    "runtime": 0.000102996826171875,
+    "certificate": {
+      "q": 11,
+      "cardinality": 2,
+      "density": "2/11",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.9189859472289947797807361141326553981249096968443239100889901180 +/- 1.59e-65]",
+      "Lambda_ball": "[1.6825070656623623377236232978387354350265849968410757972853002354 +/- 3.83e-65]",
+      "K": 1.9189859472289947,
+      "Lambda": 1.6825070656623624,
+      "minimum_frequency": 5,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.7371677654108129615989179323144735799430915150261420919071719362 +/- 3.42e-65]",
+        "brief_Parseval_peak": "[2.7487699177970253890493987971095847047653407299950449934181632439 +/- 6.71e-65]",
+        "sharp_Parseval_peak": "[0.85864761943645230613622062154546015421360043039426194348709825494 +/- 8.99e-66]",
+        "A_norm_le_2K": "[2.5603947702157585818225007387024083082226940054085934848551631814 +/- 2.53e-65]",
+        "quadratic_with_linear_term": "[28.238953671859584780590901751334177431906794022734482065546007419 +/- 4.92e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.97124314577594094130984668504976564470922399234557728239792841575 +/- 5.75e-66]",
+      "centered_first_two_terms_coefficient": "13/49",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        0,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 11,
+      "pair_count": 1,
+      "cases": 5,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2432603687834372584202575563003,
+        2432603687834372584202575563004
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 11,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.918985947228994,
+    "objective": 1.918985947228994,
+    "runtime": 7.796287536621094e-05,
+    "certificate": {
+      "q": 11,
+      "cardinality": 2,
+      "density": "2/11",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.9189859472289947797807361141326553981249096968443239100889901180 +/- 1.59e-65]",
+      "Lambda_ball": "[1.6825070656623623377236232978387354350265849968410757972853002354 +/- 3.83e-65]",
+      "K": 1.9189859472289947,
+      "Lambda": 1.6825070656623624,
+      "minimum_frequency": 5,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.7371677654108129615989179323144735799430915150261420919071719362 +/- 3.42e-65]",
+        "brief_Parseval_peak": "[2.7487699177970253890493987971095847047653407299950449934181632439 +/- 6.71e-65]",
+        "sharp_Parseval_peak": "[0.85864761943645230613622062154546015421360043039426194348709825494 +/- 8.99e-66]",
+        "A_norm_le_2K": "[2.5603947702157585818225007387024083082226940054085934848551631814 +/- 2.53e-65]",
+        "quadratic_with_linear_term": "[28.238953671859584780590901751334177431906794022734482065546007419 +/- 4.92e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.97124314577594094130984668504976564470922399234557728239792841575 +/- 5.75e-66]",
+      "centered_first_two_terms_coefficient": "13/49",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        0,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 11,
+      "pair_count": 1,
+      "cases": 5,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2432603687834372584202575563003,
+        2432603687834372584202575563004
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 13,
+    "pair_count": 2,
+    "status": 2,
+    "solver_bound": 2.2062312704272697,
+    "objective": 2.2062312704272697,
+    "runtime": 0.0007321834564208984,
+    "certificate": {
+      "q": 13,
+      "cardinality": 4,
+      "density": "4/13",
+      "pairs": [
+        1,
+        6
+      ],
+      "K_ball": "[2.2062312704272734492085369846027397163256140445792417749827412157 +/- 5.56e-65]",
+      "Lambda_ball": "[2.9070415447687313968243661622852310062779819376021061425641326206 +/- 3.41e-65]",
+      "K": 2.2062312704272733,
+      "Lambda": 2.9070415447687314,
+      "minimum_frequency": 5,
+      "peak_frequency": 2,
+      "margins": {
+        "trace_K_ge_alpha": "[1.8985389627349657569008446769104320240179217368869340826750489080 +/- 5.01e-65]",
+        "brief_Parseval_peak": "[3.8580867400324243991672571018658808427929713603414339376444045550 +/- 6.09e-65]",
+        "sharp_Parseval_peak": "[1.6979048739055738682209741763061973458462675020371476072099118265 +/- 8.02e-65]",
+        "A_norm_le_2K": "[2.7712436903480940522913184321777171844320723419949287885254889278 +/- 7.96e-65]",
+        "quadratic_with_linear_term": "[35.50627556224062822621775594805197271209021773972645275645451482 +/- 1.90e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[10.883963543614130349710426911595904887504764374382285397760112531 +/- 5.39e-64]",
+      "centered_first_two_terms_coefficient": "-47/25",
+      "exact_zero_sum_counts": [
+        0,
+        4,
+        6,
+        36,
+        100,
+        430,
+        1484,
+        5924
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 13,
+      "pair_count": 2,
+      "cases": 15,
+      "dilation_orbits": 3,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2796730394199422286666199210851,
+        2796730394199422286666199210853
+      ],
+      "pairs": [
+        1,
+        2
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 13,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.9418836348521027,
+    "objective": 1.9418836348521027,
+    "runtime": 9.489059448242188e-05,
+    "certificate": {
+      "q": 13,
+      "cardinality": 2,
+      "density": "2/13",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.9418836348521040543139645525875784544997302114780071771752890530 +/- 5.22e-65]",
+      "Lambda_ball": "[1.7709120513064197918007510440301977572109968326950698036048076175 +/- 4.84e-65]",
+      "K": 1.941883634852104,
+      "Lambda": 1.7709120513064198,
+      "minimum_frequency": 6,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.7880374810059502081601183987414246083458840576318533310214428991 +/- 1.08e-65]",
+        "brief_Parseval_peak": "[2.8413182907395237363415036866395602586768784782062825506795011844 +/- 3.12e-65]",
+        "sharp_Parseval_peak": "[0.9204886450896973507095990789519472689539353210702943186187867942 +/- 5.43e-65]",
+        "A_norm_le_2K": "[2.6074242219259381075440824783473667025916621903230146767634918694 +/- 2.64e-65]",
+        "quadratic_with_linear_term": "[37.255170229079485905314756865568629456246370318073983563671438899 +/- 4.53e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.69476110654819761379288724086781420927619354478846359921944441508 +/- 6.47e-66]",
+      "centered_first_two_terms_coefficient": "37/81",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        0,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 13,
+      "pair_count": 1,
+      "cases": 6,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2461629955293645555472068011270,
+        2461629955293645555472068011271
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 17,
+    "pair_count": 2,
+    "status": 2,
+    "solver_bound": 2.247760251603389,
+    "objective": 2.247760251603389,
+    "runtime": 0.0004949569702148438,
+    "certificate": {
+      "q": 17,
+      "cardinality": 4,
+      "density": "4/17",
+      "pairs": [
+        1,
+        8
+      ],
+      "K_ball": "[2.2477602516033940313464437167723309801910259963688366224950055437 +/- 6.58e-65]",
+      "Lambda_ball": "[3.3429622932500298409953004033884229840450107953064293028109926451 +/- 2.04e-65]",
+      "K": 2.247760251603394,
+      "Lambda": 3.34296229325003,
+      "minimum_frequency": 7,
+      "peak_frequency": 2,
+      "margins": {
+        "trace_K_ge_alpha": "[2.0124661339563352078170319520664486272498495257806013283773584848 +/- 4.50e-65]",
+        "brief_Parseval_peak": "[4.229890789229212975628987099485701803575045206745997993989685641 +/- 9.20e-65]",
+        "sharp_Parseval_peak": "[1.9974254927547122385491579228890771912038725109814398104340152891 +/- 3.96e-65]",
+        "A_norm_le_2K": "[2.847163598120211106616729495322842629490080086329609382517453363 +/- 5.15e-64]",
+        "quadratic_with_linear_term": "[63.91607097139475173881395034395023492967154801995094998441561821 +/- 1.31e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[4.0537430277544943476541091311321891877857195377927071381137414242 +/- 7.70e-65]",
+      "centered_first_two_terms_coefficient": "-23/81",
+      "exact_zero_sum_counts": [
+        0,
+        4,
+        6,
+        36,
+        100,
+        430,
+        1470,
+        5796
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 17,
+      "pair_count": 2,
+      "cases": 28,
+      "dilation_orbits": 4,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2849374632114198382804259816661,
+        2849374632114198382804259816663
+      ],
+      "pairs": [
+        1,
+        2
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 17,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.965946199367801,
+    "objective": 1.965946199367801,
+    "runtime": 8.821487426757812e-05,
+    "certificate": {
+      "q": 17,
+      "cardinality": 2,
+      "density": "2/17",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.9659461993678035565638976897103974321974457501312657519947609184 +/- 9.91e-66]",
+      "Lambda_ball": "[1.8649444588087116091462317836431267725251755558902338564967000237 +/- 2.21e-65]",
+      "K": 1.9659461993678036,
+      "Lambda": 1.8649444588087116,
+      "minimum_frequency": 8,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.8482991405442741447991918073574562557268575148371481049359373890 +/- 8.21e-66]",
+        "brief_Parseval_peak": "[2.9332537427205255552524180045951074343882005294916427496637487790 +/- 2.55e-65]",
+        "sharp_Parseval_peak": "[0.9799339540810204637331018723717978436512384304985677884977264249 +/- 2.19e-65]",
+        "A_norm_le_2K": "[2.6568392872697929093001441520192867101298559920279595145319327896 +/- 1.98e-65]",
+        "quadratic_with_linear_term": "[55.516134246731985429019286683188987504624732996560642656189451379 +/- 5.70e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.43291837687412058291514711409103079380420552276013621611894265457 +/- 4.56e-66]",
+      "centered_first_two_terms_coefficient": "109/169",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        0,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 17,
+      "pair_count": 1,
+      "cases": 8,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2492132879645002523616791007922,
+        2492132879645002523616791007923
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 19,
+    "pair_count": 2,
+    "status": 2,
+    "solver_bound": 2.1579539925574207,
+    "objective": 2.1579539925574207,
+    "runtime": 0.0005810260772705078,
+    "certificate": {
+      "q": 19,
+      "cardinality": 4,
+      "density": "4/19",
+      "pairs": [
+        1,
+        9
+      ],
+      "K_ball": "[2.1579539925574210645579852884764857413445105303937117264816288818 +/- 6.45e-65]",
+      "Lambda_ball": "[3.4699155021940565564772937273680645405129964686234905154775233421 +/- 4.51e-65]",
+      "K": 2.157953992557421,
+      "Lambda": 3.4699155021940564,
+      "minimum_frequency": 7,
+      "peak_frequency": 2,
+      "margins": {
+        "trace_K_ge_alpha": "[1.9474276767679473803474589726870120571339842146042380422711025660 +/- 5.57e-65]",
+        "brief_Parseval_peak": "[4.1644950448172412476452588670906720196788600572113961376189274588 +/- 6.95e-65]",
+        "sharp_Parseval_peak": "[1.9956471942663867016871508302380419246523274794561534537908905471 +/- 4.43e-65]",
+        "A_norm_le_2K": "[2.6675557825448722581370905694443125704855848001314225594123473320 +/- 6.87e-65]",
+        "quadratic_with_linear_term": "[76.44942110816564415008946881750115130409898257902616165308085681 +/- 5.66e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[2.9719787171308974262840832826443227469457670730509235068703054921 +/- 5.15e-65]",
+      "centered_first_two_terms_coefficient": "1/121",
+      "exact_zero_sum_counts": [
+        0,
+        4,
+        6,
+        36,
+        100,
+        430,
+        1470,
+        5796
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 19,
+      "pair_count": 2,
+      "cases": 36,
+      "dilation_orbits": 4,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2735531673930318895118370118554,
+        2735531673930318895118370118556
+      ],
+      "pairs": [
+        1,
+        2
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 19,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.9727226068054418,
+    "objective": 1.9727226068054418,
+    "runtime": 8.511543273925781e-05,
+    "certificate": {
+      "q": 19,
+      "cardinality": 2,
+      "density": "2/19",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.9727226068054447472050183896381342214569630064057526334873302701 +/- 2.84e-65]",
+      "Lambda_ball": "[1.8916344834012693580393314285698830556476237768814069587196265568 +/- 1.31e-65]",
+      "K": 1.9727226068054446,
+      "Lambda": 1.8916344834012693,
+      "minimum_frequency": 9,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.8674594489107079050997552317433973793516998485110157913820671122 +/- 3.47e-65]",
+        "brief_Parseval_peak": "[2.9572484688337705837768159037433748566670946895905667937710942998 +/- 4.96e-65]",
+        "sharp_Parseval_peak": "[0.9947247404207804250732348089087753946451948073752637475427148091 +/- 1.43e-65]",
+        "A_norm_le_2K": "[2.6707540993539403146741628726755984107845743108394293299693096991 +/- 4.39e-65]",
+        "quadratic_with_linear_term": "[64.682973382989884416492392548123466863347827536078862449086289133 +/- 5.88e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.36207285223028740897582462306848724561433035847863374676529740909 +/- 3.28e-66]",
+      "centered_first_two_terms_coefficient": "157/225",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        0,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 19,
+      "pair_count": 1,
+      "cases": 9,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2500722996600719416931512704946,
+        2500722996600719416931512704947
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 23,
+    "pair_count": 3,
+    "status": 2,
+    "solver_bound": 2.5808712211353724,
+    "objective": 2.5808712211353724,
+    "runtime": 0.004380941390991211,
+    "certificate": {
+      "q": 23,
+      "cardinality": 6,
+      "density": "6/23",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "K_ball": "[2.5808712211353727384336500023417797817826737225747035504767633743 +/- 8.04e-65]",
+      "Lambda_ball": "[4.9997796702258838608759535245920603550032897005178106973561584475 +/- 1.59e-65]",
+      "K": 2.580871221135373,
+      "Lambda": 4.999779670225884,
+      "minimum_frequency": 5,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.3200016559179814340858239153852580426522389399660078983028503308 +/- 6.23e-65]",
+        "brief_Parseval_peak": "[5.862323152891334142674999782461643567223637506945918445434358466 +/- 5.56e-64]",
+        "sharp_Parseval_peak": "[3.2960342562211496813703236418056723475596535396077711602213193376 +/- 5.81e-65]",
+        "A_norm_le_2K": "[3.319137497196708038636816556372857105463414745299571724059104902 +/- 2.77e-64]",
+        "quadratic_with_linear_term": "[108.40642468531227220265184828669533100989948616916187232748926377 +/- 2.96e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[8.8125342647257126503493515918053896264746188109803034530409825078 +/- 8.02e-65]",
+      "centered_first_two_terms_coefficient": "-83/121",
+      "exact_zero_sum_counts": [
+        0,
+        6,
+        18,
+        122,
+        600,
+        3450,
+        18914,
+        107354
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 23,
+      "pair_count": 3,
+      "cases": 165,
+      "dilation_orbits": 15,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        3271642952584018627238851153862,
+        3271642952584018627238851153865
+      ],
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2,
+          3
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 23,
+    "pair_count": 1,
+    "status": 2,
+    "solver_bound": 1.9813718920726562,
+    "objective": 1.9813718920726562,
+    "runtime": 9.584426879882812e-05,
+    "certificate": {
+      "q": 23,
+      "cardinality": 2,
+      "density": "2/23",
+      "pairs": [
+        1
+      ],
+      "K_ball": "[1.9813718920726615046846459201924120102799983669096487813213026084 +/- 5.49e-66]",
+      "Lambda_ball": "[1.9258345746955985900304471947464775987100369161466928783499853041 +/- 3.58e-65]",
+      "K": 1.9813718920726615,
+      "Lambda": 1.9258345746955985,
+      "minimum_frequency": 11,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[1.8944153703335310699020372245402380972365201060400835639299982606 +/- 3.16e-65]",
+        "brief_Parseval_peak": "[2.9855788996124965442718352507246669421945708547508306954622605709 +/- 4.52e-65]",
+        "sharp_Parseval_peak": "[1.0112615978744795382961405531603653427288980450191502564470357636 +/- 4.70e-65]",
+        "A_norm_le_2K": "[2.6885139107899394106362201032827160553991602175805316341553372072 +/- 2.88e-65]",
+        "quadratic_with_linear_term": "[83.025165409263027821095273854830218940208744002591131153890589284 +/- 6.75e-64]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.27122848799474387490441930166570890222392413777485133700044989120 +/- 3.45e-66]",
+      "centered_first_two_terms_coefficient": "277/361",
+      "exact_zero_sum_counts": [
+        0,
+        2,
+        0,
+        6,
+        0,
+        20,
+        0,
+        70
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 23,
+      "pair_count": 1,
+      "cases": 11,
+      "dilation_orbits": 1,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2511687268261251921080528165043,
+        2511687268261251921080528165044
+      ],
+      "pairs": [
+        1
+      ],
+      "tied_orbits": [
+        [
+          1
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 29,
+    "pair_count": 4,
+    "status": 2,
+    "solver_bound": 2.9141094743137326,
+    "objective": 2.9141094743137326,
+    "runtime": 0.010321855545043945,
+    "certificate": {
+      "q": 29,
+      "cardinality": 8,
+      "density": "8/29",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "K_ball": "[2.9141094743137323917459692754377357412938556259542568526540245238 +/- 4.38e-65]",
+      "Lambda_ball": "[6.6553506517370302440162512672047913401776720258094327391140605240 +/- 2.12e-65]",
+      "K": 2.9141094743137326,
+      "Lambda": 6.65535065173703,
+      "minimum_frequency": 5,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.6382474053482151503666589306101495343973039018163258181712659031 +/- 5.54e-65]",
+        "brief_Parseval_peak": "[7.581510291173633440924528316006185611115528300661833848906900496 +/- 2.31e-64]",
+        "sharp_Parseval_peak": "[4.689361170601702030100945002812811948335141104601800558025213930 +/- 5.16e-64]",
+        "A_norm_le_2K": "[3.857612131808810266566044745878030408465456328816251233321827979 +/- 4.92e-64]",
+        "quadratic_with_linear_term": "[162.13447044210070054269602672836606087713986889373125350801739409 +/- 6.88e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[14.758702036988079812857158021766838147175975470980225901212427343 +/- 2.44e-64]",
+      "centered_first_two_terms_coefficient": "-167/169",
+      "exact_zero_sum_counts": [
+        0,
+        8,
+        36,
+        296,
+        2030,
+        15200,
+        112308,
+        845560
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 29,
+      "pair_count": 4,
+      "cases": 1001,
+      "dilation_orbits": 73,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        3694072624244572915854708546138,
+        3694072624244572915854708546142
+      ],
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 29,
+    "pair_count": 2,
+    "status": 2,
+    "solver_bound": 2.2188703354710952,
+    "objective": 2.2188703354710952,
+    "runtime": 0.002199888229370117,
+    "certificate": {
+      "q": 29,
+      "cardinality": 4,
+      "density": "4/29",
+      "pairs": [
+        1,
+        2
+      ],
+      "K_ball": "[2.2188703354711343416365281526151629546129482945197048916006724412 +/- 3.69e-65]",
+      "Lambda_ball": "[3.7683919507620874736567785058127623182983653650480587632939409888 +/- 4.13e-65]",
+      "K": 2.2188703354711343,
+      "Lambda": 3.7683919507620875,
+      "minimum_frequency": 8,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.0809393009883757209468729802013698511646724324507393743592931309 +/- 3.12e-65]",
+        "brief_Parseval_peak": "[4.4331940710047773772358336851420845093179067965073415055728025422 +/- 7.65e-65]",
+        "sharp_Parseval_peak": "[2.2007491696317372308198274909626146464527538242985351715993131804 +/- 4.63e-65]",
+        "A_norm_le_2K": "[2.7857728441015084323874526641919866616297852863532489994578350521 +/- 4.83e-65]",
+        "quadratic_with_linear_term": "[153.48406016542694656844782617795720155783640278959505413278625093 +/- 5.86e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[1.1800385117384789627043146168725851120899751170110539265254755283 +/- 2.47e-65]",
+      "centered_first_two_terms_coefficient": "241/441",
+      "exact_zero_sum_counts": [
+        0,
+        4,
+        6,
+        36,
+        100,
+        430,
+        1470,
+        5796
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 29,
+      "pair_count": 2,
+      "cases": 91,
+      "dilation_orbits": 7,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2812752312588596179519515946103,
+        2812752312588596179519515946105
+      ],
+      "pairs": [
+        1,
+        2
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 31,
+    "pair_count": 4,
+    "status": 2,
+    "solver_bound": 3.0368108943404595,
+    "objective": 3.0368108943404595,
+    "runtime": 0.03548002243041992,
+    "certificate": {
+      "q": 31,
+      "cardinality": 8,
+      "density": "8/31",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "K_ball": "[3.0368108943404596852374761398902417932043783282879122768286212791 +/- 5.76e-65]",
+      "Lambda_ball": "[6.8164362263113760344592119625268754788427093501014298050639036931 +/- 4.77e-65]",
+      "K": 3.0368108943404595,
+      "Lambda": 6.816436226311376,
+      "minimum_frequency": 5,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.7787463782114274271729600108579837286882492960298477606995890211 +/- 7.40e-65]",
+        "brief_Parseval_peak": "[7.898734944069032228524914366130812213460321980694742910527993812 +/- 3.00e-64]",
+        "sharp_Parseval_peak": "[4.894688960713972108053614337851203810511257728071107694087590172 +/- 5.11e-64]",
+        "A_norm_le_2K": "[4.099472633975343209412359474104001127695588160851766957873663903 +/- 3.19e-64]",
+        "quadratic_with_linear_term": "[193.04241371980321341141819807570184990970390010418465927567395599 +/- 8.46e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[11.520282143668174489053435565704680809279648631993646106099113086 +/- 6.02e-65]",
+      "centered_first_two_terms_coefficient": "-143/225",
+      "exact_zero_sum_counts": [
+        0,
+        8,
+        36,
+        296,
+        2030,
+        15200,
+        112308,
+        845336
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 31,
+      "pair_count": 4,
+      "cases": 1365,
+      "dilation_orbits": 91,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        3849615152990309857141088880582,
+        3849615152990309857141088880586
+      ],
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2,
+          3,
+          4
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 31,
+    "pair_count": 2,
+    "status": 2,
+    "solver_bound": 2.2499982968066,
+    "objective": 2.2499982968066,
+    "runtime": 0.0008368492126464844,
+    "certificate": {
+      "q": 31,
+      "cardinality": 4,
+      "density": "4/31",
+      "pairs": [
+        1,
+        2
+      ],
+      "K_ball": "[2.2499982968066053162845733989332225610159699343156557671283715284 +/- 5.68e-65]",
+      "Lambda_ball": "[3.7969755057454502461303892321798505511358349318315022975485517357 +/- 4.60e-65]",
+      "K": 2.2499982968066052,
+      "Lambda": 3.79697550574545,
+      "minimum_frequency": 9,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.1209660387420891872523153344170935287579054181866235090638553994 +/- 2.48e-65]",
+        "brief_Parseval_peak": "[4.4985855336868967087428071341385232250203569034801868122306084203 +/- 6.58e-65]",
+        "sharp_Parseval_peak": "[2.2379190258397095506354356677592039662343788416311615518835816817 +/- 5.33e-65]",
+        "A_norm_le_2K": "[2.8480304551288129718542863290783147064980942464942720552965625632 +/- 8.55e-65]",
+        "quadratic_with_linear_term": "[170.13797820359605774903154088338397833600361363378046205896355640 +/- 2.66e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[1.0448158127094408994858669474264929436346490796229037307629285124 +/- 5.32e-65]",
+      "centered_first_two_terms_coefficient": "313/529",
+      "exact_zero_sum_counts": [
+        0,
+        4,
+        6,
+        36,
+        100,
+        430,
+        1470,
+        5796
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    },
+    "exact_optimum": {
+      "q": 31,
+      "pair_count": 2,
+      "cases": 105,
+      "dilation_orbits": 7,
+      "scale": "1267650600228229401496703205376",
+      "K_integer_enclosure": [
+        2852211691459387077800102350194,
+        2852211691459387077800102350196
+      ],
+      "pairs": [
+        1,
+        2
+      ],
+      "tied_orbits": [
+        [
+          1,
+          2
+        ]
+      ],
+      "status": "PROVED exact optimum by exhaustive integer-enclosure/cyclotomic comparison"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 37,
+    "pair_count": 5,
+    "status": 2,
+    "solver_bound": 3.0766518475560005,
+    "objective": 3.0766518475560005,
+    "runtime": 0.051654815673828125,
+    "certificate": {
+      "q": 37,
+      "cardinality": 10,
+      "density": "10/37",
+      "pairs": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "K_ball": "[3.0766518475560010116013630221584334608786421152505790879267141334 +/- 7.75e-65]",
+      "Lambda_ball": "[7.7830222341490905382996109343161053209493902314132288153364333963 +/- 5.22e-65]",
+      "K": 3.076651847556001,
+      "Lambda": 7.78302223414909,
+      "minimum_frequency": 10,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.8063815772857307413310927518881631906083718449803088176564438632 +/- 6.23e-65]",
+        "brief_Parseval_peak": "[8.487843384288336669937327806734658336805569912193756408703209013 +/- 4.34e-64]",
+        "sharp_Parseval_peak": "[5.4087194534182072400618356842958983707634230350209528837753394322 +/- 8.62e-65]",
+        "A_norm_le_2K": "[3.668087750171942022323821378647556583428499988221947668828590601 +/- 3.73e-64]",
+        "quadratic_with_linear_term": "[293.1102423894477521750024267221900666676466307399736898078955587 +/- 1.11e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[15.825848182200165780096298236071217617806718585755781775943612788 +/- 4.61e-64]",
+      "centered_first_two_terms_coefficient": "-251/289",
+      "exact_zero_sum_counts": [
+        0,
+        10,
+        48,
+        494,
+        4210,
+        39232,
+        363454,
+        3432062
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 37,
+    "pair_count": 2,
+    "status": 2,
+    "solver_bound": 2.242664841040757,
+    "objective": 2.242664841040776,
+    "runtime": 0.002746105194091797,
+    "certificate": {
+      "q": 37,
+      "cardinality": 4,
+      "density": "4/37",
+      "pairs": [
+        1,
+        18
+      ],
+      "K_ball": "[2.2426648410407850069684224996545354751801451874010349124267334543 +/- 1.88e-65]",
+      "Lambda_ball": "[3.8569867116175852646114831607812662503768599845487661301196796730 +/- 1.64e-65]",
+      "K": 2.242664841040785,
+      "Lambda": 3.8569867116175853,
+      "minimum_frequency": 15,
+      "peak_frequency": 2,
+      "margins": {
+        "trace_K_ge_alpha": "[2.1345567329326768988603143915464273670720370792929268043186253462 +/- 2.90e-65]",
+        "brief_Parseval_peak": "[4.5088799392273074638187824422436701585696883607526400008126254021 +/- 8.59e-65]",
+        "sharp_Parseval_peak": "[2.2537047317438927345249482146249709713824896340139518719118249254 +/- 3.51e-65]",
+        "A_norm_le_2K": "[2.8327451590537509710383629673142365942311770179383517819390710477 +/- 9.55e-65]",
+        "quadratic_with_linear_term": "[216.16409806076693501670524869177841049078645249188331561792117744 +/- 4.54e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[0.77237783835090764001650267568394376017223273461544851283383966226 +/- 4.63e-66]",
+      "centered_first_two_terms_coefficient": "577/841",
+      "exact_zero_sum_counts": [
+        0,
+        4,
+        6,
+        36,
+        100,
+        430,
+        1470,
+        5796
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 41,
+    "pair_count": 5,
+    "status": 2,
+    "solver_bound": 3.164447961718687,
+    "objective": 3.164447961718687,
+    "runtime": 0.052694082260131836,
+    "certificate": {
+      "q": 41,
+      "cardinality": 10,
+      "density": "10/41",
+      "pairs": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "K_ball": "[3.1644479617186872305226294443609047552390117521826629429874160631 +/- 8.85e-65]",
+      "Lambda_ball": "[8.1727063623388435289804302419829861010183599863830882275191094251 +/- 4.69e-65]",
+      "K": 3.1644479617186874,
+      "Lambda": 8.172706362338843,
+      "minimum_frequency": 12,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.9205455226942969866201904199706608527999873619387605039630258192 +/- 8.75e-65]",
+        "brief_Parseval_peak": "[8.947803732351307469369245982013241067080473899675989074181686162 +/- 2.43e-64]",
+        "sharp_Parseval_peak": "[5.784985565475967669379286207630561732650913926383128966164244548 +/- 3.23e-64]",
+        "A_norm_le_2K": "[3.887022529911302784365685468336383505432387269844280400218321435 +/- 4.82e-64]",
+        "quadratic_with_linear_term": "[358.3591776893936822316155059720690898409581263889823804801693046 +/- 5.60e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[11.216401885900734397294165681417098946543932126868486272731657574 +/- 8.66e-65]",
+      "centered_first_two_terms_coefficient": "-179/441",
+      "exact_zero_sum_counts": [
+        0,
+        10,
+        48,
+        494,
+        4210,
+        39232,
+        362838,
+        3413246
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 41,
+    "pair_count": 3,
+    "status": 2,
+    "solver_bound": 2.586083816801283,
+    "objective": 2.586083816801283,
+    "runtime": 0.011701107025146484,
+    "certificate": {
+      "q": 41,
+      "cardinality": 6,
+      "density": "6/41",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "K_ball": "[2.5860838168012826507916482140058059429043416334125459262418985848 +/- 6.66e-65]",
+      "Lambda_ball": "[5.6756847455926693668422174132538909063068365625527119966252989721 +/- 3.67e-65]",
+      "K": 2.5860838168012825,
+      "Lambda": 5.67568474559267,
+      "minimum_frequency": 8,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.4397423533866485044501847993716596014409269992662044628272644384 +/- 3.43e-65]",
+        "brief_Parseval_peak": "[6.2811864999581268220701918348176051273781707964924934797484477439 +/- 6.88e-65]",
+        "sharp_Parseval_peak": "[3.6798226188683079638087431515064130942175285018433434134210444140 +/- 3.65e-65]",
+        "A_norm_le_2K": "[3.325103545877426179466994934731917125154226282577673789216759308 +/- 4.49e-64]",
+        "quadratic_with_linear_term": "[297.19161886951178072150565274976600427090318757084296236368030488 +/- 6.64e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[2.0036756595003027286281312037441469803313732749837570335374071979 +/- 2.77e-65]",
+      "centered_first_two_terms_coefficient": "421/841",
+      "exact_zero_sum_counts": [
+        0,
+        6,
+        18,
+        122,
+        600,
+        3450,
+        18914,
+        107338
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 43,
+    "pair_count": 5,
+    "status": 2,
+    "solver_bound": 3.23923917740418,
+    "objective": 3.23923917740418,
+    "runtime": 0.060688018798828125,
+    "certificate": {
+      "q": 43,
+      "cardinality": 10,
+      "density": "10/43",
+      "pairs": [
+        1,
+        2,
+        4,
+        5,
+        6
+      ],
+      "K_ball": "[3.2392391774041904202738756768949816826270541769741651650576138897 +/- 9.15e-65]",
+      "Lambda_ball": "[8.3307739803521344349195976465218272695435057655449079085921285160 +/- 7.81e-65]",
+      "K": 3.2392391774041904,
+      "Lambda": 8.330773980352134,
+      "minimum_frequency": 12,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[3.0066810378693066993436431187554467989061239444160256301738929595 +/- 6.03e-65]",
+        "brief_Parseval_peak": "[9.200809099536343278732326364500776116626938407511695918492394307 +/- 3.23e-64]",
+        "sharp_Parseval_peak": "[5.969709140662042262540910998425314760588687684865072836246846247 +/- 5.12e-64]",
+        "A_norm_le_2K": "[4.049171611784639710006077798117180334324105030151877415126132452 +/- 4.60e-64]",
+        "quadratic_with_linear_term": "[395.7927626534942160793016670103786048131518573561801897558218372 +/- 2.83e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[9.7159269155253380152469047919901971689670705032532459293928087156 +/- 7.72e-65]",
+      "centered_first_two_terms_coefficient": "-131/529",
+      "exact_zero_sum_counts": [
+        0,
+        10,
+        48,
+        494,
+        4210,
+        39232,
+        362824,
+        3410654
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 43,
+    "pair_count": 3,
+    "status": 2,
+    "solver_bound": 2.626380441945522,
+    "objective": 2.626380441945522,
+    "runtime": 0.008003950119018555,
+    "certificate": {
+      "q": 43,
+      "cardinality": 6,
+      "density": "6/43",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "K_ball": "[2.6263804419455214718508781779258816209065061405339143271347471176 +/- 4.60e-65]",
+      "Lambda_ball": "[5.7047844109533255314911243157429269024825663566184646383647948445 +/- 1.49e-65]",
+      "K": 2.6263804419455217,
+      "Lambda": 5.704784410953326,
+      "minimum_frequency": 9,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.4868455582245912392927386430421606906739480009990306062045145594 +/- 6.66e-65]",
+        "brief_Parseval_peak": "[6.365421194737113926490874895038466885293605786224557145057989745 +/- 3.48e-64]",
+        "sharp_Parseval_peak": "[3.7275462342369802623025881570556432087735488371172396399164917276 +/- 5.87e-65]",
+        "A_norm_le_2K": "[3.398899359558698101361961210334237401015728209305193063263903121 +/- 5.20e-64]",
+        "quadratic_with_linear_term": "[322.15184919276737650505903784688920622423080504977862345998748638 +/- 8.33e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[1.8279974484562601296906539799967097516397092558249089804917703865 +/- 5.14e-65]",
+      "centered_first_two_terms_coefficient": "517/961",
+      "exact_zero_sum_counts": [
+        0,
+        6,
+        18,
+        122,
+        600,
+        3450,
+        18914,
+        107338
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 47,
+    "pair_count": 6,
+    "status": 2,
+    "solver_bound": 3.0963145042447295,
+    "objective": 3.0963145042447295,
+    "runtime": 0.057374000549316406,
+    "certificate": {
+      "q": 47,
+      "cardinality": 12,
+      "density": "12/47",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        20,
+        23
+      ],
+      "K_ball": "[3.096314504654442080329277687823968642528147450952864069521261374 +/- 1.09e-64]",
+      "Lambda_ball": "[9.1698043401199545969255403464729349846168557109497739482820897734 +/- 6.76e-65]",
+      "K": 3.0963145046544422,
+      "Lambda": 9.169804340119954,
+      "minimum_frequency": 15,
+      "peak_frequency": 2,
+      "margins": {
+        "trace_K_ge_alpha": "[2.8409953557182718675633202410154580042302751105273321546276443528 +/- 8.61e-65]",
+        "brief_Parseval_peak": "[9.380052135681077148709791937989127684803244935984457900064568440 +/- 4.77e-64]",
+        "sharp_Parseval_peak": "[6.234568163163692504722298521639470972438460639203834581037293126 +/- 6.41e-64]",
+        "A_norm_le_2K": "[3.551840609639545653980577630386767863747340794956848194987569752 +/- 3.04e-64]",
+        "quadratic_with_linear_term": "[436.8140770790797296205710481879237893295318744732495664187261999 +/- 5.90e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[14.877285910575154413027875929923213330840530264991249916913655965 +/- 1.76e-64]",
+      "centered_first_two_terms_coefficient": "-311/529",
+      "exact_zero_sum_counts": [
+        0,
+        12,
+        66,
+        788,
+        8040,
+        89262,
+        994434,
+        11280084
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 47,
+    "pair_count": 3,
+    "status": 2,
+    "solver_bound": 2.6126530743023104,
+    "objective": 2.6126530743023104,
+    "runtime": 0.010750055313110352,
+    "certificate": {
+      "q": 47,
+      "cardinality": 6,
+      "density": "6/47",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "K_ball": "[2.6126530743023107084096364765055557040118345731899778191894519763 +/- 3.92e-65]",
+      "Lambda_ball": "[5.7523930997711708817943076189528206757258053571656510864406775213 +/- 1.29e-65]",
+      "K": 2.612653074302311,
+      "Lambda": 5.7523930997711705,
+      "minimum_frequency": 10,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.4849934998342256020266577531013003848628984029772118617426434656 +/- 7.76e-65]",
+        "brief_Parseval_peak": "[6.361702291690934134754469335892272670583248059843551291373203205 +/- 5.29e-64]",
+        "sharp_Parseval_peak": "[3.7352275394603339533654498492274574184992663392127684469192451863 +/- 9.57e-65]",
+        "A_norm_le_2K": "[3.377601008978815500930063507990878698084514658987632899051533795 +/- 1.31e-64]",
+        "quadratic_with_linear_term": "[363.78028335810275046480719637753849205937736636893101770312786379 +/- 7.31e-63]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[1.5512342628467470025727296720777262426295454586483791921032562916 +/- 3.40e-65]",
+      "centered_first_two_terms_coefficient": "733/1225",
+      "exact_zero_sum_counts": [
+        0,
+        6,
+        18,
+        122,
+        600,
+        3450,
+        18914,
+        107338
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 53,
+    "pair_count": 7,
+    "status": 2,
+    "solver_bound": 3.66542025314019,
+    "objective": 3.66542025314019,
+    "runtime": 0.16714119911193848,
+    "certificate": {
+      "q": 53,
+      "cardinality": 14,
+      "density": "14/53",
+      "pairs": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "K_ball": "[3.6654202531402060850917274109962079036612028538710111954616989524 +/- 8.24e-65]",
+      "Lambda_ball": "[11.494606158945106230262757681666942668964964459274861903103970408 +/- 3.70e-64]",
+      "K": 3.6654202531402063,
+      "Lambda": 11.494606158945107,
+      "minimum_frequency": 4,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[3.4012693097439796699973877883546984696989387029276149690466046128 +/- 6.12e-65]",
+        "brief_Parseval_peak": "[12.349465526569636508886692953634655199131911761425797951058991375 +/- 3.59e-64]",
+        "sharp_Parseval_peak": "[8.693479740420838678372809365657598684287941263541379943723903188 +/- 2.82e-64]",
+        "A_norm_le_2K": "[4.699435313130788107599619072264346440237228667396868582256171842 +/- 6.58e-64]",
+        "quadratic_with_linear_term": "[563.8033282634573563143039030305404261923100663019042163754785959 +/- 4.33e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[21.288378433763422981845995634692991165088521057439741040129452523 +/- 4.04e-64]",
+      "centered_first_two_terms_coefficient": "-467/625",
+      "exact_zero_sum_counts": [
+        0,
+        14,
+        108,
+        1450,
+        17830,
+        230432,
+        2994068,
+        39378938
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 53,
+    "pair_count": 3,
+    "status": 2,
+    "solver_bound": 2.629927405485237,
+    "objective": 2.6299274054852373,
+    "runtime": 0.019138097763061523,
+    "certificate": {
+      "q": 53,
+      "cardinality": 6,
+      "density": "6/53",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "K_ball": "[2.6299274054852379950834053816326180620385056658687617868093987765 +/- 4.42e-65]",
+      "Lambda_ball": "[5.8048473424560972640020495057885203776226514301119361009412865148 +/- 2.72e-65]",
+      "K": 2.629927405485238,
+      "Lambda": 5.804847342456097,
+      "minimum_frequency": 11,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.5167198583154266743286884005005425903403924583215919754886440595 +/- 6.54e-65]",
+        "brief_Parseval_peak": "[6.4116182509659293264873319234795598240074478508718480882208048139 +/- 7.87e-65]",
+        "sharp_Parseval_peak": "[3.7688415202204449363897122584916169460911245912763386981331722202 +/- 6.84e-65]",
+        "A_norm_le_2K": "[3.407342602658051983200182854353530339663657952180489468031683340 +/- 1.99e-64]",
+        "quadratic_with_linear_term": "[430.9579086644090833473200012710590255704874344504940595866078194 +/- 5.02e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[1.2588216709036263215532948145487619965460186049890889128809574477 +/- 4.31e-65]",
+      "centered_first_two_terms_coefficient": "1117/1681",
+      "exact_zero_sum_counts": [
+        0,
+        6,
+        18,
+        122,
+        600,
+        3450,
+        18914,
+        107338
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 59,
+    "pair_count": 7,
+    "status": 2,
+    "solver_bound": 3.6741431599720453,
+    "objective": 3.6741431599720453,
+    "runtime": 0.2578849792480469,
+    "certificate": {
+      "q": 59,
+      "cardinality": 14,
+      "density": "14/59",
+      "pairs": [
+        1,
+        2,
+        3,
+        5,
+        6,
+        7,
+        8
+      ],
+      "K_ball": "[3.6741431599720447790986918832841309159689515140280680690945079842 +/- 6.73e-65]",
+      "Lambda_ball": "[11.957374095498521531357290670268026653103725151877348343839214200 +/- 1.34e-64]",
+      "K": 3.674143159972045,
+      "Lambda": 11.95737409549852,
+      "minimum_frequency": 5,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[3.4368550243788244401156410358265037973248837174178985775690842554 +/- 5.52e-65]",
+        "brief_Parseval_peak": "[12.725270645913806409951418349398913169729746916354950347241155556 +/- 4.22e-64]",
+        "sharp_Parseval_peak": "[9.051492053965636436864522089329886980140855135648045234427629077 +/- 3.43e-64]",
+        "A_norm_le_2K": "[4.673790176645204927474985841612110839134152270893858920004024238 +/- 3.42e-64]",
+        "quadratic_with_linear_term": "[704.5862141866572573379815477872693204825161041034736226153995197 +/- 5.04e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[14.919123061652178353212396167092831751061242116588266185777704401 +/- 1.13e-64]",
+      "centered_first_two_terms_coefficient": "-299/961",
+      "exact_zero_sum_counts": [
+        0,
+        14,
+        108,
+        1450,
+        17830,
+        230432,
+        2993900,
+        39342426
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 59,
+    "pair_count": 4,
+    "status": 2,
+    "solver_bound": 2.9981066162960905,
+    "objective": 2.9981066162960905,
+    "runtime": 0.04958796501159668,
+    "certificate": {
+      "q": 59,
+      "cardinality": 8,
+      "density": "8/59",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "K_ball": "[2.9981066162960911909146374548910121915603720908053891167326380070 +/- 7.34e-65]",
+      "Lambda_ball": "[7.6635411427025965145223373442113462951465836537271987425409956428 +/- 4.55e-65]",
+      "K": 2.998106616296091,
+      "Lambda": 7.663541142702597,
+      "minimum_frequency": 9,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.8625133959571081400671798277723681237637619213138636930038244477 +/- 5.36e-65]",
+        "brief_Parseval_peak": "[8.355107291191258245025006514316752331050778917840619726054892730 +/- 3.60e-64]",
+        "sharp_Parseval_peak": "[5.3486654918351321756551030583519068592834520039894877599246491694 +/- 7.96e-65]",
+        "A_norm_le_2K": "[4.013675061353189216733694510014902857559232137481097064468522849 +/- 1.89e-64]",
+        "quadratic_with_linear_term": "[573.5204881163982987176527262365401507527929325911088853003828801 +/- 3.88e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[2.3202581205068346598108557051562193016560625066034579110071672571 +/- 4.21e-65]",
+      "centered_first_two_terms_coefficient": "1033/1849",
+      "exact_zero_sum_counts": [
+        0,
+        8,
+        36,
+        296,
+        2030,
+        15200,
+        112308,
+        845320
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/4",
+    "q": 61,
+    "pair_count": 8,
+    "status": 2,
+    "solver_bound": 3.7118424812322894,
+    "objective": 3.7118424812322894,
+    "runtime": 0.8027439117431641,
+    "certificate": {
+      "q": 61,
+      "cardinality": 16,
+      "density": "16/61",
+      "pairs": [
+        1,
+        2,
+        13,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "K_ball": "[3.711842481703483208908379007404622252820056861437124297360455095 +/- 1.64e-64]",
+      "Lambda_ball": "[11.983667329208757629193515398702552617947616296543186708153253632 +/- 1.79e-64]",
+      "K": 3.711842481703483,
+      "Lambda": 11.983667329208757,
+      "minimum_frequency": 21,
+      "peak_frequency": 5,
+      "margins": {
+        "trace_K_ge_alpha": "[3.449547399736270094154280646748884547902024074551878395721110833 +/- 3.25e-64]",
+        "brief_Parseval_peak": "[12.515612294596384638611201843093648839272210164488092427518758927 +/- 4.18e-64]",
+        "sharp_Parseval_peak": "[8.787843391818570971727840892121034520132102281482840717900547086 +/- 5.12e-64]",
+        "A_norm_le_2K": "[4.491574160116777351999622012342303259686620738425528036977716899 +/- 6.26e-64]",
+        "quadratic_with_linear_term": "[749.0346503589663431287192889303704365974352070522836661066760464 +/- 8.18e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[21.580330029884318138266398635082049734727102699748934364758329555 +/- 3.85e-64]",
+      "centered_first_two_terms_coefficient": "-599/841",
+      "exact_zero_sum_counts": [
+        0,
+        16,
+        126,
+        1856,
+        25540,
+        374542,
+        5574506,
+        84426304
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  },
+  {
+    "target_density": "1/8",
+    "q": 61,
+    "pair_count": 4,
+    "status": 2,
+    "solver_bound": 3.0242035064559483,
+    "objective": 3.0242035064559483,
+    "runtime": 0.09099888801574707,
+    "certificate": {
+      "q": 61,
+      "cardinality": 8,
+      "density": "8/61",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "K_ball": "[3.0242035068583691686490179249326394928040533101001397609348458482 +/- 7.33e-65]",
+      "Lambda_ball": "[7.6850156920006683551785092463854647971837787533451211138375474988 +/- 4.79e-65]",
+      "K": 3.024203506858369,
+      "Lambda": 7.685015692000668,
+      "minimum_frequency": 10,
+      "peak_frequency": 1,
+      "margins": {
+        "trace_K_ge_alpha": "[2.8930559658747626112719687446047706403450369166575168101151737171 +/- 4.08e-65]",
+        "brief_Parseval_peak": "[8.410822395744467433163597990572376697829617127353634285085103302 +/- 2.10e-64]",
+        "sharp_Parseval_peak": "[5.3800213019227160528029251889236792327563560203733483560774606980 +/- 8.41e-65]",
+        "A_norm_le_2K": "[4.065987840829679144678695874805308085985112466200342896573872189 +/- 5.83e-64]",
+        "quadratic_with_linear_term": "[604.0885637412066928119057194765920149947935868721087528349479916 +/- 2.65e-62]"
+      },
+      "exact_equalities": [],
+      "cubic_idempotence_defect_ball": "[2.1812372659303735126292122156215490975512894779316127570731887902 +/- 2.23e-65]",
+      "centered_first_two_terms_coefficient": "1177/2025",
+      "exact_zero_sum_counts": [
+        0,
+        8,
+        36,
+        296,
+        2030,
+        15200,
+        112308,
+        845320
+      ],
+      "status": "Exact set; 220-bit Arb inequalities; rational power identities exact"
+    }
+  }
+]

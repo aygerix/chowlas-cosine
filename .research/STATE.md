@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 13: cyclic barriers; round 14 = Sanders at every density")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 14: Sanders transfers end at ¼; P66 range 13.25")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -23,7 +23,7 @@
       - Integer side: CSFG(20) ⇒ T-dense(C < min(20, 1/D_σ)), beyond 1/D (R12-B).
       - Cyclic side: the peak lemma PK(η) (Λ <= CK^{2−η}) beats Sanders' 1/3; PK(1) gives √q.
       - Scalar moments provably cannot do it (R12-S). The full convolution identity λ⋆λ = qλ is needed.
-- (L-dense, exponent 1/3) PROVED (P66, lead, paper): M >= c(C)|A|^{1/3} for every C < 9(1 + √3)/2 = 12.294, ineffective; fully analytic (Beckner).
+- (L-dense, exponent 1/3) PROVED (P66, lead, paper): M >= c(C)|A|^{1/3} for every C < 13.2548 (computer-assisted: P63 + E94b mixing), ineffective; fully analytic for C < 9(1 + √3)/2 = 12.294 (Beckner).
   This is the cubic front cap: under M = o(n^{1/3}), the cubic Schur profile g(p) = p(1 − p)(1 − 2p) is PD, so
   a <= (3 − √3)/6. Numerical reach ≈ 15.6 (E93b). Bu et al. have exponent ¼ for all C.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
@@ -303,7 +303,7 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 13: cyclic barriers; round 14 = Sanders at every density (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 13: cyclic barriers; round 14 = Sanders at every density (2026-10-19 night)
 - Round 13 DONE, lead spot-checked (PROOFS P65; EXPERIMENTS E91).
   - Universal PK is FALSE (R13-PK): profile-rounded half-sets have Λ ~ εq/2 with K = O(√(q log q)). The right
     intermediate is QU(β).
@@ -317,7 +317,7 @@ in parallel.
     - 2-D obstruction: independent lacunary scales force linear M, so counterexamples are one-dimensional at every
       scale;
     - the dilation-deficit form of the cyclic problem.
-- NEW (lead, P66): CUBIC FRONT CAP. Dense exponent 1/3 for every C < 12.294 rigorously (≈ 15.6 numerically, E93b).
+- NEW (lead, P66): CUBIC FRONT CAP. Dense exponent 1/3 for every C < 13.2548 rigorously (P63 + E94b mixing; 12.294 fully analytic; ≈ 15.6 numerically, E93b).
   Codex adversarial check pending.
 - Lead read Sanders 0807.5104v2 pp. 1–10.
   - Thm 4.1 gives exponent α/5 at density α, from r = 2⌈1/α⌉ convolution powers in Lemma 3.2; the half-set case is
@@ -325,12 +325,30 @@ in parallel.
   - JMTZ give ¼ − ε at every density; Bu et al. dense ¼.
   - So a density-INDEPENDENT cyclic exponent θ > ¼ would give DENSE CHOWLA EXPONENT θ FOR EVERY C, via the embedding
     q ∈ (2X, 4X]. That beats the 2026 literature for C > 7.72.
+## Session 3, round 14: Sanders transfers end at ¼; P66 range 13.25 (2026-10-19 night, NEWEST — read this first)
+- Round 14 DONE, lead-verified (PROOFS P67; examples/r14_certificates/).
+  - R14-CENTER: centred convolution powers regenerate the δ term at every order, U^{(r)} = A_rU + qm_rδ. The first
+    favourable order is ≍ 1/α, and even then the norm estimate gives K^{r+1} >> q.
+  - R14-UNION: union with a fixed dilate creates order-q negativity.
+  - Sanders' half-set 1/3 is not reconstructed in the small-spectrum branch: Λ = O(KL²) = O(K³) gives ¼ only.
+  - Embedding correction: use q ∈ (4X, 8X].
+- Lead.
+  - E94b (RIGOROUS): P66 now holds for C < 13.2548 (mixing P63 and Beckner on 𝒲).
+  - E95: the dedicated D_{2/3} LP saturates near 13.8.
+  - E96: degree-3 SOS / Sherali–Adams gives K = O(1) for half-sets (two-point pseudo-marginals): dead end.
+  - NOTEBOOK cont. 18.2: profile and moment methods at θ > ¼ are capped by the third-order reach.
+  - NOTEBOOK cont. 18.5: the equality case of the cyclic ¼ argument is a flat ±½ PD function with spectrum Π, |Π| ~ √q,
+    and Π + Π covering Z_q uniformly, i.e. a weighted REVERSIBLE difference set. Exact versions are impossible
+    (Galois ⇒ Paley; cyclic reversible difference sets are trivial). Making this quantitative is the new route past ¼.
 ## Running now (2026-10-19 night, newest)
-- Codex MATH agent, round 14 (.research/agents/tdense14_brief.md; report tdense14_report.md): Sanders' 1/3 at every
-  fixed density. The key step is removing the 1/α in the binomial-positivity order r.
+- Codex MATH agent, round 15 (.research/agents/tdense15_brief.md; report tdense15_report.md).
+  - (A) Adversarial verification of P66 and E94b, plus a ported σ = 2/3 certificate.
+  - (B) Stability of the equality case of the cyclic ¼ bound, aiming at an exponent θ > ¼ for half-sets.
 ## First concrete next step (2026-10-19 night, newest)
-- Verify round 14. If a density-independent θ > ¼ is proved, check the integer corollary and the literature (Bu §9,
-  JMTZ, Yip 2610.01657) before recording it as new.
+- Verify round 15.
+  - If P66 has a gap, fix it or downgrade STATE immediately.
+  - If a half-set exponent θ > ¼ is claimed, re-derive it, run the adversaries (Paley, E41 optima, R13/R14 families),
+    and check Sanders, JMTZ and Bu §9 before recording.
 ## Session 3, round 12: the missing ingredient pinned (CSFG / PK) (2026-10-19 night)
 - Round 12 DONE, lead-verified (PROOFS P64; E89: R12-N falsification, 538 cases, 0 violations).
   - No new unconditional endpoint: T-dense stays at C < 7.722.

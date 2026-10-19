@@ -2209,3 +2209,62 @@ new relaxation, not finer grids.
      - (ii) codex adversarial check of P66;
      - (iii) in the cyclic setting, the same cubic-profile argument needs K = o(q^{1/3}). Does it give anything for
        Sanders-type half-sets? There is no taper (p ≡ ½ is allowed), so no.
+
+## 2026-10-19 (cont. 18) — round 14 read, rigorous range of P66 widened, and the moment-method ceiling for θ > ¼
+1. P66 range widened (E94b, RIGOROUS, computer-assisted).
+   - Mix the two rigorous bounds on 𝒲 pointwise: φ(2x/3) <= α1φ(x) + α2x on [0, 1].
+   - Exact-rational bisection certificate with α1 = 0.233809 and α2 = 0.117344 gives D_{2/3} <= 0.0754440, hence
+     exponent 1/3 for C < 13.2548.
+   - A dedicated D_{2/3} Schur-test LP (E95; P63 code with φ(σx²)) saturates at 0.0723 (C ≈ 13.8). The family
+     overshoots the truth by 9%, as at σ = 1. Certifying it would gain only 0.5 in C, so it is left for an agent.
+2. WHY no moment method gives θ > ¼ for all C (lead; argument, not a theorem about all methods).
+   - At exponent θ > ¼ only Schur orders j <= 3 are affordable, since order j costs m^j/X.
+   - At small density every binary moment profile is ≈ p: e = p(1 − p) ≈ p and g(p) ≈ p. So every order-<=3 profile
+     constraint is satisfied by a small multiple of any PD bump. Low density can never be contradicted by profiles.
+   - The reach of every profile method at θ > ¼ is therefore the third-order reach C_3 (≈ 15.6 numerically, E93b,
+     before dilation-coupled third-order constraints). This is the exact analogue of the second-order bounded-M
+     sharpness (cont. 17.8).
+   - Rescaling does not help either. Fejér tapers at a smaller scale Y give profiles w^j·(moment) with
+     w = (1 − |t|)₊. Constant densities pass at every scale because every power of w is Pólya-convex, hence PD. The
+     contradiction is intrinsically the HARD boundary at X.
+3. Ideas tried and parked (lead, quick).
+   - (a) Bu's Prop. 9.7 gives M³‖f‖₁ >~ n/C. If ‖f‖₁ <= M^{1−δ} this gives exponent 1/(4 − δ) for all C. The
+     complementary case is spread negativity, |{f < −M^{1−δ}/4}| >~ M^{−δ}, and no lever was found for it.
+     Littlewood (McGehee–Pigno–Smith) gives ‖f‖₁ >~ log n, so the first branch alone never reaches 1/3.
+   - (b) Galois. For integer k >= K, λ + k is totally positive in Q(ζ + ζ̄). The Schur–Siegel–Smyth trace bound gives
+     only k >= 2.3. Resultant and capacity constraints are scale-free and too weak at |λ| ~ √q.
+   - (c) Cyclic small-spectrum branch, with S the positive mass. L ≈ ½ + S/q, Λ <~ K(S/q)², and Parseval gives
+     ΛS >~ q²/8. Eliminating S again gives K⁴ >~ q. Round 14 (P67.3) found the same wall: an estimate better than
+     Λ = O(KL²) is required.
+4. Strategic review after round 14.
+   - Proved this session:
+     - T-dense at exponent ½ for C < 7.722;
+     - exponent 1/3 for C < 13.25.
+   - Barriers: second-order sharpness (bounded M); the third-order ceiling (item 2); P67 for Sanders-type transfers;
+     R12-S/R13 for scalar cyclic arguments.
+   - Every route to "beyond ¼ at all densities" or "beyond 8.57 at ½" now runs through ONE missing estimate: a
+     one-sided Boolean peak bound better than second order (QU(β > 1)). In the integer setting this is the FRONT gap.
+   - Next round: independent adversarial verification of P66 (our new theorem), together with the third-order
+     sharpness question that would make item 2 a theorem.
+   - The QU wall stays the long-term main line. Its next attack should use the integer TAPER (absent in cyclic
+     half-sets): CSFG-type statements, where the set is confined to |c| <= q/4.
+5. (cont. 18) The EQUALITY CASE of the cyclic ¼ argument, fully worked out (lead, half-sets; paper reasoning, labeled).
+   - Write b − ½ = P̌ − Ň, with P = λ⁺ and N = λ⁻ on γ ≠ 0, so both P̌ and Ň are PD.
+   - Equality in "Λ <= √(2q)K together with ΛK >= q/4" forces all of the following.
+     - (i) N ≈ K on almost all γ, so Ň ≈ K·δ_0. The c = 0 spike holds all of Ň's L² mass.
+     - (ii) The positive spectrum Π has |Π| ≈ 4K² ≈ √q·const, with heights ≈ q/(4K).
+     - (iii) Off x = 0, P̌ = b − ½ = ±½ EXACTLY, and P̌ has nonnegative Fourier coefficients c_γ ≈ 1/(4K) on Π.
+     - (iv) Then P̌² ≡ ¼ off 0, so for every ξ ≠ 0: Σ_{γ+β=ξ} c_γc_β = (K'² − ¼)/q with K' = P̌(0). Π + Π must cover
+       Z_q UNIFORMLY (a weighted symmetric perfect difference set), so |Π|² >= q − 1. This recovers K >~ q^{1/4}
+       exactly.
+   - Galois check.
+     - All λ(γ) are conjugates of α = λ(1). Exactly two values force α into Q(√q), with EQUAL multiplicities (Paley,
+       K ≈ √q/2).
+     - So the ¼-extremal configuration must be near-two-valued with very UNEQUAL multiplicities (|Π| ~ √q against
+       q/2).
+     - Small-q optima (E41) look nothing like it: they are dilated near-intervals with one giant peak Λ ≈ 0.27q.
+   - Target (stability): prove that deviation from (i)–(iv) improves the second-order bound quantitatively, and that
+     (iii)–(iv) cannot hold approximately. The second part should use positivity of c (no cancellation in P̌²),
+     flatness and Galois / unequal multiplicities.
+   - This is a concrete route past ¼ that the R13 fakes need not satisfy. They are not Boolean, so (iii) is unavailable
+     to them.

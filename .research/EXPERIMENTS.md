@@ -472,3 +472,23 @@ transform has a first negative lobe exponentially small in d):
   small spikes (lattice-point discrepancy) and behaves like noise, giving M ~ √(n log X) or worse. For d >= 4 the
   r = 0.5 cap also clips the ball in T^d.
 A 0/1 set cannot have both a smooth shape (small Gibbs) and no boundary noise. This is the same tension P28 isolates.
+
+## E47 (2026-10-19) Spike share: fraction of ‖f_A‖₂² on {f_A > K·M} (src/e47_spike_share.py on dirichlet; FFT grid 16·2^⌈log2 X⌉)
+Motivation (NOTEBOOK 2026-10-19 item 2). Share_{>KM} >= 1 − 2(1 + K)R², so R -> 0 forces share -> 1 for every fixed
+K. P30 conjectures a uniform cap ρ < 1.
+   set                 n       R      max f/M  K=1    K=2    K=4    K=8    K=12
+   dense N50           50      0.570  12.4     0.820  0.800  0.783  0.657  0.239
+   dense N45           45      0.572  11.7     0.819  0.783  0.772  0.635  0.0
+   Singer–Bu q=61      3782    0.604  101.8    0.780  0.660  0.557  0.547  0.544
+   Singer–Bu q=151     22952   0.578  262.3    0.786  0.674  0.537  0.507  0.506
+   Singer–Bu q=401     161202  0.554  725.3    0.792  0.685  0.544  0.506  0.505
+   interval [1,500]    500     4.88   4.6      0.895  0.869  0.554  0      0
+   random d=0.5        2043    10.14  4.5      0.455  0.443  0.283  0      0
+   taper random        1988    1.69   26.4     0.661  0.657  0.656  0.646  0.612
+   random diffs k=60   1649    1.33   30.6     0.531  0.264  0.117  0.106  0.104
+Reading:
+- At large K the share is the central (density-profile) peak: ≈ 0.5 for Bu, ≈ 2/3 for triangle profiles (theory
+  ∫φ²/∫φ = 2/3), 0.64–0.78 for the dense records.
+- No set puts noise mass into secondary spikes above 4M.
+- A construction with R -> 0 needs >= 1 − ρ* of the mass in secondary spikes far above M. This is the quantitative
+  target for the construction track.

@@ -738,3 +738,67 @@
   2M_p = Σu ∓ 1. The elementary p^{1/4} is the non-symmetric planar bound. Natural Singer-based symmetric weights are
   killed by the E41 exact data (2M_p ≈ √p at p = 13, 31, 73).
 - Gurobi A/B (E43/E44): MIPNODE user cuts slow node throughput ~4x and lose. Plain lazy-cut model kept.
+
+## 2026-10-19 — Turán constraints, the scale they act on, and the spike-share reformulation (lead)
+1. P29 (PROVED, PROOFS): Fejér-grid weights give X·M >= h·n − (X + h)(h − 1)/2, hence M >= (n − X/2)²/(2X).
+   - Density > 1/2 in [1, max A] forces linear M. This is the discrete Turán bound (∫φ <= φ(0) for p.d. φ on [−1, 1]).
+   - P29(b), twisted form: f_A(x₀) <= ((X + h)/h)(f ∗ F_h)(x₀) + (X/h)M. Peaks must be front-loaded.
+   - Consequence: near-extremal sets have density <= 1/2 + O(n^{−1/4}). The dense records (0.69–0.74 at X <= 72)
+     are pre-asymptotic.
+2. Scale of Turán. Every fixed or Fejér-type weight constrains the local (twisted) profile only up to error M/X.
+   - For a TYPICAL set, √n-scale noise has profile size √n/X ≍ M/X, so Turán says nothing. That is why P29/P25-type
+     inequalities are blind to the noise.
+   - For a COUNTEREXAMPLE the situation reverses (elementary, PROVED):
+         (1/2π)∫_{f > KM} f² >= (n/2)(1 − 2(1 + K)R²),
+     from ∫_{f <= KM} f² <= (K + 1)M·∫f⁻ and ∫f⁻ <= 2πM.
+   - So R -> 0 puts almost all of ‖f‖₂² on spikes of height >= K·M with K -> ∞. Their profiles have size >> M/X:
+     exactly the regime where the Turán/p.d. constraints bite with relative error -> 0.
+3. P30 (CONJECTURED; sufficient for Chowla). There are K and ρ < 1 such that for every A,
+       share_{>KM}(A) := (1/2π)∫_{f_A > K·M(A)} f_A² / (|A|/2) <= ρ.
+   It implies R(A)² >= (1 − ρ)/(2(1 + K)) for all A. Example: K = 4, ρ = 1/2 would give R >= 0.22.
+   Heuristic support (profile model, NOT proved):
+   - A spike at x₀ of height P >> M has a twisted profile φ_{x₀}(t) whose Hermitian extension must be p.d. up to M/X.
+   - Bessel in the internal variable: Σ_{x₀} |φ_{x₀}(t)|² <= φ_0(t).
+   - p.d. gives |φ_{x₀}(t)| <= φ_{x₀}(0). Turán gives ∫ φ_0 <= φ_0(0)/2.
+   - Triangle shapes give total spike share <= 2/3. Optimal shapes give the doubly-positive constant ρ* ≈ 0.72
+     (P17: <= 0.9057 proved for one profile).
+   - At the threshold density φ_0(0) = 1 the Bessel identity even forbids all twisted peaks.
+   Exact gaps:
+   - (G1) a rigorous multi-scale profile decomposition: spikes can have different widths, and blocks far from 0
+     rotate (front-loading, P29(b)).
+   - (G2) error accumulation over at most ~R²X peaks (looks harmless).
+   - (G3) turning "p.d. up to M/X for every test w >= 0" (which, per peak, is a tautology: it is f >= −M) into a
+     JOINT constraint across peaks, via the {0,1}-valuedness / Bessel coupling. G3 is the real content.
+   Test: E47 (src/e47_spike_share.py) measures share_{>KM} on records, Bu sets and random sets.
+4. E47 result (EXPERIMENTS): share_{>KM} at large K plateaus at the CENTRAL profile peak.
+   - Singer–Bu q = 61..401: 0.505–0.545.
+   - Dense records: 0.66–0.78 at K = 8.
+   - Triangle-tapered random set: 0.65 (triangle prediction ∫φ²/∫φ = 2/3).
+   - Bu's non-central mass sits at levels below 4M.
+   So a construction with R -> 0 must move the >= 1 − ρ* ≈ 28% "noise" mass into SECONDARY spikes far above M.
+   None of our families does this.
+5. Heuristic DENSE-CHOWLA argument in Z (the joint constraint G3 made explicit).
+   Peak profiles ψ_{x₀} are Hermitian, p.d. up to relative O(1/K), supported in [−1, 1]. Let c_{x₀} = ψ_{x₀}(0),
+   c₀ = ψ_0(0) <= 1 (density near 0), s = ∫_{−1}^{1} ψ_0 = 2δ.
+   Inputs:
+   - central: ∫ψ_0² <= ρ*·c₀·s (doubly positive);
+   - twisted: ∫|ψ_{x₀}|² <= ‖|u|⋆|ũ|‖² <= ρ*·c_{x₀}² (ψ = u⋆ũ, supp u of length <= 1);
+   - Turán: s <= c₀;
+   - Bessel at t = 0 with constant β: c₀² + Σ_{x₀≠0}|c_{x₀}|² <= β·c₀.
+   Conclusion: share <= ρ*[c₀s + βc₀ − c₀²]/s, maximized at c₀ = (s + β)/2, giving ρ*(s + β)²/(4s).
+   - β = 1, ρ* = 0.724 (numerical): share < 1 for δ > 0.16.
+   - β = 1, ρ* <= 0.9057 (P17, proved): share < 1 for δ > 0.29.
+   Then R² >= (1 − share)/(2(1 + K)), i.e. CHOWLA FOR DENSE SETS in Z. P29 already covers δ > 1/2.
+   Sensitivity: the argument dies if β >= 1.38 (with ρ* = 0.724, at δ = 1/2) or β >= 1.10 (with 0.9057).
+   BOTTLENECK, a two-scale Bessel inequality:
+   - For one resolution it is fine. With triangle-smoothed values at t = 0 (half-width N) and peaks δ-separated,
+     duality gives the Gram bound β <= 1 + 6.6/(Nδ)² (PROVED: off-diagonal Fejér decay).
+   - The covering of {f > KM} needs separation ~ resolution, so Nδ ~ 1 and β ~ 2.
+   - Wide peaks (narrow profiles, i.e. structure in A ∩ [1, ℓX]) have smoothed values << their true ψ(0). Their
+     mass <= ρ*c²ℓ is small, but summing dyadic scales with SEPARATE budgets loses a factor 2.
+   - Needed: one joint budget across scales.
+   Candidate fix: profiles of width ℓ use the Bessel budget only on t ∈ [0, ℓ]. Peaks wider than the resolution
+   could then be charged to the low part A ∩ [1, ℓX], whose total budget is |A ∩ [1, ℓX]| <= ℓX.
+   That is a multi-scale large sieve with p.d. weights. Not attempted further today.
+   Status: HEURISTIC with the gap located precisely. Novelty of the dense-Z question: to check before investing
+   days (Z_p dense is open: Sanders p^{1/3} vs p^{1/2}).

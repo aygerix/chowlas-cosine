@@ -125,3 +125,16 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   - The limit is conjectured there.
 - Correction to the 2026-10-19 quick check above: a dense-set result in Z DOES exist (Kolountzakis 1996, density
   > 1/2, linear). The √n result for density in (0.385, 1/2] (P31) is what was not found.
+
+## Novelty check for P31-C (dyadic / sparse-front Chowla), 2026-10-19 (one extended web search)
+- Hits: JMTZ 2509.03490, Yip 2610.01657, Bedert 2509.05260, Shankar 2609.05338, Quanta (Jan 2026), proofatlas.
+- None states a √n (Chowla-strength) lower bound for A ⊂ [N, 2N] or for dense A.
+- Closest: Sanders' POLYNOMIAL estimate when every frequency is O(N) (cited in Bedert/Shankar). That is a power loss,
+  not √n.
+- So P31-C(a) (M >= 0.370√|A| for A ⊂ (X/2, X], every X) and the dense corollary δ > 0.385 appear new relative to these
+  sources. Not a thorough survey.
+- Sources:
+  - https://arxiv.org/pdf/2509.05260
+  - https://arxiv.org/html/2609.05338
+  - https://arxiv.org/html/2610.01657
+  - https://www.quantamagazine.org/networks-hold-the-key-to-a-decades-old-problem-about-waves-20260128/

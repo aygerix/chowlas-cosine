@@ -173,3 +173,18 @@ Statements (lean/ChowlaCosine/Beckner/YoungSharp.lean, YoungSharpSpecial.lean):
 - Correction found by the agent: the constant previously recorded as "0.7698" is a rounding of 4/(3√3) =
   0.7698003589… and is NOT itself a valid exact upper bound. All records now say 4/(3√3) ≈ 0.76980. The thresholds
   derived from it are unchanged at displayed precision.
+
+## C-R7 (2026-10-19) Exact certificates for P58 (T-dense(4.4393)) and its obstruction witness
+Archived copies are in examples/r7_certificates/. The originals, runnable from the repo root on the VM, are in
+.research/agents/tdense7_scratch/.
+- moment_gap.py/json (Fraction arithmetic). C = 44393/10000 with r = 0.769801 (r² > 16/27) and ρ = 0.905646 (ρ > P17's
+  (1 + √17)/(4√2)): the quadratic Ca² − (C + 2ρ/r)a + 2/r > 0 for all a, margin 3.3e-6. Also C = 4.213 with r = 0.811,
+  margin 1.4e-4.
+- algebra.py/json: R7-T's C = 3 contradiction, margin 640985/3409625664.
+- envelope_exact.py: the C = 4.164/4.331 Carathéodory–Fejér route (the large JSON output is not archived; regenerate).
+- witness.py + witness_B48.json: the 6.0539 obstruction profile (48-cell rational PWL).
+  - PD by exact Sturm count (sympy, flint ground types).
+  - Both window failures for all θ ∈ (0,1] by exact Bernstein coefficients per cell (r = 3849/5000).
+  - The lead re-ran `witness.py certify 48` on the VM (2026-10-19): PD_proved true; every density/energy cell ok.
+- point_certificates.json: 192-bit Arb point evaluations f_A(x) + r√n < 0 for the 16 adversarial/realised sets.
+  These prove R >= 1.82 for the realised witness sets; they are point certificates, not global minima.

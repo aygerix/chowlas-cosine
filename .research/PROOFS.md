@@ -1542,3 +1542,67 @@ Lead re-checked the items marked ✓.
 - Verdicts:
   - HBSC is false for natural and binary-faithful lifts; the existential HBSC remains unresolved.
   - T-dense, WGC and OBSF remain open.
+
+## P58. Round-7 agent results: T-dense(C) for every C < 4.4393 (C < 4.2138 with the elementary P31-E constant) —
+## PROVED on paper, INEFFECTIVE constant; lead re-checked every step (2026-10-19). Report .research/agents/tdense7_report.md
+Theorem (T-dense(C), C < C_7 := (2/r)(1 + √(1 − ρ*))², ρ* = the doubly-positive constant of P17).
+- There is c(C) > 0 with M(A) >= c(C)√|A| for every nonempty finite A ⊂ Z_{>0} with max A <= C|A|.
+- Here r is any asymptotic upper bound for P31's Nikolskii constant ρ_L:
+  - r = 0.811 (P31-E, elementary, kernel-checked) gives C_7 = 4.2138;
+  - r = 4/(3√3) (P31-N, Beckner) gives C_7 = 4.4393.
+  These use P17(a)'s ρ* <= (1 + √17)/(4√2) = 0.90565.
+- The sharp numerical ρ* ≈ 0.7239–0.7245 (E16, E78) would give C_7 ≈ 6.04–6.05.
+- Previously proved: C < 2.44, effective (P31 dense theorem). Kolountzakis 1996 gave linear M for C < 2.
+Proof (compactness; the lead checked each step).
+1. Contradiction sequence: X_j <= C n_j, M_j/√n_j → 0. Since M >= 1/2, n_j → ∞.
+   - The scaled coefficient measures (1/X)Σ_m 1_A(|m|)δ_{m/X} converge weak-* to p dt, with p even, 0 <= p <= 1,
+     supported in [−1, 1], and d = ∫_0^1 p >= 1/C.
+2. PD profile (untwisted P48). f_A(y/X)/X → ∫_0^1 p(t)cos(ty)dt >= 0 since M = o(X), so p̂ >= 0.
+   - Gaussian testing plus monotone convergence gives p̂ ∈ L¹. Hence p is (a.e.) continuous and PD, with
+     a := p(0) = max p and p(±1) = 0.
+3. Exact high-pass diagonal (NEW, round 7). q = k_h ∗ a (normalized triangle kernel k_h on the coefficient
+   sequence), r = a − q.
+   - Choose h_j → ∞ with h_j/X_j → 0 (diagonal over h = εX, then ε → 0) so that the scaled q → p strongly in L².
+   - Since a² = a, (a − q)² = a − 2aq + q², and the scaled measures Σ r_m²δ_{m/X}/X → e dt with e = p(1 − p).
+     The cross term a·q → p² by Cauchy–Schwarz against the strong L² limit.
+   - H_h = 1 − K_h/(h+1) ∈ [0,1], so T = H_h f_A >= −M. Its coefficients are r_m. T − r_0/2 >= −m with 0 <= m <= M.
+4. Windows. P31's chain needs no coefficient positivity (Fejér–Riesz + Parseval; the lead re-derived it for the
+   centred T). Apply it to f_A and to T with w = θX, divide by X², and let j → ∞:
+       (2θ/3)∫_0^1 v <= r(1 + θ)∫_0^θ (1 − t/θ)² v(t)dt   for v = p and v = e.
+   - θ → 0 gives (W): a >= 2d/r and a(1 − a) >= 2b/r, with b = ∫_0^1 e = d − ∫_0^1 p².
+5. PD L²/L¹ gap (= P17(a)). For q = p/a (nonnegative, PD, q(0) = 1): ∫q² <= ρ*∫q, so ∫p² <= ρ* a d and
+   b >= d(1 − ρ* a).
+6. Combine: d <= (r/2)·a(1 − a)/(1 − ρ* a) <= (r/2)/(1 + √(1 − ρ*))². The maximum over a is at
+   a = 1/(1 + √(1 − ρ*)). This contradicts d >= 1/C when C < C_7. ∎
+   - Rational certificate (moment_gap.py, exact Fractions; lead checked the logic): with k = 2/r, C is valid when
+     k − (kρ + C)²/(4C) > 0, i.e. Ca² − (C + kρ)a + k > 0 for all a.
+   - C = 44393/10000, r = 0.769801 (0.769801² > 16/27), ρ = 0.905646 > ρ*: margin 3.3e-6.
+   - C = 4.213 with r = 0.811: margin 1.4e-4.
+- Round 7's first version R7-T used the stable Gram bound p(t) <= a(1 − t²/4) instead of step 5 and gave
+  C = 3 (exact algebra: algebra.py, margin 640985/3409625664). The CF envelope p(t) <= a·cos(π/(⌊1/t⌋ + 2)) gives
+  C = 4.164 (r = 0.811) and C = 4.331 (r = 0.77) (envelope_exact.py). Both are superseded by step 5 and kept as
+  independent routes.
+Lead's verification notes.
+- Every limit is taken at fixed θ before θ → 0. Weak convergence of r² measures uses compact support and an
+  absolutely continuous limit (no atom at 0).
+- M² = o(X) is the only √n-scale input; PD needs only M = o(X).
+- The lead re-ran witness.py and algebra.py on the VM: exact outputs reproduced.
+- NOVELTY: step 5 is the project's own P17(a) (session 2; same constant, via a tangent-line variant). The agent
+  re-derived it without citing P17. NEW here: the exact high-pass diagonal (step 3) and the assembly into T-dense(C_7).
+  External priority unchecked beyond the agent's short search (Bu et al. 2026: dense n^{1/4}; Kolountzakis 1996:
+  density > 1/2).
+Obstruction to this method (PROVED, exact; lead re-ran the verifier).
+- An explicit rational piecewise-linear profile p (48 cells, witness_B48.json) is PD (Sturm: symbol S has 0 roots in
+  [−1, 1], S(1) > 0). It satisfies BOTH window inequalities for every θ ∈ (0, 1] (exact Bernstein certificates, 48
+  cells each, r = 0.7698).
+  - Values: p(0) = 0.6563, d = 0.165184, 1/d = 6.053863, b/d = 0.525.
+- So "PD profile + density and energy windows" cannot prove T-dense(C) for C >= 6.0539. The method's reach C_PD lies
+  in (4.4393, 6.0539], and numerically C_PD ≈ (2/r)(1 + √(1 − ρ*))² ≈ 6.046 (E78: ρ* ≈ 0.72387).
+  - The extremal shape is the scaled half-sine autocorrelation q(s) = (1 − s)cos πs + sin(πs)/π (ρ = π²/24 + 5/16 =
+    0.72373), with a ≈ 0.655 and support ≈ 0.62X, plus a vanishing tail.
+- Realisations of the witness (cumulative and conditional-Bernoulli rounding, n = 512…4096) have R = 1.82–2.45 (point
+  certificates R >= 1.82). These sets are Chowla-safe for other reasons: random rounding is bulk-dominated (P40), and
+  cumulative rounding falls under the P41 regime. So the witness marks the limit of the METHOD, not a construction.
+Supplementary (PROVED, elementary): dip filling M(F ∪ B) >= u − √(|B|/(2α)) when {f_F <= −u} has measure α. P31's
+minimum bound alone gives no dip measure (interval: measure O(N^{−1/2})).
+Status: paper proof, lead-verified, ineffective constant, NOT kernel-checked. Effective version and sharp ρ* OPEN.

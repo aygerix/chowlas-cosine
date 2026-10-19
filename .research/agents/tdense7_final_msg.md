@@ -1,0 +1,10 @@
+**PROVED (paper): T-dense(4.4393), hence T-dense(3).** The complete proof is in [tdense7_report.md](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense7_report.md:124).
+
+There exists one c > 0 such that every nonempty finite set A with max A ≤ 4.4393|A| satisfies M(A) ≥ c sqrt(|A|). The proof combines a new exact high-pass compactness reduction with a positive-definite profile energy inequality. The constant c remains **nonquantitative**, and the theorem is **not kernel-checked**. Using elementary P31-E alone gives C = 4.213.
+
+- **PROVED, Task 2 obstruction:** A rational continuous positive-definite profile at C = 6.053863... defeats both macroscopic window inequalities at every scale. Exact Sturm and rational Bernstein checks certify it. For the precisely defined PD/window reach, the report establishes **4.4393 < C_PD ≤ 6.053863...**.
+- **NUMERICAL:** Gurobi suggests a reach near **6.05**. The finer solve reached its time limit, so continuum optimality and the full C₁* over every alternative model remain unresolved.
+- **NUMERICAL / PROVED finite checks:** Realizations at n = 512, 1024, 2048, 4096 have refined R estimates of **1.82–2.45**. Ball-arithmetic point certificates prove R ≥ 1.82 for all eight examples. No small-R mechanism was found.
+- **PROVED, supplementary dip filling:** The report proves the conditional dip-filling inequality and shows why a P31 minimum bound alone does not supply its required dip-measure hypothesis.
+
+Reproducible code, sets, certificates, versions, and hashes are saved in [the scratch manifest](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/tdense7_scratch/manifest.json). All mathematical computation used the specified VM through `src/dirun.sh -c 2`; optimization used Gurobi. No commits, subagents, or edits to `.research/*.md` were made.

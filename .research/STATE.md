@@ -1,8 +1,12 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 6 + cont. 9")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 7: T-dense(4.4393)")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
 - (L) Chowla: M(A) >= c0 sqrt|A|. NOT ACHIEVED. Best known: >> n^{1/5} (Shankar 2609.05338, cited, checked).
+- (L-dense) T-dense(C) := M >= c(C)√n for all A with max A <= C|A|. PROVED on paper for every C < 4.4393, with an
+  INEFFECTIVE c(C) (P58, round 7, lead-verified; C < 4.2138 using only the kernel-checked elementary P31-E). Effective
+  and kernel-checked: C <= 2.44 (P31). The macroscopic method's reach is ≈ 6.05 (exact obstruction witness);
+  beyond it is the mesoscopic problem.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
   algorithm cannot exist. Not assumed: both tracks stay open.
 
@@ -280,7 +284,31 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 6 + cont. 9 (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 7: T-dense(4.4393) (2026-10-19 night, NEWEST — read this first)
+- Round 7 DONE, lead-verified (PROOFS P58; NOTEBOOK cont. 10).
+  - THEOREM (paper, ineffective constant): M(A) >= c√|A| for every A with max A <= 4.4393|A| (<= 4.2138|A| with the
+    elementary Nikolskii constant).
+  - Ingredients:
+    - compactness gives a PD limit profile p;
+    - NEW exact high-pass diagonal: H_h f >= −M has coefficient energy profile p(1 − p);
+    - P31 windows on f and on H_h f;
+    - P17(a)'s doubly-positive gap ρ* <= 0.90565.
+  - In general: T-dense(C) for C < (2/r)(1 + √(1 − ρ*))².
+- Exact obstruction: a rational PD profile defeats both windows at every scale at C = 6.0539, so this macroscopic
+  method's reach is ≈ 6.05. Numerically ρ* ≈ 0.7239 (E78), so the sharp ρ* would give C ≈ 6.046.
+- Beyond 6.05 a counterexample's residual (about half the energy) must sit in MESOSCOPIC spikes (P40 applied to the
+  high-passed function). The rest of T-dense is the mesoscopic problem, now with an explicit adversary profile.
+- E75–E77 recorded (run-tops closed; zero-set strengthening refuted).
+## Running now (2026-10-19 night, newest)
+- Nothing from the lead; round 8 is being launched (see the next step).
+## First concrete next step (2026-10-19 night, newest)
+- Round 8 (one codex agent):
+  - (1) sharpen ρ* rigorously, reaching T-dense up to ≈ 6.04;
+  - (2) test whether any other √n-scale inequality survives the macroscopic limit and kills the 6.05 witness (P32 local
+    windows, L⁶/third-moment windows, product windows);
+  - (3) an effective finite-scale version (explicit c(3)) as a Lean candidate.
+- Afterwards: the mesoscopic attack beyond 6.05, with the witness profile as the test object.
+## Session 3, round 6 + cont. 9 (2026-10-19 night)
 - Round 6 DONE (PROOFS P57; adversarial "formal escape" round). No formal escape and no inconsistency proof.
   - Tent-lift identity: the negative spectral mass of the natural lift is exactly mean|f| >= n/(n + M), and it escapes
     to microscopic scales.
@@ -296,10 +324,10 @@ in parallel.
   sits on a negative-axis crossing of G).
 - Round 7 (RUNNING): the C₁ programme. Extend the kernel-checked dense theorem (C <= 2.44) to T-dense(3), and compute
   the reach C₁* of windows + near-0/1 lemmas (NOTEBOOK cont. 9 §4).
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 7; superseded)
 - Codex MATH agent, round 7 (.research/agents/tdense7_brief.md, report tdense7_report.md, log tdense7_codex.log).
 - VM: free apart from the agent's jobs (E75/E76/E77 done).
-## First concrete next step (2026-10-19 night, newest)
+## First concrete next step (2026-10-19 night, round 7; superseded)
 - Verify round 7 when it lands. If T-dense(3) is proved: lead re-check, then hand the proof to Lean (P31 is already
   kernel-checked). If it fails: record the obstruction at C = 3 and the extremal escaping profile.
 - Lead foreground meanwhile: the construction line (escaping profiles at C₁* as test objects), and WGC/OBSF as the

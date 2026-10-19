@@ -1125,3 +1125,18 @@ Reading:
 - Reading:
   - Chowla-S (S >= c√n) is FALSE: exactly for intervals (Re G = −1 at every nontrivial zero of Im G).
   - On every near-extremal set S ≈ M: the global minimum sits at a crossing of the negative real axis by G(e^{ix}).
+
+## E78 (2026-10-19) The doubly-positive constant ρ* = sup ∫q²/(q(0)∫q) (src/e78_doubly_positive.py; examples/e78/e78.jsonl)
+- Why: T-dense(C) holds for C < (2/r)(1 + √(1 − ρ*))² (PROOFS P58). Proved ρ* <= 0.90565 (P17(a)); E16 (session 2)
+  estimated 0.7239 (h >= 0) and 0.7245 (signed).
+- NUMERICAL:
+  - Reference values: Gaussian 0.70711, triangle 0.66667, half-sine autocorrelation π²/24 + 5/16 = 0.723734 (quadrature
+    0.723733).
+  - (a) Autocorrelation class q = g ∗ g̃, g >= 0 on 200 points, L-BFGS: all 29 starts (half-sine, flat, Gaussian,
+    parabola, sin², 24 random) converge to J = 0.72386–0.72387. Best 0.7238707.
+  - (b) General piecewise-linear doubly-positive q (PD sampled on 16B points), Dinkelbach + Gurobi NonConvex:
+    B = 24 gives 0.722967 (converged, gap 6e-6); B = 40 gives 0.723189 after one step. The sampled symbol dips to
+    −0.0014, so (b) is a slight relaxation.
+  - So the general class does not beat the autocorrelation class at these resolutions.
+- Reading: ρ* ≈ 0.7239, so the sharp macroscopic reach is C ≈ 2.598·(1 + √0.2761)² ≈ 6.046. That matches the round-7
+  exact witness at 6.0539.

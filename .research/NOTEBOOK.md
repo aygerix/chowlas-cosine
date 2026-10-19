@@ -1668,3 +1668,46 @@ Where this leaves the finite TL1 programme (lead assessment):
    - The round also computes the reach C₁* and its extremal profile with Gurobi. The escaping sets at C₁* are the
      next test objects for both tracks.
    - Brief: .research/agents/tdense7_brief.md.
+
+## 2026-10-19 (night, cont. 10) — Round 7 verified: T-dense(4.4393). The macroscopic method's reach is ≈ 6.05 (lead)
+1. Verification (PROOFS P58).
+   - Every step of the compactness proof re-checked by hand: PD limit profile, exact high-pass diagonal, windows on
+     f and on H_h f, P17(a), the optimisation over a.
+   - Exact certificates re-run on the VM (algebra.py; witness.py certify 48).
+   - The one genuinely new idea is the EXACT HIGH-PASS DIAGONAL. Multiplying f by H_h = 1 − K_h/(h+1) ∈ [0,1] keeps
+     f >= −M. Its coefficients a − k_h∗a carry energy profile p(1 − p) exactly in the limit, because a² = a. This
+     gives P47's rounding-energy window for ARBITRARY sets, with no model, discrepancy or block hypothesis.
+   - The PD L²/L¹ gap is our own P17(a) (session 2), which was "recorded so the constant is not re-derived" and is now
+     load-bearing.
+2. Structure of the result. T-dense(C) holds whenever C < (2/r)(1 + √(1 − ρ*))², with r the asymptotic Nikolskii
+   constant and ρ* = sup ∫w²/(w(0)∫w) over doubly-positive w.
+   - Proved: r = 4/(3√3), ρ* <= 0.90565, so C < 4.4393.
+   - Numerical: ρ* ≈ 0.7239 (E78: 29 random/structured starts in the autocorrelation class all converge to 0.72387,
+     slightly above the half-sine autocorrelation's π²/24 + 5/16 = 0.72373; the general PWL Gurobi class gives
+     0.7230–0.7232 at B = 24/40). So the sharp ρ* gives C ≈ 6.046.
+   - The exact PD/all-window witness (1/d = 6.0539) shows the macroscopic method cannot pass ≈ 6.05.
+3. Why ≈ 6.05 is a genuine barrier for MACROSCOPIC arguments (lead analysis; HEURISTIC but sharp).
+   - The witness's realisations are killed by other proved results: random rounding by P40 (its residual, 52.5% of
+     the energy, is bulk) and cumulative rounding by the P41/P49 regime (Sturmian atoms).
+   - In the macroscopic limit both look identical to a counterexample. The limit only sees p, the twisted atoms and
+     the residual's total local energy.
+   - A counterexample at C >= 6.05 must put essentially ALL of the residual energy (b ≈ 0.525d, about half of the total)
+     into spikes of height >= √(n/ε). This is P40 applied to the high-passed T itself: T >= −M, so T's bulk energy is
+     <= √(n/ε)·M = √ε·n. Whatever is not carried by macroscopic twisted atoms must therefore be MESOSCOPIC spikes
+     (heights in [√(n/ε), o(X)]).
+   - Mesoscopic spikes are invisible in the macroscopic limit. So T-dense beyond ≈ 6.05 is EXACTLY the mesoscopic
+     problem (HBSC/OBSF) and cannot be avoided.
+   - Band-pass generalisation (lead, PROVED in outline): for every mesoscopic filter H ∈ [0,1] (degree o(X)), H·f >= −M.
+     So the windows apply to every spectral portion. In the limit, the local spectral measures σ_t of the pattern obey
+     σ_{0+} >= (2/r)∫_0^1 σ_t dt as measures.
+     - This collapses to the scalar window when σ_t = e(t)ν with a t-independent shape ν, which is exactly the witness
+       family. So it adds nothing against the witness.
+     - |mean(H f)| <= 2M, so the window error stays O(M²).
+4. Where the programme stands.
+   - Dense range proved (paper, ineffective): C < 4.4393. Kernel-checked effective range: C <= 2.44 (P31).
+   - Next: (i) sharpen ρ* toward 0.724, which reaches C ≈ 6.04, the full macroscopic reach; (ii) an effective
+     finite-scale version, i.e. explicit c(C) and Lean-formalisable; (iii) the mesoscopic theory beyond 6.05, now with a
+     concrete adversary (the witness profile) and the new band-pass/high-pass window tool.
+   - Also check whether other √n-scale inequalities survive in the macroscopic limit and could kill the witness:
+     P32 local windows on f and on filtered T; L⁶ Nikolskii (third-moment) windows; product windows on
+     (f + M)(f(· + θ) + M) >= 0. If one does, the macroscopic reach exceeds 6.05.

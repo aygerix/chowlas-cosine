@@ -1,0 +1,212 @@
+# Round 6 adversarial research report
+
+Status: ROUND-6 INVESTIGATION CHECKPOINTED. T-dense and original existential HBSC remain unresolved. Writes were restricted to this report and tdense6_scratch. No commits or subagents. All mathematical computation ran through DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2.
+
+PROVED main result (new relative to this record). The full microscopic Hermitian tent lift at every spike has total negative spectral mass exactly mean |f_A|. Dense Singer difference sets give M/H tending to zero at mesoscopic H but negative mass at least 1-o(1), escaping to unbounded spectral coordinates. This refutes direct binary-faithful completion, not existential HBSC. A new weighted Gram inequality identifies a weaker sufficient replacement, WGC. The exact binary energy identity also excludes the easy fractional formal escape. The complete statements, proofs, finite experiments and unresolved quantifiers are below.
+
+PROVED target definition (quoted). For every fixed C >= 1, T-dense asks for c(C)>0 such that every finite A contained in [1,C|A|] satisfies M(A)>=c(C)sqrt(|A|). The conventions are f_A(x)=sum cos(ax), n=|A|, X=max A, and M(A)=-min over the entire circle.
+
+PROVED source audit. Read CLAUDE.md, P40, P47, P52-P56, NOTEBOOK night continuations 7 and 8, and the round-5 HBSC statement. The local-profile constraints, SG, TL1 and law-level radial truncation are quoted inputs, not round-6 discoveries.
+
+PROVED quantifier distinction. P56 HBSC is existential over all compact groups and all supported continuous [0,1] functions satisfying its three scalar inequalities. It does not prescribe the block twisted coefficients of that function. Large negative spectral mass of a specified natural lift alone cannot refute this existential statement. The stronger statement that every natural or binary-faithful lift has negative mass O(M/H) is a different assertion.
+
+HEURISTIC research frontier. Exact phase-consistent block words plus their true Fourier superposition define an actual binary sequence. Conditional expectations can relax binary information, but their missing conditional variance must be accounted for in the P40 energy identity. The current attacks are (1) exact finite consistency and its energy identity, (2) negative spectral mass of block profiles and genuine joint lifts, and (3) a weaker energy-weighted replacement for absolute spectral completion.
+
+NUMERICAL experiment scope. Measured actual block twisted profiles at tall spikes of Singer/Bu, saved E68/E72, and seeded random dense sets, using continuous piecewise linear Hermitian extensions with explicit endpoint choices. The whole negative spectrum is integrated through an exact periodization identity. Endpoint sensitivity and the distinction between component profiles and a genuine joint [0,1] lift are reported. Numerical minima remain uncertified.
+
+## R6-A: exact phase consistency and the Jensen gap
+
+PROVED (new finite audit, elementary). Fix positive integers X and G>2X. Partition [1,X] into blocks. If every block is a binary word indexed by the actual integers in that block, and every twisted coefficient uses the same actual angle x_s in every block, their concatenation is a genuine set A. Its true superposition is f_A. Thus feasibility of this exact class with a whole-circle lower bound -M is an actual Chowla example, rather than a distinct formal escape. On a G-point grid, the all-circle conclusion additionally costs at most pi sum(A)/G by the derivative bound; grid feasibility by itself is not a whole-circle certificate.
+
+PROVED (new explicit energy audit). If the block words are replaced by their conditional means a_m in [0,1], with sum a_m=n, define F(x)=sum a_m cos(mx). Exact grid Parseval gives
+
+    2 mean_grid F^2 = sum a_m^2 = n - sum a_m(1-a_m).
+
+Consequently retaining the deterministic binary energy n/2 exactly forces every a_m to be binary. Retaining it to error o(n) forces total conditional variance o(n). A relaxation cannot count latent Bernoulli variance as spike energy of F unless it also specifies its phase-consistent realization in the true superposition. For a random binary realization with these means, expected integrated squared fluctuation equals (1/2)sum a_m(1-a_m), regardless of cross-coordinate dependence, by Fourier orthogonality. Pointwise positivity of the mean does not give pointwise positivity of a realization.
+
+PROVED (exact tempting escape, explicitly rejected). Let L=X+1 and a_m=1-m/L for 1<=m<L. Then sum a_m=(L-1)/2 and F=(K_(L-1)-1)/2>=-1/2, where K is the nonnegative Fejer kernel. However sum a_m(1-a_m)=(L^2-1)/(6L), asymptotic to n/3. This loses a fixed third of the binary energy and fails the retained P40 energy requirement as epsilon tends to zero. The exact rational identities are checked in exact_checks.json; this is not an admissible formal counterexample.
+
+PROVED (new phase-consistency audit). On a finite cyclic block group Z/q, the sigma algebra generated by characters with indices k_1,...,k_S is the coset sigma algebra of their common kernel. If gcd(q,k_1,...,k_S)=1 it is the whole sigma algebra. Therefore literal conditional expectation of a binary word on all its exact spike phases leaves the word binary in this case; it cannot provide a fractional completion. Proof: equality of all those character values for residues r,r' means q divides every k_s(r-r'); Bezout then implies r=r'. Even a single primitive character suffices. In a fixed finite interval an irrational phase is also injective. A useful mesoscopic completion must average approximate phases or weak limits and quantify the information discarded. Exact phase conditioning does not do this.
+
+PROVED (central-lobe audit of a literal mesoscopic-only formal class). Fix C and a sequence of dense sets with n>=X/C. Let U be any union of radius-1/X windows whose centers satisfy max_s f_A(x_s)=o(X), with circular distance used. For large X no center lies within 5/(4X) of zero, since there f_A>=n cos(5/4)>=X cos(5/4)/C. Thus U misses the interval |x|<=1/(4X), and
+
+    integral_(U complement) f_A^2 dx/(2pi)
+        >= cos(1/4)^2 n^2/(4pi X)
+        >= [cos(1/4)^2/(4pi C)] n.
+
+Consequently a literal model requiring all but O(sqrt(epsilon))n energy in those mesoscopic windows is inconsistent as epsilon tends to zero, without using TL1 or SG. This does not prove T-dense: P40's tall superlevel set includes the mandatory central peak of height n, so an actual counterexample does not satisfy that mesoscopic-only premise. A valid formal test must retain the ungraded central/macroscopic profile in the captured energy and apply the mesoscopic programme to the remaining variance. The finite class below includes all those components. This distinguishes a false model premise from a contradiction for genuine counterexamples.
+
+## R6-B: an exact natural-lift obstruction and spectral mass escaping to infinity
+
+PROVED (new identity). For every nonempty finite A of positive integers, set X=max A, Y=X+1 and phi(u)=(1-|u|)_+. For every real theta define the continuous Hermitian profile
+
+    h_theta(t) = sum_(a in A) [exp(i a theta) phi(Yt-a)
+                              + exp(-i a theta) phi(Yt+a)].
+
+It is supported in [-1,1], is zero at t=0, and interpolates the exact microscopic twisted word at t=a/Y. At theta=0 it is a genuine [0,1] scalar lift. With transform Q_theta(y)=integral h_theta(t) exp(i t y) dt,
+
+    Q_theta(y) = (2/Y) sinc(y/(2Y))^2 f_A(theta+y/Y),
+    delta_theta = integral_R max(-Q_theta(y),0) dy/(2pi)
+                = mean_circle |f_A|.
+
+Here sinc(u)=sin(u)/u. In particular the entire negative spectral mass is independent of the chosen spike center theta, including every center of height greater than H.
+
+PROVED proof. The transform of phi(Yt-a) is exp(i a y/Y) sinc(y/(2Y))^2/Y. Substitute u=y/Y in the negative-part integral. Periodization gives sum_(k in Z) sinc((u+2pi k)/2)^2=1. One proof computes its integer Fourier coefficients from the triangular transform of sinc squared: they are 1 at zero and 0 at every nonzero integer. The resulting integral is 2 mean f_- = mean |f|, using mean f=0. All integrands are nonnegative for the periodization step. This also proves finiteness, without numerical tail truncation.
+
+PROVED quantitative lower bound. Since f belongs to [-M,n], pointwise f^2<=n f_+ + M f_-. Integrating gives
+
+    delta_theta = mean |f| >= n/(n+M).
+
+PROVED infinite binary example (quoted Singer square identity, new application to lifts). Let S be an integer representative of a Singer perfect difference set of size k=q+1 in [0,q^2+q], with q tending to infinity through primes. Put A={b-a:b>a in S}. The positive differences are distinct, n=k(k-1)/2, X<=q^2+q=2n, and M<=k/2=o(X). Fix any alpha in (1/2,1), and H=n^alpha. Then H is mesoscopic, f_A(0)=n>H, M/H tends to zero, but every h_theta above has delta_theta >=(k-1)/k tending to 1. Thus delta_theta/(M/H) tends to infinity. This rigorously refutes a height-uniform O(M/H) estimate for this specified exact interpolation family, including all its tall centers. It does not refute existential HBSC, which permits different, coarser lifts.
+
+PROVED exact loss in the limiting argument. For every fixed T>0,
+
+    integral_(|y|<=T) max(-Q_theta(y),0) dy/(2pi)
+        <= 2 T M/(pi Y).
+
+On the Singer sequence this tends to zero, uniformly in theta, whereas the whole negative mass stays at least 1-o(1). Hence the negative measures are not tight: their mass escapes to unbounded spectral coordinates. Exact binary words, exact phase consistency, and the actual whole-circle lower bound do not prevent this. Passing to a locally nonnegative transform and then setting total negative mass to zero is invalid. This is a concrete finite-to-limit obstruction, not just the number-of-spikes accounting quoted from round 5.
+
+CONJECTURED missing control. A completion that captures the tall-window energy must discard or redistribute this escaping negative mass while controlling its loss of conditional variance. No uniform such tradeoff is proved here. The weighted version in R6-C below isolates the amount actually used by Gram, and is weaker than asking for all the negative mass to be small.
+
+PROVED (sharper rejected relaxation). For all integers X>=1 and real n with 0<n<=(X+1)/2, the minimum of -min F among weighted coefficients 0<=a_m<=1, sum a_m=n, is exactly n/X. For the lower bound sum F at the X+1 equally spaced roots of unity: the value at zero is n and the other X values are at least -M, giving M>=n/X. Equality is attained by a_m=(2n/X)(1-m/(X+1)), for which F=(n/X)(K_X-1). Its energy is
+
+    sum a_m^2 = 2 n^2(2X+1)/(3X(X+1)).
+
+At fixed density n/X=1/C with C>=2, its missing binary-energy fraction tends to 1-4/(3C), at least 1/3. Thus the fractional LP's apparently sub-square-root solution is fully explained, with a global analytic certificate for the weighted polynomial and an exact reason it fails the binary task.
+
+PROVED (new consequence of quoted SG, all binary-faithful completions). Let any sequence of supported continuous [0,1] joint lifts have masses m_j>=1/C+o(1) and defects b_j=integral h_j(1-h_j)=o(1), and finite signed spectral measures. SG implies
+
+    delta_j >= m_j^2/24 - b_j/(2m_j) >= 1/(24C^2)-o(1).
+
+Such lifts exist for binary words by smoothing their step profiles on intervals of total length o(1). On the dense Singer sequence with H=n^alpha, every lift in this binary-faithful class therefore fails an O(M/H)+o(1) negative-mass bound. This is a universal obstruction for the stated class, independently of endpoint choices or rank. An HBSC completion must deliberately become fractional, creating a positive conditional-variance defect; preserving the microscopic binary pattern is incompatible with its conclusion. Original HBSC does permit that loss, subject to its captured-energy requirement, so remains unrefuted.
+
+## R6-C: replace total negative mass by the exact weighted Gram charge
+
+PROVED (new weighted stable-Gram inequality). Let h satisfy the hypotheses of SG on R times a compact abelian group K, and let nu be its finite real signed spectral measure. For z=(t,omega), 0<t<=1, set N=N(t)=floor(1/t)+1. For a dual point xi write u=arg chi_xi(z), and define
+
+    D_N(u) = (1-cos u) - (1-cos(Nu))/N^2,
+    d_nu(z) = integral D_N(arg chi_xi(z)) d nu_-(xi),
+    G(h) = integral_(0<t<1,K) h(z) d_nu(z) dt d omega.
+
+Then 0<=D_N<=2, so 0<=G(h)<=2m delta. More precisely,
+
+    h(z) <= 1 - 1/N(t)^2 + d_nu(z),
+    b >= integral h(z)/N(t)^2 - G(h) >= m^3/12 - G(h).
+
+PROVED proof. The elementary inequality |1-exp(iNu)|<=N|1-exp(iu)| gives D_N>=0. Spectral inversion gives
+
+    h(0)-h(z) - [h(0)-h(Nz)]/N^2 = integral D_N d nu >= -d_nu(z).
+
+Here h(Nz)=0 because Nt>1. Rearranging, and using h(0)<=1, proves the pointwise bound. Multiply by h>=0 and integrate. Since 1/N(t)^2>=t^2/4 and 0<=integral_K h<=1, the same filling argument as SG gives integral t^2 h>=m^3/3. This proves the result. The original SG follows by the coarser bound G(h)<=2m delta. Exact rational checks on 3,600 signed-tent cases are in weighted_gram_checks.json; the proof is analytic and does not depend on those checks.
+
+CONJECTURED replacement WGC (weighted Gram completion). Use exactly HBSC's quantifiers, its mass condition, and its captured-energy condition, but replace its total negative-mass inequality by
+
+    G(h_j) <= B(C) M(A_j)/H_j + o(1).
+
+This asks for the negative spectral mass only through the nonnegative kernels actually used in the Gram argument. HBSC implies WGC because m<=1. The converse is not claimed. WGC is a sufficient weaker replacement: residual energy is at least
+
+    X_j m_j^3/24 - (X_j/2) G(h_j) - o(X_j).
+
+In a putative T-dense counterexample use H=sqrt(n/epsilon), epsilon=M/sqrt(n) tending to zero. The first term is a fixed positive multiple of X, the WGC error is O(X epsilon^(3/2))+o(X), whereas P40 makes the residual o(X). Thus WGC implies T-dense. WGC is not proved by this report; the weighted inequality only states the exact smaller quantity a successful completion has to control.
+
+HEURISTIC global review after the algebraic and spectral attacks. Exact binary energy kills the simple fractional escape. Exact microscopic lifts then falsify a direct negative-mass completion, even on genuine dense low-M examples. Increasing the same block grid cannot remove this conceptual obstruction. Discontinue a proof that obtains total spectral positivity merely from compact-frequency limits, and discontinue literal conditioning on all exact spike phases. Continue either a coarse-graining theorem with an explicit variance-loss versus weighted-charge bound, or a direct ordered Boolean Fourier inequality. These are different missing inputs, not consequences of Bessel or TL1 already proved.
+
+## R6-D: a direct phase-consistent spectral formulation of the missing lemma
+
+PROVED (exact finite formal class). Fix X,n and Y=2(X+1)^3. Let a be an even function on Z/Y with a_0=0, a_m=0 outside {1,...,X,-1,...,-X}, and a_m in {0,1}; require sum a=2n and n>=X/C. The fine grid is chosen to make the truncated-energy Riemann error o(X), rather than treating a constant oversampling factor as asymptotically exact. Its complete real Fourier array is
+
+    c_k = (1/Y) sum_m a_m exp(2pi i m k/Y).
+
+The identities c*c=c (cyclic convolution), c_0=2n/Y, sum c_k=0, and sum c_k^2=2n/Y hold exactly. Its local block words and twisted profiles are computed from this same a and these same frequencies. Select spikes from c_k>2H/Y and use actual Fourier projections for their superposition and residual. These retain local binary realizability, exact phase transport, local Bessel and all finite TL1/radial inequalities, P40, and global grid positivity c_k>=-2M/Y. Every SG conclusion holds whenever its lift hypotheses hold; SG is a conditional theorem and must not be imposed on an arbitrary extracted profile without verifying those hypotheses.
+
+PROVED completeness audit. Conversely the conditions c real/even, c*c=c, and the padded inverse transform imply that every inverse coefficient a_m satisfies a_m^2=a_m, hence is binary. With the mass and zero-frequency conditions, this is exactly a finite genuine-set model. Retaining the entire idempotence and transport system leaves no extra formal objects. Dropping them creates a relaxation, whose conclusion cannot be promoted to a set without a completion/rounding argument. The brief's phrase "every proved constraint" has to distinguish the listed scalar inequalities from the full deterministic binary identities. No admissible escape with M<=epsilon sqrt(n), epsilon tending to zero, is constructed here.
+
+PROVED grid qualification. For this Y, the derivative estimate gives M(A)<=M_grid+pi nX/Y=M_grid+O(1/X). Thus even at finite X the completely coherent grid model differs from the actual whole-circle problem by an explicit vanishing error, rather than an unidentified phase-consistency assumption.
+
+CONJECTURED single direct missing inequality OBSF (ordered Boolean spectral floor). For each fixed C>=1 there exist d(C)>0 and B(C)<infinity such that along every sequence of the preceding padded binary arrays with X tending to infinity and M/X tending to zero, for every sqrt(n)<=H<=n,
+
+    [Y/(4X)] sum_(k: c_k<=2H/Y) c_k^2
+        >= d(C) - B(C) M/H - o(1).
+
+All arrays obey the exact convolution idempotence and the ordered support gap, not just positive-definite moment matrices. The little-o term must hold for the chosen sequence with its growing spike count. This is a precise weaker substitute for the full completion: it only asks for an energy floor outside the tall positive superlevel set, not a joint lift or a bound for arbitrary unions of windows. HBSC, its capture inequality and SG imply OBSF after applying the separated-window cover. To justify passage to the grid, f^2 times the indicator of f<=H has variation O(X n^2): between its at most 2X threshold crossings use integral |2ff'|=O(Xn), and at crossings bound each jump by H^2<=n^2. Its grid-mean error divided by X is O(n^2/Y)=o(1). No converse is claimed.
+
+PROVED sufficiency of OBSF. On the Y-grid, mean f=0 and mean f^2=n/2 exactly. P40 applies to this finite probability space. If M=epsilon sqrt(n) and H=sqrt(n/epsilon), its upper bound gives
+
+    [Y/(4X)] sum_(c_k<=2H/Y) c_k^2
+        <= (HM+2M^2)/X
+        = (n/X)(sqrt(epsilon)+2epsilon^2) = o(1).
+
+Meanwhile M/H=epsilon^(3/2), so OBSF gives a positive constant. The range H<=n holds eventually by the quoted M>=1/2 bound. Thus OBSF implies T-dense. This is a missing lemma, not a proved inequality. Its exact extra information is Boolean convolution closure together with the ordered support gap; a local phase model that forgets either does not establish it. The natural-lift example in R6-B identifies a different exact limit obstruction: non-tight negative spectral mass. Neither obstruction is removed by law-level TL1 alone.
+
+## Task 3: the averaged run-top alternative
+
+PROVED (quoted and source-verified). [Bu et al., v1, Proposition 9.7](https://arxiv.org/html/2610.17160v1#S9.SS2) gives M^3 times mean |f| >= (n-1)/(32 C C1) for A contained in [1,Cn], n>=2, with C1=200000. Its proof uses the per-shift boundary estimate and the total boundary count. The decomposition in Lemma 9.3 and the proof of Proposition 9.1 have also been checked for the precise location of a possible averaged saving.
+
+PROVED (minor exact sharpening of the count; no exponent gain). For any finite ordered set E={e_1<...<e_N} of integers, the number T3 of centered nontrivial three-term progressions is at most sum_i min(i-1,N-i)=floor((N-1)^2/4). For symmetric E of size N=2n, writing B_t={a in E:a-t in E,a+t not in E} gives
+
+    sum_(t>0) |B_t| = N(N-1)/2 - T3 >= n^2.
+
+The first equality counts increasing pairs and removes those completed to a centered progression. This is a rank-count argument in Z, and arithmetic intervals attain the general ordered-set estimate. The sharper endpoint term alone saves no power.
+
+CONJECTURED first missing averaged inequality, in proof variables. Put E=A union (-A), K=2M, mu=2 mean |f|, and let Q1_t,Q2_t be the specific decomposition of the boundary polynomial in Bu Lemma 9.3, using its clipping rule. A sufficient averaged input for some fixed eta>0 is
+
+    sum_(1<=t<=2Cn) [ ||Q2_t||_2^2
+                       + K mu ||Q1_t||_1^2 ]
+        <= D(C,eta) n K^(3-eta) mu.
+
+PROVED implication (new explicit localization of the missing saving). Before inserting separate bounds for each shift, the comparison in the boundary proof and the inequality 2 sqrt(b) E <= alpha b + E^2/alpha give |B_t| <= D0[||Q2_t||_2^2 + K mu ||Q1_t||_1^2] for an absolute D0. Summing and using the preceding n^2 lower bound would give n<=D0 D K^(3-eta) mu<=2D0 D K^(4-eta), hence M>=c(C,eta)n^(1/(4-eta)). Both terms have to be averaged: an improvement for Q2 alone leaves the Q1 contribution. No deduction of either displayed power saving from P31's fixed-scale front constraints is established here. Such a bound is not proved here, and the group barrier P22 prevents dropping the ordered-Z input.
+
+## Numerical evidence and exact reproduction
+
+NUMERICAL scope. The VM run saved 21 actual sets, 62 high-height block configurations containing 77 profiles, 41 lower-height configurations containing 438 profiles, 21 genuine joint block lifts, and seven joint-lift endpoint LPs. All computation used DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2; Gurobi 13.0.3 used Threads=2. Python was 3.12.3, NumPy 2.5.4, seed 2026101906. Sets, source rows, Singer generators and seeds are in tdense6_scratch/sets.json. Numeric minima use a 64X-or-larger FFT and direct cosine local refinement at 16 candidate minima; they are not certified whole-circle minima.
+
+PROVED normalization for the measurement. For piecewise linear Hermitian interpolation at nodes j/B, with real q_0, q_B=0 and complex q_j, let
+
+    S(u)=q_0+2 Re sum_(1<=j<B) q_j exp(i j u).
+
+The interpolation transform is sinc(y/(2B))^2 S(y/B)/B. The periodization proof in R6-B therefore gives its entire negative spectral mass as mean_circle max(-S,0). The code integrates this periodic quantity, so it does not discard a potentially large spectral tail. Periodic quadrature is NUMERICAL; the identity reducing the whole line to one period is PROVED.
+
+NUMERICAL component-profile definition. For B=8,16,32, q_j is the actual average of a_m exp(i m theta) over the block (j-1/2)X/B<m<=(j+1/2)X/B, 1<=j<B. The natural endpoint is q_0=max(0,min(1,Re q_1)); q_B=0. The data also report q_0=0, q_0=1 and the coefficients centered by each local block mean. This makes endpoint and central-profile effects visible. At H=n^(3/4), the chosen peaks in these examples are primarily the central profile and the Bu torsion atom. At H=sqrt(n), up to 12 tallest separated peaks in the half-circle are measured, with noncentral and locally centered summaries saved separately. These are sampled peak lists, not an exhaustive cover of every tall window; no uniform asymptotic claim is inferred from them.
+
+NUMERICAL genuine joint-lift definition. For ell=8,16,32, concatenate the binary blocks into functions v_j(r) on Z/ell, indexed by the actual absolute residue r=m mod ell. Put h(j/(B+1),r)=v_j(r), interpolate linearly, take h(0,r)=h(1,r)=0, and extend by h(-t,-r)=h(t,r). This is an actual supported continuous [0,1] joint function, with finite signed spectrum. The LP for ell=16 optimizes every symmetric identity value h(0,r) in [0,1], preserving all interior block words. It does not optimize all possible coarse completions allowed by HBSC. The table uses a 65536-point reevaluation of the endpoint-LP solution; the largest change from 16384 points was 0.000626. This is a numerical stability check, not an interval certificate or a proof of LP optimality for the continuum objective.
+
+NUMERICAL table, H=n^(3/4). Negative masses refer to the whole real spectrum with Haar probability on the finite group. The component column sums only the measured coarse spike profiles with B=16 and the stated natural endpoint; the joint column is the optimized ell=16 block-word lift. These are different constructions and are deliberately not identified.
+
+| Actual set | n | X | R estimate | M/H estimate | Coarse component negative mass | Joint block negative mass |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Singer differences q=19 | 190 | 379 | 0.725474 | 0.195404 | 0.171803 | 4.536952 |
+| Singer differences q=43 | 946 | 1891 | 0.715282 | 0.128975 | 0.069512 | 10.393643 |
+| Singer differences q=163 | 13366 | 26731 | 0.709272 | 0.065965 | 0.033028 | 37.489606 |
+| Bu/Singer q=43 | 1892 | 5673 | 0.759861 | 0.115214 | 0.073538 | 17.638054 |
+| Saved E68 selection | 64 | 91 | 0.606188 | 0.214320 | 0.439913 | 2.050318 |
+| Saved E72 n=128 selection | 128 | 346 | 0.787419 | 0.234101 | 0.197026 | 4.289397 |
+| Seeded tapered random set | 1536 | 3015 | 1.470029 | 0.234816 | 0.064041 | 12.931623 |
+
+NUMERICAL interpretation. The data demonstrate large dependence on the lift. Coarse single profiles can have small negative mass while the lift retaining the block words has much larger mass even after its identity values are optimized. At H=sqrt(n), the q=163 Singer example has 11 measured noncentral profiles with total negative mass 0.628039 at B=16 and 0.602986 at B=32; the centered totals are 0.258066 and 0.455784. These finite measurements neither refute original HBSC nor approach a genuine epsilon-to-zero Chowla sequence. Flat random dense examples have large central negative lobes and M of linear scale; tapered random examples are included to avoid confusing those with fluctuations of square-root scale.
+
+NUMERICAL finite feasibility audit. The Gurobi minimax LP/MILP used 2048 circle grid points and (X,n)=(24,6),(48,12),(96,24). The fractional optima were approximately 0.25 in each case, matching the proved n/X optimum up to grid error. Their missing variance was respectively 4.04744, 8.05959 and 15.94789, a fixed fraction of n. The X=24 binary model reached floating solver optimality with grid M=1.591779 and direct refined M=1.591832. The other two binary searches reached their 45-second limits; their best refined R values were 0.639097 and 0.609331. Those are candidate values, not global optima or exact infeasibility certificates. The smallest R among the 21 saved real-data sets was 0.606188, on an existing E68 set. No new small-R construction is claimed.
+
+PROVED/NUMERICAL verification inventory. exact_checks.json contains exact rational Fejer identities for 32 parameter values and a separate floating comparison of the periodic negative-mass identity with 201 real-line periods. weighted_gram_checks.json records 3600 exact rational pointwise checks on signed tents. run_top_checks.json records 256 exact integer boundary-count checks. The floating identity checks and quadrature refinements are NUMERICAL; the paper proofs above are independent of them.
+
+PROVED audit correction. An exploratory diagnostic allocated a shared diagonal budget while mistakenly including the central profile as a conjugate pair. That diagnostic is invalid, was removed from the final profile and summary data, and is not used in the table or any conclusion. Its old values remain in the historical review log. The initial run also stopped on an FFT padding-length error for the largest joint lift; the corrected complete run finished successfully. These corrections do not change the analytic identities or the saved component-profile measurements.
+
+PROVED reproduction commands (all from the repository root, sequentially):
+
+    DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 1200 python .research/agents/tdense6_scratch/audit.py all
+    DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 180 python .research/agents/tdense6_scratch/audit.py review
+    DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 600 python .research/agents/tdense6_scratch/audit.py meso
+    DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 300 python .research/agents/tdense6_scratch/audit.py finalize
+
+PROVED artifact map. audit.py is the complete executable source. manifest.json records versions, seed, launcher, source hashes and the audit correction. summary.json and sets.json record actual sets and minima; profiles.json and lower_height_profiles.json record all measured coefficients and endpoint choices; joint_lifts.json saves the LP identity values; quadrature_refinement.json and final_summary.json summarize reevaluation. consistency_lp.json saves every LP/MILP status, incumbent and bound. Logs retain initial failures and subsequent successful execution. All artifacts are under tdense6_scratch. No top-level .research markdown, source outside scratch, or commit was intentionally changed.
+
+## Task verdicts, novelty and handoff
+
+PROVED round-6 advances relative to the supplied record (external priority unchecked). The exact tent-lift negative-mass identity; the dense genuine binary family exhibiting negative mass escaping to infinity despite local asymptotic positivity; the exact weighted Gram-charge refinement of SG; the finite conditional-variance and phase-generator audits; and the explicit first averaged proof-variable inequality for the run-top route. The exact fractional optimum and sharpened ordered boundary count are elementary supporting results, not claims of a dense Chowla advance by themselves. SG, TL1, P40, the Singer square identity and Bu's boundary method are quoted inputs.
+
+PROVED Task 1 disposition. The exact fully coherent finite class has been specified, and relaxing binary means has an explicit rejected escape and an exact energy failure. The lift argument has a genuine finite-to-limit failure: non-tight negative spectral mass. The single sufficient missing inequality OBSF states the remaining ordered Boolean constraint directly, without spectral completion; WGC is a weaker replacement for total negative-mass completion. No object satisfying all the brief's constraints with epsilon tending to zero, and no inconsistency proof for that full class, has been obtained. The result is a precise completion/limit obstruction and replacement lemmas, not alternatives (a) or (b).
+
+PROVED Task 2 verdict for specified natural classes. Height-uniform negative mass O(M/H) is false for the exact microscopic tent lifts, and false for every asymptotically binary-faithful joint completion on the dense Singer sequence with H=n^alpha, 1/2<alpha<1. These are rigorous refutations of natural strengthened interpretations. Original existential HBSC remains CONJECTURED: the evidence does not refute an appropriately fractional completion that captures only tall-window energy. Neither its truth nor its falsity has been proved. Its exact outstanding demand is a uniform loss-versus-negative-charge tradeoff, not componentwise positivity. WGC is the sufficient weaker replacement proved above at the level of the SG implication; the completion assertion itself remains CONJECTURED.
+
+CONJECTURED remaining targets. T-dense, OBSF, WGC, original HBSC and the averaged run-top saving remain unproved here. The main research question is not reported solved.
+
+HEURISTIC next discriminating action and strategic decision. Pursue the conditional-variance versus weighted-charge tradeoff for a joint coarse completion while explicitly preserving selected spike energy; use the exact negative-mass identity and the phase-generator trap as rejection tests. A construction must specify approximate phases and quantify both its discarded variance and its true superposition error. In the distinct order-based lane, attack the displayed averaged Q1/Q2 inequality with the clipped positive-part decomposition; bounding Q2 alone is insufficient. Stop enlarging the present natural-lift experiment: it has established a mechanism-level obstruction and its further growth would not test existential HBSC. This report is the round-6 checkpoint, not a claim of future unattended work.

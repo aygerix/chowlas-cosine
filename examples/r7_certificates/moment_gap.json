@@ -1,0 +1,45 @@
+{
+  "exact": [
+    {
+      "C": "4439/1000",
+      "rho": "769801/1000000",
+      "v_upper": "452823/500000",
+      "verified": true,
+      "margin": "602510211827679/10522091599395356000",
+      "margin_float": 5.726144903189227e-05,
+      "beckner_constant_less_r": true
+    },
+    {
+      "C": "44393/10000",
+      "rho": "769801/1000000",
+      "v_upper": "452823/500000",
+      "verified": true,
+      "margin": "3506490276101151/1052280271169087720000",
+      "margin_float": 3.33227788467936e-06,
+      "beckner_constant_less_r": true
+    },
+    {
+      "C": "4213/1000",
+      "rho": "811/1000",
+      "v_upper": "452823/500000",
+      "verified": true,
+      "margin": "63761551/443356571680",
+      "margin_float": 0.00014381550894439197,
+      "beckner_constant_less_r": true
+    },
+    {
+      "C": "443/100",
+      "rho": "77/100",
+      "v_upper": "453/500",
+      "verified": true,
+      "margin": "802639/1050618800",
+      "margin_float": 0.000763967863510533,
+      "beckner_constant_less_r": true
+    }
+  ],
+  "numerical": {
+    "v": 0.9056456821522993,
+    "C_limit": 4.439325747631561,
+    "C_limit_elementary": 4.2138033956687515
+  }
+}

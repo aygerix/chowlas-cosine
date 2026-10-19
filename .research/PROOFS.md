@@ -2029,3 +2029,60 @@ Status:
   - integer side: a uniform front gap (CSFG);
   - cyclic side: PK(η) for some η > 0, which beats Sanders.
   Both need the full convolution identity, not scalar moments.
+
+## P65. Round-13 agent results (report .research/agents/tdense13_report.md; lead re-checked every item marked ✓) — 2026-10-19
+Cyclic peak problem. Round 13 gives no exponent gain, but three precise barriers, plus the refutation of PK.
+Notation as in P64.12.
+1. ✓ R13-PK: universal PK is FALSE, for genuine half-sets.
+   - Construction. Fix ε ∈ (0, ½). Include each pair ±a independently with probability ½ + ε·cos(2πa/q). Then
+     E λ(±1) = εq/2 − ½ − ε and E λ(γ) = −½ − ε otherwise.
+   - Hoeffding plus a union bound plus O(√(q log q)) repair flips give exact half-sets with Λ ~ εq/2 and
+     K = O(√(q log q)) for all large q ≡ 1 mod 4.
+   - Lead re-derived the expectations.
+   - Consistent with QU: the second-order bound forces K >= (ε/(2√2) + o(1))√q here.
+   - Corrected intermediate:
+         QU(β): K <= δ√q with δ <= δ0  ⇒  Λ <= Cqδ^β,
+     which gives exponent ½ − 1/(2(β + 1)). β = 1 is the elementary ¼, β = 2 is Sanders' 1/3, β > 2 is new.
+2. ✓ R13-C, PARTIAL-CONVOLUTION BARRIER.
+   - For any J(q) = o(q^{1/3}) there is a real even array with:
+     - exact trace and Parseval;
+     - K = q^{1/3}/2 and Λ = λ(1) = 2q^{2/3} − q^{1/3}/2;
+     - the exact off-zero identity Σ_{β≠0,γ} λ(β)λ(γ − β) = λ(γ) at every γ ∈ ±{1, …, J}.
+   - Construction (h = 2λ + u, u = q^{1/3}):
+     - h(0) = u − 1, h(±1) = 4u²;
+     - for each displacement d <= J, ℓ = ⌈u⌉ reflected two-site clusters of amplitude √((C − R_d)/(2ℓ)), with
+       C = qu(u − 2), spaced more than J apart;
+     - mass/energy repair on spread sites.
+   - Lead checked z⋆z(γ) = h⋆h(γ) − qu(u − 2), so the identity holds exactly where h⋆h = C.
+   - The omitted equation at 2J + 2 has defect ≈ 0.97q² (Arb). So the missing information sits at unprescribed
+     frequencies.
+   - Kills: any argument using the identity along a prescribed initial segment of the peak orbit.
+3. ✓ R13-M1 / M2, ARITHMETIC MOMENT BARRIER.
+   - M1: the literal R12-S fake fails cubic integrality, since qT_3 − ((q − 1)/2)³ would be irrational, with
+     coefficient 3a(m − a)(m − 2a)/m² on u².
+   - M2: for every FIXED r there are arrays with K = q^{1/3}/2, Λ ≍ q^{2/3} and all of the following:
+     - all shifted-moment and Hankel positivity;
+     - integral T_k for k <= r, in the right ranges;
+     - Newton integrality modulo r!.
+     The proof adjusts r distinguished peaks by an inverse-function argument (Vandermonde Jacobian).
+   - Kills every fixed-order scalar, integrality or congruence route. Growing-order or full-Galois arithmetic stays
+     OPEN.
+4. ✓ (re-derived) The cubic positive-convolution truncation gives Λ <= O(K³) when K = o(√q), hence only q^{1/4}.
+   The kurtosis/spike route also gives only q^{1/4}; the lead's NOTEBOOK cont. 17.7(c) reached the same conclusion
+   independently.
+5. NUMERICAL, with certificates (examples/r13_certificates/).
+   - Exact trade-off staircases Λ_max(κ) at q = 17 and 37, by interval-enclosed exhaustive enumeration (70 and 48620
+     sets).
+   - Gurobi scans at q = 61 … 109: a finite staircase (q = 61: +2.5% in κ doubles the attainable peak). Small q
+     cannot probe δ -> 0.
+   - Binary-escape probe (Track C): 20 constructions up to X = 2^20 following the E82 extremal profile with front ½.
+     - Laws: Paley textures at q ≈ X^{½, ⅔, 1}, dilated near-intervals, spectral error diffusion, Gurobi rounding.
+     - All have R > 0.6 and R increasing, each with a 220-bit Arb dip.
+     - Mechanism: q = o(X) repeats the cyclic negative spectrum about X/q times; fixed block clocks create rational
+       spikes with negative sidelobes. Best large-X family: Paley at θ = 1, R ≈ 2.9 at X = 2^20.
+   - E41's printed q = 89 value is wrong; the pair list gives 4.630072322.
+Status: paper proofs (agent), lead spot-checked items 1–3. None kernel-checked. The cyclic exponent stays at Sanders'
+1/3. Directions left by round 13:
+- full-frequency incidence (adaptive, not prescribed frequencies);
+- growing-degree or full Galois arithmetic;
+- block-free coordinated q ≈ X binary tapers.

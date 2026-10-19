@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 12: the missing ingredient pinned (CSFG / PK)")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 13: cyclic barriers; round 14 = Sanders at every density")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -300,7 +300,33 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 12: the missing ingredient pinned (CSFG / PK) (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 13: cyclic barriers; round 14 = Sanders at every density (2026-10-19 night, NEWEST — read this first)
+- Round 13 DONE, lead spot-checked (PROOFS P65; EXPERIMENTS E91).
+  - Universal PK is FALSE (R13-PK): profile-rounded half-sets have Λ ~ εq/2 with K = O(√(q log q)). The right
+    intermediate is QU(β).
+  - Barriers: the exact identity along any prescribed segment J = o(q^{1/3}) of the peak orbit (R13-C), and any fixed
+    order of moments, integrality and congruences (R13-M2), are both consistent with exponent 1/3.
+  - Binary escapes: 20 laws, all R > 0.6 and growing (certified dips).
+- Lead.
+  - E90 large-q cyclic search: inconclusive (search-limited).
+  - NOTEBOOK cont. 17.6–7:
+    - sparse P61 is second-order trivial apart from front shape (it gives P31's 2.91);
+    - 2-D obstruction: independent lacunary scales force linear M, so counterexamples are one-dimensional at every
+      scale;
+    - the dilation-deficit form of the cyclic problem.
+- Lead read Sanders 0807.5104v2 pp. 1–10.
+  - Thm 4.1 gives exponent α/5 at density α, from r = 2⌈1/α⌉ convolution powers in Lemma 3.2; the half-set case is
+    1/3 after careful accounting.
+  - JMTZ give ¼ − ε at every density; Bu et al. dense ¼.
+  - So a density-INDEPENDENT cyclic exponent θ > ¼ would give DENSE CHOWLA EXPONENT θ FOR EVERY C, via the embedding
+    q ∈ (2X, 4X]. That beats the 2026 literature for C > 7.72.
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 14 (.research/agents/tdense14_brief.md; report tdense14_report.md): Sanders' 1/3 at every
+  fixed density. The key step is removing the 1/α in the binomial-positivity order r.
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 14. If a density-independent θ > ¼ is proved, check the integer corollary and the literature (Bu §9,
+  JMTZ, Yip 2610.01657) before recording it as new.
+## Session 3, round 12: the missing ingredient pinned (CSFG / PK) (2026-10-19 night)
 - Round 12 DONE, lead-verified (PROOFS P64; E89: R12-N falsification, 538 cases, 0 violations).
   - No new unconditional endpoint: T-dense stays at C < 7.722.
   - R12-N (proved): if A ∩ NZ is an initial progression, M >= n/((3π + 2)r). This excludes dense nested schedules with
@@ -317,12 +343,12 @@ in parallel.
   - the finite second-order identity gives exponent 1/4;
   - the spectrum is a Galois orbit (unused so far);
   - the construction side is reduced to binarizing P61's weighted escapes.
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 13; superseded)
 - Codex MATH agent, round 13 (.research/agents/tdense13_brief.md; report tdense13_report.md).
   - Task 1: PK(η) through full convolution, tested on exact cyclic optima.
   - Task 2: a binary-escape construction probe.
 - Lead (foreground): P61 for sparse sets, written out in full (NOTEBOOK cont. 16.6c).
-## First concrete next step (2026-10-19 night, newest)
+## First concrete next step (2026-10-19 night, round 13; superseded)
 - Verify round 13. Then: does any k >= 4 power-sum (additive-count) constraint kill the R12-S fake? This decides whether
   PK can come from counts or needs the full identity.
 ## Session 3, round 11: T-dense(7.72); FRONT-½ and the cyclic barrier (2026-10-19 night)

@@ -1331,3 +1331,18 @@ Reading:
   - INCONCLUSIVE about the asymptotics of min K/√q. Not continued.
   - Bug note: production runs did not record the seed state itself, so mode-2 rows show the best set after leaving
     Paley. This is fixed in the source.
+## E91 (2026-10-19, round-13 agent, VM) Cyclic trade-off curves and binary-escape probes (examples/r13_certificates/)
+- Reproduction: cyclic_probe.py, binary_probe.py, finalize.py (commands in the report). Gurobi seed 1913, 4 threads.
+- Cyclic trade-offs Λ_max(κ) at q = 17, 37: exact staircases, by interval-enclosed enumeration of all 70 and 48620
+  symmetric half-sets.
+- Gurobi scans at q = 61, 89, 101, 109 (floating coefficients; q = 101 and 109 thresholds are incumbents only).
+- R13-PK illustration, profile rounding with ε = 0.2. (K, Λ):
+  - q = 257: (20.1, 28.8); 1021: (56.3, 77.8) — Arb-enclosed;
+  - 4093: (138.7, 372.9); 16381: (252.4, 1626.2); 65537: (521.3, 6489.0) — FFT only.
+- Binary escapes following the E82 profile, X up to 2^20: all R > 0.6 and increasing; each dip has a 220-bit Arb
+  point certificate.
+  - At X = 2^20, R ≈ 51.6 (Paley θ = ½), 18.6 (θ = ⅔), 2.93 (θ = 1), 43.1 / 141.6 (near-interval θ = ½ / 1),
+    176 (spectral diffusion).
+  - Gurobi rounding at X = 128, 256: R ≈ 0.90, 1.18.
+  - The smooth profile contributes only −0.25 … −0.20 at each dip; the residual carries the whole dip.
+- No new record. The constructive track's best certified R is unchanged (0.5537, E25).

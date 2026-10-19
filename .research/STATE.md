@@ -267,6 +267,14 @@ in parallel.
   - TL1 would force ≥ 19% of a 0/1 local pattern's variance onto COMBINATION frequencies. A counterexample's spike set
     must then be approximately additively closed. This is the robust SR/Sanders line L1 in a cleaner form.
   - Caveat: it applies only where the window equidistributes in T^S, i.e. few, tall spikes.
+- P54 TL1 (lead, PROVED): level-1 Fourier weight of any E ⊂ T^S on a graded character set is
+  <= (8/π²)|E|(1 − |E|). Proof: Steinhaus rotation trick.
+- Round-4 agent (partial, verified by lead): P47 CONFIRMED-WITH-FIX (asymptotic qualifiers); P53 CONFIRMED-WITH-FIX
+  (Bohr-window corollary needs joint regularity of B ⊂ [0,1]×T).
+  - NEW defect: g <= 1 − t²/4 pointwise, hence b >= m³/12.
+  - NEW finite-window QD at fixed complexity: M <= ηX ⇒ energy outside any J windows >= X/(48C³) (ineffective).
+- CURRENT REDUCTION (NOTEBOOK cont. 4): T-dense ⟸ (A) finite TL1 for tall-spike sets, with errors given by weighted
+  unbalanced relation counts, + (B) the structured case (torsion / additive relations ⇒ P53 rigidity or recursion).
 ## Running now (2026-10-19 night, newest)
 - Codex MATH agent, round 4 (.research/agents/tdense4_brief.md, report tdense4_report.md):
   - Task 1: adversarial check of P47 and P53;

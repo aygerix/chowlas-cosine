@@ -1443,3 +1443,23 @@ Strategic decision:
    - The open question is whether these costs sum to a contradiction before the heights reach √(n/ε). This is the
      precise form of the descent.
 4. Next: TL1-finite (a clean, provable lemma), then the case (I)/(II) structure lemmas. Candidate for the round-5 agent.
+
+## 2026-10-19 (night, cont. 4) — Reduction: T-dense ⟸ (A) finite TL1 + (B) the structured case (lead)
+Ingredients now available:
+- R1 (round-4 agent, Task 2B, PROVED, ineffective): for fixed C, J, K there are η, X0 such that M <= ηX ⇒ the energy
+  outside ANY J windows of width K/X is >= X/(48C³).
+  - With J = 1 (the central lobe): non-central energy >= X/(48C³) for every A ⊂ [1, Cn] with M <= ηX, X >= X0.
+  - Limit form: the P53 defect b >= m³/12, from the pointwise bound g <= 1 − t²/4 (Krein/Gram inequality).
+- P40: if M <= ε√n, all but O(√ε)n of the energy is at heights >= λ = √(n/ε).
+- P54 (TL1): in the limit object, Σ_{θ∈Λ}|q_θ(t)|² <= (8/π²)p(t)(1 − p(t)) for every graded Λ, for [0,1]-valued g too.
+Reduction (HEURISTIC until (A) is proved with explicit errors):
+- Suppose M <= ε√n with ε small and X large. Let Λ be the non-central tall-spike frequency set (heights >= λ).
+  - By R1 and P40, Λ carries >= X/(48C³) − O(√ε)X of energy.
+  - (A) Finite TL1: if Λ's weighted unbalanced relation count U_D is small, Λ carries <= (0.81 + ε_D) of the local
+    rounding variance. The rest, >= 0.19·X/(48C³) − errors, is bulk. That contradicts P40 for ε < ε₀(C).
+  - (B) Hence U_D(Λ) is large: the tall spikes carry many unbalanced relations. This is torsion (residue
+    classes) or additive relations x_s + x_r ≈ x_u (approximate-group/Bohr structure). The structured case must then
+    be killed by P53-type rigidity (the defect b >= m³/12, extended to the extracted structure), or by recursion.
+- This is the precise form of the missing ingredient. It replaces "SB for arbitrary A" by two separate,
+  attackable statements: an analytic inequality (A) and an inverse-theorem step (B).
+- Round-5 agent brief (.research/agents/tdense5_brief.md): (A) first, then (B).

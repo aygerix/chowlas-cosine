@@ -123,3 +123,20 @@ Headline statements (exact; lean/ChowlaCosine/P34/):
 - `p33_ratio` (Secondary.lean). A nonempty, 1 <= m <= a <= X for all a ∈ A, ∀x, −M <= cosSum A x ⇒ |A|·m/X <= M.
 - `dilation_pinch` (Secondary.lean). q >= 1, ∀x, −M <= cosSum A x ⇒ |A|/q − (1 − 1/q)M <= |A ∩ qℕ|.
 Report: .research/agents/lean_p34_report.md.
+
+## 2026-10-19 P36 truncation at gaps — KERNEL-CHECKED (codex Lean agent; lead-audited); Beckner M4 partial
+Lead audit:
+- `lake build` passes (8753 jobs).
+- AxiomCheck gives 384/384 entries, all [propext, Classical.choice, Quot.sound], with 0 sorryAx.
+- grep finds no sorry/axiom/native_decide in P36/ or Beckner/.
+Statements (lean/ChowlaCosine/P36/Main.lean; cosSum A x = Σ_{a∈A} cos(a x)):
+- `p36_truncation`. A positive, D >= 1, ∀x, −M <= cosSum A x ⇒
+  ∀x, −(M + (1 − cos(π/(D+2)))·Σ_{a∈A, a<=D} a²) <= cosSum (A.filter (· <= D)) x.
+  This is the exact sine kernel, with no fallback constant.
+- `p36_gap`. Y <= D and no a ∈ A in (Y, D] ⇒ the error is <= (1 − cos(π/(D+2)))·Y²·|A ∩ [1, Y]|.
+- `p36_gap_pi`. The same bound with error (π²/2)(Y/(D+2))²·|A ∩ [1, Y]|.
+Beckner M4 (partial, NOT the sharp Young theorem):
+- `geometricHeatProduct_integral_monotone`: monotone product integral for compact-support positive-mass data.
+- `tendsto_sqrt_mul_heatFlow`: scalar large-time Gaussian asymptotic for every signed L¹ datum.
+- Remaining: the product large-time limit, the initial-time passage, density, and the 2×2 frame algebra
+  (.research/agents/lean_next_report.md).

@@ -580,3 +580,76 @@ open ChowlaCosine
 #print axioms ChowlaCosine.P34.phaseCoefficients_norm_sq
 #print axioms ChowlaCosine.P34.trigSum_phase
 #print axioms ChowlaCosine.P34.fejerKernel_zero
+
+-- 27. P36: exact sine kernel, quadratic Fourier increments, and all-real gap truncation.
+#print axioms ChowlaCosine.P36.squareKernel_nonneg
+#print axioms ChowlaCosine.P36.squareKernel_expansion
+#print axioms ChowlaCosine.P36.circleMean_squareKernel
+#print axioms ChowlaCosine.P36.circleMean_squareKernel_mul_shift
+#print axioms ChowlaCosine.P36.squareCoeff_pair_formula
+#print axioms ChowlaCosine.P36.squareCoeff_one
+#print axioms ChowlaCosine.P36.squareCoeff_eq_zero
+#print axioms ChowlaCosine.P36.abs_sin_nat_mul_le
+#print axioms ChowlaCosine.P36.one_sub_cos_nat_mul_le
+#print axioms ChowlaCosine.P36.kernelCoeff_le_mass
+#print axioms ChowlaCosine.P36.kernelCoeff_increment_le
+#print axioms ChowlaCosine.P36.truncation_of_kernel
+#print axioms ChowlaCosine.P36.sineAngle_pos
+#print axioms ChowlaCosine.P36.sineAngle_lt_pi
+#print axioms ChowlaCosine.P36.sineWeight_last
+#print axioms ChowlaCosine.P36.sineMass_pos
+#print axioms ChowlaCosine.P36.sineWeight_recurrence
+#print axioms ChowlaCosine.P36.sine_adjacent_sum
+#print axioms ChowlaCosine.P36.sineKernel_nonneg
+#print axioms ChowlaCosine.P36.circleMean_sineKernel
+#print axioms ChowlaCosine.P36.kernelCoeff_sineKernel
+#print axioms ChowlaCosine.P36.kernelCoeff_sineKernel_one
+#print axioms ChowlaCosine.P36.kernelCoeff_sineKernel_eq_zero
+#print axioms ChowlaCosine.P36.circleMean_sineKernel_mul_shift
+#check @ChowlaCosine.P36.p36_truncation
+#print axioms ChowlaCosine.P36.p36_truncation
+#check @ChowlaCosine.P36.p36_gap
+#print axioms ChowlaCosine.P36.p36_gap
+#check @ChowlaCosine.P36.p36_gap_pi
+#print axioms ChowlaCosine.P36.p36_gap_pi
+
+-- 28. M4: uniform domination and the concrete global heat-product integration bridge.
+#print axioms ChowlaCosine.Beckner.heatTailConstant_nonneg
+#print axioms ChowlaCosine.Beckner.heatFlow_gaussian_bound_interval
+#print axioms ChowlaCosine.Beckner.geometricHeatProduct_gaussian_bound_interval
+#print axioms ChowlaCosine.Beckner.heatTimeScore_bound_interval
+#print axioms ChowlaCosine.Beckner.heatSpaceScore_bound_interval
+#print axioms ChowlaCosine.Beckner.geometricHeatProduct_time_derivative_bound_interval
+#print axioms ChowlaCosine.Beckner.continuous_heatFlow_space
+#print axioms ChowlaCosine.Beckner.continuous_heatSpaceMoment_space
+#print axioms ChowlaCosine.Beckner.measurable_heatTimeMoment
+#print axioms ChowlaCosine.Beckner.measurable_heatTimeScore
+#print axioms ChowlaCosine.Beckner.integrable_plane_polynomial_gaussian
+#print axioms ChowlaCosine.Beckner.heat_score_polynomial_bound
+#print axioms ChowlaCosine.Beckner.continuous_planePoint
+#print axioms ChowlaCosine.Beckner.norm_planePoint_sq
+#print axioms ChowlaCosine.Beckner.continuous_geometricHeatProduct_space
+#print axioms ChowlaCosine.Beckner.measurable_geometricHeatTimeSlope_plane
+#print axioms ChowlaCosine.Beckner.geometricHeatTimeSlope_plane_bound_interval
+#print axioms ChowlaCosine.Beckner.integrable_geometricHeatProduct_plane
+#print axioms ChowlaCosine.Beckner.hasDerivAt_integral_geometricHeatProduct_plane
+#print axioms ChowlaCosine.Beckner.abs_weighted_directional_score_le
+#print axioms ChowlaCosine.Beckner.abs_weighted_second_score_le
+#print axioms ChowlaCosine.Beckner.hasDerivAt_geometricHeatSpaceSlope_line
+#print axioms ChowlaCosine.Beckner.geometricHeat_spatial_envelopes
+#print axioms ChowlaCosine.Beckner.measurable_heatSpaceScore
+#print axioms ChowlaCosine.Beckner.measurable_geometricHeat_spatial_slopes_plane
+#print axioms ChowlaCosine.Beckner.integrable_geometricHeat_spatial_slopes_plane
+#print axioms ChowlaCosine.Beckner.integrable_geometricHeatTimeSlope_plane
+#print axioms ChowlaCosine.Beckner.geometricHeatProduct_integral_derivative_nonneg
+#print axioms ChowlaCosine.Beckner.geometricHeatProduct_integral_monotone
+
+-- 29. M4 scalar rescaling: exact dilation and all-L1 large-time asymptotics.
+#print axioms ChowlaCosine.Beckner.tendsto_rescaledHeatFlow
+#print axioms ChowlaCosine.Beckner.heatKernel_rescale
+#print axioms ChowlaCosine.Beckner.rescaledHeatFlow_eq_heatFlow
+#print axioms ChowlaCosine.Beckner.tendsto_heatFlow_large_time
+#print axioms ChowlaCosine.Beckner.tendsto_sqrt_mul_heatFlow
+
+#print axioms ChowlaCosine.P36.continuous_squareKernel
+#print axioms ChowlaCosine.P36.continuous_sineKernel

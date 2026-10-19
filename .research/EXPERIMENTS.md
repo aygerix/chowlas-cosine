@@ -757,13 +757,18 @@ Reading:
 
 ## E62b/E62c (2026-10-19) Phase relaxation, wider supports and the N50 optimum (src/e62b_phase_relax_wide.py,
 ## src/scratch/e62c_n50_phases.py; examples/e62/e62b.jsonl, e62c.json)
-- E62b, best of 4 starts (UNCERTIFIED grid). Bu q199/q401 and the random controls were still running at the time of
-  writing.
-   support            R (0/1)   R (phases)
-   dense N50          0.5696    0.4983
-   Singer diff q31    0.7184    0.5983
-   Singer diff q61    0.7128    0.6329
-   E49 triangle SA    0.7842    0.5499
+- E62b, best of 4 starts (UNCERTIFIED grid). COMPLETE (examples/e62/e62b.jsonl, 8 rows).
+   support                  n      max A    R (0/1)   R (phases)
+   dense N50                50     72       0.5696    0.4983
+   Singer diff q31          496    991      0.7184    0.5983
+   Singer diff q61          1891   3781     0.7128    0.6329
+   E49 triangle SA          299    566      0.7842    0.5499
+   Bu q199 (k=40)           1560   97738    0.7018    0.6428
+   Bu q401 (k=80)           6320   432979   0.6572    0.6093
+   random n50, X=100        50     97       1.4953    0.7412
+   random n200, X=400       200    398      2.6478    0.7228
+  - Random supports gain the most (2.65 -> 0.72): phases repair a bad support down to ≈ 0.7, but not below.
+  - Structured supports gain 0.05–0.17 and stay above 0.6 at n >= 1500 (local optimization from θ = 0).
 - E62c: 10 starts and 5 annealing stages on the N50 support give best R = 0.4916 (values 0.4916–0.5000).
   - After removing the best linear phase (a pure shift of x), the phases are SMALL PERTURBATIONS OF 0:
     |θ| mostly < 0.7, mean distance to {0, π} 0.41. They are not a sign pattern.

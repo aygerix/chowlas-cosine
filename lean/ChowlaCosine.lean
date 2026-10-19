@@ -19,6 +19,7 @@ import ChowlaCosine.P31.ElementaryConvolution
 import ChowlaCosine.P31.Corollaries
 import ChowlaCosine.P34.Littlewood
 import ChowlaCosine.P34.Secondary
+import ChowlaCosine.P36.Main
 
 import ChowlaCosine.Beckner.Young
 import ChowlaCosine.Beckner.YoungSpecial
@@ -27,3 +28,5 @@ import ChowlaCosine.Beckner.HeatFlow
 import ChowlaCosine.Beckner.HeatFlowDerivative
 import ChowlaCosine.Beckner.HeatFlowRelative
 import ChowlaCosine.Beckner.GeometricHeat
+
+import ChowlaCosine.Beckner.HeatFlowRescale

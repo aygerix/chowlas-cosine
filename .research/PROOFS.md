@@ -961,7 +961,7 @@ Meaning for Chowla: the window method is phase-blind and sees only the energy pr
 are the flattest profile, so the one-sided Littlewood problem is exactly the δ = 1 instance of dense Chowla. Sparse
 0/1 sets (Chowla proper) are hard precisely because their profile can be front-loaded (escape class).
 
-## P36. Truncation at gaps: M is almost monotone under cutting A at a gap — PROVED (lead 2026-10-19; elementary)
+## P36. Truncation at gaps: M is almost monotone under cutting A at a gap — PROVED (lead 2026-10-19; elementary); KERNEL-CHECKED 2026-10-19 (`p36_truncation`, `p36_gap`, `p36_gap_pi`; exact constant; CERTIFICATES)
 Statement. For every finite A ⊂ ℤ_{>0} and every integer D >= 1,
     M(A) >= M(A ∩ [1, D]) − (1 − cos(π/(D + 2)))·Σ_{a∈A, a<=D} a².
 In particular, if A ∩ (Y, D] = ∅:

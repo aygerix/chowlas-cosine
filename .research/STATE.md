@@ -179,6 +179,8 @@ in parallel.
   - Note: .research/notes/littlewood_onesided_P34.md. E61 adversarial optimum ≈ 0.61√n.
   - **KERNEL-CHECKED** (lead-audited): p34_A_phases (√n/4, all n, all phases), p34_B (±1) and p34_C. P33 and the
     dilation pinch are kernel-checked too.
+  - P36 (truncation at gaps, exact constant 1 − cos(π/(D+2))) KERNEL-CHECKED 2026-10-19 (lead-audited, 384/384 standard
+    axioms). Beckner M4 is partial: product-integral monotonicity and the scalar asymptotic are checked.
 - **Dense comparison:** Bu et al. Prop. 9.7 (Oct 2026) gives only n^{1/4} for A ⊂ [1, Cn] and leaves √n open. Our
   kernel-checked dense theorem gives √n for C < 2.466. New lead target T-dense: all C. Note that localized windows are
   exactly critical (NOTEBOOK no-go), so it needs run/boundary input.

@@ -1504,3 +1504,15 @@ Meaning.
     the block length.
   - Case analysis on the tail structure is required. Worth a separate attack: it would be the first extension of the
     kernel-checked dense theorem.
+- (cont. 6) Explicit escape set for the whole P31 + P47 window family (HEURISTIC computation, idealized local
+  variances).
+  - Construction: front F = random half of [1, φX], tail = random of density d_t on [φX, X].
+  - With φ = 0.2 and d_t = 0.05 (C ≈ 7), every window fails:
+    - θ → 0: P47 needs φ/4 + (1−φ)d_t <= 0.385/4, and 0.09 <= 0.096 holds. P31 needs φ/2 + (1−φ)d_t <= 0.19, and
+      0.14 holds.
+    - θ = 2φ: (4φ/3)(0.09) = 0.12 <= 0.77(1 + 2φ)(7φ/12)(¼) = 0.157 holds.
+  - Yet M >= c√|F|: the front's Gaussian dips have measure ≍ 1, and a sparse tail cannot fill them, since that needs
+    |B| >= 2c²|D_F||F|.
+  - So the window family cannot prove T-dense beyond C ≈ 4–7. The escape is real but not a small-R mechanism.
+  - The "dip filling" argument is exactly an HBCG-type statement (energy not concentrated). This is consistent with
+    HBCG being the right target.

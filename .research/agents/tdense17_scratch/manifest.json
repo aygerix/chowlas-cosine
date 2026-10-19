@@ -1,0 +1,38 @@
+{
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "commands": [
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 8 -t 600 python .research/agents/tdense17_scratch/probe.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 900 python .research/agents/tdense17_scratch/zoo.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 8 -t 500 python .research/agents/tdense17_scratch/sidon_completion.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 8 -t 600 python .research/agents/tdense17_scratch/verify.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 8 -t 900 python .research/agents/tdense17_scratch/large_spectra.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 8 -t 300 python .research/agents/tdense17_scratch/large_spectra.py validate",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 8 -t 300 python .research/agents/tdense17_scratch/final_audit.py"
+  ],
+  "sha256": {
+    ".research/agents/tdense17_scratch/final_audit.py": "64f6914bef7b128a0213dc66b6f5d304320998302c22a82b8ea06c730a6fc0ad",
+    ".research/agents/tdense17_scratch/sidon_completion.py": "5115d2580b0543884a3fa37cb462f6535e4fa6e5ea172a1644b5c65f6e68f448",
+    ".research/agents/tdense17_scratch/probe.py": "4dd9da9929bf69619dc0db57510c6a1a73a6ba93232dd7ef739696366b589f2b",
+    ".research/agents/tdense17_scratch/verify.py": "63a3d7dd337ba1a25194d11408d42b32fe272b89b66a86db9a2fe937038de0c9",
+    ".research/agents/tdense17_scratch/large_spectra.py": "26e976609264df2e0d4b07c472cfbac69e7d2eb4bac542fa5831d94ee0040e07",
+    ".research/agents/tdense17_scratch/zoo.py": "53babd0c1128c47f12e32fd3abda1cae687d175335e1d55dee1a8beeafc4449c",
+    ".research/agents/tdense17_scratch/spline_L4096_s117_p5_6.npz": "89956b6c8b6993a7c6fae04af6062f8497d3a23906cd6f5583be3172c3bc9e85",
+    ".research/agents/tdense17_scratch/spline_L32768_s117.npz": "73ed61c43b83dcc9ca84762e19331ae6198443cea56585ffafeb377920133f55",
+    ".research/agents/tdense17_scratch/spline_L262144_s17.npz": "b925028be044a771816163ce23e8b1fe51ea7508660980286dd1f865600cf97e",
+    ".research/agents/tdense17_scratch/spline_L4096_s17_p5_6.npz": "e7b43d2a2df43701ee639cc349747f18c263521b4fb3704a2d50d12aeed9788e",
+    ".research/agents/tdense17_scratch/spline_L512_s17.npz": "e298e4550069abed57c549529584d4ed28c4a8e5a3e81fa24d920fdc337ccc85",
+    ".research/agents/tdense17_scratch/spline_L32768_s17.npz": "00b0187126d07fed65af1cc9525ce65945939c2de7bd6a4a5980905939d6ef21",
+    ".research/agents/tdense17_scratch/spline_L262144_s17_p5_6.npz": "14273ff1f835c9aa8c3639cc9af3a5d24098094d4a998dade84f609863cf8b25",
+    ".research/agents/tdense17_scratch/spline_L4096_s117.npz": "8b59fa1f0637f183dd8f1836d5d096ae295acdc0afdb395d8ad34edb77473409",
+    ".research/agents/tdense17_scratch/spline_L262144_s117.npz": "7e19d65b249966b41e2c073dfaed4aed6d14066a7f3eca8fae05e9919b39e484",
+    ".research/agents/tdense17_scratch/spline_L262144_s117_p5_6.npz": "dad34c51177ca3581df9b4b6df317f59466902e67df643c14c7b63ff077c2037",
+    ".research/agents/tdense17_scratch/spline_L512_s117.npz": "0584096af4cab6a6110cf5cc9b6934b717d2e188a83a0ee00ded99371eb02548",
+    ".research/agents/tdense17_scratch/spline_L4096_s17.npz": "ffee35f5d24b6815eaa65d41467f0a4105253f90b6ccbe93a72719343de99b7e",
+    "examples/e99/e99.jsonl": "fe2a7fa3866077cbe48de6333f055564ead1db57f047e8a4eeed9615c473e408",
+    "examples/smallN_best.json": "6075d220cbafc5d21184ae67c9661db7f27a484862d2d99185612531f684f87f",
+    "examples/singer_bu/certified.json": "b07d8b7ba4d43966e92106f3685937ade00aa98f9a0af04d0d94b651b1034bfb",
+    "src/chowla.py": "34947043d465dd259051e2f6bbe1747768f7e5c515377065bc6a43c4a1e52ed4",
+    "src/bu.py": "878614081fe2051492034c2e733ead87efb278b6084ffd78ba41f59c94a6fc2a"
+  }
+}

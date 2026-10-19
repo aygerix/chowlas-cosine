@@ -1,0 +1,41 @@
+{
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "seed_count": 58,
+  "search_starts": 10,
+  "swap_proposals": 4000,
+  "commands": [
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 900 python .research/agents/tdense17_scratch/fourway.py seeds",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 900 python .research/agents/tdense17_scratch/fourway.py search --steps 400",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 600 python .research/agents/tdense17_scratch/fourway.py audit",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 600 python .research/agents/tdense17_scratch/fourway_verify.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 600 python .research/agents/tdense17_scratch/fourway_extras.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 600 python .research/agents/tdense17_scratch/fourway_energy_audit.py",
+    "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -m 10 -t 600 python .research/agents/tdense17_scratch/fourway_independent_cert.py"
+  ],
+  "sha256": {
+    ".research/agents/tdense17_scratch/fourway_energy_audit.py": "0fb93435db716307879c6575c4c5dbe20ee53b5235333cdf80dbed19fee6631c",
+    ".research/agents/tdense17_scratch/fourway_extras.py": "5c94ad3e270f503b6fa388a34ebfdfc44d08886a502ee0b07b069526df6ce626",
+    ".research/agents/tdense17_scratch/fourway.py": "194b7a4121f3e74c73b85b30c9991f15da9d98541e518e677ab19bee71967146",
+    ".research/agents/tdense17_scratch/fourway_verify.py": "0cc1d83723fe29721c0f1a40cfa09e7f7ecd7ae66d16eba8d069c6568e5c74ca",
+    ".research/agents/tdense17_scratch/fourway_energy.json": "9c09460b7eb14c0593990b72c1fc3b564ea3186e02a86c24de9d7851f45899bc",
+    ".research/agents/tdense17_scratch/fourway_seeds.json": "439dacff8424a349b6e0249307c8d8b1ec2a69a90d06cf1dd028249c939287a3",
+    ".research/agents/tdense17_scratch/fourway_search.json": "d8c792d2656fe62a2b05901e97e856f72f9d14e1ba9dbdbeb122223faf380905",
+    ".research/agents/tdense17_scratch/fourway_extras.json": "3ff64d871eeb47e7264f33a9b1ef93337aa2cf1aa81c9c97e186fa1b14365609",
+    ".research/agents/tdense17_scratch/fourway_verification.json": "ec9c63bc7845b2e6cbd28cfab099366afb200ae71713986eebb685819f19343f",
+    ".research/agents/tdense17_scratch/fourway_audit.json": "a6442437bc4d7ee53e8299eb647b8f561ca57aaf8b1fa0b379a90dd8b5b1e3e9",
+    ".research/agents/tdense17_scratch/search_taper_Bohr_r2_96_hard_window.npz": "1f8d420daa4575460ca045febaf30642b7e1663dcfd5f8b13c69bc0449d9fff3",
+    ".research/agents/tdense17_scratch/search_taper_random_256_0.6.npz": "6176cdcf9d25d8a300941887a33dae23c85c9cfa1f954847abedbce81e4bd548",
+    ".research/agents/tdense17_scratch/search_taper_Bohr_r3_96_smooth_round.npz": "548621ee3c0586f1a0c4db24994f5028b1717096bddf0da515faeb81e12360c7",
+    ".research/agents/tdense17_scratch/search_taper_Bohr_r3_96_hard_window.npz": "ca6041a361c192f886d2acba1e391dccbdb592e3ad7da14e09b764cd99066204",
+    ".research/agents/tdense17_scratch/search_smallN_50.npz": "b688ebc11dce50b265ba5d06d66c6e8a97d7c41d4752d537a07543a8b34468b3",
+    ".research/agents/tdense17_scratch/search_singer_bu_11.npz": "b41a4d315e8eb801b433c0fcee09a7441deed659395fc79642bf267f0e6925d9",
+    ".research/agents/tdense17_scratch/search_taper_random_96_0.6.npz": "3f9c932eff5cddbe492f4c3f138e42237052e53c25e9149e5ff4abbe44878841",
+    ".research/agents/tdense17_scratch/search_prefix_128_0.667.npz": "044e8cefef9b4ff0cea7ec04c6ee0f86fc8b45f1006ca7e39170e279f89034e6",
+    ".research/agents/tdense17_scratch/search_smallN_100.npz": "53bf3c9ba0775e16bafbb89b84c18095a907ca25ad8cddc5d3ce218e770c7013",
+    ".research/agents/tdense17_scratch/search_smallN_36.npz": "58d64e64b4fd6d4df6839f8ba33515fb609ca61ea6d1ed7400b8fd47bac9acc0",
+    "/home/jmercedes/chowla_cosine/.research/agents/tdense17_scratch/fourway_independent_cert.py": "bb70232e9bfec1dce4e70c2fc3bfbd45988494708e907409b6a7e82a4e13a801",
+    ".research/agents/tdense17_scratch/fourway_independent_certificate.json": "f5c32aee6f2ccdcd0bf46df918f9510dff1e337aaa888d437eaeb1c3555b2214"
+  }
+}

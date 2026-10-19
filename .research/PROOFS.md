@@ -2268,3 +2268,56 @@ kernel-checked). Items 4–8 are paper proofs or conjectures as labeled. No cycl
    displacement. With cardinality bounds alone it still gives only ¼.
 Status: no exponent gain. WRS remains CONJECTURED. The cyclic-WRS line is PAUSED in favour of the all-sets
 architecture (NOTEBOOK cont. 19): sub-multiplicativity + the torsion-free boundary constraint.
+
+## P70. Round-17 agent results: self-difference-graph programme corrected; CLIQUE-S refuted; sharp-boundary Gibbs lemma; √n for independent roundings (report .research/agents/tdense17_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ CLIQUE-S IS FALSE for every pair of constants (paper proof, lead re-derived; deterministic terminating family).
+   - Construction: L = t⁶, k = t⁵, g = (L − |j|)⁺, p_a = (g⋆g)(a)/Q. Then 1 + 2Σp_a cos(ax) = |ĝ|²/Q >= 0.
+   - Force [1, k] ⊂ A and round a > k independently. The forcing cost is Σ_{a<=k}(1 − p_a) <= (3/2)√L, by
+     Cauchy–Schwarz on telescoped increments.
+   - Hoeffding on the grid G = 16L², plus the derivative bound, gives M <= ⌈√(L log₂(128L²))⌉ + 2√L + 1.
+   - Hence the clique {0, …, k} satisfies |C|/K ~ L^{1/3}/√(log L) -> ∞.
+   - Finite instance (L = 4096, seed 17): n = 3086, max A = 7587. Agent: pure-Arb certificate M <= 384437/5000.
+     LEAD re-certified by a different method (blocked Arb-DFT + Taylor, src/r17_rerun_lead.py): M <= 76.884, with
+     prefix [1, 1034] ⊂ A, so clique/K >= 6.73 (examples/r17_certificates/).
+   - These sets are dense (max A/n < 4), so P63 still gives them √n. Clusters inside smooth tapers cost nothing.
+2. ✓ SHARP-BOUNDARY GIBBS LEMMA (elementary; lead re-derived). For all finite A and all integers d, k >= 1:
+       M(A) >= c₀k − D_d(k),   c₀ = 2/(3π) − 1/8 = 0.0872…,
+       D_d(k) = |[1, k] ∖ A_d| + Σ_{b ∈ A_d, k<b<4k} (1 − b/(4k)),   A_d = {a/d : a ∈ A, d | a}.
+   Proof:
+   - Average over d-th roots of unity: M(A_d) <= M(A).
+   - Fejér smoothing of degree 4k − 1 gives g = Σ_{b<4k}(1 − b/4k)cos(bx) >= −M.
+   - At x = 3π/(2k+1) the full interval gives −(1 + csc(3π/(4k+2)))/2 <= −½ − (2k+1)/(3π).
+   - The weights cost <= (k+1)/8; missing or extra frequencies cost <= D_d(k).
+   - This is the correct structured-branch input: the boundary must be sharp in the AMBIENT difference spectrum.
+     The item-1 family has D_1(k) ≈ (9/8)k, so it fails the lemma's hypothesis, as it must.
+3. ✓ √n FOR INDEPENDENT ROUNDINGS (new; lead re-derived every step). Let A be the random set with independent
+   P(a ∈ A) = p_a, let w be a P28 triangular window, and let v = Σp_a(1 − p_a)w_a².
+   - Statement: P28 gives M >= B := ½E_x|Σw_aX_a e^{iax}|, with
+         E B >= v/(2√(6v+1)),   Var B <= ¼.
+   - Proof: symmetrize, take a fourth moment (E|W|⁴ <= 3Q² + Q) and use Hölder; the variance step is Efron–Stein
+     for a convex ½-Lipschitz functional.
+   - Corollary: if v >= cμ (μ = E|A| -> ∞), then M >= √(c/224)·√|A| with probability >= 1 − O(1/μ).
+   - Tapered profile p_a = 2α(1 − a/X), uniformly in α <= ¼: M >= √|A|/(8√21) with probability >= 1 − 169/μ.
+   - So the E99c tapered sets at density n^{−1/3}, where all graph certificates are ~n^{1/3}, are covered rigorously
+     with high probability. Selected (correlated) roundings are NOT covered.
+4. ✓ Obstruction (proved, lead checked the spectrum): for the shifted intervals {m+1, …, 3m}, Cay[A] is bipartite
+   with singular values 1/(2 sin((2j−1)π/(4m−2))). The √n-bulk is o(n²) and the Frobenius distance to the PSD cone is
+   >~ n, for W = A, A ∪ {0} and A ∪ (A+t), uniformly in t. Since M is linear here, the dichotomy must be
+   conditioned on λ_min >= −ε√n.
+5. ✓ Joint necessary conditions under M <= ε√n (lead checked the star constants).
+   - Star: the 2×2 compression of Cay[{0} ∪ ±A] is [[0, √(2n)], [√(2n), 3e/n]], with T_S = 6e and
+     e = #{a < b : b − a ∈ A}. Hence e >= (1/(3ε) − 2ε/3)n^{3/2}.
+   - Bulk: Σ_{|λ|<=γ√n}λ²/n² <= 2ε·max(γ, 2ε).
+   - P28 spikiness keeps its energy factor.
+   - P48/P53 do NOT extend to vanishing density: all scale-X twisted limits vanish there.
+6. ✓ Circularity warning (lead checked): the unrestricted P29(b) certificate EQUALS M. At h = 1, L = 2,
+   f(θ) − 2Σ_{a even}cos(aθ) = −f(θ + π). So an adversary defeating fully optimized P29(b) is a Chowla counterexample;
+   searches must use restricted families.
+7. Also proved (agent):
+   - Gram positivity alone is not a clique statement: the induced P3 has λ_min = −√2.
+   - o(n⁴) C4-quasirandomness does not give a √n-bulk (blow-up counterexample).
+8. NUMERICAL: 58 adversarial sets plus 4000 swap proposals, minimizing the MAX of the restricted certificates
+   (P28 sample, W2, Bhatia–Davis, restricted P29(b)). Best ≈ 0.43√n; no family defeats all four.
+Status: items 1–6 are paper proofs (1 also has two independent finite certificates). The FOUR-WAY COVER remains
+OPEN. The remaining adversary class: CORRELATED (selected) roundings at vanishing density that hide P28 window
+variance without creating a sharp ambient boundary.

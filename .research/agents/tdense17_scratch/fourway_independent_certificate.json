@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "n": 3086,
+  "X": 7587,
+  "grid": 2097152,
+  "precision_bits": 120,
+  "B_rational": "384437/5000",
+  "B_decimal": "[76.887400000000000000000000000000000 +/- 1.34e-34]",
+  "S3": 62806119343873,
+  "smallest_margin_lower": "[0.0024846569354703879614835131144354214 +/- 1.34e-39]",
+  "global_clique": 1025,
+  "in_S_clique": 1024,
+  "global_ratio_rational": "2562500/384437",
+  "global_ratio_decimal": 6.665591501338321,
+  "in_S_ratio_rational": "2560000/384437",
+  "in_S_ratio_decimal": 6.659088485239454,
+  "seconds": 11.529580116271973,
+  "flint_version": "0.9.0"
+}

@@ -1,4 +1,4 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 15: P66 audited, C < 13.699; WRS isolated")
+# STATE — current targets and honest status (updated 2026-10-19 evening; newest block: "Session 3, rounds 16–17: all-sets programme, P69–P70")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
@@ -629,3 +629,28 @@ Proved this block:
     - E59 (running) gives the R(n) trend for smooth escape-class profiles.
 (3) Lean. The agent is on T5 (Beckner M1–M5). Next agent: P34 in complex-coefficient form (generalize p31_elementary to
     Σ(a_j cos jx + c_j sin jx) with a_j² + c_j² <= 1; Corollaries A–C), then P33, the dilation pinch and P29.
+
+
+## Session 3, rounds 16–17: all-sets programme, P69–P70 (2026-10-19 evening)
+- PRIORITY (user, 2026-10-19): PROVE Chowla. The evidence leans that way. Both tracks stay recorded.
+- Cyclic WRS line PAUSED (P69: heavy-core-sumset fake). The new programme works on integer sets directly
+  (NOTEBOOK cont. 19, with corrections in items 10–11).
+- New tools:
+  - spike sub-multiplicativity;
+  - ∫log(M + f_A) >= −log 2 (torsion-free);
+  - Bhatia–Davis bound for P9 graphs;
+  - the trace split;
+  - the sharp-boundary Gibbs lemma M >= c₀k − D_d(k) (P70.2);
+  - √n w.h.p. for independent roundings of any profile with window variance >~ μ (P70.3).
+- E99: near-extremizers have a self-difference-graph edge ≈ −0.72√n. E99b/c: flat random sets get >~ √n from W2 at
+  every density; PD-tapered sets at density n^{−1/3} get only ≈ 3.1n^{1/3} from graphs (P70.3 covers them w.h.p.).
+- REFUTED this block:
+  - the unconditioned bulk-vs-PSD dichotomy (three ways);
+  - CLIQUE-S (P70.1, certified clique/K >= 6.73);
+  - "C½ is a semicircle edge" (downgraded to an analogy).
+- OPEN core: the FOUR-WAY COVER under M = ε√n (P28 spread / star / bulk / sharp boundary). Remaining adversary:
+  correlated selected roundings at vanishing density that hide P28 window variance with no sharp ambient boundary.
+- First next derivation: decide whether the four joint conditions of P70.5 are INCONSISTENT for small ε, or merely
+  an equivalent restatement. Concretely: try to build a correlated rounding with small P28 window variance and
+  D_d(k) >~ k at every scale (the tapering heuristic), or prove that low window variance at every scale forces a
+  sharp boundary somewhere.

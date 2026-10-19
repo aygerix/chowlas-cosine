@@ -1,0 +1,124 @@
+{
+  "exact_profile_checks": 1520,
+  "exact_moment_sets": 127,
+  "independent_certificate": {
+    "M_upper_integer": 80,
+    "clique_size": 1025,
+    "rigorous_ratio_lower": "1025/160 = 6.40625",
+    "grid": 262144,
+    "precision_bits": 140,
+    "sum_a2": 17178185031,
+    "remainder": "[1.2345728397610530789409364972795758928571 +/- 4.33e-41]",
+    "point_value": "[-76.88372907347625138422285240917652965 +/- 4.48e-36]",
+    "passed": true,
+    "method": "Arb DFT; nearest global minimum, f-prime=0, global sum(a^2) Taylor bound; pi<22/7"
+  },
+  "translated_intervals": [
+    {
+      "m": 24,
+      "t": 0,
+      "vertices": 48,
+      "beta1": 0.045224091476706856,
+      "psd_distance_per_vertex": 0.3461093276215867
+    },
+    {
+      "m": 24,
+      "t": 1,
+      "vertices": 49,
+      "beta1": 0.04917056216234902,
+      "psd_distance_per_vertex": 0.3534797566467093
+    },
+    {
+      "m": 24,
+      "t": 24,
+      "vertices": 72,
+      "beta1": 0.0687337671811642,
+      "psd_distance_per_vertex": 0.4465696201060637
+    },
+    {
+      "m": 24,
+      "t": 48,
+      "vertices": 96,
+      "beta1": 0.09899517270142878,
+      "psd_distance_per_vertex": 0.4666510564166176
+    },
+    {
+      "m": 24,
+      "t": 240,
+      "vertices": 96,
+      "beta1": 0.09044818295341375,
+      "psd_distance_per_vertex": 0.24473625259314044
+    },
+    {
+      "m": 96,
+      "t": 0,
+      "vertices": 192,
+      "beta1": 0.02456789456728015,
+      "psd_distance_per_vertex": 0.3517071461694609
+    },
+    {
+      "m": 96,
+      "t": 1,
+      "vertices": 193,
+      "beta1": 0.02508543237422802,
+      "psd_distance_per_vertex": 0.35354864475092207
+    },
+    {
+      "m": 96,
+      "t": 96,
+      "vertices": 288,
+      "beta1": 0.03332665894528516,
+      "psd_distance_per_vertex": 0.44835641909264407
+    },
+    {
+      "m": 96,
+      "t": 192,
+      "vertices": 384,
+      "beta1": 0.05037025690378399,
+      "psd_distance_per_vertex": 0.4666948097151928
+    },
+    {
+      "m": 96,
+      "t": 960,
+      "vertices": 384,
+      "beta1": 0.04913578913456034,
+      "psd_distance_per_vertex": 0.24869450804819426
+    },
+    {
+      "m": 192,
+      "t": 0,
+      "vertices": 384,
+      "beta1": 0.016643979250979827,
+      "psd_distance_per_vertex": 0.35263147666272393
+    },
+    {
+      "m": 192,
+      "t": 1,
+      "vertices": 385,
+      "beta1": 0.01681831382982522,
+      "psd_distance_per_vertex": 0.3535521979672429
+    },
+    {
+      "m": 192,
+      "t": 192,
+      "vertices": 576,
+      "beta1": 0.022516463703019716,
+      "psd_distance_per_vertex": 0.44864430325820226
+    },
+    {
+      "m": 192,
+      "t": 384,
+      "vertices": 768,
+      "beta1": 0.03368606236214112,
+      "psd_distance_per_vertex": 0.4666969598350858
+    },
+    {
+      "m": 192,
+      "t": 1920,
+      "vertices": 768,
+      "beta1": 0.03328795850195967,
+      "psd_distance_per_vertex": 0.24934810840803778
+    }
+  ],
+  "flint_version": "0.9.0"
+}

@@ -2039,3 +2039,27 @@ new relaxation, not finer grids.
      evasions.
    - (T3) A construction probe: Paley-type fronts (q ≈ X) with coordinated tapers, measuring R on the VM. This is
      Track C: if coupled tapers of strong fronts beat 1/D numerically, that is the first escape signal.
+6. (cont. 16, added while round 12 runs) Two structural remarks (lead).
+   - (a) The coupled object IS the original problem in product coordinates.
+     - Joint structure: for each spike θ, W_θ(·) is PD in t (P48); for each t, W_·(t) is the transform of the
+       two-valued local pattern. Together these say exactly that G(y, t) = 1_{E_t}(y) is PD on H × R.
+     - The exact version is P53: a PD indicator is an open subgroup, which is impossible with t ∈ [−1, 1].
+     - The mesoscopic version (H ≈ Z_N, N ≈ X) is "Chowla for E ⊂ Z_N × [−1, 1]". Via k ↦ (k mod N, k/X), E is just
+       A. So beyond second order there is no further Z-specific lever except the subgroup restrictions (P63.4).
+     - Everything else is binary Chowla itself. Hence T-dense beyond 1/D sits at the level of dense (cyclic/product)
+       Chowla, with FRONT-½ as its cleanest instance.
+   - (b) Partial-period lemma (PROVED, lead; used in the round-12 brief). Let S ⊂ Z_q be a symmetric half-set with
+     λ_γ >= −K (γ ≠ 0), s_c = 2·1_S(c) − 1 and Y < q. Then for all x,
+         Σ_{k<=Y}(1 − k/Y)s_k cos kx >= −K/2 − ½.
+     Proof: S(x) = (1/(2q))Σ_γ λ_γ F_Y(x + 2πγ/q) − s_0/2 with Fejér F_Y >= 0, and Σ_γ F_Y(x + 2πγ/q) = q when Y < q;
+     also λ_0 + K >= 0. So a cyclic counterexample restricted to ANY initial segment shorter than q, with Fejér taper,
+     is a weighted integer near-counterexample (weights (1 − k/Y)·1_S(k)). Binarising the taper is the whole difficulty.
+   - (c) P61 for sparse sets (sketch, lead).
+     - Statement. Let n -> ∞ with M = o(√n), and let X* be the trimmed top scale (drop an o(√n) tail). The only binary
+       input of P61(a) is the diagonal; for sparse sets the energy profile is the normalized density. So the limit
+       profile π (when regular at 0) is PD (energy-PD) and satisfies ∫_0^1 φ(π/π(0)) <= D.
+     - Example: π ∝ (1 − t)^β is excluded for β < β*, where ∫_0^1 φ(u^β)du = D. Since β = 1 gives 1/6 and β = 2 gives
+       0.1073, β* ∈ (1, 2).
+     - It is a sharp second-order front-loading criterion for ALL sets, ineffective. It sharpens P31/P47 qualitatively.
+     - It says nothing about sets whose front lives at scales << X* (an atom of the limit at t = 0).
+     - Status: SKETCH. Not recorded in PROOFS until the sparse normalization of every P61 step is written out.

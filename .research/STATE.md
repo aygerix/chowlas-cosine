@@ -5,8 +5,10 @@ and kills. Side results are not the prize (user, 2026-10-19).
 Latest (2026-10-19, after the advisor review): A2 automatic sets are CLOSED as a design class. All 71,840 small automata
 fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T-A2 is open (side lemma).
 - A3 (rational-spike anatomies) adds design rules D8 and D9 and the proved feature F11.
-- Step (c) is unchanged. NEXT: make D9 (union descent) a rigorous lemma, replacing "disjoint spike sets" by an
-  ℓ²-decomposition of the INV measure ν (NOTEBOOK cont. 27 §4).
+- Step (c) is unchanged. D9 made rigorous reduces to M >= ½‖f‖₁ (L¹ additivity over separated pieces), which is too weak.
+- A4: the blueprint (continuum) level is consistent, so C* lives entirely in the 0/1 fine structure.
+- NEXT: the rank dichotomy for INV's Bohr pieces. First lemma: rigorous E73 (model sets with convex windows in T^d
+  have M >= c√n uniformly in d).
 
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 

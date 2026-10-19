@@ -229,6 +229,35 @@ The prize is (c). Everything else is support.
     The one new quantitative point is E73's mechanism. Window perimeter puts L² ≈ Per/(2π²ρ) beyond radius ρ. That
     forces N·vol >= (c·log X/δ²)^D significant frequencies, whereas a ball's Gibbs is only (2/e)^{D/2}.
 
+- A4 (2026-10-19). BLUEPRINT LEVEL and the missing robust-structure tool.
+  - Literature check: one extended search for robust or approximate versions of Ma's theorem (cyclic PDS) and for
+    stability of two-valued spectra found nothing. The robust step "approximately two-valued spectrum ⇒ union of
+    approximate subgroups" appears to be new territory, not a citation gap.
+  - Prime-field face of D8: multiplicative-period sets in Z_p. Take A = union of cosets of a subgroup H of index e. On
+    Z_e, f is 1_J ⋆ η, where η is the vector of Gauss periods. η has two-valued autocorrelation (p·δ − |H|), and its
+    DFT is the Gauss sums G(χ), each of modulus √p.
+    - So one-sidedness needs every arg G(χ) aligned (real Gauss sums). That is the semiprimitive case, which exists
+      only in F_{p^{2γs}}, never in F_p.
+    - For e >= 3 the phases are equidistributed, so v is random-like.
+    - Number-theoretic restatement: the C* object needs elementary-abelian torsion.
+  - Blueprint consistency (heuristic, checked by hand). Write the anatomy as a time–frequency blueprint: front density
+    ρ₀(u), and twisted local densities ρ_j(u) of the spikes x_j at position u = k/X. Four constraints:
+    - local Booleanity: Σ_j |ρ_j(u)|² ≈ ρ₀(u);
+    - local Wiener: Σ_j |ρ_j(u)| >= 1, so at least 1/ρ₀(u) spikes are active at every position;
+    - twisted <= untwisted: |ρ_j| <= ρ₀;
+    - PD profiles.
+    These are mutually CONSISTENT. Example: ρ_j = c_j(1 − |u|) gives ρ₀ ∝ (1 − |u|)², which is PD. So no contradiction
+    lives at the continuum level.
+  - Fractional blueprints are empty. Write 1_A = ρ + e (ρ a profile, e the rounding). Only Σρ²/2 of f's L² can be
+    coherent, and C* needs essentially all n/2 in spikes, so ρ must itself be Boolean. Hence C* is entirely a property
+    of the 0/1 fine structure. This sharpens A1 and F10: the rounding IS the object.
+  - E5 already showed that Bu sets are strict local optima, so a local-search probe from them adds nothing.
+  - Next proof-side target: a RANK DICHOTOMY for the Bohr pieces that INV (P40(c)) produces.
+    - Low rank: sharp boundaries, hence Gibbs (P70.2-type).
+    - High rank: boundary noise approaches Bernoulli (E73, currently numerical only).
+    First lemma: a rigorous E73, i.e. M >= c√n·g(d) for model sets with convex windows in T^d, with g(d) bounded
+    below uniformly in d.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P75 (automatic sets: domination-or-twin ⇒ Re μ̂ < 0 ⇒ linear M; 28.5% coverage) + E108 (FPC: all 71,840 small automata certified dead). T-A2 open.

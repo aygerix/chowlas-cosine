@@ -176,3 +176,7 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
 - Ledger verdict (ROUTES): structure step = group-agnostic energy/Hilbert-cube iteration with loss K² per level;
   certificate = P9/run-top. The scale-combining loss is by design: O(1) loss per level needs ‖g‖₁ = O(1), i.e.
   K = O(1). Not a tool for C*.
+- 2026-10-19 extended web search for "approximate / robust partial difference sets, stability of two-valued spectra,
+  robust Ma theorem": nothing found. The hits are only spectral sets in cyclic groups (Forum Math Sigma 2022), which use
+  Ma's lemma exactly, and PDS packings. Absence of a hit is not proof of novelty.
+

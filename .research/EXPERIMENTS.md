@@ -1665,3 +1665,21 @@ Reading:
   The X = 23, 24 and 30 optima are single Sidon blocks.
 - Reading: the best known sets need phase cancellation (CSTAR F12). Flat CP stays above ≈ 0.75 at these sizes,
   consistent with CP½.
+
+## E112a (2026-10-19, cont. 29) CP-efficiency in prime cyclic groups (src/e112_cpzp.py; examples/e112/e112a.jsonl)
+- Setup: Z_p has no nontrivial subgroups, so it has no spreads.
+  - S symmetric; K = −min_{γ≠0} Σ_{s∈S}cos(2πsγ/p); ratio |S|/K².
+  - C_CP = flat completely positive certificate cost, by column generation with exact Gurobi clique pricing.
+  - "opt" = pricing proved optimal; "stalled" = a degenerate dual repeated a column, so C_CP is an UPPER bound.
+| set | p | ratio | C_CP/K | status |
+|---|---|---|---|---|
+| E41 half-set optimum | 71 / 79 / 83 / 89 | 2.08 / 2.10 / 2.17 / 2.05 | 5.45 / 5.00 / 5.25 / 2.64 | stalled (UB) |
+| E41 half-set optimum | 43–73 (others) | 1.66–1.97 | 2.1–5.8 | stalled (UB) |
+| Paley (QR) | 13–89 | 1.13–1.62 (→ 2) | 1.30–2.11 | opt |
+- Reading:
+  - Paley's CP cost equals the clique bound |S|/(ω − 1) (ω = 5 at p = 89), so its efficiency grows like √p/log p.
+  - The E41 optima reach ratio 2.05–2.17 with NO subgroups and are far from CP-efficient. So ratio slightly above
+    2 does not force spreads at these sizes.
+  - E41's SA data put the Z_p half-set ratio at a peak of ≈ 2.15 (p = 80–150), declining for larger p
+    (search-limited). This is consistent with a bounded ratio in Z_p and a spread threshold T ≈ 2.2 rather than 2.
+  - No refutation of SCP(T) for any fixed T: finite data cannot test the C(T) constant.

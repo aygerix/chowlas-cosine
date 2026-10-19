@@ -362,8 +362,8 @@ The prize is (c). Everything else is support.
       K ≈ √p.
     - SCP(T) for large T is consistent with every known object: all ratio → ∞ objects are spreads and CP (quadrics,
       semiprimitive cyclotomy, Latin-square partial spreads, subgroup unions).
-    - E41's Z_p half-sets (ratio ≈ 2.14, p = 71–89) have not been tested for CP-efficiency. That is the first
-      falsification check for SCP at T slightly above 2.
+    - E112a: E41's Z_p half-sets (ratio 2.05–2.17, no subgroups) have C_CP/K ≈ 2.6–5.5 (upper bounds). So SCP
+      needs T > ~2.2. E41 SA data suggest the Z_p ratio peaks near 2.15. No refutation for fixed T.
   - Meaning for C*: a Z counterexample needs a CANCELLATION object (non-CP, F12) with ratio → ∞. No such object is
     known in ANY abelian group: all known cancellation objects (Paley, Gauss periods) sit at ratio <= ~2. So the
     constructive search should target "high-ratio non-spread objects in finite groups" first. Finding one would

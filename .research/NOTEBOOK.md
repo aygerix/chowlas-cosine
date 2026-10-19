@@ -2941,3 +2941,10 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
      non-Sidon block has E(B)/s² up to s, so flatness of the sum is the whole content.
    CP½ remains a CONJECTURE, supported by E111 (no flat-CP certificate below R_CP ≈ 0.754 at X <= 39; single Sidon
    blocks hit (1/√2)√(k/(k − 1)) exactly). It is a side lemma: its value is to make F12 a theorem.
+10. SCP toy target in F_p² (lead; partial):
+    - Line restriction (Poisson): |S ∩ L| = (1/p)Σ_{ξ∈L^⊥}Ŝ(ξ) >= (|S| − (p − 1)K)/p for every line L through 0.
+    - Positivity gives Σ_{ξ≠0}Ŝ₊ <= p²K − |S| and Σ Ŝ₊² >= p²|S| − |S|² − p²K². So Ŝ has spikes of height
+      >= ~|S|/K on ~p²K²/|S| points.
+    - Spreads (m lines) saturate this exactly: height p, spike set = m dual lines, |S| ≈ pK.
+    - Missing step for SCP(F_p²): a spike at ξ forces the line {tξ} into the spike set (scalar invariance is not
+      given). E112a runs the Z_p test of SCP just above ratio 2.

@@ -27,6 +27,25 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
      frequencies, ≈ 0 elsewhere), together with a taper that makes p̂ vanish beyond X with p >= 0. Atomic ν with an
      exactly two-valued transform on all of Z is periodic (K = 1, S = qZ). The band edge X is what costs Gibbs.
 
+(O6) THE OBJECT EXISTS IN FINITE GROUPS: quadrics in F_p^r (lead, 2026-10-19; standard Gauss-sum computation).
+     Take A = {x ∈ F_p^r \ 0 : Q(x) = 0}, Q a nondegenerate quadratic form, r >= 3, p odd.
+     - Spectrum (exact): 1̂_Q(ξ) = p^{r/2−1}(p − 1)·η on the dual cone Q*(ξ) = 0, and −p^{r/2−1}·η off it
+       (η = ±1, the Gauss sign for even r; analogous for odd r). Up to the trivial character it is TWO-VALUED.
+     - With the sign right: M = p^{r/2−1}, n ≈ p^{r−1}, so R = M/√n ≈ p^{−1/2} → 0 (fixed r, p → ∞). This is the
+       group-agnostic n^{1/4} at r = 3.
+     - Anatomy, matching F1–F7 exactly:
+       - spikes on the dual cone, of measure ε² ≈ 1/p, at height ≈ √(np) = √n/ε (mesoscopic);
+       - a flat negative background −ε√n;
+       - the cone is random-like additively at its own scale;
+       - the spike set is invariant under scalar multiplication (lines through 0).
+     So C* in Z is precisely: can this anatomy be realized with distinct positive integers, i.e. through the band
+     limit / taper and in a torsion-free group? A proof must use the Z-features that the quadric lacks:
+     - the front and band limit (no box in Z is a group; the box boundary causes Gibbs);
+     - torsion-freeness (no lines through 0; dilation does not preserve [1, X]).
+     The quadric lift (ROUTES) fails at the taper: a sub-selection C' ⊂ C of relative size s has error spectrum of
+     RMS √(s(1−s)|C|) by Parseval (F10). Open finite question: can that error spectrum sit ON the dual cone?
+     ("algebraic taper": C ∩ {Q₁ = 0} ∩ ⋯ nested complete intersections; Deligne-type bounds suggest no.)
+
 ## 2. What is known about a counterexample (forced features; each with its source)
 | # | Feature | Status | Source |
 |---|---|---|---|
@@ -122,6 +141,14 @@ The prize is (c). Everything else is support.
   log(2M)/log(1/δ) for {p <= δ}; logarithmic, not a C* tool.
   Side fact (unimodular factors): the extreme lag max(B) − min(B) has multiplicity 1, so a unimodular Fejér–Riesz
   factor has an exactly two-valued autocorrelation only with λ = 1 (Sidon). Phased digit-cube designs are dead.
+
+- REVIEW after A1, A2 (2026-10-19). Both reduce to one constructive core: ROUND a PD multifractal density (Riesz
+  product / quadric spectrum) to a set, with the rounding noise confined under the spikes, recursively. O6 shows the
+  object exists in F_p^r, so the obstruction is purely the Z-features (band limit, order, torsion-freeness).
+  - Next constructive test: does F_p^r admit an "algebraic taper", i.e. sub-selections of the quadric whose error
+    spectrum lies on the dual cone?
+  - Next proof-side target: a quantitative statement that each taper level costs a fixed fraction of the spike
+    height (Gibbs) or adds noise (F10), with no recursion that pays both less.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

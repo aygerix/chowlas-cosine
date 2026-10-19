@@ -707,3 +707,25 @@ Reading:
 - Consistent with P34: no optimum gets near the bound.
 - The optimal unit-amplitude constant looks like ≈ 0.6, stable in n.
 - Sign-only search is much harder: it is SA-limited, and the values rise with n.
+E61 addendum: n = 256 gives phases 0.6072 and signs 1.155 (bound 0.284).
+
+## E62 (2026-10-19) Phase relaxation of the best 0/1 supports (src/e62_phase_relax.py; examples/e62/e62.jsonl)
+Question (P34: window methods are phase-blind): is C½ a positivity phenomenon or a support phenomenon?
+- Method: maximize min_x Σ_{a∈A} cos(ax − θ_a) over the phases, on fixed supports A. Annealed soft-min L-BFGS with FFT
+  gradient, 2 random starts. θ = 0 is a stationary point by evenness, so that start is uninformative.
+- Final value: 32× grid minimum (UNCERTIFIED).
+   support            n     R (0/1)   R (best phases)
+   dense N50          50    0.5696    0.4982
+   Bu q101            380   0.7641    0.6815
+   Bu q199            1560  0.7018    0.6431
+   Singer diff q31    496   0.7184    0.5995
+   E49 triangle SA    299   0.7842    0.5559
+   (cf. full interval [1, n], E61: 0.607, flat in n)
+Reading:
+- Freeing the phases buys 0.06–0.23 at these sizes, with the most on poorly optimized 0/1 sets.
+- The best phase-relaxed value seen is 0.498, on the record dense support: ½ to within search noise.
+- So relaxing positivity does not produce a qualitatively sub-½ regime on these supports.
+- Working conjecture recorded: phase-C½, i.e. −min Σ_{a∈A} cos(ax − θ_a) >= (½ − o(1))√|A| for all supports and phases.
+  - It is weaker evidence than C½ itself: only 2 starts per support, small n.
+  - If true, any C½ proof may be phase-blind except at the level of supports. But P31-type profile methods are already
+    known to fail on front-loaded supports (E60).

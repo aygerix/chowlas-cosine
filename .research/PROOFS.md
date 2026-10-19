@@ -649,3 +649,17 @@ Consequence for constructions (PROVED). If M(A) <= R√n with A ⊂ [1, X], then
 - At the threshold the profile must be close to the Turán extremal triangle (stability, heuristic).
 - Z_p half-sets sit exactly at this density, with no Turán constraint (the wrap-around removes the endpoint): a
   structural reason why the Z_p optima (E41) can be better than Z.
+P29(b), twisted form: spectral front-loading (PROVED, same proof with the grid shifted by x₀).
+- For every x₀ and integers L >= h >= 1:
+      M(L − h) >= h·f_A(x₀) − L·Re Σ_{a∈A} G(a) e^{iax₀}.
+  The j = 0 grid term is now h·f_A(x₀); G is even, so the pairing gives 2Re Σ G(a)e^{iax₀}.
+- With L = X + h and A ⊂ [1, X]:
+      f_A(x₀) <= ((X + h)/h)·(f ∗ F_h)(x₀) + (X/h)·M,   (f ∗ F_h)(x₀) = Σ_{a∈A, a<h} (1 − a/h) cos(a x₀).
+- Meaning: every peak of f_A must already be present, proportionally, in the frequencies below h. The low part's
+  Fejér mean at x₀ is at least (h/X)·f_A(x₀) − M.
+- At x₀ = 0: |A ∩ [1, h)| >= hn/(X + h) − MX/(X + h), i.e. initial segments carry at least their proportional
+  share minus M (front-loading, consistent with the Turán triangle profile).
+- Back-loaded sets lose. A ⊂ [X/2, X] gives f_A <= 2M everywhere, hence M >= n/2.
+- Compare P25, which bounds one window by the same low part:
+  |Σ_a F̂_H(a − m)e^{iax₀}| <= 2M + 2(f ∗ F_H)(x₀).
+  P29(b) bounds the whole sum instead, at the cost of a factor X/h.

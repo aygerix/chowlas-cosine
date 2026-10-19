@@ -710,5 +710,22 @@ Status.
   - A uniform bound for all L, sketch: with the cumulative mass a(s) = Σ_{j<=s} v_j² and C–S per s,
     Σ_s (v∗v)_s² <= 1 − 2∫A(1 − A) (continuum form). Splitting on the shortest interval carrying 1 − θ of the mass
     gives ρ_L <= ~0.95. Needs a careful discrete write-up; too weak for (ii), but enough for a nonempty (i).
-- NOT kernel-checked, not externally reviewed, novelty unchecked. Next: an independent review (codex agent) plus a
-  rigorous ρ_L lemma; then Lean (Fejér–Riesz and the integration step are mathlib-friendly).
+- Literature check: Levin–Lubinsky 2015 prove only a limsup bound for finite q and conjecture the limit, so they do
+  not give the needed upper bound. Replaced by a self-contained proof.
+- Lemma P31-N (asymptotic constant; PROOF SKETCH by lead, truncation errors to be written out):
+      ρ_L <= A_{4/3}⁴ + O(1/T + T log T / L) = 0.7698 + o(1).
+  - Choose B̂ smooth with Σ_m |B̂(ξ + 2πm)|² ≡ 1 and B̂ = 1 on [−π + 1/T, π − 1/T] (square-root partition of unity).
+    Set h(t) = Σ_j u_j e^{ijθ} B(t − j).
+  - Periodization: ∫|h|² = ‖u‖², and ∫|h ∗ h|² = (1/2π)∫|U(x + θ)|⁴ Φ(x)dx with Φ = Σ_m|B̂(x + 2πm)|⁴ >= 1 off the
+    two aliasing bands of width 2/T.
+  - Averaging over θ, some θ puts at most (2/(πT))‖U‖₄⁴ in the bands.
+  - Beckner's sharp Young inequality on R (complex h, exponents 4/3, 4/3 -> 2, constant A_{4/3}² = 0.87738) plus
+    Hölder on supp h. B decays superpolynomially at scale T, so truncate to length O(T log T).
+  - Conclusion: (1 − 2/(πT))‖U‖₄⁴ <= 0.7698‖u‖⁴(L + 1 + O(T log T)).
+  Hence the dense corollary (ii) holds RIGOROUSLY for large X with any threshold δ > 0.385 (once the lemma is written
+  out). The numerical ρ_∞ ≈ 0.687 would lower it to 0.344.
+- NOT kernel-checked, not externally reviewed, novelty unchecked. Next:
+  - independent review (codex agent, after OR3);
+  - full write-up of Lemma P31-N;
+  - Lean (Fejér–Riesz and the integration step are mathlib-friendly; Beckner is not in mathlib, so keep it as a cited
+    hypothesis or use the crude uniform bound).

@@ -45,6 +45,18 @@ identities T3(a)–(e) incl. the spectral gap (PROOFS 'Lean status update').
 NEW (session 2): P17 rigorous bounds on the doubly-positive profile constant: ρ* <= 0.9057 (all profiles), <= 0.7698 for
 w = h⋆h̃ with h >= 0 (Beckner + Hölder); numerical sup 0.7239.
 
+NEW 2026-10-19 (lead):
+- P29 (PROVED, elementary): X·M >= hn − (X + h)(h − 1)/2. Density > 1/2 forces linear M, and near-extremal sets
+  taper to density 1/2. P29(b) is the twisted form (spectral front-loading).
+- **P31** (PROVED modulo Lemma P31-N, whose proof is sketched): window–Nikolskii inequality
+  W(n/2 + M²) <= ρ_L(L + 1)(M² + S_A/2). Consequences:
+  - M >> √n for every A that is not front-loaded (front density below 2δ/ρ);
+  - dense Chowla in Z: |A| >= 0.39·max A ⇒ M >> √n;
+  - any counterexample must be front-loaded beyond 2.9δ at every scale.
+  Numerical ρ_∞ ≈ 0.687 (E48); rigorous ρ_∞ <= 0.7698 via Beckner. NOT independently reviewed. Novelty unchecked
+  beyond one search.
+- P30 (CONJECTURED reformulation): uniform cap on the share of ‖f‖₂² above K·M implies Chowla. E47 measures it.
+
 ## Heuristic / numerical
 H1 Wick model. Dense-profile identity R = c_E sqrt((1−ρ)/2) (σ_E^2 = (1−ρ)N/2), ρ <= ρ* ≈ 0.7239 (numerical sup over
 doubly-positive profiles; autocorrelation analogue of the Matolcsi–Vinuesa constant). Symmetric rounding (c_E >= √2)
@@ -137,12 +149,11 @@ All calculations on GCP VM dirichlet via src/dirun.sh; never the laptop or fejer
 Process rule (user, 2026-10-18): computations are fire-and-forget; foreground time goes to mathematics, one codex agent
 in parallel.
 
-## First concrete next step (updated 2026-10-18 late night)
-(1) Read E41 for p = 59..89. If min M_p/√p keeps falling below 0.5, find the structure of the optima (dilated
-near-interval + tail): fit the profile and the tail, and test a parametric family for large p. That would be a
-dense-regime construction in Z_p and the first sub-Paley dense family. If it levels off, attack exponent > 1/3:
-  - a symmetric near-planar large spectrum is what the identities allow at λ ~ p^{1/4};
-  - rule it out by difference-set rigidity (Johnsen: −1 is never a multiplier of a nontrivial abelian difference set)
-    in a quantitative form.
-(2) When the construction agent reports: re-certify its records, record them, commit.
-(3) Lean via codex (one subagent at a time).
+## First concrete next step (updated 2026-10-19)
+(1) Write out Lemma P31-N with explicit truncation errors, giving a uniform explicit ρ_L <= 0.78 for L >= L₀ and a
+    crude uniform bound for L < L₀. Then get an independent review of P31 (next codex agent, after OR3).
+(2) Attack the escape class of P31, front-loaded sets: steep profiles (1 − t)^p with p >= 1.91, and core + sparse tail.
+    Candidate: a multi-scale P31, with the window degree replaced by an effective degree. A sparse tail inflates
+    L + 1 without carrying mass.
+(3) Verify the OR3 agent report when it lands. Then Lean for P27 Theorem C / P31.
+

@@ -959,3 +959,26 @@ generalization and Corollaries A–C are the NEXT Lean task.
 Meaning for Chowla: the window method is phase-blind and sees only the energy profile |b_j|². Unit amplitudes on [1, n]
 are the flattest profile, so the one-sided Littlewood problem is exactly the δ = 1 instance of dense Chowla. Sparse
 0/1 sets (Chowla proper) are hard precisely because their profile can be front-loaded (escape class).
+
+## P36. Truncation at gaps: M is almost monotone under cutting A at a gap — PROVED (lead 2026-10-19; elementary)
+Statement. For every finite A ⊂ ℤ_{>0} and every integer D >= 1,
+    M(A) >= M(A ∩ [1, D]) − (1 − cos(π/(D + 2)))·Σ_{a∈A, a<=D} a².
+In particular, if A ∩ (Y, D] = ∅:
+    M(A) >= M(A ∩ [1, Y]) − (π²/2)·(Y/(D + 2))²·|A ∩ [1, Y]|.
+Proof.
+1. Let J >= 0 be the Fejér–Egerváry–Szász extremal polynomial of degree D: Ĵ(0) = 1 and Ĵ(1) = cos(π/(D + 2)), the
+   maximum over nonnegative polynomials of degree D.
+2. Ĵ is positive definite, so 1 − Ĵ(a) = ∫(1 − cos ax)J <= a²∫(1 − cos x)J = a²(1 − Ĵ(1)), using
+   1 − cos(aθ) <= a²(1 − cos θ).
+3. f_A ∗ J = Σ_{a∈A, a<=D} Ĵ(a)cos(ax) >= −M(A), since J is a probability density of degree D and kills every
+   frequency > D.
+4. Hence f_{A∩[1,D]} = f_A ∗ J + Σ_{a<=D}(1 − Ĵ(a))cos(ax) >= −M(A) − Σ_{a<=D}(1 − Ĵ(a)). ∎
+Notes.
+- The Fejér kernel gives the weaker linear error Σ a/(D + 1). The quadratic error is what makes the lemma useful.
+- This is the "gap" exception to the frequency-localization no-go (NOTEBOOK): localization is free where A has no
+  elements to be damaged.
+- Application (E60): for Bu + far outliers (gap ratio T), M(A) >= M(core) − O(n/T²). P16/P31 then apply to the core.
+  So E60's sets escape P31 but not P31 + P36 once T >~ √(n/M).
+- Corollary (P31 + P36): Chowla holds for every set that, after cutting at a gap of ratio >= C·(|core|/√|core|)^{1/2},
+  has a non-front-loaded core of size >= η|A|.
+Novelty: elementary. Folklore-level ingredients (Fejér–Egerváry–Szász, PD increments). Recorded as a tool.

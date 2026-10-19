@@ -1329,3 +1329,59 @@ Strategic decision:
     intervals;
   - E68 (Pareto front).
 - Lesson: re-read the NOTEBOOK index before re-deriving a reformulation.
+
+## 2026-10-19 (night) — P47: the high-pass window; escape class = front-loaded LOCAL VARIANCE (lead)
+1. P47 (PROOFS) in one line: apply the P31 chain to T = H_h·f_A, with H_h = 1 − K_h/K_h(0) ∈ [0,1].
+   - T >= −M, and T's coefficients are the high-pass residual r = 1_A − κ̃_h ∗ 1_A (even extension).
+   - So the window inequality reads W(m² + ‖r‖²/2) <= ρ(L+1)(m² + S_w(r)/2), with L = X + h + w.
+   - P31 is the case h = 0 (r = 1_A). The model/fluctuation split in P47's proof only COMPUTES ‖r‖² and S_w(r):
+     for bounded-discrepancy roundings, ‖r‖² = Σp(1 − p) + O(D₀(1 + V) + XD₀/h) by a² = a.
+   - Consequence: Chowla holds unless, at EVERY scale h, the local variance of A,
+     v_h(j) = (1_A(j) − (κ̃_h ∗ 1_A)(j))², is front-loaded (front mean >= ~2.6 × global mean).
+     For h = 0 this is P31's front-loaded density; h = 1 is the q = 1 denominator filter.
+2. What the escape class looks like.
+   - Front-loaded density AND front-loaded variance means the front has density strictly inside (0,1) (dense fronts have
+     no variance), and the tail is sparse with variance <= ~0.385 × the front's.
+   - Interval + taper sets (E68 anatomy: [1,52] plus a sidelobe-filling tail) are NOT in the escape class: e = 0 at the
+     front. P47 covers their bounded-discrepancy versions.
+   - Remaining picture: front F ⊂ [1, θX] with density in (0,1) and a sparse far tail B ⊂ [θX, X].
+     - M(F) >= c√|F| by P31 (F is not front-loaded at its own length).
+     - The tail must cancel F's dips: f_B >= c√|F| on D_F = {f_F <= −c√|F|}, so |B|/2 = ∫f_B² >= c²|F|·|D_F|
+       (normalized measure), i.e. |B| >= 2c²|D_F||F|, up to the M-slack.
+     - A sparse tail can therefore only cancel dips confined to small measure (negative spikes of f_F). If f_F is
+       Gaussian-like, |D_F| ≍ 1 and the tail is not sparse: contradiction.
+   - Discriminating question: can a front with density in (0,1) have its √|F|-dips confined to measure o(1)?
+3. Macroscopic picture (P48 + P52). Every set has a macroscopic budget e = p(1 − p). Macroscopic atoms with PD
+   continuous profiles can absorb part of it. The residual must be mesoscopic spikes or bulk.
+   The open core is unchanged: mesoscopic spikes (√n << height << X), which neither P48 nor any window sees.
+4. Round-3 agent results recorded as P48–P51 (TD9–TD14). TD10/P49: fixed fractional flat pieces give LINEAR M.
+
+## 2026-10-19 (night, cont.) — P53 macro-SB, and the descent it suggests (lead)
+1. P53 (PROOFS) is the joint, all-atoms form of P48.
+   - Put the local pattern density g(t,ω) on [0,1] × K, K = the dual of a countable group of angle sequences. Then the
+     reflected g̃ has a nonnegative Fourier transform at EVERY (y,θ) by P48.
+   - So g̃ is continuous and PD. A continuous {0,1}-valued function that vanishes for |t| >= 1 is 0.
+   - Hence M = o(X) ⇒ the local spectrum is not purely atomic, i.e. ∫∫g(1 − g) > 0.
+   - The 0/1 constraint enters exactly once, as "g ∈ {0,1}", i.e. a² = a at the level of local patterns.
+2. Checks.
+   - TD10/P49 (flat pieces): g jumps at flat/curved junctions, hence linear M.
+   - Bohr-window sets {m : {mα} ∈ E(m/X)} and residue-pattern sets: g ∈ {0,1}, hence linear M. Consistent with E52
+     (staircases/kinks linear) and E46 (ball-shaped Bohr sets killed).
+   - Bu sets, random sets: g = p(t) (uniform local patterns at every fixed or slowly moving frequency), so P53 is
+     silent, as it must be (M ≍ √X).
+3. Why this matters for √n. Every macroscopically structured mechanism is dead. A counterexample needs a positive
+   share of its local spectral mass in structure of height o(X).
+   - Descent question (D): does the same argument run one level down?
+     - At a mesoscopic level the spikes have height H with K√n << H << X. Their "twisted profiles" have amplitude H/X
+       → 0, so the 0/1 constraint is invisible at that normalization.
+     - The constraint must instead come from Bessel: Σ_atoms|q|² = ∫g² <= ∫g at the finest level (integers), propagated
+       up through the scales.
+   - Candidate quantitative statement (QD): for every C there are δ, c > 0 such that every A ⊂ [1, Cn] with
+     M <= δX carries >= cX of local spectral energy in structure of height <= δX.
+     - QD should follow from P53 plus compactness, once a finite-X notion of "energy in atoms of height >= δX" is fixed
+       (e.g. the largest local twisted energy captured by <= 1/δ² frequency windows of width K/X).
+     - QD is iterable only if the lower level again satisfies a P53-type rigidity. That needs a mesoscopic P48 for the
+       coherent part of spikes of height >> √n. This is the precise next lemma.
+4. E70 (P47 high-pass family on the zoo): every set has best bound >= 0.106√n. The window family captures 33–52% of M
+   on near-optimal sets. Bu/Singer best/√n drifts 0.29 (q=7) to 0.237 (q=31); E70b (q up to 127) is running to see
+   whether it levels off.

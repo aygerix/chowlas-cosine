@@ -1,0 +1,23 @@
+{
+  "exact_bump_checks": 63,
+  "rational_period_checks": 716,
+  "rational_DFT_max_error": 3.573530360512223e-15,
+  "cohomology": [
+    {
+      "X": 1024,
+      "max_error": 8.431380483860107e-05,
+      "X_times_error": 0.0863373361547275
+    },
+    {
+      "X": 4096,
+      "max_error": 2.1078478286640223e-05,
+      "X_times_error": 0.08633744706207835
+    },
+    {
+      "X": 16384,
+      "max_error": 5.26963378935652e-06,
+      "X_times_error": 0.08633768000481723
+    }
+  ],
+  "status": "Exact rational periodicity and Fourier dictionaries; floating DFT/cohomology diagnostics"
+}

@@ -906,3 +906,23 @@ E68 anatomy (n = 64, K = 1, β = 0.176, R = 0.670): A = [1, 52] ∪ {56, 58, 63,
 - The only spike is the central one, carrying 82.5% of the energy. The tail's rounding is the bulk.
 - This is the front-full cumulative-rounding shape (P41's class). E66's 1−t profile shows such shapes drift to
   R ≈ 1.4–1.8 at large n, so they are small-n optima only.
+
+## E69 (2026-10-19) Bounded-discrepancy (non-cumulative) roundings; P47 audit (src/e69_bdround.py,
+## src/e69_p47_audit.py; examples/e69/)
+- E69. Profiles ½(1−t)², (1−t), ½(1−t)⁴, 0.9(1−t)². X = 2^12, 2^14, 2^16.
+  - 'walk': randomized rounding forced to keep prefix discrepancy <= D0 ∈ {1, 4, 16}. Every case has
+    R ∈ [1.6, 3.0], slowly varying in X.
+  - 'block': adversarial TD7-O blocks (B = 16, 256; discrepancy 2–32). Linear M (R = 10–77, minimum at π or π/2).
+  - NUMERICAL (grid + Newton). No small-R bounded-discrepancy rounding was found.
+- E69b. P47 audit on walk roundings. X = 4096, 16384; D0 ∈ {1, 4, 16}; h ∈ {2D0+2, 8D0}; θ ∈ {0.1, 0.3, 0.6};
+  profiles (1−t), 0.9(1−t)², ½(1−t)², flat 0.3. 144 rows.
+  - Every P47 lower bound (rigorous ρ_L and numerical ρ = 0.687) is below the true M.
+  - The numerical U = sup H f_P is <= its P47 bound in every row. Some rows were flagged only because U ≈ 0.001 against
+    a bound rounded to 0.00.
+  - Bound/√X is constant in X (0.06–0.17 with numerical ρ): the √X scaling holds.
+  - The retained energy E/Σe is 0.85–0.99.
+  - Energy pinning Σβ² vs Σp(1−p): differences <= ~4 out of 500–3500, within D0(1 + 2V).
+  - ½(1−t)² (e0/ē = 2.143) gives a positive bound only with numerical ρ at these sizes. The rigorous ρ_L(1 + 2/√L)³ is
+    too large below X ~ 10^6.
+- Round-3 agent T3 audit (.research/agents/tdense3_scratch/summary.json): 121 zoo sets plus 45 flat/curved and Bohr
+  extensions. No set has both β₁ < 0.13 and R < 0.60. The refined R of E68's best row (n = 64) is 0.60619.

@@ -1222,3 +1222,169 @@ This is the rigorous form of P39-O(ii), using positive Fejér bumps instead of s
 - MS ⇒ T-dense (via TD4: the bounded structural part γH(B − ∫B) costs O(K²)).
 - MS is the moment-computable relative of SB (NOTEBOOK): remove bounded-mass positive structure and a bulk must remain.
 - It holds on the P42 family (P43). The deterministic case is the open core.
+
+## P47. Smoothing-defect filter + window: Chowla for bounded-discrepancy roundings with non-front-loaded rounding
+## energy — PROVED on paper (lead 2026-10-19; not kernel-checked; numerically audited E69b)
+Setting.
+- X >= 1; a model sequence P_1, …, P_X ∈ [0,1] (P_j := 0 for j > X); any a ∈ {0,1}^X; A = {j : a_j = 1}.
+- β = a − P; D₀ = max_k |Σ_{j<=k} β_j| (prefix discrepancy); V = Σ_{j=1}^{X} |P_{j+1} − P_j|.
+- P̄ = even extension of P to Z with P̄_0 := P_1; Q₂ = Σ_{j∈Z} |P̄_{j+1} − 2P̄_j + P̄_{j−1}|.
+- Rounding energy e_j = P_j(1 − P_j).
+- Integers h, w >= 1; κ_w(j) = (1 − j/(w+1))₊, W = 1 + 2Σ_{j<=w} κ_w(j)², L = X + h + w, ρ_L as in P31
+  (ρ_L <= (4/(3√3))(1 + 2/√(L+1))³).
+- δ = 4D₀/(h+1) (assume δ <= 1).
+Theorem. Put
+    E⁻ = Σ_{j<=X} e_j − D₀(1 + 2V) − 2δ Σ_{j<=X}|β_j|,
+    S⁺ = Σ_{j<=w} κ_w(j)² e_j + D₀(2 + 2V) + 3δw,
+    Δ  = W·E⁻ − ρ_L(L+1)·S⁺.
+If Δ > 0, then
+    M(A) >= √(Δ / (2(ρ_L(L+1) − W))) − π² h(h+2) Q₂/96 − δ/2.
+Proof.
+1. Filter. H(x) = 1 − K_h(x)/(h+1), with K_h the Fejér kernel Σ_{|k|<=h}(1 − |k|/(h+1))e^{ikx}. Then 0 <= H <= 1, so
+   T := H·f_A >= −M.
+2. Split f_A = f_P + f_β (f_P = Σ_{j<=X} P_j cos jx). Then G := H f_β = T − H f_P >= −(M + U), with U := sup_x H f_P.
+3. U bound (the smooth part is invisible after filtering). Φ(x) = Σ_j P̄_j e^{ijx} = P̄_0 + 2f_P, so
+   H f_P = ½HΦ − ½P̄_0 H <= ½ H|Φ|.
+   - Second summation by parts: −4 sin²(x/2) Φ(x) = Σ_j (Δ²P̄)_j e^{ijx}, so |Φ| <= Q₂/(4 sin²(x/2)).
+   - H = Σ_k κ̃_k(1 − cos kx) <= x² Σ κ̃_k k²/2 = x² h(h+2)/12, with κ̃_k = (1 − |k|/(h+1))/(h+1).
+   - With x²/sin²(x/2) <= π² on [−π, π]: U <= π² h(h+2) Q₂/96.
+4. Coefficients of G. G = ½Σ_j γ_j e^{ijx} with γ = β̄ − κ̃ ∗ β̄ (β̄ = even extension, β̄_0 = 0).
+   - Every interval sum of β̄ is at most 2D₀ in modulus, and TV(κ̃) = 2/(h+1).
+   - Abel summation gives |(κ̃ ∗ β̄)_j| <= 4D₀/(h+1) = δ for all j; in particular |γ_0| <= δ.
+5. Energy pinning (the nonlinear input a² = a).
+   - Σ_{j<=k} β_j² = Σ_{j<=k} e_j + Σ_{j<=k} β_j(1 − 2P_j).
+   - Abel summation: |Σ u_j β_j| <= D₀(sup|u| + TV(u)).
+   - Hence |Σ_{j<=X} β_j² − Σ e_j| <= D₀(1 + 2V), and |Σ_{j<=w} κ_w(j)²(β_j² − e_j)| <= D₀(2 + 2V).
+   - Then E := Σ_{j>=1} γ_j² >= Σ_{j<=X} β_j² − 2δΣ|β_j| >= E⁻, and S := Σ_{j<=w} κ_w(j)²γ_j² <= S⁺,
+     using γ_j² <= β_j² + 3δ.
+6. Window. Apply the P31 chain to G + m >= 0, m = M + U. The degree is <= L, and the mean of G is γ_0/2. With
+   m' = m + γ_0/2 >= 0:
+       W(m'² + E/2) <= ρ_L(L+1)(m'² + S/2),
+   so m'² >= Δ/(2(ρ_L(L+1) − W)), and M = m − U >= m' − δ/2 − U. ∎
+Corollary (asymptotic form).
+- Fix p: [0,1] → [0,1] of bounded variation and piecewise C², and take P_j = p(j/X). Let e = p(1 − p),
+  ē = ∫_0^1 e, ē_θ = (1/θ)∫_0^θ (1 − t/θ)² e(t) dt, ρ = 4/(3√3), and
+      Γ(θ) := (2/3)ē − ρ(1 + θ)ē_θ.
+- If Γ(θ) > 0 for some θ ∈ (0,1], choose w = ⌊θX⌋ and h + 1 = ⌈48D₀/Γ(θ)⌉. Then for every rounding a with prefix
+  discrepancy D₀ <= c(p)X:
+      M(A) >= c(p, θ)√X − C(p)(1 + D₀² Q₂),
+  with Q₂ = O_p(1/X) if p is Lipschitz with p(1) = 0, and Q₂ = O_p(1) if p has finitely many jumps.
+- Hence √X up to D₀ ≍ X^{3/4} (Lipschitz) or X^{1/4} (jumps).
+- No cumulative structure, curvature, Diophantine condition or local-overshoot hypothesis is used.
+- Front condition: Γ(0+) > 0 ⟺ e(0) < (2/ρ)ē ≈ 2.598ē.
+  - Every profile with p(0) = 1 (e(0) = 0) qualifies at small θ: e(t) ≈ |p'(0)|t, so Γ(θ) > 0 for
+    θ < 8ē/(ρ|p'(0)|).
+  - TD2's ½(1 − t)² qualifies (e(0)/ē = 2.143). ½(1 − t)³ does not (2.8), nor ½(1 − t)⁴ (3.46).
+Relation to P38/P44/P41.
+- P44 (bounded discrepancy) needed the local-overshoot hypothesis LO, and P44-O shows the fixed q = 2 filter fails
+  without it. P47 needs no LO for profiles in its class, including TD2's ½(1 − t)².
+- P41 and TD11 need cumulative rounding and curvature. P47 needs neither.
+- The escape class moves from FRONT-LOADED DENSITY (P31: p(0)/p̄ >= 2.6) to FRONT-LOADED ROUNDING ENERGY
+  (e(0)/ē >= 2.6 at every scale).
+Meaning.
+- This is the separation that session 2 lacked (NOTEBOOK "Front-loaded sets reduce to signed problems": f = P + N, and
+  f >= −M gave no bound on N alone).
+- The defect filter 1 − K_h/K_h(0) makes the smooth part uniformly O(h²Q₂). For bounded-discrepancy fluctuations it
+  is the identity up to O(D₀/h).
+- The identity a² = a pins the fluctuation's energy profile to p(1 − p), up to O(D₀(1 + V)).
+
+## P48. Macroscopic twisted-profile constraint (TD9) — PROVED on paper (round-3 agent, .research/agents/
+## tdense3_report.md §TD9; lead re-derived every step 2026-10-19)
+- Statement.
+  - Let X_j → ∞, A_j ⊂ [1, X_j], M(A_j)/X_j → 0, and let θ_j be any angles.
+  - Put ν_j = (1/X_j) Σ_{a∈A_j} e^{iaθ_j} δ_{a/X_j}. Every weak limit is q(t)dt on [0,1], with |q| <= 1.
+  - Put H(t) = q(t)/2 on (0,1), conj(q(−t))/2 on (−1,0), and 0 outside. Then H has a continuous positive-definite
+    representative, i.e. F(y) = Re∫_0^1 q(t)e^{ity}dt >= 0 for all real y.
+  - Hence q is continuous on (0,1), q(0+) is real, and q(1−) = 0. A nonzero step function q is impossible.
+- Proof: f_{A_j}(θ_j + y/X_j)/X_j → F(y) locally uniformly, and f >= −M. F >= 0 integrable (Gaussian/Fubini), then
+  Bochner/inversion.
+- Scope: heights ≍ X only. Spikes of height ≍ √n vanish after dividing by X. Macroscopic, not √n-scale.
+
+## P49. Fixed fractional flat piece ⇒ LINEAR M (TD10) — PROVED on paper (agent; lead checked the coefficient
+## formula and the contradiction step)
+- Fixed profile p with a finite partition into flat pieces and C² pieces with |p'| bounded away from 0. Cumulative
+  rounding with any phase σ. If some flat piece has value α ∈ (0,1), then M(A_X) >= c(p)X uniformly in σ.
+- Mechanism: at θ = 2πα the twisted density on that piece has modulus d_α = sin(πα)/π (irrational α) or
+  sin(πr/q)/(q sin(π/q)) (α = r/q). Curved pieces contribute 0 (van der Corput), so q_θ is a nonzero step function,
+  which P48 forbids.
+- Ineffective constant (compactness). Corollary: every fixed finite staircase with positive integral has linear M.
+- It closes the "flat pieces" escape in P41 for FIXED profiles. Staircases with X-dependent step counts remain open.
+
+## P50. P41+ and P41-B for fixed profiles (TD11, TD12, TD12-F) — PROVED on paper (agent; lead spot-checked the energy
+## identity and the cohomology step, not every exponential-sum constant)
+- TD11: fixed flat/curved profile with curved rounding energy η = ∫_curved p(1 − p) > 0 ⇒ M >= c(p)√X. Flat energy is
+  excluded. With P49 this matters only when the flat values are in {0,1}.
+- TD12: cumulative rounding of p_m = P(m/X, mα), P smooth on [0,1]×T^d, α Diophantine, |P0'| ∈ [c1, c2],
+  η = ∫∫P(1 − P) > 0 ⇒ M >= c(P,α)√X.
+  - Cohomological equation P − P0 = Ω(t,θ) − Ω(t,θ−α), giving Φ = Φ0 + Ω + O(1/X).
+  - Weighted van der Corput, then the bounded-bulk Tool C.
+- TD12-F: a fixed finite Fourier profile needs no Diophantine condition (use the orbit-closure average).
+- Tool C (reusable): if f = P + B + E with ‖P‖_∞ <= L√X, ‖P‖₂² >= aX, ‖E‖₂ <= δ√X (δ <= √a/8), and B is
+  o(√X) in L² off sets of measure → 0, then M >= min(√a/4, a/(16L))√X.
+
+## P51. Bump obstructions (TD13, TD14) — PROVED (agent; lead checked)
+- TD13: φ_L = F_L·(1 + cos 2Lx) >= 0 is localized at width 1/L, yet φ̂_L(L) = 0 and φ̂_L(2L) = ½. Positivity plus
+  localization does NOT force monotone Fourier decay. The "positive bumps have decaying transforms" route (brief T1(b))
+  is killed in its unrestricted form.
+- TD14: if f_A + m = Σ_{j<=J} w_j F_L(x − θ_j) exactly (w_j > 0, L > X = max A), then J >= L − X and
+  m >= L/(2(L − X)). Proof: coefficient at k = X, plus Vandermonde on k = X+1..L−1.
+  No robust (L²-error) version is known.
+
+## P52. Local Bessel budget for macroscopic twisted profiles — PROVED (lead 2026-10-19; elementary)
+- Setting as in P48: X_j → ∞, A_j ⊂ [1, X_j], and twisted limits q_θ at finitely many distinct fixed angles
+  θ ∈ Θ, with q_0 = p (the density profile). No hypothesis on M.
+- Statement: p(t)² + Σ_{θ∈Θ\{0}} |q_θ(t)|² <= p(t) for a.e. t. Equivalently Σ_{θ≠0}|q_θ|² <= e := p(1 − p).
+- Proof.
+  - For smooth ψ >= 0 on (0,1), put b_m = 1_A(m)ψ(m/X). Then ‖b‖² = Σ_{a∈A} ψ(a/X)² = X∫pψ² + o(X), using a² = a.
+  - For |y| <= Y: b̂(θ + y/X) = X∫ψ q_θ e^{ity} dt + o(X). So the energy of b̂ on |x − θ| <= Y/X is
+    X∫|ψq_θ|² − O(X/Y) + o(X) (Plancherel on R, plus the tail of a smooth transform).
+  - The windows are disjoint for distinct θ, so Bessel gives Σ_θ ∫ψ²|q_θ|² <= ∫ψ²p. Since ψ is arbitrary, the
+    statement follows. ∎
+- Meaning.
+  - The macroscopic rounding energy e(t) = p(1 − p) is a budget. Macroscopic atoms (heights ≍ X) can absorb part of it.
+  - The residual b(t) = e(t) − Σ_{θ≠0}|q_θ(t)|² >= 0 must sit in MESOSCOPIC spikes (√n << height << X) or in the bulk.
+  - With P48, each absorbed atom must have a PD continuous profile q_θ with q_θ(1) = 0.
+
+## P53. Macro-SB: M = o(X) forces a NON-ATOMIC local spectrum (joint form of P48) — PROVED on paper (lead
+## 2026-10-19; not yet adversarially checked; priority unchecked)
+Setting.
+- X_j → ∞, A_j ⊂ [1, X_j], |A_j| >= X_j/C, M(A_j) = o(X_j).
+- Γ = a countable additive group of angle sequences θ = (θ_j)_j that is NONDEGENERATE: X_j‖θ_j‖_{R/2πZ} → ∞ for every
+  θ ≠ 0 in Γ. Examples: the group generated by finitely many fixed angles that are rationally independent mod 2π;
+  X-dependent atom locations are allowed.
+- K = Γ^ (compact, metrizable). ι_j: Z → K, ι_j(a)(θ) = e^{iaθ_j}. χ_θ(ω) = ω(θ).
+Construction.
+- ν_j = (1/X_j) Σ_{a∈A_j} δ_{(a/X_j, ι_j(a))} on [0,1] × K. Pass to a weakly convergent subsequence: ν_j → ν.
+- Nondegeneracy gives (1/X)Σ_{m∈[sX,tX]} e^{imθ_j} → 0 for θ ≠ 0, so the full-integer measures tend to Leb × Haar.
+  Hence ν = g dt dω with 0 <= g <= 1.
+- Twisted limits: (1/X)Σ_a e^{iaθ_j} δ_{a/X} → q_θ(t)dt, with q_θ(t) = ∫_K g(t,ω)χ_θ(ω)dω. q_0 = p, the density profile.
+- Local Bessel/Parseval on K: Σ_{θ∈Γ}|q_θ(t)|² = ∫_K g(t,·)² <= ∫_K g(t,·) = p(t).
+  - The defect b(t) = ∫_K g(1 − g) is the local spectral mass NOT carried by Γ-atoms. (P52 is the case of finitely
+    many θ.)
+Theorem. ∫_0^1 ∫_K g(1 − g) dω dt > 0. Consequently Γ-atoms never carry all of the local spectral mass.
+Moreover the reflection g̃(t,ω) = g(t,ω) (t > 0), g(−t,−ω) (t < 0), 0 (|t| >= 1) is a.e. equal to a continuous
+positive-definite function on R × K.
+Proof.
+1. Partial transform: ∫_K g̃(t,ω)χ_θ(ω)dω = q_θ(t) for t > 0 and conj(q_θ(−t)) for t < 0.
+   Hence Ĝ(y,θ) := ∫_R∫_K g̃ e^{ity}χ_θ = 2Re∫_0^1 q_θ(t)e^{ity}dt.
+2. P48, applied at the angle sequence θ_j for each θ ∈ Γ (P48 allows j-dependent angles), gives Ĝ(y,θ) >= 0 for all
+   (y,θ) ∈ R × Γ.
+3. Ĝ ∈ L¹(R × Γ), with ‖Ĝ‖₁ <= 2π.
+   - Test against φ_δ(y,θ) = e^{−δy²}ψ_δ(θ), where ψ_δ(θ) = |F_δ ∩ (F_δ + θ)|/|F_δ| for a Følner sequence F_δ of Γ
+     (ψ_δ is PD, ψ_δ → 1 pointwise, and its inverse transform is >= 0 with mass 1).
+   - Then ⟨Ĝ, φ_δ⟩ = 2π⟨g̃, φ̌_δ⟩ <= 2π‖g̃‖_∞. Fatou gives the bound.
+4. Fourier inversion: g̃ is a.e. equal to a continuous PD function g_c.
+5. If g ∈ {0,1} a.e., then g_c ∈ {0,1} everywhere: Leb × Haar charges every nonempty open set.
+   - For each ω, t ↦ g_c(t,ω) is continuous, {0,1}-valued, and 0 for |t| > 1, so it is ≡ 0.
+   - Hence ∫∫g = 0, contradicting ∫∫g = lim|A_j|/X_j >= 1/C. ∎
+Corollaries and meaning.
+- TD10/P49 follows. On a fractional flat piece the local pattern is the 0/1 Sturmian window. On curved pieces it is
+  uniform (g = p). Continuity of g_c in t fails at the junctions.
+- Bohr-interval sets A = {m : {mα} ∈ E(m/X)} (α irrational, E(t) ⊂ T Jordan-measurable windows of measure p(t))
+  have g ∈ {0,1}. So M >= c·X along every sequence: LINEAR M for every Bohr-window set with a nonzero profile, whatever
+  the windows. Same for finite-rank Bohr patterns over T^d and for residue-class patterns (finite K).
+- For the √n problem: a counterexample has M = o(X), so a positive part of its local spectrum is not carried by ANY
+  countable nondegenerate family of macroscopic atoms. That part lives in spikes of height o(X) (mesoscopic) or in the
+  bulk. This is the first step of a descent: macroscopic structure alone cannot produce a counterexample.
+- Not quantitative: compactness, and the defect is upper semicontinuous in the wrong direction for a direct
+  finite-X version. A quantitative, multiscale form is the next target (NOTEBOOK).

@@ -1,0 +1,97 @@
+{
+  "status": "PROVED finite membership using Arb enclosures; minima and energies still NUMERICAL",
+  "precision_bits": 192,
+  "rows": [
+    {
+      "name": "bohr_1mode_4096_0.0",
+      "n": 1023,
+      "certified_floor_decisions": 4096
+    },
+    {
+      "name": "bohr_1mode_4096_0.37",
+      "n": 1024,
+      "certified_floor_decisions": 4096
+    },
+    {
+      "name": "bohr_1mode_4096_0.999",
+      "n": 1024,
+      "certified_floor_decisions": 4096
+    },
+    {
+      "name": "bohr_2mode_4096_0.0",
+      "n": 1023,
+      "certified_floor_decisions": 4096
+    },
+    {
+      "name": "bohr_2mode_4096_0.37",
+      "n": 1024,
+      "certified_floor_decisions": 4096
+    },
+    {
+      "name": "bohr_2mode_4096_0.999",
+      "n": 1024,
+      "certified_floor_decisions": 4096
+    },
+    {
+      "name": "bohr_1mode_16384_0.0",
+      "n": 4095,
+      "certified_floor_decisions": 16384
+    },
+    {
+      "name": "bohr_1mode_16384_0.37",
+      "n": 4096,
+      "certified_floor_decisions": 16384
+    },
+    {
+      "name": "bohr_1mode_16384_0.999",
+      "n": 4096,
+      "certified_floor_decisions": 16384
+    },
+    {
+      "name": "bohr_2mode_16384_0.0",
+      "n": 4095,
+      "certified_floor_decisions": 16384
+    },
+    {
+      "name": "bohr_2mode_16384_0.37",
+      "n": 4096,
+      "certified_floor_decisions": 16384
+    },
+    {
+      "name": "bohr_2mode_16384_0.999",
+      "n": 4096,
+      "certified_floor_decisions": 16384
+    },
+    {
+      "name": "bohr_1mode_65536_0.0",
+      "n": 16383,
+      "certified_floor_decisions": 65536
+    },
+    {
+      "name": "bohr_1mode_65536_0.37",
+      "n": 16384,
+      "certified_floor_decisions": 65536
+    },
+    {
+      "name": "bohr_1mode_65536_0.999",
+      "n": 16384,
+      "certified_floor_decisions": 65536
+    },
+    {
+      "name": "bohr_2mode_65536_0.0",
+      "n": 16383,
+      "certified_floor_decisions": 65536
+    },
+    {
+      "name": "bohr_2mode_65536_0.37",
+      "n": 16384,
+      "certified_floor_decisions": 65536
+    },
+    {
+      "name": "bohr_2mode_65536_0.999",
+      "n": 16384,
+      "certified_floor_decisions": 65536
+    }
+  ],
+  "total_floor_decisions": 516096
+}

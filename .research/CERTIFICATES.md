@@ -200,3 +200,17 @@ Archived copies are in examples/r7_certificates/. The originals, runnable from t
   of the Gaussian identities (the float checks are not proofs).
 - Lead's independent re-check (E79, src/e79_r8_checks.py): ρx − x² + β(y_min(x)) − β(x)/2 >= 0 on a 2·10⁵-point float
   grid and a 2001-point exact-rational grid (minimum 0 at x = 0), and β' > 0.
+
+## C-R9 (2026-10-19) Exact certificates for P60 (κ <= 0.749089; T-dense(6.9366)); archived in examples/r9_certificates/
+- long_gram.py → long_gram_bounds.json: 18 rational supporting lines q(2t) >= m q(t) + b, each with its Chebyshev
+  certificate (λ_3..λ_24 >= 0).
+- long_scalar_d24_exact.json: κ = 749089/10⁶, a degree-24 increasing β (Bernstein and power forms), 21 branches, 29
+  leaves in u = √(1 − x).
+- long_verify.py → long_independent_verification.json: the agent's QQ/Sturm/Bernstein checks.
+- exact_witness.py → witness_B160_full_factor.json (integer spectral factor; 1/d < 7.267398825422); witness_B40_energy.json.
+- cp_obstruction.py/json: the Horn witness (Arb, 160 bits).
+- independent_verify.py/json: degree 4/8/12 scalar certificates and the effective-constant comparisons (P60.7).
+- packet_probe.py/json: the weighted escape probe.
+- manifest.json: hashes and versions.
+- Lead's independent re-check: E81 (src/e81_r9_verify.py; exact-rational Taylor models; all pass).
+- NOT a certificate: E82's D ≈ 0.11667 (numerical lower bound on D; an upper bound needs a certificate, round 10).

@@ -1147,3 +1147,54 @@ Reading:
 - (B) Energy-PD on the ρ*-extremal shape p = a·q (q = half-sine autocorrelation, support [0,1]): min_y ∫_0^1 e(t)cos(ty)dt
   = −0.0094 (a = ½), −0.0073 (a = 0.45), −0.0055 (a = 0.4), all near y ≈ 8. So the doubly-positive extremiser is NOT
   admissible in the enlarged class {p PD, p(1 − p) PD}, and that class's reach exceeds 4(2 − ρ*)/r ≈ 6.63.
+
+## E80 (2026-10-19) Two-profile ("enlarged") class reach by SLSQP (src/e80_enlarged_reach.py; examples/e80/e80.jsonl)
+- Setup: maximize d over p = a·q(t/φ) with q the autocorrelation of g = exp(z) (NG = 30 cells). Constraints:
+  e = p(1 − p) PD (cosine transform sampled at 1600 y ∈ [0.05, 160]); windows on p and e at 43 θ ∈ (0, 1];
+  r = 4/(3√3).
+- PARTIAL. Seeds 0, 1, 2 finished (SLSQP "success" false each time; constraints satisfied to sampling accuracy):
+  - seed 0: d = 0.138658 (C = 7.212), a = 0.4968, min FT_e = −8e−11;
+  - seed 1: C = 7.894;
+  - seed 2: C = 8.608.
+  Then the run CRASHED (overflow in exp(z)). Not rerun.
+- Reading: seed 0 suggests the two-profile reach may be ≈ 7.21, below round 9's 7.2674 local optimum (P60.5). It is
+  unverified (sampled constraints). SUPERSEDED: the two-profile class is a relaxation of the exact second-order class
+  (P61, E82).
+
+## E81 (2026-10-19) Lead's independent re-check of round 9 (src/e81_r9_verify.py; examples/e81/e81_verify.json)
+- Method: exact-rational Taylor models with interval subdivision. This differs from the agent's Bernstein + SymPy
+  Sturm.
+- (A) All 18 supporting-line polynomials are > 0 on [−1, 1] (14–52 leaves each); λ_n >= 0.
+- (B) Degree-24 scalar certificate (κ = 749089/10⁶):
+  - all 29 leaves pass; the u = 1 leaf is divided by (1 − u);
+  - β' > 0 on [−10⁻⁵, 1] (13 leaves);
+  - Bernstein form equals power form exactly;
+  - branches 3–20 are exactly the 18 lines;
+  - leaves cover [0,1]; branch arguments are >= −10⁻⁵.
+  (The first run flagged L <= 1 on [0, 1/16]: my checker demanded strict inequality where L(0) = 1. Only the lower
+  range is needed.)
+- (C) C = 4·10¹²/576649461289 exactly; r² > 16/27; the rational 6.9366 is OK; elementary r = 0.811 gives 6.58424.
+- (D) 160-cell witness: q_i recomputed from the integer factor (exact match). d = 0.137600814820021222977… by
+  closed-form cell integrals in mpmath (60 digits), so 1/d = 7.26739882542104 < 7.267398825422.
+- (E) Horn form of the CP-obstruction profile: −0.00118031835777388 (mpmath).
+
+## E82 (2026-10-19) The exact second-order constant D (src/e82_cp_reach.py; examples/e82/e82*.jsonl)
+- Setup: maximize ∫_0^1 φ(w²), φ(x) = (1 − √(1 − x))/2, over w = G ⋆ G̃. G >= 0 is a step function on N cells of
+  [0,1] with ∫G² = 1, so w is the exact PWL interpolation of the discrete autocorrelation (a genuine member of 𝒲).
+  The objective uses 16-point Gauss–Legendre per cell. L-BFGS-B. Starts: constant, half-sine, centre-peaked, 2 random.
+- NUMERICAL (all starts agree at each N):
+  | N | D | 1/D | ∫_0^1 w² |
+  | --- | --- | --- | --- |
+  | 20 | 0.1163413 | 8.5954 | 0.3407 |
+  | 40 | 0.1165803 | 8.5778 | 0.3402 |
+  | 80 | 0.1166500 | 8.5727 | 0.3401 |
+  | 160 | 0.1166694 | 8.5712 | 0.34005 |
+  | 320 | 0.1166747 | 8.5708 | 0.34004 |
+- Windows (sanity, r = 4/(3√3)): every P31 density and energy window holds on the optimiser, as they must, since
+  escapes are genuine.
+- Triangle check: (1 − π/4)/2 = 0.1073009 reproduced to 2e−9.
+- Shape: G* is a symmetric bump with G*(0)/G*(½) = 0.381 and ∫G* = 0.9777.
+- Companion modes (E82_MODE):
+  - N2 = sup ∫_0^1 w²: 0.343456 (N = 40), 0.343482 (80), 0.343488 (160). Beckner's rigorous bound is 0.384900.
+  - ratio κ_w = sup ∫φ(w²)/∫w²: 0.354845 (40), 0.355525 (80), 0.355747 (160), still rising; the maximiser's ∫w²
+    shrinks (0.268 → 0.255).

@@ -1,0 +1,128 @@
+{
+  "status": "PROVED exact QQ and Arb checks",
+  "long_gram": [
+    {
+      "x0": 0.25,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.3,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.35,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.39999999999999997,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.44999999999999996,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.49999999999999994,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.5499999999999999,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.5999999999999999,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.6499999999999999,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.7,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.7499999999999999,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.7999999999999998,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.8499999999999999,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.8999999999999999,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.95,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.97,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.985,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    },
+    {
+      "x0": 0.995,
+      "degree": 24,
+      "sturm_roots": 0,
+      "endpoints_positive": true
+    }
+  ],
+  "scalar_degree": 24,
+  "kappa": "749089/1000000",
+  "monotonicity_sturm_roots": 0,
+  "leaf_count": 29,
+  "interval_cover": true,
+  "C_exact": "4000000000000/576649461289",
+  "C_float": 6.936623145469854,
+  "concrete_C": "34683/5000",
+  "concrete_margin": "66734113613/5000000000000000",
+  "elementary_C_exact": "4000000000/607511179",
+  "elementary_C_float": 6.584240979045425,
+  "witness_factor_identity": true,
+  "witness_density_ball": "[0.1376008148200212229772238871762788134801027881590348 +/- 4.46e-53]",
+  "witness_reach_upper": "3633699412711/500000000000",
+  "witness_reach_upper_proved": true
+}

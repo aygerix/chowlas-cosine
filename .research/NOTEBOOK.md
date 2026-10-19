@@ -1746,3 +1746,61 @@ Where this leaves the finite TL1 programme (lead assessment):
        c(5.19));
      - (iii) mesoscopic: aggregated PD of every filtered marginal plus P40 spike domination, against the new extremal
        profile.
+
+## 2026-10-19 (night, cont. 12) — Round 9 verified; complete positivity made exact: the second-order reach is 1/D ≈ 8.571 (lead)
+1. Round 9 verified (PROOFS P60; E81 re-checks every certificate by exact-rational Taylor models, a method different
+   from the agent's).
+   - T-dense(C) for C < 6.9366, from the Catalan parametrisation, the scalar reduction d <= rκ/4, and κ <= 0.749089.
+   - The density windows are redundant.
+   - The two-profile class has a witness at 1/d = 7.26740.
+   - The agent found that the residual covariance kernels must be COMPLETELY POSITIVE (CP), and that CP is strictly
+     stronger than doubly nonnegative (Horn witness).
+2. Missing ingredient identified and derived: the exact form of complete positivity (PROOFS P61).
+   - The Gabor/STFT identity  avg_u |(h·ψ(· − u))^|² = |ĥ|² ⋆ |ψ̂|²  holds for h = g + m >= 0 and any band-limited
+     window ψ >= 0.
+   - So the smoothed residual energy profile is EXACTLY an average of |ŝ_u|². Each ŝ_u is a Hermitian PD function
+     supported in [−1 − ε, 1 + ε] (the transform of a nonnegative function).
+   - Since φ(x) = (1 − √(1 − x))/2 is convex, Jensen reduces the extremal problem to ONE generator.
+   - Hence: in every dense counterexample limit, d <= D := sup_{w PD, supp [−1,1], w(0)=1} ∫_0^1 φ(|w|²).
+   - T-dense(C) holds for C < 1/D. Windows, Beckner, ρ* and κ are not needed. They are consequences, used only to
+     bound D rigorously.
+3. Sharpness. For every such w, the round-9 weighted Fejér-packet escape (packet shape with transform w) is a genuine
+   positive polynomial with min >= −o(√X) and binary first and second moment profiles (p = φ(w²), e = w²/4).
+   - So 1/D is the EXACT reach of every "positivity + two moments" argument.
+   - The rounds 7–9 classes were relaxations, missing CP: 6.05 (windows only), ≈ 7.21–7.27 (two-profile).
+4. Numbers (E82). D ≈ 0.1166747, so 1/D ≈ 8.5708.
+   - The optimiser is a symmetric bump keeping 38% of its height at the ends. Every start converges to it at every
+     resolution.
+   - The triangle gives 9.3196.
+   - Companion constants: sharp L⁴ constant N₂ = sup ∫_0^1 w² ≈ 0.34349 (Beckner: 0.3849); κ_w ≈ 0.3557.
+   - Split certificates (κ_w × N₂) can reach at most ≈ 8.2 even with sharp N₂, and ≈ 7.3 with Beckner. To get near
+     8.57 rigorously we need a certificate that couples the support with the convexity.
+5. Strategic review (skill §3).
+   - Distance:
+     - rigorous T-dense: 6.9366 (ineffective);
+     - truth of second order: 8.571;
+     - T-dense for ALL C needs THIRD-or-higher binary information, provably (the escapes satisfy every positivity
+       statement).
+   - Theory of success beyond 8.571: binary versus positive spectral structure. Facts:
+     - (i) A {0,1}-valued PD function on a group is the indicator of a SUBGROUP (3×3 Gram: b_k = b_l = 1 ⇒ b_{k+l} = 1).
+     - (ii) Bohr / cut-and-project binarisations of packets need PD window indicators, hence subgroups. Macroscopic
+       twisted atoms (P48/P53) need W_θ(0) >= |W_θ(t)| real, which is impossible for 1_W with 0 < |W| < 1.
+     - (iii) Random rounding of an escape adds Θ(X) bulk error energy, so M ~ √(X log X) (P40).
+     - (iv) Coefficient skew Σr_k³ ≈ X∫p(1 − p)(1 − 2p) needs ~J^{3/2} near-resonant centre triples θ_a ± θ_b ± θ_c ≈ 0.
+       An AP of centres gives ~J², too many. The needed skew profile e(1 − 2p) = (w²/4)√(1 − w²) vanishes as w → 1,
+       whereas one packet family's skew scales like w³. So several families, with tuned cross-resonances, are needed.
+   - Kill / pivot / continue:
+     - The macroscopic second-order line is DONE as a theory. What remains there is certificate work: a rigorous
+       D₁ → 1/D₁ toward 8.57.
+     - PIVOT the main research effort to the BINARISATION question. Either (Track C, dense) build binary sequences
+       whose residual is a sum of positive packets, or (Track L) prove that binary + positive packets forces a
+       contradiction beyond 1/D. These are the same question.
+   - Bias check: T-dense is only the dense regime. Bu-type extremisers are sparse (X ~ n²). The sparse regime stays
+     open in the record, and a full Chowla proof needs it too.
+6. Next.
+   - Round 10 (one codex agent):
+     - (T1) adversarial check of P61;
+     - (T2) rigorous D₁: target C >= 7.5, ideally 8;
+     - (T3) the third-order / binarisation problem: moment hierarchy of positive-packet escapes, the subgroup
+       lemma, and the reach of "positivity + 3 moments". Construct, or prove an obstruction.
+   - Lean later: P61(a) needs Bochner/Gabor on R; P59.6 / P60.7 for the effective range.

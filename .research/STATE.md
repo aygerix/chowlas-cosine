@@ -1,14 +1,18 @@
-# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 8: T-dense(6.156), explicit c(3)")
+# STATE — current targets and honest status (updated 2026-10-19 night; newest block: "Session 3, round 9 + P61: the second-order reach 1/D ≈ 8.571")
 
 ## Targets
 - (C) Epoch: algorithm solution(c,n) for all c>0 — requires R(A_k) -> 0. NOT ACHIEVED. No solution.py exists.
 - (L) Chowla: M(A) >= c0 sqrt|A|. NOT ACHIEVED. Best known: >> n^{1/5} (Shankar 2609.05338, cited, checked).
 - (L-dense) T-dense(C) := M >= c(C)√n for all A with max A <= C|A|.
-  - PROVED on paper for every C < 6.156, ineffective c(C) (P58 + P59; lead-verified). With only the elementary P31-E
-    constant: C < 5.843.
-  - EXPLICIT c(3) = 10^{−6000005} (P59.6, compactness-free).
+  - PROVED on paper for every C < 6.9366, ineffective c(C) (P58–P60; lead-verified, exact certificates C-R9). With only
+    the elementary P31-E constant: C < 6.584.
+  - EXPLICIT constants for every C < 6.156 (P60.7); c(3) = 10^{−6000005} (P59.6).
   - Kernel-checked effective: C <= 2.44 (P31).
-  - Macroscopic class {p PD, p(1 − p) PD, windows}: reach above 6.63 (E79/E80). Beyond that, the mesoscopic problem.
+  - P61 (lead, paper; awaiting adversarial check): T-dense(C) for every C < 1/D, where D = sup ∫_0^1 φ(|w|²) over PD w
+    supported in [−1, 1] with w(0) = 1, and φ(x) = (1 − √(1 − x))/2.
+    - This is SHARP for positivity + two binary moments (weighted packet escapes).
+    - Numerically 1/D ≈ 8.5708 (E82). Rigorous so far: D <= rκ/4, i.e. 6.9366.
+    - Beyond 1/D: only third-or-higher binary information helps.
 - Working hypothesis **C½**: M(A) >= sqrt|A|/2 for ALL finite A (sharp by Bu et al.). CONJECTURED. If true, Epoch's
   algorithm cannot exist. Not assumed: both tracks stay open.
 
@@ -286,7 +290,28 @@ in parallel.
 - E70b: the P47 family gives ≈ 0.21√n on Bu up to n = 63252. With the rigorous ρ_L: 0.17√n at q = 127.
 - E72: the optima shrink max A to <= 2.9n (mostly inside P31's range), so it does not test C = 3. E72c (box ratios
   4, 6, 10) is running.
-## Session 3, round 8: T-dense(6.156), explicit c(3) (2026-10-19 night, NEWEST — read this first)
+## Session 3, round 9 + P61: the second-order reach 1/D ≈ 8.571 (2026-10-19 night, NEWEST — read this first)
+- Round 9 DONE, lead-verified (PROOFS P60; E81 re-checks every certificate by a different exact method).
+  - T-dense(C < 6.9366) (κ <= 0.749089).
+  - The two-profile witness at 7.2674.
+  - CP covariances, strictly stronger than doubly nonnegative (Horn).
+  - Explicit constants on C < 6.156.
+- P61 (lead): complete positivity made exact by the Gabor identity avg_u|(hψ_u)^|² = |ĥ|² ⋆ |ψ̂|², plus Jensen.
+  - Hence d <= D and T-dense(C < 1/D). Weighted escapes show 1/D is the exact reach of positivity + two moments.
+  - E82: 1/D ≈ 8.5708, with a symmetric bump optimiser.
+  - The rounds 7–9 classes (6.05, 7.27) were relaxations.
+- So the macroscopic / second-order theory of T-dense is SOLVED up to certificates. Beyond 8.571 the question is
+  BINARISATION: can binary coefficient sequences have a residual made of positive packets? (NOTEBOOK cont. 12: subgroup
+  lemma, Bohr failure, cubic skew.)
+## Running now (2026-10-19 night, newest)
+- Codex MATH agent, round 10 (.research/agents/tdense10_brief.md; report tdense10_report.md).
+## First concrete next step (2026-10-19 night, newest)
+- Verify round 10 when it lands:
+  - P61 adversarial check;
+  - rigorous D₁ (target T-dense(7.5–8));
+  - third-order / binarisation result.
+- Then decide: (a) Lean for P61(a); (b) a binarisation construction attempt on the VM (Track C, dense).
+## Session 3, round 8: T-dense(6.156), explicit c(3) (2026-10-19 night)
 - Round 8 DONE, lead-verified (PROOFS P59; NOTEBOOK cont. 11).
   - ENERGY-PD: in any dense counterexample limit, the residual energy profile e = p(1 − p) is PD (autocorrelation of
     g + m >= 0). Hence p(0) <= ½. This alone with the density window gives T-dense(5.196).
@@ -296,10 +321,10 @@ in parallel.
     beyond P31; Lean candidate.
 - cont. 10's "macroscopic barrier 6.05" is RETRACTED (it covered only the two scalar windows).
 - E79: the ρ*-extremal shape violates energy-PD, so the enlarged class's reach is > 6.63. E80 (running) estimates it.
-## Running now (2026-10-19 night, newest)
+## Running now (2026-10-19 night, round 9; superseded)
 - VM: E80 (src/e80_enlarged_reach.py): SLSQP over autocorrelation profiles with e-PD and window constraints.
 - Codex MATH agent, round 9 (.research/agents/tdense9_brief.md; report tdense9_report.md).
-## First concrete next step (2026-10-19 night, newest)
+## First concrete next step (2026-10-19 night, round 9; superseded)
 - Round 9 (one codex agent): the exact reach of the enlarged macroscopic class, with certificates, giving T-dense(C₉);
   extra macroscopic constraints (measure-valued PD of σ_t, atoms, Boolean); effective constants.
 - Then a Lean round for the effective T-dense(3) (P59.6), with P31-E already kernel-checked.

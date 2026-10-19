@@ -1665,3 +1665,129 @@ Correction of the lead's NOTEBOOK cont. 10: the "macroscopic barrier ≈ 6.05" w
 only. Energy-PD is a further MACROSCOPIC constraint (the product window), and it defeats the round-7 witness: at
 t = 7/48, e(t) − e(0) ≈ 0.024 > 0.
 Status: items 1–3 and 5–6 paper proofs, lead-verified; 4 computer-assisted exact; none kernel-checked.
+
+## P60. Round-9 agent results (report .research/agents/tdense9_report.md; lead re-checked every item marked ✓) — 2026-10-19
+1. ✓ CATALAN PARAMETRISATION (NEW, short). Since a <= ½ (P59.1) and p(t) <= p(0), p = (1 − √(1 − 4e))/2 =
+   Σ_{k>=1} Catalan(k−1)e^k, a series with nonnegative coefficients converging uniformly on [0, ¼]. Schur products
+   preserve PD, so "e PD, 0 <= e <= ¼" already implies p PD.
+2. ✓ SCALAR REDUCTION. Put q = e/e(0) (PD, nonnegative, q(0) = 1). The θ → 0 energy window gives ∫_0^1 q <= r/2. Since
+   ψ(x) = 1 − √(1 − x) is convex with ψ(0) = 0 and 4e(0) <= 1, p = ψ(4e(0)q)/2 <= 2e(0)ψ(q). Hence d <= rκ/4, where
+   κ = sup ∫ψ(q)/∫q over normalized nonnegative PD q (any support).
+   - The density windows are REDUNDANT once e is PD with all its windows: p = p² + e, and p² inherits every window
+     from p PD by lattice sampling. The agent's scalar class therefore EQUALS the two-profile class.
+3. ✓ κ <= 749089/10⁶ (computer-assisted, exact).
+   - 18 rational supporting lines q(2t) >= m q(t) + b. Each comes from T_2(z) − mz − b − Σ_{n=3}^{24} λ_n T_n(z) >= 0 on
+     [−1, 1] with λ_n >= 0, integrated against q's Bochner measure (uses q(nt) >= 0).
+   - Plus the Gram branches q(2t) >= 2q(t)² − 1 and q(2t) >= q(t) − √(1 − q(t)) (P59.4).
+   - A monotone degree-24 potential β with κx − ψ(x) + β(L(x)) − β(x)/2 >= 0 on [0,1]; substitute x = 1 − u².
+   - 29 leaves cover u ∈ [0,1]. The β terms cancel on integration.
+   - Lead's independent re-check (E81, exact-rational Taylor models; a different method from the agent's Bernstein +
+     Sturm): all 18 lines, all 29 leaves, β' > 0 on [−10⁻⁵, 1], Bernstein = power form, every branch argument
+     >= −10⁻⁵ on its leaf, leaves cover [0,1].
+4. ✓ T-dense(C) for every C < 4/(rκ) = 4·10¹²/576649461289 = 6.936623…, with r = 0.769801 > 4/(3√3); r² > 16/27
+   checked exactly. INEFFECTIVE constant. With the elementary r = 0.811: C < 6.5842.
+5. ✓ (numerical + exact witness) Two-profile reach. Integer spectral factor (160 cells) with d = 0.1376008148…, so
+   1/d = 7.2673988… < 7.267398825422. q_i were recomputed from the integers, and d from closed-form cell integrals at
+   60 digits (E81). Exact PD from the factor identity; all-θ windows certified by the agent. Gurobi local searches give
+   ≈ 7.267; E80 (lead, sampled constraints, unverified) found d = 0.13866 (1/d = 7.212). So the class's reach is
+   <= 7.2674, and possibly <= 7.21.
+6. ✓ COMPLETELY POSITIVE covariances (NEW).
+   - For h = g + m >= 0, the matrices (1/X)∫h(x + y_i/X)h(x + y_j/X) are completely positive.
+   - In the limit, [½∫_0^1 e(t)cos((y_i − y_j)t)dt]_{ij} is CP for every finite y. CP is strictly stronger than
+     "e PD, e >= 0" (= doubly nonnegative) once k >= 5.
+   - Strictness inside the two-profile class: q = Λ(t/ε) + ½[Λ((t − ½)/ε) + Λ((t + ½)/ε)], ε = 1/1000, satisfies
+     every window. Its 5-point Horn form at y_i = 4πi/5 is −0.0011803… (Arb; the lead re-derived it by hand as
+     ≈ ε(10 − 13.09 + 1.91) and in mpmath).
+   - The lead turned this into an exact theorem: P61.
+7. EXPLICIT constants on the whole old range C < 4(2 − ρ)/r0 = 6.156. Paper proof; the lead read it but did not
+   re-derive every constant.
+   - Inputs: P59.6's Gaussian pigeonhole; a ROBUST doubly-positive lemma; mass-to-zero truncation of the Gaussian
+     filter; a finite energy window.
+   - The robust doubly-positive lemma: Q_cont = continuous Gaussian smoothing + 2M·Gaussian is an exactly PD
+     function on R, so the ρ inequality applies without compactness.
+   - Parameters: η = min(10⁻³, g/1000), J = ⌈10⁸/η²⌉, K = J³, β = min(η/(4J), 1/(X0 + 1))K^{−J}, c(C) = β/100.
+   - Examples: C = 5 gives c = 10^{−9·10¹⁶}; C = 6 gives 10^{−8.2·10¹⁸}. The c(3) = 10^{−6000005} of P59.6 is much
+     better at C = 3.
+8. Formal two-scale escape and the cubic gap (Task 3). Weighted Fejér packets at J = X^{0.9} random centres have the
+   correct first two binary moment profiles and min >= −o(√X), but zero coefficient skew. A binary sequence needs
+   Σr_k³ ≈ X∫p(1 − p)(1 − 2p) > 0. The agent's cubic-resonance target is CONJECTURED. The lead generalized the escape
+   to every CP generator in P61(c).
+9. Formal corrections by the agent (kept): a simultaneous-PWL ansatz for (p, e) cannot be exactly doubly PD; a
+   160-cell batch failed by integer-digit overflow (no claim from it).
+Status: 1–4 and 6 paper or exact-computer proofs, lead-verified; none kernel-checked.
+
+## P61. The SECOND-ORDER REACH theorem (lead, 2026-10-19; paper proof; awaiting adversarial codex check and Lean)
+Definitions.
+- φ(x) = (1 − √(1 − x))/2 on [0,1]. It is convex and increasing, φ(0) = 0, φ(1) = ½, and φ(x)/x is increasing.
+- 𝒲 = {w : R → C continuous, Hermitian PD, supp w ⊂ [−1,1], w(0) = 1}.
+- D := sup_{w∈𝒲} ∫_0^1 φ(|w(t)|²) dt.
+- WLOG w = G ⋆ G̃ with G >= 0 on [0,1] and ∫G² = 1. Reason: Boas–Kac/Krein give w = G ⋆ G̃ with G ∈ L²[0,1]; then
+  |w| <= |G| ⋆ |G̃|, and φ(x²) is increasing in x.
+Theorem.
+(a) In the P58 limit of any dense counterexample sequence: ∫_0^1 φ(e(t)/e(0))dt <= D, and d = ∫_0^1 p <= D.
+    Consequently T-dense(C) holds for EVERY C < 1/D (ineffective constant).
+(b) SHARPNESS. For every w ∈ 𝒲 there are real cosine polynomials E_X of degree X with min E_X >= −o(√X), coefficient
+    profile p = φ(|w|²), and coefficient-square profile p (so residual energy e = |w|²/4 = p − p²). Hence no argument
+    that uses only positivity (of f + M and of anything built from it by filters, products, shifts or averages) together
+    with the first two binary moment profiles can prove T-dense(C) for any C > 1/D.
+(c) NUMERICAL (E82): D ≈ 0.1166747 at N = 320 (all five starts agree at every N), so 1/D ≈ 8.5708.
+    - N: 20 → 8.5954, 40 → 8.5778, 80 → 8.5727, 160 → 8.5712, 320 → 8.5708.
+    - Optimiser G*: a symmetric bump with G*(0)/G*(½) ≈ 0.38; ∫w² = 0.3400.
+    - Triangle (G = 1): (1 − π/4)/2 = 0.10730 (1/D <= 9.3196; round 9's formal escape). G = 1 is not stationary: the
+      first variation is Ψ(x) + Ψ(1 − x) with Ψ(x) = ½√(2x − x²), which is not constant.
+    - Companion constants (E82): N₂ := sup ∫_0^1 w² ≈ 0.34349 (Beckner gives r/2 = 0.38490) and
+      κ_w := sup ∫φ(w²)/∫w² ≈ 0.3557 (still creeping up with N). Their product ≈ 0.1222.
+(d) RIGOROUS now: D <= rκ/4 with round 9's κ. Proof: q = w² is nonnegative and PD with q(0) = 1;
+    ∫_0^1 w² <= r/2 by sharp Young (Beckner) at exponents (4/3, 4/3; 2) on a unit-length support. This recovers
+    T-dense(6.9366). Any better rigorous D₁ >= D gives T-dense(C < 1/D₁).
+Proof of (a).
+1. Set-up (P58, P59). T = H_h f >= −M, with coefficients r_m = a_m − (k_h ⋆ a)_m. Write T = r_0/2 + g with
+   g >= −m, 0 <= m <= M. Then h := g + m >= 0, ĥ(0) = m and ĥ(k) = r_k/2 for k ≠ 0, with degree <= X(1 + o(1)). The
+   diagonal gives (1/X)Σ r_k²δ_{k/X} → e(s)ds weakly, e = p(1 − p) continuous, and a <= ½, so p = φ(4e).
+2. Rescale H_X(v) := h(v/X)/√X, a nonnegative trigonometric polynomial in v with frequencies ω_k = k/X ∈ [−1 − o(1),
+   1 + o(1)].
+3. Pick ψ >= 0 in L¹(R) with ψ̂ continuous, supported in [−ε, ε], and ∫|ψ̂|² = 1 (e.g. a normalized Fejér kernel).
+   Put ρ = |ψ̂|², a probability density on [−ε, ε].
+4. Gabor pieces. s_u(v) := H_X(v)ψ(v − u) >= 0 for u ∈ R. Then ŝ_u(t) = Σ_k α_k e^{i(ω_k − t)u}ψ̂(t − ω_k), with
+   α_k = ĥ(k)/√X.
+   - Each ŝ_u is continuous and Hermitian PD (the transform of a nonnegative L¹ function), with
+     supp ŝ_u ⊂ [−(1 + δ), 1 + δ], δ = ε + o(1).
+   - EXACT identity (orthogonality of e^{i(k − k')u/X} over a period):
+         avg_{u ∈ [0, 2πX)} |ŝ_u(t)|² = (1/X)Σ_k |ĥ(k)|² ρ(t − k/X)
+                                     = (1/X)[m²ρ(t) + ¼Σ_{k≠0} r_k² ρ(t − k/X)] → ¼(e ⋆ ρ)(t),
+     uniformly in t, using m² <= M² = o(X) and weak convergence against the equicontinuous family ρ(t − ·).
+5. Normalize. With λ_u = ŝ_u(0)² and c_u = ŝ_u/ŝ_u(0): each c_u is PD with c_u(0) = 1 and |c_u| <= 1. Put
+   μ_u = 16λ_u, Y(t) = avg μ_u|c_u(t)|² (→ 4(e ⋆ ρ)(t)) and M̄ = Y(0).
+6. Jensen (φ convex on [0,1], probability weights μ_u/M̄): M̄φ(Y(t)/M̄) <= avg_u μ_uφ(|c_u(t)|²) pointwise.
+7. Integrate over t >= 0 (Tonelli). Dilating each c_u by 1 + δ puts it in 𝒲, so the right side is <= M̄(1 + δ)D.
+   Hence ∫_0^{1+δ} φ(Y/M̄) <= (1 + δ)D.
+8. Let X → ∞ (dominated convergence; Y/M̄ → (e ⋆ ρ)/(e ⋆ ρ)(0)), then ε → 0 (e ⋆ ρ → e uniformly). This gives
+   ∫_0^1 φ(e/e(0)) <= D.
+9. Finally 4e(0) <= 1 and φ(sx) <= sφ(x) give p = φ(4e) <= φ(e/e(0)), so d <= D. Also e(0) > 0, since otherwise e ≡ 0
+   and p ≡ 0.
+10. P58 gives d >= 1/C, which contradicts C < 1/D. ∎
+- Inputs: P58 steps 1–3 (compactness, diagonal), P59.1 (a <= ½), Bochner, Boas–Kac (only for the WLOG). NOT used: P31
+  windows, Beckner, ρ*, κ. Those are implied by (a) and enter only through the rigorous bound in (d).
+Proof sketch of (b) (round-9 Task 3, generalized to arbitrary w; take G >= 0 so w is real and nonnegative).
+- Smooth part: P_X = Σ_{k>=1} φ(w(k/X)²)cos kx >= −¼, since φ(w²) is PD (Catalan series of Schur powers) and sampling
+  a PD function gives a PD sequence.
+- Packets: S_X(x) = Σ_k w(k/X)e^{ikx} >= 0 (sampled PD). Put
+      g_X = c Σ_{j<=J}[S_X(x − θ_j) + S_X(x + θ_j) − 2],   c = 1/√(32J),   J = ⌊X^{0.9}⌋,   θ_j i.i.d. uniform.
+  Then g_X >= −√(J/8) = o(√X), and r_k = 4c·w(k/X)Σ_j cos kθ_j with E r_k = 0 and E r_k² = w(k/X)²/4.
+- The law of large numbers on test functions gives the profiles (p, p).
+- E_X := P_X + g_X is ≥ −o(√X) and is a genuine positive-plus-constant polynomial. So every positivity consequence
+  holds. In particular the windows hold automatically; E82 confirms all P31 windows on the D-optimiser, with
+  r = 4/(3√3).
+Meaning.
+- The second-order (macroscopic + mesoscopic, positivity + two binary moments) theory of T-dense is now EXACTLY
+  solved: its reach is 1/D ≈ 8.571.
+- The rounds 7–9 classes were relaxations of 𝒲:
+  - two windows: 6.05;
+  - plus energy-PD (two-profile class): ≈ 7.21–7.27.
+  - Their missing ingredient was complete positivity, whose exact form is the Gabor mixture representation
+    e ⋆ ρ = avg |ŝ_u|².
+- Beyond 1/D: only THIRD-or-higher binary information can help (the escapes have zero coefficient skew).
+- NOVELTY: grep of PROOFS for Gabor/STFT/completely positive/copositive found only P60.6 (round 9's CP observation,
+  which seeded this). External priority unchecked.
+Status: paper proof (lead). Needs: (i) an adversarial codex check of every step (round 10, Task 1); (ii) a rigorous
+D₁ < rκ/4 (round 10, Task 2); (iii) Lean, later.

@@ -1,0 +1,172 @@
+{
+  "status": "EXACT",
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "scalar": [
+    {
+      "degree": 4,
+      "kappa": "190309/250000",
+      "checks": [
+        {
+          "degree": 3,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 16,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 8,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 7,
+          "roots": 0,
+          "positive_endpoints": true
+        }
+      ],
+      "C_exact": "1000000000000/146500058509",
+      "C_float": 6.825935840418566
+    },
+    {
+      "degree": 8,
+      "kappa": "756119/1000000",
+      "checks": [
+        {
+          "degree": 7,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 32,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 16,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 15,
+          "roots": 0,
+          "positive_endpoints": true
+        }
+      ],
+      "C_exact": "4000000000000/582061162319",
+      "C_float": 6.8721300422511105
+    },
+    {
+      "degree": 12,
+      "kappa": "376647/500000",
+      "checks": [
+        {
+          "degree": 11,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 48,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 24,
+          "roots": 0,
+          "positive_endpoints": true
+        },
+        {
+          "degree": 23,
+          "roots": 0,
+          "positive_endpoints": true
+        }
+      ],
+      "C_exact": "2000000000000/289943237247",
+      "C_float": 6.897901875518546
+    }
+  ],
+  "effective": {
+    "checks": {
+      "F_increasing": {
+        "roots": 0,
+        "positive": true
+      },
+      "F_derivative_le4": {
+        "roots": 0,
+        "positive": true
+      },
+      "denominator_ge_half": true,
+      "F0_ge_point4": true,
+      "crossing_bound": true,
+      "omega_bound": true,
+      "pigeonhole_bound": true,
+      "final_error": true,
+      "lower_t_998": true
+    },
+    "examples": [
+      {
+        "C": "3",
+        "r": "77/100",
+        "base_upper": "769801/1000000",
+        "D": 21,
+        "X0": 11136082523,
+        "eta": "1/1000",
+        "J": 100000000000000,
+        "c_power10_exponent": 4200000000000030,
+        "c": "10^(-4200000000000030)",
+        "status": "PROVED rational comparisons"
+      },
+      {
+        "C": "5",
+        "r": "77/100",
+        "base_upper": "769801/1000000",
+        "D": 21,
+        "X0": 11136082523,
+        "eta": "13889/60156250",
+        "J": 1875942641047683,
+        "c_power10_exponent": 90045246770288816,
+        "c": "10^(-90045246770288816)",
+        "status": "PROVED rational comparisons"
+      },
+      {
+        "C": "6",
+        "r": "77/100",
+        "base_upper": "769801/1000000",
+        "D": 21,
+        "X0": 11136082523,
+        "eta": "2477/96250000",
+        "J": 150990444344733763,
+        "c_power10_exponent": 8153483994615623237,
+        "c": "10^(-8153483994615623237)",
+        "status": "PROVED rational comparisons"
+      },
+      {
+        "C": "123/20",
+        "r": "77/100",
+        "base_upper": "769801/1000000",
+        "D": 21,
+        "X0": 11136082523,
+        "eta": "283/394625000",
+        "J": 194444793448538500918,
+        "c_power10_exponent": 12250021987257925557874,
+        "c": "10^(-12250021987257925557874)",
+        "status": "PROVED rational comparisons"
+      },
+      {
+        "C": "29/5",
+        "r": "203/250",
+        "base_upper": "811/1000",
+        "D": 1,
+        "X0": 1000100,
+        "eta": "1831/294350000",
+        "J": 2584350366779306924,
+        "c_power10_exponent": 147307970906420494701,
+        "c": "10^(-147307970906420494701)",
+        "status": "PROVED rational comparisons"
+      }
+    ]
+  }
+}

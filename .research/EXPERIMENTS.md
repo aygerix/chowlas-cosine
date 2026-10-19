@@ -901,3 +901,8 @@ Reading:
 - The low-(β, R) sets are very dense and front-heavy (max A ≈ 86–93 at n = 64, density ≈ 0.7). Their spike energy is
   mostly the central spike; they are not a new structural regime.
 - Consistent with SB; small R costs bulk.
+E68 anatomy (n = 64, K = 1, β = 0.176, R = 0.670): A = [1, 52] ∪ {56, 58, 63, 65, 69, 72, 76, 80, 81, 82, 85}.
+- A full interval plus a sparse tail that fills the Dirichlet sidelobes. The interval alone has R ≈ 1.4.
+- The only spike is the central one, carrying 82.5% of the energy. The tail's rounding is the bulk.
+- This is the front-full cumulative-rounding shape (P41's class). E66's 1−t profile shows such shapes drift to
+  R ≈ 1.4–1.8 at large n, so they are small-n optima only.

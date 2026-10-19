@@ -2455,3 +2455,56 @@ Scope.
 - For μL >> 1 with a large peak it is OPEN: case (B) gives only ~1/L. Numerically E105 finds U/μ >= 0.104 there (L <= 16).
 - Not a C* tool: PR is step (d) of the cont. 20 architecture, rank 1 only.
 - Adversarial audit 2026-10-19: CORRECT; both constants re-derived; 4,358 accepted numerical cases, no violation.
+
+## P75. Automatic sets: a domination-or-twin criterion forces LINEAR M (lead, 2026-10-19; PROVED on paper, elementary; CSTAR A2 / T-A2)
+Setting.
+- Deterministic automaton on states S, base b, 0/1 digit matrices C_d, and C = Σ_d C_d PRIMITIVE with Perron root λ,
+  1 < λ < b.
+- Right eigenvector r > 0 and left eigenvector π > 0, normalized πᵀr = 1. Start state s₀ with δ(s₀, 0) = s₀;
+  A_L = {1 <= k < b^L : the L-digit string of k is accepted}.
+- μ := the stationary Parry measure on T: μ([v]) = λ^{−|v|} Σ_s π_s r_{δ(s,v)}, read via base-b expansion.
+- τ_v := the state map s ↦ δ(s, v) (reject allowed). ρ(v)_t := Σ_{s : τ_v(s) = t} π_s. E_t := mean of the Parry
+  measure ν_t (from t) on [0, 1].
+- For u = m/b^p and N >= 0 (k = p + N): w, w⁻ are the p-digit expansions of m and m − 1, and
+      I(u) := R(w0^N) + L(w⁻(b−1)^N),  R(v) = Σ_t ρ(v)_t r_t (1 − E_t),  L(v) = Σ_t ρ(v)_t r_t E_t,
+  with I(0) := R(0^k) + L((b−1)^k).
+Theorem. Suppose EITHER some u = m/b^p, N >= 0 has G(u) := I(u) + I(−u) − 2I(0) > 0, OR there are twins
+u_i = m_i/b^{p_i} (each with some N_i, G(u_i) = 0) whose reduced denominators q_i satisfy b | lcm(q_i). Then Re μ̂(j) < 0 for some j ∈ Z. Consequently M(A_L) >= (c − o(1))|A_L| for a constant c > 0
+(LINEAR M).
+Proof.
+1. Suppose Re μ̂ >= 0. Then σ := (μ + μ̃)/2 has σ̂ = Re μ̂ >= 0. With Λ_r := 1_[0,r] ⋆ 1_[−r,0] (triangle on [−r, r],
+   Λ̂_r(j) = (sin πjr/πj)² >= 0) and r := b^{−k}, φ := σ ⋆ Λ_r is continuous and positive definite (φ̂ = σ̂Λ̂_r >= 0,
+   summable).
+2. Translate structure. μ restricted to a cylinder [v] satisfies μ([vx]) = λ^{−|vx|} Σ_s π_s r_{δ(τ_v(s), x)}. So it
+   depends on v only through (|v|, τ_v), and its triangle weights are λ^{−|v|}b^{−|v|}·R(v) on the right of the
+   cylinder's left endpoint and λ^{−|v|}b^{−|v|}·L(v) on the left of its right endpoint.
+   - B(u, b^{−k}) = [w⁻(b−1)^N] ∪ [w0^N]; B(0, b^{−k}) = [(b−1)^k] ∪ [0^k]. Parry measures are atomless, so the
+     endpoints are null.
+   - Hence φ(u) = (I_μ(u) + I_μ(−u))/2 and φ(0) = I_μ(0) up to the common factor λ^{−k}b^{−k}, where I_μ(x) =
+     ∫Λ_r(x − y)dμ(y) and Λ_r is even. So G(u) >= 0 means φ(u) >= φ(0).
+3. A PD function is maximal at 0, so G(u) > 0 is a contradiction. If G(u) = 0, PD gives |φ(x + u) − φ(x)|² <=
+   2φ(0)(φ(0) − Re φ(u)) = 0, so φ is u-periodic: σ̂(j)Λ̂_r(j)(e(jm/b^p) − 1) = 0 for all j.
+4. Take j with b ∤ j. Then Λ̂_r(j) ≠ 0, since its zeros are jr ∈ Z \ {0}, i.e. j ∈ b^kZ \ {0}. Each twin gives
+   σ̂(j)(e(j u_i) − 1) = 0. Since b | lcm(q_i) and b ∤ j, j is not divisible by every q_i, so e(j u_i) ≠ 1 for some i.
+   Hence σ̂(j) = 0. (A single twin with gcd(m, b) = 1 has q = b^p, so it suffices on its own.)
+5. ×b-invariance (μ̂(bj) = μ̂(j)) extends this to σ̂(j) = 0 for every j ≠ 0. So σ = Lebesgue and μ <= 2·Lebesgue.
+   But μ is supported on the sofic set X, which has ≍ λ^k admissible length-k cylinders and Lebesgue measure 0
+   (λ < b): μ is singular. Contradiction.
+6. Transfer to A_L. Let ν be the Parry measure from s₀. Then A_L/b^L → ν weakly, so f_{A_L}(t/b^L)/|A_L| → Re ν̂(t)
+   for fixed t. Primitivity gives (×b)^m_* ν → μ, so Re ν̂(b^m j) → Re μ̂(j) < 0. Fix m with Re ν̂(b^m j) < 0, and set
+   t = b^m j. ∎
+Coverage (E108d, FLOAT evaluation of G; p <= 4, N = 40): 20,476 of 71,840 small automata (28.5%) satisfy the
+hypothesis: 15,829 by domination (G > 1e-9) and 4,647 by twins (|G| < 1e-12, b | lcm q_i). Uncovered, 51,364:
+- b = 4 (43,435): typically one tie at u = 1/2 only (lcm = 2). These automata carry a base-2 symmetry. The tie gives
+  σ̂(odd) = 0, so σ' := (×2)_*σ is again PD and ×4-invariant, with σ' = Lebesgue ⇒ σ = Lebesgue. Re-running the test
+  on σ' (a base-2 rewrite) would be the next step. NOT implemented.
+- b = 5 (7,726) and b = 3 (203): G < 0 strictly at every tested u (0 is the strictly heaviest triangle point).
+  The 2-point test cannot decide these; a >= 3-point Gram test (Σ c_i c̄_j φ(x_i − x_j) < 0) is needed.
+In general T-A2 remains a CONJECTURE: "the max-entropy measure of a proper positive-entropy sofic subshift of the
+b-shift is never positive definite".
+Separately, ALL 71,840 small automata (sector_all: b = 3: 213, b = 4: 58,377, b = 5: 13,250) are INTERVAL-CERTIFIED
+dead by the advisor's finite-prefix certificate (E108a): each has a certified t with Re ν̂(t) < −0.084 (worst case
+−0.0843, b = 5, t = 241/25, h = 5). The stationary μ has min_{j<=J} Re μ̂(j) < 0 for all 71,840 (float; the largest
+value is −0.0106).
+Status: PROVED on paper; elementary. It is a construction-class obstruction (CSTAR DESIGN), NOT a C* proof step: it
+kills automatic families at the MACROSCOPIC level, before the mesoscopic (depth-dependent) question arises.

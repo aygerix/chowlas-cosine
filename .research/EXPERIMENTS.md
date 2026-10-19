@@ -1581,3 +1581,21 @@ Reading:
     measure ν) is never PD. The best rows have λ close to b (b = 3, λ = 2.618).
 - Reading: in small automata the FRONT already forces linear M. The b-adic sector conditions are not yet binding.
   E107c anneals larger automata (S = 4–10) to test whether D → 0 is reachable at all.
+
+## E108 (2026-10-19) Finite-prefix certificates and the T-A2 tests for automatic sets (src/e108_fpc.py, e108_mu.py, e108_twin.py, e108_dom.py, e108_sum.py, e108_margin.py; examples/e108/ on dirichlet, NOT committed, 9–13 MB each)
+- Input: examples/e107/sector_all.jsonl, 71,840 automata (b = 3: 213, b = 4: 58,377, b = 5: 13,250; S <= 3).
+- E108a, FPC (advisor; python-flint arb/acb at 128 bits; λ is a rigorous root of charpoly(C), r from arb_mat solve).
+  t is proposed by a float scan s ∈ [0.02, 20) and rounded to k/50, with h chosen so that 2π|t|/b^h <= |Re|/4.
+  - Result: 71,840 / 71,840 CERTIFIED, Re ν̂(t) < bound_upper <= −0.0843 (worst: b = 5, t = 241/25, h = 5).
+  - Fibbinary check: the advisor's −0.03182448 (t = 1, h = 8) is reproduced; h = 24 gives < −0.0578943.
+  - Status: interval-certified (the float search only proposes t).
+- E108b, stationary μ̂(j), j <= J (float). min_j Re μ̂(j) < 0 for ALL 71,840; the largest such minimum is −0.0106.
+  The margin shrinks as α → 1.
+- E108c, exact twins (equal state maps τ, gcd(m, b) = 1, p <= 4): 3,560 / 71,840.
+- E108d, P75 domination-or-twin (float G, p <= 4, N = 40, twins combined by b | lcm of reduced denominators):
+  - covered: 20,476 (dom 15,829, twin 4,647);
+  - uncovered: 51,364 (b = 4: 43,435, mostly a single tie at u = 1/2; b = 5: 7,726 and b = 3: 203 with G < 0
+    strictly, e.g. b = 3, δ = [[0,−1,1],[0,1,0]], λ = 1+√2, Gmax = −0.38).
+- Reading: the finite class has NO survivor, rigorously. The general T-A2 needs a base-2 descent for the b = 4 ties
+  and a >= 3-point Gram test for the strictly-dominated cases. A2 is closed as a design class (CSTAR A2 (viii)).
+

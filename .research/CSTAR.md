@@ -13,7 +13,9 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
 
 (O1) Density form. p := 1 + D_S/K = 1 + f/M is a probability density. p̂(k) = 1/K for k ∈ S and 0 for k ∉ S ∪ {0}.
      ∫p² = 1 + |S|/K² = 1 + 1/(2ε²).
-     **Chowla ⇔ every such p (S finite) has ∫p² <= 1 + C.  A counterexample ⇔ a family with ∫p² → ∞.**
+     **Chowla (some c₀ > 0) ⇔ every such p (S finite) has ∫p² <= 1 + C. A counterexample ⇔ a family with ∫p² → ∞.**
+     Exactly ∫p² = 1 + 1/(2R²). So the SHARP conjecture C½ (R >= ½) is the specific bound **∫p² <= 3**. Proving
+     some C does not prove C½ (advisor, 2026-10-19). Track which one a claimed result reaches.
 (O2) Idempotent form. D_S is an idempotent trigonometric polynomial (coefficients in {0, 1}), D_S >= −K, and
      ‖D_S‖₁ = 2∫(D_S)_− <= 2K. Chowla ⇔ |S| <= C·K². (Littlewood/MPS gives only ‖D_S‖₁ >~ log|S|. Cohen and
      Green–Sanders structure costs exp(exp(K^4)), which is useless here.)
@@ -55,22 +57,22 @@ S = A ∪ (−A), D_S = Σ_{s∈S} e(sx) = 2f, K := 2M.
 | F2 | Concentration dichotomy. Either the spikes with f > √n/ε (p > 1/ε²) carry a constant share of ∫p², or >= const mass of p sits on {p > 1/(4ε²)}, which has measure <= 4ε² (Markov). Proof: ∫p² <= t + sup(p)·∫_{p>t} p | proved (elementary) | cont. 25.7, made exact here |
 | F3 | Sparse: X/n >= 7.72 eventually (T-dense), and >= 13.7 if M = o(n^{1/3}) | proved (P61–P63, P66) | STATE |
 | F4 | Macroscopic window spikes (height >= c·n_H) lie on the front's spikes; at most 1/(c²ρ_H) per scale | proved (P28) | cont. 25.6 |
-| F5 | The concentration set E is additively random-like at its own scale (arcs and Bohr E are forbidden) | heuristic-sharp | cont. 25.7 |
-| F6 | Dissociated spike sets (order 6) are impossible when m <~ √X | proved in outline | cont. 25.3 |
+| F5 | The concentration set E is additively random-like at its own scale (arcs and Bohr E are forbidden) | HEURISTIC (not an exclusion) | cont. 25.7 |
+| F6 | Dissociated spike sets (order 6) are impossible when m <~ √X | PROOF OUTLINE only (constants unwritten) | cont. 25.3 |
 | F7 | Weak-L¹ (Carathéodory): P(f > s) ≈ cM/s on M <~ s <~ √n/ε (multifractal, maximally heavy-tailed) | heuristic | cont. 25.6 |
 | F8 | Flat sets (negative region of positive measure) lose only constant factors under weight perturbation | proved (P72(b)) + E103 | — |
 | F9 | Every known near-extremizer is flat: β_K ≈ 0.18+ and R >= ½. Sparse SA (E106, n <= 128) finds only Beatty dilates of dense sets (one macroscopic spike, R >= 0.85) | numerical | E68, E104, E106 |
-| F10 | Variance conservation. For ANY random A with marginals w_a = P(a ∈ A), and any correlations: ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a). Rounding noise cannot be destroyed, only moved in x. A random construction must move all of it under the positive spikes of E f | proved (exact: ∫cos(2πax)cos(2πbx)dx = δ_ab/2) | this file, 2026-10-19 |
+| F10 | Variance conservation. For ANY random A with marginals w_a = P(a ∈ A), and any correlations: ∫Var(f_A(x))dx = ½Σ_a w_a(1 − w_a). Rounding noise cannot be destroyed, only moved in x. | IDENTITY proved (∫cos(2πax)cos(2πbx)dx = δ_ab/2). The reading "noise must sit under the spikes of E f" is HEURISTIC: large Var(f(x)) where E f ≈ 0 forces negative values only with an anti-concentration input, which is not proved | this file, 2026-10-19 |
 
 ## 3. DESIGN — constructive side (build the object on purpose)
 Design rules implied by §2. A candidate that violates one is dead before it is run.
 - D1 (F1, F2): concentrated. Mass on a set of measure ~ε² (or on high spikes), not flat.
-- D2 (F6): not dissociated at small m. The spike positions must carry additive relations.
-- D3 (F5): those relations must not make E an arc or a Bohr set at its own scale (mixing). So it needs additive
+- D2 (F6, outline only): not dissociated at small m. The spike positions must carry additive relations.
+- D3 (F5, heuristic only): those relations must not make E an arc or a Bohr set at its own scale (mixing). So it needs additive
   relations among the spike positions at scale 1/X, with E random-like at scale ε². This is the central tension.
 - D4 (F4): no macroscopic interior window spikes beyond a bounded frame.
 - D5 (F3): sparse, X/n -> ∞ or at least > 7.72.
-- D6 (F10): if randomized, the rounding noise must be spectrally confined under the spikes of E f.
+- D6 (F10 reading, heuristic): if randomized, the rounding noise must be spectrally confined under the spikes of E f.
 - D7 (O5): the band edge must be tapered inside the construction, not by truncation.
 Open design question Q-D: which point configurations {x_j} (m = o(X)) have exponential sums on [1, X] that are
 two-valued, carry additive relations (D2), and are not Bohr-like at scale ε² (D3)?
@@ -105,7 +107,7 @@ The prize is (c). Everything else is support.
   - Spike profiles. F_L(j/b^k + y) ≈ Σ_t F^{(t)}_{L−k}(b^k y)·(w_{jk})_t, with w_{jk} = M(j/b)···M(j/b^k)1. Under the
     Parry measure every top-language profile ν_t equals ONE measure ν on [0, 1], with ν([d₁…d_p]) = λ^{−p}
     r_{s(d₁…d_p)}/r₀. So the twisted profile at every b-adic spike is Re[Φ_k(j)·ν̂(s)], s ∈ R.
-  - NECESSARY for R_L bounded (let alone → 0): the negativity there is λ^{L−k}|min_s Re[Φ_k(j)ν̂(s)]|, which must be
+  - NECESSARY (NOT sufficient) for R_L bounded (let alone → 0). It controls only FIXED depths k; spikes at depths k = k(L) that grow with L (the mesoscopic cloud) are not controlled: the negativity there is λ^{L−k}|min_s Re[Φ_k(j)ν̂(s)]|, which must be
     O(λ^{L/2}) for every FIXED k. So EXACTLY Re[Φ_k(j)ν̂(s)] >= 0 for all s, j, k. With θ_ν := π/2 − sup_s|arg ν̂(s)|,
     this says: every b-adic spike value Φ_k(j) lies in the sector |arg| <= θ_ν (or is 0), and Re ν̂ >= 0 (the main
     profile is PD).
@@ -116,7 +118,7 @@ The prize is (c). Everything else is support.
     M >= c·n·λ^{−k₀} (linear in n).
   - Periodic orbits. For x of exact ×b-period p, F_L(x) ~ ρ(Q_x)^{L/p} with Q_x = M(b^{p−1}x)···M(x). If
     |ρ(Q_x)|^{1/p} > √λ, then ρ(Q_x) must be REAL POSITIVE; otherwise the phase rotates with L and M >= |ρ|^{L/p} >> √n.
-  - Global cone obstruction (PROVED, two lines). If every M(y) mapped one complex cone K ∋ 1 (with e₀ᵀK in the right
+  - Global cone obstruction (PROVED, but TAUTOLOGICAL: it restates that negative excursions exist; useful only if a cone ESCAPE is shown to cost >= c√n). If every M(y) mapped one complex cone K ∋ 1 (with e₀ᵀK in the right
     half-plane) into itself, then Re F_L >= 0 everywhere, so f >= −1: impossible (M → ∞). So a "bad" set B ⊂ T is
     unavoidable. A counterexample must keep every trajectory that passes through B at growth < √λ, or map it back
     into K. Tool candidate: Rugh's complex-cone Perron–Frobenius (contraction of complex cones under perturbations
@@ -152,5 +154,49 @@ The prize is (c). Everything else is support.
   - Next proof-side target: a quantitative statement that each taper level costs a fixed fraction of the spike
     height (Gibbs) or adds noise (F10), with no recursion that pays both less.
 
+- ADVISOR REVIEW (2026-10-19), adopted.
+  (i) ∫p² <= 3 ⇔ C½ is distinct from "some C" (O1).
+  (ii) A2's sector condition is necessary, not sufficient. The open part is uniform control of negative excursions at
+       depths k(L) → ∞, i.e. the many-spike lemma again.
+  (iii) FINITE-PREFIX CERTIFICATE (FPC, advisor). For a primitive automaton with Parry measure ν from s₀ and
+        admissible words w of length h (cylinder mass q_w = λ^{−h}r_{s(w)}/r_{s₀}, left endpoint u_w):
+            |ν̂(t) − Σ_{|w|=h} q_w e(t u_w)| <= 2π|t|/b^h,
+        and Σ_w q_w e(t u_w) = λ^{−h} e_{s₀}ᵀ M(t/b)···M(t/b^h) r / r_{s₀}.
+        So Re(...) + 2π|t|/b^h < 0 certifies Re ν̂(t) < 0, hence M(A_L) >= (|Re ν̂(t)| − o(1))|A_L|.
+        Advisor's Fibbinary instance: t = 1, h = 8 gives Re ν̂(1) < −0.0318.
+  (iv) Turn A2 into a YES/NO question: either PROVE every nontrivial sparse primitive automaton fails an FPC (main
+       profile or b-adic sector), or EXHIBIT a survivor and analyse its depth-dependent (mesoscopic) matrix products.
+       More screening alone decides neither.
+  (v) Verdict accepted: CSTAR is a better discipline; it is NOT yet an advance on the many-spike lemma (step (c)).
+  (vi) FPC implemented in ball arithmetic: src/e108_fpc.py (python-flint arb/acb, 128 bits).
+       - λ is a rigorous root of charpoly(C), isolated by real part; r is an arb_mat solve.
+       - Advisor's Fibbinary numbers reproduced exactly: Σ = −0.05636818, bound < −0.03182448 (t = 1, h = 8).
+       - Tightened with h = 24: Re ν̂(1) < −0.0578943, so M(A_L) >= (0.0579 − o(1))|A_L|.
+  (vii) T-A2 (the YES/NO question, sharpened by the lead). Along t = b^m j, ν̂(t) → μ̂(j), where μ is the STATIONARY
+        Parry measure (the max-entropy measure of the sofic shift, viewed on T). So a single integer j with
+        Re μ̂(j) < 0 forces an FPC failure.
+        CONJECTURE T-A2: the max-entropy measure of a sofic subshift of the b-shift with 0 < h < log b is never
+        positive definite (some Re μ̂(j) < 0).
+        - Heuristic: ×b-invariant PD measures exist (Riesz products Π(1 + a cos 2πb^i x); Bernoulli convolutions
+          ν⋆ν̃), but each needs NON-uniform digit weights (the 0-digit doubled = multiplicity).
+        - Maximal entropy forces uniform path weights (a set has no multiplicity), and finite-state splitting of a
+          multiplicity recurs at every scale with the same relative defect.
+        - T-A2 would answer the advisor's question NO for all primitive automata with s₀ recurrent. It is the
+          multiplicity obstruction in ergodic language. Test: src/e108_mu.py.
+  (viii) ANSWER to (iv), as far as it goes (E108, P75).
+         - FINITE CLASS: YES, all fail. Every one of the 71,840 automata of the sector scan (b = 3, 4, 5; S <= 3) is
+           INTERVAL-CERTIFIED to fail the FPC on the MAIN profile, with Re ν̂(t) < −0.084 at a certified t. So
+           M(A_L) >= (0.084 − o(1))|A_L| for each, uniformly. No survivor exists, so there are no mesoscopic products
+           to analyse in this class.
+         - GENERAL: T-A2 is OPEN. P75 (proved, elementary) reduces "not PD" to a 2-point domination-or-twin
+           inequality among explicit cylinder weights. It covers 28.5% of the class (float).
+         - Obstructions to finishing: (1) base-2 symmetric b = 4 automata tie at u = 1/2 only (fix: descend to
+           (×2)_*σ); (2) automata where 0 is the strictly heaviest point need a >= 3-point Gram test.
+         - Lesson for C*. A finite-state self-similar law is a FIXED scale-invariant measure. A non-PD measure
+           repeats its negative excursion at every scale, which gives linear M. So a C* set cannot carry the same
+           finite-state law at all scales: its mesoscopic statistics must CHANGE with depth (the Riesz-rounding
+           reduction above). A2 is CLOSED as a design class. Its general theorem T-A2 is a side lemma (§6).
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
+P75 (automatic sets: domination-or-twin ⇒ Re μ̂ < 0 ⇒ linear M; 28.5% coverage) + E108 (FPC: all 71,840 small automata certified dead). T-A2 open.

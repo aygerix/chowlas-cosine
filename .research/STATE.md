@@ -2,6 +2,9 @@
 C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed object, the forced features, the design
 rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
 and kills. Side results are not the prize (user, 2026-10-19).
+Latest (2026-10-19, after the advisor review): A2 automatic sets are CLOSED as a design class. All 71,840 small automata
+fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T-A2 is open (side lemma). The next
+work item is CHAIN step (c), the many-spike lemma.
 
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 

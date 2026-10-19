@@ -1,0 +1,530 @@
+[
+  {
+    "name": "bohr_X4096",
+    "n": 236,
+    "X": 3653,
+    "C": 15.478813559322035,
+    "filter": {
+      "q": 895,
+      "V": "1299/8",
+      "W": "-8325/32",
+      "V_over_n": 0.6880296610169492,
+      "min_W_over_V_threehalves": -0.1257348064907441,
+      "admissible_count": 4096,
+      "all_q_checked": 4096,
+      "exact_argmin": true,
+      "cmax": 20448,
+      "c0": 19992,
+      "c_at_0_q_2q_3q": [
+        19992,
+        19146,
+        13380,
+        9133
+      ],
+      "third_moment_M_lb_numerical": 7.034449273444381,
+      "min_V_over_n": 0.604343220338983
+    },
+    "minimum_numerical": {
+      "M": 31.817264242932467,
+      "x": 2.65995463832376,
+      "R": 2.0711274910882427,
+      "grid_half_count": 262144,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 0.12921404838562012,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 4096,
+      "seed": 2026105996,
+      "J": 32,
+      "epsilon": "1/256",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 8,
+      "activity_limit": 16,
+      "union_size": 898,
+      "thinning": "(4/5)*(1-m/4097)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.2981937878165205,
+          0.6703244699799634,
+          0.8340937775702683
+        ]
+      },
+      {
+        "q": 895,
+        "bounds": [
+          0.45790364512978593,
+          1.0494770791864254,
+          1.390179468781945
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bohr_X16384",
+    "n": 922,
+    "X": 15643,
+    "C": 16.96637744034707,
+    "filter": {
+      "q": 1192,
+      "V": "4931/8",
+      "W": "18783/8",
+      "V_over_n": 0.6685195227765727,
+      "min_W_over_V_threehalves": 0.15342899778964064,
+      "admissible_count": 16384,
+      "all_q_checked": 16384,
+      "exact_argmin": true,
+      "cmax": 291366,
+      "c0": 291366,
+      "c_at_0_q_2q_3q": [
+        291366,
+        279840,
+        263670,
+        252538
+      ],
+      "third_moment_M_lb_numerical": 11.747632445148074,
+      "min_V_over_n": 0.6309652928416486
+    },
+    "minimum_numerical": {
+      "M": 73.14780813022847,
+      "x": 0.6194167674614055,
+      "R": 2.408994766604505,
+      "grid_half_count": 1048576,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 0.7352426052093506,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 16384,
+      "seed": 2026118284,
+      "J": 35,
+      "epsilon": "1/280",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 9,
+      "activity_limit": 17,
+      "union_size": 3596,
+      "thinning": "(4/5)*(1-m/16385)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.17975241027330802,
+          0.587880119704476,
+          0.6732457285747602
+        ]
+      },
+      {
+        "q": 1192,
+        "bounds": [
+          0.38688767037244937,
+          0.9132329917453491,
+          1.2609071904621756
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bohr_X65536",
+    "n": 3882,
+    "X": 61853,
+    "C": 15.933281813498196,
+    "filter": {
+      "q": 2917,
+      "V": "20333/8",
+      "W": "2246007/32",
+      "V_over_n": 0.6547205048943844,
+      "min_W_over_V_threehalves": 0.5477645428397431,
+      "admissible_count": 65536,
+      "all_q_checked": 65536,
+      "exact_argmin": true,
+      "cmax": 5506386,
+      "c0": 5506386,
+      "c_at_0_q_2q_3q": [
+        5506386,
+        5245404,
+        5136882,
+        5080087
+      ],
+      "third_moment_M_lb_numerical": 19.48176602367378,
+      "min_V_over_n": 0.6407457496136012
+    },
+    "minimum_numerical": {
+      "M": 151.68830119223404,
+      "x": 0.49411716092484204,
+      "R": 2.4345815250487473,
+      "grid_half_count": 4194304,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 3.720644474029541,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 65536,
+      "seed": 2026167436,
+      "J": 37,
+      "epsilon": "1/296",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 10,
+      "activity_limit": 18,
+      "union_size": 14535,
+      "thinning": "(4/5)*(1-m/65537)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.08653526763225146,
+          0.47118322635205645,
+          0.5511915577067237
+        ]
+      },
+      {
+        "q": 2917,
+        "bounds": [
+          0.31268032711666266,
+          0.7705249836553667,
+          1.101575415900168
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bohr_X200000",
+    "n": 11817,
+    "X": 193123,
+    "C": 16.342811204197343,
+    "filter": {
+      "q": 22934,
+      "V": "61539/8",
+      "W": "20429205/32",
+      "V_over_n": 0.650958365067276,
+      "min_W_over_V_threehalves": 0.9462607285478375,
+      "admissible_count": 200000,
+      "all_q_checked": 200000,
+      "exact_argmin": true,
+      "cmax": 50481264,
+      "c0": 50481264,
+      "c_at_0_q_2q_3q": [
+        50481264,
+        47325918,
+        44084691,
+        39372049
+      ],
+      "third_moment_M_lb_numerical": 28.015508366444603,
+      "min_V_over_n": 0.6484831175425235
+    },
+    "minimum_numerical": {
+      "M": 288.75823385216944,
+      "x": 2.734334831772487,
+      "R": 2.656322244141769,
+      "grid_half_count": 16777216,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 14.157987356185913,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 200000,
+      "seed": 2026301900,
+      "J": 40,
+      "epsilon": "1/320",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 9,
+      "activity_limit": 20,
+      "union_size": 44237,
+      "thinning": "(4/5)*(1-m/200001)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.05063235812575397,
+          0.37377942480751364,
+          0.46416291820161426
+        ]
+      },
+      {
+        "q": 22934,
+        "bounds": [
+          0.2577180815312274,
+          0.6716860388282779,
+          1.0080891437557886
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fejer_X4096",
+    "n": 1030,
+    "X": 3946,
+    "C": 3.8310679611650484,
+    "filter": {
+      "q": 252,
+      "V": "4017/8",
+      "W": "-32259/8",
+      "V_over_n": 0.4875,
+      "min_W_over_V_threehalves": -0.3583794894412844,
+      "admissible_count": 4096,
+      "all_q_checked": 4096,
+      "exact_argmin": true,
+      "cmax": 1196607,
+      "c0": 1187526,
+      "c_at_0_q_2q_3q": [
+        1187526,
+        1193347,
+        1171152,
+        1155109
+      ],
+      "third_moment_M_lb_numerical": 13.640182298408416,
+      "min_V_over_n": 0.4588592233009709
+    },
+    "minimum_numerical": {
+      "M": 69.35121702591772,
+      "x": 1.4202652629702137,
+      "R": 2.1609040051316755,
+      "grid_half_count": 262144,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 0.17386388778686523,
+    "parameters": {
+      "kind": "positive Fejer mixture Bernoulli",
+      "X_ambient": 4096,
+      "seed": 2026105996,
+      "J": 17,
+      "delta": 0.5,
+      "modulation_amplitude": 0.5,
+      "alpha_denominator": 2147483647,
+      "minimum_negative_cos_count": 2,
+      "probability_evaluation": "floating point (saved realization is an exact integer set)"
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.05533185704018289,
+          0.4557564001716915,
+          0.6290945586636904
+        ]
+      },
+      {
+        "q": 252,
+        "bounds": [
+          0.4250123620518667,
+          0.9597529518447849,
+          1.2529162018093274
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fejer_X16384",
+    "n": 4077,
+    "X": 16200,
+    "C": 3.9735099337748343,
+    "filter": {
+      "q": 1391,
+      "V": "16449/8",
+      "W": "-315909/32",
+      "V_over_n": 0.5043230316409124,
+      "min_W_over_V_threehalves": -0.10588580679290101,
+      "admissible_count": 16384,
+      "all_q_checked": 16384,
+      "exact_argmin": true,
+      "cmax": 18397812,
+      "c0": 18379932,
+      "c_at_0_q_2q_3q": [
+        18379932,
+        18272658,
+        17866401,
+        17322463
+      ],
+      "third_moment_M_lb_numerical": 24.15434478180365,
+      "min_V_over_n": 0.47838484179543783
+    },
+    "minimum_numerical": {
+      "M": 142.66564977758867,
+      "x": 2.721945282126964,
+      "R": 2.2343389840672643,
+      "grid_half_count": 1048576,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 0.8399689197540283,
+    "parameters": {
+      "kind": "positive Fejer mixture Bernoulli",
+      "X_ambient": 16384,
+      "seed": 2026118284,
+      "J": 20,
+      "delta": 0.5,
+      "modulation_amplitude": 0.5,
+      "alpha_denominator": 2147483647,
+      "minimum_negative_cos_count": 1,
+      "probability_evaluation": "floating point (saved realization is an exact integer set)"
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.028281463085680438,
+          0.3291673884234677,
+          0.5591313659627715
+        ]
+      },
+      {
+        "q": 1391,
+        "bounds": [
+          0.37829003873547407,
+          0.9089691130063067,
+          1.2613214128894585
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fejer_X65536",
+    "n": 16457,
+    "X": 64900,
+    "C": 3.9436106216199796,
+    "filter": {
+      "q": 5425,
+      "V": "66257/8",
+      "W": "-484071/8",
+      "V_over_n": 0.503258491827186,
+      "min_W_over_V_threehalves": -0.08027982314999992,
+      "admissible_count": 65536,
+      "all_q_checked": 65536,
+      "exact_argmin": true,
+      "cmax": 296727168,
+      "c0": 296580948,
+      "c_at_0_q_2q_3q": [
+        296580948,
+        294915828,
+        289401963,
+        280817668
+      ],
+      "third_moment_M_lb_numerical": 47.61622340589214,
+      "min_V_over_n": 0.4905055599440967
+    },
+    "minimum_numerical": {
+      "M": 326.200171287665,
+      "x": 0.755195302039426,
+      "R": 2.5427803707000387,
+      "grid_half_count": 4194304,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 4.297199726104736,
+    "parameters": {
+      "kind": "positive Fejer mixture Bernoulli",
+      "X_ambient": 65536,
+      "seed": 2026167436,
+      "J": 23,
+      "delta": 0.5,
+      "modulation_amplitude": 0.5,
+      "alpha_denominator": 2147483647,
+      "minimum_negative_cos_count": 2,
+      "probability_evaluation": "floating point (saved realization is an exact integer set)"
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.014231045452830162,
+          0.21019838969348723,
+          0.5158762178547132
+        ]
+      },
+      {
+        "q": 5425,
+        "bounds": [
+          0.3711757652530355,
+          0.910596519990906,
+          1.3067043520631834
+        ]
+      }
+    ]
+  },
+  {
+    "name": "fejer_X200000",
+    "n": 50037,
+    "X": 198736,
+    "C": 3.971780882147211,
+    "filter": {
+      "q": 4438,
+      "V": "200777/8",
+      "W": "-2787237/16",
+      "V_over_n": 0.5015713372104642,
+      "min_W_over_V_threehalves": -0.04381450961071178,
+      "admissible_count": 200000,
+      "all_q_checked": 200000,
+      "exact_argmin": true,
+      "cmax": 2751454716,
+      "c0": 2751076158,
+      "c_at_0_q_2q_3q": [
+        2751076158,
+        2750172144,
+        2745903831,
+        2740381546
+      ],
+      "third_moment_M_lb_numerical": 81.21464765281782,
+      "min_V_over_n": 0.4931925375222335
+    },
+    "minimum_numerical": {
+      "M": 663.0362960114094,
+      "x": 1.2706913404184121,
+      "R": 2.9640919476587926,
+      "grid_half_count": 16777216,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 15.560584783554077,
+    "parameters": {
+      "kind": "positive Fejer mixture Bernoulli",
+      "X_ambient": 200000,
+      "seed": 2026301900,
+      "J": 25,
+      "delta": 0.5,
+      "modulation_amplitude": 0.5,
+      "alpha_denominator": 2147483647,
+      "minimum_negative_cos_count": 2,
+      "probability_evaluation": "floating point (saved realization is an exact integer set)"
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.008135922052917383,
+          0.12849475013611114,
+          0.4517987101557701
+        ]
+      },
+      {
+        "q": 4438,
+        "bounds": [
+          0.3630686352885891,
+          0.8941589701143133,
+          1.318375464254791
+        ]
+      }
+    ]
+  }
+]

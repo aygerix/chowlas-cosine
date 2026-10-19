@@ -1288,3 +1288,30 @@ Strategic decision:
   - First derivation to attempt: a two-level version. ρ = front-loaded profile times a q-periodic pattern; show its
     0/1 rounding has either bulk >= cn or a kink sidelobe >= c√n. This generalizes P38 + P41 to arbitrary
     (non-cumulative) roundings of a two-level structure.
+
+## 2026-10-19 (late night) — P41-B, the spike-comb heuristic for SB, and why physical-space SB proofs leak √n
+- P41-B (CONJECTURED extension, proof sketch): cumulative rounding of Bohr-modulated profiles p(m) = P(m/X, mα), with
+  P smooth on [0,1] × T^d, α Diophantine, and the θ-average P₀ curved (|P₀'| >= c₁ where the energy lives).
+  - Φ(m) = Φ₀(m) + ω(m/X, mα) + o(1), with Φ₀'' = P₀'/X and ω the bounded solution of the cohomological equation.
+  - e(kΦ) = e(kΦ₀)·Σ_j c_{k,j}(m/X)e(jmα). Van der Corput with partial summation in each term keeps the curved part
+    O(√(KX)) uniformly.
+  - The profile's Bohr spikes at 2πlα are excluded like flat pieces (P41+).
+  - So deterministic cumulative roundings of TD5-type positive-mixture profiles satisfy Chowla.
+  - The hard sets are non-cumulative roundings whose errors are themselves structured.
+- Why SB resists physical-space proofs (recorded failures):
+  - (a) With φ = f1_U (the spike part, ∫φ <= M) and r = f1_{U^c}, the identity f⊛f = ½f gives
+    ½∫_U f² = T(φ,φ,φ) + 2T(φ,φ,r) + T(φ,r,r). The error terms are bounded only by ‖φ‖₁·‖φ‖₂‖r‖₂ ~ M·√δ·n, which
+    exceeds n by a factor ε√(δn).
+  - (b) Dually, φ̂ ≈ ½1_S in ℓ², but the Toeplitz error operator has norm sup|r| ~ K√n. Positive-definiteness of φ̂
+    therefore loses exactly the √n we need.
+  - (c) P25 localization controls local sums at m-scale H, i.e. x-resolution 1/H ≫ 1/X (the spike width), so it
+    cannot see fine spikes.
+  - Every route so far loses exactly at the √n scale. The missing ingredient must be exact at that scale (like
+    P41's exponential sums for a specific rounding), not a stability or regularity argument.
+- Spike-comb heuristic (why SB should hold):
+  - A violator has f ≈ −M + Σ_j h·φ((x − x_j)/w) with positive bumps φ, so f̂(k) = hw·φ̂(kw)·Σ_j e^{−ikx_j}.
+  - φ >= 0 forces φ̂ to decay (triangle-like). Flat 0/1 coefficients then force |Σ_j e^{−ikx_j}| to GROW toward the
+    band edge on S and to vanish on [−1/w, 1/w] \ S: about 4X vanishing conditions with N_s ~ ε²X points.
+  - Coset (rational) point sets vanish for free but have flat moduli on their dilate lattices: the wrong shape, giving
+    exactly the Dirichlet sidelobes.
+  - A quantitative "positive-bump uncertainty principle" along these lines is a candidate missing ingredient.

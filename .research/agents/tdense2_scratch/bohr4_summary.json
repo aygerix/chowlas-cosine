@@ -1,0 +1,274 @@
+[
+  {
+    "name": "bohr4_X4096",
+    "n": 268,
+    "X": 3338,
+    "C": 12.455223880597014,
+    "filter": {
+      "q": 1140,
+      "V": "1333/8",
+      "W": "14733/32",
+      "V_over_n": 0.6217350746268657,
+      "min_W_over_V_threehalves": 0.214057755289823,
+      "admissible_count": 4096,
+      "all_q_checked": 4096,
+      "exact_argmin": true,
+      "cmax": 30840,
+      "c0": 30840,
+      "c_at_0_q_2q_3q": [
+        30840,
+        26055,
+        16339,
+        8878
+      ],
+      "third_moment_M_lb_numerical": 6.050244802708872,
+      "min_V_over_n": 0.5862873134328358
+    },
+    "minimum_numerical": {
+      "M": 33.73121298228964,
+      "x": 2.3353382769000435,
+      "R": 2.0604617737552573,
+      "grid_half_count": 262144,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 0.16209888458251953,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 4096,
+      "seed": 2026105996,
+      "J": 16,
+      "epsilon": "1/128",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 7,
+      "activity_limit": 8,
+      "union_size": 918,
+      "thinning": "(4/5)*(1-m/4097)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.2491884158984749,
+          0.5721574449299021,
+          0.7169550677387309
+        ]
+      },
+      {
+        "q": 1140,
+        "bounds": [
+          0.3695775228832832,
+          0.8730839801334089,
+          1.1907389984954275
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bohr4_X16384",
+    "n": 901,
+    "X": 14652,
+    "C": 16.261931187569367,
+    "filter": {
+      "q": 898,
+      "V": "4689/8",
+      "W": "89535/16",
+      "V_over_n": 0.650527192008879,
+      "min_W_over_V_threehalves": 0.3943551226612994,
+      "admissible_count": 16384,
+      "all_q_checked": 16384,
+      "exact_argmin": true,
+      "cmax": 291918,
+      "c0": 291918,
+      "c_at_0_q_2q_3q": [
+        291918,
+        268503,
+        250401,
+        243109
+      ],
+      "third_moment_M_lb_numerical": 10.20124455831084,
+      "min_V_over_n": 0.6227802441731409
+    },
+    "minimum_numerical": {
+      "M": 75.94284810684577,
+      "x": 2.836691441500666,
+      "R": 2.5300230920626174,
+      "grid_half_count": 1048576,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 0.7256472110748291,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 16384,
+      "seed": 2026118284,
+      "J": 18,
+      "epsilon": "1/144",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 8,
+      "activity_limit": 9,
+      "union_size": 3603,
+      "thinning": "(4/5)*(1-m/16385)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.17406382165302345,
+          0.5247323904623459,
+          0.6187948250491806
+        ]
+      },
+      {
+        "q": 898,
+        "bounds": [
+          0.33985273062175275,
+          0.8136792176593951,
+          1.1583956113179832
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bohr4_X65536",
+    "n": 3914,
+    "X": 63833,
+    "C": 16.308891159938682,
+    "filter": {
+      "q": 16138,
+      "V": "19723/8",
+      "W": "4173561/32",
+      "V_over_n": 0.6298863055697497,
+      "min_W_over_V_threehalves": 1.0654481154132578,
+      "admissible_count": 65536,
+      "all_q_checked": 65536,
+      "exact_argmin": true,
+      "cmax": 5880996,
+      "c0": 5880996,
+      "c_at_0_q_2q_3q": [
+        5880996,
+        4931757,
+        3565155,
+        2169316
+      ],
+      "third_moment_M_lb_numerical": 15.153773891214229,
+      "min_V_over_n": 0.6298863055697497
+    },
+    "minimum_numerical": {
+      "M": 161.73296872891217,
+      "x": 2.7706406626400004,
+      "R": 2.5851642874127907,
+      "grid_half_count": 4194304,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 4.2853991985321045,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 65536,
+      "seed": 2026167436,
+      "J": 19,
+      "epsilon": "1/152",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 9,
+      "activity_limit": 9,
+      "union_size": 14613,
+      "thinning": "(4/5)*(1-m/65537)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.08215019853655833,
+          0.3910289822674464,
+          0.4642180891224858
+        ]
+      },
+      {
+        "q": 16138,
+        "bounds": [
+          0.2422202188643327,
+          0.5917845202541169,
+          0.8815091598681064
+        ]
+      }
+    ]
+  },
+  {
+    "name": "bohr4_X200000",
+    "n": 11878,
+    "X": 195489,
+    "C": 16.458073749789527,
+    "filter": {
+      "q": 30175,
+      "V": "60579/8",
+      "W": "9931095/8",
+      "V_over_n": 0.6375126283886177,
+      "min_W_over_V_threehalves": 1.8839049178812262,
+      "admissible_count": 200000,
+      "all_q_checked": 200000,
+      "exact_argmin": true,
+      "cmax": 53719176,
+      "c0": 53719176,
+      "c_at_0_q_2q_3q": [
+        53719176,
+        47726322,
+        42111828,
+        34606996
+      ],
+      "third_moment_M_lb_numerical": 19.038732212064815,
+      "min_V_over_n": 0.6242949149688499
+    },
+    "minimum_numerical": {
+      "M": 297.6535688155475,
+      "x": 1.7487659337368495,
+      "R": 2.731111516438701,
+      "grid_half_count": 16777216,
+      "fft_direct_disagreement": 0.0,
+      "certified": false
+    },
+    "seconds": 15.499828338623047,
+    "parameters": {
+      "kind": "Bohr union",
+      "X_ambient": 200000,
+      "seed": 2026301900,
+      "J": 20,
+      "epsilon": "1/160",
+      "C0": 2,
+      "alpha_denominator": 2147483647,
+      "alpha_trials": 1,
+      "maximum_active": 10,
+      "activity_limit": 10,
+      "union_size": 44398,
+      "thinning": "(4/5)*(1-m/200001)^2",
+      "exact_membership_and_thinning": true
+    },
+    "moment_M_bounds": [
+      {
+        "q": 0,
+        "bounds": [
+          0.04797465970502364,
+          0.28103361518724235,
+          0.3500507685508747
+        ]
+      },
+      {
+        "q": 30175,
+        "bounds": [
+          0.17468932426939782,
+          0.5126749090472901,
+          0.8643587109099705
+        ]
+      }
+    ]
+  }
+]

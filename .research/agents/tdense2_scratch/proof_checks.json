@@ -1,0 +1,98 @@
+{
+  "status": "EXACT checks PASS",
+  "endpoint_t": 1024,
+  "sufficient_endpoint_inequality": true,
+  "abstract_moment_obstruction": [
+    {
+      "r": 1,
+      "highest_moment": 3,
+      "Schur_threshold": "80/27",
+      "constant_m": "107/27"
+    },
+    {
+      "r": 2,
+      "highest_moment": 5,
+      "Schur_threshold": "69125/4488",
+      "constant_m": "73613/4488"
+    },
+    {
+      "r": 3,
+      "highest_moment": 7,
+      "Schur_threshold": "792130993/2241000",
+      "constant_m": "794371993/2241000"
+    }
+  ],
+  "rational_witnesses_rechecked": 210,
+  "independent_CRT_rechecks": [
+    {
+      "name": "bohr_X200000",
+      "all_cube_coefficients_rechecked": 579370,
+      "method": "fmpz_poly over Z, independent of modular CRT"
+    },
+    {
+      "name": "bohr4_X200000",
+      "all_cube_coefficients_rechecked": 586468,
+      "method": "fmpz_poly over Z, independent of modular CRT"
+    },
+    {
+      "name": "fejer_X200000",
+      "all_cube_coefficients_rechecked": 596209,
+      "method": "fmpz_poly over Z, independent of modular CRT"
+    }
+  ],
+  "exact_finite_Bohr_seventh_moment_bounds": [
+    {
+      "name": "bohr_X65536",
+      "q": 2917,
+      "exact_claim": "M >= (1) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr4_X16384",
+      "q": 898,
+      "exact_claim": "M >= (4/5) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr4_X4096",
+      "q": 1140,
+      "exact_claim": "M >= (4/5) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr4_X200000",
+      "q": 30175,
+      "exact_claim": "M >= (4/5) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr_X16384",
+      "q": 1192,
+      "exact_claim": "M >= (1) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr_X200000",
+      "q": 22934,
+      "exact_claim": "M >= (1) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr_X4096",
+      "q": 895,
+      "exact_claim": "M >= (1) sqrt(n)",
+      "passed": true
+    },
+    {
+      "name": "bohr4_X65536",
+      "q": 16138,
+      "exact_claim": "M >= (4/5) sqrt(n)",
+      "passed": true
+    }
+  ],
+  "versions": {
+    "python-flint": "0.9.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  }
+}

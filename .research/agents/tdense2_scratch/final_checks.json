@@ -1,0 +1,10 @@
+{
+  "status": "EXACT final checks PASS",
+  "benchmark_LM_eta": "1/10",
+  "benchmark_LM_B": 2,
+  "benchmark_sets_checked": 23,
+  "exhaustive_local_front_checks": 94242,
+  "local_max_X": 10,
+  "local_max_q": 3,
+  "reason": "Does not prove the asymptotic theorems; checks the finite claims and an algebraic normalization."
+}

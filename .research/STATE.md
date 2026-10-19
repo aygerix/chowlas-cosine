@@ -222,6 +222,24 @@ in parallel.
 - E64/E65 (one Bu step): R_opt/R_Bu = 0.84, 0.94, 0.97, 0.98, 1.00 at k = 7, 8, 9, 11, 12 (time-limited MILP).
   At k = 12 the class optimum IS Bu. E65 annealing at k = 12 with λ > 1 raises M by 35–44%.
   The one-step class closes onto Bu (T9/T10 prediction confirmed). Dense optima are rigid: E = ∅.
+## Session 3, latest additions (2026-10-19 late night)
+- P41 (lead, PROVED on paper): Chowla for cumulative rounding of curved piecewise-C² profiles, at any start density
+  (irrational included), with no front-loading or monotonicity condition. Proof: spike truncation (P40), Vaaler and
+  van der Corput. E66 numerics agree (curved R ≈ 1.4–3.0).
+- P39 V_q normalization corrected (agent catch).
+- TD5 (round-2 agent, lead-checked step by step; to be recorded in PROOFS when the report is final): LM-dense is
+  FALSE at C = 16.
+  - Family: random rounding of a positive Fejér mixture with J ≍ log X bumps.
+  - W_q ≳ X²/log²X for every q, with M >= √n/128.
+- Conjecture SB (NOTEBOOK; implies Chowla via P40): ∫_{f <= K√n} f² >= c·n for every A.
+  - E67 zoo: intervals ≈ 0.05–0.10 (negative sidelobes); Bu/Singer ≈ 0.45–0.53; certified small optima ≈ 0.23–0.41;
+    random 0.7–0.96.
+  - E67 SA (minimize β_K) is running.
+- Next derivations:
+  - (1) P41+: flat Sturmian pieces excluded from the bulk accounting (Diophantine bookkeeping).
+  - (2) Two-level arbitrary rounding (front-loaded profile × q-periodic pattern): bulk or kink sidelobe.
+  - (3) Every 0/1 sequence factors into maximal Sturmian (balanced) pieces via the taut string. Study whether pieces
+    of length <= K√n plus long Sturmian pieces give SB.
 ## Running now (2026-10-19, session 3, latest)
 - Codex MATH agent, round 2: .research/agents/tdense2_brief.md (report tdense2_report.md).
   - T1: decide LM-dense on Bohr unions (exact triple counts).

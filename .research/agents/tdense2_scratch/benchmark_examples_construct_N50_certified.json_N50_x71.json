@@ -1,0 +1,210 @@
+{
+  "name": "benchmark_examples/construct/N50_certified.json:N50_x71",
+  "n": 50,
+  "X": 68,
+  "C": 1.36,
+  "A": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35,
+    36,
+    37,
+    39,
+    40,
+    41,
+    42,
+    47,
+    48,
+    50,
+    52,
+    57,
+    61,
+    62,
+    64,
+    65,
+    68
+  ],
+  "parameters": null,
+  "filter": {
+    "q": 23,
+    "V": "71/8",
+    "W": "-21/32",
+    "V_over_n": 0.1775,
+    "min_W_over_V_threehalves": -0.024820857076380945,
+    "admissible_count": 68,
+    "all_q_checked": 68,
+    "exact_argmin": true,
+    "cmax": 6573,
+    "c0": 6540,
+    "c_at_0_q_2q_3q": [
+      6540,
+      6150,
+      4989,
+      3535
+    ],
+    "third_moment_M_lb_numerical": 1.7581475311196786,
+    "min_V_over_n": 0.1325
+  },
+  "minimum_numerical": {
+    "M": 4.048310657885534,
+    "x": 1.697608889276783,
+    "R": 0.5725175837081269,
+    "grid_half_count": 8192,
+    "fft_direct_disagreement": 0.0,
+    "certified": false
+  },
+  "higher_moments": [
+    {
+      "q": 0,
+      "moments": [
+        "1",
+        "0",
+        "25",
+        "1635/2",
+        "143799/4",
+        "6455985/4",
+        "295721935/4",
+        "219573333231/64"
+      ],
+      "witnesses": [
+        {
+          "degree": 1,
+          "highest_moment": 3,
+          "scale": 7,
+          "integer_polynomial_coefficients": [
+            -1000000000,
+            209283572
+          ],
+          "exact_m_lower_bound": "936076653908194177/1252374758443174490",
+          "exact_M_lower_bound": "936076653908194177/1252374758443174490",
+          "M_lower_bound": 0.7474413290410211,
+          "M_lb_over_sqrt_n": 0.10570416646079832,
+          "eigenvalue_numerical": -0.10677733272014589
+        },
+        {
+          "degree": 2,
+          "highest_moment": 5,
+          "scale": 7,
+          "integer_polynomial_coefficients": [
+            673655296,
+            -1000000000,
+            139089743
+          ],
+          "exact_m_lower_bound": "2214487243928408495971/1318210346441639607723",
+          "exact_M_lower_bound": "2214487243928408495971/1318210346441639607723",
+          "M_lower_bound": 1.6799194831888307,
+          "M_lb_over_sqrt_n": 0.23757649168204448,
+          "eigenvalue_numerical": -0.2399884975984036
+        },
+        {
+          "degree": 3,
+          "highest_moment": 7,
+          "scale": 7,
+          "integer_polynomial_coefficients": [
+            286070077,
+            -1000000000,
+            349310811,
+            -30665974
+          ],
+          "exact_m_lower_bound": "1225651518937297187576309/500635819096115360981580",
+          "exact_M_lower_bound": "1225651518937297187576309/500635819096115360981580",
+          "M_lower_bound": 2.4481898261897808,
+          "M_lb_over_sqrt_n": 0.3462263255461418,
+          "eigenvalue_numerical": -0.34974140374138835
+        }
+      ]
+    },
+    {
+      "q": 23,
+      "moments": [
+        "1",
+        "0",
+        "71/8",
+        "-21/32",
+        "31997/128",
+        "8935/64",
+        "19164485/2048",
+        "107175579/8192"
+      ],
+      "witnesses": [
+        {
+          "degree": 1,
+          "highest_moment": 3,
+          "scale": 7,
+          "integer_polynomial_coefficients": [
+            -420335914,
+            1000000000
+          ],
+          "exact_m_lower_bound": "13220746828625000000/4383107937328138601",
+          "exact_M_lower_bound": "30824601594578138601/17532431749312554404",
+          "M_lower_bound": 1.7581475311196788,
+          "M_lb_over_sqrt_n": 0.24863960831622228,
+          "eigenvalue_numerical": -0.43089929460562243
+        },
+        {
+          "degree": 2,
+          "highest_moment": 5,
+          "scale": 7,
+          "integer_polynomial_coefficients": [
+            -37186334,
+            854620734,
+            -1000000000
+          ],
+          "exact_m_lower_bound": "24565170929994150247117/4888911096347403323772",
+          "exact_M_lower_bound": "27009626478167851909003/9777822192694806647544",
+          "M_lower_bound": 2.762335614810755,
+          "M_lb_over_sqrt_n": 0.39065324902915916,
+          "eigenvalue_numerical": -0.7178101756602158
+        },
+        {
+          "degree": 3,
+          "highest_moment": 7,
+          "scale": 7,
+          "integer_polynomial_coefficients": [
+            -55872128,
+            20256572,
+            985249513,
+            -1000000000
+          ],
+          "exact_m_lower_bound": "12389075730940763685898186/2153181529822789650886557",
+          "exact_M_lower_bound": "26931332991704317022682929/8612726119291158603546228",
+          "M_lower_bound": 3.1269231853759223,
+          "M_lb_over_sqrt_n": 0.44221371772575085,
+          "eigenvalue_numerical": -0.8219780529645491
+        }
+      ]
+    }
+  ],
+  "seconds": 0.008327484130859375
+}

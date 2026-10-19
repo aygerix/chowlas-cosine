@@ -852,3 +852,27 @@ Reading:
   slowly, perhaps ~√log X. This is consistent with P41's M >= c√n.
 - Non-convex profiles (a flat-to-curved kink; oscillation) have LINEAR M (R ∝ √n), as in E52.
 - No cumulative rounding comes near R = ½. The best is the linear profile from density 1 (R ≈ 1.4–1.8).
+
+## E67 (2026-10-19) Bulk fraction β_K = ∫_{f<=K√n} f² / ∫f² (Conjecture SB) (src/e67_zoo.py, src/e67_bulk_sa.c;
+## examples/e67/)
+NUMERICAL (FFT grid integrals). SB says β_K >= c > 0 for every A, and implies Chowla via P40.
+| family | n | β1 | β2 | β3 | R |
+|---|---|---|---|---|---|
+| interval | 256 / 1024 / 4096 | 0.083 / 0.074 / 0.070 | 0.097 / 0.080 / 0.073 | 0.104 / 0.085 / 0.076 | 3.5 / 7.0 / 13.9 |
+| random density 1/3 | 256–4096 | ≈0.56 | ≈0.69 | ≈0.69 | 2.9–13.8 |
+| random density 1/50 | 256–4096 | ≈0.70 | ≈0.96 | ≈0.98 | |
+| cumround ½(1−t)² | 256–4096 | ≈0.53 | ≈0.70 | ≈0.70 | 2.3–2.7 |
+| cumround 1−t | 256–4096 | ≈0.30 | ≈0.335 | ≈0.34 | 1.57–1.68 |
+| multidilate (8 primes) | 234 / 898 / 3576 | 0.28 / 0.20 / 0.18 | 0.71 / 0.26 / 0.19 | | 1.1 / 1.6 / 3.0 |
+| Bu/Singer q = 7..31 | 56–992 | 0.29–0.33 | 0.44–0.53 | 0.53–0.60 | 0.66–0.80 |
+| smallN_best (certified-type optima) | 20–35 | 0.19–0.30 | 0.23–0.41 | 0.30–0.48 | 0.57–0.60 |
+SA minimising β_K over A ⊂ [1, X], |A| = n (4·10^6 swaps, 3 restarts):
+- (X, n) = (256, 64), (512, 64): min β1 = 0.110, min β2 = 0.112–0.118. The minimiser is the interval [1, 64]
+  (R = 1.81).
+- (1024, 128): min β1 = 0.091, again interval-like (R = 2.51); β2 runs reach 0.215–0.227.
+- (4096, 64): pending at the time of writing.
+Reading:
+- No SB violator was found. β is minimised by intervals (bulk = negative sidelobes ≈ 5–10%, decreasing slowly towards
+  ≈ 0.05).
+- The SB-extremal sets have huge M, far from the Chowla extremisers (Bu: β2 ≈ 0.45; small optima: β2 ≈ 0.25–0.4).
+- B–D (P40) is far from binding at the current R: it only requires β_K <= 2(K + R)R + 2R².

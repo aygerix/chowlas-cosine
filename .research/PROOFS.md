@@ -1159,3 +1159,64 @@ Meaning:
   spikes cannot hide it.
 - This is a mechanism different from P31 (linear profile constraint) and P38 (window on filtered energy), and it
   does not care about front-loading.
+
+## P42. LM-dense is FALSE (TD5) — PROVED on paper (round-2 agent 2026-10-19, report .research/agents/tdense2_report.md
+## §TD5; every step checked by the lead; not kernel-checked)
+For every t >= 1024 there is (by a terminating search; existence via the probabilistic method) A_t ⊂ [1, X], X = 2^t,
+n >= X/16, such that for EVERY 1 <= q <= X:
+    V_q >= X/256,    W_q >= X²/(2^28 J²),    J = 128(t+1).
+So W_q/V_q^{3/2} -> ∞ uniformly in q, and no single filter (1 − cos qx) with TD4 gives c√n. Also M(A_t) >= √n/128,
+witnessed at x = π: this disproves the certificate, not T-dense.
+Construction:
+- B = F_N + (1/4J)Σ_i [F_N(x − θ_i) + F_N(x + θ_i)], with Fejér F_N, N = X + 1, and θ_i uniform on 16X points.
+- Profile p_m = ½(1 − m/N)[1 + (1/2J)Σ cos mθ_i] ∈ [w/4, 3w/4]; independent Bernoulli(p_m) rounding.
+Mechanism:
+- For each q, the order of q mod 16X is >= 16, so >= J/4 bumps have cos(qθ_i) <= 0 (Chernoff, union bound over q).
+- Each such bump survives the filter (H_q >= 3/4 on it) and contributes N²/8192·(4J)^{−3} to ∫(H_q B)³; cubes of
+  nonnegative summands add.
+- The rounding noise is uniformly <= R ≍ √(X log X) and perturbs the cube by <= 63R³.
+This is the rigorous form of P39-O(ii), using positive Fejér bumps instead of sharp Bohr sets.
+
+## P43. Reciprocal spike masks (TD6) — PROVED on paper for the P42 family (agent; lead-checked)
+- With H = 1/(1 + B) (0 < H <= 1, H >= 1/13 off {B > 12}, a set of measure <= 1/8), with probability >= 1 − O(1/X)
+  over the rounding:
+  - |∫Hf| <= 33;
+  - Var(Hf) >= X/2^20;
+  - centered ∫|Hf − μ|³ <= 2^16 X^{3/2}.
+- TD4 then gives M >= √X/2^58, with NO dependence on J: no (3/8)^{J/2} product-filter loss.
+- H can be replaced by the polynomial H_d = Σ_{k<=d}(L − B)^k/(1 + L)^{k+1}, L = 3N/2, of degree O(N log X).
+- Exact moment formulas for any finite positive multiplier: μ = R₁, V = R₂ − μ², W = R₃ − 3μR₂ + 2μ³, with
+  R_j = (h^{*j} ∗ s^{*j})(0)/2^j.
+
+## P44. P38 under bounded discrepancy plus local overshoot (TD7) — PROVED on paper (agent; lead-checked)
+- Hypotheses: P38's profile hypotheses (q, r/q start, slope L, tail mass μ_tail), and ANY binary a with prefix
+  discrepancy |Σ_{i<=j}(a_i − p(i/X))| <= D, plus the averaged local-overshoot bound
+  (LO) O_q(w) = Σ_{j<=w}(d_j − r)₊ <= K0 + K1(w+1)(w+q)/X, where d_j = Σ_{i=j+1}^{j+q} a_i.
+- Conclusion: M >= c(p, q, D, K0, K1)√n.
+- Proof:
+  - Σz <= qL(w+1)(w+q)/X + 2qD, and Σ|z| = Σz + 2O_q(w), which gives the front energy.
+  - Tail energy: discrepancy bounds q-chain runs by K_run = ⌈2D(q+1)⌉ + 1, and b_j >= ½ at every run start.
+  - Then the TD-window as in P38.
+- P44-O (TD7-O, PROVED): bounded discrepancy alone does not suffice for the FIXED filter q = 2.
+  - Block construction mixing 1100-patterns in the front with q-chains later; D = B + 1 fixed.
+  - The TD-window numerator is negative at every proportional scale. Filters q = 4, 8, 16 are not excluded
+    (they work numerically).
+
+## P45. Fixed-order moment certificates cannot see bulk behind spikes (TD8) — PROVED (agent; lead-checked)
+- For every r there is C_r < ∞ and a centered distribution T_X with variance ≍ X and min T_X = −√X − O(1)
+  (bulk ±√X plus a rare spike X·U[1,2] with probability 1/X), such that every shifted Hankel matrix through moment
+  2r+1 is PSD at m = C_r.
+- So moment-PSD certificates of bounded order give only m >= O(1) on spike-plus-bulk laws.
+- Exact Schur thresholds r = 1, 2, 3: 80/27, 69125/4488, 792130993/2241000 (the report's 107/27 for r = 1 is a looser
+  sufficient value).
+- Lesson: an ADAPTIVE mask (P43) or a cosine-specific relation is required.
+
+## P46. Mask-selection reduction MS (T4) — PROVED reduction; MS itself CONJECTURED (agent; lead-checked)
+- MS: for every C there are K, L, η > 0 such that every large A ⊂ [1, Cn], |A| = n, admits:
+  - a nonnegative trigonometric polynomial B with ∫B <= K;
+  - a real γ with |γ| <= K;
+  such that, with H = 1/(1 + B) and R = f_A − γ(B − ∫B):
+    ∫H²R² >= ηn,   |∫HR| <= K,   ∫|HR|³ <= L·n^{3/2}.
+- MS ⇒ T-dense (via TD4: the bounded structural part γH(B − ∫B) costs O(K²)).
+- MS is the moment-computable relative of SB (NOTEBOOK): remove bounded-mass positive structure and a bulk must remain.
+- It holds on the P42 family (P43). The deterministic case is the open core.

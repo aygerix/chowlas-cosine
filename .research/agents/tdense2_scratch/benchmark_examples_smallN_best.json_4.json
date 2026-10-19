@@ -1,0 +1,164 @@
+{
+  "name": "benchmark_examples/smallN_best.json:4",
+  "n": 4,
+  "X": 4,
+  "C": 1.0,
+  "A": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "parameters": null,
+  "filter": {
+    "q": 3,
+    "V": "9/8",
+    "W": "-33/32",
+    "V_over_n": 0.28125,
+    "min_W_over_V_threehalves": -0.8642416214502247,
+    "admissible_count": 3,
+    "all_q_checked": 4,
+    "exact_argmin": true,
+    "cmax": 39,
+    "c0": 36,
+    "c_at_0_q_2q_3q": [
+      36,
+      37,
+      19,
+      10
+    ],
+    "third_moment_M_lb_numerical": 1.0568926926609183,
+    "min_V_over_n": 0.09375
+  },
+  "minimum_numerical": {
+    "M": 1.5195578816428483,
+    "x": 1.0027500192273007,
+    "R": 0.7597789408214242,
+    "grid_half_count": 256,
+    "fft_direct_disagreement": 0.0,
+    "certified": false
+  },
+  "higher_moments": [
+    {
+      "q": 0,
+      "moments": [
+        "1",
+        "0",
+        "2",
+        "9/2",
+        "37/2",
+        "1015/16",
+        "475/2",
+        "28077/32"
+      ],
+      "witnesses": [
+        {
+          "degree": 1,
+          "highest_moment": 3,
+          "scale": 2,
+          "integer_polynomial_coefficients": [
+            -1000000000,
+            682104037
+          ],
+          "exact_m_lower_bound": "6726271336374723679/9861063669166789476",
+          "exact_M_lower_bound": "6726271336374723679/9861063669166789476",
+          "M_lower_bound": 0.68210403685012,
+          "M_lb_over_sqrt_n": 0.34105201842506,
+          "eigenvalue_numerical": -0.34105201842506
+        },
+        {
+          "degree": 2,
+          "highest_moment": 5,
+          "scale": 2,
+          "integer_polynomial_coefficients": [
+            169692272,
+            -1000000000,
+            507255421
+          ],
+          "exact_m_lower_bound": "88724639534791899473/87481059908514718312",
+          "exact_M_lower_bound": "88724639534791899473/87481059908514718312",
+          "M_lower_bound": 1.0142154156291394,
+          "M_lb_over_sqrt_n": 0.5071077078145697,
+          "eigenvalue_numerical": -0.5071077078145695
+        },
+        {
+          "degree": 3,
+          "highest_moment": 7,
+          "scale": 2,
+          "integer_polynomial_coefficients": [
+            67767396,
+            595031116,
+            -1000000000,
+            353039797
+          ],
+          "exact_m_lower_bound": "442311039476878089083/360796451419653917232",
+          "exact_M_lower_bound": "442311039476878089083/360796451419653917232",
+          "M_lower_bound": 1.2259295725788941,
+          "M_lb_over_sqrt_n": 0.6129647862894471,
+          "eigenvalue_numerical": -0.6129647862894471
+        }
+      ]
+    },
+    {
+      "q": 3,
+      "moments": [
+        "1",
+        "0",
+        "9/8",
+        "-33/32",
+        "527/128",
+        "-425/64",
+        "40455/2048",
+        "-161665/4096"
+      ],
+      "witnesses": [
+        {
+          "degree": 1,
+          "highest_moment": 3,
+          "scale": 2,
+          "integer_polynomial_coefficients": [
+            -348559359,
+            1000000000
+          ],
+          "exact_m_lower_bound": "216647259625000000/134247875582163627",
+          "exact_M_lower_bound": "567542394832163627/536991502328654508",
+          "M_lower_bound": 1.0568926926609186,
+          "M_lb_over_sqrt_n": 0.5284463463304593,
+          "eigenvalue_numerical": -0.8068926926609188
+        },
+        {
+          "degree": 2,
+          "highest_moment": 5,
+          "scale": 2,
+          "integer_polynomial_coefficients": [
+            2758009,
+            -649499805,
+            1000000000
+          ],
+          "exact_m_lower_bound": "153057628781993362105/69757143740567811268",
+          "exact_M_lower_bound": "187936200652277267739/139514287481135622536",
+          "M_lower_bound": 1.3470749415373604,
+          "M_lb_over_sqrt_n": 0.6735374707686802,
+          "eigenvalue_numerical": -1.0970749415373606
+        },
+        {
+          "degree": 3,
+          "highest_moment": 7,
+          "scale": 2,
+          "integer_polynomial_coefficients": [
+            66471800,
+            -299878576,
+            -496491316,
+            1000000000
+          ],
+          "exact_m_lower_bound": "22783380370647656450/9713511715294399163",
+          "exact_M_lower_bound": "55280272456589712063/38854046861177596652",
+          "M_lower_bound": 1.4227674315136776,
+          "M_lb_over_sqrt_n": 0.7113837157568388,
+          "eigenvalue_numerical": -1.1727674315136773
+        }
+      ]
+    }
+  ],
+  "seconds": 0.005833148956298828
+}

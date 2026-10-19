@@ -109,3 +109,19 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   - https://arxiv.org/pdf/0807.5104
   - https://arxiv.org/pdf/2509.03490
   - https://www.proofatlas.ai/collaboration/chowla-cosine-conjecture/
+
+## Found by the P31 review agent (2026-10-19)
+- M. N. Kolountzakis, "The density of B_h[g] sequences and the minimum of dense cosine sums", J. Number Theory 56
+  (1996) 4–11, Thm 2:
+  - M >= Cε²N for distinct frequencies <= (2 − ε)N, i.e. density above 1/2 in [1, max A] forces linear M;
+  - the proof multiplies by a Fejér kernel and uses Fejér's peak/mean bound (via Fejér–Riesz);
+  - so our P29 is classical, and P31's multiplication/factorization framework has a direct predecessor;
+  - P31's x₀-averaged second-moment inequality and its threshold β/2 were not found there.
+  - https://eigen-space.org/mk/ps/dense.pdf
+- W. Beckner, "Inequalities in Fourier analysis", Ann. Math. 102 (1975) 159–182, Thm 3: sharp Young on R^d with
+  constant (A_pA_qA_{r'})^d. It is used for P31-N with p = q = 4/3, r = 2.
+- Levin–Lubinsky (2015 manuscript) Thm 1: limsup N^{1/p−1/q}Λ_{N,p,q} <= E_{p,q}, with Λ an INFIMUM of ‖P‖_p/‖P‖_q.
+  - For p = 2, q = 4 this points toward a LOWER bound on lim ρ, not the needed upper bound.
+  - The limit is conjectured there.
+- Correction to the 2026-10-19 quick check above: a dense-set result in Z DOES exist (Kolountzakis 1996, density
+  > 1/2, linear). The √n result for density in (0.385, 1/2] (P31) is what was not found.

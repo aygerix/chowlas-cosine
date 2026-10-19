@@ -1,0 +1,30 @@
+[
+  {
+    "N": 2,
+    "numerical_lower_bound_rho": 0.75
+  },
+  {
+    "N": 3,
+    "numerical_lower_bound_rho": 0.7142857142857143
+  },
+  {
+    "N": 5,
+    "numerical_lower_bound_rho": 0.6966900438857261
+  },
+  {
+    "N": 10,
+    "numerical_lower_bound_rho": 0.6893961317957052
+  },
+  {
+    "N": 20,
+    "numerical_lower_bound_rho": 0.6875842395288179
+  },
+  {
+    "N": 50,
+    "numerical_lower_bound_rho": 0.687077730306907
+  },
+  {
+    "N": 120,
+    "numerical_lower_bound_rho": 0.6869980344043617
+  }
+]

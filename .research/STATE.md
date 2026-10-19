@@ -46,8 +46,8 @@ NEW (session 2): P17 rigorous bounds on the doubly-positive profile constant: ρ
 w = h⋆h̃ with h >= 0 (Beckner + Hölder); numerical sup 0.7239.
 
 NEW 2026-10-19 (lead):
-- P29 (PROVED, elementary): X·M >= hn − (X + h)(h − 1)/2. Density > 1/2 forces linear M, and near-extremal sets
-  taper to density 1/2. P29(b) is the twisted form (spectral front-loading).
+- P29 (PROVED; CLASSICAL, cf. Kolountzakis 1996 Thm 2): density > 1/2 forces linear M, and near-extremal sets
+  taper to density 1/2. P29(b) is the twisted form.
 - **P31** (PROVED modulo Lemma P31-N, whose proof is sketched): window–Nikolskii inequality
   W(n/2 + M²) <= ρ_L(L + 1)(M² + S_A/2). Consequences:
   - M >> √n for every A that is not front-loaded (front density below 2δ/ρ);
@@ -127,7 +127,8 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
   progress in examples/gurobi/e44.jsonl (N=45 bound 3.23 vs incumbent 3.836 at 1500 s).
 - E37g (src/e37g_batch.sh): Gurobi group run-top ILP, 18 instances → examples/cyclic_ilp/e37g.jsonl.
 - Codex agent queue (one at a time):
-  1. RUNNING: P31 adversarial check + Nikolskii lemma (.research/agents/p31_brief.md).
+  1. DONE: P31 adversarial check (report verified by lead). Main inequality survives, with 4 corrections.
+     P31-N is proved (ρ_L <= β(1 + 2/√(L+1))³). Kolountzakis 1996 is prior art for P29.
   2. NEXT: Lean formalization of P31 core (Fejér–Riesz, Lemma P31-E, window inequality; plan L1–L4 in PROOFS).
   3. THEN: Lean Beckner sharp Young (.research/agents/lean_beckner_brief.md, user request 2026-10-19; milestones
      M1 non-sharp Young -> M4 sharp constant). The local mathlib has neither Young convolution nor Fejér–Riesz.

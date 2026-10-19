@@ -640,7 +640,11 @@ Remarks.
 Statement. For integers L >= h >= 1, ψ(a) = (1 − |a|/h)₊ and every finite A ⊂ Z_{>0},
     (L − h)·M(A) >= h|A| − L·Σ_{a∈A} Σ_{k∈Z} ψ(a − kL).
 Corollary (L = X + h, A ⊂ [1, X], n = |A|): the inner sum is ψ(a) and is at most (h−1)/2 in total, so
-    X·M(A) >= h·n − (X + h)(h − 1)/2   for every h >= 1,   hence   M(A) >= (n − X/2)²/(2X)   (h ≈ X(n/X − 1/2)).
+    X·M(A) >= h·n − (X + h)(h − 1)/2   for every h >= 1,   hence   M(A) >= (n − X/2)₊²/(2X)   (h ≈ X(n/X − 1/2)).
+CORRECTION (P31 review agent): the positive part is required. A = {12} has M = 1 < 25/24.
+PRIOR ART: the density > 1/2 mechanism is CLASSICAL. Kolountzakis, J. Number Theory 56 (1996) 4–11, Thm 2, proves
+M >= Cε²N for distinct frequencies <= (2 − ε)N, by Fejér multiplication + Fejér–Riesz. P29 is a rediscovery (same
+order, explicit constant).
 Proof.
 - G(a) = Σ_k ψ(a − kL) is L-periodic with DFT Ĝ_j = F_h(2πj/L) >= 0 (Fejér kernel), F_h(0) = h, and
   Σ_{j=0}^{L−1} F_h(2πj/L) = L·G(0) = L (h <= L).
@@ -680,7 +684,9 @@ P29(b), twisted form: spectral front-loading (PROVED, same proof with the grid s
 (lead 2026-10-19; PROVED modulo the constant ρ_L, see "Status")
 Definitions.
 - ρ_L := sup ‖v ∗ v‖₂² / ((L + 1)‖v‖₂⁴) over v >= 0 supported on {0, …, L}.
-  Equivalently ‖U‖₄⁴ <= ρ_L (L + 1)‖U‖₂⁴ for every trigonometric polynomial U of degree <= L (pass to |coefficients|).
+  Equivalently ‖U‖₄⁴ <= ρ_L (L + 1)‖U‖₂⁴ for every ANALYTIC polynomial U = Σ_{j=0}^{L} u_j e^{ijx} (pass to
+  |coefficients|). CORRECTION (review agent): this fails for two-sided polynomials of degree L, e.g. L = 1 and
+  U = 1 + 2cos x (ratio 19/9 > 3/2). Fejér–Riesz supplies an analytic U, so the main inequality is unaffected.
 - For an integer w >= 1, κ(k) = (1 − |k|/(w + 1))₊ (Fejér kernel F = Σ κ(k)e^{ikx} >= 0), W = Σ_k κ(k)², and
   S_A = Σ_{a∈A} κ(a)².
 Theorem. For every finite A ⊂ Z_{>0} with X = max A, n = |A|, M = M(A), and L = X + w:
@@ -741,7 +747,27 @@ Status.
   - full write-up of Lemma P31-N;
   - Lean (Fejér–Riesz and the integration step are mathlib-friendly; Beckner is not in mathlib, so keep it as a cited
     hypothesis or use the crude uniform bound).
-Lemma P31-E (ELEMENTARY uniform constant; PROVED by lead 2026-10-19, Lean-friendly, no Beckner).
+Lemma P31-N, rigorous (review agent, .research/agents/p31_report.md; lead re-checked every step 2026-10-19):
+    ρ_L <= β(1 + 2/√(L + 1))³,   β = A_{4/3}⁴ = 4/(3√3) = 0.769800…
+- Proof: exact sinc interpolation h_θ(t) = Σ u_j e^{ijθ} sinc(π(t − j)).
+  - ĥ = 1_{[−π, π]}·U, so ‖h‖₂ = ‖u‖ and ‖h∗h‖₂² = ‖u∗u‖² EXACTLY (the band is one period: no aliasing).
+  - Beckner's Theorem 3 (Ann. Math. 102 (1975)).
+  - Hölder on [−R, N − 1 + R]. The tails are controlled by averaging over θ: E_θ|h_θ(t)|^{4/3} <= (Σ|u_j|²B(t−j)²)^{2/3}
+    and B² <= 1/(π² dist²). Take R = √N.
+- This supersedes the lead's smooth-cutoff sketch, whose truncation step was incomplete.
+- The agent also gives an elementary ρ_L <= 19/20 for all L >= 1 (orthogonal decomposition around the constant
+  vector). Note ρ_0 = 1.
+- Explicit: ρ_L <= 0.95 for 1 <= L < 249999 and ρ_L <= 0.78 for L >= 249999.
+Explicit dense theorem (review agent, PROVED, uses Beckner): every A with |A| >= (2/5)·max A has M(A) >= √|A|/1000.
+For every fixed δ₀ > 2/(3√3) ≈ 0.3849 there is an explicit c(δ₀) > 0 with M(A) >= c(δ₀)√|A| whenever
+|A| >= δ₀·max A. The small-ε limit is needed; at ε = 1 the threshold is r, not r/2.
+CORRECTION to (iii): the fixed-scale threshold is 2δ/(ρ(1 + ε)). Exact relative form:
+d/δ >= 2X/C − (4X/W)(M²/n).
+Novelty (agent's audit): the averaged second-moment inequality and the density threshold β/2 were not found.
+Predecessor framework: Kolountzakis 1996 (Fejér multiplication + Fejér–Riesz). No priority claim.
+
+Lemma P31-E (ELEMENTARY uniform constant; PROVED by lead 2026-10-19, Lean-friendly, no Beckner; not reviewed by the
+agent, which worked from the earlier brief).
 For every L >= 0:
     ρ_L <= μ + λ/(3(L + 1))   with λ = 0.71, μ = 0.8110, i.e.   ρ_L <= 0.8110 + 0.2367/(L + 1).
 Proof. Take v >= 0 on {0..L}, ‖v‖ = 1, N = L + 1, p_j = v_j², a_j = Σ_{i<=j} p_i, w(A) = A(1 − A).
@@ -775,7 +801,7 @@ LEAN PLAN (verification route = kernel check; no outside review):
 - (L3) The window inequality: x₀-integration of finite trig sums, Fubini for finite sums, the Fejér kernel F_{w+1} >= 0
   and its coefficients.
 - (L4) Corollaries with explicit constants.
-P31(c), multi-scale form (PROVED, lead 2026-10-19; same proof applied to a low-passed polynomial).
+P31(c), multi-scale form (inequality PROVED; claimed consequence RETRACTED, see below).
 - For H >= 1, g_H := f_A ∗ F_H = Σ_{a∈A} (1 − a/H)₊ cos(a x) satisfies g_H >= −M (F_H >= 0 has mass 1) and has
   degree < H.
 - Run the P31 argument on h = F_{w+1}(· − x₀)(g_H + M) >= 0, of degree <= H − 1 + w. This gives
@@ -785,7 +811,16 @@ P31(c), multi-scale form (PROVED, lead 2026-10-19; same proof applied to a low-p
   [1, εH]. So M >> √(n_H) as soon as A is not front-loaded AT SCALE H.
 - "Core + sparse tail" sets are covered whenever the core (the scale H carrying most of the weighted mass) is not
   front-loaded at its own scale.
-- REMAINING ESCAPE CLASS for P31/P31(c): sets front-loaded at EVERY scale H with every ε. Model case: power-law
+- RETRACTION (review agent's obstruction plus lead check). The low-pass weights (1 − a/H)² impose a (1 − t)² factor.
+  So even a FLAT-density core has weighted ratio d/δ_H ≈ 3 > 2/ρ, and P31(c) gives nothing for it.
+  - Exact obstruction: A ⊇ [1, H − 1] gives g_H = (F_H − 1)/2 with minimum >= −1/2.
+  - Any nonnegative mean-one kernel of degree < H behaves the same way.
+  - Even the optimal p.d. kernel is only borderline (its squared-weight average ≈ ρ/2, which reproduces the
+    threshold 2/ρ).
+  Positive low-pass smoothing alone cannot handle cores.
+- What does handle cores (review agent, PROVED): M(B ∪ T) >= M(B) − |T| (degree-free). For an interval core
+  {1..Y}: M >= 2Y/(3π) − |T|.
+- REMAINING ESCAPE CLASS: sets front-loaded at EVERY scale H with every ε. Model case: power-law
   density profiles φ(t) ∝ t^{−α}, 0 < α < 1. These are Turán-compatible (|t|^{−α} is p.d.) and scale-invariant.
   This class is now the precise target for both tracks:
   - lower bound: a new argument for self-similar front-loaded sets;

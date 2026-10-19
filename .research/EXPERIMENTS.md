@@ -586,3 +586,20 @@ Reading:
   - triangle profile: eff_f(X) -> 2/3;
   - flat front: eff_g(w, θ) -> (2/3)/(1 + θ), exactly the recursion's borderline (NOTEBOOK 2026-10-19 late).
 - Not evidence for or against Chowla. It locates where the slack is not.
+
+## E55 (2026-10-19) What P31 alone proves for actual families (src/scratch/p31_family_lb.py; dirichlet)
+Method: the best P31 lower bound on R over w ∈ (0, X]: M² >= (Wn − C·s_A)/(2(C − W)).
+Columns: C from Beckner (0.7698(L + 1)), elementary P31-E, and numerical ρ = 0.687 (unproved).
+   set              n     true R   P31 LB (Beckner / elem / num)    best w/X
+   Bu q101          380   0.764    0.077 / 0.064 / 0.114             0.10–0.19
+   Bu q199          1560  0.701    0.086 / 0.068 / 0.126             0.13–0.20
+   Bu q401          6320  0.657    0.060 / 0.042 / 0.105             0.08–0.19
+   Singer diff q61  1891  0.713    0.137 / 0.113 / 0.198             0.25–0.46
+   dense N50        50    0.569    0.209 / 0.186 / 0.266             0.33–0.53
+   E49 triangle     299   0.784    0.126 / 0.102 / 0.186
+   E50 α=0.5        299   1.003    0.022 / 0.015 / 0.109             (escape class: P31 nearly vacuous)
+Reading:
+- P31 depends only on the density profile s_A(·).
+- Every known family's profile lies OUTSIDE the escape class (front/average ratio ≈ 2 < 2/ρ). So P31 already proves
+  that any family with the Bu, Singer or triangle profile has R >= c(profile) > 0 (about 0.04–0.2).
+- Constructions must change the profile class, not tune parameters.

@@ -1265,3 +1265,16 @@ Reading:
   point certificates.
 - Reading: no tested weighted family has four binary profiles with a bounded fourth moment. Positive Paley
   overconcentrates on qZ; deletion loses both the lower bound and the cubic skew.
+## E87 (2026-10-19) Where the round-11 certificate loses (src/e87_slack.py; examples/e87/e87.json)
+- NUMERICAL. At the E82 optimiser w* (N = 320; ∫φ(w*²) = 0.1166747), the certificate's λ/2 = 0.1295 splits as follows:
+  - Schur slack λ/2 − ∫a w* = 0.0030 (23%);
+  - pointwise slack ∫(a w* − φ(w*²)) = 0.0098 (77%), after the potentials telescope.
+- Per quarter of t, the linear term a·w* − φ(w*²) is −0.0064, +0.0063, +0.0073, +0.0026. The potentials move slack from
+  t >= ¼ to the front, as designed, but the net loss is spread over t ∈ [¼, 1).
+- The certificate's own worst case is the top eigenfunction G_a of T_a: ∫a w_a = 0.12938 ≈ λ/2, but ∫φ(w_a²) is only
+  0.11118.
+- Reading:
+  - The bound is limited by the per-t LINEARIZATION of the convex φ(x²) under per-t constraints (caps and lattice
+    lines), not by the Schur step.
+  - Reaching 1/D ≈ 8.57 rigorously needs constraints coupling non-commensurable t (non-lattice Gram triples). The
+    dilation family cannot supply them.

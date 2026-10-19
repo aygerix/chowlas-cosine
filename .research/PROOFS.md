@@ -982,3 +982,27 @@ Notes.
 - Corollary (P31 + P36): Chowla holds for every set that, after cutting at a gap of ratio >= C·(|core|/√|core|)^{1/2},
   has a non-front-loaded core of size >= η|A|.
 Novelty: elementary. Folklore-level ingredients (Fejér–Egerváry–Szász, PD increments). Recorded as a tool.
+
+## P37. The P31/P36 escape class contains sets with R -> ½ (Bu + far outliers) — PROVED modulo Bu et al.'s theorem
+## (lead 2026-10-19)
+Setting:
+- S is a Sidon set of size k from Bu et al.'s construction (2610.17160). Their theorem gives
+  B := max_x (g_S/2 − ρ_S²) = M(A(S)) − k/2 = O(√(k log k)).
+- O is a set of k_o "outliers" at distance about T·L (L = max|S|), chosen so that S ∪ O is still Sidon. Generic offsets
+  work: E60 does this greedily.
+- Bu's identity holds for every Sidon set: f_{A(S∪O)} = ρ² − K/2 − g/2, with ρ = ρ_S + ρ_O, g = g_S + g_O and
+  K = k + k_o.
+Claim. M(A(S∪O)) <= K/2 + B + k_o√(2k) + k_o/2 whenever k_o <= √(k/2). Hence
+    R(A(S∪O)) <= ½ + O(√(log k/k)) + O(k_o/√k),
+which tends to ½ for k_o = o(√k).
+Proof.
+1. |ρ_O| <= k_o and g_O <= k_o, so g/2 − ρ² <= (g_S/2 − ρ_S²) + 2|ρ_S|k_o + k_o/2.
+2. Put r = |ρ_S|. Then g_S/2 − ρ_S² <= min(B, k/2 − r²), using g_S <= k.
+3. For r <= √(k/2) the total is <= B + k_o√(2k) + k_o/2.
+4. For r > √(k/2) >= k_o, the function −r² + 2rk_o is decreasing, so k/2 − r² + 2rk_o <= 2k_o√(k/2). ∎
+Escape:
+- For T >= 8 the profile of A(S∪O) is front-loaded at every scale (E60: factors 20–200). P31 gives nothing.
+- For fixed T and k -> ∞, P36's error ≈ (π²/2)k²/T² >> k. So P36 + P31 give nothing either.
+- Only structural arguments (P16) see these sets. P16 still gives R >= ½ − o(1) for them, being a statement about
+  every Sidon set.
+Meaning: profile and gap methods are provably insufficient for Chowla, even near the conjectured extremal constant.

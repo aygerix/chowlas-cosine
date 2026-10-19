@@ -148,7 +148,11 @@ $\rho=C_L/(L+1)$. Sets violating this at every scale are \emph{front-loaded}, an
 Adding a few far elements to a Sidon set $S$ keeps it Sidon, so Bu et al.'s identity
 $f_{A(S)}=\rho_S^2-|S|/2-g_S/2$ survives while the profile of $A(S)$ becomes arbitrarily front-loaded. Numerically
 (Bu's sets with $|S|=40,80$ plus $2$--$4$ outliers, front-loading factors up to $200$), $M(A)/\sqrt{|A|}$ stays within
-$0.03$ of the value for $A(S)$ itself, e.g.\ $0.673$ at $|A|=6972$. So the front-loading restriction is a limitation of
+$0.03$ of the value for $A(S)$ itself, e.g.\ $0.673$ at $|A|=6972$. In fact, writing $B=\max_x(g_S/2-\rho_S^2)$
+($=O(\sqrt{k\log k})$ for Bu et al.'s sets, $k=|S|$) and adding $k_o\le\sqrt{k/2}$ outliers $O$, one has
+$g/2-\rho^2\le\min(B,k/2-|\rho_S|^2)+2k_o|\rho_S|+k_o/2\le B+k_o\sqrt{2k}+k_o/2$, so
+$M(A(S\cup O))/\sqrt{|A|}\le\frac12+O(\sqrt{\log k/k})+O(k_o/\sqrt k)\to\frac12$ for $k_o=o(\sqrt k)$, while the
+front-loading factor is of the order of the outliers' distance ratio. So the front-loading restriction is a limitation of
 the method, not of the sets.
 \end{remark}
 

@@ -181,7 +181,7 @@ in parallel.
 - **Dense comparison:** Bu et al. Prop. 9.7 (Oct 2026) gives only n^{1/4} for A ⊂ [1, Cn] and leaves √n open. Our
   kernel-checked dense theorem gives √n for C < 2.466. New lead target T-dense: all C. Note that localized windows are
   exactly critical (NOTEBOOK no-go), so it needs run/boundary input.
-- **E60:** the escape class contains near-Bu sets (R within 0.03 of Bu numerically; R -> ½ unproved). Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within
+- **E60 + P37:** the escape class contains sets with R -> ½ (Bu + o(√k) far outliers; PROVED in P37 modulo Bu et al.'s theorem). Bu + 2–4 far Sidon outliers has front ratio up to 200 and R within
   +0.026 of Bu. P31's barrier is purely methodological. Profile methods are exhausted for Chowla.
 
 ## Running now (2026-10-19 night, latest)

@@ -689,7 +689,7 @@ M is a grid minimum: 16× oversampled, capped at 2^28 points (≥ 6× for the la
    401_80   96  4      6972  43837800   0.673     201 / 153 / 26 / 2.8                          0
 Reading:
 - Front-loading by a factor up to 200 costs Bu only +0.016 to +0.026 in R.
-- The escape class is NOT "empty of good sets": it contains sets within 0.03 of Bu's R at the same size (Bu + outliers; P16 still applies to them). R -> ½ is EXPECTED but UNPROVED: Bu's argument does not control the cross term 2ρ_Sρ_O (lead check 2026-10-19).
+- The escape class is NOT "empty of good sets": it contains sets within 0.03 of Bu's R at the same size (Bu + outliers; P16 still applies to them). R -> ½ is PROVED in P37 (modulo Bu et al.'s theorem) for k_o = o(√k) outliers. The cross term 2ρ_Sρ_O costs only k_o√(2k).
 - P31's front-loading barrier is a method limitation, not evidence that front-loaded sets have large M.
 - Any lower-bound proof must handle front-loaded Bu sets. Profile-only arguments cannot reach Chowla.
 - (E50/E52 SA found R ~ 1–1.8 for smooth front-loaded profiles. That was search difficulty, not structure.)

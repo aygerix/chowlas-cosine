@@ -170,13 +170,20 @@ All calculations on GCP VM dirichlet via src/dirun.sh; never the laptop or fejer
 Process rule (user, 2026-10-18): computations are fire-and-forget; foreground time goes to mathematics, one codex agent
 in parallel.
 
-## First concrete next step (updated 2026-10-19 late)
-(1) L1: state and prove a quantitative pattern lemma on Z_q.
-    - Hypothesis: P ⊂ Z_q, 0 ∈ P, and the residue-weight vector c (c_r = |A_r|/max) has DFT >= −η·|P| at every nonzero
-      frequency.
-    - Conclusion: P is O(η)-close to a subgroup.
-    - Test it against Bu, where the pattern mod 3 is {0: differences, 1: sums} with spikes at 1/3 and 1/6.
-(2) Collect E52. If two-level escape profiles beat the triangle at equal n, that is the first construction-side signal
-    in the escape class; otherwise record it as further evidence.
-(3) When the Lean agent reports: verify T1 (Fejér–Riesz) and the unconditional T3, then record them in
-    PROOFS/CERTIFICATES.
+## First concrete next step (updated 2026-10-19, end of session block)
+Proved this block:
+- P33: M(A) >= |A|·min A/max A. The linear-test optimum (E58); folklore-level.
+- KERNEL-CHECKED dense theorem (CERTIFICATES).
+- P31-C(a, b) found VOID: sets without small elements have linear M. Corrected everywhere.
+(1) Lower bound. Window/Nikolskii (second-moment) arguments are linear in 1_A and cannot reach the escape class
+    (NOTEBOOK, "Why the P31 family stops").
+    - Needed: a NONLINEAR certificate.
+    - Candidates: weighted windows with weight 1/(M + G) (derived; untested); robust SR via a residue-pattern lemma on
+      Z_q; Cayley-graph structure (λ_min = −2M) à la JMTZ with Z-specific input.
+    - First derivation: state the weighted-window inequality ∫(f + M)²/(M + G) <= (C/W)M precisely and evaluate it
+      in the spike model.
+(2) Construction. The bi-flat factor target (NOTEBOOK/CONSTRUCTIONS).
+    - Bu is optimal among phase-blind square identities (single class; incircle).
+    - Beating ½ needs either phase-locking or lag multiplicity >= 2 with approximate bi-flatness.
+    - E59 (running) gives the R(n) trend for smooth escape-class profiles.
+(3) Lean. The agent is on T5 (Beckner M1–M5). Next agent: P33, the dilation pinch and P29, all short.

@@ -131,8 +131,9 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
 - None states a √n (Chowla-strength) lower bound for A ⊂ [N, 2N] or for dense A.
 - Closest: Sanders' POLYNOMIAL estimate when every frequency is O(N) (cited in Bedert/Shankar). That is a power loss,
   not √n.
-- So P31-C(a) (M >= 0.370√|A| for A ⊂ (X/2, X], every X) and the dense corollary δ > 0.385 appear new relative to these
-  sources. Not a thorough survey.
+- So the dense corollary δ > 0.385 (0.4055 elementary) appears new relative to these sources. Not a thorough survey.
+- CORRECTION (same day): the dyadic statement is trivial. Sets in (X/2, X] have M >= 0.373|A| by a test-point
+  average (PROOFS P31-C correction), so there is nothing to claim there.
 - Sources:
   - https://arxiv.org/pdf/2509.05260
   - https://arxiv.org/html/2609.05338

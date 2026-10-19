@@ -653,3 +653,14 @@ counterexample must keep its fair share in EVERY qZ with q <~ n/M, not only for 
   - On random-like and escape-class sets the L⁴ front condition is WEAKER than P31's: the front must carry
     (energy ratio)^{1/4} instead of the density ratio.
   - Not a route to the escape class as is.
+
+## E54 (2026-10-19) Adversarial test of P31-C(a) on DYADIC sets (src/e54_batch.sh; examples/profile_sa/e54.jsonl)
+SA over A ⊂ (X/2, X] (density 0 below X/2, then a 0.05X ramp up to d2). Results:
+   X     d2    n     best grid R
+   526   0.6   150   10.33
+   1052  0.6   300   14.68
+   1052  0.3   150   10.36
+   2104  0.3   300   14.69
+So M ≈ 0.85n: LINEAR. This exposed the error in claiming P31-C(a) as content.
+- Sets in (X/2, X] satisfy M >= 0.373n by averaging f(θπ/X) over θ ∈ [1, 3/2] (PROOFS P31-C correction).
+- The √n statement was true but void.

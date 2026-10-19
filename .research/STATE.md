@@ -123,13 +123,12 @@ Subagents (user rule 2026-10-18): no native Opus subagents. Launch via the codex
 (`codex exec -m gpt-6.1-sol -c model_reasoning_effort="xhigh" ...`), still at most one at a time.
 
 ## Running now (2026-10-19 late)
-- E54 (src/e54_batch.sh; 6 cores). SA over DYADIC sets A ⊂ (X/2, X]: an adversarial test of P31-C(a)'s 0.370.
-  Output: examples/profile_sa/e54.jsonl.
 - grb_group_bt.py (Gurobi, 2 threads), E37g successor.
 - Codex agent (one at a time): Lean P31 + Beckner (.research/agents/lean_p31_brief.md).
   - The conditional T3 chain is KERNEL-CHECKED (hypothesis `FejerRiesz (X+w)`, a definition).
   - Now on T1 (Fejér–Riesz). Verify its report before recording.
-  - NEXT agent after it: Lean for P31-C (explicit (C) and the dyadic 0.370).
+  - NEXT agent after it: Lean for P31-C (explicit (C) and the dense c(δ) table). The dyadic statement is VOID:
+    linear M is trivial there.
 - DONE this session (2026-10-19 late):
   - E50: power laws are worse than the triangle.
   - E51: P32 does not contract; the Bu spikes are the mod-3 dilation.

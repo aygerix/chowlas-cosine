@@ -683,7 +683,8 @@ P29(b), twisted form: spectral front-loading (PROVED, same proof with the grid s
 ## P31. Window–Nikolskii inequality: Chowla for every set that is not front-loaded
 **Consolidated clean write-up (2026-10-19): .research/notes/dense_chowla_P31.md.**
 - Theorem 1, Lemma 2 (P31-E) and Theorem 3 with explicit (a)/(b).
-- Corollaries: dyadic 0.370; dense c(δ) table, threshold 0.4055 with the elementary constant.
+- Corollaries: dense c(δ) table, threshold 0.4055 with the elementary constant.
+- The dyadic and no-small-elements corollaries are void: linear M holds trivially there (P31-C correction).
 - The text below keeps the history and the corrections.
 (lead 2026-10-19; PROVED modulo the constant ρ_L, see "Status")
 Definitions.
@@ -858,6 +859,19 @@ COROLLARIES (exact constants, every X >= 1, no asymptotics):
 Sharper constants:
 - With P31-N (Beckner, ρ_L -> 0.7698) the dyadic constant becomes 0.380 asymptotically.
 - With the numerical ρ_∞ ≈ 0.687 (E48; not proved) it would be 0.402.
+CORRECTION (lead, 2026-10-19, same day; found while testing E54). (a) and (b) are TRUE but TRIVIALLY SUPERSEDED.
+- Sets without small elements have LINEAR M by a one-line test-point argument.
+- If A ⊂ (X/2, X] and θ ∈ [1, 3/2], every a ∈ A has aθπ/X ∈ (π/2, 3π/2), so cos(aθπ/X) < 0. Averaging over θ,
+      mean_θ f_A(θπ/X) = Σ_a (2X/(aπ))(sin(1.5aπ/X) − sin(aπ/X)) <= −0.3729·n,
+  since for t = a/X ∈ (1/2, 1] the summand is <= −0.3729, approached only as t -> ½. Hence M(A) >= 0.3729·|A|.
+- E54 confirms: SA over dyadic sets finds M ≈ 0.85n.
+- For A ⊂ [Y, KY], linear test measures give M >= c(K)|A| (E58 LP computes c(K)). The PSD argument on the points
+  0, Y, 2Y, … shows c(K) <= ~1/K.
+- So the dyadic 0.370√n and the √n of (b) are mathematically void. Do not cite them.
+- (c) and the dense corollaries are unaffected. Sets with small elements (dense, Singer-type, triangle profiles) CAN
+  have M ~ √n, so √n is the right order there.
+- P31's genuine content is Chowla for sets with a front that is not front-loaded beyond about 2.4–2.9× the average
+  density, including all dense sets with δ > 0.4055 (elementary) / 0.385 (Beckner).
 Status: paper proof complete given P31 + P31-E. Lean: P31 is kernel-checked conditionally on FejerRiesz (agent T3).
 (C) is the natural T4 target. Literature: no √n bound for dyadic or sparse-front sets was found in the 2026-10-19
 dense-case check. Not a thorough survey.

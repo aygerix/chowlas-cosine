@@ -31,8 +31,10 @@ Let ρ_L be the sharp constant in ‖U‖₄⁴ <= ρ_L(L + 1)‖U‖₂⁴ for 
     (b) M² >= (w + 1)·(n/(3C_w) − 1/6).
 
 **Corollaries.**
-- (C1) DYADIC SETS. If A ⊂ (X/2, X], then M(A) >= 0.3701·√|A|, for every X.
-- (C2) NO SMALL ELEMENTS. If A ∩ [1, εX] = ∅ with 0 < ε <= 1, then M² >= εn/(2.433(1 + ε) + 0.7101/X).
+- (C1, C2) VOID. They are true but trivially superseded; kept only for the record.
+  - A ⊂ (X/2, X] already has M >= 0.3729·|A| by averaging f_A(θπ/X) over θ ∈ [1, 3/2] (every cos(aθπ/X) < 0).
+  - Sets in [Y, KY] have M >= c(K)|A| by linear test measures (EXPERIMENTS E58).
+  - The P31 statements M >= 0.370√|A| (dyadic) and M² >= εn/(2.433(1 + ε) + …) (no elements below εX) add nothing.
 - (C3) DENSE SETS. If |A| >= δX with δ > 0.4055, then M >= c(δ)√n. Lower bounds for c(δ) (optimal w, checked for
   X ∈ {10³, 10⁵, 10⁷}):
 
@@ -45,8 +47,8 @@ Let ρ_L be the sharp constant in ‖U‖₄⁴ <= ρ_L(L + 1)‖U‖₂⁴ for 
 **Sharper constants (proved elsewhere in PROOFS.md).**
 - Replace Lemma 2 by Beckner's sharp Young inequality via exact sinc interpolation (Lemma P31-N, review agent, lead
   re-checked): ρ_L <= (4/(3√3))(1 + 2/√(L + 1))³.
-- This moves the dense threshold to any δ > 2/(3√3) ≈ 0.3849 and the dyadic constant to 0.380.
-- The numerical limit ρ_∞ ≈ 0.687 (E48; not proved) would give 0.344 and 0.402.
+- This moves the dense threshold to any δ > 2/(3√3) ≈ 0.3849.
+- The numerical limit ρ_∞ ≈ 0.687 (E48; not proved) would give 0.344.
 
 ## 2. Proof of Theorem 1
 
@@ -125,11 +127,9 @@ Step 2: (a) and (b).
 - κ(a) < 1 for a >= 1 gives S_A <= |A ∩ [1, w]|. This is (a).
 - S_A <= Σ_{k=1}^{w} κ(k)² = w(2w + 1)/(6(w + 1)) <= (w + 1)/3. This is (b).
 
-(C1) Take w = ⌊X/2⌋. Then A ∩ [1, w] = ∅, w + 1 >= (X + 1)/2 and X + w + 1 <= (3X + 2)/2, so by (a)
-    M² >= n(X + 1)/(7.299X + 6.286).
-This is decreasing in X with limit 1/7.299 = 0.137005, hence M >= 0.37014√n.
-
-(C2) Take w = ⌊εX⌋, so w + 1 >= εX. The right side of (a) increases in w + 1.
+(C1, C2) [void: superseded by linear bounds]. Derivation via (a): w = ⌊X/2⌋, resp. w = ⌊εX⌋.
+Linear replacement for (C1): for t = a/X ∈ (1/2, 1],
+    mean_{θ∈[1,3/2]} cos(tθπ) = (2/(tπ))(sin(1.5tπ) − sin(tπ)) <= −0.3729.
 
 (C3) Take n = δX in (b) and optimize w; the table is src/scratch/dense_constants.py.
 The bound is positive iff n > C_w/2 ≈ 0.4055(X + w + 1).
@@ -160,5 +160,5 @@ The bound is positive iff n > C_w/2 ≈ 0.4055(X + w + 1).
   - Elementary inequalities.
   - For the sharp constants only: Beckner, Ann. Math. 102 (1975), Thm 3.
 - Predecessor framework: Kolountzakis 1996 (Fejér multiplication and Fejér–Riesz; Turán-type bound, PROOFS P29).
-- Novelty check (LITERATURE 2026-10-19). No √n bound for dense or dyadic sets was found. The closest is Sanders'
+- Novelty check (LITERATURE 2026-10-19). No √n bound for dense sets was found. (Dyadic sets are trivial: linear M.) The closest is Sanders'
   polynomial estimate for frequencies O(N), cited in Bedert 2509.05260 and Shankar 2609.05338. Not a thorough survey.

@@ -880,6 +880,31 @@ Status: paper proof complete given P31 + P31-E. Lean: P31 is kernel-checked cond
 (C) is the natural T4 target. Literature: no √n bound for dyadic or sparse-front sets was found in the 2026-10-19
 dense-case check. Not a thorough survey.
 
+## P33. Ratio lemma: M(A) >= |A|·min(A)/max(A) — PROVED (lead 2026-10-19; elementary; probably folklore)
+STATEMENT. For every finite nonempty A ⊂ Z_{>0} with Y = min A and Z = max A:
+    M(A) >= (Y/Z)·|A|.
+Proof:
+- Let N = Y + Z, c = Y/Z, and for b ∈ Z_N let b̄ ∈ (−N/2, N/2] be its representative. Define
+      D(b) = (1 + c)·(1 − |b̄|/Y)₊ − c   and   m_j = (1/N)Σ_{b∈Z_N} D(b)e^{−2πijb/N}.
+- The triangle has support |b̄| <= Y − 1 < N/2, so there is no wrap. Hence
+      m_j = (1 + c)F_{Y−1}(2πj/N)/N − c·1[j = 0],   F_{Y−1} = Fejér kernel (>= 0, F_{Y−1}(0) = Y).
+  So m_j >= 0 for j ≠ 0, and m_0 = (1 + c)Y/N − c = 0.
+- μ = Σ_j m_j δ_{2πj/N} is a probability measure (Σ m_j = D(0) = 1). Since D is even, ∫cos(ax)dμ = D(a mod N).
+- For a ∈ [Y, Z] = [Y, N − Y] we have |ā| >= Y, so D(a) = −c. Hence ∫f_A dμ = −c|A| and min f_A <= −(Y/Z)|A|. ∎
+Optimality of the linear-test constant:
+- E58 (Gurobi LP over all probability measures, A ⊂ [Y, KY]) gives c(K)·K = 0.998–1.000 for K = 2 … 20; the LP atoms
+  approach a grid of spacing 2π/((K+1)Y).
+- PSD upper bound: the points 0, Y, …, mY force c <~ 1/K.
+- So Y/Z is the best constant any single-measure (linear) test can give uniformly over A ⊂ [Y, Z].
+Consequences:
+- A ⊂ (X/2, X] has M >= |A|/2·(1 − O(1/X)). This supersedes the 0.373n test-point bound and P31-C(a).
+- A ⊂ [εX, X] has M >= ε|A|, linear. This supersedes P31-C(b).
+- Chowla-type √n behaviour is only possible when min A <~ max A/√|A|. Small elements are NECESSARY.
+- Combined with P31: a counterexample needs elements down to scale X/√n and a front-loaded profile at every scale
+  above that. P33 handles the bottom; P31 handles every scale with a sub-threshold front.
+Novelty: almost certainly folklore (a one-measure Fejér construction). Recorded because the project needed it and P31-C
+had wrongly occupied this case.
+
 ## P32. Two-scale spike-support inequality (route R3) — PROVED (lead 2026-10-19; elementary from P31's window step)
 Setup: A ⊂ Z_{>0} finite, X = max A, f = f_A >= −M. w >= 1, F = Fejér kernel of degree w with F̂(0) = 1, κ(k) the
 same Fejér weights as in P31, g = f ∗ F (so g(x) = Σ_{a∈A} κ(a)cos(ax), g >= −M, mean 0). W = (1/2π)∫F², L = X + w,

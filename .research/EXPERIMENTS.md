@@ -664,3 +664,13 @@ SA over A ⊂ (X/2, X] (density 0 below X/2, then a 0.05X ramp up to d2). Result
 So M ≈ 0.85n: LINEAR. This exposed the error in claiming P31-C(a) as content.
 - Sets in (X/2, X] satisfy M >= 0.373n by averaging f(θπ/X) over θ ∈ [1, 3/2] (PROOFS P31-C correction).
 - The √n statement was true but void.
+
+## E58 (2026-10-19) Best linear test for sets without small elements (src/e58_ratio_lp.py; Gurobi LP; examples/e58/e58.jsonl)
+LP: maximize c over probability measures μ on [0, π] (grid G = 16KY) subject to μ̂(a) <= −c for all a ∈ [Y, KY].
+Results (Y = 40 and 80 agree):
+   K     1.5     2       2.5     3        4       6       8       12      20
+   c     0.807   0.499   0.431   0.3333   0.2497  0.1665  0.1249  0.0833  0.0500
+   cK    1.21    0.998   1.08    1.000    0.999   0.999   0.999   0.999   0.999
+- c(K) = 1/K for K >= 2. PROOFS P33 proves the matching bound M(A) >= (min A/max A)|A| by an explicit Fejér measure
+  on the (Y + Z)-th roots of unity.
+- The optimal atoms sit near multiples of 2π/((K + 1)Y), matching P33's construction.

@@ -811,3 +811,11 @@ the energy. That is the dense-set mechanism (T8), and it is natural at small k.
 The phase-blind cap ∫P² = Mt² + |D|/2 is inflated at small k by the slack (k = 8: 43 > |E| = 35).
 The asymptotic question (T9: can the tails of an inflated central spike be kept under P at large k?) is open. See
 k = 9–12 below and E65.
+E64 continued (Mt = M_Bu; tl 1800 s; none proved optimal):
+   k   |D|  M(D)    M_Bu    |E| (bound)   λ      R(A)    R_Bu    outside incircle (central / bulk)
+   9   36   4.499   6.120   40 (85)       1.11   0.698   0.721   22% (0% / 22%)
+   10  45   5.000   7.500   88 (106)      1.96   0.648   0.791   79% (72% / 7%); |E| close to the pinch (105)
+- R(A)/R_Bu = 0.80, 0.84, 0.94, 0.97, 0.82 for k = 6..10. This is NOT monotone. It tracks Bu's relative slack
+  M_Bu/M(D) (1.50 at k = 10), which the optimum spends on central-spike locking.
+- A clean asymptotic test must fix the relative slack: E65 measures M(λ)/M(D) at fixed λ.
+Dense D = N36 optimum, Mt = M(D): no nonempty E found in 1500 s (bound 64, not closed). The ε = 0.05 run is running.

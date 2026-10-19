@@ -206,7 +206,14 @@ in parallel.
     These are finite-size slack effects until larger k are in.
 - E61b: the sharp one-sided Littlewood constant is ≈ 0.608 (heuristic, n <= 768), against P34's proved 0.28.
 
-## Running now (2026-10-19 night, latest)
+## Running now (2026-10-19, session 3, latest)
+- Codex MATH agent (user request 2026-10-19: Lean has a break; the agent helps with the mathematics): target T-dense
+  (.research/agents/tdense_brief.md, report tdense_report.md).
+- Lean: sharp Young (Beckner) and M5 are KERNEL-CHECKED. Only P31-N remains; its drafts are uncommitted
+  (P31/FourierL2.lean, P31/SincInterpolation.lean).
+- VM: E64 (k = 11, 12; dense N36/N50; second level D = Bu), then E65 (Singer k = 12–24); grb_group_bt; E61b n = 1024.
+
+## Running now (2026-10-19 night, earlier)
 - Codex Lean agent (one at a time): P34 complex-coefficient chain and Corollaries A–C, then P33/pinch
   (.research/agents/lean_p34_brief.md; report lean_p34_report.md). Beckner T5 is PAUSED after a partial: M1/M3 and M4
   infrastructure are kernel-checked (CERTIFICATES). Resume M4 in the next Lean slot after P34.

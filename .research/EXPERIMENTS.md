@@ -876,3 +876,13 @@ Reading:
   ≈ 0.05).
 - The SB-extremal sets have huge M, far from the Chowla extremisers (Bu: β2 ≈ 0.45; small optima: β2 ≈ 0.25–0.4).
 - B–D (P40) is far from binding at the current R: it only requires β_K <= 2(K + R)R + 2R².
+E67 quantitative law (lead, 2026-10-19). The bulk fraction β_K matches the ROUNDING-ENERGY share 1 − Σρ²/Σρ (ρ = local
+density profile) wherever the rounding is unstructured:
+- cumulative rounding of 1−t: predicted 1/3, observed β2 = 0.335.
+- cumulative rounding of ½(1−t)²: predicted 1 − (1/20)/(1/6) = 0.70, observed β2 = 0.69–0.70.
+- random density δ: predicted 1 − δ, observed 0.69 (δ = 1/3) and 0.96–0.98 (δ = 1/50).
+So for curved cumulative roundings ALL rounding energy is bulk (P41's mechanism) and the central spike carries exactly
+Σρ²/Σρ.
+Intervals (share 0): β = sidelobe energy ≈ 0.05–0.1. Bu/Singer (share ≈ 0.67): β2 ≈ 0.45, so part of Bu's rounding is
+structured (spiky). Small optima: 0.23–0.41.
+Heuristic form of SB: β_K >= c·[rounding share] + [negative-sidelobe energy].

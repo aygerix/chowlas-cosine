@@ -53,7 +53,7 @@ NEW 2026-10-19 (lead):
   - M >> √n for every A that is not front-loaded (front density below 2δ/ρ);
   - dense Chowla in Z: |A| >= 0.39·max A ⇒ M >> √n;
   - any counterexample must be front-loaded beyond 2.9δ at every scale.
-  Numerical ρ_∞ ≈ 0.687 (E48); rigorous ρ_∞ <= 0.7698 via Beckner. NOT independently reviewed. Novelty unchecked
+  Numerical ρ_∞ ≈ 0.687 (E48); rigorous ρ_∞ <= 0.7698 via Beckner. Elementary constant ρ_L <= 0.811 + 0.237/(L + 1) (Lemma P31-E), so it is unconditional on paper. Not kernel-checked. Novelty unchecked
   beyond one search.
 - P30 (CONJECTURED reformulation): uniform cap on the share of ‖f‖₂² above K·M implies Chowla. E47 measures it.
 
@@ -150,8 +150,10 @@ Process rule (user, 2026-10-18): computations are fire-and-forget; foreground ti
 in parallel.
 
 ## First concrete next step (updated 2026-10-19)
-(1) Write out Lemma P31-N with explicit truncation errors, giving a uniform explicit ρ_L <= 0.78 for L >= L₀ and a
-    crude uniform bound for L < L₀. Then get an independent review of P31 (next codex agent, after OR3).
+(1) P31 is now unconditional on paper via the ELEMENTARY Lemma P31-E: ρ_L <= 0.8110 + 0.2367/(L + 1) (Cauchy–Schwarz,
+    Abel summation, one explicit integral). The codex agent P31 is running an adversarial check. Next agent: Lean
+    formalization of P31 + P31-E (plan L1–L4 in PROOFS). The verification route is the kernel check, never an
+    outside review.
 (2) Attack the escape class of P31, front-loaded sets: steep profiles (1 − t)^p with p >= 1.91, and core + sparse tail.
     Candidate: a multi-scale P31, with the window degree replaced by an effective degree. A sparse tail inflates
     L + 1 without carrying mass.

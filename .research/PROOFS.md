@@ -736,8 +736,42 @@ Status.
   - Conclusion: (1 − 2/(πT))‖U‖₄⁴ <= 0.7698‖u‖⁴(L + 1 + O(T log T)).
   Hence the dense corollary (ii) holds RIGOROUSLY for large X with any threshold δ > 0.385 (once the lemma is written
   out). The numerical ρ_∞ ≈ 0.687 would lower it to 0.344.
-- NOT kernel-checked, not externally reviewed, novelty unchecked. Next:
-  - independent review (codex agent, after OR3);
+- NOT kernel-checked; novelty unchecked. Next:
+  - adversarial check by the codex agent (running);
   - full write-up of Lemma P31-N;
   - Lean (Fejér–Riesz and the integration step are mathlib-friendly; Beckner is not in mathlib, so keep it as a cited
     hypothesis or use the crude uniform bound).
+Lemma P31-E (ELEMENTARY uniform constant; PROVED by lead 2026-10-19, Lean-friendly, no Beckner).
+For every L >= 0:
+    ρ_L <= μ + λ/(3(L + 1))   with λ = 0.71, μ = 0.8110, i.e.   ρ_L <= 0.8110 + 0.2367/(L + 1).
+Proof. Take v >= 0 on {0..L}, ‖v‖ = 1, N = L + 1, p_j = v_j², a_j = Σ_{i<=j} p_i, w(A) = A(1 − A).
+- (E1) Bound each (v∗v)_s by Cauchy–Schwarz on its own index range: (v∗v)_s <= a_s for s <= L and
+  <= 1 − a_{s−L−1} for s > L. Call this bound m_s. Then
+      Σ(v∗v)_s² <= Σ_s (v∗v)_s m_s <= Σ_j v_j² G(j)        (AM–GM v_iv_j <= (v_i² + v_j²)/2)
+  with G(j) = Σ_{i=0}^{L} m_{i+j} = N − D(j). Abel summation gives Σ_j v_j² D(j) = 2Σ_{j<L} w(a_j). Hence
+      ‖v∗v‖² <= E1 := N − 2Σ_{j<L} w(a_j)          (exact at constant v: gives 2N/3).
+- (E2) ‖v∗v‖² <= max_s (v∗v)_s · Σ_s (v∗v)_s <= (Σ v)².
+- Change of variables. Put I_j = [a_{j−1}, a_j], g = p_j^{−1/2} on I_j (when p_j > 0), φ = 1 − 2w. Then:
+  - Σ_{j<L} w(a_j) = Σ_j (w(a_{j−1}) + w(a_j))/2 (telescoping);
+  - trapezoid rule for the quadratic w: (1/p)∫_I w = trapezoid + p²/6;
+  - hence E1 = ∫_0^1 g²φ dA + (1/3)Σ p_j² + Σ_{p_j=0} φ(a_j), with ∫g² dA = #{p_j > 0} and ∫g dA = Σ v_j.
+- Weighted Cauchy–Schwarz: (∫g)² <= ∫g²(μ − λφ) · ∫dA/(μ − λφ), and (1 − λ)∫_0^1 dA/(μ − λφ) <= 1.
+  The integral equals √(2/(λc))·artanh(√(λ/(2c))) with c = μ − λ/2; numerically 0.99914 at (0.71, 0.811). So
+      λ∫g²φ + (1 − λ)(∫g)² <= μ∫g².
+- Combine, using λ <= μ for the zero entries:
+      min(E1, E2) <= λE1 + (1 − λ)E2 <= μN + λ/3. ∎
+Checks (numerical, 4000 random v including zeros): trapezoid identity to 2e−14; no violation of
+‖v∗v‖² <= min(E1, E2) <= μN + λ/3. Code: src/scratch/rho_elem.py; the secular optimum λ = 0.7100, μ = 0.81080 is
+from src/scratch/rho_secular.py. Optimized sup of min(E1, E2)/N ≈ 0.8083 (N >= 60).
+Consequence: P31 is UNCONDITIONAL with ρ = 0.8110 + 0.2367/(L + 1) (paper proof):
+- dense Chowla for |A| >= 0.41(1 + ε)(1 + η)·max A, X large;
+- non-front-loaded Chowla for d_ε < 2.47δ.
+The sharper constants (0.7698 via Beckner, ≈ 0.687 numerically) only move the thresholds.
+LEAN PLAN (verification route = kernel check; no outside review):
+- (L1) Fejér–Riesz for nonnegative trig polynomials (finite, via FTA root pairing). Check whether mathlib has it.
+- (L2) Lemma P31-E: Cauchy–Schwarz, Abel summation, and the integral constant. For Lean, replace the arctanh closed
+  form by a rational upper Riemann sum (the integrand is monotone in |A − 1/2|), with margin from μ slightly above
+  0.811.
+- (L3) The window inequality: x₀-integration of finite trig sums, Fubini for finite sums, the Fejér kernel F_{w+1} >= 0
+  and its coefficients.
+- (L4) Corollaries with explicit constants.

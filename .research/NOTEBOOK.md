@@ -2787,3 +2787,15 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    - Status of the plan's proof track. The dissociated half is proved (item 3). The many-spike case with window
      domination IS C*. No new tool has appeared; the plan's main bet stands only as a precise statement, not as a
      route with a handle.
+7. A checked NON-contradiction (recorded so it is not re-derived). Exact mixing against Booleanity on the
+   concentration set.
+   - Outside macroscopic spikes p <= ~1/ε², and ∫p² = 1 + 1/(2ε²) then forces >= ¼ of ν's mass onto a set E with
+     |E| <= 4ε² (density ~1/ε²).
+   - Exact mixing gives ν_E⋆ν_E <= ν⋆ν = 1 − 1/K + p/K <= 1 + o(1) away from the central spike. So E has
+     random-like additive energy at its own scale: arcs or Bohr-structured E of measure ε² are FORBIDDEN (energy
+     ~1/ε²).
+   - Booleanity of Kν̂_E on [1, X] at density q = n/X needs fourth moment Σ_{|k|<=X}|ν̂_E|⁴ ≈ 2n/K⁴ = 1/(8ε⁴n). That is
+     X/(2n) times the Gaussian value, but tiny in absolute terms. The mixing bound (sup × mass² = O(1/ε²)) is far larger.
+   - So the two constraints are compatible. No contradiction here.
+   - Kept as a FACT: mesoscopic concentration sets must be additively random-like at their own scale. This is the
+     dual of the macroscopic picture, where structure is forced.

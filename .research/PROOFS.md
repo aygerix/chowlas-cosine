@@ -623,3 +623,29 @@ Remarks.
   - a counterexample must be locally deterministic at every scale (all windows' spectra concentrated on a common small
     set of frequencies), the Bohr-type regime where the Gibbs constraints (P24/P25) act.
   Making "deterministic ⇒ Gibbs" quantitative is the open step.
+
+## P29. Fejér-grid Turán bound: density above 1/2 forces linear M (PROVED, lead 2026-10-19; elementary, novelty unchecked)
+Statement. For integers L >= h >= 1, ψ(a) = (1 − |a|/h)₊ and every finite A ⊂ Z_{>0},
+    (L − h)·M(A) >= h|A| − L·Σ_{a∈A} Σ_{k∈Z} ψ(a − kL).
+Corollary (L = X + h, A ⊂ [1, X], n = |A|): the inner sum is ψ(a) and is at most (h−1)/2 in total, so
+    X·M(A) >= h·n − (X + h)(h − 1)/2   for every h >= 1,   hence   M(A) >= (n − X/2)²/(2X)   (h ≈ X(n/X − 1/2)).
+Proof.
+- G(a) = Σ_k ψ(a − kL) is L-periodic with DFT Ĝ_j = F_h(2πj/L) >= 0 (Fejér kernel), F_h(0) = h, and
+  Σ_{j=0}^{L−1} F_h(2πj/L) = L·G(0) = L (h <= L).
+- Pairing ±A with G gives 2Σ_{a∈A} G(a) = (1/L) Σ_j F_h(x_j)·2f_A(x_j), x_j = 2πj/L.
+- Use the j = 0 term 2hn, and bound f_A >= −M on the remaining weight L − h. ∎
+Remarks.
+- h = 1 is P13(a), (q − 1)M >= |A| − q|A ∩ qZ|. P29 is one fixed nonnegative weight, so it is not a route to √n for
+  sparse sets.
+- Sharp in order: the profile model with a clipped triangle density min(1, (1 + η)(1 − t)) has FT negativity ≍ η² at
+  density 1/2 + η/2, so (n − X/2)²/X is the right size.
+- Interval [1, X]: bound X/8, true 0.2172X.
+- Numerics (all slacks positive): N50 bound 1.96 vs M = 4.03; N45 2.34 vs 3.84; general (L, h) family brute-checked
+  on 6 sets.
+Consequence for constructions (PROVED). If M(A) <= R√n with A ⊂ [1, X], then
+    n − X/2 <= √(2RX)·n^{1/4},   i.e. density <= 1/2 + O(n^{−1/4}).
+- Current dense records (density 0.69–0.74 at X <= 72) are pre-asymptotic. Any family extrapolating them to large N
+  must taper to density 1/2.
+- At the threshold the profile must be close to the Turán extremal triangle (stability, heuristic).
+- Z_p half-sets sit exactly at this density, with no Turán constraint (the wrap-around removes the endpoint): a
+  structural reason why the Z_p optima (E41) can be better than Z.

@@ -1,0 +1,7829 @@
+{
+  "status": "NUMERICAL, with exact symbolic identities explicitly listed",
+  "seed": 20261018,
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "cases": 125,
+  "exhaustive_cases": 35,
+  "maximum_errors": {
+    "lift": 2.6483348847250454e-10,
+    "projection": 8.988365607365267e-13,
+    "derivative": 6.772360450213455e-15,
+    "orthogonality": 1.3500311979441904e-13,
+    "e_l2": 1.0842021724855044e-18,
+    "K_l2": 3.1086244689504383e-15
+  },
+  "zero_C0_cases": 10,
+  "no_t_multiple_cases": 1,
+  "nondivisible_q_t_cases": 73,
+  "macro_branch_cases": 101,
+  "symbolic_quotient_h": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12
+  ],
+  "exact_macro_bernstein": [
+    {
+      "a": "1/2",
+      "b": "1",
+      "coefficients": [
+        "1/2",
+        "1/8",
+        "1/6",
+        "5/4",
+        "9/2"
+      ]
+    },
+    {
+      "a": "0",
+      "b": "1/2",
+      "coefficients": [
+        "5/2",
+        "9/4",
+        "5/3",
+        "7/8",
+        "1/2"
+      ]
+    },
+    {
+      "a": "-1/2",
+      "b": "0",
+      "coefficients": [
+        "3/2",
+        "17/8",
+        "8/3",
+        "11/4",
+        "5/2"
+      ]
+    },
+    {
+      "a": "-3/4",
+      "b": "-1/2",
+      "coefficients": [
+        "11/32",
+        "35/64",
+        "41/48",
+        "19/16",
+        "3/2"
+      ]
+    },
+    {
+      "a": "-1",
+      "b": "-3/4",
+      "coefficients": [
+        "1/2",
+        "1/8",
+        "1/24",
+        "9/64",
+        "11/32"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "label": "random_0",
+      "t": 1,
+      "L": 0,
+      "n": 4,
+      "k": 1,
+      "q_identity_test": 17,
+      "q_theorem_sufficient": 48,
+      "N": 4,
+      "C0": 4,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006944444444444444,
+      "projection_derivative_margin": 3.0594570446110367,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "8": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 1,
+      "L": 0,
+      "n": 4,
+      "k": 1,
+      "q_identity_test": 17,
+      "q_theorem_sufficient": 48,
+      "N": 4,
+      "C0": 4,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006944444444444444,
+      "projection_derivative_margin": 0.03531294572836096,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 1,
+      "L": 0,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 17,
+      "q_theorem_sufficient": 48,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.003472222222222222,
+      "projection_derivative_margin": 1.2754810826975125,
+      "fibres": {
+        "5": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 1,
+      "L": 0,
+      "n": 4,
+      "k": 1,
+      "q_identity_test": 17,
+      "q_theorem_sufficient": 48,
+      "N": 4,
+      "C0": 4,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006944444444444444,
+      "projection_derivative_margin": 0.7582110439339917,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 1,
+      "L": 1,
+      "n": 6,
+      "k": 2,
+      "q_identity_test": 25,
+      "q_theorem_sufficient": 800,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 1.5,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00030618621784789723,
+      "projection_derivative_margin": 2.95931716384428,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          1
+        ],
+        "7": [
+          1
+        ],
+        "8": [
+          1
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 1,
+      "L": 1,
+      "n": 9,
+      "k": 2,
+      "q_identity_test": 25,
+      "q_theorem_sufficient": 800,
+      "N": 9,
+      "C0": 9,
+      "macro_m_numerical": 4.6875,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00037499999999999995,
+      "projection_derivative_margin": 31.50362428636717,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          0
+        ],
+        "3": [
+          1
+        ],
+        "4": [
+          1
+        ],
+        "5": [
+          1
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          1
+        ],
+        "8": [
+          0
+        ],
+        "9": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 1,
+      "L": 1,
+      "n": 7,
+      "k": 2,
+      "q_identity_test": 25,
+      "q_theorem_sufficient": 800,
+      "N": 7,
+      "C0": 7,
+      "macro_m_numerical": 1.041666666666666,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003307189138830738,
+      "projection_derivative_margin": 5.137285438519673,
+      "fibres": {
+        "2": [
+          1
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          1
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "8": [
+          1
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 1,
+      "L": 1,
+      "n": 7,
+      "k": 2,
+      "q_identity_test": 25,
+      "q_theorem_sufficient": 800,
+      "N": 7,
+      "C0": 7,
+      "macro_m_numerical": 2.53125,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003307189138830738,
+      "projection_derivative_margin": 1.7369638161917602,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          1
+        ],
+        "3": [
+          1
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          1
+        ],
+        "8": [
+          1
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 1,
+      "L": 3,
+      "n": 12,
+      "k": 3,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 12471,
+      "N": 12,
+      "C0": 6,
+      "macro_m_numerical": 9.151300710135397,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.54320987654321e-05,
+      "projection_derivative_margin": 216.4209303373566,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          0,
+          3
+        ],
+        "3": [
+          3
+        ],
+        "4": [
+          1
+        ],
+        "5": [
+          0,
+          3
+        ],
+        "6": [
+          0,
+          3
+        ],
+        "7": [
+          3
+        ],
+        "8": [
+          3
+        ],
+        "9": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 1,
+      "L": 3,
+      "n": 11,
+      "k": 4,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 14400,
+      "N": 11,
+      "C0": 7,
+      "macro_m_numerical": 6.0582410664868975,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2795620333161265e-05,
+      "projection_derivative_margin": 178.68148482226346,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          2
+        ],
+        "3": [
+          3
+        ],
+        "4": [
+          3
+        ],
+        "5": [
+          2
+        ],
+        "6": [
+          0,
+          3
+        ],
+        "7": [
+          2
+        ],
+        "8": [
+          1
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 1,
+      "L": 3,
+      "n": 10,
+      "k": 4,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 14400,
+      "N": 10,
+      "C0": 8,
+      "macro_m_numerical": 3.005069908929404,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2200145293859489e-05,
+      "projection_derivative_margin": 229.89902741253368,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          1
+        ],
+        "3": [
+          1
+        ],
+        "4": [
+          2
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          3
+        ],
+        "8": [
+          0,
+          3
+        ],
+        "9": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 1,
+      "L": 3,
+      "n": 10,
+      "k": 4,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 14400,
+      "N": 10,
+      "C0": 6,
+      "macro_m_numerical": 1.2034271247461898,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2200145293859489e-05,
+      "projection_derivative_margin": 454.07333131703086,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          0
+        ],
+        "3": [
+          2
+        ],
+        "4": [
+          0
+        ],
+        "5": [
+          0,
+          3
+        ],
+        "6": [
+          3
+        ],
+        "8": [
+          1
+        ],
+        "9": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 1,
+      "L": 5,
+      "n": 11,
+      "k": 5,
+      "q_identity_test": 57,
+      "q_theorem_sufficient": 69496,
+      "N": 11,
+      "C0": 5,
+      "macro_m_numerical": 6.969132690146488,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.8355625873614632e-06,
+      "projection_derivative_margin": 1076.0517321270947,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          0,
+          5
+        ],
+        "3": [
+          3
+        ],
+        "5": [
+          2
+        ],
+        "6": [
+          2
+        ],
+        "7": [
+          2,
+          5
+        ],
+        "8": [
+          3
+        ],
+        "9": [
+          4
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 1,
+      "L": 5,
+      "n": 14,
+      "k": 4,
+      "q_identity_test": 57,
+      "q_theorem_sufficient": 62159,
+      "N": 14,
+      "C0": 4,
+      "macro_m_numerical": 9.828658772055473,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 2.315217940106865e-06,
+      "projection_derivative_margin": 722.0813998179273,
+      "fibres": {
+        "1": [
+          1,
+          4
+        ],
+        "2": [
+          0,
+          3
+        ],
+        "3": [
+          4
+        ],
+        "4": [
+          3
+        ],
+        "5": [
+          1,
+          4
+        ],
+        "6": [
+          4
+        ],
+        "7": [
+          0,
+          3
+        ],
+        "8": [
+          1,
+          4
+        ],
+        "9": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 1,
+      "L": 5,
+      "n": 16,
+      "k": 6,
+      "q_identity_test": 57,
+      "q_theorem_sufficient": 76128,
+      "N": 16,
+      "C0": 2,
+      "macro_m_numerical": 3.958527437269528,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 2.0208878973065607e-06,
+      "projection_derivative_margin": 1589.613101428739,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          2,
+          5
+        ],
+        "3": [
+          1,
+          4
+        ],
+        "4": [
+          0,
+          3
+        ],
+        "5": [
+          0,
+          5
+        ],
+        "6": [
+          0,
+          5
+        ],
+        "7": [
+          3
+        ],
+        "8": [
+          0,
+          3
+        ],
+        "9": [
+          0,
+          5
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 1,
+      "L": 5,
+      "n": 13,
+      "k": 6,
+      "q_identity_test": 57,
+      "q_theorem_sufficient": 76128,
+      "N": 13,
+      "C0": 5,
+      "macro_m_numerical": 0.770368608019262,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.8216037339258523e-06,
+      "projection_derivative_margin": 1381.357298555711,
+      "fibres": {
+        "1": [
+          1,
+          4
+        ],
+        "2": [
+          0,
+          3
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          2
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0,
+          3
+        ],
+        "7": [
+          2
+        ],
+        "8": [
+          5
+        ],
+        "9": [
+          1,
+          4
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 2,
+      "L": 0,
+      "n": 6,
+      "k": 1,
+      "q_identity_test": 33,
+      "q_theorem_sufficient": 96,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.008505172717997146,
+      "projection_derivative_margin": 4.890291691552786e-05,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 2,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 33,
+      "q_theorem_sufficient": 96,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 0.5275615482168021,
+      "fibres": {
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 2,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 33,
+      "q_theorem_sufficient": 96,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 0.014555512815290068,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "7": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 2,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 33,
+      "q_theorem_sufficient": 96,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 0.12648114938760577,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 2,
+      "L": 1,
+      "n": 10,
+      "k": 3,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 1960,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 4.999999999999999,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003227486121839514,
+      "projection_derivative_margin": 0.9144811290779113,
+      "fibres": {
+        "1": [
+          0,
+          1
+        ],
+        "3": [
+          1,
+          2
+        ],
+        "4": [
+          2
+        ],
+        "5": [
+          1
+        ],
+        "6": [
+          2
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          2
+        ],
+        "9": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 2,
+      "L": 1,
+      "n": 9,
+      "k": 3,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 1960,
+      "N": 8,
+      "C0": 8,
+      "macro_m_numerical": 1.2109977206184839,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00030618621784789723,
+      "projection_derivative_margin": 27.225111717106678,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "2": [
+          2
+        ],
+        "3": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0,
+          1
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          2
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 2,
+      "L": 1,
+      "n": 10,
+      "k": 3,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 1960,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 3.5885563480296776,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003227486121839514,
+      "projection_derivative_margin": 59.54479591251647,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "3": [
+          0,
+          1
+        ],
+        "5": [
+          1,
+          2
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          0,
+          1
+        ],
+        "8": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 2,
+      "L": 1,
+      "n": 9,
+      "k": 3,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 1960,
+      "N": 7,
+      "C0": 7,
+      "macro_m_numerical": 2.1149900544283344,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00030618621784789723,
+      "projection_derivative_margin": 71.91951919960621,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "4": [
+          2
+        ],
+        "5": [
+          0,
+          1
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          0,
+          1
+        ],
+        "8": [
+          2
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 2,
+      "L": 3,
+      "n": 17,
+      "k": 7,
+      "q_identity_test": 81,
+      "q_theorem_sufficient": 38099,
+      "N": 9,
+      "C0": 7,
+      "macro_m_numerical": 6.360491915780287,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2024594482623141e-05,
+      "projection_derivative_margin": 377.69077653805226,
+      "fibres": {
+        "1": [
+          2,
+          5
+        ],
+        "2": [
+          3,
+          6
+        ],
+        "3": [
+          0,
+          6
+        ],
+        "4": [
+          3,
+          4
+        ],
+        "5": [
+          0,
+          1
+        ],
+        "6": [
+          4,
+          5
+        ],
+        "7": [
+          1,
+          2
+        ],
+        "8": [
+          1
+        ],
+        "9": [
+          1,
+          2
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 2,
+      "L": 3,
+      "n": 16,
+      "k": 6,
+      "q_identity_test": 81,
+      "q_theorem_sufficient": 35273,
+      "N": 10,
+      "C0": 6,
+      "macro_m_numerical": 3.178665677674564,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2600255878514291e-05,
+      "projection_derivative_margin": 110.38970294079841,
+      "fibres": {
+        "1": [
+          0,
+          6
+        ],
+        "2": [
+          1
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          2,
+          3
+        ],
+        "5": [
+          0,
+          1
+        ],
+        "6": [
+          2,
+          3
+        ],
+        "7": [
+          1,
+          6
+        ],
+        "8": [
+          2
+        ],
+        "9": [
+          0,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 2,
+      "L": 3,
+      "n": 17,
+      "k": 7,
+      "q_identity_test": 81,
+      "q_theorem_sufficient": 38099,
+      "N": 9,
+      "C0": 9,
+      "macro_m_numerical": 9.282353585539358,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2024594482623141e-05,
+      "projection_derivative_margin": 229.25089856693705,
+      "fibres": {
+        "1": [
+          1,
+          2
+        ],
+        "2": [
+          1,
+          2
+        ],
+        "3": [
+          2,
+          5
+        ],
+        "4": [
+          1,
+          6
+        ],
+        "5": [
+          4,
+          5
+        ],
+        "6": [
+          2,
+          5
+        ],
+        "7": [
+          0,
+          3
+        ],
+        "8": [
+          1,
+          4
+        ],
+        "9": [
+          4
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 2,
+      "L": 3,
+      "n": 16,
+      "k": 7,
+      "q_identity_test": 81,
+      "q_theorem_sufficient": 38099,
+      "N": 10,
+      "C0": 8,
+      "macro_m_numerical": 13.71222361788412,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.1665570154605778e-05,
+      "projection_derivative_margin": 583.42122438787,
+      "fibres": {
+        "1": [
+          4,
+          5
+        ],
+        "2": [
+          3,
+          4
+        ],
+        "3": [
+          2,
+          3
+        ],
+        "4": [
+          2,
+          3
+        ],
+        "5": [
+          1,
+          2
+        ],
+        "6": [
+          4
+        ],
+        "7": [
+          2,
+          5
+        ],
+        "8": [
+          4
+        ],
+        "9": [
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 2,
+      "L": 5,
+      "n": 24,
+      "k": 10,
+      "q_identity_test": 113,
+      "q_theorem_sufficient": 196562,
+      "N": 12,
+      "C0": 10,
+      "macro_m_numerical": 15.773796855194279,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.917182595407156e-06,
+      "projection_derivative_margin": 2034.8392859094668,
+      "fibres": {
+        "1": [
+          3,
+          6
+        ],
+        "2": [
+          2,
+          7,
+          10
+        ],
+        "3": [
+          1,
+          2,
+          7,
+          8
+        ],
+        "4": [
+          3,
+          4,
+          9
+        ],
+        "5": [
+          1,
+          4,
+          7
+        ],
+        "6": [
+          4,
+          5
+        ],
+        "7": [
+          5,
+          10
+        ],
+        "8": [
+          2,
+          7,
+          8
+        ],
+        "9": [
+          1,
+          6
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 2,
+      "L": 5,
+      "n": 23,
+      "k": 9,
+      "q_identity_test": 113,
+      "q_theorem_sufficient": 186475,
+      "N": 13,
+      "C0": 3,
+      "macro_m_numerical": 4.994285931694796,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.978338123590554e-06,
+      "projection_derivative_margin": 2164.3871427593995,
+      "fibres": {
+        "1": [
+          1,
+          4
+        ],
+        "2": [
+          0,
+          1,
+          7,
+          10
+        ],
+        "3": [
+          6
+        ],
+        "4": [
+          9
+        ],
+        "5": [
+          3,
+          4,
+          10
+        ],
+        "6": [
+          0,
+          3,
+          10
+        ],
+        "7": [
+          0,
+          5
+        ],
+        "8": [
+          0,
+          3,
+          10
+        ],
+        "9": [
+          0,
+          3,
+          6,
+          9
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 2,
+      "L": 5,
+      "n": 28,
+      "k": 9,
+      "q_identity_test": 113,
+      "q_theorem_sufficient": 186475,
+      "N": 16,
+      "C0": 18,
+      "macro_m_numerical": 9.517848097287409,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 2.1828084071657523e-06,
+      "projection_derivative_margin": 3637.3068895575097,
+      "fibres": {
+        "1": [
+          0,
+          8,
+          9
+        ],
+        "2": [
+          0,
+          9,
+          10
+        ],
+        "3": [
+          0,
+          3,
+          10
+        ],
+        "4": [
+          0,
+          7,
+          8
+        ],
+        "5": [
+          3,
+          10
+        ],
+        "6": [
+          0,
+          1,
+          6
+        ],
+        "7": [
+          0,
+          3,
+          9
+        ],
+        "8": [
+          0,
+          1,
+          8,
+          9
+        ],
+        "9": [
+          1,
+          2,
+          9,
+          10
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 2,
+      "L": 5,
+      "n": 28,
+      "k": 11,
+      "q_identity_test": 113,
+      "q_theorem_sufficient": 206156,
+      "N": 16,
+      "C0": 18,
+      "macro_m_numerical": 10.173335145188132,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.9744244934005775e-06,
+      "projection_derivative_margin": 2280.0906243385616,
+      "fibres": {
+        "1": [
+          2,
+          5,
+          10
+        ],
+        "2": [
+          1,
+          2,
+          7,
+          8
+        ],
+        "3": [
+          0,
+          1,
+          8,
+          9
+        ],
+        "4": [
+          2,
+          7
+        ],
+        "5": [
+          4,
+          10
+        ],
+        "6": [
+          0,
+          3,
+          6
+        ],
+        "7": [
+          1,
+          6,
+          9
+        ],
+        "8": [
+          2,
+          7,
+          10
+        ],
+        "9": [
+          1,
+          2,
+          7,
+          10
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 3,
+      "L": 0,
+      "n": 6,
+      "k": 1,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 144,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.008505172717997146,
+      "projection_derivative_margin": 0.7909742112556641,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 3,
+      "L": 0,
+      "n": 5,
+      "k": 1,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 144,
+      "N": 5,
+      "C0": 5,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.00776412492187427,
+      "projection_derivative_margin": 0.9296527511183523,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "7": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 3,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 144,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 0.03347875236044714,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "8": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 3,
+      "L": 0,
+      "n": 6,
+      "k": 1,
+      "q_identity_test": 49,
+      "q_theorem_sufficient": 144,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.008505172717997146,
+      "projection_derivative_margin": 0.009541327619839016,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 3,
+      "L": 1,
+      "n": 11,
+      "k": 4,
+      "q_identity_test": 73,
+      "q_theorem_sufficient": 3395,
+      "N": 5,
+      "C0": 5,
+      "macro_m_numerical": 4.328982246967609,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00029315098498896436,
+      "projection_derivative_margin": 96.97517305875152,
+      "fibres": {
+        "1": [
+          0,
+          2
+        ],
+        "2": [
+          1,
+          3
+        ],
+        "3": [
+          1,
+          2
+        ],
+        "4": [
+          1,
+          3
+        ],
+        "6": [
+          0
+        ],
+        "8": [
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 3,
+      "L": 1,
+      "n": 14,
+      "k": 4,
+      "q_identity_test": 73,
+      "q_theorem_sufficient": 3395,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 4.261947373428012,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003307189138830738,
+      "projection_derivative_margin": 11.791788795364257,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "3": [
+          0,
+          1
+        ],
+        "4": [
+          0,
+          1,
+          2
+        ],
+        "5": [
+          2,
+          3
+        ],
+        "6": [
+          0,
+          2
+        ],
+        "7": [
+          1
+        ],
+        "8": [
+          1,
+          3
+        ],
+        "9": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 3,
+      "L": 1,
+      "n": 16,
+      "k": 4,
+      "q_identity_test": 73,
+      "q_theorem_sufficient": 3395,
+      "N": 9,
+      "C0": 9,
+      "macro_m_numerical": 3.6582200640107447,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00035355339059327376,
+      "projection_derivative_margin": 106.7759787035809,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          0,
+          1
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "5": [
+          1,
+          2,
+          3
+        ],
+        "6": [
+          2,
+          3
+        ],
+        "7": [
+          0,
+          1
+        ],
+        "8": [
+          0,
+          1
+        ],
+        "9": [
+          2,
+          3
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 3,
+      "L": 1,
+      "n": 8,
+      "k": 3,
+      "q_identity_test": 73,
+      "q_theorem_sufficient": 2940,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 5.672174265908872,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0002886751345948129,
+      "projection_derivative_margin": 63.45458598771992,
+      "fibres": {
+        "1": [
+          2,
+          3
+        ],
+        "2": [
+          3
+        ],
+        "3": [
+          2
+        ],
+        "4": [
+          2
+        ],
+        "6": [
+          1,
+          3
+        ],
+        "8": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 3,
+      "L": 3,
+      "n": 26,
+      "k": 10,
+      "q_identity_test": 121,
+      "q_theorem_sufficient": 68306,
+      "N": 10,
+      "C0": 6,
+      "macro_m_numerical": 15.77657361722989,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2441755784411343e-05,
+      "projection_derivative_margin": 251.1928244464364,
+      "fibres": {
+        "1": [
+          4,
+          5
+        ],
+        "2": [
+          2,
+          3,
+          7
+        ],
+        "3": [
+          4,
+          6,
+          8
+        ],
+        "4": [
+          1,
+          3,
+          8
+        ],
+        "5": [
+          3
+        ],
+        "6": [
+          1,
+          2,
+          3
+        ],
+        "7": [
+          0,
+          2,
+          7,
+          9
+        ],
+        "8": [
+          4,
+          5,
+          6
+        ],
+        "9": [
+          0,
+          5,
+          7,
+          9
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 3,
+      "L": 3,
+      "n": 27,
+      "k": 10,
+      "q_identity_test": 121,
+      "q_theorem_sufficient": 68306,
+      "N": 11,
+      "C0": 7,
+      "macro_m_numerical": 12.856805229130547,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.267876290521218e-05,
+      "projection_derivative_margin": 872.0870301149753,
+      "fibres": {
+        "1": [
+          0,
+          2,
+          4
+        ],
+        "2": [
+          0,
+          5,
+          9
+        ],
+        "3": [
+          6,
+          7,
+          8
+        ],
+        "4": [
+          2,
+          3,
+          4
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          9
+        ],
+        "6": [
+          1,
+          3,
+          8
+        ],
+        "7": [
+          3,
+          4,
+          5
+        ],
+        "8": [
+          5,
+          6,
+          7
+        ],
+        "9": [
+          2,
+          9
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 3,
+      "L": 3,
+      "n": 23,
+      "k": 10,
+      "q_identity_test": 121,
+      "q_theorem_sufficient": 68306,
+      "N": 10,
+      "C0": 8,
+      "macro_m_numerical": 15.067148106097932,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.170196827785733e-05,
+      "projection_derivative_margin": 726.054431789075,
+      "fibres": {
+        "1": [
+          3,
+          4,
+          8
+        ],
+        "2": [
+          0,
+          2,
+          9
+        ],
+        "3": [
+          4,
+          5,
+          6
+        ],
+        "4": [
+          2,
+          6
+        ],
+        "5": [
+          6,
+          8
+        ],
+        "6": [
+          2,
+          3,
+          7
+        ],
+        "7": [
+          3,
+          8
+        ],
+        "8": [
+          1,
+          6
+        ],
+        "9": [
+          1,
+          3,
+          8
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 3,
+      "L": 3,
+      "n": 26,
+      "k": 10,
+      "q_identity_test": 121,
+      "q_theorem_sufficient": 68306,
+      "N": 10,
+      "C0": 8,
+      "macro_m_numerical": 12.363729418198997,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2441755784411343e-05,
+      "projection_derivative_margin": 886.2558608660729,
+      "fibres": {
+        "1": [
+          4,
+          8,
+          9
+        ],
+        "2": [
+          0,
+          2,
+          7
+        ],
+        "3": [
+          2,
+          3,
+          7
+        ],
+        "4": [
+          6,
+          7,
+          8
+        ],
+        "5": [
+          2,
+          3,
+          7
+        ],
+        "6": [
+          1,
+          9
+        ],
+        "7": [
+          0,
+          5,
+          7
+        ],
+        "8": [
+          0,
+          1,
+          2,
+          9
+        ],
+        "9": [
+          2,
+          6
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 3,
+      "L": 5,
+      "n": 32,
+      "k": 15,
+      "q_identity_test": 169,
+      "q_theorem_sufficient": 361107,
+      "N": 13,
+      "C0": 13,
+      "macro_m_numerical": 13.844738381304815,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.8075370853136334e-06,
+      "projection_derivative_margin": 2211.3619023158453,
+      "fibres": {
+        "1": [
+          2,
+          6,
+          7,
+          15
+        ],
+        "2": [
+          2,
+          4,
+          6,
+          14,
+          15
+        ],
+        "3": [
+          3,
+          4,
+          8,
+          15
+        ],
+        "4": [
+          3,
+          5,
+          7
+        ],
+        "5": [
+          6
+        ],
+        "6": [
+          0,
+          4,
+          8,
+          13
+        ],
+        "7": [
+          2,
+          3,
+          10,
+          15
+        ],
+        "8": [
+          1,
+          2,
+          9,
+          10,
+          11
+        ],
+        "9": [
+          5,
+          15
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 3,
+      "L": 5,
+      "n": 34,
+      "k": 16,
+      "q_identity_test": 169,
+      "q_theorem_sufficient": 372950,
+      "N": 13,
+      "C0": 13,
+      "macro_m_numerical": 17.957595641287867,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.8040032850904072e-06,
+      "projection_derivative_margin": 2860.6539247690507,
+      "fibres": {
+        "1": [
+          2,
+          6,
+          7,
+          14
+        ],
+        "2": [
+          3,
+          10,
+          11
+        ],
+        "3": [
+          0,
+          2,
+          7,
+          11,
+          15
+        ],
+        "4": [
+          1,
+          5,
+          6,
+          13
+        ],
+        "5": [
+          3,
+          4,
+          12,
+          14
+        ],
+        "6": [
+          0,
+          7,
+          8,
+          12
+        ],
+        "7": [
+          9,
+          10
+        ],
+        "8": [
+          2,
+          4,
+          6,
+          11
+        ],
+        "9": [
+          3,
+          5,
+          10,
+          15
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 3,
+      "L": 5,
+      "n": 32,
+      "k": 15,
+      "q_identity_test": 169,
+      "q_theorem_sufficient": 361107,
+      "N": 11,
+      "C0": 7,
+      "macro_m_numerical": 20.395803088442467,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.8075370853136334e-06,
+      "projection_derivative_margin": 2870.6905322596467,
+      "fibres": {
+        "1": [
+          10,
+          12,
+          14
+        ],
+        "2": [
+          11,
+          12
+        ],
+        "3": [
+          0,
+          1,
+          8,
+          10
+        ],
+        "4": [
+          1,
+          6,
+          13,
+          14,
+          15
+        ],
+        "5": [
+          2,
+          3,
+          4,
+          11,
+          13
+        ],
+        "6": [
+          6,
+          8,
+          13
+        ],
+        "7": [
+          0,
+          4,
+          8,
+          9
+        ],
+        "8": [
+          4,
+          5,
+          9
+        ],
+        "9": [
+          1,
+          8,
+          12
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 3,
+      "L": 5,
+      "n": 37,
+      "k": 16,
+      "q_identity_test": 169,
+      "q_theorem_sufficient": 372950,
+      "N": 11,
+      "C0": 5,
+      "macro_m_numerical": 15.615464139456835,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.8819094694956243e-06,
+      "projection_derivative_margin": 4165.709126595951,
+      "fibres": {
+        "1": [
+          2,
+          7,
+          14
+        ],
+        "2": [
+          0,
+          4,
+          5,
+          14
+        ],
+        "3": [
+          0,
+          2,
+          9,
+          11,
+          13
+        ],
+        "4": [
+          0,
+          1,
+          5,
+          10
+        ],
+        "5": [
+          2,
+          4,
+          6,
+          13,
+          14
+        ],
+        "6": [
+          3,
+          7,
+          8,
+          12
+        ],
+        "7": [
+          4,
+          6,
+          14,
+          15
+        ],
+        "8": [
+          4,
+          5,
+          6,
+          14
+        ],
+        "9": [
+          1,
+          2,
+          12,
+          13
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 6,
+      "L": 0,
+      "n": 2,
+      "k": 1,
+      "q_identity_test": 97,
+      "q_theorem_sufficient": 288,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.004910463758239914,
+      "projection_derivative_margin": 0.4379153965152881,
+      "fibres": {
+        "3": [
+          0
+        ],
+        "5": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 6,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 97,
+      "q_theorem_sufficient": 288,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 0.9374580415376941,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "6": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 6,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 97,
+      "q_theorem_sufficient": 288,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 2.9542357424288337,
+      "fibres": {
+        "3": [
+          0
+        ],
+        "7": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 6,
+      "L": 0,
+      "n": 3,
+      "k": 1,
+      "q_identity_test": 97,
+      "q_theorem_sufficient": 288,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006014065304058601,
+      "projection_derivative_margin": 0.4273647744127984,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "8": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 6,
+      "L": 1,
+      "n": 23,
+      "k": 7,
+      "q_identity_test": 145,
+      "q_theorem_sufficient": 8980,
+      "N": 4,
+      "C0": 4,
+      "macro_m_numerical": 10.84242252957353,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003204349722308279,
+      "projection_derivative_margin": 143.75275083666983,
+      "fibres": {
+        "1": [
+          2,
+          4
+        ],
+        "2": [
+          1,
+          3,
+          6
+        ],
+        "3": [
+          2,
+          6
+        ],
+        "4": [
+          0,
+          2,
+          5
+        ],
+        "5": [
+          2,
+          3,
+          4,
+          5
+        ],
+        "6": [
+          2,
+          3,
+          4,
+          6
+        ],
+        "7": [
+          1,
+          2,
+          5
+        ],
+        "8": [
+          5
+        ],
+        "9": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 6,
+      "L": 1,
+      "n": 25,
+      "k": 7,
+      "q_identity_test": 145,
+      "q_theorem_sufficient": 8980,
+      "N": 8,
+      "C0": 8,
+      "macro_m_numerical": 6.886664780767933,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00033407655239053044,
+      "projection_derivative_margin": 202.16183582646426,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          0,
+          4,
+          5
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "4": [
+          0,
+          3,
+          5
+        ],
+        "5": [
+          0,
+          1,
+          2
+        ],
+        "6": [
+          1,
+          5,
+          6
+        ],
+        "7": [
+          0,
+          3
+        ],
+        "8": [
+          0,
+          1
+        ],
+        "9": [
+          3,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 6,
+      "L": 1,
+      "n": 27,
+      "k": 6,
+      "q_identity_test": 145,
+      "q_theorem_sufficient": 8314,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 22.0,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00037499999999999995,
+      "projection_derivative_margin": 9.324010892451092,
+      "fibres": {
+        "1": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "2": [
+          1,
+          3,
+          4
+        ],
+        "3": [
+          1,
+          5
+        ],
+        "4": [
+          1,
+          2,
+          5
+        ],
+        "5": [
+          1,
+          2,
+          3,
+          5
+        ],
+        "6": [
+          1,
+          3,
+          4
+        ],
+        "7": [
+          1,
+          3
+        ],
+        "8": [
+          0,
+          1,
+          5
+        ],
+        "9": [
+          0,
+          1,
+          3
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 6,
+      "L": 1,
+      "n": 29,
+      "k": 7,
+      "q_identity_test": 145,
+      "q_theorem_sufficient": 8980,
+      "N": 7,
+      "C0": 7,
+      "macro_m_numerical": 12.345671077425825,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00035981145856446226,
+      "projection_derivative_margin": 115.49637423749138,
+      "fibres": {
+        "1": [
+          0,
+          1,
+          2,
+          5
+        ],
+        "2": [
+          1,
+          4,
+          5,
+          6
+        ],
+        "3": [
+          4,
+          5,
+          6
+        ],
+        "4": [
+          0,
+          3,
+          4,
+          5
+        ],
+        "5": [
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "6": [
+          0,
+          2,
+          4
+        ],
+        "7": [
+          1,
+          3
+        ],
+        "8": [
+          1,
+          2
+        ],
+        "9": [
+          0,
+          5
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 6,
+      "L": 3,
+      "n": 46,
+      "k": 18,
+      "q_identity_test": 241,
+      "q_theorem_sufficient": 183283,
+      "N": 9,
+      "C0": 5,
+      "macro_m_numerical": 33.16155659797792,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2334957621689093e-05,
+      "projection_derivative_margin": 816.1325595016708,
+      "fibres": {
+        "1": [
+          2,
+          3,
+          7,
+          11,
+          12
+        ],
+        "2": [
+          4,
+          8,
+          13
+        ],
+        "3": [
+          2,
+          10,
+          12,
+          13,
+          15
+        ],
+        "4": [
+          0,
+          1,
+          4,
+          5,
+          14,
+          15,
+          18
+        ],
+        "5": [
+          7,
+          8,
+          9,
+          16
+        ],
+        "6": [
+          0,
+          3,
+          4
+        ],
+        "7": [
+          0,
+          7,
+          11,
+          14,
+          15,
+          16,
+          18
+        ],
+        "8": [
+          8,
+          10,
+          13,
+          15,
+          17,
+          18
+        ],
+        "9": [
+          5,
+          7,
+          9,
+          10,
+          12,
+          14
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 6,
+      "L": 3,
+      "n": 46,
+      "k": 19,
+      "q_identity_test": 241,
+      "q_theorem_sufficient": 188305,
+      "N": 8,
+      "C0": 6,
+      "macro_m_numerical": 26.31536223015163,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2005966129868813e-05,
+      "projection_derivative_margin": 959.8455257224509,
+      "fibres": {
+        "1": [
+          2,
+          4,
+          7,
+          11,
+          12,
+          15
+        ],
+        "2": [
+          6,
+          8,
+          11,
+          15,
+          16
+        ],
+        "3": [
+          0,
+          7,
+          8,
+          15,
+          16,
+          17
+        ],
+        "4": [
+          0,
+          5,
+          13,
+          14,
+          15,
+          16
+        ],
+        "5": [
+          0,
+          1,
+          3,
+          14,
+          16
+        ],
+        "6": [
+          2,
+          5,
+          6,
+          7,
+          10
+        ],
+        "7": [
+          3,
+          5,
+          7,
+          10
+        ],
+        "8": [
+          2,
+          3,
+          10
+        ],
+        "9": [
+          0,
+          8,
+          9,
+          13,
+          16,
+          18
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 6,
+      "L": 3,
+      "n": 44,
+      "k": 19,
+      "q_identity_test": 241,
+      "q_theorem_sufficient": 188305,
+      "N": 7,
+      "C0": 5,
+      "macro_m_numerical": 15.705963934063146,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.1742066516245095e-05,
+      "projection_derivative_margin": 944.2021479220477,
+      "fibres": {
+        "1": [
+          0,
+          2,
+          5,
+          15
+        ],
+        "2": [
+          4,
+          8,
+          13
+        ],
+        "3": [
+          2,
+          4,
+          9,
+          13,
+          17
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          11
+        ],
+        "5": [
+          3,
+          8,
+          11,
+          13,
+          16
+        ],
+        "6": [
+          0,
+          1,
+          4,
+          9,
+          11,
+          14,
+          18
+        ],
+        "7": [
+          2,
+          4,
+          6,
+          11,
+          13,
+          15
+        ],
+        "8": [
+          3,
+          7,
+          12
+        ],
+        "9": [
+          1,
+          2,
+          3,
+          6,
+          10
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 6,
+      "L": 3,
+      "n": 42,
+      "k": 17,
+      "q_identity_test": 241,
+      "q_theorem_sufficient": 178119,
+      "N": 7,
+      "C0": 7,
+      "macro_m_numerical": 30.870861442111625,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2128167407305183e-05,
+      "projection_derivative_margin": 1053.6565253854776,
+      "fibres": {
+        "1": [
+          13
+        ],
+        "2": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          18
+        ],
+        "3": [
+          5,
+          6,
+          8,
+          10,
+          15
+        ],
+        "4": [
+          1,
+          9,
+          10,
+          12,
+          17
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          5,
+          9,
+          10
+        ],
+        "6": [
+          0,
+          1,
+          14,
+          16
+        ],
+        "7": [
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "8": [
+          1,
+          5,
+          8,
+          9
+        ],
+        "9": [
+          8,
+          9,
+          10,
+          12,
+          13,
+          17
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 6,
+      "L": 5,
+      "n": 77,
+      "k": 30,
+      "q_identity_test": 337,
+      "q_theorem_sufficient": 1021365,
+      "N": 14,
+      "C0": 6,
+      "macro_m_numerical": 37.51727403649851,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.9826341940647117e-06,
+      "projection_derivative_margin": 6771.152585452153,
+      "fibres": {
+        "1": [
+          1,
+          2,
+          3,
+          12,
+          17,
+          19,
+          21,
+          22,
+          30
+        ],
+        "2": [
+          5,
+          6,
+          9,
+          13,
+          14,
+          16,
+          27
+        ],
+        "3": [
+          0,
+          4,
+          7,
+          8,
+          23,
+          25,
+          26,
+          28,
+          30
+        ],
+        "4": [
+          0,
+          1,
+          8,
+          9,
+          10,
+          17,
+          18,
+          26
+        ],
+        "5": [
+          7,
+          9,
+          10,
+          23,
+          25,
+          27,
+          28
+        ],
+        "6": [
+          2,
+          9,
+          18,
+          19,
+          20,
+          22,
+          27,
+          29
+        ],
+        "7": [
+          1,
+          2,
+          3,
+          4,
+          6,
+          11,
+          21,
+          22,
+          24,
+          26
+        ],
+        "8": [
+          4,
+          6,
+          7,
+          8,
+          11,
+          22,
+          25,
+          27,
+          29,
+          30
+        ],
+        "9": [
+          2,
+          7,
+          9,
+          12,
+          17,
+          20,
+          22,
+          25,
+          30
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 6,
+      "L": 5,
+      "n": 73,
+      "k": 30,
+      "q_identity_test": 337,
+      "q_theorem_sufficient": 1021365,
+      "N": 14,
+      "C0": 16,
+      "macro_m_numerical": 27.51587365285668,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.9304504533400026e-06,
+      "projection_derivative_margin": 9291.770478989813,
+      "fibres": {
+        "1": [
+          2,
+          4,
+          6,
+          7,
+          15,
+          26,
+          28,
+          30
+        ],
+        "2": [
+          4,
+          9,
+          12,
+          14,
+          17,
+          22
+        ],
+        "3": [
+          0,
+          2,
+          4,
+          13,
+          15,
+          23,
+          24,
+          26,
+          28
+        ],
+        "4": [
+          0,
+          3,
+          7,
+          16,
+          20,
+          21,
+          23,
+          25
+        ],
+        "5": [
+          2,
+          3,
+          4,
+          11,
+          13,
+          21,
+          22,
+          29,
+          30
+        ],
+        "6": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          19,
+          22,
+          24,
+          29
+        ],
+        "7": [
+          0,
+          1,
+          3,
+          8,
+          17,
+          19,
+          21,
+          30
+        ],
+        "8": [
+          2,
+          3,
+          4,
+          5,
+          18,
+          19,
+          20,
+          22,
+          27
+        ],
+        "9": [
+          7,
+          12,
+          15,
+          16,
+          25,
+          26,
+          30
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 6,
+      "L": 5,
+      "n": 70,
+      "k": 27,
+      "q_identity_test": 337,
+      "q_theorem_sufficient": 968952,
+      "N": 13,
+      "C0": 5,
+      "macro_m_numerical": 36.01904538372963,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.992622338861006e-06,
+      "projection_derivative_margin": 1963.2889415622042,
+      "fibres": {
+        "1": [
+          0,
+          1,
+          9,
+          11,
+          14,
+          22,
+          25,
+          29
+        ],
+        "2": [
+          2,
+          3,
+          4,
+          12,
+          19,
+          20,
+          27,
+          28,
+          30
+        ],
+        "3": [
+          0,
+          9,
+          13,
+          16,
+          27
+        ],
+        "4": [
+          1,
+          3,
+          11,
+          12,
+          19,
+          20,
+          21,
+          28,
+          29
+        ],
+        "5": [
+          0,
+          8,
+          15,
+          17,
+          18,
+          19,
+          28
+        ],
+        "6": [
+          10,
+          11,
+          13,
+          15,
+          24,
+          26,
+          29
+        ],
+        "7": [
+          0,
+          1,
+          3,
+          8,
+          17,
+          18,
+          22,
+          26
+        ],
+        "8": [
+          1,
+          4,
+          8,
+          15,
+          17,
+          24,
+          25,
+          26
+        ],
+        "9": [
+          0,
+          2,
+          3,
+          11,
+          22,
+          25,
+          26,
+          29,
+          30
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 6,
+      "L": 5,
+      "n": 74,
+      "k": 30,
+      "q_identity_test": 337,
+      "q_theorem_sufficient": 1021365,
+      "N": 15,
+      "C0": 9,
+      "macro_m_numerical": 41.20607578059447,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.9436277425137568e-06,
+      "projection_derivative_margin": 4291.056424566508,
+      "fibres": {
+        "1": [
+          2,
+          6,
+          13,
+          16,
+          23,
+          24
+        ],
+        "2": [
+          3,
+          4,
+          5,
+          8,
+          13,
+          22,
+          26,
+          27,
+          29
+        ],
+        "3": [
+          0,
+          4,
+          13,
+          15,
+          22,
+          23,
+          24,
+          26
+        ],
+        "4": [
+          2,
+          3,
+          10,
+          11,
+          12,
+          13,
+          26,
+          28,
+          30
+        ],
+        "5": [
+          0,
+          4,
+          8,
+          21,
+          23,
+          26,
+          28,
+          30
+        ],
+        "6": [
+          1,
+          4,
+          9,
+          12,
+          17,
+          25,
+          26,
+          28
+        ],
+        "7": [
+          0,
+          1,
+          9,
+          14,
+          18,
+          22,
+          25,
+          29
+        ],
+        "8": [
+          0,
+          5,
+          10,
+          18,
+          20,
+          21,
+          23,
+          25,
+          28
+        ],
+        "9": [
+          3,
+          4,
+          6,
+          14,
+          19,
+          22,
+          23,
+          27,
+          30
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 12,
+      "L": 0,
+      "n": 4,
+      "k": 1,
+      "q_identity_test": 193,
+      "q_theorem_sufficient": 576,
+      "N": 4,
+      "C0": 4,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006944444444444444,
+      "projection_derivative_margin": 0.08560100976778132,
+      "fibres": {
+        "4": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 12,
+      "L": 0,
+      "n": 5,
+      "k": 1,
+      "q_identity_test": 193,
+      "q_theorem_sufficient": 576,
+      "N": 5,
+      "C0": 5,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.00776412492187427,
+      "projection_derivative_margin": 1.8659646726130283,
+      "fibres": {
+        "2": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "9": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 12,
+      "L": 0,
+      "n": 4,
+      "k": 1,
+      "q_identity_test": 193,
+      "q_theorem_sufficient": 576,
+      "N": 4,
+      "C0": 4,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.006944444444444444,
+      "projection_derivative_margin": 0.275063802731095,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 12,
+      "L": 0,
+      "n": 2,
+      "k": 1,
+      "q_identity_test": 193,
+      "q_theorem_sufficient": 576,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 0.004910463758239914,
+      "projection_derivative_margin": 0.23425055530879502,
+      "fibres": {
+        "4": [
+          0
+        ],
+        "8": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 12,
+      "L": 1,
+      "n": 53,
+      "k": 13,
+      "q_identity_test": 289,
+      "q_theorem_sufficient": 24476,
+      "N": 7,
+      "C0": 7,
+      "macro_m_numerical": 26.080433640780214,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.000356936753716742,
+      "projection_derivative_margin": 239.75256228899823,
+      "fibres": {
+        "1": [
+          2,
+          6,
+          7,
+          11,
+          12
+        ],
+        "2": [
+          4,
+          5,
+          6,
+          8,
+          11
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          6,
+          7,
+          8,
+          10
+        ],
+        "4": [
+          2,
+          3,
+          5,
+          9,
+          11,
+          12
+        ],
+        "5": [
+          1,
+          7,
+          8,
+          10,
+          11,
+          12
+        ],
+        "6": [
+          1,
+          6,
+          7,
+          8,
+          10,
+          12
+        ],
+        "7": [
+          2,
+          3,
+          5,
+          10,
+          12
+        ],
+        "8": [
+          0,
+          1,
+          2,
+          3,
+          5,
+          6,
+          7,
+          9,
+          10
+        ],
+        "9": [
+          7,
+          8,
+          9,
+          10
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 12,
+      "L": 1,
+      "n": 50,
+      "k": 12,
+      "q_identity_test": 289,
+      "q_theorem_sufficient": 23516,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 23.03774288310296,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003608439182435161,
+      "projection_derivative_margin": 177.9240892931028,
+      "fibres": {
+        "1": [
+          1,
+          3,
+          6,
+          9,
+          11
+        ],
+        "2": [
+          2,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11
+        ],
+        "3": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          8,
+          9,
+          11
+        ],
+        "4": [
+          2,
+          4,
+          5,
+          6,
+          7,
+          11
+        ],
+        "5": [
+          4,
+          10,
+          12
+        ],
+        "6": [
+          1,
+          3,
+          5,
+          6,
+          7,
+          8
+        ],
+        "7": [
+          1,
+          2,
+          5,
+          6,
+          8,
+          9
+        ],
+        "8": [
+          2,
+          3,
+          4,
+          9,
+          10,
+          12
+        ],
+        "9": [
+          4,
+          5,
+          10
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 12,
+      "L": 1,
+      "n": 51,
+      "k": 13,
+      "q_identity_test": 289,
+      "q_theorem_sufficient": 24476,
+      "N": 6,
+      "C0": 6,
+      "macro_m_numerical": 25.015661339540888,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.00035013733569294467,
+      "projection_derivative_margin": 212.62850554127215,
+      "fibres": {
+        "1": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7,
+          9,
+          10,
+          12
+        ],
+        "2": [
+          1,
+          2,
+          9
+        ],
+        "3": [
+          6,
+          8,
+          10,
+          12
+        ],
+        "4": [
+          0,
+          2,
+          3,
+          4,
+          5,
+          6,
+          8,
+          9,
+          10,
+          11
+        ],
+        "5": [
+          0,
+          2,
+          4,
+          5,
+          6,
+          9,
+          10,
+          11
+        ],
+        "6": [
+          2,
+          7,
+          10,
+          11,
+          12
+        ],
+        "7": [
+          1,
+          6,
+          7,
+          12
+        ],
+        "8": [
+          1,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        "9": [
+          7,
+          8
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 12,
+      "L": 1,
+      "n": 40,
+      "k": 13,
+      "q_identity_test": 289,
+      "q_theorem_sufficient": 24476,
+      "N": 3,
+      "C0": 3,
+      "macro_m_numerical": 17.77182131175526,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.0003100868364730211,
+      "projection_derivative_margin": 33.46144393768319,
+      "fibres": {
+        "1": [
+          3,
+          4,
+          11,
+          12
+        ],
+        "2": [
+          3,
+          4,
+          5,
+          7,
+          8,
+          9,
+          12
+        ],
+        "3": [
+          2,
+          3,
+          4
+        ],
+        "4": [
+          4,
+          5,
+          8
+        ],
+        "5": [
+          0,
+          2,
+          4,
+          6,
+          7,
+          8,
+          9,
+          11
+        ],
+        "6": [
+          1,
+          4,
+          11
+        ],
+        "7": [
+          4,
+          7,
+          8,
+          10
+        ],
+        "8": [
+          1,
+          2,
+          5,
+          7,
+          8
+        ],
+        "9": [
+          5,
+          6,
+          9
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 12,
+      "L": 3,
+      "n": 95,
+      "k": 33,
+      "q_identity_test": 481,
+      "q_theorem_sufficient": 496331,
+      "N": 13,
+      "C0": 5,
+      "macro_m_numerical": 65.98024442774545,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.3091814140637316e-05,
+      "projection_derivative_margin": 1061.1480183102976,
+      "fibres": {
+        "1": [
+          2,
+          6,
+          9,
+          15,
+          17,
+          19,
+          20,
+          22,
+          25,
+          28,
+          35,
+          36
+        ],
+        "2": [
+          1,
+          3,
+          9,
+          14,
+          19,
+          20,
+          23,
+          29,
+          30,
+          34,
+          36
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          3,
+          7,
+          16,
+          21,
+          29
+        ],
+        "4": [
+          2,
+          9,
+          12,
+          16,
+          23,
+          25,
+          29,
+          31,
+          32
+        ],
+        "5": [
+          0,
+          1,
+          6,
+          9,
+          16,
+          27,
+          29,
+          31,
+          32,
+          35,
+          36
+        ],
+        "6": [
+          0,
+          2,
+          13,
+          16,
+          19,
+          20,
+          21,
+          29,
+          34,
+          36
+        ],
+        "7": [
+          0,
+          18,
+          20,
+          22,
+          23,
+          25,
+          26,
+          28,
+          29,
+          31,
+          33,
+          36
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          16,
+          19,
+          23,
+          26,
+          29,
+          30,
+          32,
+          36
+        ],
+        "9": [
+          6,
+          8,
+          10,
+          12,
+          15,
+          19,
+          25,
+          26,
+          29,
+          33,
+          35
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 12,
+      "L": 3,
+      "n": 92,
+      "k": 36,
+      "q_identity_test": 481,
+      "q_theorem_sufficient": 518400,
+      "N": 10,
+      "C0": 8,
+      "macro_m_numerical": 68.31385236172136,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.2334957621689093e-05,
+      "projection_derivative_margin": 2764.880162887753,
+      "fibres": {
+        "1": [
+          2,
+          13,
+          15,
+          18,
+          20,
+          21,
+          22,
+          24,
+          31
+        ],
+        "2": [
+          3,
+          4,
+          10,
+          13,
+          14,
+          18,
+          19,
+          21,
+          24,
+          29,
+          32,
+          35
+        ],
+        "3": [
+          6,
+          8,
+          13,
+          14,
+          19,
+          23,
+          24,
+          27,
+          29,
+          34
+        ],
+        "4": [
+          0,
+          5,
+          6,
+          8,
+          9,
+          14,
+          16,
+          23,
+          25,
+          27,
+          31
+        ],
+        "5": [
+          0,
+          4,
+          10,
+          14,
+          17,
+          18,
+          20,
+          25,
+          27,
+          33,
+          36
+        ],
+        "6": [
+          5,
+          15,
+          16,
+          18,
+          19,
+          22,
+          23,
+          33,
+          36
+        ],
+        "7": [
+          2,
+          5,
+          9,
+          18,
+          27,
+          28,
+          31,
+          32,
+          36
+        ],
+        "8": [
+          1,
+          3,
+          11,
+          14,
+          16,
+          17,
+          19,
+          24,
+          30,
+          32,
+          34
+        ],
+        "9": [
+          3,
+          7,
+          10,
+          13,
+          17,
+          26,
+          28,
+          32,
+          33,
+          36
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 12,
+      "L": 3,
+      "n": 90,
+      "k": 34,
+      "q_identity_test": 481,
+      "q_theorem_sufficient": 503795,
+      "N": 10,
+      "C0": 6,
+      "macro_m_numerical": 47.95745662775567,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.255384593857964e-05,
+      "projection_derivative_margin": 668.8325120697048,
+      "fibres": {
+        "1": [
+          1,
+          8,
+          10,
+          12,
+          14,
+          16,
+          17,
+          18,
+          19,
+          33
+        ],
+        "2": [
+          2,
+          6,
+          10,
+          11,
+          19,
+          20,
+          24,
+          25,
+          28,
+          29,
+          33
+        ],
+        "3": [
+          5,
+          10,
+          11,
+          13,
+          16,
+          19,
+          20,
+          21,
+          24,
+          26
+        ],
+        "4": [
+          2,
+          4,
+          6,
+          7,
+          10,
+          12,
+          25,
+          29,
+          32,
+          33,
+          35
+        ],
+        "5": [
+          0,
+          3,
+          4,
+          8,
+          17,
+          18,
+          19,
+          21,
+          25,
+          26,
+          36
+        ],
+        "6": [
+          3,
+          4,
+          9,
+          12,
+          14,
+          17,
+          19,
+          20,
+          30
+        ],
+        "7": [
+          2,
+          5,
+          6,
+          7,
+          8,
+          10,
+          11,
+          13,
+          16,
+          21
+        ],
+        "8": [
+          0,
+          1,
+          3,
+          6,
+          7,
+          8,
+          17,
+          21,
+          35,
+          36
+        ],
+        "9": [
+          6,
+          12,
+          14,
+          22,
+          25,
+          27,
+          31,
+          35
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 12,
+      "L": 3,
+      "n": 88,
+      "k": 30,
+      "q_identity_test": 481,
+      "q_theorem_sufficient": 473233,
+      "N": 9,
+      "C0": 7,
+      "macro_m_numerical": 41.75085466876198,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.3215259854593753e-05,
+      "projection_derivative_margin": 1261.5715808009516,
+      "fibres": {
+        "1": [
+          1,
+          4,
+          6,
+          7,
+          8,
+          14,
+          27,
+          29,
+          33,
+          35,
+          36
+        ],
+        "2": [
+          3,
+          4,
+          5,
+          18,
+          31,
+          35,
+          36
+        ],
+        "3": [
+          0,
+          2,
+          4,
+          5,
+          7,
+          9,
+          22,
+          27,
+          32,
+          35,
+          36
+        ],
+        "4": [
+          4,
+          5,
+          6,
+          14,
+          21,
+          22,
+          25,
+          27,
+          31,
+          36
+        ],
+        "5": [
+          0,
+          1,
+          11,
+          14,
+          18,
+          27,
+          29,
+          31,
+          33
+        ],
+        "6": [
+          0,
+          3,
+          4,
+          13,
+          18,
+          19,
+          21,
+          22,
+          26,
+          29,
+          32,
+          35
+        ],
+        "7": [
+          2,
+          3,
+          5,
+          7,
+          8,
+          9,
+          13,
+          18,
+          34,
+          35
+        ],
+        "8": [
+          1,
+          3,
+          5,
+          11,
+          12,
+          18,
+          28,
+          31,
+          34
+        ],
+        "9": [
+          12,
+          13,
+          19,
+          26,
+          27,
+          28,
+          30,
+          32,
+          33
+        ]
+      }
+    },
+    {
+      "label": "random_0",
+      "t": 12,
+      "L": 5,
+      "n": 129,
+      "k": 58,
+      "q_identity_test": 673,
+      "q_theorem_sufficient": 2840299,
+      "N": 14,
+      "C0": 8,
+      "macro_m_numerical": 65.25368063038287,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.845604817916214e-06,
+      "projection_derivative_margin": 26339.422111613403,
+      "fibres": {
+        "1": [
+          2,
+          8,
+          11,
+          12,
+          15,
+          18,
+          21,
+          25,
+          44,
+          48,
+          51,
+          52,
+          53,
+          54,
+          55,
+          59
+        ],
+        "2": [
+          0,
+          10,
+          13,
+          14,
+          15,
+          16,
+          18,
+          19,
+          20,
+          21,
+          23,
+          29,
+          46,
+          54,
+          57,
+          59,
+          60
+        ],
+        "3": [
+          5,
+          9,
+          13,
+          22,
+          24,
+          26,
+          27,
+          28,
+          31,
+          32,
+          45,
+          47,
+          49
+        ],
+        "4": [
+          2,
+          7,
+          9,
+          10,
+          11,
+          12,
+          15,
+          18,
+          20,
+          25,
+          46,
+          47,
+          51,
+          56
+        ],
+        "5": [
+          3,
+          5,
+          19,
+          21,
+          23,
+          24,
+          25,
+          26,
+          28,
+          34,
+          42,
+          57
+        ],
+        "6": [
+          7,
+          8,
+          9,
+          12,
+          17,
+          18,
+          22,
+          25,
+          35,
+          38,
+          40,
+          51,
+          53,
+          55,
+          57,
+          60
+        ],
+        "7": [
+          1,
+          3,
+          8,
+          12,
+          19,
+          21,
+          26,
+          28,
+          37,
+          39,
+          41,
+          42,
+          46,
+          47,
+          48
+        ],
+        "8": [
+          1,
+          4,
+          5,
+          8,
+          24,
+          26,
+          30,
+          31,
+          40,
+          44,
+          45,
+          46,
+          49,
+          51,
+          60
+        ],
+        "9": [
+          5,
+          10,
+          24,
+          25,
+          30,
+          33,
+          43,
+          44,
+          52,
+          58,
+          59
+        ]
+      }
+    },
+    {
+      "label": "random_1",
+      "t": 12,
+      "L": 5,
+      "n": 142,
+      "k": 58,
+      "q_identity_test": 673,
+      "q_theorem_sufficient": 2840299,
+      "N": 16,
+      "C0": 14,
+      "macro_m_numerical": 74.91863536188033,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.9363686032677208e-06,
+      "projection_derivative_margin": 12092.602529586196,
+      "fibres": {
+        "1": [
+          5,
+          6,
+          13,
+          20,
+          21,
+          23,
+          26,
+          27,
+          28,
+          34,
+          42,
+          43,
+          49,
+          56,
+          57,
+          60
+        ],
+        "2": [
+          0,
+          7,
+          9,
+          14,
+          22,
+          27,
+          30,
+          44,
+          45,
+          48,
+          52,
+          55,
+          59
+        ],
+        "3": [
+          1,
+          3,
+          7,
+          10,
+          11,
+          16,
+          18,
+          32,
+          36,
+          45,
+          49,
+          53,
+          54,
+          58,
+          59
+        ],
+        "4": [
+          0,
+          3,
+          14,
+          16,
+          23,
+          29,
+          30,
+          32,
+          34,
+          36,
+          37,
+          43,
+          51,
+          52,
+          57,
+          59
+        ],
+        "5": [
+          2,
+          5,
+          9,
+          10,
+          12,
+          16,
+          25,
+          27,
+          50,
+          52,
+          54,
+          55,
+          57,
+          58,
+          59,
+          60
+        ],
+        "6": [
+          2,
+          11,
+          15,
+          18,
+          20,
+          21,
+          24,
+          25,
+          31,
+          41,
+          51,
+          52,
+          54,
+          56,
+          59,
+          60
+        ],
+        "7": [
+          1,
+          7,
+          10,
+          12,
+          15,
+          16,
+          17,
+          23,
+          30,
+          38,
+          43,
+          45,
+          51,
+          53,
+          56,
+          58,
+          59,
+          60
+        ],
+        "8": [
+          0,
+          1,
+          8,
+          15,
+          17,
+          18,
+          21,
+          31,
+          35,
+          37,
+          40,
+          44,
+          46,
+          50,
+          51,
+          60
+        ],
+        "9": [
+          0,
+          3,
+          4,
+          9,
+          10,
+          14,
+          20,
+          23,
+          25,
+          31,
+          36,
+          39,
+          42,
+          46,
+          52,
+          57
+        ]
+      }
+    },
+    {
+      "label": "random_2",
+      "t": 12,
+      "L": 5,
+      "n": 140,
+      "k": 55,
+      "q_identity_test": 673,
+      "q_theorem_sufficient": 2765868,
+      "N": 14,
+      "C0": 4,
+      "macro_m_numerical": 76.25486374628456,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.9744244934005775e-06,
+      "projection_derivative_margin": 3455.009177332418,
+      "fibres": {
+        "1": [
+          1,
+          11,
+          16,
+          17,
+          19,
+          24,
+          33,
+          39,
+          42,
+          44,
+          46,
+          49,
+          52,
+          59
+        ],
+        "2": [
+          3,
+          9,
+          10,
+          11,
+          12,
+          14,
+          19,
+          20,
+          28,
+          29,
+          30,
+          37,
+          39,
+          45,
+          46,
+          47,
+          48,
+          50
+        ],
+        "3": [
+          8,
+          10,
+          12,
+          15,
+          18,
+          23,
+          26,
+          29,
+          31,
+          33,
+          37,
+          48,
+          51,
+          56,
+          59
+        ],
+        "4": [
+          2,
+          3,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          17,
+          19,
+          30,
+          44,
+          45,
+          48,
+          51,
+          53,
+          58,
+          59
+        ],
+        "5": [
+          4,
+          7,
+          17,
+          20,
+          23,
+          26,
+          33,
+          34,
+          42,
+          48,
+          52,
+          56
+        ],
+        "6": [
+          0,
+          3,
+          22,
+          25,
+          28,
+          30,
+          33,
+          35,
+          38,
+          41,
+          44,
+          51,
+          55,
+          58
+        ],
+        "7": [
+          3,
+          13,
+          14,
+          16,
+          17,
+          19,
+          21,
+          32,
+          39,
+          48,
+          50,
+          53,
+          55,
+          57
+        ],
+        "8": [
+          0,
+          2,
+          3,
+          13,
+          17,
+          21,
+          22,
+          23,
+          28,
+          31,
+          36,
+          39,
+          42,
+          49,
+          50,
+          56,
+          57,
+          59
+        ],
+        "9": [
+          0,
+          1,
+          3,
+          4,
+          8,
+          17,
+          19,
+          21,
+          22,
+          23,
+          36,
+          40,
+          50,
+          51,
+          56,
+          58,
+          59
+        ]
+      }
+    },
+    {
+      "label": "random_3",
+      "t": 12,
+      "L": 5,
+      "n": 143,
+      "k": 54,
+      "q_identity_test": 673,
+      "q_theorem_sufficient": 2740608,
+      "N": 13,
+      "C0": 5,
+      "macro_m_numerical": 78.2404342205035,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 2.013858700714148e-06,
+      "projection_derivative_margin": 4760.979890442757,
+      "fibres": {
+        "1": [
+          3,
+          4,
+          7,
+          22,
+          25,
+          32,
+          36,
+          38,
+          39,
+          40,
+          43,
+          45,
+          54,
+          58
+        ],
+        "2": [
+          4,
+          8,
+          10,
+          13,
+          14,
+          17,
+          18,
+          23,
+          27,
+          40,
+          43,
+          54,
+          57,
+          58,
+          59,
+          60
+        ],
+        "3": [
+          0,
+          4,
+          9,
+          11,
+          14,
+          15,
+          18,
+          19,
+          32,
+          34,
+          36,
+          40,
+          41,
+          45,
+          49,
+          50,
+          59
+        ],
+        "4": [
+          0,
+          5,
+          9,
+          11,
+          22,
+          25,
+          28,
+          32,
+          36,
+          38,
+          41,
+          42,
+          45,
+          47,
+          51,
+          55
+        ],
+        "5": [
+          2,
+          4,
+          6,
+          19,
+          21,
+          24,
+          25,
+          29,
+          32,
+          42,
+          47,
+          50,
+          58
+        ],
+        "6": [
+          4,
+          5,
+          6,
+          11,
+          14,
+          20,
+          22,
+          24,
+          25,
+          45,
+          50,
+          51,
+          52,
+          54,
+          55,
+          56,
+          59,
+          60
+        ],
+        "7": [
+          0,
+          4,
+          5,
+          8,
+          19,
+          22,
+          33,
+          36,
+          38,
+          39,
+          41,
+          42,
+          49,
+          52,
+          55,
+          59
+        ],
+        "8": [
+          1,
+          4,
+          5,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23,
+          24,
+          26,
+          39,
+          41,
+          55,
+          57
+        ],
+        "9": [
+          0,
+          1,
+          2,
+          6,
+          9,
+          17,
+          19,
+          27,
+          34,
+          37,
+          42,
+          44,
+          45,
+          47,
+          50,
+          52,
+          53,
+          55
+        ]
+      }
+    },
+    {
+      "label": "complete_cancellation",
+      "t": 2,
+      "L": 3,
+      "n": 64,
+      "k": 2,
+      "q_identity_test": 81,
+      "q_theorem_sufficient": 20365,
+      "N": 64,
+      "C0": 0,
+      "macro_m_numerical": 11.715148581632306,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 4.3648566739910345e-05,
+      "projection_derivative_margin": 136.12805714245317,
+      "fibres": {
+        "1": [
+          0,
+          6
+        ],
+        "2": [
+          0,
+          6
+        ],
+        "3": [
+          0,
+          6
+        ],
+        "4": [
+          0,
+          6
+        ],
+        "5": [
+          0,
+          6
+        ],
+        "6": [
+          0,
+          6
+        ],
+        "7": [
+          0,
+          6
+        ],
+        "8": [
+          0,
+          6
+        ],
+        "9": [
+          0,
+          6
+        ],
+        "10": [
+          0,
+          6
+        ],
+        "11": [
+          0,
+          6
+        ],
+        "12": [
+          0,
+          6
+        ],
+        "13": [
+          0,
+          6
+        ],
+        "14": [
+          0,
+          6
+        ],
+        "15": [
+          0,
+          6
+        ],
+        "16": [
+          0,
+          6
+        ],
+        "17": [
+          0,
+          6
+        ],
+        "18": [
+          0,
+          6
+        ],
+        "19": [
+          0,
+          6
+        ],
+        "20": [
+          0,
+          6
+        ],
+        "21": [
+          0,
+          6
+        ],
+        "22": [
+          0,
+          6
+        ],
+        "23": [
+          0,
+          6
+        ],
+        "24": [
+          0,
+          6
+        ],
+        "25": [
+          0,
+          6
+        ],
+        "26": [
+          0,
+          6
+        ],
+        "27": [
+          0,
+          6
+        ],
+        "28": [
+          0,
+          6
+        ],
+        "29": [
+          0,
+          6
+        ],
+        "30": [
+          0,
+          6
+        ],
+        "31": [
+          0,
+          6
+        ],
+        "32": [
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "label": "AP_step_3t_over_2",
+      "t": 4,
+      "L": 5,
+      "n": 64,
+      "k": 4,
+      "q_identity_test": 225,
+      "q_theorem_sufficient": 248634,
+      "N": 32,
+      "C0": 0,
+      "macro_m_numerical": 20.916635878080466,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 4.950144175767085e-06,
+      "projection_derivative_margin": 338.12949396302594,
+      "fibres": {
+        "1": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "2": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "3": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "4": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "5": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "6": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "7": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "8": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "9": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "10": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "11": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "12": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "13": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "14": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "15": [
+          0,
+          6,
+          12,
+          18
+        ],
+        "16": [
+          0,
+          6,
+          12,
+          18
+        ]
+      }
+    },
+    {
+      "label": "AP_step_3t",
+      "t": 3,
+      "L": 5,
+      "n": 64,
+      "k": 2,
+      "q_identity_test": 169,
+      "q_theorem_sufficient": 131858,
+      "N": 64,
+      "C0": 0,
+      "macro_m_numerical": 11.715148581632533,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.000561029071998e-06,
+      "projection_derivative_margin": 19.01528796375125,
+      "fibres": {
+        "1": [
+          0,
+          9
+        ],
+        "2": [
+          0,
+          9
+        ],
+        "3": [
+          0,
+          9
+        ],
+        "4": [
+          0,
+          9
+        ],
+        "5": [
+          0,
+          9
+        ],
+        "6": [
+          0,
+          9
+        ],
+        "7": [
+          0,
+          9
+        ],
+        "8": [
+          0,
+          9
+        ],
+        "9": [
+          0,
+          9
+        ],
+        "10": [
+          0,
+          9
+        ],
+        "11": [
+          0,
+          9
+        ],
+        "12": [
+          0,
+          9
+        ],
+        "13": [
+          0,
+          9
+        ],
+        "14": [
+          0,
+          9
+        ],
+        "15": [
+          0,
+          9
+        ],
+        "16": [
+          0,
+          9
+        ],
+        "17": [
+          0,
+          9
+        ],
+        "18": [
+          0,
+          9
+        ],
+        "19": [
+          0,
+          9
+        ],
+        "20": [
+          0,
+          9
+        ],
+        "21": [
+          0,
+          9
+        ],
+        "22": [
+          0,
+          9
+        ],
+        "23": [
+          0,
+          9
+        ],
+        "24": [
+          0,
+          9
+        ],
+        "25": [
+          0,
+          9
+        ],
+        "26": [
+          0,
+          9
+        ],
+        "27": [
+          0,
+          9
+        ],
+        "28": [
+          0,
+          9
+        ],
+        "29": [
+          0,
+          9
+        ],
+        "30": [
+          0,
+          9
+        ],
+        "31": [
+          0,
+          9
+        ],
+        "32": [
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "label": "common_short_arc",
+      "t": 12,
+      "L": 1,
+      "n": 192,
+      "k": 6,
+      "q_identity_test": 289,
+      "q_theorem_sufficient": 16628,
+      "N": 32,
+      "C0": 32,
+      "macro_m_numerical": 98.16345946403125,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.001,
+      "projection_derivative_margin": 0.0584992195622787,
+      "fibres": {
+        "1": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "2": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "3": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "4": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "5": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "6": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "7": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "8": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "9": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "10": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "11": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "12": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "13": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "14": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "15": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "16": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "17": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "18": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "19": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "20": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "21": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "22": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "23": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "24": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "25": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "26": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "27": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "28": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "29": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "30": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "31": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "32": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      }
+    },
+    {
+      "label": "no_multiples_of_t",
+      "t": 12,
+      "L": 1,
+      "n": 192,
+      "k": 6,
+      "q_identity_test": 289,
+      "q_theorem_sufficient": 16628,
+      "N": 0,
+      "C0": 0,
+      "macro_m_numerical": 158.30290058467025,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 0.001,
+      "projection_derivative_margin": null,
+      "fibres": {
+        "1": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "2": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "3": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "4": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "5": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "6": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "7": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "8": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "9": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "10": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "11": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "12": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "13": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "14": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "15": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "16": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "17": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "18": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "19": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "20": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "21": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "22": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "23": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "24": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "25": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "26": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "27": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "28": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "29": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "30": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "31": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "32": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ]
+      }
+    },
+    {
+      "label": "unbalanced",
+      "t": 6,
+      "L": 3,
+      "n": 67,
+      "k": 4,
+      "q_identity_test": 241,
+      "q_theorem_sufficient": 86400,
+      "N": 65,
+      "C0": 65,
+      "macro_m_numerical": 0.01580987839141479,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 3.157929310135976e-05,
+      "projection_derivative_margin": 185.73403464760491,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          0
+        ],
+        "3": [
+          0
+        ],
+        "4": [
+          0
+        ],
+        "5": [
+          0
+        ],
+        "6": [
+          0
+        ],
+        "7": [
+          0
+        ],
+        "8": [
+          0
+        ],
+        "9": [
+          0
+        ],
+        "10": [
+          0
+        ],
+        "11": [
+          0
+        ],
+        "12": [
+          0
+        ],
+        "13": [
+          0
+        ],
+        "14": [
+          0
+        ],
+        "15": [
+          0
+        ],
+        "16": [
+          0
+        ],
+        "17": [
+          0
+        ],
+        "18": [
+          0
+        ],
+        "19": [
+          0
+        ],
+        "20": [
+          0
+        ],
+        "21": [
+          0
+        ],
+        "22": [
+          0
+        ],
+        "23": [
+          0
+        ],
+        "24": [
+          0
+        ],
+        "25": [
+          0
+        ],
+        "26": [
+          0
+        ],
+        "27": [
+          0
+        ],
+        "28": [
+          0
+        ],
+        "29": [
+          0
+        ],
+        "30": [
+          0
+        ],
+        "31": [
+          0
+        ],
+        "32": [
+          0
+        ],
+        "33": [
+          0
+        ],
+        "34": [
+          0
+        ],
+        "35": [
+          0
+        ],
+        "36": [
+          0
+        ],
+        "37": [
+          0
+        ],
+        "38": [
+          0
+        ],
+        "39": [
+          0
+        ],
+        "40": [
+          0
+        ],
+        "41": [
+          0
+        ],
+        "42": [
+          0
+        ],
+        "43": [
+          0
+        ],
+        "44": [
+          0
+        ],
+        "45": [
+          0
+        ],
+        "46": [
+          0
+        ],
+        "47": [
+          0
+        ],
+        "48": [
+          0
+        ],
+        "49": [
+          0
+        ],
+        "50": [
+          0
+        ],
+        "51": [
+          0
+        ],
+        "52": [
+          0
+        ],
+        "53": [
+          0
+        ],
+        "54": [
+          0
+        ],
+        "55": [
+          0
+        ],
+        "56": [
+          0
+        ],
+        "57": [
+          0
+        ],
+        "58": [
+          0
+        ],
+        "59": [
+          0
+        ],
+        "60": [
+          0
+        ],
+        "61": [
+          0
+        ],
+        "62": [
+          0
+        ],
+        "63": [
+          0
+        ],
+        "64": [
+          0
+        ],
+        "65": [
+          1
+        ],
+        "66": [
+          2
+        ],
+        "67": [
+          18
+        ]
+      }
+    },
+    {
+      "label": "disjoint_residues_per_level",
+      "t": 6,
+      "L": 3,
+      "n": 64,
+      "k": 19,
+      "q_identity_test": 241,
+      "q_theorem_sufficient": 188305,
+      "N": 13,
+      "C0": 13,
+      "macro_m_numerical": 33.241817508897654,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.4161465053738382e-05,
+      "projection_derivative_margin": 1734.6981849220433,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          2
+        ],
+        "3": [
+          3
+        ],
+        "4": [
+          4
+        ],
+        "5": [
+          5
+        ],
+        "6": [
+          6
+        ],
+        "7": [
+          7
+        ],
+        "8": [
+          8
+        ],
+        "9": [
+          9
+        ],
+        "10": [
+          10
+        ],
+        "11": [
+          11
+        ],
+        "12": [
+          12
+        ],
+        "13": [
+          13
+        ],
+        "14": [
+          14
+        ],
+        "15": [
+          15
+        ],
+        "16": [
+          16
+        ],
+        "17": [
+          17
+        ],
+        "18": [
+          18
+        ],
+        "19": [
+          0
+        ],
+        "20": [
+          1
+        ],
+        "21": [
+          2
+        ],
+        "22": [
+          3
+        ],
+        "23": [
+          4
+        ],
+        "24": [
+          5
+        ],
+        "25": [
+          6
+        ],
+        "26": [
+          7
+        ],
+        "27": [
+          8
+        ],
+        "28": [
+          9
+        ],
+        "29": [
+          10
+        ],
+        "30": [
+          11
+        ],
+        "31": [
+          12
+        ],
+        "32": [
+          13
+        ],
+        "33": [
+          14
+        ],
+        "34": [
+          15
+        ],
+        "35": [
+          16
+        ],
+        "36": [
+          17
+        ],
+        "37": [
+          18
+        ],
+        "38": [
+          0
+        ],
+        "39": [
+          1
+        ],
+        "40": [
+          2
+        ],
+        "41": [
+          3
+        ],
+        "42": [
+          4
+        ],
+        "43": [
+          5
+        ],
+        "44": [
+          6
+        ],
+        "45": [
+          7
+        ],
+        "46": [
+          8
+        ],
+        "47": [
+          9
+        ],
+        "48": [
+          10
+        ],
+        "49": [
+          11
+        ],
+        "50": [
+          12
+        ],
+        "51": [
+          13
+        ],
+        "52": [
+          14
+        ],
+        "53": [
+          15
+        ],
+        "54": [
+          16
+        ],
+        "55": [
+          17
+        ],
+        "56": [
+          18
+        ],
+        "57": [
+          0
+        ],
+        "58": [
+          1
+        ],
+        "59": [
+          2
+        ],
+        "60": [
+          3
+        ],
+        "61": [
+          4
+        ],
+        "62": [
+          5
+        ],
+        "63": [
+          6
+        ],
+        "64": [
+          7
+        ]
+      }
+    },
+    {
+      "label": "zero_level_only",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10800,
+      "N": 1,
+      "C0": 0,
+      "macro_m_numerical": 1.8060994582162793,
+      "branch": "macro",
+      "zero_mode": true,
+      "theorem_bound": 3.858024691358025e-06,
+      "projection_derivative_margin": 93.68724688232986,
+      "fibres": {
+        "0": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "zero_level_cancellation",
+      "t": 2,
+      "L": 3,
+      "n": 34,
+      "k": 3,
+      "q_identity_test": 81,
+      "q_theorem_sufficient": 37413,
+      "N": 33,
+      "C0": 0,
+      "macro_m_numerical": 6.805413513217505,
+      "branch": "macro",
+      "zero_mode": true,
+      "theorem_bound": 1.2988046474231068e-05,
+      "projection_derivative_margin": 56.47040541059646,
+      "fibres": {
+        "0": [
+          1,
+          6
+        ],
+        "1": [
+          0,
+          6
+        ],
+        "2": [
+          0,
+          6
+        ],
+        "3": [
+          0,
+          6
+        ],
+        "4": [
+          0,
+          6
+        ],
+        "5": [
+          0,
+          6
+        ],
+        "6": [
+          0,
+          6
+        ],
+        "7": [
+          0,
+          6
+        ],
+        "8": [
+          0,
+          6
+        ],
+        "9": [
+          0,
+          6
+        ],
+        "10": [
+          0,
+          6
+        ],
+        "11": [
+          0,
+          6
+        ],
+        "12": [
+          0,
+          6
+        ],
+        "13": [
+          0,
+          6
+        ],
+        "14": [
+          0,
+          6
+        ],
+        "15": [
+          0,
+          6
+        ],
+        "16": [
+          0,
+          6
+        ]
+      }
+    },
+    {
+      "label": "zero_level_with_large_mass",
+      "t": 3,
+      "L": 5,
+      "n": 200,
+      "k": 4,
+      "q_identity_test": 169,
+      "q_theorem_sufficient": 279713,
+      "N": 200,
+      "C0": 0,
+      "macro_m_numerical": 36.23758496569447,
+      "branch": "macro",
+      "zero_mode": true,
+      "theorem_bound": 4.375350643169999e-06,
+      "projection_derivative_margin": 280.690706365472,
+      "fibres": {
+        "0": [
+          3,
+          12
+        ],
+        "1": [
+          0,
+          9
+        ],
+        "2": [
+          0,
+          9
+        ],
+        "3": [
+          0,
+          9
+        ],
+        "4": [
+          0,
+          9
+        ],
+        "5": [
+          0,
+          9
+        ],
+        "6": [
+          0,
+          9
+        ],
+        "7": [
+          0,
+          9
+        ],
+        "8": [
+          0,
+          9
+        ],
+        "9": [
+          0,
+          9
+        ],
+        "10": [
+          0,
+          9
+        ],
+        "11": [
+          0,
+          9
+        ],
+        "12": [
+          0,
+          9
+        ],
+        "13": [
+          0,
+          9
+        ],
+        "14": [
+          0,
+          9
+        ],
+        "15": [
+          0,
+          9
+        ],
+        "16": [
+          0,
+          9
+        ],
+        "17": [
+          0,
+          9
+        ],
+        "18": [
+          0,
+          9
+        ],
+        "19": [
+          0,
+          9
+        ],
+        "20": [
+          0,
+          9
+        ],
+        "21": [
+          0,
+          9
+        ],
+        "22": [
+          0,
+          9
+        ],
+        "23": [
+          0,
+          9
+        ],
+        "24": [
+          0,
+          9
+        ],
+        "25": [
+          0,
+          9
+        ],
+        "26": [
+          0,
+          9
+        ],
+        "27": [
+          0,
+          9
+        ],
+        "28": [
+          0,
+          9
+        ],
+        "29": [
+          0,
+          9
+        ],
+        "30": [
+          0,
+          9
+        ],
+        "31": [
+          0,
+          9
+        ],
+        "32": [
+          0,
+          9
+        ],
+        "33": [
+          0,
+          9
+        ],
+        "34": [
+          0,
+          9
+        ],
+        "35": [
+          0,
+          9
+        ],
+        "36": [
+          0,
+          9
+        ],
+        "37": [
+          0,
+          9
+        ],
+        "38": [
+          0,
+          9
+        ],
+        "39": [
+          0,
+          9
+        ],
+        "40": [
+          0,
+          9
+        ],
+        "41": [
+          0,
+          9
+        ],
+        "42": [
+          0,
+          9
+        ],
+        "43": [
+          0,
+          9
+        ],
+        "44": [
+          0,
+          9
+        ],
+        "45": [
+          0,
+          9
+        ],
+        "46": [
+          0,
+          9
+        ],
+        "47": [
+          0,
+          9
+        ],
+        "48": [
+          0,
+          9
+        ],
+        "49": [
+          0,
+          9
+        ],
+        "50": [
+          0,
+          9
+        ],
+        "51": [
+          0,
+          9
+        ],
+        "52": [
+          0,
+          9
+        ],
+        "53": [
+          0,
+          9
+        ],
+        "54": [
+          0,
+          9
+        ],
+        "55": [
+          0,
+          9
+        ],
+        "56": [
+          0,
+          9
+        ],
+        "57": [
+          0,
+          9
+        ],
+        "58": [
+          0,
+          9
+        ],
+        "59": [
+          0,
+          9
+        ],
+        "60": [
+          0,
+          9
+        ],
+        "61": [
+          0,
+          9
+        ],
+        "62": [
+          0,
+          9
+        ],
+        "63": [
+          0,
+          9
+        ],
+        "64": [
+          0,
+          9
+        ],
+        "65": [
+          0,
+          9
+        ],
+        "66": [
+          0,
+          9
+        ],
+        "67": [
+          0,
+          9
+        ],
+        "68": [
+          0,
+          9
+        ],
+        "69": [
+          0,
+          9
+        ],
+        "70": [
+          0,
+          9
+        ],
+        "71": [
+          0,
+          9
+        ],
+        "72": [
+          0,
+          9
+        ],
+        "73": [
+          0,
+          9
+        ],
+        "74": [
+          0,
+          9
+        ],
+        "75": [
+          0,
+          9
+        ],
+        "76": [
+          0,
+          9
+        ],
+        "77": [
+          0,
+          9
+        ],
+        "78": [
+          0,
+          9
+        ],
+        "79": [
+          0,
+          9
+        ],
+        "80": [
+          0,
+          9
+        ],
+        "81": [
+          0,
+          9
+        ],
+        "82": [
+          0,
+          9
+        ],
+        "83": [
+          0,
+          9
+        ],
+        "84": [
+          0,
+          9
+        ],
+        "85": [
+          0,
+          9
+        ],
+        "86": [
+          0,
+          9
+        ],
+        "87": [
+          0,
+          9
+        ],
+        "88": [
+          0,
+          9
+        ],
+        "89": [
+          0,
+          9
+        ],
+        "90": [
+          0,
+          9
+        ],
+        "91": [
+          0,
+          9
+        ],
+        "92": [
+          0,
+          9
+        ],
+        "93": [
+          0,
+          9
+        ],
+        "94": [
+          0,
+          9
+        ],
+        "95": [
+          0,
+          9
+        ],
+        "96": [
+          0,
+          9
+        ],
+        "97": [
+          0,
+          9
+        ],
+        "98": [
+          0,
+          9
+        ],
+        "99": [
+          0,
+          9
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 0.03090532987852146,
+      "fibres": {
+        "2": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 1.125,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 14.644158827993694,
+      "fibres": {
+        "2": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 1.6341769111734736,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 43.40235341356663,
+      "fibres": {
+        "2": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 1.8060994582162793,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 97.92339697004351,
+      "fibres": {
+        "2": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 0,
+      "macro_m_numerical": 0.36609839317600923,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 32.98702000261792,
+      "fibres": {
+        "2": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 0.062005994544562404,
+      "fibres": {
+        "1": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.0,
+      "branch": "derivative",
+      "zero_mode": false,
+      "theorem_bound": 1.0912141684977586e-05,
+      "projection_derivative_margin": 4.436780895278443,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.49999999999999994,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 24.402199507236983,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.3155651547204494,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 9.497335384224547,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.36609839317600923,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 124.6742798105879,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 0.2477421355636002,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 9.450191908885717e-06,
+      "projection_derivative_margin": 104.91182372080326,
+      "fibres": {
+        "1": [
+          0
+        ],
+        "2": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 1.125,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 14.419344927517006,
+      "fibres": {
+        "1": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.49999999999999994,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 8.928465880162783,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 2.25,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.0912141684977586e-05,
+      "projection_derivative_margin": 21.955656282148006,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 2.208250985247548,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 59.87122736733498,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 1.5195578816428483,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 107.02248561867903,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 3,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 12471,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 0.8113797233191167,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 178.1204054985928,
+      "fibres": {
+        "1": [
+          1
+        ],
+        "2": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 1.6341769111734736,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 44.95094442176308,
+      "fibres": {
+        "1": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.3155651547204494,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 19.03004244099176,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "2": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 2.208250985247548,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 46.72030924858488,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "2": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 3.2683538223469473,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.0912141684977586e-05,
+      "projection_derivative_margin": 34.41915451078466,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "2": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 3.0519529453149263,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 199.1782699996806,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "2": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 3,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 12471,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 1.5134092572837923,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 204.4278200265633,
+      "fibres": {
+        "1": [
+          2
+        ],
+        "2": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 1,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 1,
+      "C0": 1,
+      "macro_m_numerical": 1.8060994582162793,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 95.31338072868056,
+      "fibres": {
+        "1": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 0.36609839317600923,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 33.47379489745306,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 1.5195578816428483,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 151.64444113273285,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 3.0519529453149263,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 220.21747442679023,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 1,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 7200,
+      "N": 2,
+      "C0": 2,
+      "macro_m_numerical": 3.6121989164325585,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.0912141684977586e-05,
+      "projection_derivative_margin": 22.462203609308638,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 1.9804687500000016,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 9.450191908885717e-06,
+      "projection_derivative_margin": 54.28044953416364,
+      "fibres": {
+        "1": [
+          3
+        ],
+        "2": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 2,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 2,
+      "C0": 0,
+      "macro_m_numerical": 0.36609839317600923,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 79.81618028056457,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 0.2477421355636002,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 9.450191908885717e-06,
+      "projection_derivative_margin": 107.24026372031784,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          0
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 3,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 12471,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 0.8113797233191167,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 235.14748315641816,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          1
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 3,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 12471,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 1.5134092572837923,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 7.71604938271605e-06,
+      "projection_derivative_margin": 207.10299914132725,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          2
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 3,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 3,
+      "C0": 1,
+      "macro_m_numerical": 1.9804687500000016,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 9.450191908885717e-06,
+      "projection_derivative_margin": 142.34958462779616,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          3
+        ]
+      }
+    },
+    {
+      "label": "exhaustive_2_levels",
+      "t": 1,
+      "L": 3,
+      "n": 4,
+      "k": 2,
+      "q_identity_test": 41,
+      "q_theorem_sufficient": 10183,
+      "N": 4,
+      "C0": 0,
+      "macro_m_numerical": 0.7321967863520185,
+      "branch": "macro",
+      "zero_mode": false,
+      "theorem_bound": 1.0912141684977586e-05,
+      "projection_derivative_margin": 103.13597355994692,
+      "fibres": {
+        "1": [
+          0,
+          3
+        ],
+        "2": [
+          0,
+          3
+        ]
+      }
+    }
+  ]
+}

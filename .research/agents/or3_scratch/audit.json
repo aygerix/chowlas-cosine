@@ -1,0 +1,13 @@
+{
+  "exact_certificate": "PROVED by exact rational reconstruction",
+  "covered_interval": "[-1,1]",
+  "pieces": 5,
+  "minimum_bernstein_coefficient": "1/24",
+  "certified_macro_lower_bound": "-11/24",
+  "F2_status": "NUMERICAL finite checks; independent paper proof in report",
+  "F2_seed": 20261019,
+  "F2_cases": 125,
+  "F2_formula_max_error": 1.0658141036401503e-14,
+  "F2_sampled_L2_over_bound_max": 1.0,
+  "cyclic_kernel_min_numerical": 1.581622540206775e-07
+}

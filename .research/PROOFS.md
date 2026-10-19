@@ -602,6 +602,18 @@ Corollaries:
 - n^{3/8} for k <= n^{1/12}.
 - The cancellation family S = qY ∪ (qY + 3t) has M >= |S|/16 for q >= 24t (a linear macro dip).
 Status: PROVED (paper), lead-verified, not kernel-checked; novelty unchecked. Unrestricted OR(2)-weak remains OPEN.
+Theorem D (codex agent OR3, .research/agents/or3_report.md; PROVED; lead re-checked every step and constant
+2026-10-19). Same hypotheses as Theorem C with min S >= q, but with q >= 16BJ√(L+1)·t√k. Then
+    M(S ∪ (S + t)) >= √(n/k) / (32BJ²√(L+1)).
+- So k^{3/2} becomes k^{1/2}.
+- For fixed L: exponent 1/4 + δ whenever k <= n^{1/2 − 2δ}.
+- Key change: the derivative branch is projected onto the residue classes ≡ 0 mod t only. The t-shift average g_θ
+  has g_θ(π) = 0, g'_θ(π) = Im Σ b_y e^{iyθ}, |g''| <= K. Hence C_0/2 <= 2∫K(M + e), and the curvature involves only
+  the L + 1 fibres ht.
+- D0 (also in the report, not re-checked line by line): drops min S >= q, with q >= 24BJ√(L+1)t√k and constant 64.
+- (D8), a data-dependent form for arbitrary residue positions: M >= C_+/(4G_0) − π²G_all/(2q²). Structural only.
+- Unrestricted spread and general OR(2)-weak remain OPEN. The report also proves an obstruction to exact
+  positive-filter localization.
 Mechanism: the coset grid (θ + 2πZ)/q of the real line separates the micro (quotient) phase from the macro (residue)
 profile. The exact zero of the pair factor plus a sampled-derivative/Taylor lemma converts either derivative energy
 or a macro dip into a negative value. Z-specific: it uses genuine real sample points, not a group character.

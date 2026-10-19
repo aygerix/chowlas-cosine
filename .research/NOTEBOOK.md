@@ -1334,7 +1334,8 @@ Strategic decision:
 1. P47 (PROOFS) in one line: apply the P31 chain to T = H_h·f_A, with H_h = 1 − K_h/K_h(0) ∈ [0,1].
    - T >= −M, and T's coefficients are the high-pass residual r = 1_A − κ̃_h ∗ 1_A (even extension).
    - So the window inequality reads W(m² + ‖r‖²/2) <= ρ(L+1)(m² + S_w(r)/2), with L = X + h + w.
-   - P31 is the case h = 0 (r = 1_A). The model/fluctuation split in P47's proof only COMPUTES ‖r‖² and S_w(r):
+   - P31 is the IDENTITY-multiplier case (r = 1_A; it is not H_0, which vanishes; agent correction). The
+     model/fluctuation split in P47's proof only COMPUTES ‖r‖² and S_w(r):
      for bounded-discrepancy roundings, ‖r‖² = Σp(1 − p) + O(D₀(1 + V) + XD₀/h) by a² = a.
    - Consequence: Chowla holds unless, at EVERY scale h, the local variance of A,
      v_h(j) = (1_A(j) − (κ̃_h ∗ 1_A)(j))², is front-loaded (front mean >= ~2.6 × global mean).
@@ -1367,8 +1368,8 @@ Strategic decision:
    - TD10/P49 (flat pieces): g jumps at flat/curved junctions, hence linear M.
    - Bohr-window sets {m : {mα} ∈ E(m/X)} and residue-pattern sets: g ∈ {0,1}, hence linear M. Consistent with E52
      (staircases/kinks linear) and E46 (ball-shaped Bohr sets killed).
-   - Bu sets, random sets: g = p(t) (uniform local patterns at every fixed or slowly moving frequency), so P53 is
-     silent, as it must be (M ≍ √X).
+   - Random sets: g = p(t), so P53 is silent. CORRECTION (round-4 agent): Bu sets have a macroscopic residue atom,
+     f_A(2π/3) = n/4 (3-adic structure, T8). Their local pattern on Z_3 is fractional, not 0/1, so P53 is still silent.
 3. Why this matters for √n. Every macroscopically structured mechanism is dead. A counterexample needs a positive
    share of its local spectral mass in structure of height o(X).
    - Descent question (D): does the same argument run one level down?
@@ -1486,3 +1487,12 @@ Meaning.
   multiscale induction on μ. A loss of a constant factor per dyadic scale would cost ~ log n, so the losses must be
   summable.
 - Routes: (A)+(B) of cont. 4 (TL1 + structure), or a finite, J-uniform version of the Krein/Gram argument.
+
+## 2026-10-19 (night, cont. 6) — Round 4 recorded (P55); HBCG = window QD-½; TL1 answers the agent's obstruction (lead)
+- The window-counting step withdrawn in cont. 5 is RESTORED with radius-1/X windows by the agent's separated cover
+  J <= 3πXn/H². The window form of QD-½ (= the agent's HBCG) therefore implies T-dense via P40.
+- The agent's saturating joint-PD system shows what any descent must use: the binary bound 0 <= g <= 1, not just PD
+  plus Bessel. That system has 100% level-1 mass. P54 (TL1) caps level-1 mass at 81% for [0,1] patterns. So the round-5
+  task is a finite, J-uniform TL1 inside HBCG:
+  - graded-dissociated tall spikes ⇒ >= 19% residual ⇒ HBCG;
+  - otherwise unbalanced phase-coherent relations ⇒ structure.

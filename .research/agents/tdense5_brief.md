@@ -18,6 +18,12 @@ Read first:
   finite-window QD);
 - NOTEBOOK entries "2026-10-19 (night, cont. 2)" and "(night, cont. 3)" (the TL1 dichotomy).
 
+## Context from your round 4 (recorded as PROOFS P55)
+- HBCG is the precise missing inequality, and it implies T-dense.
+- Your saturating joint-PD system shows that PD plus Bessel is not enough. It puts 100% of the variance on level-1
+  characters (±e_l). P54 below caps level-1 mass at 81% for every GENUINE [0,1]-valued pattern. So P54 is exactly the
+  binary input your Task 2D asked for. Its finite, J-uniform version inside HBCG is the main task now.
+
 ## The lead's new input: P54 (torus level-1 inequality, PROVED)
 - Statement: if ψ: K^ → R is a homomorphism with ψ ≡ 1 on a character set Λ, then for every E ⊂ K
   Σ_{λ∈Λ∪−Λ} |1̂_E(λ)|² <= (8/π²)|E|(1 − |E|).
@@ -50,7 +56,7 @@ profile p_m), at frequencies x_1..x_S with amplitudes c_s = â(x_s).
   - Bu/Singer sets;
   - residue-class sets (TL1 must FAIL there: torsion; make sure your U_D detects it).
 
-## Task 2: the dichotomy, made precise
+## Task 2: the dichotomy, made precise (target: HBCG, P55)
 Combine finite TL1 with P40 (spike domination at heights >= √(n/ε)) to prove a structural theorem of the form:
 - if M(A) <= ε√n and A ⊂ [1, Cn], then the weighted tall-spike measure μ = Σ_s |c_s|² δ_{x_s} has an unbalanced
   relation count U_D >= κ(C, D)·n² (or the appropriate normalization), for some D = D(ε) and κ > 0.

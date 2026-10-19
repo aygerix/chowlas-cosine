@@ -1,0 +1,54 @@
+{
+  "exact_checks.json": {
+    "bytes": 454,
+    "sha256": "15dd2735c93a14aaf996db83f2a0d8eddba3777c1c60db6da44a6834c88c04c4"
+  },
+  "exact_extended.json": {
+    "bytes": 1210,
+    "sha256": "b06f5ae8e0af9576c2dc193f3b4b28494ad8fb7267ce890c89394a9c45fcd55f"
+  },
+  "bohr_checks.json": {
+    "bytes": 12478,
+    "sha256": "9149afa6b363374c1fccbe9e11e19b0dce06d2033b5b3496c371815aa3a1b114"
+  },
+  "summary.json": {
+    "bytes": 6405,
+    "sha256": "b22c1f964de9c7f7795ca807e5d8ad687c2fa2e28e317ae3f3ded7fe9b9c1313"
+  },
+  "meso_checks.json": {
+    "bytes": 26629,
+    "sha256": "15fb15b1e16c917e1a955ce265ffa3636fdb1f97ad8c1a539c22c92078ccc7b2"
+  },
+  "zoo_sets.json": {
+    "bytes": 2289541,
+    "sha256": "268bbf433b3bbf6605694f72d7eeb7872acc7198bf86132ebb45903a9e6c9e29"
+  },
+  "bohr_sets.json": {
+    "bytes": 1912895,
+    "sha256": "95675aac8e65e143f22b15abbbb381ad8b540694624a73c4d3e5d20c62584277"
+  },
+  "hbcg_checks.json": {
+    "bytes": 79150,
+    "sha256": "82b61641ae11d49934ac449bbc5449580fb4472e1cb2f0d9c8cc44dd82ff23ac"
+  },
+  "hbcg_summary.json": {
+    "bytes": 801,
+    "sha256": "1ca09537c7bd9d5afb3a6e226590776fe9c63c09215f7a6411f3fb9d889b285f"
+  },
+  "meso_sets.json": {
+    "bytes": 2387029,
+    "sha256": "395a2ea146ec863683ad41c333faaf6091815033f555bbabbdd916ad5063bea8"
+  },
+  "finite_cover.json": {
+    "bytes": 687,
+    "sha256": "0dc4d388c60d293ace1d708d9844b1942b5260a953af9bfd0fe1a8e9a3b7a585"
+  },
+  "zoo_checks.json": {
+    "bytes": 80845,
+    "sha256": "81c35061719165d3a27e0983ded54b0d30b0ef43154330145a353dd5d01b8c14"
+  },
+  "audit.py": {
+    "bytes": 20622,
+    "sha256": "4ec4c90fa7e0dc0abf55d24c9e00e5a921e157f4a52e7b9c1b035c314f7e54c8"
+  }
+}

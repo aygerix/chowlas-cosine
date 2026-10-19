@@ -1422,3 +1422,39 @@ Meaning for Chowla (NOTEBOOK 2026-10-19 night, cont. 2).
   including differences and torsion) or in continuous spectrum.
 - Finite-window use needs the window to equidistribute in the relevant torus (length >> (1/η)^S), so it serves only for
   boundedly many tall spikes.
+
+## P55. Round-4 agent results (.research/agents/tdense4_report.md; lead re-checked the items marked ✓) — 2026-10-19
+- Audit verdicts:
+  - P47 CONFIRMED-WITH-FIX. Finite theorem as written. The asymptotic corollary needs D₀ <= d·X^{3/4} with d small
+    (Lipschitz case; X^{1/4} with jumps), the right limit e(0+), and positive total variance.
+  - P53 CONFIRMED-WITH-FIX. The Bohr-window corollary needs B ⊂ [0,1] × T with boundary of product measure zero. The
+    fiberwise version is FALSE: the agent's counterexample builds windows from Singer difference sets with prime X_j.
+  - The Bohr-window numerics (1,044,480 Arb-certified memberships; α = golden ratio; p = (1−t)^k/2, k = 1, 2, 4) show
+    M/X stable at 0.02–0.14.
+- ✓ Pointwise defect (Krein/Gram): if h is continuous and PD on R × K, 0 <= h <= 1, and h = 0 for |t| > 1, then
+  h(t,ω) <= 1 − t²/4. Hence the P53 defect is b >= (1/4)∫t²p >= m³/12 >= 1/(12C³), uniformly in K and its rank.
+- Finite fixed-complexity QD (PROVED, ineffective). For fixed C, J, K there are η, X0 such that every A ⊂ [1, X] with
+  n >= X/C, X >= X0 and M <= ηX has cosine energy >= X/(48C³) outside ANY J windows of radius K/X.
+  - Moving centers with near-relations are handled by quotienting the relation lattice.
+- ✓ Separated-window cover. A maximal 1/X-separated set of points of {f > H} has J <= 3πXn/H² points, and the radius-1/X
+  windows around them cover {f > H}.
+  - Proof: f(θ)² <= X∫_I f² + 2∫_I|ff'| on |I| = 1/X; sum; ∫f² = πn and ∫f'² <= πX²n.
+- MP48 obstructions (PROVED).
+  - The H-normalized twisted measures have total variation n/H → ∞, so they have no weak-measure limit.
+  - L² profiles with nonnegative transform can be unbounded (h_α(t) = ∫_1^∞ s^{α−1}(1 − s|t|)₊ ds).
+  - A formal joint-PD profile system on R × T^J saturates the Bessel budget exactly: q_0 = p, q_{±e_l} = aφ,
+    a = 1/(4√J). It has h_J(0,e) = p(0) + √J/2 → ∞ and negative values. So PD plus Bessel cannot force a residual;
+    the binary [0,1] bound must be retained.
+    - LEAD NOTE: this system puts 100% of the variance on level-1 characters. P54 (TL1) caps that at 81% for every
+      genuine [0,1] pattern. TL1 is exactly the binary input this obstruction asks for.
+- HBCG (CONJECTURED; the precise missing inequality).
+  - Statement: for every C there are c, B > 0 such that for large X, every A ⊂ [1, X] with n >= X/C, every H >= √n,
+    and every union U of <= ⌈3πXn/H²⌉ radius-1/X windows centred at points with f_A > H:
+        ∫_{U^c} f_A² dx/2π >= c·X − B·X·M(A)/H.
+  - HBCG ⇒ T-dense (PROVED, agent; ✓ lead): take H = √(n/ε) and use P40 plus the cover above.
+  - HBCG is the window form of QD-½ (NOTEBOOK cont. 5). Numerics: residual/X + M/H >= 0.1245 over 304 rows
+    (76 sets).
+- Corrections to the lead's notes.
+  - Bu sets have an exact macroscopic residue atom f_A(2π/3) = n/4 (3-adic structure, known as T8). They do NOT have
+    uniform local patterns at every fixed frequency.
+  - "P31 is the h = 0 case of P47's filter" is literally false (H_0 = 0). P31 is the identity-multiplier case.

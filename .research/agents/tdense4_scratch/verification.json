@@ -1,0 +1,12 @@
+{
+  "status": "PROVED finite artifact-integrity and integer-set checks passed",
+  "checked": {
+    "bohr": 24,
+    "zoo": 74,
+    "meso": 30,
+    "hbcg": 304
+  },
+  "artifact_count": 13,
+  "python": "3.12.3",
+  "numpy": "2.5.4"
+}

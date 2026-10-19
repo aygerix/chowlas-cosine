@@ -1,0 +1,44 @@
+[
+  {
+    "X": 1024,
+    "n": 512,
+    "h": 128,
+    "w": 128,
+    "D": "1/2",
+    "delta": "2/129",
+    "Delta_positive": true,
+    "bound": "[-5.821780082847906524783792605279385520 +/- 3.29e-37]",
+    "M_point_lower": "[32.490765309221466804463602861097122706 +/- 3.42e-37]",
+    "Q2": "1/256",
+    "rho": "1",
+    "status": "Fraction identities and Arb certified finite lower-bound comparison"
+  },
+  {
+    "X": 4096,
+    "n": 2048,
+    "h": 128,
+    "w": 512,
+    "D": "1/2",
+    "delta": "2/129",
+    "Delta_positive": true,
+    "bound": "[1.185686582695050832422186429002481896 +/- 9.59e-38]",
+    "M_point_lower": "[77.571672531977900249347337747950742272 +/- 1.57e-37]",
+    "Q2": "1/1024",
+    "rho": "1",
+    "status": "Fraction identities and Arb certified finite lower-bound comparison"
+  },
+  {
+    "X": 16384,
+    "n": 8192,
+    "h": 128,
+    "w": 2048,
+    "D": "1/2",
+    "delta": "2/129",
+    "Delta_positive": true,
+    "bound": "[5.758280571398043166726774430460118401 +/- 2.06e-37]",
+    "M_point_lower": "[160.96181529614165139243925513206683461 +/- 4.97e-36]",
+    "Q2": "1/4096",
+    "rho": "1",
+    "status": "Fraction identities and Arb certified finite lower-bound comparison"
+  }
+]

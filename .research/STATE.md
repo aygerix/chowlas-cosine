@@ -300,7 +300,7 @@ in parallel.
   high-passed function). The rest of T-dense is the mesoscopic problem, now with an explicit adversary profile.
 - E75–E77 recorded (run-tops closed; zero-set strengthening refuted).
 ## Running now (2026-10-19 night, newest)
-- Nothing from the lead; round 8 is being launched (see the next step).
+- Codex MATH agent, round 8 (.research/agents/tdense8_brief.md; report tdense8_report.md). VM: E78 finishing.
 ## First concrete next step (2026-10-19 night, newest)
 - Round 8 (one codex agent):
   - (1) sharpen ρ* rigorously, reaching T-dense up to ≈ 6.04;

@@ -2422,4 +2422,9 @@ Consequences.
     i.e. U >= 4.6·10^{-3}|Ω|. Not sharp (conjectured 0.0947).
   - The large-peak case g(0) >= 4/3 is OPEN. Example: Ω = {D_L > 0} has g(0) ~ (2/π²)log L and still U/|Ω| ≈ 0.30, so a
     large peak does not by itself contradict PR.
-Status: PROVED on paper; elementary; not kernel-checked. A fact, not a C* tool.
+Status: PROVED on paper; elementary. A fact, not a C* tool.
+KERNEL-CHECKED (Z version) 2026-10-19: lean/ChowlaCosine/FewSpike.lean (sha256 204985…c032731).
+- Theorems: `fewSpike_core` (bad-set count >= (#S − 1)/3) and `fewSpike` (E >= δ²(#S − 1)/3).
+- PD is defined by finite sums plus Hermitian symmetry.
+- The proof uses the 3-point test (1, −2, 1), i.e. ψ(k + l) <= 2ψ(k) + 2ψ(l), in place of the GNS square root.
+- Axioms: propext, Classical.choice, Quot.sound. Rebuilt and audited by the lead.

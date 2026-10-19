@@ -14,6 +14,7 @@ import ChowlaCosine.RunTopGroup
 import ChowlaCosine.NegDefFibre
 import ChowlaCosine.FibreSchur
 import ChowlaCosine.HalfSet
+import ChowlaCosine.FewSpike
 import ChowlaCosine.P31.WindowBound
 import ChowlaCosine.P31.Main
 import ChowlaCosine.P31.ElementaryConvolution

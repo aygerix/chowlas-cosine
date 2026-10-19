@@ -679,7 +679,7 @@ Proved this block:
 - P71.2 KERNEL-CHECKED. Periodic triangular Bohr tapers have M >= 7n/6290 + 1/2 (BohrTaper.lean, lead-audited).
 - P72 PROVED. Robust duality M_τ = max_μ Σ(−c_a − τ|c_a|), the flat lemma, and the slope at τ = 0.
 - P73 PROVED. Robust few-spike lemma: Boolean S is L²-far from PD φ with φ(0) < 4/3 (Z and T); PR(1) small-peak regime.
-  Lean agent RUNNING: .research/agents/lean_p73_brief.md, report lean_p73_report.md, file lean/ChowlaCosine/FewSpike.lean.
+  KERNEL-CHECKED (Z version): lean/ChowlaCosine/FewSpike.lean, lead-audited.
 (b) Constructions. Nothing new. Relaxations of Booleanity (weights E103, phases E62) buy only constant factors.
   Nothing below ½ anywhere.
 (c) Refuted / killed on paper this block (ROUTES rows):

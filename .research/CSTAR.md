@@ -534,6 +534,14 @@ The prize is (c). Everything else is support.
     0.92p² at p = 29, 31. So the optimal one-rep K is o(p²)-like already at p ≈ 29 (numerical). The penalty law for
     one-rep lifts is K_opt ∈ [p + c√|D|, ≈ 1.25√(|D| ln n²)]: √|D| up to √log, i.e. ρ_opt between c/log p and C.
 
+  - Advisor point 3 (error location) now has first-order THEOREMS: for quadric cones every odd field (in particular the
+    first-order rounding field of any one-rep lift) puts EXACTLY the area share 1/p of its energy on the spikes (P81:
+    concentration factor 1); for JL a = 2 the factor is <= 0.873p (P79), numerically ≈ 1.2√p (E121c). Second-order
+    error location is still only measured (E116: 1.2–1.7×).
+  - E120 p = 5 PRE-REGISTERED (before its result): certified sup ρ over symmetric T ⊂ P_25 lies in [0.305, 0.45]
+    (SA free subset 0.305; one-rep optimum ≈ 0.21); refuted if the MIQP finds ρ > 0.45 or certifies < 0.305 (impossible
+    unless the SA set is mis-evaluated).
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

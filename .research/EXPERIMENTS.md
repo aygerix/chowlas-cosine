@@ -1868,3 +1868,12 @@ CONFIRMED: the constant 1.25 (fitted at p <= 13) holds out of sample to p = 31; 
 0.92p² at p = 29, 31: the p² law fails for optimal lifts (as P78 proves asymptotically). The SA values at p <= 7 (0.92p²)
 sit ≈ 0.65 × the random level there; whether SA stays at ≈ 0.65 × random (⇒ K ≈ 0.8p^{3/2}√ln p) is E119's SA runs.
 Status: numerical, not interval-certified (a rigorous grid bound at p = 31 costs ~2700 in Hessian slack ≫ the 100 margin).
+
+## E121c (2026-10-20) Asymptotics of λ_odd(D_{2,1}) via the P79 blocks (src/e121c_lambda_asym.py; dirichlet; NUMERICAL SVD)
+  | p        | 13    | 19    | 23    | 29    | 37    | 43    | 53    | 61    | 71    | 83    | 97    |
+  | λ_odd    | 0.353 | 0.268 | 0.242 | 0.199 | 0.189 | 0.168 | 0.151 | 0.175 | 0.137 | 0.122 | 0.134 |
+  | λ·√p     | 1.27  | 1.17  | 1.16  | 1.07  | 1.15  | 1.10  | 1.10  | 1.37  | 1.16  | 1.11  | 1.32  |
+λ_odd ≈ 1.2/√p, carried by σ₁(H)² ≈ 1.2p^{3/2} (H_top = λ to 3 digits for p >= 19: the a_* row/column is negligible).
+So the first-order concentration factor relative to the area share |N|/n² ≈ 1/p is ≈ 1.2√p for JL a = 2, against EXACTLY 1
+for quadric cones (P81). P79's bound (→ 1/2) is crude; a p^{−1/2+ε} bound would need Fermat-quotient/character-sum
+estimates for H[s₀,s] = ψ̄(s − s₀) (sums over an interval of length p modulo p²); not needed for P80.

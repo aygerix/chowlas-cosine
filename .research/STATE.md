@@ -1,5 +1,11 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Active continuation: uniform-completion obstruction and adaptive coupling
+
+**Full Chowla remains OPEN.** The latest pass constructs genuine Boolean A_t with n~5L/12 and a proved positive bounded Chowla ratio, but uniform selected-coefficient completion cost J_≥/sqrt(N) grows at least as L^(1/8). This refutes generic bounded-ratio control of that cost and J_≥^4=O(NK^2). It does not refute the still-unproved restriction to exact strict-record minimizers. That stronger architecture is deprioritized; return to the actual mixed certificate with variable interior coefficients and macroscopic coupling.
+
+The change is tested concretely: on the same family, discrepancy rounding with an additional weighted row produces q=D_A-D_p with coupling asymptotic to (160/693)L and proves a square-root lower bound. Four saved Boolean witnesses have exact rational lower certificates, independently checked by signed Kronecker substitution, plus separate all-circle Arb upper bounds. At n=6687 the uniform-completion 128 threshold is rigorously impossible, while the variable-coupling certificate gives R>0.3567 and the upper certificate gives R<1.458. [Proof, constants, scope, data and strategic decision](notes/cstar_forced_plateau_2026-10-20.md). All jobs in this pass are terminal; reviewer launch again failed because the default model was unavailable. No universal adaptive-profile theorem, independent review, or Lean verification is asserted.
+
 ## Active continuation: deletion and partial majorants, 2026-10-20
 
 **Full Chowla is still OPEN; the goal remains active.** The proposed coefficient-rank deletion heuristic failed an exact finite test: A={1,...,9,13} has the improving subset {1,...,7,9}, but all 18 proper upper/lower rank prefixes of its saved rational dual worsen R. Rational Chebyshev evaluations and independent exact Sturm checks prove the comparisons. This does not certify the ordering of the true unrestricted optimizer or refute an asymptotic theorem on strict-record minimizers.

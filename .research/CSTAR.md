@@ -1,5 +1,9 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Latest architecture test: Boolean plateau separation, 2026-10-20
+
+ATTACK LOG / DESIGN / CHAIN(c): a paper construction gives Boolean A with M(A)=Theta(sqrt(n)) but J_≥(±A)/sqrt(2n) growing at least as L^(1/8), n~5L/12. Thus bounded ratio does not imply bounded uniform-completion cost, and J_≥^4=O(NK^2) is false. The strict-record cost conjecture is not refuted but is deprioritized; it still lacks an inverse mechanism. Variable interior coefficients do yield square-root certificates for the constructed family. A saved n=6687 set has J_≥^4>128N^2, yet its exact q=D_A-D_p certificate gives R>0.3567 (Arb upper R<1.458). The source of progress is this separation of architectures, not a universal C* bound. [Theorem, exact checks, energy pivot, and remaining gap](notes/cstar_forced_plateau_2026-10-20.md). Full Chowla remains OPEN; no independent-agent or kernel audit claimed.
+
 ## Latest inverse-step test: 2026-10-20
 
 CHAIN(c) remains open. Exact finite checks refute guaranteed threshold deletion from the saved rational dual: A={1,...,9,13} has an improving 8-subset while all 18 rank prefixes worsen R. This does not settle the true unrestricted dual or strict-record case. A mean-zero partial-majorant relaxation weakens the sufficient L4 target and gives nonnegative nonconstant multipliers and a conditionally negative definite translation gap. The needed cost upper bound remains missing; the derived translation inequalities have the opposite direction. Equality-dual positivity is false for positive weighted data (exact {1,5} example), while the Boolean sign question is not settled. [Derivations, scope, and decision](notes/cstar_partial_majorants_2026-10-20.md). Do not expand the sign scan or reintroduce rank thresholding as an established Boolean inverse theorem.

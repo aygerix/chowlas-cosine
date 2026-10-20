@@ -1,0 +1,29 @@
+{
+  "status": "independent exact integer verification",
+  "cases": [
+    {
+      "t": 2,
+      "n": 35,
+      "verified": true,
+      "uniform_completion_128_obstructed": false
+    },
+    {
+      "t": 3,
+      "n": 337,
+      "verified": true,
+      "uniform_completion_128_obstructed": false
+    },
+    {
+      "t": 4,
+      "n": 1793,
+      "verified": true,
+      "uniform_completion_128_obstructed": false
+    },
+    {
+      "t": 5,
+      "n": 6687,
+      "verified": true,
+      "uniform_completion_128_obstructed": true
+    }
+  ]
+}

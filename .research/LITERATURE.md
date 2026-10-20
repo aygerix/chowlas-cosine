@@ -1,5 +1,9 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Targeted check: real-matrix discrepancy (2026-10-20)
+
+Larsen, *Fast Discrepancy Minimization with Hereditary Guarantees*, [primary paper](https://cs.au.dk/~larsen/papers/Hereditary.pdf), introduction: Spencer's square-matrix theorem applies to real entries of absolute value<=1 and gives discrepancy<=6sqrt(m). Lovett–Meka, [arXiv:1203.5747v2](https://arxiv.org/pdf/1203.5747), Theorem 4, verifies the arbitrary-vector/starting-point partial-coloring formulation. The forced-plateau proof derives the required fractional rounding directly by dyadic rounding and square padding; it does not infer a real-matrix theorem merely from an incidence-matrix abstract. [Application and scope](notes/cstar_forced_plateau_2026-10-20.md).
+
 ## Targeted check: partial majorants (2026-10-20)
 
 Fournier–Vrecko, *Minimal Fourier majorants in L^p*, [arXiv:2112.13799v1](https://arxiv.org/html/2112.13799v1), Section 2, Lemma 2.3 / Corollary 2.4. Verified the finite-support partial-majorant variational structure for general 1<p<infinity. Our mean-zero p=4 problem requires an additional free constant multiplier. The special full-majorant conclusion at p=4/3 must not be applied to equality completion at p=4. [Own derivation and weighted sign countercontrol](notes/cstar_partial_majorants_2026-10-20.md).

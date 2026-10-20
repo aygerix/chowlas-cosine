@@ -3344,3 +3344,30 @@ Reproduce:
 Data live in experiments/dual_deletion_2026-10-20/{probe,verification,dual_sign,partial_majorant}.json. The scripts retain qualifications and solver versions. Paper proofs have not received independent-agent or Lean review: the configured default model was unavailable on earlier attempts to launch the required reviewer.
 
 **GLOBAL STRATEGIC REVIEW.** Stop treating rank thresholds as a guaranteed rounding mechanism. Retain the weaker partial-majorant target as a legitimate certificate tool, with positive multipliers obtained by construction rather than assumption. Do not expand the sign-search box without a theorem that would use its outcome. The next discriminating analytic question is whether Boolean strict-record extremality forces a uniform upper bound for J_≥/sqrt(N), or admits an exact countercontrol. Merely rewriting C* or deriving another lower bound for J_≥ does not answer that question. The construction line still requires genuinely correlated, non-band-concentrated selectors; this pass produces none. The three distinct lower-bound, factor/construction, and correlated-selector lines remain recorded. Full Chowla is open and the active goal is preserved; all jobs from this pass are terminal.
+
+## 2026-10-20 — Boolean plateau separation and variable interior coupling
+
+ATTACK LOG / DESIGN / CHAIN(c). [Full proof, exact finite certificates, scope, and review](notes/cstar_forced_plateau_2026-10-20.md). Previous turn classified as progress: it produced exact deletion counterevidence, a valid partial-majorant relaxation, and a weighted sign countercontrol. This pass tests the missing cost estimate on a new genuine Boolean family rather than expanding the old sign scan.
+
+**Paper construction.** Let L=t^6, b=t^5, v_j=j(L-j), E=(L^5-L)/30, r_a=sum v_j v_{j+a}/E. Then 1-r_a<=5a^2/(L^2+1) and sum r_a=5L(L^2-1)/[12(L^2+1)]-1/2. Force p_a=1 for a<=b, leave p_a=r_a elsewhere. The forcing bias is at most 2sqrt(L). Spencer's real-matrix theorem, dyadic rounding, square padding, and a 16L point grid give Boolean eta with fixed prefix and cosine discrepancy<32sqrt(L). Include cardinality and p_a rows. Then n~5L/12 and M<=70sqrt(n).
+
+**New asymptotic obstruction.** The forced prefix supplies the nonnegative Fejer dual, giving J_≥>=b/(b+1)^(1/4), hence liminf J_≥/[sqrt(N)L^(1/8)]>=sqrt(6/5). Thus bounded M/sqrt(n) does NOT force bounded uniform-completion cost; J_≥^4=O(NK^2) is false even for Boolean sets. This is not the previous high-ratio interval obstruction. Strict-record minimizers are not claimed or refuted.
+
+**Changed mechanism, tested.** The actual certificate only needs macroscopic coupling, not qhat=1 at every selected frequency. With q=D_A-D_p, the selected coefficients are 1-p_a, zero on the prefix. Its coupling is a=2sum_selected(1-p_a). The extra weighted row gives a~2W~(160/693)L because W/L tends to nu=80/693. Since q=2 times the cosine discrepancy, ||q||_infinity<64sqrt(L). The two-by-two certificate gives a square-root lower bound; using ||D_A||_1<=2K gives the stronger explicit constant M>=(nu/256)sqrt(n)=(5/11088)sqrt(n) eventually. The same asymptotic family therefore has a proved positive bounded ratio despite diverging uniform-completion cost.
+
+**Energy diagnostic, limited scope.** q_b=2D_[1,b]-D_[1,2b] has Q=4b, zero value at the origin, fourth power>=b^4/(b+1), but integral (|V|^2/E)q_b^2<=100000 b^5/L^3=O(L^(7/6)). This tests the loss in replacing actual energy by a global L4 bound. It only interpolates the prefix and may conflict with the rest of A; it is not presented as a full-support certificate.
+
+**Finite evidence.** Four saved Boolean supports have (L,b,n)=(64,32,35),(729,243,337),(4096,1024,1793),(15625,3125,6687). Their Fejer lower completion ratios are >1.5957,2.3682,3.0221,3.6138 respectively. Exact adaptive lower certificates give R>0.2336,0.2640,0.3464,0.3567; separate 96-bit Arb DFT plus a rational second-derivative remainder gives R<1.0177,0.8216,1.2094,1.4575. The n=6687 support has J_≥^4>128N^2 exactly. It defeats that sufficient threshold while its variable-coupling certificate succeeds. FLINT polynomial multiplication and an independent standard-library signed Kronecker product agree on all four Q,H,a,fourth powers and negative rational determinants.
+
+All computation ran on Dirichlet. Gurobi 13.0.3 refined the two smaller candidates; larger candidates are seeded finite roundings. These finite algorithms are not claimed to implement the existential Spencer rounding. The real-matrix theorem was checked in the primary papers, not inferred from the set-system abstract. Reviewer launch again failed with unavailable configured default model; no independent or Lean audit is claimed.
+
+Reproduce:
+
+    src/dirun.sh -c 2 -m 12 -t 360 python src/cstar_forced_plateau.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/cstar_plateau_noise.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_plateau_verify.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/cstar_plateau_energy.py
+
+Data: experiments/forced_plateau_2026-10-20/{results,noise,verification,energy}.json. All jobs are terminal.
+
+**Global review.** Discontinue generic bounded-ratio control of uniform completion cost and the M-dependent cost estimate. Deprioritize the strict-record version until an actual inverse mechanism appears; the new theorem leaves it logically open. Continue with the genuine mixed certificate and variable interior coefficients. This is already allowed by full W2, so do not claim it is a new universal reduction. The new family demonstrates concretely why the stronger constraint can discard useful certificates. The unsolved general task is producing a comparable adaptive certificate for arbitrary hypothetical low-ratio extremizers. Merely assuming small physical discrepancy and macroscopic coupling would rename C*: the resulting bounded-supremum test already implies Chowla by ||D_A||_1<=2K. The construction track has also been checked: this particular family has a positive lower ratio and supplies no quantified disproof. The full original goal stays active and unresolved.

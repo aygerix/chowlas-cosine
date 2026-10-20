@@ -1,0 +1,53 @@
+{
+  "qualification": "Exact prefix/profile energy identities, not full-support certificates.",
+  "cases": [
+    {
+      "t": 2,
+      "L": 64,
+      "b": 32,
+      "Q_exact": 128,
+      "weighted_energy_exact": "170225353/65793",
+      "signed_profile_energy_exact": "161803849/65793",
+      "fourth_power_exact": 509056,
+      "weighted_energy_over_L3half_float": 5.0532943106124515,
+      "fourth_power_over_L2_float": 124.28125,
+      "verified": true
+    },
+    {
+      "t": 3,
+      "L": 729,
+      "b": 243,
+      "Q_exact": 972,
+      "weighted_energy_exact": "573352972547336/5295553809",
+      "signed_profile_energy_exact": "568205694244988/5295553809",
+      "fourth_power_exact": 228646476,
+      "weighted_energy_over_L3half_float": 5.500718122519027,
+      "fourth_power_over_L2_float": 430.238683127572,
+      "verified": true
+    },
+    {
+      "t": 4,
+      "L": 4096,
+      "b": 1024,
+      "Q_exact": 4096,
+      "weighted_energy_exact": "20834047075244367950/18764998447377",
+      "signed_profile_energy_exact": "20757185641603911758/18764998447377",
+      "fourth_power_exact": 17163128832,
+      "weighted_energy_over_L3half_float": 4.2353098313709925,
+      "fourth_power_over_L2_float": 1023.002197265625,
+      "verified": true
+    },
+    {
+      "t": 5,
+      "L": 15625,
+      "b": 3125,
+      "Q_exact": 12500,
+      "weighted_energy_exact": "18550036024662522437686/3104408582051595",
+      "signed_profile_energy_exact": "18511230917386877500186/3104408582051595",
+      "fourth_power_exact": 488125112500,
+      "weighted_energy_over_L3half_float": 3.0593970457170196,
+      "fourth_power_over_L2_float": 1999.3604608,
+      "verified": true
+    }
+  ]
+}

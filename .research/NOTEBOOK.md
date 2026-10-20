@@ -3074,4 +3074,11 @@ Lead, paper only, no computation. Each item was checked against ROUTES/NOTEBOOK/
 - The third advisor model (P61(b) packets) is not a lift: its noise is Gaussian (sum of J random cosines). A Boolean
   noise e_k ∈ {−p_k, 1 − p_k} written as Σ_j c_j cos(kθ_j) forces additive structure on {θ_j} (subgroup ⇒ two-valued
   character sums), i.e. back to lifts. This is the (c) ⇒ (d) step itself; no new inequality yet.
+  CORRECTION (same session): that closure argument is exact-atomic only. At resolution 1/X the J² sums of m = μX spike
+  points spread over X cells once μ >> X^{−1/2}; the mixing identity p⋆p = (1 − 1/K) + p/K gives only a 1/(Kμ) relative
+  excess of U + U on U. This is the A5 regime split (structure visible only for M <~ n^{1/3}). Not a new route.
+- Third moment check (dead end, recorded): for lifts, E_χ F³ on the coset (χ + α)/n is a trigonometric polynomial in α
+  whose mean counts additive triples preserved EXACTLY in Z²; σ² = |D| on every coset; K >~ σ⁴/E F³ gives only K >~ r for
+  lifts preserving a constant fraction of D's triples (an interval lift of a cyclic line preserves ~3/4). Moments do not see
+  the √|D| penalty; P77's local Taylor step does.
 - Codex is out of quota until 2026-10-25 14:57; adversarial checks of P78–P81 are lead self-checks for now.

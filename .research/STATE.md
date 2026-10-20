@@ -30,9 +30,12 @@ prediction or exclude an explicit model; no reformulation sweeps; target = some 
   (c) Refuted/failed: my pre-registered E119 numbers (dropped √2); the advisor's 0.92p² law for OPTIMAL lifts (fails by
       p = 29); a depth-uniform λ_odd gap (false at a >= 3).
   (d) Three directions: (i) free-subset/multiplicity lifts — first order does NOT exclude constant multiplicity c ~ p^{1/4}
-      (ρ <= min(ρ_G/c, Cc³V⁴)); E120 p = 5, 7 and E119c measure it; (ii) C* core step (c) ⇒ (d): Booleanity of the noise
-      written as a short exponential sum forces additive closure of the spike set (NOTEBOOK cont. 31 later) — make it a
-      robust lemma; (iii) small-V 1D images and deep JL (a >= 3) need a second-order mechanism (P77 is first order).
+      (ρ <= min(ρ_G/c, Cc³V⁴)); E120 p = 5, 7 and E119c measure it; (ii) [CORRECTED same session: the "Booleanity of
+      the noise forces additive closure of the spike set" idea is only the exact-atomic case; with resolution 1/X the J²
+      pair sums spread uniformly once μ >> X^{−1/2}, and the mixing identity (O3) leaves only a 1/(Kμ) relative bias — this
+      is the KNOWN A5 regime split (visible only for M <~ n^{1/3}); not a route] the C* core (c) itself: the open item is
+      still a fine-scale (beyond-moment) Booleanity inequality — P77's local Taylor-at-invariant-grid mechanism is the one
+      beyond-moment tool that worked today, but it needs an exact invariant grid, which a general S ⊂ Z lacks; (iii) small-V 1D images and deep JL (a >= 3) need a second-order mechanism (P77 is first order).
   (e) FIRST NEXT STEP: read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
       random?), then decide whether multiplicity lifts need a theorem; codex reviews of P78–P81 after 2026-10-25 14:57.
 - FIRST NEXT STEP (cont. 31, superseded in part): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,

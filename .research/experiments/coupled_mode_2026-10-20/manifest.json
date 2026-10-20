@@ -1,0 +1,201 @@
+{
+  "captured_utc": "2026-10-20T14:19:18.236689+00:00",
+  "scope": "This pass only, plus three explicitly labeled minimal dependencies from the previous pass. Text, Python and JSON; no PDF, repository index reconstruction, commit or push. Preliminary superseded derivation and unfinished finite search omitted.",
+  "files": [
+    {
+      "path": "exterior/exterior_counterfamily.md",
+      "source_label": "current_pass/exterior/exterior_counterfamily.md",
+      "source_sha256": "77943ae588a5b17f7a771b83a4f3078c5f58a758afc167ab29e4b60a6484f2ac",
+      "archive_sha256": "9506ff9cd644e59a18c1b8eadca6b0c96cf8a39224cbac5cacae7180c0294f22",
+      "adaptations": [
+        "Portable paths, removed coordination attribution, updated audit status, and/or corrected numerical-status commentary; no algorithm or theorem changed."
+      ]
+    },
+    {
+      "path": "exterior/check_axis_decomposition.py",
+      "source_label": "current_pass/exterior/check_axis_decomposition.py",
+      "source_sha256": "b2ec2c0f0a5a58c718526c27baaf786e0a268aad82a9a12c66b63626469e5193",
+      "archive_sha256": "b2ec2c0f0a5a58c718526c27baaf786e0a268aad82a9a12c66b63626469e5193",
+      "adaptations": []
+    },
+    {
+      "path": "exterior/check_axis_decomposition.json",
+      "source_label": "current_pass/exterior/check_axis_decomposition.json",
+      "source_sha256": "d829cd03059b6927cb323c09922ef49522d7640e9dbb7fe32002f81e22521643",
+      "archive_sha256": "d829cd03059b6927cb323c09922ef49522d7640e9dbb7fe32002f81e22521643",
+      "adaptations": []
+    },
+    {
+      "path": "order/direct_union_order_audit.md",
+      "source_label": "current_pass/order/direct_union_order_audit.md",
+      "source_sha256": "1706fd89ee92fd1029c593d9b2fa20bc8f1cf0c3a35095be3bb7caf1c77bb366",
+      "archive_sha256": "7c584376c1743243445de883f244f18bb06cec171c1d5d9782343c44124b7942",
+      "adaptations": [
+        "Portable paths, removed coordination attribution, updated audit status, and/or corrected numerical-status commentary; no algorithm or theorem changed."
+      ]
+    },
+    {
+      "path": "order/verify_direct_union.py",
+      "source_label": "current_pass/order/verify_direct_union.py",
+      "source_sha256": "a121bc3159002ebd9580bd328ec874a2e6a3cd3ad1f732ae7cd6955466919063",
+      "archive_sha256": "a121bc3159002ebd9580bd328ec874a2e6a3cd3ad1f732ae7cd6955466919063",
+      "adaptations": []
+    },
+    {
+      "path": "order/verify_direct_union_results.json",
+      "source_label": "current_pass/order/verify_direct_union_results.json",
+      "source_sha256": "562ebc5105f3c17b5552470613be98c04517055b614562017aaa851bef5506ed",
+      "archive_sha256": "562ebc5105f3c17b5552470613be98c04517055b614562017aaa851bef5506ed",
+      "adaptations": []
+    },
+    {
+      "path": "audit/EXTERIOR_AXIS_UNION_AUDIT.md",
+      "source_label": "current_pass/audit/EXTERIOR_AXIS_UNION_AUDIT.md",
+      "source_sha256": "e9a32d2a26e25bf2629a3673b87fe88d1a550e06b5389eda0277366280509819",
+      "archive_sha256": "5e2a5aaf5c7ebe27118d7c3ebc484ace5ee4c35d5abe5a8d490542d45e1a4715",
+      "adaptations": [
+        "Portable paths, removed coordination attribution, updated audit status, and/or corrected numerical-status commentary; no algorithm or theorem changed."
+      ]
+    },
+    {
+      "path": "audit/FULL_W2_COMPANION_AUDIT.md",
+      "source_label": "current_pass/audit/FULL_W2_COMPANION_AUDIT.md",
+      "source_sha256": "3c5f82950e9f8be032b77968425f2051ae43d29da694659fa2e9f3f1ab4e09e6",
+      "archive_sha256": "3c5f82950e9f8be032b77968425f2051ae43d29da694659fa2e9f3f1ab4e09e6",
+      "adaptations": []
+    },
+    {
+      "path": "audit/AUXILIARY_ROOT_ORBIT_AUDIT.md",
+      "source_label": "current_pass/audit/AUXILIARY_ROOT_ORBIT_AUDIT.md",
+      "source_sha256": "9cc9d7c8a27687ef1f3b4486be189958b2015689bb182b99d8375adba02483e9",
+      "archive_sha256": "9cc9d7c8a27687ef1f3b4486be189958b2015689bb182b99d8375adba02483e9",
+      "adaptations": []
+    },
+    {
+      "path": "audit/check_axis_union.py",
+      "source_label": "current_pass/audit/check_axis_union.py",
+      "source_sha256": "0dfb1015a8f6f6ca3425defe28518e1c116f995ff37399203e0c63456e8d4295",
+      "archive_sha256": "0dfb1015a8f6f6ca3425defe28518e1c116f995ff37399203e0c63456e8d4295",
+      "adaptations": []
+    },
+    {
+      "path": "audit/check_results.json",
+      "source_label": "current_pass/audit/check_results.json",
+      "source_sha256": "f0ad53b251f6c86bb973ae96613862317c70395da307d89d5fa4b28d3b3cabd7",
+      "archive_sha256": "f0ad53b251f6c86bb973ae96613862317c70395da307d89d5fa4b28d3b3cabd7",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/axis_laguerre_diagnostic.py",
+      "source_label": "current_pass/multimode/axis_laguerre_diagnostic.py",
+      "source_sha256": "8bafab7aeee91816852d20cd55b0cad55692ccae4fc96449f4ab7ffd305581d0",
+      "archive_sha256": "8bafab7aeee91816852d20cd55b0cad55692ccae4fc96449f4ab7ffd305581d0",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/axis_laguerre_diagnostic.json",
+      "source_label": "current_pass/multimode/axis_laguerre_diagnostic.json",
+      "source_sha256": "15559dc5a5aaacf6374d89d3ce61f50d29602fb55350fdbd44581e82a6f4c1e1",
+      "archive_sha256": "15559dc5a5aaacf6374d89d3ce61f50d29602fb55350fdbd44581e82a6f4c1e1",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/axis_laguerre_diagnostic.log",
+      "source_label": "current_pass/multimode/axis_laguerre_diagnostic.log",
+      "source_sha256": "618bc5fae346b00186a5d36a4ed17c88e21ecb26f2d4cc4071d1875cd08d00e5",
+      "archive_sha256": "618bc5fae346b00186a5d36a4ed17c88e21ecb26f2d4cc4071d1875cd08d00e5",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/root_orbit_response.py",
+      "source_label": "current_pass/multimode/root_orbit_response.py",
+      "source_sha256": "1a3d1781aaf2f21ceb3d4ee9cee68194dd95f16189c8d6bb30710ac2b63b6c2b",
+      "archive_sha256": "1a3d1781aaf2f21ceb3d4ee9cee68194dd95f16189c8d6bb30710ac2b63b6c2b",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/root_orbit_response.log",
+      "source_label": "current_pass/multimode/root_orbit_response.log",
+      "source_sha256": "934f377a3e0922e4e8731b5f6b2bd6dab52f321ce646bdf58ef2cd09fc79c4fd",
+      "archive_sha256": "934f377a3e0922e4e8731b5f6b2bd6dab52f321ce646bdf58ef2cd09fc79c4fd",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/root_orbit_low_cost_obstruction.md",
+      "source_label": "current_pass/multimode/root_orbit_low_cost_obstruction.md",
+      "source_sha256": "be69aaf0e241d4b690e323c4c8a237b7c1c547bc740ef7696a62a9beee9f1cb5",
+      "archive_sha256": "be69aaf0e241d4b690e323c4c8a237b7c1c547bc740ef7696a62a9beee9f1cb5",
+      "adaptations": []
+    },
+    {
+      "path": "multimode/bouquet_response_and_scope.md",
+      "source_label": "current_pass/multimode/bouquet_response_and_scope.md",
+      "source_sha256": "2d3ab89d20c348bdae5dc4105dad58662608aa9f1b60e9a41bb7f4c1cbe99e4b",
+      "archive_sha256": "2d3ab89d20c348bdae5dc4105dad58662608aa9f1b60e9a41bb7f4c1cbe99e4b",
+      "adaptations": []
+    },
+    {
+      "path": "numeric/centered_taper_check.py",
+      "source_label": "current_pass/numeric/centered_taper_check.py",
+      "source_sha256": "e544508b843d8c5b71d570c043854240518bd1d1fa4ed48bcd4edbae00d04eba",
+      "archive_sha256": "e544508b843d8c5b71d570c043854240518bd1d1fa4ed48bcd4edbae00d04eba",
+      "adaptations": []
+    },
+    {
+      "path": "numeric/centered_taper_check.json",
+      "source_label": "current_pass/numeric/centered_taper_check.json",
+      "source_sha256": "a126dc8806577d6ac99972b5a27067e4fad06dddd700670e4e5b470aadc7bb30",
+      "archive_sha256": "a126dc8806577d6ac99972b5a27067e4fad06dddd700670e4e5b470aadc7bb30",
+      "adaptations": []
+    },
+    {
+      "path": "dependencies/weak_w1_taper_proof.md",
+      "source_label": "prior_groundstate_pass/obstructions/weak_w1_taper_proof.md",
+      "source_sha256": "968e61fdd875b5de96b5186f997ca7532e617e2cc57342d2ec2ff1fdcadce3d9",
+      "archive_sha256": "968e61fdd875b5de96b5186f997ca7532e617e2cc57342d2ec2ff1fdcadce3d9",
+      "adaptations": []
+    },
+    {
+      "path": "dependencies/weak_w1_taper_audit.md",
+      "source_label": "prior_groundstate_pass/audit/weak_w1_taper_audit.md",
+      "source_sha256": "0cde5acfe6023997492d751bfd0de20b1b2c49f26c07078d39b0a638f85613a0",
+      "archive_sha256": "4bfd6fc5ed1ecea479b3024fcc581f567fe2dc2823e34625f28e871763d0e4cd",
+      "adaptations": [
+        "Portable paths, removed coordination attribution, updated audit status, and/or corrected numerical-status commentary; no algorithm or theorem changed."
+      ]
+    },
+    {
+      "path": "dependencies/laguerre_full_w2_diagnostic.json",
+      "source_label": "prior_groundstate_pass/translation/laguerre_full_w2_diagnostic.json",
+      "source_sha256": "53622f17249685b7b5fcc98a2d00e0be7b74dc37e08b28ad49c15c585bf0e198",
+      "archive_sha256": "53622f17249685b7b5fcc98a2d00e0be7b74dc37e08b28ad49c15c585bf0e198",
+      "adaptations": []
+    },
+    {
+      "path": "README.md",
+      "source_label": "archive_generated",
+      "source_sha256": null,
+      "archive_sha256": "29f422729d3c0ed087e690067d822ca26da2f55c615eed8324f4a9b0a8ad3a16",
+      "adaptations": []
+    },
+    {
+      "path": "VALIDATION.md",
+      "source_label": "archive_generated",
+      "source_sha256": null,
+      "archive_sha256": "c3014e47de2c2a58d7d68bd1e16208cb33e7e66004d3ff5e3abceb5be067786b",
+      "adaptations": []
+    },
+    {
+      "path": "validation_results.json",
+      "source_label": "archive_generated",
+      "source_sha256": null,
+      "archive_sha256": "fdc4bf3096e875b910be97752117128ffd3a777d14d50f7e35dff6b68f29b62d",
+      "adaptations": []
+    }
+  ],
+  "report": {
+    "path": "../../notes/cstar_coupled_mode_2026-10-20.md",
+    "sha256": "6b6cb80e4ae82cd7a19b642cc64cdce381a23709b8eafb2322b070f3530635d5"
+  },
+  "sealed_utc": "2026-10-20T14:19:58.610843+00:00"
+}

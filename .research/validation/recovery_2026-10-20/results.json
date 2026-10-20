@@ -1,0 +1,57 @@
+{
+  "scope": "Eight representative checks rerun in a disposable copy. Captured archive outputs unchanged. No large sweeps or new formal/interval certification.",
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONDONTWRITEBYTECODE": "1"
+  },
+  "checks": [
+    {
+      "script": "cstar_structural_2026-10-20/verify_w2_exact_certificate.py",
+      "returncode": 0,
+      "elapsed_seconds": 46.659,
+      "log": "cstar_structural_2026-10-20__verify_w2_exact_certificate.py.recovery.log"
+    },
+    {
+      "script": "cstar_structural_2026-10-20/verify_subset_certificate.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.484,
+      "log": "cstar_structural_2026-10-20__verify_subset_certificate.py.recovery.log"
+    },
+    {
+      "script": "cstar_structural_2026-10-20/audit_product_fejer.py",
+      "returncode": 0,
+      "elapsed_seconds": 0.853,
+      "log": "cstar_structural_2026-10-20__audit_product_fejer.py.recovery.log"
+    },
+    {
+      "script": "cstar_structural_2026-10-20/audit_order_profile_asymptotic.py",
+      "returncode": 0,
+      "elapsed_seconds": 4.837,
+      "log": "cstar_structural_2026-10-20__audit_order_profile_asymptotic.py.recovery.log"
+    },
+    {
+      "script": "full_w2_falsification_2026-10-20/audit_checks.py",
+      "returncode": 0,
+      "elapsed_seconds": 3.381,
+      "log": "full_w2_falsification_2026-10-20__audit_checks.py.recovery.log"
+    },
+    {
+      "script": "groundstate_repair_2026-10-20/audit/check_groundstate_obstruction.py",
+      "returncode": 0,
+      "elapsed_seconds": 3.093,
+      "log": "groundstate_repair_2026-10-20__audit_check_groundstate_obstruction.py.recovery.log"
+    },
+    {
+      "script": "coupled_mode_2026-10-20/audit/check_axis_union.py",
+      "returncode": 0,
+      "elapsed_seconds": 2.1,
+      "log": "coupled_mode_2026-10-20__audit_check_axis_union.py.recovery.log"
+    },
+    {
+      "script": "coupled_mode_2026-10-20/order/verify_direct_union.py",
+      "returncode": 0,
+      "elapsed_seconds": 1.8,
+      "log": "coupled_mode_2026-10-20__order_verify_direct_union.py.recovery.log"
+    }
+  ]
+}

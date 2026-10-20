@@ -1,0 +1,396 @@
+PDF-DERIVED HISTORICAL TEXT EXTRACTION - NOT ORIGINAL MARKDOWN
+Source filename: chowla-research-handoff.pdf
+Source SHA-256: 3597a4312aae50c55e0ebf5d41c0816951353953a298e3253e24605489e0f3a7
+Source report date: 20 October 2026 (printed in the document)
+Recovery date: 20 October 2026 (UTC)
+Pages: 10
+Method: pdftotext -layout (Poppler); UTF-8 output.
+Status: Historical source, not the current project synthesis. Consult the sibling README.md.
+Caveat: Mathematical glyphs, subscripts, superscripts, integrals, and reading order may
+be lossy. Charts are not represented by this text. All extracted page text, including
+footers and whitespace, is retained below; only form-feed page boundaries are replaced
+by explicit page markers. No original source Markdown, chart data, or Git objects are
+claimed to have been recovered from this extraction. The source PDF is not bundled.
+
+===== SOURCE PDF PAGE 1 OF 10 =====
+ Chowla research handoff
+ Experimental results and assessment for independent review
+ 20 October 2026
+
+ Bottom line. None of this work proves or advances the universal bound MA ≥ c√|A| for any
+ absolute c > 0. The useful output is the elimination, by explicit calculations, of several stated
+ shortcuts. These failures should not be relabeled as new gap conjectures. The missing ingredient
+ remains a quantitative use of the exact simultaneous Boolean frequency arrangement.
+
+ What is established and what is not
+ The report consolidates full negative-sublevel experiments, a conditional Boolean augmentation
+ theorem with an advisor-attributed L1 strengthening, fractional Fejér padding, growing-order
+ cyclotomic and determinant tests, and a high-rank Boolean boundary-Schur counterexample.
+ The analytical arguments are paper proofs, not Lean or kernel-checked results; novelty and
+ external priority have not been verified. The numerical evidence is floating point, not a rigorous
+ certificate.
+
+ Common normalization
+    fA(x) = ∑a∈A cos(2πax), MA = −min fA, RA = MA/√|A|,
+    HA(t) = meas{x ∈ ℝ/ℤ : fA(x) ≤ −tMA}, 0 ≤ t ≤ 1.
+
+ A is a nonempty finite set of positive integers; measure is normalized Haar measure. Boolean
+ means each positive cosine coefficient is 0 or 1. For weighted f = ∑ckcos(2πkx), use E = ∑ck² and
+ R = M/√E, so ∫f² = E/2. The earlier E125 statistic is N(s) = H(1 − s). At t = 1 the level set has
+ measure zero for a nonconstant trigonometric polynomial.
+
+ Relation to the symmetric formulation C star
+ For S = A ∪ (−A), put D(z) = ∑s∈Szs, N = |S| = 2|A|. On the circle D = 2fA. Thus the true cost
+ −min D = 2MA. Nonnegativity of P = K + D, with integer K = ⌈2MA⌉, motivates the equivalent
+ square-root-scale target N ≤ CK². Ceiling changes constants, not the asymptotic issue. No sharp
+ constant is sought.
+
+ Numerical design
+ Four original E125-type weighted packets use X = 1,024, 4,096, 16,384, 65,536; α = 0.9; J = round(Xα); seed X;
+ independent uniform packet centers; and the E82 optimized autocorrelation profile. Controls include four full
+ Singer–Bu sets and sixteen other Boolean examples. Frequencies and amplitudes were not rescaled to
+ manufacture a match. Packet coefficients may be negative or exceed 1; they are not the bounded fractional
+ objects of page 6.
+
+ Explicit packet coefficients are ck = φ(w(k/X)²) + 4c w(k/X)∑j cos(kθj), with φ(v) = (1 − √(1 − v))/2 and c = 1/√(32J).
+ The profile w is the linearly interpolated normalized autocorrelation of the E82 N = 320 optimizer. Numerical
+ curves use these signed coefficients, not coefficient mass as the energy denominator.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                                  1
+===== SOURCE PDF PAGE 2 OF 10 =====
+ Full packet and Singer Bu profiles
+
+
+
+
+ All computed thresholds are retained and connected, including the whole interval rather than only near-floor
+ points. Zero values at t = 1 are omitted from the log panel. Lines between thresholds are visual interpolation, not
+ continuum bounds. Each profile uses its own polished estimate of the true minimum.
+
+ Near t = 0.99, the tested packets are hundreds of times above the four-Bu envelope; at
+ moderate depths the profiles overlap or reverse. This is an observed family difference, not a
+ necessary feature of arbitrary Boolean near-extremizers or hypothetical counterexamples.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                              2
+===== SOURCE PDF PAGE 3 OF 10 =====
+ All twenty Boolean control profiles
+
+
+
+
+ Each panel shows full-range curves for its stated family; the same dotted packet X = 65,536 is repeated as a visual
+ reference. Counts: 4 full Bu, 5 thinned Bu, 5 small simulated-annealing (SA), 2 dense SA, 3 Bernoulli-packet, 1
+ random half-density. These are selected finite examples, not an exhaustive search or an optimality claim.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                              3
+===== SOURCE PDF PAGE 4 OF 10 =====
+ Numerical values and uncertainty
+
+  Family and parameter               E             M/√E            H(0.5)          H(0.9)          H(0.99)
+
+  Packet X=1,024                     115.1         0.7647          0.3101          0.1580          0.0216
+
+  Packet X=4,096                     484.2         0.6873          0.3593          0.2107          0.0239
+
+  Packet X=16,384                    1,922.8       0.6388          0.3949          0.2549          0.0363
+
+  Packet X=65,536                    7,638.3       0.5965          0.4251          0.2930          0.0433
+
+  Bu q=61                            3,782         0.6040          0.3621          0.0240          8.41e-05
+
+  Bu q=101                           10,302        0.5885          0.3704          0.0262          3.44e-05
+
+  Bu q=151                           22,952        0.5777          0.3801          0.0292          9.41e-06
+
+  Bu q=199                           39,800        0.5658          0.3825          0.0402          1.43e-05
+
+  Small SA n=20                      20            0.6011          0.3930          0.0729          0.0082
+
+  Small SA n=36                      36            0.5648          0.3735          0.0579          0.0061
+
+  Small SA n=100                     100           0.6650          0.2722          0.0288          0.0019
+
+ Against the envelope of the four full Bu curves, the first sampled threshold where each packet exceeds it is
+ respectively 0.75, 0.61, 0.44, 0.30. The first sampled ≥3 ratios are 0.89, 0.87, 0.86, 0.85 and persist on the
+ sampled grid through 0.9999. At t = 0.99 the ratios are approximately 256, 284, 432, 516. These are grid
+ statements only. Small-SA controls show why that envelope is not a universal Boolean bound.
+
+ Method and error interpretation
+ FFT grids locate extrema; numerical polishing estimates M. Cubic Hermite crossing integration is
+ supplemented by direct root refinement near the floor and at all thresholds for small-SA controls.
+ For Bu, polished-extremum checks correct hidden valleys and holes. Doubling the grids changes
+ the packet curves by at most 4.6 × 10−6 and the four principal Bu curves by at most 1.6 × 10−7
+ in absolute H.
+ These are observed refinement differences, not rigorous error bars. Floating-point agreement neither certifies the
+ global minimum nor proves every narrow sublevel component was found. Relative errors can be larger when H is
+ tiny. H(1) = 0 is imposed from the mathematical level-set fact, not a grid count. The exact arguments below do not
+ depend on these numerical minima.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                             4
+===== SOURCE PDF PAGE 5 OF 10 =====
+ Exact Boolean augmentation proof
+ Finite statement. Given nonempty B ⊂ ℕ, integer L ≥ 1 and integer q > max B, set C = B ∪
+ q{1,…,L}, gL(y) = ∑k=1Lcos(2πky), and mL = −min gL. Then C is Boolean, |C| = |B| + L, and
+
+    2L/(3π) ≤ mL ≤ MC ≤ mL + MB ≤ L + MB.
+
+ Disjointness and the upper bound are immediate. Choose a minimizer y of gL. For every a ∈ B, q
+ does not divide a, so the average of exp(2πia(j + y)/q) over j = 0,…,q − 1 is zero. At least one
+ grid point x = (j + y)/q has fB(x) ≤ 0 while gL(qx) = −mL. Hence MC ≥ mL, with no limiting
+ equidistribution assumption.
+
+    2gL(y) + 1 = sin((2L + 1)πy)/sin(πy).
+
+ At y = 3/(4L + 2), the numerator is −1. Using sin u ≤ u gives mL ≥ [1 + csc(3π/(4L + 2))]/2 ≥
+ 2L/(3π). Also mL ≤ L.
+
+ If fC(x) ≤ −tMC, then gL(qx) ≤ −tmL + MB. Set a = tmL − MB and assume 2a − 1 > 0. The identity
+ forces |sin(πqx)| ≤ 1/(2a − 1). For d = dist(qx,ℤ), sin(πd) ≥ 2d. The allowed arcs have measure at
+ most 1/(2a − 1); integer dilation preserves Haar measure. Therefore
+
+    HC(t) ≤ 1/[2(tmL − MB) − 1].
+
+ When the bound exceeds 1 it is merely trivial. This is an exact finite statement, not an estimate
+ inferred from the plots.
+
+ Conditional closure for every hypothetical counterexample sequence
+ Suppose nj = |Bj| → ∞ and Mj = o(√nj). Choose integers Lj with max(Mj,1) = o(Lj) and Lj = o(√nj);
+ rounding √(max(Mj,1)√nj) suffices. Choose any qj > max Bj. Then
+
+    RCⱼ ≤ (Lj + Mj)/√(nj + Lj) → 0,
+    supδ≤t≤1 HCⱼ(t) ≤ [2δLj/(3π) − 1]−1 → 0 for every δ > 0.
+
+ The second estimate holds eventually because Mj ≤ δLj/(3π). The added o(√n) frequencies have
+ negligible coefficient energy yet control the normalization. This does not construct an actual
+ counterexample. It proves that, if any exist, some have vanishing negative mass at every fixed
+ positive depth.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                             5
+===== SOURCE PDF PAGE 6 OF 10 =====
+ Vanishing bulk and fractional profile instability
+ Advisor attributed L1 strengthening
+ The advisor proposed this strengthening in material shared by the user. Put uj = fCⱼ/MCⱼ. Mean
+ zero and fB ≥ −MB imply ‖fB‖₁ = 2∫(fB)− ≤ 2MB. For DL = 2gL + 1, N = 2L + 1 and d = dist(y,ℤ),
+
+    |DL(y)| ≤ min(N, 1/(2d)),
+    ‖DL‖₁ ≤ 2∫01/2 min(N,1/(2d)) dd = 1 + log N.
+
+ The integral splits at d = 1/(2N). Thus ‖gL‖₁ ≤ 1 + ½log(2L + 1). Measure preservation and page
+ 5 give
+
+    ‖uj‖₁ ≤ (3π/(2Lj))[2Mj + 1 + ½log(2Lj + 1)] → 0,
+    ‖uj‖₂² = (nj + Lj)/(2MCⱼ²) → ∞.
+
+ Since 0 ≤ (uj)− ≤ 1, its squared L2 norm tends to zero. For fixed η > 0, Ej = {uj > η} has
+ measure ≤ ‖uj‖₁/η → 0, while ∫ℝ/ℤ∖Eⱼ(uj)+² ≤ η‖uj‖₁ → 0. The divergent positive energy lies in rare
+ excursions. Equivalently 1 + uj → 1 in L1 but its squared L2 norm diverges.
+
+ Every fixed Boolean H profile has a bounded fractional approximation
+ Fix A, f, M > 0 and q > max A. Set KN(x) = N−1|∑k=0N−1e2πikx|² and F = f + ε(KN(qx) − 1), 0 < ε ≤
+ ½. The disjoint added coefficients 2ε(1 − k/N) lie in [0,1], and
+
+    E(F) = |A| + 4ε²(N − 1)(2N − 1)/(6N).
+
+ KN ≥ 0 and ∫KN = 1 give F ≥ f − ε and ‖F − f‖₁ ≤ 2ε. For U = {f < −M + δ} of measure v > 0,
+ some x ∈ U has KN(qx) ≤ 1/v. Hence M − δ − ε/v ≤ MF ≤ M + ε, so MF → M uniformly in N.
+ Choose ε → 0 and Nε² → ∞. Then MF/√E(F) → 0 and F/MF → f/M in L1.
+ Every level set of nonconstant f is finite; its CDF is continuous. Convergence in probability therefore gives uniform
+ CDF convergence, hence sup0≤t≤1|HF(t) − HA(t)| → 0. Quantitatively, with D = ‖F/MF − f/M‖₁ and ω(h) =
+ supsmeas{|f/M − s| ≤ h}, threshold sandwiching gives sup|HF − HA| ≤ D/η + ω(η). This is a stable-profile
+ obstruction, not a Boolean counterexample or a match to P61’s two coefficient profiles.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                                6
+===== SOURCE PDF PAGE 7 OF 10 =====
+ Packet asymptotics and growing cyclotomic norms
+ Why the P61 flat background limit is real but model specific
+ For a fixed continuous compactly supported positive-definite kernel w with w(0) = 1, its inverse
+ Fourier transform W is nonnegative and integrable with ∫W = 1. Periodization gives SX(x) =
+ X∑m∈ℤW(X(x + m)). Let T(r) = ∫|u|>rW(u)du → 0. For 2J translated or reflected packets, remove
+ the radius-r/X arcs about their centers. Their union has measure ≤ 4Jr/X and the average packet
+ mass outside has integral ≤ T(r). Thus
+
+    meas{(∑ packets)/(2J) > η} ≤ 4Jr/X + T(r)/η.
+
+ If J → ∞ and J/X → 0, take r → ∞ with Jr/X → 0. Write B = √(J/8), c = 1/√(32J), and EX = PX + c∑
+ packets − B. The smooth part has mean zero and PX ≥ −¼. Markov gives (PX + ¼)/B → 0 in
+ probability. Hence EX/B → −1. Together with EX ≥ −B − ¼ this gives MX/B → 1 and HX(t) → 1 for
+ every fixed 0 < t < 1. For the triangular kernel T(r) = O(1/r); no such rate is assumed for general
+ w.
+
+ Prime norms with exact Boolean mean and variance
+ Let S = −S, 0 ∉ S, N = |S|, X = max S and P(z) = K + ∑s∈Szs ≥ 0 on the circle, K an integer
+ ceiling of the true cost. For prime q > 2X + 1, set d = q − 1. P(ζq) cannot vanish because zXP has
+ degree 2X < deg Φq. Its conjugates are positive, and its norm is a positive integer Rq ≥ 1.
+
+    μq = K − N/d, Vq = qN(d − N)/d².
+
+ Indeed ∑j=1q−1ζqjs = −1 for nonzero s; the zero sums in S + S are exactly N, so ∑D(ζqj)² = qN −
+ N². AM–GM yields only K ≥ 1 + N/(q − 1), a density bound at q comparable to X.
+
+ The sharp global quadratic majorant for 0 < t ≤ B and 0 < μ < B is log t ≤ log μ + (t − μ)/μ −
+ c(μ,B)(t − μ)², with c = [B/μ − 1 − log(B/μ)]/(B − μ)². It follows by monotonicity of (u − 1 − log
+ u)/(u − 1)², represented as ∫₀¹(1 − s)/(1 + s(u − 1))² ds. With B = K + N, the norm gives
+ c(μq,B)Vq ≤ log μq. As q → ∞ this becomes
+
+    N/K − log(1 + N/K) ≤ N log K.
+
+ For every integer K ≥ 2 this is automatic for all N: its left side is ≤ N/K and log K ≥ 1/K. This specific
+ norm-plus-variance inequality is vacuous for the target; it does not exclude optimizations using more conjugate
+ data.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                          7
+===== SOURCE PDF PAGE 8 OF 10 =====
+ Integral controls and redundant determinant bounds
+ One globally positive control at all coprime orders
+    U (z) = 1 + z + … + zL−1,
+     L
+    PL(z) = UL(z)UL(z−1) = L + ∑0<|k|<L(L − |k|)zk.
+
+ This has nonnegative integer coefficients, constant K = L and extreme coefficients 1. Its off-zero
+ Fourier energy is EL = 2∑r=1L−1r² = L(L − 1)(2L − 1)/3, so EL/K² ∼ 2L/3 → ∞. The off-zero
+ coefficient mass is instead L(L − 1) ∼ K². Energy equals support size only in the Boolean case.
+
+ For every q > 1 coprime to L, UL(ζq) = (1 − ζqL)/(1 − ζq). The automorphism ζq ↦ ζqL permutes
+ primitive conjugates, so Norm UL = Norm PL = 1. This saturates the integer-product bound at all
+ coprime orders simultaneously, including every prime q > 2L. All evaluations come from one
+ polynomial on ℤ: there is exact no-wrap compatibility, not separately chosen finite-group
+ models. At noncoprime orders evaluations may vanish; any nonzero norm is still a positive
+ integer.
+
+ Scope. This is not Boolean: interior coefficients exceed 1. It refutes integrality-only
+ Fourier-energy bounds, not C star. A successful arithmetic argument must exploit the coefficient
+ cap or an exact Boolean relation that rejects this control. Frobenius congruences alone hold for
+ every integer polynomial and do not reject it.
+
+ Every principal Toeplitz determinant is already at least one
+ More generally take any nonnegative real Laurent polynomial P with extreme coefficient 1,
+ without integrality. Since zXP is monic, Jensen’s root formula gives ∫log P ≥ 0. Circle zeros give
+ integrable logarithmic singularities. For arbitrary distinct integer indices I = {i₁,…,im}, define GI
+ = (P̂(ia − ib)). Then
+
+    det GI ≥ exp(m∫log P) ≥ 1.
+
+ Proof: choose an outer Fejér–Riesz factor Q with P = |Q|² and |Q(0)|² = exp∫log P. Shift and sort I
+ so its indices are nonnegative. The coefficient vectors ziₐQ have a triangular minor at rows
+ i₁,…,im, with diagonal Q(0). Cauchy–Binet bounds the Gram determinant below by |Q(0)|2m. This
+ holds for all principal index sets at growing order, not just contiguous sections.
+ Thus “the positive determinant is an integer, hence ≥1” adds nothing to positivity and the extreme coefficient 1. PL
+ satisfies all these lower bounds while its energy/K² diverges. Relations between actual determinant values, other
+ arithmetic data and full coefficient recovery are not ruled out. Full conjugate values at q > 2X + 1 encode the
+ coefficients and can simply restate the original problem.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                               8
+===== SOURCE PDF PAGE 9 OF 10 =====
+ A high rank Boolean boundary Schur test fails
+ For finite symmetric S ⊂ ℤ and an index set I, put BI = (1S(i − j)). Suppose H = KI + BI is PSD and
+ P projects onto ker H. An exterior row x has bx = (1S(x − i))i∈I. If the extended block is PSD at
+ diagonal K + δ, compression to ker H and that row gives
+
+    [[δI, Pbx], [(Pbx)*, K + δ]] ≥ 0,
+    δ(K + δ) ≥ ‖Pbx‖₂².
+
+ The attempted Boolean step was maxx∉I‖Pbx‖² ≥ c|S| when |S|/K² is large and the kernel
+ occupies almost all of I. This would force a square-root increment. The following exact
+ torsion-free example refutes that step.
+
+    d,m ≥ 2, B = 8m,
+    S = {±tBj : 1 ≤ t ≤ m − 1, 0 ≤ j < d},
+    I = {∑j=0d−1ujBj : 0 ≤ uj ≤ m − 1}.
+
+ Then |S| = 2d(m − 1), |I| = md. Base-B uniqueness identifies BI with the adjacency of the
+ Cartesian product of d complete graphs on m vertices. Hence H = dI + BI is the sum of d tensor
+ terms with Jm in one coordinate and identities elsewhere. H is PSD at K = d, with
+
+    ker H = (1⊥)⊗d, dim ker H = (m − 1)d,
+    P = (Im − Jm/m)⊗d.
+
+ For any x outside I with a neighbor, write x = y + tBj. Its digit vector lies in [−m + 1,2m − 2]d.
+ Two such representations must agree: their difference has digits of magnitude ≤3m and B = 8m
+ makes this encoding injective. If neighbors occurred in two different coordinate directions, each
+ representation would force the other altered coordinate into [0,m − 1]. All coordinates would
+ then be in that interval and x ∈ I, a contradiction. Thus every exterior row meets at most one
+ coordinate fibre.
+
+    ‖Pbx‖² ≤ ‖bx‖² ≤ m,
+    maxx∉I‖Pbx‖²/|S| ≤ m/[2d(m − 1)].
+
+ Take m = d². Then |S|/K² = 2(d² − 1)/d → ∞, dim ker H/|I| = (1 − 1/d²)d → 1, but the leakage ratio tends to 0. More
+ exactly, a fibre of length ℓ gives ‖Pbx‖² = (ℓ − ℓ²/m)(1 − 1/m)d−1. At fixed d = 2, ℓ ≈ m/2 succeeds at square-root
+ scale; at growing rank it misses the factor d. Fixed-rank success is not universal progress.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                              9
+===== SOURCE PDF PAGE 10 OF 10 =====
+ Scope of the boundary failure and review agenda
+ What passes and what does not
+ For any integer t ≥ 1 and any set J of t exterior integers, let C be the cross block. Every column
+ has at most m ones, so ‖C‖op ≤ √(tm), and the exterior adjacency has norm ≤ t − 1. Perturbing
+ diag(H,dIt) therefore shows that the Boolean block on I ∪ J is PSD at
+
+    Kt = d + √(tm) + t − 1.
+
+ This holds for every such J simultaneously. For m = d² and t = o(d), |S|/Kt² → ∞. Only subsets of
+ this specified I plus at most t exterior rows are covered. Arbitrary row sets of comparable size
+ and all contiguous Toeplitz sections are not claimed to pass.
+ This is not a Chowla counterexample: K = d is local. At x = 6/(B − 1), Bjx ≡ x mod 1 and the full sum equals
+ d[sin((2m − 1)πx)/sin(πx) − 1]. Its true cost is at least (4/(3π) + o(1))dm and is Θ(dm). For p = 2m − 1 prime, the
+ corresponding union of nonzero coordinate axes in ᵓpd has Fourier minimum −d and size d(p − 1); the integer
+ support is its centered one-representative lift. The arbitrary-m integer calculation does not require p prime.
+
+ Even singularity alone gives no leakage: for S = {−1,1}, I = {1,…,L}, the PSD boundary K = 2cos(π/(L + 1)) has
+ maximum leakage 2sin²(π/(L + 1))/(L + 1) ∼ 2π²/L³. For genuinely globally nonnegative nonzero P, every finite
+ Gram block is strictly positive definite, since ∫P|∑cizi|² > 0 for nonzero coefficients. Exact kernels therefore describe
+ local relaxations, not globally feasible densities.
+
+ Assessment and questions for skeptical review
+ The universal fixed-depth floor-flatness route is closed in its stated necessary-condition form. Bounded distribution
+ tests continuous at zero also collapse under the augmentation; unbounded moments, moving thresholds,
+ positive-tail statistics and separately proved structural reductions remain outside that obstruction. Norm
+ integrality, determinant lower bounds and a bounded-boundary-row test are insufficient in the exact senses proved
+ here. None of this rules out all distributional, arithmetic or Toeplitz methods.
+
+ Check: (1) every factor of two between cosine and symmetric Fourier energy; (2) the conditional quantifiers and
+ minimum bounds in augmentation; (3) uniform CDF convergence versus energy-sensitive statistics; (4) Jensen and
+ arbitrary-index triangular-minor scope; (5) the base-8m uniqueness and the restricted family in Kt. Any proposed
+ replacement must reject the explicit controls and prove, not assume, the missing simultaneous Boolean constraint.
+ No new universal aggregate inequality has been obtained.
+
+ Provenance and reruns
+ Source snapshot: local commit 446367d948fedba07c5e70e3fdf9d9fcd106b08b, not pushed. Public base:
+ dfd51a19d0b094850f451d1cc82c88880be77b17. Source notes: negative_sublevels_2026-10-20.md and its
+ _appendix.md; cstar_cyclotomic_determinants_2026-10-20.md; cstar_boolean_boundary_tests_2026-10-20.md.
+ Data: packets/e125_final.jsonl, boolean/definitive_boolean_curves.json and comparison_summary.json in the
+ experiment bundle. Repository cross-references: P61(b), P65.3, E125, src/e125_floor.py and
+ src/e83_escape_binarise.py. These are locators, not claims that local notes exist on the remote. This PDF contains
+ the arguments needed for proof review; a reproducibility ZIP is optional for rerunning the numerical work.
+
+
+
+
+Chowla research handoff | 20 October 2026                                                                               10

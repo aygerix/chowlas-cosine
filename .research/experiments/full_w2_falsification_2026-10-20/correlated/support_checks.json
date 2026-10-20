@@ -1,0 +1,122 @@
+[
+  {
+    "tag": "Singer_p2_q7",
+    "exact_W2_size": 13,
+    "max_fft_integer_error": 4.440892098500626e-16
+  },
+  {
+    "tag": "Singer_p3_q13",
+    "exact_W2_size": 35,
+    "max_fft_integer_error": 1.9344450513601147e-15
+  },
+  {
+    "tag": "Singer_p5_q31",
+    "exact_W2_size": 67,
+    "max_fft_integer_error": 7.105427357601002e-15
+  },
+  {
+    "tag": "Singer_p7_q57",
+    "exact_W2_size": 143,
+    "max_fft_integer_error": 1.4210854715202004e-14
+  },
+  {
+    "tag": "Singer_p11_q133",
+    "exact_W2_size": 449,
+    "max_fft_integer_error": 2.842170943040401e-14
+  },
+  {
+    "tag": "Singer_p17_q307",
+    "exact_W2_size": 1061,
+    "max_fft_integer_error": 8.526512829121202e-14
+  },
+  {
+    "tag": "Singer_p23_q553",
+    "exact_W2_size": 2057,
+    "max_fft_integer_error": 1.4210854715202004e-13
+  },
+  {
+    "tag": "Singer_p31_q993",
+    "exact_W2_size": 3409,
+    "max_fft_integer_error": 3.410605131648481e-13
+  },
+  {
+    "tag": "Singer_p47_q2257",
+    "exact_W2_size": 8425,
+    "max_fft_integer_error": 9.094947017729282e-13
+  },
+  {
+    "tag": "Singer_p61_q3783",
+    "exact_W2_size": 13945,
+    "max_fft_integer_error": 1.3642420526593924e-12
+  },
+  {
+    "tag": "Singer_p89_q8011",
+    "exact_W2_size": 30105,
+    "max_fft_integer_error": 2.7284841053187847e-12
+  },
+  {
+    "tag": "optimized_q31_H6",
+    "exact_W2_size": 265,
+    "max_fft_integer_error": 7.105427357601002e-15
+  },
+  {
+    "tag": "optimized_q61_H8",
+    "exact_W2_size": 887,
+    "max_fft_integer_error": 6.138963403427298e-15
+  },
+  {
+    "tag": "optimized_q127_H11",
+    "exact_W2_size": 3095,
+    "max_fft_integer_error": 7.993605777301127e-15
+  },
+  {
+    "tag": "optimized_q251_H16",
+    "exact_W2_size": 9523,
+    "max_fft_integer_error": 2.842170943040401e-14
+  },
+  {
+    "tag": "collapsed_m16_lambda1_X256",
+    "exact_W2_size": 889,
+    "max_fft_integer_error": 5.684341886080802e-14
+  },
+  {
+    "tag": "collapsed_m16_lambda0.25_X1024",
+    "exact_W2_size": 2501,
+    "max_fft_integer_error": 2.842170943040401e-14
+  },
+  {
+    "tag": "collapsed_m16_lambda0.25_X1024",
+    "exact_W2_size": 2845,
+    "max_fft_integer_error": 2.842170943040401e-14
+  },
+  {
+    "tag": "collapsed_m32_lambda1_X1024",
+    "exact_W2_size": 3759,
+    "max_fft_integer_error": 2.2737367544323206e-13
+  },
+  {
+    "tag": "collapsed_m32_lambda0.25_X4096",
+    "exact_W2_size": 14675,
+    "max_fft_integer_error": 1.4210854715202004e-13
+  },
+  {
+    "tag": "collapsed_m32_lambda0.176777_X5793",
+    "exact_W2_size": 17943,
+    "max_fft_integer_error": 9.947598300641403e-14
+  },
+  {
+    "tag": "collapsed_m64_lambda1_X4096",
+    "exact_W2_size": 14801,
+    "max_fft_integer_error": 9.094947017729282e-13
+  },
+  {
+    "tag": "collapsed_m64_lambda0.25_X16384",
+    "exact_W2_size": 55477,
+    "max_fft_integer_error": 9.094947017729282e-13
+  },
+  {
+    "tag": "collapsed_m64_lambda0.125_X32768",
+    "exact_W2_size": 111595,
+    "max_fft_integer_error": 9.094947017729282e-13
+  }
+]

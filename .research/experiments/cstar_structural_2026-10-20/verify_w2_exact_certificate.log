@@ -1,0 +1,4 @@
+PASS: exact support, all 267 positive leading minors in reversed row order, exact divisions, and saved determinant match.
+50 H + 353 I is positive definite; K_W2 < 353/50 < sqrt(50).
+This refutes the sharp constant only, not an unspecified universal positive constant.
+Elapsed seconds: 5.241060018539429

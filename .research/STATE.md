@@ -1,4 +1,22 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
+
+## Current handoff: recovered completed passes, 2026-10-20
+
+This dated supplement updates the current state; the older handoffs below are retained as history, not assertions that their jobs are still running. Full navigation and provenance: [recovery index](RECOVERY_INDEX.md) and [recovery audit](RECOVERY_AUDIT.md). Existing P/E identifiers are preserved; no new identifiers are assigned.
+
+**Universal status: OPEN.** With S=A union (-A), N=|S|=2|A| and D_S=2f_A, K_global=-min D_S=2M. For W2=({0} union S)+({0} union S), K_W2=-lambda_min(B_W2)<=K_global. No universal c>0 with K_W2>=c sqrt(N), and no universal Chowla square-root proof or quantified counterexample algorithm, is established by these passes.
+
+- **Structural campaign, through 06:12 UTC:** exact attainment/record reduction; exact refutation of the sharp local W2 constant; audited product-Fejer model theorem; audited failure of the fixed three-dimensional order-profile certificate. Deterministic fits and finite searches remain numerical. [Synthesis](notes/cstar_research_checkpoint_2026-10-20.md), [addendum](notes/cstar_research_addendum_2026-10-20.md), [reproduction](experiments/cstar_structural_2026-10-20/README.md).
+- **Full-W2 falsification, 06:39 UTC:** no vanishing-ratio family found in the bounded campaign. Tensor, unequal-axis-interval, fixed-geometric-orbit and exact-interval-fiber exclusions have stated restricted hypotheses; correlated curves are numerical. [Report](notes/cstar_full_w2_falsification_2026-10-20.md), [audit](experiments/full_w2_falsification_2026-10-20/audit.md).
+- **Groundstate repair, sealed 07:40 UTC:** PROVED on paper and independently audited: weak-W1 Boolean families and an interval implant defeat repair of a prescribed bottom mode, including its parity-preserving exterior resolvent. The same family has a separate full-W2 square-root certificate, with base bound sqrt(N)/22 for k>=1 and r>=4k^2. This is not a full-W2 counterexample. [Report](notes/cstar_groundstate_repair_2026-10-20.md).
+- **Coupled mode, sealed 14:19 UTC:** PROVED on paper and independently audited: one genuine integer-support family has K_W1/sqrt(N), K_E/sqrt(N), and K_(W2 minus {0})/sqrt(N) tending to zero, but K_W2/sqrt(N) tending to one. The bottom vector has center mass tending to 1/2 and exterior mass tending to zero, with essential mixed energy. The enhanced five-condition selection is required. [Latest report](notes/cstar_coupled_mode_2026-10-20.md), [audit](experiments/coupled_mode_2026-10-20/audit/FULL_W2_COMPANION_AUDIT.md).
+
+**Refuted intermediates, not current targets:** universal sharp local W2 constant; fixed order-profile square-root guarantee; universal repair of one prescribed W1 bottom mode; universal W1-or-exterior-only dichotomy. The general centroid/BAC route remains closed as recorded in the original ledger; its model-specific P77/P79/P81 exclusions remain distinct. The earlier L1/fixed-depth obstruction remains closed only in its stated scope. None of these refutations disposes of arbitrary mixed full-W2 directions.
+
+**Remaining directions, not new results:** (1) a fully coupled Boolean spectral/response inequality allowing positive spectral cost; (2) adversarial constructions outside the excluded fixed tensor/orbit/fiber classes; (3) exact Boolean positive-profile/factor structure without an unjustified independence or integrality relaxation. The first concrete unproved derivation is the fixed-interior exterior-correction criterion in the latest report: seek r supported in E with ||D_S+r||^2<=C N and integral D_S|D_S+r|^2<=C N^(3/2), or exhibit a counterfamily to that criterion. It is proved here only for the selected special family.
+
+All new theorem statuses refer to research paper proofs and algebraic audits, not new Lean/kernel verification or a priority claim. Numerical eigensolver/FFT outputs are not certified spectral enclosures. This is a documented handoff, not a claim that unattended research jobs are running.
+
 C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed object, the forced features, the design
 rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
 and kills. Side results are not the prize (user, 2026-10-19).

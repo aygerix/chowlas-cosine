@@ -1,0 +1,38 @@
+[
+  {
+    "n": 1056,
+    "X": 10000,
+    "alpha": 0.10000000000000002,
+    "W2_size": 34193,
+    "contained_radius": 14551,
+    "rayleigh_K_bound": 150.2746432250782,
+    "rayleigh_over_sqrt_n": 4.624382472740539,
+    "first_K": 33.6421809611975,
+    "true_K_est": 167.37852540647975,
+    "matches_old_n": true
+  },
+  {
+    "n": 3962,
+    "X": 63496,
+    "alpha": 0.06299605249474367,
+    "W2_size": 226269,
+    "contained_radius": 98255,
+    "rayleigh_K_bound": 345.7223426538801,
+    "rayleigh_over_sqrt_n": 5.492501846112796,
+    "first_K": 48.82909887514552,
+    "true_K_est": 393.24214932917545,
+    "matches_old_n": true
+  },
+  {
+    "n": 15881,
+    "X": 403175,
+    "alpha": 0.03968502629920499,
+    "W2_size": 1496211,
+    "contained_radius": 674976,
+    "rayleigh_K_bound": 736.6127098183359,
+    "rayleigh_over_sqrt_n": 5.845212242182136,
+    "first_K": 77.73025647861101,
+    "true_K_est": 798.5332578047734,
+    "matches_old_n": true
+  }
+]

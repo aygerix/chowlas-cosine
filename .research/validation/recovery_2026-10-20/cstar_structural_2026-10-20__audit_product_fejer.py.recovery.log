@@ -1,0 +1,8 @@
+EXACT_CUBIC 1 signclasses 2 monomials 1 totalordered 6
+EXACT_FILL_GRAPH 1 targets 4
+EXACT_CUBIC 2 signclasses 12 monomials 26 totalordered 288
+EXACT_FILL_GRAPH 2 targets 24
+EXACT_CUBIC 3 signclasses 62 monomials 547 totalordered 6486
+EXACT_FILL_GRAPH 3 targets 124
+
+STDERR:

@@ -2723,3 +2723,23 @@ invariance of ‖f''‖₂: ∫ω|f''(x + tu_x)|dx <= √2‖ω‖₂‖f''‖�
 It is the d = 1, q → ∞ form of P77 and uses no Booleanity. BAC (Boolean anti-concentration: ∫_{f<=0}f'² >= c∫f'² for Boolean
 dense A) would give T-dense for all C via r' = 0; E124 shows BAC does not separate Boolean sets from fractional packets at
 computable sizes, so it is a gap HYPOTHESIS, not a mechanism. Route closed (ROUTES, advisor review 5).
+
+## Unnumbered proof supplement: recovered passes of 2026-10-20
+
+Existing P identifiers above are unchanged. Full statements, proofs and their hypotheses remain in the linked notes; this ledger does not silently strengthen them. Unless stated otherwise, PROVED means paper proof with the archived independent audit where linked, not new Lean/kernel verification.
+
+| Statement or mechanism | Status and precise scope | Source / audit |
+| --- | --- | --- |
+| Fixed-cardinality attainment and record reduction | PROVED reduction; no quantitative Chowla bound | [Proof](notes/cstar_extremizer_compactness_2026-10-20.md) |
+| Sharp local W2 constant | REFUTED by exact rational/integer positive-definiteness certificate; does not refute every positive constant | [Statement and certificate](notes/cstar_w2_universal_2026-10-20.md), [independent verifier](experiments/cstar_structural_2026-10-20/verify_w2_exact_certificate.py) |
+| Independent product-Fejer rounding | PROVED high-probability model-specific W2 bound, with separate support-filling and independence hypotheses | [Proof](notes/cstar_product_fejer_asymptotic_2026-10-20.md), [audit](notes/cstar_product_fejer_independent_audit_2026-10-20.md) |
+| Fixed positive-half autocorrelation 3D span | PROVED asymptotic obstruction for that span only | [Proof](notes/cstar_order_profile_asymptotic_2026-10-20.md), [audit](notes/cstar_order_profile_asymptotic_independent_audit_2026-10-20.md) |
+| Full-W2 amplification exclusions | PROVED for the stated fixed/product/orbit/fiber classes; changing near-contained bases and adaptive fibers remain open | [Report and proof links](notes/cstar_full_w2_falsification_2026-10-20.md), [audit](experiments/full_w2_falsification_2026-10-20/audit.md) |
+| Weak-W1 balanced layers and interval implant | PROVED: prescribed-bottom-mode translated repair and odd-sector resolvent stay weak; not a full-W2 counterexample | [Proof](experiments/groundstate_repair_2026-10-20/schur/groundstate_product_no_amplification.md), [audit](experiments/groundstate_repair_2026-10-20/audit/groundstate_product_obstruction_audit.md) |
+| Balanced-layer full-W2 rescue | PROVED: K_W2>=sqrt(N)/22 for k>=1, r>=4k^2; transfers to implant via independent coordinate | [Proof](experiments/groundstate_repair_2026-10-20/translation/balanced_layers_full_w2_certificate.md), [audit](experiments/groundstate_repair_2026-10-20/audit/balanced_layers_full_w2_audit.md) |
+| Random tapered weak W1 | PROVED using dependency-sensitive three-color decoupling and imported matrix concentration | [Proof](experiments/groundstate_repair_2026-10-20/obstructions/weak_w1_taper_proof.md), [audit](experiments/groundstate_repair_2026-10-20/audit/weak_w1_taper_audit.md) |
+| Coupled axis-union family | PROVED: weak W1, exterior and center-deleted W2, but K_W2/sqrt(N)->1, with unique square-root negative outlier and localization; enhanced five-condition selection required | [Main proof](experiments/coupled_mode_2026-10-20/exterior/exterior_counterfamily.md), [companion](experiments/coupled_mode_2026-10-20/order/direct_union_order_audit.md), [audit](experiments/coupled_mode_2026-10-20/audit/FULL_W2_COMPANION_AUDIT.md) |
+| Root-orbit low-spectral-cost obstruction and bouquet identities | PROVED restricted control; root family is not weak W1, and spectral projection differs from arbitrary low-Rayleigh mixtures | [Proof](experiments/coupled_mode_2026-10-20/multimode/root_orbit_low_cost_obstruction.md), [audit](experiments/coupled_mode_2026-10-20/audit/AUXILIARY_ROOT_ORBIT_AUDIT.md) |
+| Universal full-W2 / Chowla square-root theorem | OPEN; neither proofs for special models nor finite searches settle it | [Current gap](notes/cstar_coupled_mode_2026-10-20.md), [STATE](STATE.md) |
+
+Dependency order: the coupled theorem imports the tapered selected-adjacency estimate, combines it with scalar Fourier bounds, filling and weighted-energy control on the same jointly selected base, then uses exact axis decomposition and carry-free encoding. Its small finite scripts check assembly, not the infinite-family quantifier. The bottom-mode obstruction is a separate preceding result, not an assumption of the coupled theorem. The full catalog of other restricted structural notes is in [RECOVERY_INDEX](RECOVERY_INDEX.md).

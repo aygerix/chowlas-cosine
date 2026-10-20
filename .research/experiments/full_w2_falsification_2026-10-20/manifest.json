@@ -1,0 +1,1049 @@
+{
+  "checkpoint_utc": "2026-10-20T06:39:39.342000+00:00",
+  "scope": "Bounded full-W2 falsification pass; no universal theorem or vanishing-ratio family found",
+  "files": [
+    {
+      "source": "analytic/axis_interval_full_w2.md",
+      "source_sha256": "2a7b6b05895058dd0fe24c7b6c11652b1f6a616d5c6e6894b7f231318da65845",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/axis_interval_full_w2.md",
+      "checkpoint_sha256": "2a7b6b05895058dd0fe24c7b6c11652b1f6a616d5c6e6894b7f231318da65845"
+    },
+    {
+      "source": "analytic/axis_sanity.json",
+      "source_sha256": "564ae794fb38ce53f597a928d3bc42ea04785abc7bcff24c2344f06122f9d3cc",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/axis_sanity.json",
+      "checkpoint_sha256": "564ae794fb38ce53f597a928d3bc42ea04785abc7bcff24c2344f06122f9d3cc"
+    },
+    {
+      "source": "analytic/categorical_overlap_check.json",
+      "source_sha256": "dd6cc00afb9fc74e51e39a0f2f2a641154186ef59e4b226e4210cb5381a02eca",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/categorical_overlap_check.json",
+      "checkpoint_sha256": "dd6cc00afb9fc74e51e39a0f2f2a641154186ef59e4b226e4210cb5381a02eca"
+    },
+    {
+      "source": "analytic/categorical_overlap_check.py",
+      "source_sha256": "bf0a1c017ebdfe172f44b612c1f244522e7eeb1cdf3c8de334f121eab386ee8c",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/categorical_overlap_check.py",
+      "checkpoint_sha256": "8f2c9f9de820b4a2e5cbddb6e6c221180aed1a73e27ac05f8863747e21372711"
+    },
+    {
+      "source": "analytic/categorical_overlap_diagnostic.md",
+      "source_sha256": "14a8cedf89994e25e902898e71813159fd5eeb9c9f45d0b36c806d67a77c7127",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/categorical_overlap_diagnostic.md",
+      "checkpoint_sha256": "14a8cedf89994e25e902898e71813159fd5eeb9c9f45d0b36c806d67a77c7127"
+    },
+    {
+      "source": "analytic/tensor_nonamplification.md",
+      "source_sha256": "d3395454dd82fe7fe1077e514ef11843c44d6f2022a69b71c59da644dac717f8",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/tensor_nonamplification.md",
+      "checkpoint_sha256": "64a959274b8819dc07afd3b3d8dacc7682d3efbb5576657196ba31e4ae9021d8"
+    },
+    {
+      "source": "analytic/tensor_sanity.json",
+      "source_sha256": "231e9413e6e2f2f99e81144c962f00a48d7835b85facfa305083dfd3702a54b4",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/tensor_sanity.json",
+      "checkpoint_sha256": "231e9413e6e2f2f99e81144c962f00a48d7835b85facfa305083dfd3702a54b4"
+    },
+    {
+      "source": "analytic/verify_axis_and_tensor.py",
+      "source_sha256": "f78cbda341edb6c449fb27b98aa6bea9be17767d8d74071ac87392d627469958",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "analytic/verify_axis_and_tensor.py",
+      "checkpoint_sha256": "51cc5649a4b8cf07084735e8a3de977a7a555bc564554f1525a5d65062c47bb4"
+    },
+    {
+      "source": "audit.md",
+      "source_sha256": "b2ed6e6cc4f4115cffaa1689a52aa5d1781429ce87cfa0764cc5a684beb8eb52",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "audit.md",
+      "checkpoint_sha256": "b2ed6e6cc4f4115cffaa1689a52aa5d1781429ce87cfa0764cc5a684beb8eb52"
+    },
+    {
+      "source": "audit_checks.json",
+      "source_sha256": "a3a1a745ffaa218816cc41266d003116b3e007c58cd1a29c05fb7dbb5a3422d7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "audit_checks.json",
+      "checkpoint_sha256": "a3a1a745ffaa218816cc41266d003116b3e007c58cd1a29c05fb7dbb5a3422d7"
+    },
+    {
+      "source": "audit_checks.py",
+      "source_sha256": "d2ee377adeb90c856aaacb4ae2c79d659406198e77b105baafeaa7870857cb66",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "audit_checks.py",
+      "checkpoint_sha256": "851da626de469cae8c0ad640b3e0de39c69e1c104d98dbc5a876ef351b64be83"
+    },
+    {
+      "source": "correlated/REPORT.md",
+      "source_sha256": "dcb2f15adc0401e6f215d4498a2a8a3b5f8310d2b2c815505a0a3bb089027fd5",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/REPORT.md",
+      "checkpoint_sha256": "632b758357a852452eea5127a5568f2ec1a94fb3399b4d9f72736bf07bfed04c"
+    },
+    {
+      "source": "correlated/balanced_lifts.json",
+      "source_sha256": "fdf65ad63ae0b910d59631b1d10934c74e6c572f6043632de985aae40559830d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/balanced_lifts.json",
+      "checkpoint_sha256": "fdf65ad63ae0b910d59631b1d10934c74e6c572f6043632de985aae40559830d"
+    },
+    {
+      "source": "correlated/balanced_lifts.log",
+      "source_sha256": "4cdf005bf4e8367fd7bb973ebf951752dfb61246b2053d7f3925bd2c313f0db9",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/balanced_lifts.log",
+      "checkpoint_sha256": "4cdf005bf4e8367fd7bb973ebf951752dfb61246b2053d7f3925bd2c313f0db9"
+    },
+    {
+      "source": "correlated/check_supports.py",
+      "source_sha256": "15b9061d3c9d9c8acc8fdb8c09f78c91879dd96ac8acce16cf1a80016fc7ed4b",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/check_supports.py",
+      "checkpoint_sha256": "9a8ca562edd75c4140343ff3281729a7a233ec5ccf666862bb6bfed4dfea1640"
+    },
+    {
+      "source": "correlated/collapsed.log",
+      "source_sha256": "143f65b1a7818dbe6ecdaf285158cad44c20af87edb4a2bcac5382fe9383d815",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/collapsed.log",
+      "checkpoint_sha256": "143f65b1a7818dbe6ecdaf285158cad44c20af87edb4a2bcac5382fe9383d815"
+    },
+    {
+      "source": "correlated/collapsed_differences.py",
+      "source_sha256": "7bd09bd58da81ddaf8cec1138449a5982bc2e42d30778545217d8ab93d44404d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/collapsed_differences.py",
+      "checkpoint_sha256": "ab53552c8cd5f0662ee85d142405ecb8eefd9376fb5ba8dccc3f32ca4f7e7d88"
+    },
+    {
+      "source": "correlated/collapsed_results.json",
+      "source_sha256": "239f285143cb2cdb58fb40b76d28ef96e0e65d4cd75ccac365b33df56b0611b0",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/collapsed_results.json",
+      "checkpoint_sha256": "239f285143cb2cdb58fb40b76d28ef96e0e65d4cd75ccac365b33df56b0611b0"
+    },
+    {
+      "source": "correlated/large_lifts.json",
+      "source_sha256": "df2e8aed681a7de6b681407ff6744e3c087d7b79ab2d5691fe1ad7f955c4e462",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/large_lifts.json",
+      "checkpoint_sha256": "df2e8aed681a7de6b681407ff6744e3c087d7b79ab2d5691fe1ad7f955c4e462"
+    },
+    {
+      "source": "correlated/large_lifts.log",
+      "source_sha256": "76d97bbf4554ed0132b1ae347355b5bd4db31bb50cbe3173a14e34b23ed0a7ed",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/large_lifts.log",
+      "checkpoint_sha256": "76d97bbf4554ed0132b1ae347355b5bd4db31bb50cbe3173a14e34b23ed0a7ed"
+    },
+    {
+      "source": "correlated/lifts.py",
+      "source_sha256": "a3775205c50aa90da77768ce7a606d6877942609ea7b0d2bd0db0e45f9533a81",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/lifts.py",
+      "checkpoint_sha256": "b22ea68582791188d3fbe249e9cea55702489e718344afde7edaf82877a2bcfa"
+    },
+    {
+      "source": "correlated/lifts_results.json",
+      "source_sha256": "fdf65ad63ae0b910d59631b1d10934c74e6c572f6043632de985aae40559830d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/lifts_results.json",
+      "checkpoint_sha256": "fdf65ad63ae0b910d59631b1d10934c74e6c572f6043632de985aae40559830d"
+    },
+    {
+      "source": "correlated/optimization.log",
+      "source_sha256": "540a56390e1e8e9c4e8931d70cdc18e7a01a3e88940d7515446ed44fc9808537",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/optimization.log",
+      "checkpoint_sha256": "540a56390e1e8e9c4e8931d70cdc18e7a01a3e88940d7515446ed44fc9808537"
+    },
+    {
+      "source": "correlated/optimize_lifts.py",
+      "source_sha256": "1babf9b5443cf903223b384e8676b5d08361f2261a44fdf68d46a2243597d4e5",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/optimize_lifts.py",
+      "checkpoint_sha256": "7ba18f7ec6f58633cfd4203e60700c12d50a638694a9cb6d8c798a7227071663"
+    },
+    {
+      "source": "correlated/optimized_results.json",
+      "source_sha256": "4da98d336f14adaf8f855030a19cca8c0045ae2f8f48733f59398b54f9f83442",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/optimized_results.json",
+      "checkpoint_sha256": "4da98d336f14adaf8f855030a19cca8c0045ae2f8f48733f59398b54f9f83442"
+    },
+    {
+      "source": "correlated/singer.py",
+      "source_sha256": "b1518f4f97e9c400e6edd9923b3b2611ca72f7ddaf8b1a9c0667fe6adf14ce07",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/singer.py",
+      "checkpoint_sha256": "dd5cbfe941cfaa9f0c6f4923efb9c2828af32b2a57b2bdcc2fdef0c09feaa1e5"
+    },
+    {
+      "source": "correlated/singer_cuts.log",
+      "source_sha256": "b878de1e71464d4994fd6378e17b9e1043da6c015f26202011b9434003a5a1c7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/singer_cuts.log",
+      "checkpoint_sha256": "b878de1e71464d4994fd6378e17b9e1043da6c015f26202011b9434003a5a1c7"
+    },
+    {
+      "source": "correlated/singer_cuts.py",
+      "source_sha256": "b0132f5c91c89acbc827d562dbc47ba5b7b1a52056bcf7e6d1b1ac64d92f42e2",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/singer_cuts.py",
+      "checkpoint_sha256": "d7a63b04d06d6b93af43a4a2ac6bec94c38ae5562a03fbb415499c3ddece43ff"
+    },
+    {
+      "source": "correlated/singer_cuts_results.json",
+      "source_sha256": "a152b307fe3a2192419920692a84589e343d4101b75ff590f13e4af7b8a34f28",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/singer_cuts_results.json",
+      "checkpoint_sha256": "a152b307fe3a2192419920692a84589e343d4101b75ff590f13e4af7b8a34f28"
+    },
+    {
+      "source": "correlated/singer_results.json",
+      "source_sha256": "a81a60d037c0d2c157b532e02aa5f4584c10f4e22a43b624b1b020cfb87afbdb",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/singer_results.json",
+      "checkpoint_sha256": "a81a60d037c0d2c157b532e02aa5f4584c10f4e22a43b624b1b020cfb87afbdb"
+    },
+    {
+      "source": "correlated/support_checks.json",
+      "source_sha256": "5899f3337c0be86a5c763e8167b0bde6c2a8543d6b2a45ac7d89e51cc73d361d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/support_checks.json",
+      "checkpoint_sha256": "5899f3337c0be86a5c763e8167b0bde6c2a8543d6b2a45ac7d89e51cc73d361d"
+    },
+    {
+      "source": "correlated/validate.py",
+      "source_sha256": "826c2e7b92ae232484a2ad9beae91cbe6594f722e87a61b9ade11e7a9e68ccb2",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/validate.py",
+      "checkpoint_sha256": "f0e1a0985b16c9bebb1dbe9a7c968df474c1fb21f9cf67fc03800c1339a43be3"
+    },
+    {
+      "source": "correlated/validation.json",
+      "source_sha256": "fc04f9ad08898b6797453164fd101aa71ba1e9344f8756dc180f55e84501fd2e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "correlated/validation.json",
+      "checkpoint_sha256": "fc04f9ad08898b6797453164fd101aa71ba1e9344f8756dc180f55e84501fd2e"
+    },
+    {
+      "source": "multiscale/blowup.log",
+      "source_sha256": "cb03e690976346f295fb1955c0aa8a664996666f8fdf02bc0522708e9dc0eee1",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/blowup.log",
+      "checkpoint_sha256": "cb03e690976346f295fb1955c0aa8a664996666f8fdf02bc0522708e9dc0eee1"
+    },
+    {
+      "source": "multiscale/blowup_exact.py",
+      "source_sha256": "4ed8fc415d2d75076cf7ec5bc3b9faeef165bf5a60264e254330fc690a8eb303",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/blowup_exact.py",
+      "checkpoint_sha256": "531bd7f04860337f7f122d239548b6e8a86ab904b955ce16e9bb868a0c536d12"
+    },
+    {
+      "source": "multiscale/blowup_verification.json",
+      "source_sha256": "210ebef34e29d477637301b8c808d8025cb7bae59cdb592b7a60210cc8d1ac30",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/blowup_verification.json",
+      "checkpoint_sha256": "210ebef34e29d477637301b8c808d8025cb7bae59cdb592b7a60210cc8d1ac30"
+    },
+    {
+      "source": "multiscale/centered.log",
+      "source_sha256": "4175079a3a3ebfa126573e079401d3e8d453a10b63dec868f27b4e727cd0d0ae",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/centered.log",
+      "checkpoint_sha256": "4175079a3a3ebfa126573e079401d3e8d453a10b63dec868f27b4e727cd0d0ae"
+    },
+    {
+      "source": "multiscale/centered.py",
+      "source_sha256": "397655b9c68339318bde45d4fa9e8159341d3b4389e2ac46e70636cc70ff146b",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/centered.py",
+      "checkpoint_sha256": "2d57af71e5c3c9cdd319ca29af26f2dc51b23fc0c172172227cd0b0e17cfc61f"
+    },
+    {
+      "source": "multiscale/clusters.log",
+      "source_sha256": "110c97ea09ecf3617679e0f5c9c5797998c9e1b22d23634c04f67a887a5f4a48",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/clusters.log",
+      "checkpoint_sha256": "110c97ea09ecf3617679e0f5c9c5797998c9e1b22d23634c04f67a887a5f4a48"
+    },
+    {
+      "source": "multiscale/clusters.py",
+      "source_sha256": "f3c175d983e908acae0a14f04bb908a7a0cbda410fa866807ba0e37541af6b98",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/clusters.py",
+      "checkpoint_sha256": "e21be61200a9bf9f80dabb6a8b3dfbdaaae7de8a2ac88e5b0b350a4d226353e3"
+    },
+    {
+      "source": "multiscale/dyadic_degree.json",
+      "source_sha256": "ce9f54dce012fd8959215752efe3e9dd57d6ed51c987cbe1932eb77bdff4f7b0",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/dyadic_degree.json",
+      "checkpoint_sha256": "ce9f54dce012fd8959215752efe3e9dd57d6ed51c987cbe1932eb77bdff4f7b0"
+    },
+    {
+      "source": "multiscale/dyadic_extend.py",
+      "source_sha256": "1db6badc6a6b422a160b53ee0b11d2ba38b65bde5e16de3725e8272ec7f8936f",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/dyadic_extend.py",
+      "checkpoint_sha256": "e91f374063cbf1dc0804c0d426869e106f345235b3476ae907c8114ab66138e3"
+    },
+    {
+      "source": "multiscale/dyadic_extended.log",
+      "source_sha256": "f325b635ea00134e0b930cf03e7b5f691ae03fba40712dc6f4c8e66f5e7f1d25",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/dyadic_extended.log",
+      "checkpoint_sha256": "f325b635ea00134e0b930cf03e7b5f691ae03fba40712dc6f4c8e66f5e7f1d25"
+    },
+    {
+      "source": "multiscale/dyadic_proof.py",
+      "source_sha256": "f04afde4f1910e3526db6da398264bac1f7bc26cf6a3792ca59eaeccf13ac1b8",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/dyadic_proof.py",
+      "checkpoint_sha256": "a5cadb7cffae0f58c6d53df4a1c4546e3bf72c85a230a2ad40549d0802290322"
+    },
+    {
+      "source": "multiscale/report.md",
+      "source_sha256": "6efd67f617459ceec20119a95971f34d8e76bdb310c910e962f49ce96970de85",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/report.md",
+      "checkpoint_sha256": "94ab5d7ef791f6dd4e426e48f500096c1f68a9493499f385dbc1053f0e3f56f9"
+    },
+    {
+      "source": "multiscale/results.jsonl",
+      "source_sha256": "d1c3ac70445d4563d383b20cbdab84a2f68d95bf997f8b1e8a53a36e422a2640",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/results.jsonl",
+      "checkpoint_sha256": "d1c3ac70445d4563d383b20cbdab84a2f68d95bf997f8b1e8a53a36e422a2640"
+    },
+    {
+      "source": "multiscale/run.log",
+      "source_sha256": "3db7d9a9cf76ac820b5b9cb52f727fd62de25fe4034f294e1bd677af986c555a",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/run.log",
+      "checkpoint_sha256": "3db7d9a9cf76ac820b5b9cb52f727fd62de25fe4034f294e1bd677af986c555a"
+    },
+    {
+      "source": "multiscale/search.py",
+      "source_sha256": "fec6b3263629b7e40c1f0a16cdcd210498f9e9ecb461977c11b282c0fdbaa509",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/search.py",
+      "checkpoint_sha256": "83a0bb6a7a72b838df25166ce1921a86a20a9beb1b60453f6108736d9bde6209"
+    },
+    {
+      "source": "multiscale/sparse_verification.json",
+      "source_sha256": "8e077eb3ac118d2ca367dcc4ddc97a4cea516ed7195fb08e8889a156a0c0b8c3",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/sparse_verification.json",
+      "checkpoint_sha256": "8e077eb3ac118d2ca367dcc4ddc97a4cea516ed7195fb08e8889a156a0c0b8c3"
+    },
+    {
+      "source": "multiscale/verify_sparse.log",
+      "source_sha256": "077b2a422e7a0de644ec8ae5d408735fb2fd48d40a743da4bee5f61ae681b3ff",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/verify_sparse.log",
+      "checkpoint_sha256": "077b2a422e7a0de644ec8ae5d408735fb2fd48d40a743da4bee5f61ae681b3ff"
+    },
+    {
+      "source": "multiscale/verify_sparse.py",
+      "source_sha256": "fba6de7688709d55d4d3f2792bd7ba7086b1d50b8eacc495996cdb7b54813515",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/verify_sparse.py",
+      "checkpoint_sha256": "634a35172401cbd08879cec384e69f49c29effe106f2225c4af7ad7b20d43ca7"
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_1.npz",
+      "source_sha256": "92e8445ebb96467afdf268269e8f029fe3a9250dca13123bcbcabcedb513f1c7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_1.json",
+      "checkpoint_sha256": "9a074793ae0d3d051975986fbf9a10a43118476769c5f2c4c3156d9cf83b6d26",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_128.npz",
+      "source_sha256": "c6e8012414f2e2827ab9efdf95db51d14440cad13f360fdcc1b524fb4f2c911b",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_128.json",
+      "checkpoint_sha256": "1d99fb38b2119eb696a7bb402f72593feb1fea75cd6128899ac65f1f868e040b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_16.npz",
+      "source_sha256": "5f5e507670d82e9f0c519327dee8c8b737839d1f97e6da683540d737363671b4",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_16.json",
+      "checkpoint_sha256": "19418aff44c5dd759e61c7fc88fbef0ad7dfbcab3e90b3fb26251f114f7bcee4",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_2.npz",
+      "source_sha256": "fa1e51a73a4ca0b4188f23e938a1ea070b1c620fa62364abed05cc7a83ebd2c1",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_2.json",
+      "checkpoint_sha256": "5f055de3054be234e2fdbf4ba6c2f5b9f6544a741b49d51930f61f9838c86625",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_32.npz",
+      "source_sha256": "4e0b84e9760fee2531c7a82ad30dcea8dd82eb6be8e2b51b20cfa748bb4fa276",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_32.json",
+      "checkpoint_sha256": "fe6729dc7d2cf28931f6e510ff9180e5087eb971f8aa0f913fbec0b73fca7b61",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_4.npz",
+      "source_sha256": "06c8e589d53ab09e731c104e5e655831bd2fad8f8cfebbb6356d8f8ca91751b6",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_4.json",
+      "checkpoint_sha256": "b120cacd193e907a3282ec2a9ea66baef30de9247619d47c7a7fef2e9f9f4b6b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_64.npz",
+      "source_sha256": "f9a91f106eb5d42bb906e7d1425a0d956ed5721798cd46bde97e17c2af3a091e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_64.json",
+      "checkpoint_sha256": "1fdcf0ff70ab03483df884b5ffba217c2fa41c008ec539dab1f9669c7a831eb6",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_dyadic_union_8.npz",
+      "source_sha256": "3bbfc18163c13277ddc2c107020c00b59ed95643dacdd2ad1a4077e9c5720e27",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_dyadic_union_8.json",
+      "checkpoint_sha256": "52420a67135a5bce602dbec4397afa680522a4f2198bb1b004f06f378e162667",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_1.npz",
+      "source_sha256": "c991e38e93eebfcb498872bd8333d915772d44e837da43c2d5689b307da7488e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_1.json",
+      "checkpoint_sha256": "929faadda0c2838bb53040fd458bbe8ed99953fac5f2512e759eadb189816237",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_128.npz",
+      "source_sha256": "e05833e50487cc729a17690e85c6a21d488eea41a02cecf740318566371ab533",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_128.json",
+      "checkpoint_sha256": "d18dacb03de220807e06d6c5584ddcc3d290c46d5ede144efb073da8a69bed84",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_16.npz",
+      "source_sha256": "962733de7f7683f065841fcade5ddf4b122b5c59642f48e3bd12451b16d0d252",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_16.json",
+      "checkpoint_sha256": "152aa4a8545b69e400fe1223a462013e13ab3728c756d696a811ce0c469ce8c5",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_2.npz",
+      "source_sha256": "812502f641c634858879f85ebbf14bc18b0c489a0396419229e8a1694f49cd62",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_2.json",
+      "checkpoint_sha256": "a2a9b4281530a247961396be1d8f74bfcbf2de85735346fc03ee0eac2b4ab620",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_32.npz",
+      "source_sha256": "5ff26741f3bc3956d53f76793529bfba715f6d4dae852cfe09bd2ee787eac861",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_32.json",
+      "checkpoint_sha256": "394fe7275ef013355136017a32ab288d81f90b9e2fc68b493eb91855266f89cd",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_4.npz",
+      "source_sha256": "d8b2685bdbb14c7af03d6fc9fa4ee717fa6186d15d68ea06c0b10cee92985e0b",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_4.json",
+      "checkpoint_sha256": "decbe689851f899d9d3b24c8698b6821d7d3b2b51e0a1a2359180dbce07ae371",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_64.npz",
+      "source_sha256": "a2f1ae9ba014e5668a9e59a5f4c3e5c1aea0cda9b647d06b0e26678ff5266402",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_64.json",
+      "checkpoint_sha256": "080603f60910030a1e45f183ea67b3aa4b9e14f23ecbdb3f3cca790925abccd8",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_filled_8.npz",
+      "source_sha256": "ff2e9cba5d213af3dfd498db6eda694a2b9833d5afc0bf2f6eacf911dfb5c811",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_filled_8.json",
+      "checkpoint_sha256": "3cf6cda51b0b2e2cc48ff0db1d2f78dbebb0873d68dca20392334161a28779da",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_1.npz",
+      "source_sha256": "c991e38e93eebfcb498872bd8333d915772d44e837da43c2d5689b307da7488e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_1.json",
+      "checkpoint_sha256": "99a8eaa6d8a43fe78a7298fa5950d3fb6a9e9e781964a9eb8af11584e0b921d2",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_128.npz",
+      "source_sha256": "453db2a47589e52d77aa13ad691df086dc22df5f3b998287f71d5a101a021895",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_128.json",
+      "checkpoint_sha256": "acc74ca55f780a0ec8133f13cac31936ae56bc782ec4b01f29a8c54a759e0fac",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_16.npz",
+      "source_sha256": "7b94d81830c85a9ca91efa64919622e23036d40bb89cc9d786b767002686b440",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_16.json",
+      "checkpoint_sha256": "8239eecc9abb6504c2648a21a0532710d6f11a4c76f82f6d8f834e210abb3c9a",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_2.npz",
+      "source_sha256": "795b352d26eb5e8a3f727b9afadb78eaa6c3f2fca48d46c19eabae2e7458b788",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_2.json",
+      "checkpoint_sha256": "7ea4d4fec7afb61f4ab4a254bba605c1a34432a07d9a3f8849a761c366818803",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_32.npz",
+      "source_sha256": "5c9bd0ede5e9f4c744545b9f1f344e11ec018e1a19e0729db73d6eb24e1167fa",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_32.json",
+      "checkpoint_sha256": "daf2057433cd3fa8445807bd2d11d09dcdcca318ca391e27bab94158eabe1d0d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_4.npz",
+      "source_sha256": "9a86236a0ccf89007bd7f233e8118f42966a829a03e5c313065c2890630e9afc",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_4.json",
+      "checkpoint_sha256": "c5ad36cfe277a0921512f3cf3b5c6db8372dbcd161bc2b25426d9ab712748147",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_64.npz",
+      "source_sha256": "48dd010d64223196a4eb7e9e0935003eedb1d4050ba647046723655e1ad82f81",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_64.json",
+      "checkpoint_sha256": "67ae69586017db7c52cb21857503e57740960fbb64dbd2b01bbffd1951c65db1",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/clusters_tapered_8.npz",
+      "source_sha256": "747b989da7e8d19289c7b36fa12013e9c17da147dbaafe0db08c29e6922ecd9e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/clusters_tapered_8.json",
+      "checkpoint_sha256": "45a0a61ef206d8a489da188f29d2a44995c358bb94e548d1331f938721be094e",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/dyadic_extended_J10.npz",
+      "source_sha256": "aebcdda33a467b5e19db39d3a65860bbfeceee3bea06006e40a2dfac7638e5f9",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/dyadic_extended_J10.json",
+      "checkpoint_sha256": "8cd053073d7277945a86d94b31744a8ee3c445aa39c935857a6ba9a61b9298b7",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/dyadic_extended_J11.npz",
+      "source_sha256": "292a15c037f1a40705bcf1a9278e6e4eb8b0ff6dff6aca6d7d2f019da6986f68",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/dyadic_extended_J11.json",
+      "checkpoint_sha256": "d6809c85146c7a35a20a5e260ce6aa0467942d4041286b73ce0b74c872f44827",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/dyadic_extended_J12.npz",
+      "source_sha256": "228dbde5ea6012f5f575cbdd41b130fc0a75e950cc65c62318873120035993b1",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/dyadic_extended_J12.json",
+      "checkpoint_sha256": "70848dbbae1a9399ce9767439d850f7bc648f828a390de841a44373a6794686a",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/dyadic_extended_J8.npz",
+      "source_sha256": "a24d9dc6a440f69c407a738ee4b414fa4e39d03c9cac8757c1a6a75de027d7f2",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/dyadic_extended_J8.json",
+      "checkpoint_sha256": "c3a6901fd7bc07249e515f2f9fc62e494ca5415f94958886aaef4204eabc1483",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/dyadic_extended_J9.npz",
+      "source_sha256": "9ccc71e12bd2a3b29f36bf1dd23edbd53d004505fadbebbeead8eae5e1affa37",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/dyadic_extended_J9.json",
+      "checkpoint_sha256": "707519b8df6648106e8755bea8e3f2028a579a0219dce0fda4c3b415f18320b6",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h0.npz",
+      "source_sha256": "92e8445ebb96467afdf268269e8f029fe3a9250dca13123bcbcabcedb513f1c7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h0.json",
+      "checkpoint_sha256": "33ec0e077e3266d48c7da0a3416cf00995cd9cc490c5203e212c6264f6eb4cfc",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h1.npz",
+      "source_sha256": "e94c1a91b40d12770e57fce10ac2240a61a9a99c13c135715073220cfe05bd4d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h1.json",
+      "checkpoint_sha256": "552016617abe73bca05fe3e89fc611f005e4b61bdbbeb94318802e496abd34a3",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h16.npz",
+      "source_sha256": "1c9a15b2cb94e8af7d408f813c3cd0e16e7c4f1d57e8d4dbf7493be5b7e5a15d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h16.json",
+      "checkpoint_sha256": "fab673178bc5dc97a43532dc1012591c9a69ecd167d56671ab45cb97792ac57b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h2.npz",
+      "source_sha256": "559a9b496d2da5f6e709d7f0963aeeb108be2749085d4e5412dac96e94f7e17a",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h2.json",
+      "checkpoint_sha256": "3e3513fc181aa387f512e12b21a63cfd80bd01e3359bbf554ac34d0f4e497ffc",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h32.npz",
+      "source_sha256": "79e339021cd93d8b2355c9ba56d8fce43bccf3753bf3589f84eb558f1bc0a31c",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h32.json",
+      "checkpoint_sha256": "841d33071ce494a781e158e1194172338e20ab12265f2a3cfecdc18a9df62b49",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h4.npz",
+      "source_sha256": "ed4b09807d3376d109a011b553455ecd7c450686dfeaf5c59471b4b0c1c41de3",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h4.json",
+      "checkpoint_sha256": "3f7692f37e583addba700cafc4f20fa8ee735cbe79ded1f265a72c3011cd20e8",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/symmetric_blowup_h8.npz",
+      "source_sha256": "1ec90251354ab5b0a35bbe84a48318e4fa4c608afe71d785e7def312e8b7eaae",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/symmetric_blowup_h8.json",
+      "checkpoint_sha256": "9096265f3fa7e829d366f47c2ba06fbc2ebb7b76a86532d92618d9fcdade4a1c",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_cumulative_1024.npz",
+      "source_sha256": "a43e15b84e2220077b923e9097d820f6cb36724f1e87daf5a6a1090e62a6a118",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_cumulative_1024.json",
+      "checkpoint_sha256": "1101bb157b995291c82df29a89ef608b8ff2b27e8ce944921d96a3d2e1ebdb2b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_cumulative_128.npz",
+      "source_sha256": "8b5a41634b1e286ddf01760361ec204c8b665b3b6d995a51cd01a91b685d9257",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_cumulative_128.json",
+      "checkpoint_sha256": "80afde3d560f873ebad26e9888229a3dd75683ca5326e3f62962f442af75cd77",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_cumulative_256.npz",
+      "source_sha256": "50ef43276fa6a7aa11a07c3c9ca43a04b60672d655243976f4b7f30e1049f0d7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_cumulative_256.json",
+      "checkpoint_sha256": "993b3c9a9e0c9321ad253ace4ebcaaf50c2f4faf28ffafaf156bde838c7be405",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_cumulative_32.npz",
+      "source_sha256": "789144e57409d55c5436bb985e357b2dba241f4bede231a8298cc473d61358fb",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_cumulative_32.json",
+      "checkpoint_sha256": "aa3e672d76bb41411766b39f180032825b6e8333efc76406d7e55ceacf3f9aac",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_cumulative_512.npz",
+      "source_sha256": "88a496a1adce676dbb0bddcc246c32eab054f603f866c504848b634d680e0b11",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_cumulative_512.json",
+      "checkpoint_sha256": "360bb11c482feb84c6c963c106284556b0b15f46cbf7708f77cc4acc8082a9e0",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_cumulative_64.npz",
+      "source_sha256": "1c86dbe2d29184ef70165e706e27499b7dc0d7030d024261189b5a28f0836410",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_cumulative_64.json",
+      "checkpoint_sha256": "de979a4a7a3941b04d58f0a33d9728119eb2363aaf3ec8be06597c8659c45e2c",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_1024.npz",
+      "source_sha256": "9df3e1fae344d0ccb1d9b590cf29ae705e26304ce9934f4a6cf7b9a4ae561f59",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_1024.json",
+      "checkpoint_sha256": "c9586bd462f16e1f4112bc74831fb6532b89f8de99c35ed32297c6e2a39abf87",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_128.npz",
+      "source_sha256": "64d253c91af99dae11d44a15f83f27f1f424667f484a043e03ce93581d087994",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_128.json",
+      "checkpoint_sha256": "66c69283f5b1849a53f3b5f29efac52ca4613dfb88aac8d23a08f0327aeba078",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_256.npz",
+      "source_sha256": "5fc1f7c6073651d7d181e0031563c05438c78b8ed9e79b2253f6df3bbc32f1b6",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_256.json",
+      "checkpoint_sha256": "20c85595290f5e67bda763118952f7ec843f47eb67f38293a87f8eb2e5acc52e",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_32.npz",
+      "source_sha256": "dcf44804e8ed4c42c3f92f71cfb31de89f6e183eb621e6386e26a5e3c822a1d4",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_32.json",
+      "checkpoint_sha256": "d17ac601b4219e3e4f83b8f575cbe367f3b018664573bc3265cd2981c2cca22d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_512.npz",
+      "source_sha256": "cf33360610d51779d102b1c8978c1ba6fefe3a3e22fb8e4b2582481d52a6cc77",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_512.json",
+      "checkpoint_sha256": "96ff93744fdcfa9901b7c086731563b6a43f88bcd74ac46db99bed3eec2571e8",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_64.npz",
+      "source_sha256": "b71ddc5e891574d6fd7d97080b86d765665a64309af5beaab483b918e564ac47",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_64.json",
+      "checkpoint_sha256": "d744a7c380868fd518ccfe78695091fe6fa65687d03446d8031ed5642ded634b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_1024.npz",
+      "source_sha256": "cd82d5d808df524b8a872f1be03a6e6e2bbece7b05a89d43e1dabfb74fd1f5f9",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_1024.json",
+      "checkpoint_sha256": "98748e3506c3266f83347fcc9f61c3b175361d5abd921ecb1d7998f05c78b40c",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_128.npz",
+      "source_sha256": "1fe847f83e990d62e0a8bad65f3c2891135bdefcbb0b264a02adf3a312ab71f7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_128.json",
+      "checkpoint_sha256": "0c1303d099b5857427f1e5a1db6f5d899d1ee4d301bd6260ec6283031ae8811d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_2048.npz",
+      "source_sha256": "cf063c4d31a36847778856293c1057e1a92e702bca18933dffa3050bb3bb03b4",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_2048.json",
+      "checkpoint_sha256": "ed848baf406a302ab355856fac015597ded7443cc5cd873621a8b2e82f576a7b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_256.npz",
+      "source_sha256": "9e700c3cf1b3874a3bed30ef4e1e3cf42affb665bd8fa84b241591131feaaa5f",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_256.json",
+      "checkpoint_sha256": "ca8822d51e298d4fbedf56375748b37df362dd4a21c802adceecaae2246f9a0d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_32.npz",
+      "source_sha256": "20f047bef5a96c61229039358b74ca6c358e77d670ebcb8ceaba196f4f02eaf4",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_32.json",
+      "checkpoint_sha256": "302f55bb80c4a821d6a3d04496612076ccc78d8a77fbaa67fff23c6dd4c8f753",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_4096.npz",
+      "source_sha256": "cf19011a2dbafec3feaa994368931565c64f4ca38f8bf8865dc3f9c3fa26a93a",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_4096.json",
+      "checkpoint_sha256": "f8dc299eb59a561c5b17a0e96c530be5d316f30d525dd26061c1960dd077977b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_512.npz",
+      "source_sha256": "dbf71ddeb26cb7b55fcd846e11a15cbdbc5036232d2d34ce47f116af23b20014",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_512.json",
+      "checkpoint_sha256": "b4b7b5b25a5736ee798e972fcd21516a862560129ae19d35b69ccbfab868475e",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_golden_centered_64.npz",
+      "source_sha256": "a03e940a340b172fda1203eead12f308e6fce15cb9789f27d9885c0a4585d3f9",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_golden_centered_64.json",
+      "checkpoint_sha256": "62d4e19833dddbd44b5854c65e69ec00680df3d2fe547976cbfcfca843793f5f",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_1024.npz",
+      "source_sha256": "c4023e5ed0ed00112b45ed0d65c68b22ed69dea3a19c5d56d109211f6469200c",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_1024.json",
+      "checkpoint_sha256": "08a2bf6d4143e1d167eea2301af0de050ff5ad747149978d1428f8ce6f12d6f7",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_128.npz",
+      "source_sha256": "c601f07ed84e83e965a9d09c488ddc7986cf0bb7c17e5a1b97626f0be47df584",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_128.json",
+      "checkpoint_sha256": "fca0fcc7072ef4fc2275287e1801e153e18bd6b4ce649d4bf853d3d7b3ea55ee",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_256.npz",
+      "source_sha256": "66af4b89cbbe5f21ca565f8e57976938863482c02ec70ef3daef334d1574117a",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_256.json",
+      "checkpoint_sha256": "0656efc62b52dfdf2f02d64e61236e3909e5307b3e3cf6fae8f875bfd4ad4414",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_32.npz",
+      "source_sha256": "8a0b2cf17a8a01289a41953ee0e4ae8bee5a1be8c3f73a45f43120f083bd3e1e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_32.json",
+      "checkpoint_sha256": "a19f6ea0ea92c8f628abe6ef01e890fdc20de264f13aeaf8e26d1ce5e4f726f9",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_512.npz",
+      "source_sha256": "19c64bede0c01096a4c587cce0c6312bf7718a79ed3cc169b680d2eb5fd6f6af",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_512.json",
+      "checkpoint_sha256": "2965c75cf7bc925397b70a937c2eacda15ba029533dcb5b8f3aae5a4995ee9db",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_64.npz",
+      "source_sha256": "00e7a372dcb254aa743fb6cebaa05d9ff6552dfeaede844a4f5798a5421dc425",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_64.json",
+      "checkpoint_sha256": "65574c2c19d95a5ea27d09507c2a6a4b9f897e19376528748a456ed356581dc2",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_1024.npz",
+      "source_sha256": "298d84cdae8fbc569863eb569f0708968345d78f1507b3e1c217314cc554a494",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_1024.json",
+      "checkpoint_sha256": "86f83406237cd8047d83b32424465e644bd932a066d1eedf78b312b86ebac057",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_128.npz",
+      "source_sha256": "79f803dbb98688721c846b94a7051e0a4ee389a5df693b90d657befdcfb76d06",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_128.json",
+      "checkpoint_sha256": "517634c70d82c54cd186bace2b742925e62ab8346fe34663d4584f440e59a3e1",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_2048.npz",
+      "source_sha256": "5c5d65569d01ca89ba9268d6a8a3a716c094d1f54721672230cf86deb033398a",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_2048.json",
+      "checkpoint_sha256": "86201f8a36af39aaf03fa50fa37585c907d0cae0db8bdd0a87efe150ed460725",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_256.npz",
+      "source_sha256": "4591b935a29e8d31d896737477fefdf7afdd09a67e2a819a2136b65b940c569a",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_256.json",
+      "checkpoint_sha256": "ced4850db73055eac51e1cbbfdc82c7fcbed13fdd05db10dcc4d5a7fc6cadb05",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_32.npz",
+      "source_sha256": "205c2a588cbd3bf5902f2cd4d660613b32651f366571b79c9e421442ce9a5590",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_32.json",
+      "checkpoint_sha256": "f2cb1f8b92b79805f51cf09aaac31b90b5476522132f742327e94773e0dc9212",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_4096.npz",
+      "source_sha256": "903f4f4552b4fa8db080a579019bed66a8903daeac6e6dc7e4bd74bbc53d315f",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_4096.json",
+      "checkpoint_sha256": "0c99ece67076d7f4650010296e8b7a80186bca476b61912c649c88e61b00f424",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_512.npz",
+      "source_sha256": "aea5227860b6188dafdd389fccc5c3de10321a718ddb7ecd15a54288660ab311",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_512.json",
+      "checkpoint_sha256": "3aca1c6a678aaacd7860cde948cab680409e8a1c073c4832ab259ffce0e60b9b",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_quadratic_centered_64.npz",
+      "source_sha256": "bb9946ba8690aaf32a58f7eaee0f032e5ec5b1dd24a1b1cecfb4c7c28642c36d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_quadratic_centered_64.json",
+      "checkpoint_sha256": "44a85967f8d1d1b2509471420894f19c207080972dfb2ef4ca32007a34e0c5a3",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_random_1024.npz",
+      "source_sha256": "154e014f0d297372f5668e921fc5211fe3692f3ba060ca513979d4c70e8618f7",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_random_1024.json",
+      "checkpoint_sha256": "621894173c2697b3a93ccc22ce60730ad256c2506d9958b6d714c01ef5eb9e36",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_random_128.npz",
+      "source_sha256": "c10615f89c59d807b1d6d461f9d80f762c8ad966fa0de0fe2d8822d9d8b7cd2e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_random_128.json",
+      "checkpoint_sha256": "420e5f885c14c7a1b319f090f27582eec7b8c8e69d70bd8fd9d66274a2f2688e",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_random_256.npz",
+      "source_sha256": "fed1109ffd313178ce62f73565043c8129350bdf62b998a2409843a189617ceb",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_random_256.json",
+      "checkpoint_sha256": "52f4f8e12282d3ac59269b543dced7c4a8440e300eaef1050eaa9cc1fd76c7e8",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_random_32.npz",
+      "source_sha256": "1c5ef193c2d22bb713768372e77d3842fb2aa5852c070c4e271e78e0c55fdea9",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_random_32.json",
+      "checkpoint_sha256": "19f40c9da0a66e56a00f6126f7b4fa391e45dca5721b68cc789ca2219493af4d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_random_512.npz",
+      "source_sha256": "d5efa936873cf247c9916ce493e3aadc7a5e657de0d60740b31beea1cdf700bc",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_random_512.json",
+      "checkpoint_sha256": "b02726256293ca7712c88d3e7e2c0180bba2eb4aed1ce6c7cd70b393b885549f",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_random_64.npz",
+      "source_sha256": "6d5d07d55126d1c3e0cf56278cf21810ba6fafce3cefeb5e69fe98a2851cba2d",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_random_64.json",
+      "checkpoint_sha256": "a981608c0d647b33ad96f5d30be41648b950acc67ec3a4d8747f2172b967b23d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_1024.npz",
+      "source_sha256": "9d97b6761a2c122411d8c5d82069ad26aeb59d5a8ca47af7dc8327496a93dcbe",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_1024.json",
+      "checkpoint_sha256": "c6351df25179b292b99343b5fe9b11ce010b0e61fb9e7388a5b1ace592b0912f",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_128.npz",
+      "source_sha256": "d8138cf29d9a9c5b5a2724416c347fe02a5141cd4211a8618848b6bcd35bd6c8",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_128.json",
+      "checkpoint_sha256": "54f812d0159de924d80372f071390a6a7e2223e67675bec210559d91ebe7cd50",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_2048.npz",
+      "source_sha256": "721658e788452b26e534d9a685b350f46990132f00f991e5df59c124796a561e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_2048.json",
+      "checkpoint_sha256": "52441648710aeb4a2dd147067c31fffcbaaeb72acfee699c52e3f7fd0cc3c27d",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_256.npz",
+      "source_sha256": "cfba707d7a2fcb42be64f8d6e589941ca486dd22aa627d2f9480ce8ea7447ddf",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_256.json",
+      "checkpoint_sha256": "2dafca7d4e272e1a270989a5a36a4ef47852fb625e9752d8bea887754a035de2",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_32.npz",
+      "source_sha256": "b411d707175577c696472c0e3a55ea9dd42b5298db55fbb3f8a75ea2ec8cab46",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_32.json",
+      "checkpoint_sha256": "e81b531374110a76d4bcadce9c1bac16d3a7383b6a8fb669bc25ef49b19debf2",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_4096.npz",
+      "source_sha256": "b7bc73084a9f0dd34d33121811acc883bf9295d7ff40db435ec3ea463d864f3c",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_4096.json",
+      "checkpoint_sha256": "1e8482c1b2fd44becb59dfe2acf15420f62d90cf26bdce421d4216675d5710b9",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_512.npz",
+      "source_sha256": "3394e5d14ac9f00b7c7f3b4467b19bdbd67f488db63d680fbd5c23b03610ee4e",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_512.json",
+      "checkpoint_sha256": "ec53c6bddd58482bd21e161cdb7762c48358e5e851e51ff252331c18314802ee",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    },
+    {
+      "source": "multiscale/tri_two_rotations_64.npz",
+      "source_sha256": "afd1734765ec25944bbf2fdd9c33099adef6bdca9263067990a403a0ee87d9be",
+      "captured_utc": "2026-10-20T06:39:39.342000+00:00",
+      "path": "multiscale/supports/tri_two_rotations_64.json",
+      "checkpoint_sha256": "39d771c6f328554d3277452ee1caa190a7e5a6a8f1281ec3b93b8eb2d218b29e",
+      "transformation": "Exported A/K/W2 size/hash as JSON; omitted binary cache/eigenvector."
+    }
+  ],
+  "archival_generated_files": [
+    {
+      "path": "notes/cstar_full_w2_falsification_2026-10-20.md",
+      "sha256": "ea33e0d9751ea5925c37ea0d237f6e164b720b249d5edb0040280a4286f1d5ed"
+    },
+    {
+      "path": "experiments/full_w2_falsification_2026-10-20/README.md",
+      "sha256": "0dc09c35cdd404c9e53c4fa6ef5774cfc7a9d365782857ee64f81b70ceecfe90"
+    },
+    {
+      "path": "experiments/full_w2_falsification_2026-10-20/multiscale/support_io.py",
+      "sha256": "c4d378b30db2dd6d50794cbee847049c1ae59f6ff50113f68070af36aaae2fa7"
+    }
+  ]
+}

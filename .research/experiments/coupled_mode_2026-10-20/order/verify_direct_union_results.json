@@ -1,0 +1,34 @@
+{
+  "X": 8,
+  "m": 3,
+  "A": [
+    1,
+    2,
+    3,
+    4,
+    6,
+    7
+  ],
+  "N": 36,
+  "W2_rows": 517,
+  "E_rows": 480,
+  "integer_base": 42,
+  "exact_exterior_blocks": 6,
+  "integer_Z_norm2": 1752,
+  "integer_DZ": 142,
+  "integer_DZ2": 9036,
+  "normalized_compression": [
+    [
+      0,
+      5.876001809076813
+    ],
+    [
+      5.876001809076813,
+      5.157534246575342
+    ]
+  ],
+  "K_W1": 3.7401757054301137,
+  "K_E": 5.674515550049929,
+  "K_W2": 6.025689099092018,
+  "note": "Matrix identities above checked with integers; eigenvalues here are floating diagnostics only."
+}

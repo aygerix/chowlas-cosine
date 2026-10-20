@@ -1,5 +1,17 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Latest CHAIN / ATTACK LOG supplement: 2026-10-20
+
+Current target and normalization are unchanged: some universal positive constant for Boolean integer supports, not the sharp half-constant. The [current STATE handoff](STATE.md) and [recovery index](RECOVERY_INDEX.md) supersede the historical commissioned-job/status wording below. All original objects, design rules and numbered records are retained.
+
+- **CHAIN(c), structural pass:** the [synthesis](notes/cstar_research_checkpoint_2026-10-20.md) and [addendum](notes/cstar_research_addendum_2026-10-20.md) distinguish exact reductions/countercontrols, a positive product-Fejer theorem and finite profile evidence. The fixed order-profile span fails asymptotically; arbitrary full W2 remains open.
+- **ATTACK LOG, full-operator falsification:** the [bounded campaign](notes/cstar_full_w2_falsification_2026-10-20.md) found no vanishing full-W2 ratio. Proven exclusions cover specified tensor, axis-interval, fixed-orbit and exact-fiber constructions only; they do not exclude adaptive/growing templates.
+- **CHAIN(c), prescribed groundstate repair:** the [audited interval-implant obstruction](notes/cstar_groundstate_repair_2026-10-20.md) defeats the entire translated space and, separately, the odd W2 sector. Those spaces are complementary, not nested. Independent even directions still give square-root full W2 on that family. Do not reopen a universal single-bottom-mode repair claim.
+- **CHAIN(c), exterior-only alternative:** the [latest coupled-mode theorem](notes/cstar_coupled_mode_2026-10-20.md) refutes a universal strong direction wholly inside W1 or E. Even the center-deleted W2 block can be weak while K_W2/sqrt(N)->1. Small exterior mass does not make its energy/cross terms negligible. The theorem depends on simultaneous five-condition selection and carry-free encoding, not finite FFT extrapolation.
+
+The surviving quantitative gap is a universal **mixed/coupled** Boolean certificate. The latest report proves a fixed-interior exterior-correction criterion only on its selected family; its root-orbit control warns against discarding all positive-cost punctured modes. It does not refute a weak-W1-conditioned statement using that root family. Full W2 and Chowla remain OPEN. These are unnumbered, source-linked additions; no unavailable local ledger or P/E history is invented.
+
+
 **Rule (user, 2026-10-19).** C* is the problem. Every route in ROUTES.md reduces to it. Work that does not advance C*
 is a side lemma. A side lemma is recorded in one line (PROOFS + the index at the bottom of this file) and is never
 the goal of a session. "C* needs a new idea" is not a diagnosis and not a stopping point. The math must be made here.

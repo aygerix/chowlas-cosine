@@ -1,0 +1,90 @@
+[
+  {
+    "tag": "JL_p3_a2_center",
+    "N": 24,
+    "W2": 203,
+    "occupied_residues": 81,
+    "alias_dimension": 122,
+    "Kalias": 7.2327263485569695,
+    "Kalias_over_sqrtN": 1.4763740835956607,
+    "ratio": 0.45878284911600103,
+    "residual": 6.739261611713751e-09
+  },
+  {
+    "tag": "JL_p5_a2_center",
+    "N": 120,
+    "W2": 1989,
+    "occupied_residues": 625,
+    "alias_dimension": 1364,
+    "Kalias": 20.38526458561746,
+    "Kalias_over_sqrtN": 1.8609115423756475,
+    "ratio": 0.2887676514517402,
+    "residual": 1.4748127781817021e-07
+  },
+  {
+    "tag": "JL_p7_a2_center",
+    "N": 336,
+    "W2": 8113,
+    "occupied_residues": 2401,
+    "alias_dimension": 5712,
+    "Kalias": 57.92921625149741,
+    "Kalias_over_sqrtN": 3.160297838356582,
+    "ratio": 0.10012533261480114,
+    "residual": 4.799669808167017e-13
+  },
+  {
+    "tag": "JL_p3_a3_center",
+    "N": 234,
+    "W2": 2625,
+    "occupied_residues": 729,
+    "alias_dimension": 1896,
+    "Kalias": 42.14188567357606,
+    "Kalias_over_sqrtN": 2.754901248578981,
+    "ratio": 0.13176131735093596,
+    "residual": 1.4744155974594654e-11
+  },
+  {
+    "tag": "JL_p3_a4_center",
+    "N": 2160,
+    "W2": 25447,
+    "occupied_residues": 6561,
+    "alias_dimension": 18886,
+    "Kalias": 337.8079660933799,
+    "Kalias_over_sqrtN": 7.268470149421445,
+    "ratio": 0.018928403164594897,
+    "residual": 6.413499300402048e-12
+  },
+  {
+    "tag": "quad_p3_d4",
+    "N": 32,
+    "W2": 313,
+    "occupied_residues": 81,
+    "alias_dimension": 232,
+    "Kalias": 6.618607799572098,
+    "Kalias_over_sqrtN": 1.170015614272901,
+    "ratio": 0.730494053232166,
+    "residual": 6.191115391372713e-14
+  },
+  {
+    "tag": "quad_p5_d4",
+    "N": 144,
+    "W2": 3769,
+    "occupied_residues": 625,
+    "alias_dimension": 3144,
+    "Kalias": 20.48835957571906,
+    "Kalias_over_sqrtN": 1.7073632979765883,
+    "ratio": 0.3430426488019497,
+    "residual": 9.547892866097077e-09
+  },
+  {
+    "tag": "quad_p3_d6",
+    "N": 260,
+    "W2": 10321,
+    "occupied_residues": 729,
+    "alias_dimension": 9592,
+    "Kalias": 39.42486425145728,
+    "Kalias_over_sqrtN": 2.445026286822538,
+    "ratio": 0.16727573033459042,
+    "residual": 2.0691975294041567e-10
+  }
+]

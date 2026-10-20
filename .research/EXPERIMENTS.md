@@ -1962,3 +1962,14 @@ E119c (free-subset SA, p = 11, L = 121, Bernoulli-taper init, 6M iterations; exa
 |T| = 2452 (1.86 per class), K = 123.7, ρ = 0.160 (one-rep optimum 0.100). Free-subset best ρ: 0.305 (p = 5), 0.204 (7),
 0.160 (11) — still DEcreasing in p (ρ·log p ≈ 0.49, 0.40, 0.38; ρ·√p ≈ 0.68, 0.54, 0.53), consistent with the A10
 prediction that the best lift ratio falls with p. Multiplicity buys a factor 1.3–1.6 over one-rep, not a trend reversal.
+
+## Unnumbered archive supplement — completed passes, 2026-10-20
+
+No new E identifier is assigned and earlier seeds/results remain unchanged. These are archived completed passes, not newly scheduled runs. Use N=|S|=2|A| and K=-lambda_min(B_W2); K_global=2M. Historical multiscale JSON `rho` means N/K^2, not the Perron eigenvalue.
+
+- [Structural reproduction index](experiments/cstar_structural_2026-10-20/README.md): exact subset and sharp-W2 certificates; exhaustive/heuristic full-W2 searches; profile, alias and model diagnostics; independent product-Fejer and order-profile exact checks. Reports and captured JSON/logs are linked there. Restored repository inputs are available; two profile path assumptions were made script-relative during recovery, with manifest provenance retained.
+- [Full-W2 falsification index](experiments/full_w2_falsification_2026-10-20/README.md): 84 multiscale records and text support exports, correlated lift/Singer tests, exact set checks and independent operator controls. Binary eigenvector caches were deliberately omitted. Finite curves and residuals do not certify asymptotic lower bounds or the absence of a lower eigenvalue.
+- [Groundstate-repair index](experiments/groundstate_repair_2026-10-20/README.md): exact finite layer/implant/energy checks and translated-space diagnostics. The beta=.45 target-8192 translated solve was interrupted after groundstate diagnostics; no completed translated certificate is claimed there. [Archive-time validation](experiments/groundstate_repair_2026-10-20/VALIDATION.md).
+- [Coupled-mode index](experiments/coupled_mode_2026-10-20/README.md): exact axis/encoding/color/compression checks; optional root-orbit and Laguerre diagnostics; seeded tapered FFT samples t=2,...,6. These samples are not the lexicographically selected theorem family, do not establish all five joint conditions, and do not compute certified full-W2 minima. [Archive-time validation](experiments/coupled_mode_2026-10-20/VALIDATION.md).
+
+Recovery-time checks and their limits are recorded in [RECOVERY_AUDIT](RECOVERY_AUDIT.md). Run output-generating scripts in a copy to preserve captured evidence; some large scripts require substantial time and memory. No universal theorem or counterfamily is inferred from a completed finite search.

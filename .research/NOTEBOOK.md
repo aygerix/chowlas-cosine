@@ -3082,3 +3082,11 @@ Lead, paper only, no computation. Each item was checked against ROUTES/NOTEBOOK/
   lifts preserving a constant fraction of D's triples (an interval lift of a cyclic line preserves ~3/4). Moments do not see
   the √|D| penalty; P77's local Taylor step does.
 - Codex is out of quota until 2026-10-25 14:57; adversarial checks of P78–P81 are lead self-checks for now.
+
+## 2026-10-20 — recovered completed research passes and current handoff
+
+Four source-backed completed passes are now integrated into the persistent ledgers without renumbering P/E entries: [structural synthesis](notes/cstar_research_checkpoint_2026-10-20.md) plus [addendum](notes/cstar_research_addendum_2026-10-20.md); [full-W2 falsification](notes/cstar_full_w2_falsification_2026-10-20.md); [groundstate repair](notes/cstar_groundstate_repair_2026-10-20.md); and [coupled mode](notes/cstar_coupled_mode_2026-10-20.md).
+
+The substantive progression is from failure of restricted profiles, through failure of prescribed-bottom-mode repair, to failure of the W1-or-exterior-only alternative. The last family retains a sharp square-root full-W2 certificate through center coupling. Neither weak principal blocks nor small exterior coefficient mass license deleting cross energy. Universal full W2 and Chowla remain open.
+
+Proofs, audits, exact checks and numerical diagnostics retain their distinct statuses. The current targets and first unproved derivation are in [STATE](STATE.md); source navigation and recovery limits are in [RECOVERY_INDEX](RECOVERY_INDEX.md) and [RECOVERY_AUDIT](RECOVERY_AUDIT.md). Earlier PDF-derived reports are retained as explicitly historical reconstructions under [recovered_early](notes/recovered_early/README.md), not substitutes for original source Markdown or current status.

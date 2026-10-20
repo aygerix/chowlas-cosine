@@ -1,0 +1,23 @@
+[
+  {
+    "target": 1000,
+    "n": 1056,
+    "radius_exact": 14551,
+    "size_exact": 34193,
+    "seconds": 0.004011392593383789
+  },
+  {
+    "target": 4000,
+    "n": 3962,
+    "radius_exact": 98255,
+    "size_exact": 226269,
+    "seconds": 0.04746270179748535
+  },
+  {
+    "target": 16000,
+    "n": 15881,
+    "radius_exact": 674976,
+    "size_exact": 1496211,
+    "seconds": 1.2179980278015137
+  }
+]

@@ -1,0 +1,32 @@
+{
+  "comparison": [
+    {
+      "file": "audit/check_results.json",
+      "maximum_float_absolute_difference": 0.0,
+      "exact_integer_and_structure_match": true
+    },
+    {
+      "file": "exterior/check_axis_decomposition.json",
+      "maximum_float_absolute_difference": 0.0,
+      "exact_integer_and_structure_match": true
+    },
+    {
+      "file": "order/verify_direct_union_results.json",
+      "maximum_float_absolute_difference": 0.0,
+      "exact_integer_and_structure_match": true
+    },
+    {
+      "file": "multimode/axis_laguerre_diagnostic.json",
+      "maximum_float_absolute_difference": 0.0,
+      "exact_integer_and_structure_match": true
+    },
+    {
+      "file": "numeric/centered_taper_check.json",
+      "maximum_float_absolute_difference": 0.0,
+      "exact_integer_and_structure_match": true
+    }
+  ],
+  "relative_links_checked": 15,
+  "absolute_workspace_paths": [],
+  "scripts_changed_after_validation_copy": []
+}

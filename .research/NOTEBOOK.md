@@ -3024,3 +3024,34 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
     two-valuedness but each spike profile is a ball indicator. The obstruction is the archimedean box + aperiodicity.
 11. E114 final (exact ω): JL j ≠ 0 has ω = K + 1 for (p, a) = (3,3), (5,2), (5,3) [K = 9, 5, 25], hence
     C_CP >= ratio·K. Clique-poor exact high-ratio cancellation objects exist in finite groups.
+
+## cont. 31 (2026-10-19) — reformulation sweep for the C* core; route-checked; mostly NOT new
+Lead, paper only, no computation. Each item was checked against ROUTES/NOTEBOOK/PROOFS before recording.
+1. ALREADY IN RECORD (do not redo): Kolmogorov/H^p (Re(K/2 + F_A) >= 0 ⇒ ∫|K/2 + F_A|^p <= (K/2)^p/cos(pπ/2), p < 1;
+   = subordination, killed cont. 24–25); hereditary multiples (f_{A∩qZ} >= −M, kernel-checked P13a); Z_p-Chowla ⇒
+   Z-Chowla (cont. 30 item 4; Z_p has the same Gibbs via Bohr sets); third-moment two-point bound
+   (X ≥ −M ⇒ E X³ >= σ⁴/M − Mσ², tight for the C* two-point law, so moments cannot exclude C*); Halász/large-sieve on
+   spike sets (satisfied by the background term m·M >> X once M >> n^{1/3}: the regime split of A5(i) again).
+2. NEW REMARK (graph form of the anatomy). C* ⟺ the bottom eigenvalue −K of Cay(Z, S) has spectral density 1 − δ
+   (δ ≈ 2ε²): the Toeplitz sections KI + A_N have numerical rank ≈ δN, i.e. the integers form a translation-invariant
+   spherical two-distance configuration (norm² K, inner products {0, 1}) of rank density δ. A FLAT CP certificate of
+   cost K is exactly a "K-fold line graph" structure (A + KI = BBᵀ, B = vertex–clique incidence), i.e. the Hoffman /
+   Kim–Koolen–Yang fat-clique structure. JL (A9) is the finite counterexample to that structure at degree ≈ pK²
+   (consistent with KKY needing degree >= κ(K), astronomically large). No new constraint extracted.
+3. NEW REMARK (C½ as a kurtosis statement). With p = |Q|² (Fejér–Riesz, ‖Q‖₂ = 1): ∫p² = kurtosis(Q) = 1 + 1/(2R²).
+   Random complex Q gives 2 (R = 1/√2, Sidon squares); "real-valued" Q (Q(e(x)) = e(Xx/2)·real) gives the real-Gaussian
+   value 3 (R = 1/2, Bu). So C½ ⟺ "a two-valued-autocorrelation analytic polynomial is never more heavy-tailed than a
+   real Gaussian". Heuristic only; no proof route.
+4. CITED-VERIFIED (abstract level, one search; full text not read): Belov–Konyagin, Izv. Math. 60:6 (1996)
+   1123–1182: for nonnegative cosine polynomials with nonnegative integer coefficients, (ln²n)/(ln ln n) << K(n) <<
+   M(n) << (ln n)³. Mechanism as reconstructed here (HEURISTIC): ⌊λ(n/k)^α⌋ coefficients = a sum of nested initial
+   intervals Σ_j D_{k_j}; each interval's Gibbs lobe at x ≈ 0.7/k_j is dominated by the accumulated main lobes of the
+   shorter intervals. With multiplicity capped at m only m nested intervals remain, so the shortest one's Gibbs
+   (0.22·k_min) is uncompensated and the low-density tail must be rounded as a set. So bounded multiplicity does not
+   inherit the polylog bound, and the multiplicity question (is M_m(n) >= c_m√n for fixed m?) is NOT a cheap
+   discriminator: it is as hard as Chowla at the tail. Dilated disjoint APs (A = ⊔ d_j·[1, k]) reproduce the B–K front
+   with weights 1/d_j, but their cross terms at generic x are Gaussian (σ ≈ √(n/2)), so min ≈ −√(n log n).
+5. Decision. Nothing above advances step (c). The sweep confirms the record: every constraint visible to positivity,
+   moments, energy, large values, Hardy space or graph spectra is satisfied by the C* anatomy (flat background
+   −M, spikes of height n/(2M) on measure 2ε², additively random at order >= 3 when M >> n^{1/3}). Next: a
+   computation that can actually discriminate (see STATE first-next-step), not another reformulation.

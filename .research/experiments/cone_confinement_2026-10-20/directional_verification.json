@@ -1,0 +1,53 @@
+{
+  "qualification": "Independent reverse-factor enumeration, integer hashes, and 160-bit reduced-period point checks; not an external paper-proof audit.",
+  "cases": [
+    {
+      "X": 96,
+      "pattern": "annular",
+      "n": 60608,
+      "reduced_phase_denominator": 21903,
+      "set_hash_matches": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 96,
+      "pattern": "wedge_annular",
+      "n": 15152,
+      "reduced_phase_denominator": 21903,
+      "set_hash_matches": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 96,
+      "pattern": "scale_changing",
+      "n": 30304,
+      "reduced_phase_denominator": 21903,
+      "set_hash_matches": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 128,
+      "pattern": "annular",
+      "n": 115488,
+      "reduced_phase_denominator": 38415,
+      "set_hash_matches": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 128,
+      "pattern": "wedge_annular",
+      "n": 28872,
+      "reduced_phase_denominator": 38415,
+      "set_hash_matches": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 128,
+      "pattern": "scale_changing",
+      "n": 57744,
+      "reduced_phase_denominator": 38415,
+      "set_hash_matches": true,
+      "point_bound_verified": true
+    }
+  ]
+}

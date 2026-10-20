@@ -1,0 +1,108 @@
+{
+  "qualification": "Independent exact standard-library finite-field and eigenbasis checks; not an external-agent or Lean audit of the all-prime proof.",
+  "cases": [
+    {
+      "p": 3,
+      "full_eigenbasis_checked": true,
+      "plane_span_rank": 7,
+      "exact_fourier_residue_counts": 81,
+      "probes": [
+        {
+          "name": "one_ruling",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "balanced_permutation",
+          "verified": true,
+          "threshold_hamming": 8
+        },
+        {
+          "name": "mixed_two_planes",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "scalar_even",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "seeded_even",
+          "verified": true,
+          "threshold_hamming": 4
+        }
+      ],
+      "verified": true
+    },
+    {
+      "p": 5,
+      "full_eigenbasis_checked": true,
+      "plane_span_rank": 11,
+      "exact_fourier_residue_counts": 625,
+      "probes": [
+        {
+          "name": "one_ruling",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "balanced_permutation",
+          "verified": true,
+          "threshold_hamming": 24
+        },
+        {
+          "name": "mixed_two_planes",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "scalar_even",
+          "verified": true,
+          "threshold_hamming": 72
+        },
+        {
+          "name": "seeded_even",
+          "verified": true,
+          "threshold_hamming": 40
+        }
+      ],
+      "verified": true
+    },
+    {
+      "p": 7,
+      "full_eigenbasis_checked": true,
+      "plane_span_rank": 15,
+      "exact_fourier_residue_counts": 2401,
+      "probes": [
+        {
+          "name": "one_ruling",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "balanced_permutation",
+          "verified": true,
+          "threshold_hamming": 48
+        },
+        {
+          "name": "mixed_two_planes",
+          "verified": true,
+          "threshold_hamming": 0
+        },
+        {
+          "name": "scalar_even",
+          "verified": true,
+          "threshold_hamming": 128
+        },
+        {
+          "name": "seeded_even",
+          "verified": true,
+          "threshold_hamming": 110
+        }
+      ],
+      "verified": true
+    }
+  ],
+  "seconds": 0.8352798279956914
+}

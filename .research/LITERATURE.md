@@ -220,3 +220,7 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   subgroup at all). Exact check p = 3, a = 3: |D| = 234, (v,k,λ,μ) = (729, 234, 81, 72), values 18 (×234), −9 (×494).
   Polhill's positive ingredient in Z_{p²}⁴ likewise is a union of full punctured subgroups and subgroup shells, not
   closed under ×p.
+
+## 2026-10-20 cone-confinement attribution check
+
+The rank-two hyperbolic quadric's two rulings and projective grid are classical: Peter J. Cameron, [Notes on Classical Groups](https://webspace.maths.qmul.ac.uk/p.j.cameron/class_gps/cg.pdf), course notes January–March 2000, p. 41 / Figure 1, checked directly. Brouwer's [affine-polar graph page](https://aeb.win.tue.nl/drg/graphs/VO.html) identifies the affine graph and points to Brouwer–Shult (1990) for local structure; that paper was not read in this pass. The current full cone-concentration spectrum is derived directly from the rook-grid geometry and Fourier orthogonality, with Boolean confinement consequences. No novelty/priority claim or inference from a search failing to find an exact statement is made. The squared-disk fractional countercontrol follows from the elementary autocorrelation identity, rather than an imported specialized theorem.

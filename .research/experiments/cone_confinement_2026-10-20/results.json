@@ -1,0 +1,335 @@
+{
+  "qualification": "Exact finite full concentration operators and identities; FFT values are corroboration. No universal integer-support claim.",
+  "seed": 20261022,
+  "numpy": "2.5.4",
+  "cases": [
+    {
+      "p": 3,
+      "cone_size": 33,
+      "nonzero_cone_size": 32,
+      "points_sha256": "d3ece5d4f4e55b9ad2558457e1db656c634689752853663b390a4b8b862ac354",
+      "spectrum": [
+        {
+          "eigenvalue": "1",
+          "multiplicity": 7
+        },
+        {
+          "eigenvalue": "1/3",
+          "multiplicity": 16
+        },
+        {
+          "eigenvalue": "1/9",
+          "multiplicity": 10
+        }
+      ],
+      "exact_cubic_identity": true,
+      "exact_fourier_residue_counts": true,
+      "probes": [
+        {
+          "name": "one_ruling",
+          "count": 16,
+          "density": "1/2",
+          "even": true,
+          "error_energy": "8",
+          "inside_energy": "8",
+          "outside_energy": "0",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "0",
+          "ruling_energy": "8",
+          "leakage_fraction": "0",
+          "closest_single_ruling_hamming": 0,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0xffff",
+          "verified": true
+        },
+        {
+          "name": "balanced_permutation",
+          "count": 8,
+          "density": "1/4",
+          "even": true,
+          "error_energy": "6",
+          "inside_energy": "2/3",
+          "outside_energy": "16/3",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "6",
+          "ruling_energy": "0",
+          "leakage_fraction": "8/9",
+          "closest_single_ruling_hamming": 8,
+          "two_ruling_threshold_hamming": 8,
+          "mask_hex": "0xc0300c03",
+          "verified": true
+        },
+        {
+          "name": "mixed_two_planes",
+          "count": 14,
+          "density": "7/16",
+          "even": true,
+          "error_energy": "63/8",
+          "inside_energy": "55/8",
+          "outside_energy": "1",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "9/8",
+          "ruling_energy": "27/4",
+          "leakage_fraction": "8/63",
+          "closest_single_ruling_hamming": 6,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0x30303ff",
+          "verified": true
+        },
+        {
+          "name": "scalar_even",
+          "count": 32,
+          "density": "1",
+          "even": true,
+          "error_energy": "0",
+          "inside_energy": "0",
+          "outside_energy": "0",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "0",
+          "ruling_energy": "0",
+          "leakage_fraction": null,
+          "closest_single_ruling_hamming": 0,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0xffffffff",
+          "verified": true
+        },
+        {
+          "name": "seeded_even",
+          "count": 18,
+          "density": "9/16",
+          "even": true,
+          "error_energy": "63/8",
+          "inside_energy": "367/72",
+          "outside_energy": "25/9",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "25/8",
+          "ruling_energy": "19/4",
+          "leakage_fraction": "200/567",
+          "closest_single_ruling_hamming": 10,
+          "two_ruling_threshold_hamming": 4,
+          "mask_hex": "0x3c30fff",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "p": 5,
+      "cone_size": 145,
+      "nonzero_cone_size": 144,
+      "points_sha256": "6635d8d0595f371d38f4ef5712f6babdb07c56bffffefe289071112638e6a7ea",
+      "spectrum": [
+        {
+          "eigenvalue": "1",
+          "multiplicity": 11
+        },
+        {
+          "eigenvalue": "1/5",
+          "multiplicity": 108
+        },
+        {
+          "eigenvalue": "1/25",
+          "multiplicity": 26
+        }
+      ],
+      "exact_cubic_identity": true,
+      "exact_fourier_residue_counts": true,
+      "probes": [
+        {
+          "name": "one_ruling",
+          "count": 72,
+          "density": "1/2",
+          "even": true,
+          "error_energy": "36",
+          "inside_energy": "36",
+          "outside_energy": "0",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "0",
+          "ruling_energy": "36",
+          "leakage_fraction": "0",
+          "closest_single_ruling_hamming": 0,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0xffffffffffffffffff",
+          "verified": true
+        },
+        {
+          "name": "balanced_permutation",
+          "count": 24,
+          "density": "1/6",
+          "even": true,
+          "error_energy": "20",
+          "inside_energy": "4/5",
+          "outside_energy": "96/5",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "20",
+          "ruling_energy": "0",
+          "leakage_fraction": "24/25",
+          "closest_single_ruling_hamming": 24,
+          "two_ruling_threshold_hamming": 24,
+          "mask_hex": "0xf000000f000000f000000f000000f000000f",
+          "verified": true
+        },
+        {
+          "name": "mixed_two_planes",
+          "count": 44,
+          "density": "11/36",
+          "even": true,
+          "error_energy": "275/9",
+          "inside_energy": "251/9",
+          "outside_energy": "8/3",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "25/9",
+          "ruling_energy": "250/9",
+          "leakage_fraction": "24/275",
+          "closest_single_ruling_hamming": 20,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0xf00000f00000f00000f00000fffffff",
+          "verified": true
+        },
+        {
+          "name": "scalar_even",
+          "count": 72,
+          "density": "1/2",
+          "even": true,
+          "error_energy": "36",
+          "inside_energy": "36/5",
+          "outside_energy": "144/5",
+          "within_line_energy": "36",
+          "grid_interaction_energy": "0",
+          "ruling_energy": "0",
+          "leakage_fraction": "4/5",
+          "closest_single_ruling_hamming": 72,
+          "two_ruling_threshold_hamming": 72,
+          "mask_hex": "0x999999999999999999999999999999999999",
+          "verified": true
+        },
+        {
+          "name": "seeded_even",
+          "count": 56,
+          "density": "7/18",
+          "even": true,
+          "error_energy": "308/9",
+          "inside_energy": "2348/225",
+          "outside_energy": "1784/75",
+          "within_line_energy": "16",
+          "grid_interaction_energy": "103/9",
+          "ruling_energy": "61/9",
+          "leakage_fraction": "1338/1925",
+          "closest_single_ruling_hamming": 52,
+          "two_ruling_threshold_hamming": 40,
+          "mask_hex": "0xf609f000900069990696f0909f06f09909f0",
+          "verified": true
+        }
+      ]
+    },
+    {
+      "p": 7,
+      "cone_size": 385,
+      "nonzero_cone_size": 384,
+      "points_sha256": "400784d5c20d452b6bb64ba5cedfc5682240b49bc3e603435d9402384f42387a",
+      "spectrum": [
+        {
+          "eigenvalue": "1",
+          "multiplicity": 15
+        },
+        {
+          "eigenvalue": "1/7",
+          "multiplicity": 320
+        },
+        {
+          "eigenvalue": "1/49",
+          "multiplicity": 50
+        }
+      ],
+      "exact_cubic_identity": true,
+      "exact_fourier_residue_counts": true,
+      "probes": [
+        {
+          "name": "one_ruling",
+          "count": 192,
+          "density": "1/2",
+          "even": true,
+          "error_energy": "96",
+          "inside_energy": "96",
+          "outside_energy": "0",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "0",
+          "ruling_energy": "96",
+          "leakage_fraction": "0",
+          "closest_single_ruling_hamming": 0,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0xffffffffffffffffffffffffffffffffffffffffffffffff",
+          "verified": true
+        },
+        {
+          "name": "balanced_permutation",
+          "count": 48,
+          "density": "1/8",
+          "even": true,
+          "error_energy": "42",
+          "inside_energy": "6/7",
+          "outside_energy": "288/7",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "42",
+          "ruling_energy": "0",
+          "leakage_fraction": "48/49",
+          "closest_single_ruling_hamming": 48,
+          "two_ruling_threshold_hamming": 48,
+          "mask_hex": "0xfc000000000003f000000000000fc000000000003f000000000000fc000000000003f000000000000fc000000000003f",
+          "verified": true
+        },
+        {
+          "name": "mixed_two_planes",
+          "count": 90,
+          "density": "15/64",
+          "even": true,
+          "error_energy": "2205/32",
+          "inside_energy": "2061/32",
+          "outside_energy": "9/2",
+          "within_line_energy": "0",
+          "grid_interaction_energy": "147/32",
+          "ruling_energy": "1029/16",
+          "leakage_fraction": "16/245",
+          "closest_single_ruling_hamming": 42,
+          "two_ruling_threshold_hamming": 0,
+          "mask_hex": "0x3f00000000003f00000000003f00000000003f00000000003f00000000003f00000000003fffffffffffff",
+          "verified": true
+        },
+        {
+          "name": "scalar_even",
+          "count": 128,
+          "density": "1/3",
+          "even": true,
+          "error_energy": "256/3",
+          "inside_energy": "256/21",
+          "outside_energy": "512/7",
+          "within_line_energy": "256/3",
+          "grid_interaction_energy": "0",
+          "ruling_energy": "0",
+          "leakage_fraction": "6/7",
+          "closest_single_ruling_hamming": 128,
+          "two_ruling_threshold_hamming": 128,
+          "mask_hex": "0x861861861861861861861861861861861861861861861861861861861861861861861861861861861861861861861861",
+          "verified": true
+        },
+        {
+          "name": "seeded_even",
+          "count": 110,
+          "density": "55/192",
+          "even": true,
+          "error_energy": "7535/96",
+          "inside_energy": "55823/4704",
+          "outside_energy": "6529/98",
+          "within_line_energy": "48",
+          "grid_interaction_energy": "2497/96",
+          "ruling_energy": "215/48",
+          "leakage_fraction": "313392/369215",
+          "closest_single_ruling_hamming": 110,
+          "two_ruling_threshold_hamming": 110,
+          "mask_hex": "0x2d852000021012012b40fcc021000fd249e873300000b6148000001200c48c01e7adcc0780cc000c85249e00c01e00c",
+          "verified": true
+        }
+      ]
+    }
+  ],
+  "seconds": 0.1559293570171576
+}

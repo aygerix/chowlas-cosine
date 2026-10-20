@@ -1,0 +1,62 @@
+{
+  "qualification": "Exact independent sign-certificate and factor-enumeration checks, plus 176-bit direct phase rechecks. No external-agent or Lean audit.",
+  "sign_verified": true,
+  "cases": [
+    {
+      "X": 24,
+      "pattern": "full_annulus",
+      "n": 4668,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 24,
+      "pattern": "two_ruling_threshold",
+      "n": 2370,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 24,
+      "pattern": "coupled_modular",
+      "n": 2070,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 24,
+      "pattern": "seeded_even",
+      "n": 2416,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 64,
+      "pattern": "full_annulus",
+      "n": 41804,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 64,
+      "pattern": "two_ruling_threshold",
+      "n": 21030,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 64,
+      "pattern": "coupled_modular",
+      "n": 17666,
+      "hash_verified": true,
+      "point_bound_verified": true
+    },
+    {
+      "X": 64,
+      "pattern": "seeded_even",
+      "n": 20964,
+      "hash_verified": true,
+      "point_bound_verified": true
+    }
+  ]
+}

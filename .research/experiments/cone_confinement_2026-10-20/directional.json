@@ -1,0 +1,180 @@
+{
+  "qualification": "Certified lower witnesses at a fixed CRT phase; not global minima or a universal Chowla theorem.",
+  "cases": [
+    {
+      "X": 96,
+      "pattern": "annular",
+      "n": 60608,
+      "directions": 8704,
+      "min_direction_squared": 97,
+      "C": [
+        3307353,
+        3262355,
+        3218565,
+        3175935
+      ],
+      "moduli": [
+        145,
+        147,
+        149,
+        151
+      ],
+      "root_of_unity": {
+        "j": 239378035,
+        "q": 479566185
+      },
+      "f_over_n_upper_rational": "-655911/5000000",
+      "M_lower_rational": "621147717/78125",
+      "R_lower_float": 32.29534188896719,
+      "encoded_set_sha256": "690868a94bfb9952bcbb5b55629ca38dd8bf0aeac7a453f222d72d7ef5678c55",
+      "arb_precision": 112,
+      "verified": true
+    },
+    {
+      "X": 96,
+      "pattern": "wedge_annular",
+      "n": 15152,
+      "directions": 2176,
+      "min_direction_squared": 97,
+      "C": [
+        3307353,
+        3262355,
+        3218565,
+        3175935
+      ],
+      "moduli": [
+        145,
+        147,
+        149,
+        151
+      ],
+      "root_of_unity": {
+        "j": 239378035,
+        "q": 479566185
+      },
+      "f_over_n_upper_rational": "-1334077/10000000",
+      "M_lower_rational": "1263370919/625000",
+      "R_lower_float": 16.421615440664848,
+      "encoded_set_sha256": "71a7cfdb26c36f823e254ca6fe02346a1d87500729957a159b872593cbe2afe7",
+      "arb_precision": 112,
+      "verified": true
+    },
+    {
+      "X": 96,
+      "pattern": "scale_changing",
+      "n": 30304,
+      "directions": 4352,
+      "min_direction_squared": 97,
+      "C": [
+        3307353,
+        3262355,
+        3218565,
+        3175935
+      ],
+      "moduli": [
+        145,
+        147,
+        149,
+        151
+      ],
+      "root_of_unity": {
+        "j": 239378035,
+        "q": 479566185
+      },
+      "f_over_n_upper_rational": "-655911/5000000",
+      "M_lower_rational": "621147717/156250",
+      "R_lower_float": 22.836255250426664,
+      "encoded_set_sha256": "2cbb2475354c3beed2ade9357c2812e266f896a0b477456ca685db2f8f583db4",
+      "arb_precision": 112,
+      "verified": true
+    },
+    {
+      "X": 128,
+      "pattern": "annular",
+      "n": 115488,
+      "directions": 15520,
+      "min_direction_squared": 130,
+      "C": [
+        7644585,
+        7566179,
+        7489365,
+        7414095
+      ],
+      "moduli": [
+        193,
+        195,
+        197,
+        199
+      ],
+      "root_of_unity": {
+        "j": 736761481,
+        "q": 1475404905
+      },
+      "f_over_n_upper_rational": "-262963/2000000",
+      "M_lower_rational": "949033467/62500",
+      "R_lower_float": 44.68204897564309,
+      "encoded_set_sha256": "54277330244ebb5d462e02c808d8aec3e41acb3d96542917201f258ced92f9f4",
+      "arb_precision": 112,
+      "verified": true
+    },
+    {
+      "X": 128,
+      "pattern": "wedge_annular",
+      "n": 28872,
+      "directions": 3880,
+      "min_direction_squared": 130,
+      "C": [
+        7644585,
+        7566179,
+        7489365,
+        7414095
+      ],
+      "moduli": [
+        193,
+        195,
+        197,
+        199
+      ],
+      "root_of_unity": {
+        "j": 736761481,
+        "q": 1475404905
+      },
+      "f_over_n_upper_rational": "-1331163/10000000",
+      "M_lower_rational": "4804167267/1250000",
+      "R_lower_float": 22.61880582460802,
+      "encoded_set_sha256": "653c951584a86663b42e3ad634a7b8ef67962b53343ecb033519aa71cf062db6",
+      "arb_precision": 112,
+      "verified": true
+    },
+    {
+      "X": 128,
+      "pattern": "scale_changing",
+      "n": 57744,
+      "directions": 7760,
+      "min_direction_squared": 130,
+      "C": [
+        7644585,
+        7566179,
+        7489365,
+        7414095
+      ],
+      "moduli": [
+        193,
+        195,
+        197,
+        199
+      ],
+      "root_of_unity": {
+        "j": 736761481,
+        "q": 1475404905
+      },
+      "f_over_n_upper_rational": "-262963/2000000",
+      "M_lower_rational": "949033467/125000",
+      "R_lower_float": 31.59497982798666,
+      "encoded_set_sha256": "57ffb5a4113a4f09293567ee3761bc1b07255fbf89e73738abf1ffa0c5e7404f",
+      "arb_precision": 112,
+      "verified": true
+    }
+  ],
+  "paper_bound": "D(theta)<=-N/50+308 X^2 for all directional subsets, X>=72 divisible by four"
+}

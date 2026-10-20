@@ -2680,3 +2680,16 @@ and |A| = (p²−1)(p+1) for r = 4, so ρ = |A|/K² <= (157V)²/(1 − 1/p)² <=
 Scope as P80: Z^r minimum; 1D Freiman images with small V, free subsets, multiplicities and unbounded spread not covered.
 (η = −1 swaps the roles: then N ∖ 0 is the complement of the dual cone and the same computation gives 1 − 1/p; irrelevant,
 since η = −1 has negative spikes.)
+
+## P80c. Transfer of P80/P81 to 1D Freiman images (lead, 2026-10-20; PROVED on paper, elementary)
+Let T ⊂ Z^d (d = 2 or r) be an odd one-rep lift with spread ‖z‖_∞ <= Wn, F_T(ξ) = Σ_{z∈T} cos(2πz·ξ), and S_V = {z₁ + Vz₂ + V²z₃
++ …} its Freiman image (V > 2Wn, injective), f_{S_V}(x) = F_T(x, Vx, V²x, …). Then
+    K₁D(S_V) >= K₂D(T) − (π²/2)·Σ_{z∈T} z₁²/V².
+Proof (d = 2; general d by the same step in the first coordinate). Let ξ* minimise F_T, so ∇F_T(ξ*) = 0. The line
+{(x, Vx)} meets ξ* + (δ, 0) for some |δ| <= 1/(2V) (solve Vδ ≡ ξ*₂ − Vξ*₁ mod 1). Taylor: F_T(ξ* + (δ, 0)) <= F_T(ξ*) +
+½·4π²Σz₁²·δ². ∎
+Consequence. With P80's sharper gain g = (1 − Λ(p))√|D|/(8√24·W) (resp. P81's for quadrics) and Σz₁² <= |D|W²n²: if
+V² >= π²|D|W²n²/g, then K₁D(S_V) >= p + g/2. I.e. V >= C·W^{3/2}·n·|D|^{1/4}/√(1 − Λ) suffices; max(S_V) is then polynomial.
+So the JL a = 2 and quadric one-rep models are excluded IN Z for such V. Small V (e.g. the experiments' V = 4L + 3 ≈ 4n)
+remain uncovered; there the line meets only n of the n² grid points and the projected centroid field can concentrate.
+(E116: K₁D at V ≈ 4n was only 1–2% below K₂D, so small V does not help in practice.)

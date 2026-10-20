@@ -2948,3 +2948,11 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
     - Spreads (m lines) saturate this exactly: height p, spike set = m dual lines, |S| ≈ pK.
     - Missing step for SCP(F_p²): a spike at ξ forces the line {tξ} into the spike set (scalar invariance is not
       given). E112a runs the Z_p test of SCP just above ratio 2.
+11. CP-Chowla(Z) via the copositive dual (lead; negative result):
+    - Test h = (1 − βg(0))δ₀ − α1_{±A} + βg with g PD and ĝ placed on the bulk {f_A ≈ −M}. Copositivity on cliques
+      forces α <= (1 − βg(0))/(ω − 1). So the value interpolates between 2n/(ω − 1) and 2M: no gain.
+    - Reason: a clique B has ∫|F_B|²·2f_A = |B|(|B| − 1), so big cliques' spectra sit on f_A's spikes, not the
+      bulk.
+    - Any CP-Chowla proof must put the Z-specific extreme-lag multiplicity structure (P76(c)) INTO the dual
+      (h depending on where k sits in the cliques' multiplicity profiles). Fourier plus clique size alone caps at
+      max(clique bound, 2M).

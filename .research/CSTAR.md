@@ -374,6 +374,18 @@ The prize is (c). Everything else is support.
     composite, Z_p) for sets FAR from unions of subgroups, and measure their CP-efficiency. Also test the E41 Z_p
     half-sets.
 
+- A7 (cont. 29). WHY RATIO 2: the FLAT-SPECTRUM BARRIER (elementary, proved).
+  - If |Ŝ(ξ)| ≡ λ for all ξ ≠ 0 (Paley, bent/Menon difference sets, Singer-type sets), Parseval gives
+    λ² = σ(1 − d) with d = σ/|G|. So the ratio σ/K² = 1/(1 − d) <= 2 at density d <= ½.
+  - Every symmetric-spectrum cancellation object is capped at ratio 2.
+  - Beating 2 needs an ASYMMETRIC spectrum: positive spikes of height μK with μ >> 1 over shallow negatives. This
+    is the C* anatomy.
+  - The only known exactly two-valued asymmetric objects are Latin-square-type PDS (eigenvalues n − r and −r with
+    r << n) from partial spreads / partial congruence partitions (PCPs).
+  - So the EXACT form of SCP is the classification question: are Latin-square-type PDS with small r always PCPs
+    (unions of subgroups)? This needs a literature check (queued; one agent at a time). If true, SCP is its robust
+    (approximately two-valued) version, which is the "robust Ma" gap of A4 in a sharper form.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

@@ -1,5 +1,14 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-20 — widened means, changed center laws, and short-factor residue checks
+
+[Full definitions and limits](notes/cstar_wide_parity_2026-10-20.md); data in `experiments/wide_mean_2026-10-20/`. All computation on Dirichlet. Commands: `src/dirun.sh -c 2 -m 8 -t 480 python src/cstar_wide_mean.py`, then `cstar_parity_mean.py`, `cstar_wide_mean_verify.py`, `cstar_center_law_lp.py`, `cstar_residue_mean_verify.py`; `cstar_short_factor_probe.py` uses timeout240. These are deterministic probes with no random seeds. All jobs terminal and checks pass.
+
+- Six widened profiles X=256,1024,4096, sigma in{1,3/4,1/2}: cyclic and per-fiber heat-maximizing radii. Independent Gaussian/192-bit checks give M(mean) lower bounds; parity ratios at X4096 exceed28.878 and38.118. Three near-linear, parity-resistant radius assignments give mean ratios>12.125,25.772,89.788. These are fractional profiles, NOT Boolean sets. Two sources share disk statistics; the verifier imports neither and uses independent row counts/alternating sums. A negative-exponent integer-power issue in the initial verifier produced floats; it was corrected to integer parity signs before the passing run.
+- Three Gurobi center laws R=8,16,32, D4 orbits, exact expected masses4758/197,79054/797,1285672/3209: all parity values become nonnegative. Endpoint-pair reconstruction confirms rational laws/mass and Arb negative-point M(mean)>0.4871,0.4888,0.4535. A561-point grid objective is NOT an all-phase upper bound; numerical LP optimality is not promoted to an exact optimum claim.
+- Exact GL2 histograms at p=2,3,5,7,11 check rank-one average -1/(p^2-1), positive zero/rank-two countercontrols and the scalar-transfer constant. Two deliberately incomplete-fiber Boolean sets at X16,64 have n592,15320, max A415831654172258 and490283659859416061612, with two scalar evaluation conventions and certified point ratios>3.8315,3.9424. Frequencies exceed the practical Epoch verifier range; these are mechanism probes, not submissions.
+- Saved certificates: `verification.json`, `residue_verification.json`, `boolean_residue.json`; raw assignments/laws: `results.json`, `parity.json`, `center_law.json`. The two configured reviewer launches failed; no independent-agent/Lean audit completed.
+
 ## E0 (2026-10-17) Baseline evaluators and Sidon differences
 - Code: src/chowla.py (E1 float FFT+Newton; E2 rigorous arb DFT + 4th-order Taylor remainder; E3 exact PARI polsturm).
 - Sanity: A={1}: -1; {1,2}: -1.125 exact (2c^2+c-1 at c=-1/4); {1,2,3}: -1.3155651547; {1,3,5}: -3 (x=pi). E1/E2 agree.

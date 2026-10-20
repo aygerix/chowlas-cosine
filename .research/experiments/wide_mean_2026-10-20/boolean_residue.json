@@ -1,0 +1,72 @@
+[
+  {
+    "X": 16,
+    "B": 4,
+    "p": 5,
+    "n": 592,
+    "max_A": 415831654172258,
+    "generator": "canonical primitive u, ||u||>=sqrt(X); ||uw^T||<=X; canonical w; exclude (3u1+5u2+7w1+11w2+u1w2) mod5 in {0,1}",
+    "sha256": "5b60f97bed9c1c1bf6e9d7c16050042ede344a42552ffbab6bee34fe31957b69",
+    "h": [
+      24577,
+      24579,
+      24581,
+      24583
+    ],
+    "phase_matrix": [
+      4,
+      1,
+      2,
+      0
+    ],
+    "crt_residues": [
+      19662,
+      4916,
+      9832,
+      0
+    ],
+    "j": 238789447108557995,
+    "P": 365029116275196009,
+    "residue_average_M_lower": "11480582/516117",
+    "scalar_point_f_ball": "[-93.22461038059602531574847211990011873225167670876868554 +/- 7.33e-54]",
+    "point_M_lower": "2913269/31250",
+    "point_ratio_lower_float": 3.831507786784728,
+    "two_scalar_evaluations_agree": true,
+    "qualification": "Boolean set; certified negative point and positive-average lower bound only."
+  },
+  {
+    "X": 64,
+    "B": 8,
+    "p": 11,
+    "n": 15320,
+    "max_A": 490283659859416061612,
+    "generator": "canonical primitive u, ||u||>=sqrt(X); ||uw^T||<=X; canonical w; exclude (3u1+5u2+7w1+11w2+u1w2) mod5 in {0,1}",
+    "sha256": "32e72a9a250f4f0c9c8c6e17d0f5bcaf556b6caab709490e8c64e9ef77a60be9",
+    "h": [
+      1572865,
+      1572867,
+      1572869,
+      1572871
+    ],
+    "phase_matrix": [
+      1,
+      0,
+      0,
+      1
+    ],
+    "crt_residues": [
+      142988,
+      0,
+      0,
+      142988
+    ],
+    "j": 3060124654104029700560763,
+    "P": 6120249219773064743485545,
+    "residue_average_M_lower": "817485541/6606033",
+    "scalar_point_f_ball": "[-487.973584653368893091974384671322108848344103777276192 +/- 9.11e-52]",
+    "point_M_lower": "243986791/500000",
+    "point_ratio_lower_float": 3.942456662857047,
+    "two_scalar_evaluations_agree": true,
+    "qualification": "Boolean set; certified negative point and positive-average lower bound only."
+  }
+]

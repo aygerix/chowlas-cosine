@@ -1,5 +1,13 @@
 # NOTEBOOK (dated)
 
+## 2026-10-20 — widening tested; center-law escape and deterministic residue exclusion
+
+DESIGN / CHAIN(c): the promised wider staggered mean was tested with exact coefficients and a positive Gaussian measure. It fails. An elementary disk parity proof removes the previous scale-gap restriction for uniform center marginals, giving M(mean)>=s/60 after scalar transfer. Gurobi then genuinely changes the center law while preserving expected size: R8,16,32 rational laws repair all parity values, with independently confirmed negative points elsewhere. This is an explicit countercontrol to overextending the marginal theorem.
+
+The next derivation is stronger: for H uniform GL2(F_p), every nonzero rank-one M modp has E exp(2pi i<H,M>/p)=-1/(p^2-1). If M=u w^T with u primitive and ||w||<=B<p, no selected matrix reduces to zero. CRT phase approximation gives M(A)>=n/(8B^2); hence all truncated ||u||>=sqrt(X), n/X^2->infinity families have R->infinity, for arbitrary Boolean selections under the stated encoding. This closes the log-surplus model, not full Chowla. [Complete derivation, constants, model scopes and verification](notes/cstar_wide_parity_2026-10-20.md).
+
+Global review: stop tuning the truncated phase-rich cone; maintaining its uniform mean or repairing its finite phases cannot rescue its logarithmic gain. Preserve universal mixed Boolean certificates, non-cone growing-depth Riesz rounding, and incomplete long-fiber/phase-poor encodings as distinct open lines. Next precise inverse probe: the corrected GL2 average (p^2 n_p-n)/(p^2-1) requires content balance at several primes; test that against plane certificates on incomplete long fibers, without assuming the balances are inconsistent. All nine means, three new laws, five prime histograms and two Boolean witnesses pass their recorded checks on Dirichlet. Reviewer launches failed with the unavailable default model, so no external/Lean audit is claimed.
+
 ## 2026-10-17 Session 1 — orientation and first derivations
 - Built evaluators E1/E2/E3; reproduced Sidon-difference identity (R -> 1/sqrt2).
 - Read Bu et al. (1/2), Bedert v3 (1/5), Shankar (log-free 1/5), JMTZ (1/10). Summaries in LITERATURE.md.

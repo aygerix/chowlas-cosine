@@ -1,0 +1,101 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 192,
+  "independent_disk_method": "row alternating sums and direct row lens intersections",
+  "finite_q_checks": 4096,
+  "cases": [
+    {
+      "X": 256,
+      "V": 64,
+      "pattern": "cyclic",
+      "fibers": 3680,
+      "parity_lower": "1004532847964274289/704643079000000",
+      "mean_ratio_lower": 7.424953245699296,
+      "heat_checked": true,
+      "passed": true
+    },
+    {
+      "X": 256,
+      "V": 64,
+      "pattern": "greedy_heat",
+      "fibers": 3680,
+      "parity_lower": "186730853540235061/140928615800000",
+      "mean_ratio_lower": 8.660151014086779,
+      "heat_checked": true,
+      "passed": true
+    },
+    {
+      "X": 1024,
+      "V": 181,
+      "pattern": "cyclic",
+      "fibers": 30276,
+      "parity_lower": "46205836032817951401/3607772529200000",
+      "mean_ratio_lower": 14.840443831617673,
+      "heat_checked": true,
+      "passed": true
+    },
+    {
+      "X": 1024,
+      "V": 181,
+      "pattern": "greedy_heat",
+      "fibers": 30276,
+      "parity_lower": "220300413611253464823/18038862646000000",
+      "mean_ratio_lower": 18.44795248538346,
+      "heat_checked": true,
+      "passed": true
+    },
+    {
+      "X": 4096,
+      "V": 512,
+      "pattern": "cyclic",
+      "fibers": 246400,
+      "parity_lower": "57510404457146349981627/524766913258000000",
+      "mean_ratio_lower": 28.878072132762426,
+      "heat_checked": true,
+      "passed": true
+    },
+    {
+      "X": 4096,
+      "V": 512,
+      "pattern": "greedy_heat",
+      "fibers": 246400,
+      "parity_lower": "55769042341501206482861/524766913258000000",
+      "mean_ratio_lower": 38.11833940402041,
+      "heat_checked": true,
+      "passed": true
+    },
+    {
+      "X": 256,
+      "V": 85,
+      "pattern": "greedy_parity",
+      "fibers": 6652,
+      "parity_lower": "743325891202400853/352321539500000",
+      "mean_ratio_lower": 12.125253217660761,
+      "heat_checked": false,
+      "passed": true
+    },
+    {
+      "X": 1024,
+      "V": 256,
+      "pattern": "greedy_parity",
+      "fibers": 61588,
+      "parity_lower": "377505521230760904091/18038862646000000",
+      "mean_ratio_lower": 25.772593677399875,
+      "heat_checked": false,
+      "passed": true
+    },
+    {
+      "X": 4096,
+      "V": 1024,
+      "pattern": "greedy_parity",
+      "fibers": 997324,
+      "parity_lower": "178671893957536277877877/524766913258000000",
+      "mean_ratio_lower": 89.78865531479383,
+      "heat_checked": false,
+      "passed": true
+    }
+  ],
+  "broader_sampler_constant": "1/2000",
+  "qualification": "Fractional means and explicitly scoped sampler laws only."
+}

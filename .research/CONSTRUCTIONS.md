@@ -1,5 +1,7 @@
 # Constructions (parametric families)
 
+2026-10-20 update: the truncated integer cone under the stated phase-rich CRT encoding is now excluded for **arbitrary** selections, including nonuniform/correlated/non-lens ones: ||u||>=sqrt(X), n/X^2->infinity implies M>=n/(32X) and R->infinity. Nonuniform center laws do repair the previous uniform-marginal parity obstruction, but not this deterministic residue average. Discontinue its logarithmic-gain counterexample strategy. No arbitrary-encoding or unrestricted Chowla statement follows. [Proof, finite witnesses and exact scope](notes/cstar_wide_parity_2026-10-20.md).
+
 | family | N | M bound | R limit | status |
 |---|---|---|---|---|
 | Sidon differences (B Sidon, k) | k(k-1)/2 | k/2 (exact identity) | 1/sqrt2 | proved |

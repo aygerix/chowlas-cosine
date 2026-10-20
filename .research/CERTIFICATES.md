@@ -1,5 +1,9 @@
 # Certificates
 
+## 2026-10-20 — positive Gaussian and residue-average lower certificates
+
+[Statements, exact hypotheses and proofs](notes/cstar_wide_parity_2026-10-20.md). The nine disk-lens mean certificates use exact parity counts/rational CRT error; six also have positive periodic-Gaussian certificates with an explicit alias tail, independently rechecked at192 bits. Three changed center laws have exact mass/parity checks and independent endpoint-pair negative-point certificates, without global upper claims. The GL2(F_p) positive-average identity gives M(A)>=n/(8B^2) for ANY short-right-factor rank-one selection under the stated CRT encoding; it does not require enumerating all scalar phases. Two actual incomplete-fiber Boolean supports have separate192-bit scalar point checks, matching direct scalar and matrix-residue conventions. Data and rational witnesses: `experiments/wide_mean_2026-10-20/`. These are lower bounds on negative minima; no Epoch-valid all-circle upper bound, unrestricted Chowla proof, or Lean check is claimed.
+
 ## Method E2 (src/chowla.py: certify_lower_bound)
 g(t) = f_A(2 pi t). Grid t_j = j/L (L power of 2 >= 16 max A). FLINT acb.dft (ball arithmetic, prec 96) encloses
 g, g', g'', g''' at all grid points. For |s| <= 1/(2L): g(t_j+s) >= cubic Taylor polynomial - S4 (1/(2L))^4/24,

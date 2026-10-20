@@ -2730,6 +2730,7 @@ Existing P identifiers above are unchanged. Full statements, proofs and their hy
 
 | Statement or mechanism | Status and precise scope | Source / audit |
 | --- | --- | --- |
+| Short-factor rank-one residue obstruction; scale-independent disk parity | PROVED on paper: uniform GL2(F_p) phases average every nonzero rank-one residue to -1/(p^2-1); scalar transfer gives M>=n/(8B^2) for ANY encoded rank-one selection with primitive u, ||w||<=B<=X. Thus truncated ||u||>=sqrt(X), n/X^2->infinity families have diverging R. Separately uniform disk-center marginals satisfy s/60<=M(mean)<=s/2 without scale gaps. Exact GL2/disk and independent finite checks; no universal/Lean/independent-agent claim | [Proof, hypotheses, center-law countercontrol, checks](notes/cstar_wide_parity_2026-10-20.md) |
 | Fixed-cardinality attainment and record reduction | PROVED reduction; no quantitative Chowla bound | [Proof](notes/cstar_extremizer_compactness_2026-10-20.md) |
 | Sharp local W2 constant | REFUTED by exact rational/integer positive-definiteness certificate; does not refute every positive constant | [Statement and certificate](notes/cstar_w2_universal_2026-10-20.md), [independent verifier](experiments/cstar_structural_2026-10-20/verify_w2_exact_certificate.py) |
 | Independent product-Fejer rounding | PROVED high-probability model-specific W2 bound, with separate support-filling and independence hypotheses | [Proof](notes/cstar_product_fejer_asymptotic_2026-10-20.md), [audit](notes/cstar_product_fejer_independent_audit_2026-10-20.md) |

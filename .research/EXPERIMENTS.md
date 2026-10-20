@@ -1829,3 +1829,27 @@ singular value for every primitive odd ψ. max_{j,ψ} λ: 0.605 (3), 0.542 (5), 
   | 3,5,7 ell | 20, 104, 300 | spikes negative | 0.41, 0.24, 0.16 | 1 − 1/p | — | — | — |
 Full odd spectrum (E122b): every eigenvalue = 1/p, off-diagonal <= 1e−17, for r = 4 (p = 3, 5, 7, 11) and r = 6 (p = 3, 5).
 This is P81 (proved).
+
+## E119 (2026-10-20, cont. 31) Advisor's p² law vs noise law, one-rep JL D_{2,1} lifts (src/e119_taper_random.py,
+## src/e119_batch.sh; dirichlet; K NUMERICAL FFT + BFGS). Predictions were pre-registered in CSTAR A10 before the run.
+Taper-random one-rep lifts (P78 construction), 4 seeds each:
+  | p  | |D|  | K (seeds)                    | median K/√(|D| ln n²) | 0.92p² | registered pred | corrected pred |
+  | 3  | 24   | 13.1, 12.7, 13.6, 12.8       | 1.26                  | 8.3    | 12.2            | 16.3           |
+  | 5  | 120  | 38.2, 48.0, 35.6, 37.9       | 1.37                  | 23.0   | 28.2            | 37.9           |
+  | 7  | 336  | 63.0, 64.9, 69.6, 67.0       | 1.29                  | 45.1   | 48.8            | 66.0           |
+  | 11 | 1320 | 136.8, 150.1, 142.1, 141.3   | 1.26                  | 111.3  | 101.1           | 138.4          |
+  | 13 | 2184 | 175.9, 187.0, 199.1, 182.6   | 1.23                  | 155.5  | 132.2           | 181.0          |
+PRE-REGISTERED PREDICTION FAILED (lead): taper-random K at p = 11, 13 is 137–150 and 176–199, not ≈ 101, 132, and lies ABOVE
+0.92p². Cause found: the Gaussian extreme value is σ√(2 ln N); the registered formula used σ√(ln N) (dropped factor √2).
+With √2 restored ("corrected pred", same σ̄², no refit) the noise law matches all five p. K/√(|D| ln n²) ≈ 1.25 is flat in p,
+as P78 predicts. Consequence: at p <= 13 random lifts do NOT beat the p² law; the asymptotic o(p²) (P78, a theorem) only
+bites near p ≈ 25–30 (1.25·2p^{3/2}√ln p = 0.92p²). Decisive test launched: E119b (p = 17..31).
+Centred / CVP (E118 method) at p = 11: K = 303 / 281 (φ 0.058 / 0.097, λ_odd 0.303); p = 13: 491 / 479. Centred K ≈ 0.22|D|
+(box Gibbs lobe). SA one-rep (taper init) at p = 11, 13: running.
+
+## E120 (2026-10-20, cont. 31) Certified sup_T |T|/K(T)² (Dinkelbach MIQP; src/e116_jl_taper.py ratio; src/e120_ratio.sh)
+p = 3, a = 2, j = 1, class P_9 (48 ± pairs): round 0 at ρ = 0.8: OPTIMAL, ObjBound = 0.0 (228 lazy cuts, 404 s).
+CERTIFIED: |T| <= 0.8·K(T)² + 10⁻⁴ for every symmetric T ⊂ P_9, i.e. sup ratio <= 0.8001 (K >= 1), attained by the E116
+optimum T = 20, K = 5. (Cuts are valid for all truly feasible T, so the bound is rigorous up to LP tolerances; the cut
+generator's numerics only affect which incumbents are accepted.) Running: full box [−9, 9]² control, p = 5 (L = 25), p = 7.
+(Threshold-MILP control, full box at Kthr = 3, 1800 s: T = 6, K = 2.63, ratio 0.867 — the full box beats the D-class.)

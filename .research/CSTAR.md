@@ -523,6 +523,13 @@ The prize is (c). Everything else is support.
         hold for OPTIMAL lifts asymptotically; E119 tests where the SA values sit between √|D| and √(|D| log p).
     (3) E120 (Dinkelbach sup-ratio MIQP) running for p = 3 (D-class and full box), 5, 7.
 
+  - E119 OUTCOME (pre-registered prediction FAILED, recorded): taper-random K = 137–150 (p = 11), 176–199 (p = 13), above
+    0.92p². Cause: dropped √2 in the Gaussian maximum; corrected law (no refit) fits p = 3..13 with K ≈ 1.25√(|D| ln n²).
+    At accessible p the p² law is NOT beaten by random lifts; crossover predicted near p ≈ 25–30 (E119b running).
+  - E120: p = 3 sup ratio CERTIFIED <= 0.8001 in the D-class P_9 (advisor item 3 done at p = 3).
+  - P81 (proved): quadric cones have odd concentration EXACTLY (1/p)·I, so one-rep quadric lifts are excluded like JL
+    (ρ <= 5.6·10⁴V² on Z⁴). Two of the three advisor models are now excluded in the one-rep bounded-spread class.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

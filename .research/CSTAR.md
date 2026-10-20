@@ -511,6 +511,18 @@ The prize is (c). Everything else is support.
     (3) Dinkelbach MIQP (src/e116_jl_taper.py ratio): max 2|T| − ρk², lazy cuts; ObjBound <= tol ⇒ sup ratio <= ρ + tol
         (K >= 1 always). Replaces the threshold MILPs (stopped).
 
+  - RESULTS on review 3 (same session):
+    (1) P79 (proved on paper; E121 reduction check exact to 1e−15): for JL D_{2,j}, j ≠ 0, the unit scalars (Z/p²)^* act
+        freely with p + 1 orbits; conductor-p characters have ZERO odd concentration on N; a primitive odd ψ gives the
+        block M_ψ*M_ψ/p² whose p×p Toeplitz part H[s₀,s] = ψ̄(s − s₀) is complex ANTISYMMETRIC, so its top singular value
+        is doubled (Youla) and σ₁² <= p(p−1)/2. Hence λ_odd <= [(p+3) + √((p+7)(p−1))]/(4p) <= 0.873, → 1/2. Uniform gap
+        PROVED for a = 2 (not for a >= 3, where it is numerically false).
+    (2) P78: taper-random one-rep lifts have K <= r + 4√(|D| ln(4π²n²|D|)) + √|D| = O(p^{3/2}√log p) = o(p²). With P80
+        (= P77 + P79 + β >= 1/12): bounded-spread one-rep lifts of D_{2,j} have K₂D >= p + 6.6·10⁻⁴√|D|/V², i.e.
+        ρ <= 2.3·10⁶V⁴ uniformly in p. MODEL EXCLUDED on Z² (1D images with small V not covered). The 0.92p² law cannot
+        hold for OPTIMAL lifts asymptotically; E119 tests where the SA values sit between √|D| and √(|D| log p).
+    (3) E120 (Dinkelbach sup-ratio MIQP) running for p = 3 (D-class and full box), 5, 7.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

@@ -14,7 +14,13 @@ prediction or exclude an explicit model; no reformulation sweeps; target = some 
   = r + Ω(√|D|) for bounded-spread one-rep lifts. Fractional tapers escape because their centroids vanish exactly.
 - E115: exact Z_p ILP (Gurobi). Sub-half optima never beat the E41 half-sets; max ρ ≈ 2.0 at p <= 83.
 - Running: E116 MILP p = 5 (batch 1) and p = 7 (batch 2) certified bounds; spread test (reps in [−Rn, Rn]², R = 2, 3).
-- FIRST NEXT STEP (cont. 31): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,
+- cont. 31 later (advisor review 3): P79 PROVED uniform gap λ_odd <= 0.873 for JL D_{2,j} (j ≠ 0) via the unit-scalar
+  character decomposition + antisymmetric singular-value pairing; P78 taper-random lifts K = O(p^{3/2}√log p); P80:
+  bounded-spread one-rep JL a = 2 lifts have ρ <= C·V⁴ uniformly in p (Z² minimum). λ_odd → 1 with depth a (E117), but
+  deep lifts are worse (E118). E118: centroid-only optimisation is not the binding cost. Running: E119 (p = 11, 13
+  scaling; pre-registered: advisor 0.92p² = 111, 155 vs taper-random ≈ 101, 132), E120 (Dinkelbach certified sup ρ),
+  codex check of P78–P80 (.research/agents/p79_check_report.md). Threshold MILPs stopped (superseded by E120).
+- FIRST NEXT STEP (cont. 31, superseded in part): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,
   the remaining permitted lift models are (i) variable-multiplicity subsets (P77 needs λ_odd of the sub-multiset's own
   background) and (ii) multi-scale reps (P77's spread factor degrades); attack (ii) by ball-averaging the far reps.
   If anything beats the random level, analyse that instance first.

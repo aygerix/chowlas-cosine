@@ -2523,3 +2523,47 @@ Side lemma (CSTAR A5). Setting: f_A + λ = v*Qv with v = (e(iθ))_i and diagonal
     residue-class parts. Their autocorrelations are exactly the qZ-lags, and Σ‖·‖₂² is unchanged. This is the CP
     form of P13. Hence C_CP(A) >= max_q 2|A_q|/(ω(A_q) − 1).
 Open: CP-Chowla, C_CP >= c√n (E111).
+
+## P77. CENTROID BARRIER for Boolean lifts of a finite set (lead, 2026-10-20 cont. 31; PROVED on paper, elementary;
+## numerical inputs E117; context CSTAR A10 / E116; not kernel-checked)
+Setting. n >= 2, D ⊂ Z_n² with D = −D, 0 ∉ D, finite spectrum D̂(χ) = Σ_{g∈D} cos(2πχ·g/n) (χ ∈ Z_n²).
+Fix r' and a background set B ⊂ {χ ≠ 0 : D̂(χ) <= −r'}; put N = Z_n² ∖ B. A ONE-REP LIFT is an odd map z: D → Z²
+with z(g) ≡ g (mod n); T = z(D), F(ξ) = Σ_{g∈D} cos(2π z(g)·ξ) on T², K(T) = −min F. Define
+  W(χ) = Σ_g z(g) sin(2πχ·g/n) ∈ R²,   A2 = Σ_{χ∈B} |W(χ)|²,   Z4 = (Σ_g |z(g)|⁴)^{1/2},
+and λ_odd = top eigenvalue of the concentration operator C = 1_D·P_N·1_D on ODD real functions on D,
+P_N f = (1/n²)Σ_{χ∈N} f̂(χ)χ (so Σ_{χ∈N}|f̂(χ)|² = n²⟨f, Cf⟩).
+Theorem. (a) K(T) >= r' + A2/(8n|B|^{1/2}Z4).
+(b) A2 >= (1 − λ_odd)·n²·Σ_g |z(g)|². Hence, since |B| <= n²,
+        K(T) >= r' + ((1 − λ_odd)/8) · Σ_g|z(g)|² / (Σ_g|z(g)|⁴)^{1/2}.
+(c) If every |z(g)| <= √2·Vn (reps within V periods) and Σ_g|z(g)|² >= β|D|n², then
+        K(T) >= r' + (1 − λ_odd)·β·|D|^{1/2}/(16V²).
+Proof. (a) z(g) ≡ g gives e(z(g)·(χ + α)/n) = e(χ·g/n)e(z(g)·α/n). For χ ∈ B pick u_χ ∈ U = {±e₁, ±e₂} with
+u_χ·W(χ) = |W(χ)|_∞ and put h_χ(t) = F((χ + t u_χ)/n) = Σ_g cos(2π(χ·g + t z(g)·u_χ)/n). Then h_χ(0) = D̂(χ) <= −r',
+h_χ'(0) = −(2π/n)|W(χ)|_∞, h_χ''(t) = −(4π²/n²)Re Q_{u_χ}(χ, t) with Q_u(χ, t) = Σ_g e((χ·g + t z(g)·u)/n)(z(g)·u)².
+For fixed u and t, Parseval over all χ ∈ Z_n² gives Σ_χ|Q_u(χ,t)|² = n²Σ_g(z(g)·u)⁴ <= n²Z4². For weights ω on B
+(Σω = 1), Cauchy–Schwarz on each B_u = {χ : u_χ = u} and over the four u:
+  Σ_χ ω_χ|h_χ''(t)| <= (4π²/n²)·Σ_u ‖ω|_{B_u}‖₂·nZ4 <= (8π²/n)Z4‖ω‖₂.
+Taylor with integral remainder and min F <= Σ_χ ω_χ h_χ(ρ):
+  min F <= −r' − (2πρ/n)Σ_χ ω_χ|W(χ)|_∞ + (4π²ρ²/n)Z4‖ω‖₂.
+Take ω_χ = |W(χ)|_∞/S₁ (S₁ = Σ_B|W|_∞, S₂ = Σ_B|W|_∞²) and optimise ρ: min F <= −r' − S₂^{3/2}/(4nS₁Z4). Then
+S₁ <= (|B|S₂)^{1/2} and S₂ >= A2/2. ∎(a)
+(b) Each coordinate f_k = z_k·1_D is odd and real, so f̂_k = i·W_k and Σ_χ|W(χ)|² = n²Σ_g|z(g)|² (Parseval).
+Σ_{χ∈N}|W|² = Σ_k n²⟨f_k, Cf_k⟩ <= λ_odd n²Σ_g|z(g)|², and W(0) = 0. ∎(b)   (c) is (b) with Z4 <= √|D|·2V²n².
+Remarks.
+- FRACTIONAL lifts escape exactly here: for the PD taper τ = Λ(z₁/n)Λ(z₂/n), Σ_{z≡g} τ(z) z = 0 for EVERY class (the
+  τ-weighted centroid of the lattice translates vanishes), so the first-order term is identically 0, while
+  Σ_{z≡g}τ(z) = 1 and F_w >= −r (Poisson). A Boolean lift with 1 <= m(g) < n reps in class g has centroid sum
+  M_g ≡ m(g)·g (mod n), never 0 for g of order n. The same proof with z(g) replaced by M_g (and D̂ by m̂, Z4 by
+  (Σ_g(Σ_{z≡g}|z|²)²)^{1/2}) covers lifts with class multiplicities m(g); for constant m ≡ c it gives
+  ratio = c|D|/K² <= C·c³V⁴/((1 − λ_odd)²β²).
+- Scope. This is a barrier for a MODEL CLASS (Boolean lifts of a fixed finite set with bounded spread V), not for Z.
+  For an arbitrary S ⊂ Z reduced mod N the hypothesis λ_odd < 1 is exactly what a C* object would violate (its own
+  position field is concentrated on its spikes, since F' ≈ 0 on a flat background), so P77 says nothing about C*
+  in general. It lower-bounds the Z² minimum; a 1D Freiman image (z₁ + Vz₂) has K_1D <= K_2D, with K_1D → K_2D as
+  V → ∞, so P77 transfers to 1D images only for large V.
+- Inputs (E117, numerical eigenvalues, not certified): JL a = 2, j = 1: λ_odd = 0.605 (p=3), 0.542 (5), 0.390 (7),
+  0.303 (11), 0.353 (13); a = 3, p = 3: 0.801 (j=1), 0.756 (j=0). Centred lifts have φ := Σ_N|W|²/Σ|W|² = 0.05–0.32;
+  SA-optimised one-rep lifts (E116) push φ to 0.48, 0.27, 0.11 (p = 3, 5, 7), approaching λ_odd at p = 3.
+- So, IF λ_odd <= 1 − c uniformly in p (numerically <= 0.61 for a = 2, p <= 13; unproved), every bounded-spread
+  one-rep lift of the JL a = 2 family has ratio <= C(c, V, β) uniformly in p: the "lift a high-ratio finite object"
+  model cannot reach ratio → ∞. The constant is weak (p = 7: bound increment ≈ 1.2 against the observed K − r ≈ 38).

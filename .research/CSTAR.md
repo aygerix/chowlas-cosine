@@ -487,6 +487,13 @@ The prize is (c). Everything else is support.
     ONE m (e.g. reps in 2Z² handle α ∈ {0, ½}²: that is the box lift of the dilate 2⁻¹D). Generic α sees non-character
     phases, and the optimum is random-like there.
 
+  - MECHANISM FOUND (P77, proved on paper; E117): the first-order (CENTROID) term. On the coset ξ = (χ + α)/n the lift's
+    derivative is −(2π/n)W(χ), W the transform of the class-centroid field M_g ≡ m(g)g (mod n). Fractional PD tapers
+    make every centroid 0 (that is why they keep K = r); Boolean lifts cannot (m(g) < n). The share of W's energy that
+    can sit on spikes is at most λ_odd (0.30–0.61 for JL a = 2, p <= 13), so K >= r + ((1 − λ_odd)/8)Σ|z|²/(Σ|z|⁴)^{1/2}
+    = r + Ω(√|D|) for bounded-spread one-rep lifts. Model EXCLUDED (conditional on λ_odd <= 1 − c uniformly, numerically
+    supported). Open: variable-multiplicity subsets (the MILP optima), unbounded spread, and the 1D images at small V.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

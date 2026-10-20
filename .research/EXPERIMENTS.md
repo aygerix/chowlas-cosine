@@ -1768,3 +1768,19 @@ Both ends agree to 3 decimals in every row, so these K are certified.
   background (−8.0, −22.3, −32.3, −42.5) is essentially the global minimum. So the optimiser hides only a little of the
   rounding error under the spikes; the binding negativity is on the background.
 - Pending: certified Gurobi bounds at p = 5 (batch 1) and p = 7 (to queue); free-subset SA at p = 5, 7.
+
+## E117 (2026-10-20, cont. 31) Concentration eigenvalues for the centroid barrier P77 (src/e117_concentration.py;
+## dirichlet; NUMERICAL eigenvalues, numpy eigvalsh, not certified)
+N = Z_n² ∖ B (B = {D̂ = −r}, the background), λ_odd = top eigenvalue of 1_D P_N 1_D on odd functions; φ = fraction of
+the centroid field's W-energy on N.
+  | p a j | n   | |D|  | |N|/n² | λ_odd  | φ centred lift | φ SA-optimised one-rep lift (E116) |
+  | 3 2 1 | 9   | 24   | 0.309  | 0.6055 | 0.133          | 0.476                              |
+  | 5 2 1 | 25  | 120  | 0.194  | 0.5418 | 0.085          | 0.266                              |
+  | 7 2 1 | 49  | 336  | 0.140  | 0.3897 | 0.084          | 0.110                              |
+  | 11 2 1| 121 | 1320 | 0.090  | 0.3034 | 0.058          | —                                  |
+  | 13 2 1| 169 | 2184 | 0.077  | 0.3532 | 0.053          | —                                  |
+  | 3 3 1 | 27  | 234  | 0.322  | 0.8007 | 0.176          | —                                  |
+  | 3 3 0 | 27  | 234  | 0.322  | 0.7558 | 0.317          | —                                  |
+Reading: the optimiser does move the centroid field toward the spikes (φ 0.13 → 0.48 at p = 3) but cannot exceed
+λ_odd, which stays <= 0.61 for a = 2. This is the quantitative content of "the rounding error cannot hide under the
+spikes" at first order (P77).

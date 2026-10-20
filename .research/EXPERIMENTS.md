@@ -1877,3 +1877,10 @@ Status: numerical, not interval-certified (a rigorous grid bound at p = 31 costs
 So the first-order concentration factor relative to the area share |N|/n² ≈ 1/p is ≈ 1.2√p for JL a = 2, against EXACTLY 1
 for quadric cones (P81). P79's bound (→ 1/2) is crude; a p^{−1/2+ε} bound would need Fermat-quotient/character-sum
 estimates for H[s₀,s] = ψ̄(s − s₀) (sums over an interval of length p modulo p²); not needed for P80.
+
+## E118b (2026-10-20) Direct K-minimising SA (one rep, R = 1) on deep JL p = 3, a = 4 (src/e118_deep.sh; NUMERICAL)
+Seed 1 (1.5M iterations, box init): K = 136.9, ρ = 0.115, K/√(|D| ln n²) = 0.99 (|D| = 2160, λ_odd = 0.935).
+Against CVP 0.058 and centred 0.0086. Pre-registered (E118): "direct SA at a = 4 stays below a = 3's 0.20" — CONFIRMED
+(seed 2 running). Optimised one-rep ρ at p = 3: 0.36, 0.20, 0.115 for a = 2, 3, 4, although λ_odd → 1 (0.61, 0.80, 0.94):
+the weaker first-order barrier at depth is not exploited; the cost is random-level (K/√(|D| ln n²) = 0.80, 0.83, 0.99; the
+rise at a = 4 may be under-optimisation, 1400 iterations per class).

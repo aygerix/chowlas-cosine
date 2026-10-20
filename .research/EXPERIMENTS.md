@@ -1937,7 +1937,8 @@ E119 (cont.) SA one-rep, taper init, p = 11 (1.5M iterations, ~1100 per class): 
 0.92p² = 111.3 (law within 3%); taper-random 137–150. Pre-registered "SA <= taper-random" HOLDS. SA/random = 0.80 (vs ≈ 0.65
 at p <= 7): the optimiser's advantage shrinks with size, so at p = 11 the optimised lift sits ON the p² law. The law can
 only fail for optimised lifts once the random level (1.25√(|D| ln n²)) drops below it, p ≈ 23–29 (E119b), unless SA gains
-more. p = 13, 17 running.
+more. p = 13 SA (2.5M iterations) did NOT finish: the batch hit its 30000 s wall-clock limit (exit 143) and was killed;
+no p = 13 SA result and the p = 11 box seed-2 run never started. p = 17 (E119d) still running.
 E119c (free-subset SA, p = 11, L = 121, Bernoulli-taper init, 6M iterations; examples/e119/free_p11.jsonl; NUMERICAL):
 |T| = 2452 (1.86 per class), K = 123.7, ρ = 0.160 (one-rep optimum 0.100). Free-subset best ρ: 0.305 (p = 5), 0.204 (7),
 0.160 (11) — still DEcreasing in p (ρ·log p ≈ 0.49, 0.40, 0.38; ρ·√p ≈ 0.68, 0.54, 0.53), consistent with the A10

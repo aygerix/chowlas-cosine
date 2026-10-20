@@ -2,7 +2,18 @@
 C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed object, the forced features, the design
 rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
 and kills. Side results are not the prize (user, 2026-10-19).
-Latest (2026-10-19, after the advisor review): A2 automatic sets are CLOSED as a design class. All 71,840 small automata
+Latest (2026-10-19, cont. 29):
+- F12: C* needs PHASE CANCELLATION. The best dense set N50 has R = 0.570, but its cheapest completely positive
+  (cancellation-free) certificate has R_CP = 0.857 (lead-verified LP optimum). Its DNN certificate at minimal
+  degree is exact. The gap lives in DNN \ CP.
+- A6/A6′ SPREAD PRINCIPLE: every known ratio → ∞ object in any abelian group is a union of subgroups (CP). Hence
+  Chowla ⇐ SCP(T) (group-agnostic: high ratio ⇒ CP-efficient) + CP-Chowla(Z) (Z-specific, P76). SCP(2) is false
+  (Paley); E112a puts T > ~2.2.
+- A7 FLAT-SPECTRUM BARRIER: symmetric-spectrum objects have ratio 1/(1 − d) <= 2. Beating 2 needs spiky
+  asymmetric spectra, i.e. Latin-square-type PDS, all known ones being partial spreads.
+- Open toy: SCP in F_p² (NOTEBOOK cont. 29.10).
+- Literature check queued: are Latin-square-type PDS with small r always partial congruence partitions?
+Earlier (after the advisor review): A2 automatic sets are CLOSED as a design class. All 71,840 small automata
 fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T-A2 is open (side lemma).
 - A3 (rational-spike anatomies) adds design rules D8 and D9 and the proved feature F11.
 - Step (c) is unchanged. D9 made rigorous reduces to M >= ½‖f‖₁ (L¹ additivity over separated pieces), which is too weak.

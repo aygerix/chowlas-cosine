@@ -2678,6 +2678,11 @@ coordinate g_k makes (ug_k) run over F_p^*, so Σ_{g∈A}|g_c|² >= |A|p(p+1)/12
     K(T) >= p^{r/2−1} + 1 + (1 − 1/p)·√|A|/(4√6·r²·V),     r = 4:  K >= p + 1 + (1 − 1/p)√|A|/(157V),
 and |A| = (p²−1)(p+1) for r = 4, so ρ = |A|/K² <= (157V)²/(1 − 1/p)² <= 5.6·10⁴V² uniformly in p (finite ρ_G = p − 1).
 Scope as P80: Z^r minimum; 1D Freiman images with small V, free subsets, multiplicities and unbounded spread not covered.
+Novelty (2026-10-20, two targeted web searches, advisor's request): no prior statement of the odd-concentration identity
+found. Closest: strongly regular affine polar graphs VO^±(2m, q) (spectra, association schemes; e.g. arXiv 2402.05055,
+aeb.win.tue.nl/graphs/VO.html) and symmetric uncertainty principles (J. Algebra 586 (2021) 899–934). The mechanism
+(Q(g ± h) = ±B(g, h) on the cone) is classical, so P81 is very plausibly a short consequence of known VO⁺ structure; claim
+no novelty for the identity itself, only for its use as a lifting barrier. Advisor independently confirmed p = 3, 5.
 (η = −1 swaps the roles: then N ∖ 0 is the complement of the dual cone and the same computation gives 1 − 1/p; irrelevant,
 since η = −1 has negative spikes.)
 

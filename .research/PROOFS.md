@@ -2577,3 +2577,71 @@ Remarks.
 - So, IF λ_odd <= 1 − c uniformly in p (numerically <= 0.61 for a = 2, p <= 13; unproved), every bounded-spread
   one-rep lift of the JL a = 2 family has ratio <= C(c, V, β) uniformly in p: the "lift a high-ratio finite object"
   model cannot reach ratio → ∞. The constant is weak (p = 7: bound increment ≈ 1.2 against the observed K − r ≈ 38).
+
+## P78. Taper-random one-rep lifts: K <= r + C√(|D| log n) (lead, 2026-10-20 cont. 31; PROVED on paper, elementary)
+Setting. n odd, D ⊂ Z_n² ∖ 0 symmetric with D̂(χ) >= −r for χ ≠ 0. τ(z) = Λ(z₁/n)Λ(z₂/n), Λ(t) = max(0, 1 − |t|).
+Theorem. There is an odd one-rep lift z: D → [−n, n]² (z(g) ≡ g, z(−g) = −z(g)) with
+    K(T) <= r + 4√(|D|·ln(4π²n²|D|)) + √|D|,     T = z(D), F_T(ξ) = Σ_{g∈D} cos(2π z(g)·ξ).
+For JL D_{2,j} (n = p², |D| = p(p² − 1), r = p): K_opt = O(p^{3/2}√log p) = o(p²), so ρ_opt >= c/log p.
+Proof. (i) Σ_{z≡g} τ(z) = 1 for every class (codex audit of P77). Fractional lift F_τ(ξ) = Σ_z τ(z)1_D(z mod n)cos(2πz·ξ).
+Poisson: 1_D(z mod n) = n⁻²Σ_χ D̂(χ)e(χ·z/n), so F_τ(ξ) = n⁻²Σ_χ D̂(χ)τ̂(ξ + χ/n), τ̂(η) = Φ_n(η₁)Φ_n(η₂) >= 0
+(Fejér), Σ_χ τ̂(ξ + χ/n) = n²τ(0) = n² (τ vanishes on nZ² ∖ 0). With D̂(0) = |D| >= 0 and D̂ >= −r off 0:
+F_τ(ξ) >= −r·n⁻²Σ_{χ≠0}τ̂(ξ + χ/n) >= −r.
+(ii) For one g from each pair {g, −g} choose z(g) = ḡ + nt (t ∈ {−1, 0}²) with probability τ(z), independently; z(−g) = −z(g)
+(τ is even, so −z(g) has law τ on the class −g). Then E F_T = F_τ, and F_T − F_τ = Σ_{pairs} Y_g with Y_g ∈ [−4, 4]
+independent, mean 0. Hoeffding: P(F_T(ξ) − F_τ(ξ) < −λ) <= exp(−2λ²/(64·|D|/2)) = exp(−λ²/(16|D|)).
+(iii) |∇F_T| <= 2πΣ_{g}|z(g)| <= 2π√2·n|D|. On the grid of spacing h = 1/(2πn√|D|) (N_g = h⁻² points) every ξ is within
+Euclidean distance h/√2 of a grid point, so F_T(ξ) >= F_T(grid) − 2πn|D|h = F_T(grid) − √|D|. Union bound with
+λ = 4√(|D| ln N_g) (strict inequality by any slack): with positive probability F_T >= −r − λ on the grid. ∎
+Numerics (E119): taper-random K measured at p = 3..13 (examples/e119/scaling.jsonl).
+
+## P79. Uniform odd-concentration gap for Jedwab–Li D_{2,j} (lead, 2026-10-20 cont. 31; PROVED on paper; reduction checked
+## numerically against the direct eigenvalue to 1e−15 for (p,j) = (3,1),(3,2),(5,1),(5,2),(7,1),(7,3),(11,1),(13,1),(13,5): E121)
+Setting. p odd prime, n = p², j ∈ {1, …, p−1}, D = D_{2,j} = D₀ ∪ D₁ (src/e114_cp_group.jl_set(p, 2, j)):
+  D₀ = {(yv, y) : y ∈ (Z/n)^*, v ∈ V_j}, V_j = {jp + s : 0 <= s < p};  D₁ = {(x, py') : 1 <= y' < p, x ≡ jy' (mod p)}.
+B = {χ ≠ 0 : D̂(χ) = −p}, N = Z_n² ∖ B, λ_odd = sup over odd real f ≠ 0 on D of Σ_{χ∈N}|f̂(χ)|²/(n²‖f‖²).
+Theorem. λ_odd = max_ψ ‖M_ψ‖²/p² over PRIMITIVE odd characters ψ of (Z/n)^* (conductor-p characters give 0), where
+    M_ψ = [[H, ψ̄(j)φ], [φᵀ, 0]] ∈ C^{(p+1)×(p+1)},  H[s₀, s] = ψ̄(s − s₀) (s ≠ s₀), H[s, s] = 0,  φ_s = ψ̄(1 − pj⁻¹s),
+and λ_odd <= Λ(p) := [(p + 3) + √((p + 7)(p − 1))]/(4p) <= Λ(3) = (6 + 2√5)/12 < 0.8727, Λ(p) → 1/2.
+Proof.
+1. G = (Z/n)^* acts on Z_n² by scalars. D is G-invariant; the action on D is FREE with p + 1 orbits, representatives
+   g_s = (jp + s, 1) (0 <= s < p) and g_* = (j, p). [(yv, y) = y·g_{v−jp}; (x, py') = u·g_* with u = xj⁻¹ mod n, a unit with
+   u ≡ y' (mod p). Free: the coordinate 1 of g_s, resp. j of g_*, is a unit.] Sizes p(p−1); total |D| = p(p² − 1).
+2. D̂(uχ) = D̂(χ), so B, N are G-invariant and the concentration form commutes with G. Odd real functions split into
+   ψ-components (ψ(−1) = −1): f(u g_O) = ψ(u)a_O, ‖f‖² = p(p−1)Σ_O|a_O|². f̂(χ) = Σ_O a_O G_ψ(χ·g_O),
+   G_ψ(t) = Σ_{u∈G}ψ(u)e(−ut/n). Gauss sums: ψ primitive (nontrivial on 1 + pZ): G_ψ(t) = ψ̄(t)G_ψ(1) for t a unit,
+   |G_ψ(1)| = p, G_ψ(t) = 0 for p | t (group u by u mod p; Σ_{u≡w}ψ(u) = 0). ψ of conductor p: G_ψ(t) = 0 unless p ∥ t
+   (t a unit: Σ_k e(−kt/p) = 0 inside each u ≡ w class; t ≡ 0: Σψ = 0).
+3. Spectrum (Ramanujan sums c_n(t) = p(p−1), −p, 0 for t ≡ 0, p ∥ t, unit): D̂(χ) = Σ_O c_n(χ·g_O). Case analysis on
+   χ = (α, β): α unit ⇒ exactly one s₀ with p | χ·g_{s₀}, χ·g_* a unit; α = pα' (α' ≢ 0): χ·g_s = pα's + β, χ·g_* = p(α'j + β);
+   α = 0. Result: D̂ ∈ {p² − p, −p} off 0, and N ∖ 0 = N₁ ∪ N₂ with
+     N₁ = {(α, −α(jp + s₀)) : α unit, 0 <= s₀ < p}  (orbit O_{s₀} has χ·g ≡ 0, all others units),
+     N₂ = {(pα', β) : 1 <= α' < p, β unit, β ≡ −α'j (mod p)}  (O_* has χ·g ≡ 0, all g_s units).
+   In particular on N no orbit has p ∥ χ·g_O, so conductor-p components have f̂ = 0 on N (f̂(0) = 0 by oddness).
+4. Primitive ψ. On N₁: χ·g_s = α(s − s₀), χ·g_* = α(j − ps₀), ψ̄(j − ps₀) = ψ̄(j)φ_{s₀} (ψ(1 + pt) depends on t mod p), so
+   f̂(χ) = G_ψ(1)ψ̄(α)(Mx)_{s₀}, x = (a_s, a_*). On N₂: χ·g_s = β(1 + pα'β⁻¹s), α'β⁻¹ ≡ −j⁻¹ (mod p), so
+   f̂(χ) = G_ψ(1)ψ̄(β)(φᵀa). |N₁| = p²(p−1), |N₂| = p(p−1), each with |G_ψ(1)|² = p²:
+   Σ_N|f̂|² = p³(p−1)‖Mx‖², while n²‖f‖² = p⁵(p−1)‖x‖². Hence the ψ-block of the concentration form is M*M/p².
+5. ψ odd ⇒ H[s, s₀] = ψ̄(−1)ψ̄(s − s₀) = −H[s₀, s]: H is complex ANTISYMMETRIC. For antisymmetric A and A*Av = σ²v (σ > 0),
+   J v := conj(Av)/σ satisfies A*A(Jv) = σ²Jv, ⟨v, Jv⟩ = conj(vᵀAv)/σ = 0, J² = −1 (antilinear quaternionic structure), so
+   every nonzero singular value has even multiplicity (Youla). Hence σ₁(H)² <= ‖H‖_F²/2 = p(p−1)/2.
+6. ‖Mx‖² = ‖Ha + ψ̄(j)a_*φ‖² + |φᵀa|² <= (σ₁‖a‖ + √p|a_*|)² + p‖a‖², ‖φ‖² = p. The top eigenvalue of
+   [[σ₁² + p, σ₁√p], [σ₁√p, p]] is increasing in σ₁; at σ₁² = p(p−1)/2 it equals p[(p+3) + √((p+7)(p−1))]/4. Divide by p².
+   Λ is decreasing for p >= 3 ((1 + 7/p)(1 − 1/p) decreases). ∎
+Numerics (E121, NUMERICAL): λ_odd = 0.605 (p=3), 0.542/0.469 (5; j=1/2), 0.390/0.377 (7), 0.303 (11), 0.353/0.300 (13);
+σ₁(H)²/p² = 0.33, 0.37, 0.35, 0.27, 0.30 (bound (p−1)/(2p)). Top pair always degenerate (step 5 confirmed).
+Scope: j ≠ 0 only (j = 0 changes the orbit structure of D₁). Depth a >= 3 is NOT covered and there λ_odd → 1
+numerically (E117: p = 3, a = 3, 4: 0.80, 0.94).
+
+## P80. Bounded-spread one-rep lifts of D_{2,j} have bounded ratio, uniformly in p (lead, 2026-10-20; corollary of P77 + P79)
+Statement. p odd prime, j ≠ 0, z: D_{2,j} → Z² an odd one-rep lift with ‖z(g)‖_∞ <= Vn. Then the Z² minimum satisfies
+    K₂D(T) >= p + (1 − Λ(p))·√|D|/(192V²) >= p + 0.127·√|D|/(192V²),   so   ρ = |D|/K₂D² <= (192V²/(1 − Λ(p)))² <= 2.3·10⁶·V⁴.
+Proof. P77(c) with r' = p, B = {D̂ = −p} (nonempty, symmetric), |z| <= √2Vn, and β >= 1/12: |z(g)|² >= (g_k)_c² for each
+coordinate k (centred residue), and on O_s the second coordinate of u·g_s is u, on O_* the first coordinate of u·g_* is uj,
+each running over all units once. So Σ|z|² >= (p+1)Σ_{u unit}u_c² = (p+1)(p² − 1)p²(p² − p + 1)/12 = |D|n²(p³ + 1)/(12p³). ∎
+With P78: K_opt(one-rep) ∈ [p + c√|D|, p + C√(|D| log p)], so the advisor's "K ≈ 0.92p²" cannot hold for optimal lifts as
+p → ∞ (it is o(p²)); P77's √|D| order is the right order up to √log.
+Scope (important). This bounds the Z² minimum. A 1D Freiman image S_V = {z₁ + Vz₂} has K₁D <= K₂D, with K₁D >= K₂D − 1 once
+V >= C·n|D| (Lipschitz); for small V the 1D image is a different object and is NOT covered. Free subsets / variable
+multiplicities (E116 SA, E120 MIQP), unbounded spread and depth a >= 3 are not covered. The constant is useless numerically
+(observed ρ ~ 0.2); the content is uniformity in p: the JL a = 2 one-rep model cannot give ρ → ∞.

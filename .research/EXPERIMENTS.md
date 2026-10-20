@@ -1716,8 +1716,10 @@ N_p(K) = max |S| over symmetric S ⊂ Z_p^*, |S| <= (p−1)/2, D_S(j) >= −K fo
 - Run 1 (K = 2, 3; 57 solves, all OPTIMAL; examples/e115/np_k_run1.jsonl): N_p(2) = 2 for every p >= 83 (S = {±1});
   N_p(3) = 6–8 (ratio <= 0.89) except p = 37: |S| = 12, S = ±{1,4,5,8,9,13} (ratio 1.33). Fixed small K is
   uninformative (optimum = tiny set); stopped.
-- Run 2 (running): K = c√p, c ∈ {0.42, 0.46, 0.50}, primes 31–151, 1200 s cap; ObjBound is a valid upper bound on
-  N_p(K) even for unfinished solves. Output examples/e115/np_k_run2.jsonl.
+- Run 2 (STOPPED at p = 83 to free the VM for E116; 37 solves, all OPTIMAL; examples/e115/np_k_run2.jsonl):
+  K = c√p, c ∈ {0.42, 0.46, 0.50}. Max ratio |S|/K² = 1.92 (p = 71, 79 at c = 0.50, |S| one pair short of a
+  half-set); with the exact min of the optimal set, 38/4.362² = 2.0 at p = 79. Sub-half sets never beat the E41
+  half-set optima: in Z_p the binding constraint is |S| <= p/2, and the question reduces to E41.
 
 ## E116 (2026-10-20, cont. 31) Advisor's experiment: lifting a Jedwab–Li set to Z² (≡ Z) with a jointly optimised
 ## Boolean taper (src/e116_jl_taper.py; dirichlet; minima NUMERICAL: FFT grid 16(2L+1) + BFGS, not certified)

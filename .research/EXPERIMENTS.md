@@ -1731,7 +1731,7 @@ Bernoulli(w) rounding, seeds 0–3):
   | 5 2 1 | 50 | 120 | 5   | 4.80    | 20.00  | 211.1 | 0.53       | 120, 32.3, 0.115   | 0.077–0.097         |
 - (ii) is exact theory: with L = n the PD taper vanishes on nZ² ∖ 0, so by Poisson F_w >= −r·τ(0) = −r (observed
   K_frac = r to 1e−13). The fractional lift costs only the factor Σw²/|D| ≈ (2/3)² = 4/9 (a sinc taper would cost
-  nothing: Σw² = |D|). L = 2n is worse (K scales by (L/n)², Σw² by (L/n)²·… /4). So the Gibbs penalty of the box is
+  nothing: Σw² = |D|). L = 2n is worse (K scales by (L/n)² = 4, Σw² only by 4, so the ratio drops by 4). So the Gibbs penalty of the box is
   ENTIRELY avoidable for fractional weights; the whole loss is the 0/1 constraint.
 - (iii) naive Booleans lose a factor ≈ 20–60 in ratio. Bernoulli matches the noise prediction
   K ≈ √(2·(5/9)|D|·ln(4n²)) (p = 5: 32 predicted, 31–38 observed).

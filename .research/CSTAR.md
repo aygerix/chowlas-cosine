@@ -4,6 +4,12 @@
 is a side lemma. A side lemma is recorded in one line (PROOFS + the index at the bottom of this file) and is never
 the goal of a session. "C* needs a new idea" is not a diagnosis and not a stopping point. The math must be made here.
 
+**Rule (advisor, 2026-10-20; adopted).** Every proposed idea must give a FALSIFIABLE QUANTITATIVE PREDICTION or an
+inequality that EXCLUDES AN EXPLICIT MODEL the known theory still permits (F_p^r quadrics, Jedwab–Li lifts, P61(b)
+packets). Anything that follows from Parseval, positivity, the mixing identity or generic moments alone is presumed to be
+a known statement in new notation. No reformulation or literature sweeps unless a specific obstacle demands one. The
+target is SOME c > 0, not C½. Current commissioned experiment: E116 (A10).
+
 Every work item must name the C* step it serves: OBJECT (§1), DESIGN (§3, construction), CHAIN (§4, proof) or
 ATTACK LOG (§5). If it serves none of them, do not do it.
 
@@ -460,6 +466,24 @@ The prize is (c). Everything else is support.
   - E111 dual observation (lead): the optimal flat-CP duals y_k on dense near-optima are small and signed for small k
     and increase steeply toward the top (N50_x72: y ≈ 0 for k <= 20, y_49..y_72 ≈ 0.6–1.5). The flat-CP lower bound is
     carried by extreme lags, as P76(c) predicts.
+
+- A10 (cont. 31, advisor's experiment E116). LIFT A JEDWAB–LI SET TO Z² (≡ Z) WITH A JOINTLY OPTIMISED BOOLEAN TAPER.
+  Three measured costs (p = 5, a = 2: |D| = 120, K_G = r = 5, ratio_G = 4.8):
+  - (ii) fractional lift with the PD taper Λ(z₁/n)Λ(z₂/n): K = r EXACTLY (Poisson: the taper vanishes on nZ² ∖ 0), ratio
+    2.04 = (4/9)·ratio_G; a sinc taper would keep all of ratio_G. So the archimedean boundary costs NOTHING for
+    fractional weights. This corrects the emphasis of A9/D8: the box is not the obstruction by itself.
+  - (iii) Boolean: box representatives 0.115, Bernoulli rounding of the taper ≈ 0.09 (= the F10 noise prediction
+    K ≈ √(2·(5/9)|D|·ln 4n²)), jointly optimised subsets (SA, short) 0.26, optimal fundamental domain (SA) 0.20.
+    p = 3: finite 2.67, fractional 1.05, Boolean optimum (Gurobi, PROVEN for Kthr <= 5) <= 0.8.
+  - Reading so far: the whole loss is the 0/1 constraint; optimised Booleans sit at K ≈ 2√|D| (random level), not at
+    K ≈ r. Joint optimisation recovers only constant factors.
+  - PREDICTION (falsifiable): for JL lifts with a = 2, p = 3, 5, 7, the best Boolean K' grows like √(|D| log n) and the
+    best ratio DEcreases with p (ratio_frac/ratio_bool grows like p·log n). Refuted if the scan (examples/e116/scan.jsonl)
+    shows best ratio increasing with p or exceeding 2.
+  - Precise phenomenon to explain if the prediction holds: on the coset ξ = (χ + α)/n the lift's values are the Z_n²
+    transform of u_α(g) = Σ_{z∈T, z≡g} e(z·α/n). Rep choices make u_α a character twist of D only for α ∈ (1/m)Z² for
+    ONE m (e.g. reps in 2Z² handle α ∈ {0, ½}²: that is the box lift of the dilate 2⁻¹D). Generic α sees non-character
+    phases, and the optimum is random-like there.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

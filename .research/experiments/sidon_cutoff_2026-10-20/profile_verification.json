@@ -1,0 +1,98 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "profiles": {
+    "profile_probe.json": {
+      "cost_checks": [
+        {
+          "p": 31,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": true
+        },
+        {
+          "p": 61,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        },
+        {
+          "p": 127,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        },
+        {
+          "p": 251,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        },
+        {
+          "p": 509,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        }
+      ],
+      "direct_p7_reference_laws": {
+        "isotropic": "7223/686",
+        "matched": "492/49"
+      }
+    },
+    "profile_arc.json": {
+      "cost_checks": [
+        {
+          "p": 31,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": true
+        },
+        {
+          "p": 61,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        },
+        {
+          "p": 127,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        },
+        {
+          "p": 251,
+          "variance_and_lower_algebra": true,
+          "direct_fixed_mean_cubic_recount": false
+        }
+      ],
+      "direct_p7_reference_laws": {
+        "isotropic": "74458/1029",
+        "matched": "10714/147"
+      }
+    }
+  },
+  "global_certificates": [
+    {
+      "kind": "partial",
+      "n": 874,
+      "max_A": 2342103225,
+      "base": 385,
+      "sha256": "5d9557d81c4e1d919613153e437cdc666057f64a9e60a1a4610b4e07f6b8cd4e",
+      "a": 712,
+      "Q": 1424,
+      "H": 10918,
+      "global_M_lower": "1541990599/200000000",
+      "global_M_upper": "76",
+      "direct_four_coordinate_recount": true,
+      "exact_square_identity_upper": true
+    },
+    {
+      "kind": "windowed",
+      "n": 394,
+      "max_A": 1199584925,
+      "base": 385,
+      "sha256": "4ad38a348691dbe9cb7e58724bdc140b054b3c002ed796134fd4f34c23381684",
+      "a": 434,
+      "Q": 868,
+      "H": 5070,
+      "global_M_lower": "241942561/40000000",
+      "global_M_upper": "55",
+      "direct_four_coordinate_recount": true,
+      "exact_square_identity_upper": true
+    }
+  ],
+  "qualification": "All cubic lower inequalities exact; large-prime FLINT convolutions rechecked algebraically, with independent direct cubic recount at p31 only."
+}

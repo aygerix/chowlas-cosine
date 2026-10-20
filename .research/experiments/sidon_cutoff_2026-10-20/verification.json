@@ -1,0 +1,106 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 192,
+  "cases": [
+    {
+      "X": 64,
+      "cutoff_squared": 2,
+      "a": 2544,
+      "Q": 5088,
+      "n": 3952,
+      "actual_support_unchanged": true,
+      "conservative_asymptotic_size_test_met": false,
+      "independent_four_coordinate_H": 66498,
+      "frozen_actual_target_contribution": 520,
+      "passed": true
+    },
+    {
+      "X": 256,
+      "cutoff_squared": 2,
+      "a": 56078,
+      "Q": 112156,
+      "n": 81794,
+      "actual_support_unchanged": true,
+      "conservative_asymptotic_size_test_met": false,
+      "passed": true
+    },
+    {
+      "X": 256,
+      "cutoff_squared": 4,
+      "a": 37970,
+      "Q": 75940,
+      "n": 81794,
+      "actual_support_unchanged": true,
+      "conservative_asymptotic_size_test_met": false,
+      "passed": true
+    },
+    {
+      "X": 1024,
+      "cutoff_squared": 4,
+      "a": 905552,
+      "Q": 1811104,
+      "n": 1585878,
+      "actual_support_unchanged": true,
+      "conservative_asymptotic_size_test_met": false,
+      "passed": true
+    }
+  ],
+  "completion_and_pair_checks": [
+    {
+      "p": 3,
+      "missing": 2,
+      "pair_H": 18,
+      "pair_bound_checked": true,
+      "off_grid_E_squared_over_p_balls": [
+        "[0.33351181595646106566510051609045364045832311901438330613 +/- 5.99e-57]",
+        "[0.37037037037037037037037037037037037037037037037037037037 +/- 1.39e-57]",
+        "[0.0005845234584162863671387479111961488661775155121452081499 +/- 3.41e-59]"
+      ],
+      "integer_fourth_moment": 15
+    },
+    {
+      "p": 5,
+      "missing": 4,
+      "pair_H": 120,
+      "pair_bound_checked": true,
+      "off_grid_E_squared_over_p_balls": [
+        "[0.4707370077642234013694752415713565057932806689024147247 +/- 5.11e-56]",
+        "[1.56800000000000000000000000000000000000000000000000000000 +/- 5.03e-57]",
+        "[4.985009484749971960967004985818682503866420877087880e-7 +/- 1.36e-59]"
+      ],
+      "integer_fourth_moment": 45
+    },
+    {
+      "p": 7,
+      "missing": 6,
+      "pair_H": 470,
+      "pair_bound_checked": true,
+      "off_grid_E_squared_over_p_balls": [
+        "[0.1348222845860087019990498816712221842945982772954925553 +/- 3.05e-56]",
+        "[0.10495626822157434402332361516034985422740524781341107872 +/- 5.63e-57]",
+        "[0.0005635063885297491845571485773975631196266460614263344162 +/- 6.23e-59]"
+      ],
+      "integer_fourth_moment": 91
+    },
+    {
+      "p": 11,
+      "missing": 10,
+      "pair_H": 2966,
+      "pair_bound_checked": true,
+      "off_grid_E_squared_over_p_balls": [
+        "[0.0992902799020234703993128480051843567515412308183642841 +/- 5.44e-56]",
+        "[0.1081893313298271975957926371149511645379413974455296769 +/- 3.97e-56]",
+        "[4.68564068637122785833330272552871411863342946034575e-8 +/- 5.32e-59]"
+      ],
+      "integer_fourth_moment": 231
+    }
+  ],
+  "constants": {
+    "pair_cost": 416,
+    "tail": 64,
+    "log_comparison": 81,
+    "global_C3": 2176227
+  },
+  "qualification": "Finite probes corroborate identities; all-parameter completion/cutoff theorem is a paper proof. No independent four-coordinate cubic recount at X256/1024."
+}

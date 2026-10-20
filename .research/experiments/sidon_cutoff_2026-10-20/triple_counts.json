@@ -1,0 +1,212 @@
+{
+  "qualification": "Exact counts and interval limiting weights; not a uniform asymptotic exponent theorem.",
+  "cases": [
+    {
+      "U": 2,
+      "directions": 4,
+      "primitive_relation_denominators": 2,
+      "D_ball": "9.00000000000000000000000000000000000000000000000000000000",
+      "D_over_U2_float": 2.25,
+      "D_over_U4_float": 0.5625,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 115728,
+          "over_X2_U2_float": 7.0634765625
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 1851984,
+          "over_X2_U2_float": 7.06475830078125
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 29646432,
+          "over_X2_U2_float": 7.068260192871094
+        }
+      ]
+    },
+    {
+      "U": 3,
+      "directions": 8,
+      "primitive_relation_denominators": 12,
+      "D_ball": "[37.7153333333333333333333333333333333333333333333333333333 +/- 6.21e-56]",
+      "D_over_U2_float": 4.190592592592592,
+      "D_over_U4_float": 0.4656213991769547,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 484464,
+          "over_X2_U2_float": 13.141927083333334
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 7762176,
+          "over_X2_U2_float": 13.16015625
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 124233504,
+          "over_X2_U2_float": 13.164255777994791
+        }
+      ]
+    },
+    {
+      "U": 4,
+      "directions": 16,
+      "primitive_relation_denominators": 51,
+      "D_ball": "[101.89893628852938773787156174000099305563072565301105991 +/- 2.17e-54]",
+      "D_over_U2_float": 6.3686835180330865,
+      "D_over_U4_float": 0.3980427198770679,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 1305168,
+          "over_X2_U2_float": 19.915283203125
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 20965728,
+          "over_X2_U2_float": 19.994476318359375
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 335629536,
+          "over_X2_U2_float": 20.00507926940918
+        }
+      ]
+    },
+    {
+      "U": 6,
+      "directions": 36,
+      "primitive_relation_denominators": 286,
+      "D_ball": "[277.9264902551757285536586575782268819732036789821982833 +/- 3.34e-53]",
+      "D_over_U2_float": 7.720180284865993,
+      "D_over_U4_float": 0.2144494523573887,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 3511392,
+          "over_X2_U2_float": 23.813151041666668
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 57170448,
+          "over_X2_U2_float": 24.23199462890625
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 915402672,
+          "over_X2_U2_float": 24.249889373779297
+        }
+      ]
+    },
+    {
+      "U": 8,
+      "directions": 60,
+      "primitive_relation_denominators": 858,
+      "D_ball": "[496.5580531594282952784859874641872758662624851042650912 +/- 7.51e-53]",
+      "D_over_U2_float": 7.758719580616067,
+      "D_over_U4_float": 0.12122999344712605,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 6165984,
+          "over_X2_U2_float": 23.5213623046875
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 102012720,
+          "over_X2_U2_float": 24.321727752685547
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 1635407712,
+          "over_X2_U2_float": 24.369473934173584
+        }
+      ]
+    },
+    {
+      "U": 10,
+      "directions": 96,
+      "primitive_relation_denominators": 2019,
+      "D_ball": "[835.936886558727409148073706126385899333008578463488100 +/- 3.69e-52]",
+      "D_over_U2_float": 8.359368865587275,
+      "D_over_U4_float": 0.08359368865587274,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 10141680,
+          "over_X2_U2_float": 24.7599609375
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 171072864,
+          "over_X2_U2_float": 26.1036474609375
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 2752314000,
+          "over_X2_U2_float": 26.248111724853516
+        }
+      ]
+    },
+    {
+      "U": 12,
+      "directions": 132,
+      "primitive_relation_denominators": 3885,
+      "D_ball": "[1173.28969345896592420577907497158930734198815671936337 +/- 1.90e-51]",
+      "D_over_U2_float": 8.147845093465042,
+      "D_over_U4_float": 0.05658225759350723,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 13973616,
+          "over_X2_U2_float": 23.691162109375
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 239226144,
+          "over_X2_U2_float": 25.349314371744793
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 3861926592,
+          "over_X2_U2_float": 25.576529184977215
+        }
+      ]
+    },
+    {
+      "U": 16,
+      "directions": 240,
+      "primitive_relation_denominators": 12056,
+      "D_ball": "[2202.86088661882925809721278054192287772897820979110566 +/- 8.61e-51]",
+      "D_over_U2_float": 8.604925338354802,
+      "D_over_U4_float": 0.033612989602948444,
+      "finite": [
+        {
+          "X": 64,
+          "ordered_nonleft_triples": 25239264,
+          "over_X2_U2_float": 24.070037841796875
+        },
+        {
+          "X": 256,
+          "ordered_nonleft_triples": 444664128,
+          "over_X2_U2_float": 26.504047393798828
+        },
+        {
+          "X": 1024,
+          "ordered_nonleft_triples": 7239985440,
+          "over_X2_U2_float": 26.971047520637512
+        }
+      ]
+    }
+  ],
+  "direct_control": {
+    "X": 4,
+    "U": 2,
+    "ordered": 432,
+    "formula": 432,
+    "passed": true
+  }
+}

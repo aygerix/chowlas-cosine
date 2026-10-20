@@ -1,5 +1,7 @@
 # Long Sidon fibers and a nonlinear obstruction with a small mean budget
 
+**Continuation:** the [deterministic cutoff/window theorem](cstar_sidon_deterministic_2026-10-20.md) removes the marginal restriction below using a weaker logarithmic pairwise bound and an adaptive reference. The sharp conditional Cp^3 statement recorded here remains open but is no longer required for that family. This note retains the earlier proof and failed C=2 trial as history.
+
 2026-10-20. Research record for CSTAR DESIGN / CHAIN(c), not a manuscript.
 Full Chowla and the arbitrary-support mixed-certificate step remain OPEN.
 The main paper result below handles arbitrary dependence across a specified

@@ -1,5 +1,13 @@
 # NOTEBOOK (dated)
 
+## 2026-10-20 — deterministic reference cutoff and profile matching
+
+The last conditional Cp^3 target was stronger than needed. Completion plus exact Sidon L4 gives the PAIRWISE bound H<=416p^3(3+2log p)^4 for any p-point cyclic Sidon actual/reference sets. Freeze the reference below (1+log X)^4, leaving actual A intact: the coupling loses only O(X^2 loglog X) out of n~X^2log X, while the left cubic becomes O(X^3). A congruence-lattice boundary argument additionally proves D(U)=sum1/ell^2<=4000000U^2(1+2log U), so the off-left cubic is O(X^2U^2 log U). At U=sqrt(X), H=o(n^(3/2)) and the fixed-A averaged positive moment matrix proves M>=sqrt(n)/16 for EVERY actual cyclic-Sidon assignment. No marginal or independence premise remains. [Complete proof and checks](notes/cstar_sidon_deterministic_2026-10-20.md).
+
+An actual extension attempt failed: half-interval parabolas against uniform full-box k-subset references have conditional H>=c p^4-O(p^3). Exact data and p7 law checks confirm the profile mismatch. Adaptive references intersect the SAME window and restore cardinality, giving deterministic M>=c sqrt(n) for any dense window with Fourier algebra norm<=Bp^delta, every fixed delta<1/2. The earlier delta<1/6 restriction was removed by the lattice count. Prefix, arc and joint-coordinate windows are covered, while no arbitrary-support representation or endpoint bound is proved.
+
+Finite frozen references, explicit partial/windowed supports, full small matrix controls and lattice tests all pass their recorded checks on Dirichlet. Current opportunity cost: stop constant fitting/global scans in this class. Next endpoint probe at p11,k5 asks for cyclic-Sidon references with matching3x3 counts and macroscopic difference turnover, then exact a,Q,H; retain the universal adaptive-certificate and non-cone Riesz lines. Four proof-review launches failed with the unavailable configured model; no external/Lean audit. Sharp Cp^3 cost remains an optional side question, not the missing ingredient for the deterministic family theorem.
+
 ## 2026-10-20 — long incomplete Sidon fibers; nonlinear sign despite a small mean
 
 The promised inverse test genuinely changed the construction: lifted affine-parabola differences give integer Sidon fibers, each with M<=p/2. Uniform GL2 rotations remove the fixed parabola's missing-direction mean defect, yielding exact coefficient c_p times a product triangular taper and M(mean)=O(U^2). Actual Boolean probes have weaker tested residue/plane certificates than global negative points; right-plane global upper bounds are NOT claimed.

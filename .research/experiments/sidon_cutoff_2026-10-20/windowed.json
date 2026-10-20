@@ -1,0 +1,1446 @@
+{
+  "X": 64,
+  "U": 4,
+  "cutoff_squared": 2,
+  "n": 394,
+  "high_n": 238,
+  "a": 434,
+  "Q": 868,
+  "H_left": 3986,
+  "H_right": 1074,
+  "H_line": -10,
+  "H": 5070,
+  "global_M_lower": "241942561/40000000",
+  "ratio_lower": 0.30472225334984915,
+  "fibers": [
+    {
+      "u": [
+        0,
+        1
+      ],
+      "p": 43,
+      "k": 13,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          19,
+          17
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          11
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          19,
+          17
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          11
+        ]
+      ],
+      "reference_coefficients": [
+        37,
+        4,
+        24
+      ],
+      "frozen": true,
+      "reference_parameters": {},
+      "reference_window_count_before": 13,
+      "adjustment": 0
+    },
+    {
+      "u": [
+        1,
+        -3
+      ],
+      "p": 13,
+      "k": 4,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          2
+        ],
+        [
+          0,
+          4
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          4,
+          2
+        ]
+      ],
+      "reference_coefficients": [
+        11,
+        10,
+        2
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            2,
+            11
+          ],
+          [
+            3,
+            11
+          ]
+        ],
+        "shift": [
+          8,
+          4
+        ]
+      },
+      "reference_window_count_before": 4,
+      "adjustment": 0
+    },
+    {
+      "u": [
+        1,
+        -2
+      ],
+      "p": 19,
+      "k": 7,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "reference": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          7,
+          8
+        ],
+        [
+          9,
+          3
+        ],
+        [
+          2,
+          15
+        ],
+        [
+          2,
+          16
+        ]
+      ],
+      "reference_coefficients": [
+        4,
+        13,
+        1
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            7,
+            18
+          ],
+          [
+            2,
+            17
+          ]
+        ],
+        "shift": [
+          1,
+          8
+        ]
+      },
+      "reference_window_count_before": 5,
+      "adjustment": 2
+    },
+    {
+      "u": [
+        1,
+        -1
+      ],
+      "p": 31,
+      "k": 10,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          15,
+          8
+        ]
+      ],
+      "reference": [
+        [
+          3,
+          8
+        ],
+        [
+          3,
+          12
+        ],
+        [
+          4,
+          4
+        ],
+        [
+          5,
+          1
+        ],
+        [
+          5,
+          10
+        ],
+        [
+          6,
+          8
+        ],
+        [
+          6,
+          14
+        ],
+        [
+          8,
+          14
+        ],
+        [
+          11,
+          2
+        ],
+        [
+          11,
+          13
+        ]
+      ],
+      "reference_coefficients": [
+        25,
+        26,
+        20
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            17,
+            29
+          ],
+          [
+            6,
+            20
+          ]
+        ],
+        "shift": [
+          4,
+          27
+        ]
+      },
+      "reference_window_count_before": 12,
+      "adjustment": 2
+    },
+    {
+      "u": [
+        1,
+        0
+      ],
+      "p": 43,
+      "k": 13,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          19,
+          17
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          11
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          21
+        ],
+        [
+          10,
+          14
+        ],
+        [
+          12,
+          15
+        ],
+        [
+          15,
+          10
+        ],
+        [
+          19,
+          17
+        ],
+        [
+          20,
+          13
+        ],
+        [
+          21,
+          11
+        ]
+      ],
+      "reference_coefficients": [
+        13,
+        25,
+        33
+      ],
+      "frozen": true,
+      "reference_parameters": {},
+      "reference_window_count_before": 13,
+      "adjustment": 0
+    },
+    {
+      "u": [
+        1,
+        1
+      ],
+      "p": 31,
+      "k": 10,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          10
+        ],
+        [
+          15,
+          8
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          13
+        ],
+        [
+          1,
+          14
+        ],
+        [
+          3,
+          5
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          6,
+          12
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          7,
+          9
+        ],
+        [
+          14,
+          8
+        ],
+        [
+          0,
+          23
+        ]
+      ],
+      "reference_coefficients": [
+        20,
+        14,
+        6
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            13,
+            24
+          ],
+          [
+            2,
+            7
+          ]
+        ],
+        "shift": [
+          23,
+          13
+        ]
+      },
+      "reference_window_count_before": 9,
+      "adjustment": 1
+    },
+    {
+      "u": [
+        1,
+        2
+      ],
+      "p": 19,
+      "k": 7,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          6
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          5,
+          9
+        ],
+        [
+          0,
+          17
+        ],
+        [
+          1,
+          17
+        ],
+        [
+          3,
+          14
+        ]
+      ],
+      "reference_coefficients": [
+        6,
+        17,
+        13
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            16,
+            7
+          ],
+          [
+            2,
+            7
+          ]
+        ],
+        "shift": [
+          14,
+          0
+        ]
+      },
+      "reference_window_count_before": 4,
+      "adjustment": 3
+    },
+    {
+      "u": [
+        1,
+        3
+      ],
+      "p": 13,
+      "k": 4,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          4
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "reference_coefficients": [
+        10,
+        12,
+        7
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            3,
+            5
+          ],
+          [
+            10,
+            9
+          ]
+        ],
+        "shift": [
+          10,
+          10
+        ]
+      },
+      "reference_window_count_before": 4,
+      "adjustment": 0
+    },
+    {
+      "u": [
+        2,
+        -3
+      ],
+      "p": 11,
+      "k": 5,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          1,
+          2
+        ],
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          2
+        ],
+        [
+          0,
+          6
+        ],
+        [
+          0,
+          7
+        ]
+      ],
+      "reference_coefficients": [
+        10,
+        5,
+        3
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            5,
+            10
+          ],
+          [
+            5,
+            2
+          ]
+        ],
+        "shift": [
+          7,
+          10
+        ]
+      },
+      "reference_window_count_before": 3,
+      "adjustment": 2
+    },
+    {
+      "u": [
+        2,
+        -1
+      ],
+      "p": 19,
+      "k": 7,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          9
+        ],
+        [
+          1,
+          5
+        ],
+        [
+          1,
+          7
+        ],
+        [
+          8,
+          5
+        ],
+        [
+          8,
+          9
+        ],
+        [
+          4,
+          10
+        ]
+      ],
+      "reference_coefficients": [
+        18,
+        16,
+        1
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            4,
+            14
+          ],
+          [
+            1,
+            2
+          ]
+        ],
+        "shift": [
+          8,
+          9
+        ]
+      },
+      "reference_window_count_before": 6,
+      "adjustment": 1
+    },
+    {
+      "u": [
+        2,
+        1
+      ],
+      "p": 19,
+      "k": 7,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          5,
+          6
+        ],
+        [
+          8,
+          7
+        ],
+        [
+          9,
+          5
+        ]
+      ],
+      "reference": [
+        [
+          4,
+          8
+        ],
+        [
+          6,
+          0
+        ],
+        [
+          7,
+          1
+        ],
+        [
+          7,
+          6
+        ],
+        [
+          8,
+          6
+        ],
+        [
+          9,
+          8
+        ],
+        [
+          2,
+          10
+        ]
+      ],
+      "reference_coefficients": [
+        3,
+        3,
+        2
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            12,
+            8
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "shift": [
+          8,
+          6
+        ]
+      },
+      "reference_window_count_before": 6,
+      "adjustment": 1
+    },
+    {
+      "u": [
+        2,
+        3
+      ],
+      "p": 11,
+      "k": 5,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          3
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          0,
+          8
+        ],
+        [
+          4,
+          6
+        ]
+      ],
+      "reference_coefficients": [
+        9,
+        10,
+        8
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            0,
+            10
+          ],
+          [
+            1,
+            3
+          ]
+        ],
+        "shift": [
+          9,
+          6
+        ]
+      },
+      "reference_window_count_before": 3,
+      "adjustment": 2
+    },
+    {
+      "u": [
+        3,
+        -2
+      ],
+      "p": 11,
+      "k": 5,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4,
+          3
+        ],
+        [
+          0,
+          10
+        ]
+      ],
+      "reference_coefficients": [
+        1,
+        0,
+        7
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            10,
+            1
+          ],
+          [
+            6,
+            0
+          ]
+        ],
+        "shift": [
+          2,
+          2
+        ]
+      },
+      "reference_window_count_before": 4,
+      "adjustment": 1
+    },
+    {
+      "u": [
+        3,
+        -1
+      ],
+      "p": 13,
+      "k": 4,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          2,
+          0
+        ],
+        [
+          3,
+          0
+        ],
+        [
+          0,
+          10
+        ],
+        [
+          1,
+          12
+        ]
+      ],
+      "reference_coefficients": [
+        6,
+        9,
+        8
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            5,
+            0
+          ],
+          [
+            2,
+            7
+          ]
+        ],
+        "shift": [
+          6,
+          7
+        ]
+      },
+      "reference_window_count_before": 2,
+      "adjustment": 2
+    },
+    {
+      "u": [
+        3,
+        1
+      ],
+      "p": 13,
+      "k": 4,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          1
+        ],
+        [
+          0,
+          2
+        ],
+        [
+          3,
+          1
+        ],
+        [
+          3,
+          5
+        ]
+      ],
+      "reference_coefficients": [
+        2,
+        6,
+        10
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            2,
+            11
+          ],
+          [
+            3,
+            12
+          ]
+        ],
+        "shift": [
+          11,
+          6
+        ]
+      },
+      "reference_window_count_before": 5,
+      "adjustment": 1
+    },
+    {
+      "u": [
+        3,
+        2
+      ],
+      "p": 11,
+      "k": 5,
+      "actual": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          5,
+          3
+        ]
+      ],
+      "reference": [
+        [
+          0,
+          3
+        ],
+        [
+          2,
+          5
+        ],
+        [
+          2,
+          6
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          6,
+          8
+        ]
+      ],
+      "reference_coefficients": [
+        10,
+        1,
+        10
+      ],
+      "frozen": false,
+      "reference_parameters": {
+        "A": [
+          [
+            8,
+            7
+          ],
+          [
+            3,
+            6
+          ]
+        ],
+        "shift": [
+          7,
+          5
+        ]
+      },
+      "reference_window_count_before": 2,
+      "adjustment": 3
+    }
+  ],
+  "windowed": true,
+  "encoding": "Any integer linear encoding with kernel gap>3X; e.g. base6X+1",
+  "qualification": "Exact global negative-minimum lower certificate for actual Boolean partial fibers."
+}

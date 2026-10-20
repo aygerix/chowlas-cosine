@@ -1,5 +1,9 @@
 # Certificates
 
+## 2026-10-20 — selective reference and matching-window certificates
+
+For fixed actual A, average the mixed positive moment matrix over equal-cardinality references; use Q_bar=2a_bar. Freezing only the short reference fibers keeps actual targets in the ruling cubic. Pairwise completion gives p^3 log^4 cost, while an exact primitive-relation/lattice bound gives off-left O(X^2U^2 log U). This yields deterministic square-root lower bounds for the stated cyclic-Sidon and windowed architectures, without a law on actual choices. References in a window are trimmed/padded within a Sidon curve to match cardinality. [All hypotheses and proof](notes/cstar_sidon_deterministic_2026-10-20.md). Six finite mixed certificates have exact rational positivity checks; full direct four-coordinate recounts at X64 and the two concrete base385 examples. The latter also have square-identity all-circle UPPER bounds. Data in `experiments/sidon_cutoff_2026-10-20/`; source-scoped verification limits remain explicit. No universal Chowla or Lean claim.
+
 ## 2026-10-20 — exact mixed cubic positivity on Sidon fibers
 
 For q=D_A-D_B, mean-zero and real, let a=<D_A,q>, Q=||q||_2^2, H=<D_A,q^2>, K=2M(A). The moment matrix of (D_A+K)(s+tq)^2 is positive, so QK^2+HK-a^2>=0. A rational k with Qk^2+Hk-a^2<0 certifies M(A)>k/2 on the WHOLE scalar circle. Rank-one ruling inclusion-exclusion computes H exactly with integer polynomial/sparse convolutions; encoding kernel gap>3X prevents scalar aliases. Three finite certificates have ratio>0.313; X64 is independently recounted in four coordinates. These are negative-minimum lower bounds, not all-phase construction upper bounds. [Full statement, asymptotic sampler theorem and verification limits](notes/cstar_sidon_mixed_2026-10-20.md), data `experiments/sidon_fibers_2026-10-20/`.

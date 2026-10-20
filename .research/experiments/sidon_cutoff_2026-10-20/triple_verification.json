@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "direct_matrix_controls": [
+    {
+      "X": 4,
+      "U": 2,
+      "signed_matrices": 144,
+      "ordered_triples": 432,
+      "primitive_relation_formula": 432,
+      "passed": true
+    },
+    {
+      "X": 6,
+      "U": 3,
+      "signed_matrices": 424,
+      "ordered_triples": 3840,
+      "primitive_relation_formula": 3840,
+      "passed": true
+    },
+    {
+      "X": 8,
+      "U": 4,
+      "signed_matrices": 864,
+      "ordered_triples": 16848,
+      "primitive_relation_formula": 16848,
+      "passed": true
+    }
+  ],
+  "independent_vector_lattice_cases": 451,
+  "window_delta_checks": [
+    "0",
+    "1/6",
+    "1/4",
+    "2/5",
+    "49/100"
+  ],
+  "qualification": "Finite controls corroborate counts and normalizations; uniform D(U) bound is the paper proof."
+}

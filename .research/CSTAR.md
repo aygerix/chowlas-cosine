@@ -557,6 +557,12 @@ The prize is (c). Everything else is support.
     all C). BAC IS a uniform anti-concentration (gap) hypothesis. PRE-REGISTERED E124: (P1) P82 <= M always; (P2) Boolean
     dense families have share₀ >= 0.2, G₀/√n >= 0.05; (P3) fractional packets have share₀ → 0 as X grows.
 
+  - E124 VERDICT (advisor review 5): P82 holds everywhere but is weight-agnostic; BAC (the only Boolean entry) is a gap
+    hypothesis, and the fractional packets match the Bu-type Boolean sets in share₀ (0.26–0.29 vs 0.225) and G₀/√n (0.05)
+    at X <= 16384 (packet advantage decays like X^{−0.05}). P77 does NOT supply a general route — said so, moving on.
+    Lesson for any future local inequality: the P61(b) packets are not asymptotic at computable X; a separating statistic
+    must be insensitive to the packets' non-flat (−√(J/8) + nonneg tails) background, i.e. must see sub-floor structure.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

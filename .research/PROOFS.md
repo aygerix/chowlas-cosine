@@ -2713,3 +2713,13 @@ CONSEQUENCES.
 - Small V (e.g. V ≈ 4n in the experiments) remains uncovered.
 E123 (NUMERICAL): 120 random odd lifts in d = 2, 3, 4 with random V: repaired bound never violated (min margins 0.10,
 0.36, 2.36).
+
+## P82. Local Taylor (centroid) inequality in 1D, continuous form (lead, 2026-10-20; PROVED on paper, elementary; side lemma)
+For every real C² 1-periodic f, every r' and every measurable B ⊂ {f <= −r'} with |B| > 0:
+    −min f >= r' + ∫_B f'² / (2√2·|B|^{1/2}·‖f''‖_{L²(T)}).
+Proof. For x ∈ B step in the descent direction u_x = −sign f'(x): f(x + ρu_x) <= f(x) − ρ|f'(x)| + ∫_0^ρ(ρ − t)|f''(x + tu_x)|dt.
+Average with ω = |f'|1_B/S₁ (S₁ = ∫_B|f'|, S₂ = ∫_B f'²); split B by the sign of f' and use Cauchy–Schwarz with translation
+invariance of ‖f''‖₂: ∫ω|f''(x + tu_x)|dx <= √2‖ω‖₂‖f''‖₂. Optimise ρ: decrement S₂^{3/2}/(2√2S₁‖f''‖₂) >= S₂/(2√2|B|^{1/2}‖f''‖₂). ∎
+It is the d = 1, q → ∞ form of P77 and uses no Booleanity. BAC (Boolean anti-concentration: ∫_{f<=0}f'² >= c∫f'² for Boolean
+dense A) would give T-dense for all C via r' = 0; E124 shows BAC does not separate Boolean sets from fractional packets at
+computable sizes, so it is a gap HYPOTHESIS, not a mechanism. Route closed (ROUTES, advisor review 5).

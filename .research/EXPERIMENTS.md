@@ -1891,3 +1891,27 @@ rise at a = 4 may be under-optimisation, 1400 iterations per class).
   Repaired full-coordinate loss (π²/(2V²))Σ(Σ_{k<d}|z_k|)² = 0.1542 >= 0.1500. CONFIRMED.
 - 120 random odd lifts (d = 2, 3, 4; n ∈ [3, 6]; 3–8 ± pairs; V ∈ (2n, 6n]): repaired bound min margin 0.096 / 0.360 / 2.359
   (no violation); z₁-only bound violated once at d = 3 (margin −0.037).
+
+## E124 (2026-10-20, cont. 31; advisor's commissioned experiment) Local centroid / anti-concentration test (src/e124_bac.py;
+## dirichlet; NUMERICAL grid sums, L >= 32·max A; pre-registered in CSTAR)
+f = Σ c_a cos(2πax); share₀ = ∫_{f<=0}f'²/∫f'²; G₀ = ∫_{f<=0}f'²/(2√2|{f<=0}|^{1/2}‖f''‖₂) (P82 at r' = 0, a valid lower bound on M).
+  | family                         | n_eff  | R = M/√n | share₀ | G₀/√n  |
+  | Singer–Bu q = 61/101/199/307   | 3782–94556 | 0.604/0.588/0.566/0.557 | 0.227/0.226/0.225/0.225 | 0.048/0.047/0.047/0.047 |
+  | dense optima X30/X120/X260     | 20/73/150 | 0.61/0.67/0.75 | 0.30/0.24/0.26 | 0.064/0.053/0.059 |
+  | JL lift images p=3,5 (a=2), 3 (a=3), 7 | 12–168 | 1.18–1.74 | 0.38–0.43 | 0.085–0.10 |
+  | quadric centred lift p=5/7     | 72/192 | 2.17/1.47 | 0.42/0.36 | 0.10/0.083 |
+  | random d=0.5 / d=0.1           | 2061/1624 | 9.4/8.5 | 0.35/0.48 | 0.091/0.125 |
+  | interval [1,2000] / Paley 4093 | 2000/2046 | 9.7/9.5 | 0.200/0.348 | 0.043/0.091 |
+  | packets FRACTIONAL X=1024/4096/16384 | 115/484/1923 | 0.765/0.687/0.639 | 0.288/0.287/0.260 | 0.053/0.054/0.050 |
+  | packets Bernoulli-rounded       | 168/656/2674 | 1.79/1.99/2.08 | 0.42/0.43/0.42 | 0.090/0.087/0.085 |
+(X = 65536 packets killed: X × J outer product > 10 GB; not needed.)
+Pre-registered: (P1) P82 <= M — HOLDS for all 24 sets. (P2) Boolean share₀ >= 0.2 HOLDS (min 0.200, interval);
+G₀/√n >= 0.05 FAILS marginally for Singer–Bu (0.047, flat in q) and interval (0.043) — a threshold miss, not a decay.
+(P3) packets share₀ → 0 NOT CONFIRMED: 0.288 → 0.287 → 0.260 over 16× in X, and the fractional packets match the Bu-type
+Boolean sets in both statistics. Reason: the packet advantage decays like X^{−0.05} (R 0.76 → 0.64), their background is
+not flat at accessible X (floor −√(J/8) plus oscillating nonnegative tails), so separation would need X ~ 10²⁰.
+NOTE: an "optimised" P82 over levels r' is dominated by the trivial term r' (ratio 0.950 = the top level scanned);
+the informative quantity is G₀.
+VERDICT (advisor's criterion): the local centroid inequality is weight-agnostic (P82) and Booleanity enters only through
+an anti-concentration (gap) hypothesis that cannot even be calibrated against the packets at computable sizes. P77 does
+NOT supply a general route. Recorded in ROUTES; P77/P79/P81 remain model exclusions.

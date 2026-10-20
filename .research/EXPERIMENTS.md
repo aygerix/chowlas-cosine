@@ -1933,3 +1933,8 @@ destroys the floor at once.
 SCOPE: a model-separating statistic, not a Chowla mechanism. C* (F2) forces only E_background[p] <= 1 − c (background at
 about −cM on average), not a flat floor at −M; a C* object with a half-depth background and rare deep wells would look
 Boolean-like here. So FLOOR ("Boolean sets have no macroscopic near-floor plateau") would exclude the packet model only.
+E119 (cont.) SA one-rep, taper init, p = 11 (1.5M iterations, ~1100 per class): K = 114.6, ρ = 0.1005, K/√(|D| ln n²) = 1.02.
+0.92p² = 111.3 (law within 3%); taper-random 137–150. Pre-registered "SA <= taper-random" HOLDS. SA/random = 0.80 (vs ≈ 0.65
+at p <= 7): the optimiser's advantage shrinks with size, so at p = 11 the optimised lift sits ON the p² law. The law can
+only fail for optimised lifts once the random level (1.25√(|D| ln n²)) drops below it, p ≈ 23–29 (E119b), unless SA gains
+more. p = 13, 17 running.

@@ -3055,3 +3055,23 @@ Lead, paper only, no computation. Each item was checked against ROUTES/NOTEBOOK/
    moments, energy, large values, Hardy space or graph spectra is satisfied by the C* anatomy (flat background
    −M, spikes of height n/(2M) on measure 2ε², additively random at order >= 3 when M >> n^{1/3}). Next: a
    computation that can actually discriminate (see STATE first-next-step), not another reformulation.
+
+## 2026-10-20 cont. 31 (later) — advisor review 3; model exclusions P79–P81; a failed prediction
+- Advisor review 3 (pasted by the user): prove λ_odd <= 1 − c for JL; test K ≈ 0.92p² at p = 11, 13; certify sup ρ.
+- P79 (proved): JL D_{2,j} has a free unit-scalar action with p + 1 orbits; conductor-p characters vanish on N; primitive
+  odd ψ give antisymmetric Toeplitz blocks, whose singular values pair (Youla), so λ_odd <= 0.873 (→ 1/2). Exact checks
+  p <= 19. Uniform gap over ALL depths is false (a = 3, 4: 0.80, 0.94), so the statement is for a = 2.
+- P81 (proved, two lines): for an η = +1 quadric cone, Q(g − h) = −Q(g + h) on the cone makes the odd concentration kernel
+  diagonal with entry 1/p. So the odd concentration operator IS (1/p)·I. One-rep quadric lifts excluded (Z^r minimum).
+- P78: random taper lifts give K = O(√(|D| log n)) — so P77's √|D| order is the true order up to √log.
+- FAILED pre-registered prediction (E119): my noise constant dropped √2 (Gaussian max is σ√(2 ln N)); measured
+  K/√(|D| ln n²) ≈ 1.25 flat for p = 3..13. Random lifts sit ABOVE 0.92p² for p <= 13; crossover predicted p ≈ 25–30.
+- Where this sits in the CHAIN: the lift exclusions are instances of step (d) ("structured alternative ⇒ Gibbs") for
+  rank-2/rank-r Bohr spectra coming from specific finite objects. P77-d reduces (d) for a given finite object to a
+  first-order gap λ_odd < 1; but λ_odd → 1 for deep JL, so a GENERAL (d) needs second-order terms. Constant-multiplicity
+  lifts: K >= c·r' (grid values scale with c) and the centroid gain scales like √|A|/c, so ρ <= min(ρ_G/c, C c³V⁴):
+  not uniformly bounded (c ~ p^{1/4} gives p^{3/4}); multiplicity classes are NOT excluded by first order.
+- The third advisor model (P61(b) packets) is not a lift: its noise is Gaussian (sum of J random cosines). A Boolean
+  noise e_k ∈ {−p_k, 1 − p_k} written as Σ_j c_j cos(kθ_j) forces additive structure on {θ_j} (subgroup ⇒ two-valued
+  character sums), i.e. back to lifts. This is the (c) ⇒ (d) step itself; no new inequality yet.
+- Codex is out of quota until 2026-10-25 14:57; adversarial checks of P78–P81 are lead self-checks for now.

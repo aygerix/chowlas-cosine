@@ -1853,6 +1853,15 @@ CERTIFIED: |T| <= 0.8·K(T)² + 10⁻⁴ for every symmetric T ⊂ P_9, i.e. sup
 optimum T = 20, K = 5. (Cuts are valid for all truly feasible T, so the bound is rigorous up to LP tolerances; the cut
 generator's numerics only affect which incumbents are accepted.) Running: full box [−9, 9]² control, p = 5 (L = 25), p = 7.
 (Threshold-MILP control, full box at Kthr = 3, 1800 s: T = 6, K = 2.63, ratio 0.867 — the full box beats the D-class.)
+E120 (cont.) Remaining runs. p = 3 full box [−9,9]² (180 pairs), 1800 s/round: NOT certified; incumbent T = 30, K = 6,
+ρ = 0.8333 > the D-class sup 0.8; ObjBound 166 (useless). p = 5 (L = 25, ρ0 = 0.30): NO OUTPUT — no line in ratio.jsonl on
+the VM or locally, no traceback in the job log; cause undiagnosed (it ended in < 10800 s, before p = 7 started). p = 7
+(L = 49, 672 pairs, 10800 s): NOT certified; ObjBound 696 → 1344, incumbent a single ± pair (T = 2, K = 2, ρ = 0.5).
+PRE-REGISTRATION ERROR (lead): any single ± pair {g, −g} in the class has K = 2, ρ = 2/4 = 0.5, so sup ρ >= 0.5 for every p
+and the p = 5 window [0.305, 0.45] was false before the run. The free-subset SA values (0.305, 0.204, 0.160) are optima of
+LARGE T, not sups. A meaningful item (3) needs a size floor (|T| >= c|D|, added as a constraint) or must ask whether
+sup ρ − 0.5 grows with p. Dinkelbach MIQP with lazy cuts does not close at p >= 5 (bound gap ~10³); certification beyond
+p = 3 needs a different relaxation.
 
 ## E119b (2026-10-20, cont. 31) Crossover test of the 0.92p² law (src/e119b_batch.sh; data examples/e119/taper_large.jsonl;
 ## dirichlet; K NUMERICAL: FFT grid (oversampling 8 for p = 17, 19; 4 for p >= 23) + BFGS from the 16 best basins)

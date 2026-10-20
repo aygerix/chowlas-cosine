@@ -1,8 +1,11 @@
 #!/bin/bash
-# E115 batch: exact N_p(K) for K = 2..7 over primes 31..211 (Gurobi, 8 threads, 1800 s cap per solve).
-out=examples/e115/np_k.jsonl
-for K in 2 3 4 5 6 7; do
-  for p in 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 137 139 149 151 157 163 167 173 179 181 191 193 197 199 211; do
-    python src/e115_zp_ilp.py $p $K 1800 8 >> $out
+# E115 run 2: exact N_p(K) near the half-set regime, K = c·sqrt(p), c in {0.42, 0.46, 0.50}; Gurobi 8 threads,
+# 1200 s cap per solve (ObjBound is a valid upper bound on N_p(K) even when the solve is not finished).
+# Run 1 (K = 2, 3 integer thresholds, primes <= 211) is in examples/e115/np_k_run1.jsonl.
+out=examples/e115/np_k_run2.jsonl
+for p in 31 37 41 43 47 53 59 61 67 71 73 79 83 89 97 101 103 107 109 113 127 131 149 151; do
+  for c in 0.42 0.46 0.50; do
+    K=$(python -c "import math; print(round($c*math.sqrt($p), 6))")
+    python src/e115_zp_ilp.py $p $K 1200 8 >> $out
   done
 done

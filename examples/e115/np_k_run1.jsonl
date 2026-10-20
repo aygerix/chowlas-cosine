@@ -1,0 +1,57 @@
+{"p": 31, "K": 2.0, "status": 2, "seconds": 0.04, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.98973864678379, "ratio": 0.5, "S_pos": [1]}
+{"p": 37, "K": 2.0, "status": 2, "seconds": 0.06, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.992794977085053, "ratio": 0.5, "S_pos": [1]}
+{"p": 41, "K": 2.0, "status": 2, "seconds": 0.06, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9941316023674809, "ratio": 0.5, "S_pos": [1]}
+{"p": 43, "K": 2.0, "status": 2, "seconds": 0.08, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9946645673271033, "ratio": 0.5, "S_pos": [1]}
+{"p": 47, "K": 2.0, "status": 2, "seconds": 0.07, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9955337572463063, "ratio": 0.5, "S_pos": [1]}
+{"p": 53, "K": 2.0, "status": 2, "seconds": 0.08, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.996487463528643, "ratio": 0.5, "S_pos": [1]}
+{"p": 59, "K": 2.0, "status": 2, "seconds": 0.11, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9971653913535239, "ratio": 0.5, "S_pos": [1]}
+{"p": 61, "K": 2.0, "status": 2, "seconds": 0.12, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.997348179769661, "ratio": 0.5, "S_pos": [1]}
+{"p": 67, "K": 2.0, "status": 2, "seconds": 0.14, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.997801782971423, "ratio": 0.5, "S_pos": [1]}
+{"p": 71, "K": 2.0, "status": 2, "seconds": 0.22, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9980424530399472, "ratio": 0.5, "S_pos": [1]}
+{"p": 73, "K": 2.0, "status": 2, "seconds": 0.19, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.99814823020446, "ratio": 0.5, "S_pos": [1]}
+{"p": 79, "K": 2.0, "status": 2, "seconds": 0.22, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9984187944546037, "ratio": 0.5, "S_pos": [1]}
+{"p": 83, "K": 2.0, "status": 2, "seconds": 0.26, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.998567509632663, "ratio": 0.5, "S_pos": [1]}
+{"p": 89, "K": 2.0, "status": 2, "seconds": 0.36, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9987541245239564, "ratio": 0.5, "S_pos": [1]}
+{"p": 97, "K": 2.0, "status": 2, "seconds": 0.48, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9989511380910299, "ratio": 0.5, "S_pos": [1]}
+{"p": 101, "K": 2.0, "status": 2, "seconds": 0.75, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9990325645839762, "ratio": 0.5, "S_pos": [1]}
+{"p": 103, "K": 2.0, "status": 2, "seconds": 0.65, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.999069767246703, "ratio": 0.5, "S_pos": [1]}
+{"p": 107, "K": 2.0, "status": 2, "seconds": 0.78, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9991380124539968, "ratio": 0.5, "S_pos": [1]}
+{"p": 109, "K": 2.0, "status": 2, "seconds": 0.94, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9991693526477023, "ratio": 0.5, "S_pos": [1]}
+{"p": 113, "K": 2.0, "status": 2, "seconds": 0.94, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.999227114989108, "ratio": 0.5, "S_pos": [1]}
+{"p": 127, "K": 2.0, "status": 2, "seconds": 1.58, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9993881145061663, "ratio": 0.5, "S_pos": [1]}
+{"p": 131, "K": 2.0, "status": 2, "seconds": 1.75, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9994249093063137, "ratio": 0.5, "S_pos": [1]}
+{"p": 137, "K": 2.0, "status": 2, "seconds": 2.18, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.999474176998368, "ratio": 0.5, "S_pos": [1]}
+{"p": 139, "K": 2.0, "status": 2, "seconds": 2.24, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9994891990956236, "ratio": 0.5, "S_pos": [1]}
+{"p": 149, "K": 2.0, "status": 2, "seconds": 2.35, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9995554597192362, "ratio": 0.5, "S_pos": [1]}
+{"p": 151, "K": 2.0, "status": 2, "seconds": 2.21, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9995671572126459, "ratio": 0.5, "S_pos": [1]}
+{"p": 157, "K": 2.0, "status": 2, "seconds": 2.56, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9995996074857052, "ratio": 0.5, "S_pos": [1]}
+{"p": 163, "K": 2.0, "status": 2, "seconds": 3.35, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9996285408226697, "ratio": 0.5, "S_pos": [1]}
+{"p": 167, "K": 2.0, "status": 2, "seconds": 3.25, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9996461216485832, "ratio": 0.5, "S_pos": [1]}
+{"p": 173, "K": 2.0, "status": 2, "seconds": 3.41, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9996702417995467, "ratio": 0.5, "S_pos": [1]}
+{"p": 179, "K": 2.0, "status": 2, "seconds": 4.6, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9996919774333266, "ratio": 0.5, "S_pos": [1]}
+{"p": 181, "K": 2.0, "status": 2, "seconds": 4.65, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9996987467834768, "ratio": 0.5, "S_pos": [1]}
+{"p": 191, "K": 2.0, "status": 2, "seconds": 5.97, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9997294651491986, "ratio": 0.5, "S_pos": [1]}
+{"p": 193, "K": 2.0, "status": 2, "seconds": 6.24, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9997350429144478, "ratio": 0.5, "S_pos": [1]}
+{"p": 197, "K": 2.0, "status": 2, "seconds": 6.63, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9997456931320206, "ratio": 0.5, "S_pos": [1]}
+{"p": 199, "K": 2.0, "status": 2, "seconds": 7.33, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9997507790353146, "ratio": 0.5, "S_pos": [1]}
+{"p": 211, "K": 2.0, "status": 2, "seconds": 14.73, "pairs": 1, "S_size": 2, "bound_pairs": 1.0, "Kmin_exact": 1.9997783198473877, "ratio": 0.5, "S_pos": [1]}
+{"p": 31, "K": 3.0, "status": 2, "seconds": 0.1, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.5715989719851056, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 37, "K": 3.0, "status": 2, "seconds": 0.11, "pairs": 6, "S_size": 12, "bound_pairs": 6.0, "Kmin_exact": 2.855697794841759, "ratio": 1.3333333333333333, "S_pos": [1, 4, 5, 8, 9, 13]}
+{"p": 41, "K": 3.0, "status": 2, "seconds": 0.2, "pairs": 4, "S_size": 8, "bound_pairs": 4.0, "Kmin_exact": 2.943964339688077, "ratio": 0.8888888888888888, "S_pos": [1, 2, 3, 4]}
+{"p": 43, "K": 3.0, "status": 2, "seconds": 0.23, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.626380441945522, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 47, "K": 3.0, "status": 2, "seconds": 0.33, "pairs": 4, "S_size": 8, "bound_pairs": 4.0, "Kmin_exact": 2.952404478056354, "ratio": 0.8888888888888888, "S_pos": [1, 2, 3, 4]}
+{"p": 53, "K": 3.0, "status": 2, "seconds": 0.72, "pairs": 4, "S_size": 8, "bound_pairs": 4.0, "Kmin_exact": 2.9770916008764825, "ratio": 0.8888888888888888, "S_pos": [1, 2, 3, 4]}
+{"p": 59, "K": 3.0, "status": 2, "seconds": 1.52, "pairs": 4, "S_size": 8, "bound_pairs": 4.0, "Kmin_exact": 2.9981066162960905, "ratio": 0.8888888888888888, "S_pos": [1, 2, 3, 4]}
+{"p": 61, "K": 3.0, "status": 2, "seconds": 2.03, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6107850375903503, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 67, "K": 3.0, "status": 2, "seconds": 3.86, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.62726606325191, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 71, "K": 3.0, "status": 2, "seconds": 4.7, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6196739222511938, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 73, "K": 3.0, "status": 2, "seconds": 5.35, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.631095779333445, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 79, "K": 3.0, "status": 2, "seconds": 8.5, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6270221327806973, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 83, "K": 3.0, "status": 2, "seconds": 11.21, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.630774036371518, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 89, "K": 3.0, "status": 2, "seconds": 18.16, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6262671473982913, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 97, "K": 3.0, "status": 2, "seconds": 27.35, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6310662902536537, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 101, "K": 3.0, "status": 2, "seconds": 40.94, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6293674916626193, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 103, "K": 3.0, "status": 2, "seconds": 56.74, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6297360025835825, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 107, "K": 3.0, "status": 2, "seconds": 51.23, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6311190324718536, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 109, "K": 3.0, "status": 2, "seconds": 64.05, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.625058670417215, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}
+{"p": 113, "K": 3.0, "status": 2, "seconds": 78.29, "pairs": 3, "S_size": 6, "bound_pairs": 3.0, "Kmin_exact": 2.6291825611905506, "ratio": 0.6666666666666666, "S_pos": [1, 2, 3]}

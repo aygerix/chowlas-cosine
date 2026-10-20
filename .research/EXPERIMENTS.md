@@ -1709,3 +1709,34 @@ CP structure of the Jedwab–Li blocks D_{a,j} ⊂ Z_{p^a}² (exact LS_{p^{a−1
   generation on Z_27² was too slow (killed) and replaced by the exact clique computations above.
 - (3, 4, 1) (K = 27): the exact max-clique run produced no output within its wall-time limit (no
   value claimed). The ω = K + 1 pattern is verified only for (3,3), (5,2), (5,3).
+
+## E115 (2026-10-20, cont. 31) Exact K-Chowla numbers in Z_p (Gurobi ILP; src/e115_zp_ilp.py; dirichlet)
+N_p(K) = max |S| over symmetric S ⊂ Z_p^*, |S| <= (p−1)/2, D_S(j) >= −K for all j ≠ 0 (exact characters, no grid;
+1 ∈ S by dilation symmetry). Z_p-Chowla (sup_p max_K N_p(K)/K² < ∞) ⇒ Z-Chowla.
+- Run 1 (K = 2, 3; 57 solves, all OPTIMAL; examples/e115/np_k_run1.jsonl): N_p(2) = 2 for every p >= 83 (S = {±1});
+  N_p(3) = 6–8 (ratio <= 0.89) except p = 37: |S| = 12, S = ±{1,4,5,8,9,13} (ratio 1.33). Fixed small K is
+  uninformative (optimum = tiny set); stopped.
+- Run 2 (running): K = c√p, c ∈ {0.42, 0.46, 0.50}, primes 31–151, 1200 s cap; ObjBound is a valid upper bound on
+  N_p(K) even for unfinished solves. Output examples/e115/np_k_run2.jsonl.
+
+## E116 (2026-10-20, cont. 31) Advisor's experiment: lifting a Jedwab–Li set to Z² (≡ Z) with a jointly optimised
+## Boolean taper (src/e116_jl_taper.py; dirichlet; minima NUMERICAL: FFT grid 16(2L+1) + BFGS, not certified)
+Lift P_L = {z ∈ [−L, L]² : z mod n ∈ D_{a,j}}; Boolean T ⊂ P_L maps to S = {z₁ + Vz₂} ⊂ Z (V > 4L) with
+ratio_1D >= |T|/K'_2D², R_1D <= K'/√(2|T|). ratio 2 ⟺ R = ½; best known integer sets of size ~100–250: ratio ≈ 1.4.
+Measured (i) finite, (ii) fractional PD taper w = Λ(z₁/L)Λ(z₂/L), (iii) Boolean (box = centred representatives;
+Bernoulli(w) rounding, seeds 0–3):
+  | p a j | L  | |D| | K_G | ratio_G | K_frac | Σw²   | ratio_frac | box: |T|, K', ratio | Bernoulli ratio     |
+  | 3 2 1 | 9  | 24  | 3   | 2.67    | 3.000  | 9.41  | 1.05       | 24, 10.28, 0.227   | 0.13–0.16           |
+  | 5 2 1 | 25 | 120 | 5   | 4.80    | 5.000  | 50.93 | 2.04       | 120, 32.3, 0.115   | 0.078–0.110         |
+  | 5 2 1 | 50 | 120 | 5   | 4.80    | 20.00  | 211.1 | 0.53       | 120, 32.3, 0.115   | 0.077–0.097         |
+- (ii) is exact theory: with L = n the PD taper vanishes on nZ² ∖ 0, so by Poisson F_w >= −r·τ(0) = −r (observed
+  K_frac = r to 1e−13). The fractional lift costs only the factor Σw²/|D| ≈ (2/3)² = 4/9 (a sinc taper would cost
+  nothing: Σw² = |D|). L = 2n is worse (K scales by (L/n)², Σw² by (L/n)²·… /4). So the Gibbs penalty of the box is
+  ENTIRELY avoidable for fractional weights; the whole loss is the 0/1 constraint.
+- (iii) naive Booleans lose a factor ≈ 20–60 in ratio. Bernoulli matches the noise prediction
+  K ≈ √(2·(5/9)|D|·ln(4n²)) (p = 5: 32 predicted, 31–38 observed).
+- PREDICTION (lead, falsifiable, recorded before the MILP results): the jointly optimised Boolean T stays at ratio
+  <= ~1.4 (R >= 0.6) for p = 3, 5, i.e. no better than unstructured integer optima of the same size, and the ratio
+  gap ratio_frac/ratio_bool grows with p. A ratio > 2 at p = 5 would refute the Gibbs-versus-rounding dichotomy.
+- MILP batch 1 (running): max |T| s.t. F_T >= −Kthr (lazy cuts at true minimisers), p = 3 (L = 9, Kthr 3–6, plus
+  the unrestricted box as control) and p = 5 (L = 25, Kthr 5, 7.5, 10, 15); 1800 s each; examples/e116/milp1.jsonl.

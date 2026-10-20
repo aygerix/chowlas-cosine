@@ -1,0 +1,161 @@
+{
+  "qualification": "Independent finite exact endpoint-pair/hash checks and 192-bit point/floor verification; not an independent-agent or Lean audit of the asymptotic theorem.",
+  "python": "3.12.3",
+  "flint": "0.9.0",
+  "arb_precision": 192,
+  "root_sign_sturm_verified": true,
+  "origin_fiber_tradeoff_constant_verified": true,
+  "independent_samples": [
+    {
+      "X": 64,
+      "n": 1872,
+      "hash_and_point_verified": true,
+      "parity": [
+        {
+          "q": 24,
+          "disk_points": 69,
+          "coefficients": 69,
+          "verified": true
+        },
+        {
+          "q": 27,
+          "disk_points": 89,
+          "coefficients": 89,
+          "verified": true
+        },
+        {
+          "q": 23,
+          "disk_points": 69,
+          "coefficients": 69,
+          "verified": true
+        }
+      ],
+      "any_coupling_mean": {
+        "fibers": 116,
+        "max_n": 6536,
+        "mean_D_upper_rational": "-54035409/500000",
+        "expected_M_lower_rational": "54035409/1000000",
+        "fractional_mean_M_lower_rational": "54035409/1000000",
+        "fractional_mean_M_global_upper_rational": "58",
+        "expected_R_lower_rational": "18011803/27000000",
+        "qualification": "Expectation bounds for ANY coupling with the specified coefficient marginals; not a deterministic bound on each output.",
+        "verified": true
+      }
+    },
+    {
+      "X": 128,
+      "n": 8439,
+      "hash_and_point_verified": true,
+      "parity": [
+        {
+          "q": 40,
+          "disk_points": 129,
+          "coefficients": 129,
+          "verified": true
+        },
+        {
+          "q": 126,
+          "disk_points": 401,
+          "coefficients": 401,
+          "verified": true
+        },
+        {
+          "q": 40,
+          "disk_points": 129,
+          "coefficients": 129,
+          "verified": true
+        }
+      ],
+      "any_coupling_mean": {
+        "fibers": 292,
+        "max_n": 30192,
+        "mean_D_upper_rational": "-279164489/1000000",
+        "expected_M_lower_rational": "279164489/2000000",
+        "fractional_mean_M_lower_rational": "279164489/2000000",
+        "fractional_mean_M_global_upper_rational": "146",
+        "expected_R_lower_rational": "279164489/348000000",
+        "qualification": "Expectation bounds for ANY coupling with the specified coefficient marginals; not a deterministic bound on each output.",
+        "verified": true
+      }
+    },
+    {
+      "X": 256,
+      "n": 35582,
+      "hash_and_point_verified": true,
+      "parity": [
+        {
+          "q": 68,
+          "disk_points": 221,
+          "coefficients": 221,
+          "verified": true
+        },
+        {
+          "q": 100,
+          "disk_points": 317,
+          "coefficients": 317,
+          "verified": true
+        },
+        {
+          "q": 64,
+          "disk_points": 197,
+          "coefficients": 197,
+          "verified": true
+        }
+      ],
+      "any_coupling_mean": {
+        "fibers": 740,
+        "max_n": 137808,
+        "mean_D_upper_rational": "-357529847/500000",
+        "expected_M_lower_rational": "357529847/1000000",
+        "fractional_mean_M_lower_rational": "357529847/1000000",
+        "fractional_mean_M_global_upper_rational": "370",
+        "expected_R_lower_rational": "357529847/372000000",
+        "qualification": "Expectation bounds for ANY coupling with the specified coefficient marginals; not a deterministic bound on each output.",
+        "verified": true
+      }
+    }
+  ],
+  "correlated": [
+    {
+      "iteration": 0,
+      "n": 1599,
+      "listed_floors_verified": true,
+      "missed_negative_point_verified": true
+    },
+    {
+      "iteration": 1,
+      "n": 1599,
+      "listed_floors_verified": true,
+      "missed_negative_point_verified": true
+    },
+    {
+      "iteration": 2,
+      "n": 1599,
+      "listed_floors_verified": true,
+      "missed_negative_point_verified": true
+    }
+  ],
+  "countercontrol": [
+    {
+      "X": 64,
+      "n": 1376,
+      "full_empty_choices_verified": true,
+      "listed_positive_curve_bounds_verified": true,
+      "t5_negative_verified": true
+    },
+    {
+      "X": 128,
+      "n": 6984,
+      "full_empty_choices_verified": true,
+      "listed_positive_curve_bounds_verified": true,
+      "t5_negative_verified": true
+    },
+    {
+      "X": 256,
+      "n": 32720,
+      "full_empty_choices_verified": true,
+      "listed_positive_curve_bounds_verified": true,
+      "t5_negative_verified": true
+    }
+  ]
+}

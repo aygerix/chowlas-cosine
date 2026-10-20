@@ -45,7 +45,12 @@ prediction or exclude an explicit model; no reformulation sweeps; target = some 
       target (FLOOR), not a Chowla route, because C* (F2) only forces a background averaging −cM.
   (e0) NEXT DERIVATION (C*): is a C* object with a half-depth background (p ≈ const < 1 on most of T) and rare deep wells
       compatible with p̂ ∈ {0, 1/K}? If Booleanity forces the floor to be flat, FLOOR + E125 become a route; if not, record why.
-  (e) FIRST NEXT STEP (earlier): read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
+  (e1) OUTCOMES of the queued runs (2026-10-20): E119 SA p = 11 K = 114.6 (on 0.92p²); p = 13 SA killed at the 30000 s
+      limit (no result); E119d p = 17 K_true = 271.4 (pre-registered 245 FALSE; on 0.92p² = 266; SA/random 0.65 → 0.80 → 0.88),
+      but the SA's coarse grid under-reports K by 13% at p = 17, so optimised lifts need a finer-grid SA before p >= 17 is
+      read. E120: only p = 3 certified; p = 5 left no output; p = 7 bound gap ~10³; and sup ρ >= 0.5 trivially (one ± pair),
+      so item (3) needs a size floor |T| >= c|D|. E119c free-subset ρ 0.305, 0.204, 0.160 (p = 5, 7, 11), still falling.
+  (e) FIRST NEXT STEP (earlier, now done — see e1): read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
       random?), then decide whether multiplicity lifts need a theorem; codex reviews of P78–P81 after 2026-10-25 14:57.
 - FIRST NEXT STEP (cont. 31, superseded in part): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,
   the remaining permitted lift models are (i) variable-multiplicity subsets (P77 needs λ_odd of the sub-multiset's own

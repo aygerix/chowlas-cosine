@@ -563,6 +563,10 @@ The prize is (c). Everything else is support.
     Lesson for any future local inequality: the P61(b) packets are not asymptotic at computable X; a separating statistic
     must be insensitive to the packets' non-flat (−√(J/8) + nonneg tails) background, i.e. must see sub-floor structure.
 
+  - E125 PRE-REGISTERED (before its run): near-floor geometry N(t) = |{f <= −M(1 − t)}|, well count, γ (N ~ t^γ). A separating
+    statistic exists at computable X iff packets and Singer–Bu sets differ by >= 3× in N(t) (t ∈ [0.01, 0.1]) or >= 0.2 in γ,
+    consistently in X; otherwise: no local statistic tested separates Boolean sets from packets at computable X.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

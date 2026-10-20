@@ -1915,3 +1915,21 @@ the informative quantity is G₀.
 VERDICT (advisor's criterion): the local centroid inequality is weight-agnostic (P82) and Booleanity enters only through
 an anti-concentration (gap) hypothesis that cannot even be calibrated against the packets at computable sizes. P77 does
 NOT supply a general route. Recorded in ROUTES; P77/P79/P81 remain model exclusions.
+
+## E125 (2026-10-20, cont. 31) Near-floor geometry: Boolean sets vs fractional P61(b) packets (src/e125_floor.py; dirichlet;
+## NUMERICAL, grid L >= 64·max A, M = grid min; pre-registered in CSTAR)
+N(t) = |{f <= −M(1 − t)}|, wells(t) = components, γ = slope of log N between t = 0.01 and 0.1.
+  | family                      | N(0.01)            | N(0.05)          | N(0.1)          | N(0.5)        | wells(0.01)    | γ           |
+  | Singer–Bu q = 61/101/199    | 8.0e-5/3.4e-5/1.4e-5 | 2.5e-3/1.9e-3/3.5e-3 | 0.024/0.026/0.041 | 0.36/0.37/0.38 | 14/16/30     | 2.48/2.88/3.45 |
+  | dense optima X120/X260      | 2.7e-3/3.7e-4      | 0.017/0.0068     | 0.037/0.022     | 0.28/0.25     | 6/2            | 1.14/1.78   |
+  | random d = 0.5, X = 4096    | 2.3e-5             | 5.0e-5           | 7.2e-5          | 2.2e-4        | 2              | 0.50        |
+  | packets FRACTIONAL 1k/4k/16k| 0.022/0.024/0.036  | 0.13/0.17/0.20   | 0.16/0.21/0.25  | 0.31/0.36/0.39 | 62/284/1596  | 0.87/0.95/0.85 |
+  | packets Bernoulli 1k/4k/16k | 2.1e-4/6.9e-5/1.3e-5 | 5e-4/3e-4/4e-5 | 7e-4/6e-4/1.4e-4 | 0.07/0.04/0.035 | 2/2/2       | 0.54/0.93/1.01 |
+PRE-REGISTERED CRITERION MET: packets vs Singer–Bu differ by 270–2500× in N(0.01) (growing with X: packets up, Bu down) and by
+>= 1.5 in γ. The fractional packets have a macroscopic FLAT FLOOR (the deterministic bottom −√(J/8) of nonnegative packet
+tails, attained on ~0.1X shallow wells); Boolean near-extremizers reach their minimum in a few isolated deep wells, with the
+near-floor measure growing steeply (γ ≈ 2.5–3.5). At half depth (N(0.5)) the two are indistinguishable. Bernoulli rounding
+destroys the floor at once.
+SCOPE: a model-separating statistic, not a Chowla mechanism. C* (F2) forces only E_background[p] <= 1 − c (background at
+about −cM on average), not a flat floor at −M; a C* object with a half-depth background and rare deep wells would look
+Boolean-like here. So FLOOR ("Boolean sets have no macroscopic near-floor plateau") would exclude the packet model only.

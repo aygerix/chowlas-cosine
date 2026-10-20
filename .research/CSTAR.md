@@ -567,6 +567,14 @@ The prize is (c). Everything else is support.
     statistic exists at computable X iff packets and Singer–Bu sets differ by >= 3× in N(t) (t ∈ [0.01, 0.1]) or >= 0.2 in γ,
     consistently in X; otherwise: no local statistic tested separates Boolean sets from packets at computable X.
 
+  - E125 RESULT (pre-registered criterion MET): near-floor geometry separates the packets from Boolean near-extremizers by
+    270–2500× in N(0.01) = |{f <= −0.99M}| (packets 0.022–0.036 and growing; Singer–Bu 8e-5 → 1.4e-5 and shrinking), γ 0.9 vs
+    2.5–3.5. Packets = flat floor (nonnegative-tail bottom); Boolean = rare deep wells. Candidate model exclusion
+    FLOOR: Boolean A have no macroscopic near-floor plateau. NOT a Chowla route by itself: C* (F2) needs only a background
+    averaging −cM, compatible with rare deep wells. Next derivation: does Booleanity + C* force the floor to be flat, i.e. is
+    a "half-depth background with rare deep wells" C* object consistent with p̂ ∈ {0, 1/K}? Test against the mixing identity
+    p ⋆ p = (1 − 1/K) + p/K evaluated at the deep wells (p = 0 there).
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

@@ -1,0 +1,178 @@
+{
+  "qualification": "Independent finite exact/ball checks, not an external-agent or Lean audit.",
+  "python_version": "3.12.3",
+  "flint_version": "0.9.0",
+  "arb_precision": 192,
+  "quantization": {
+    "line_profiles": 84,
+    "cone_cases": [
+      {
+        "prime": 5,
+        "profile": "scalar_tent",
+        "selector": "zero",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "scalar_tent",
+        "selector": "threshold",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "scalar_tent",
+        "selector": "one_ruling",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "scalar_tent",
+        "selector": "seeded_even",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "central_radial",
+        "selector": "zero",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "central_radial",
+        "selector": "threshold",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "central_radial",
+        "selector": "one_ruling",
+        "verified": true
+      },
+      {
+        "prime": 5,
+        "profile": "central_radial",
+        "selector": "seeded_even",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "scalar_tent",
+        "selector": "zero",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "scalar_tent",
+        "selector": "threshold",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "scalar_tent",
+        "selector": "one_ruling",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "scalar_tent",
+        "selector": "seeded_even",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "central_radial",
+        "selector": "zero",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "central_radial",
+        "selector": "threshold",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "central_radial",
+        "selector": "one_ruling",
+        "verified": true
+      },
+      {
+        "prime": 7,
+        "profile": "central_radial",
+        "selector": "seeded_even",
+        "verified": true
+      }
+    ],
+    "verified": true
+  },
+  "lens_transform": [
+    {
+      "t": "0",
+      "normalized_upper_ball": "[-0.067603458976034532113280699483285016883418633403184291 +/- 1.66e-55]",
+      "verified": true
+    },
+    {
+      "t": "1/4",
+      "normalized_upper_ball": "[-0.080404553237160885249967850489097382806399534309629739 +/- 8.59e-55]",
+      "verified": true
+    },
+    {
+      "t": "1/2",
+      "normalized_upper_ball": "[-0.08263460856516663700450765192137462049730354020776039 +/- 4.30e-54]",
+      "verified": true
+    },
+    {
+      "t": "2/3",
+      "normalized_upper_ball": "[-0.0813501588799981171637355773194178908458981423041996 +/- 2.40e-53]",
+      "verified": true
+    },
+    {
+      "t": "3/4",
+      "normalized_upper_ball": "[-0.0802542253350260585691783559959319949525346964377809 +/- 5.88e-53]",
+      "verified": true
+    },
+    {
+      "t": "9/10",
+      "normalized_upper_ball": "[-0.0778207215755254455604472929151043641258700488321 +/- 2.95e-50]",
+      "verified": true
+    },
+    {
+      "t": "99/100",
+      "normalized_upper_ball": "[-0.07617889374081767042600370136700589 +/- 7.55e-36]",
+      "verified": true
+    }
+  ],
+  "lenses": [
+    {
+      "L": 6,
+      "X": 64,
+      "n": 2420,
+      "hash_verified": true,
+      "point_verified": true,
+      "fejer_verified": true,
+      "aliases": 0,
+      "mean": 1
+    },
+    {
+      "L": 7,
+      "X": 128,
+      "n": 14672,
+      "hash_verified": true,
+      "point_verified": true,
+      "fejer_verified": true,
+      "aliases": 0,
+      "mean": 1
+    },
+    {
+      "L": 8,
+      "X": 256,
+      "n": 95608,
+      "hash_verified": true,
+      "point_verified": true,
+      "fejer_verified": true,
+      "aliases": 0,
+      "mean": 1
+    }
+  ],
+  "verified": true
+}

@@ -1,5 +1,11 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Latest radial realization: Boolean front succeeds, mesoscopic sign fails
+
+DESIGN / CHAIN(c), 2026-10-20: the disk-autocorrelation fractional escape is now realized by a genuine Boolean integer-cone family. Rational Halton centers assign lens windows to dyadic primitive-u shells; membership uses only integer arithmetic. A paper count gives n~(3pi/32)X^2 log X, and EVERY fixed matrix-phase front tends to a nonnegative squared-disk average. Nevertheless a positive Fejer measure isolates an early nondegenerate shell and proves M>=X^(3/2)/2^36 for X=2^L, L>=64, under the stated separated CRT encoding. Thus this Boolean macroscopic realization is not a counterexample; the lost scale is explicit. Three exact finite sets, point bounds and separate Fejer certificates were independently reconstructed. [Proof, arithmetic membership, constants, checks and scope](notes/cstar_radial_boolean_2026-10-20.md).
+
+For arbitrary varying marginals on the finite split cone, integrality also gives off-cone energy >=(1-1/p) times the sum of exact scalar-line quantization minima. The minimum is a sorted-prefix formula; for coefficient range<=1/2 it equals the profile's within-line variance. This needs no independence or constant radial marginal, but it is L2 information and does NOT by itself force a sign. Full Chowla and the universal mixed-certificate gap remain OPEN; no independent-agent/Lean audit completed.
+
 ## Latest algebraic-taper test: complete cone spectrum and rotational obstruction
 
 DESIGN / CHAIN(c), 2026-10-20: on Q={det=0} in Mat_2(F_p), the FULL noise-concentration spectrum is 1,1/p,1/p^2, with multiplicities 2p+1,(p+1)^2(p-2),p^2+1 (paper derivation; exact checks p=3,5,7). Perfectly hidden centered Boolean selector noise comes exactly from unions of planes in one ruling. Near confinement forces proximity, with Hamming error <=4p/(p-1) times leaked energy, to a threshold pattern involving both rulings; relative one-ruling stability is FALSE by an explicit mixed-two-plane sequence. Balanced-ruling noise retains at most 1/p of its energy on the spikes. This answers the stated finite-field algebraic-taper model, not arbitrary C*.

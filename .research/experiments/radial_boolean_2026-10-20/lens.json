@@ -1,0 +1,243 @@
+{
+  "qualification": "Genuine Boolean profile realization and finite lower witnesses; no counterexample or global upper bound.",
+  "seed": 20261025,
+  "cases": [
+    {
+      "L": 6,
+      "X": 64,
+      "n": 2420,
+      "C": [
+        3891147186677219433,
+        3891142238837145635,
+        3891137291009654805,
+        3891132343194746895
+      ],
+      "moduli": [
+        1572865,
+        1572867,
+        1572869,
+        1572871
+      ],
+      "centers": {
+        "2": [
+          -3,
+          2,
+          6
+        ],
+        "3": [
+          9,
+          -14,
+          18
+        ]
+      },
+      "shell_counts": {
+        "3": 64,
+        "2": 2356
+      },
+      "encoded_set_sha256": "84ab0ea0734cc756de00e5daa9531d9ca9ab5b79bbf50dd9ac9f1aa3c4a59dcf",
+      "max_A": 354093765612956815457,
+      "fejer": {
+        "shell": 2,
+        "u": [
+          4,
+          1
+        ],
+        "center": [
+          -3,
+          2,
+          6
+        ],
+        "fiber_pairs": 106,
+        "m": 15895,
+        "mean": "1",
+        "aliases": "0",
+        "H_ball": "[-17.8031542770914903050110130924915914 +/- 6.06e-35]",
+        "M_lower_rational": "1112697/125000",
+        "isolation_squared_margin": 2465112850751,
+        "verified": true,
+        "R_lower_float": 0.18095026402618788
+      },
+      "point": {
+        "j": 5224696334754286345111538,
+        "q": 6120249219773064743485545,
+        "residues": [
+          -45412,
+          14615,
+          6136,
+          -33638
+        ],
+        "f_over_n_upper_rational": "-1305081/10000000",
+        "M_lower_rational": "157914801/500000",
+        "R_lower_float": 6.420149630715486,
+        "certificate": "128-bit Arb point LOWER bound for M; not a global minimum",
+        "verified": true
+      },
+      "count_over_asymptotic_float": 0.48234475178695757,
+      "verified": true
+    },
+    {
+      "L": 7,
+      "X": 128,
+      "n": 14672,
+      "C": [
+        1992250734906640957545,
+        1992250418246990168099,
+        1992250101587440042005,
+        1992249784927990579215
+      ],
+      "moduli": [
+        12582913,
+        12582915,
+        12582917,
+        12582919
+      ],
+      "centers": {
+        "2": [
+          -3,
+          2,
+          6
+        ],
+        "3": [
+          9,
+          -14,
+          18
+        ],
+        "4": [
+          -27,
+          -4,
+          36
+        ]
+      },
+      "shell_counts": {
+        "4": 4420,
+        "3": 780,
+        "2": 9472
+      },
+      "encoded_set_sha256": "140ae5ca5705139c947f2715e098a8007ab724001119868cc9e11d568c119aac",
+      "max_A": 390481053160400574488842,
+      "fejer": {
+        "shell": 2,
+        "u": [
+          4,
+          1
+        ],
+        "center": [
+          -3,
+          2,
+          6
+        ],
+        "fiber_pairs": 431,
+        "m": 31790,
+        "mean": "1",
+        "aliases": "0",
+        "H_ball": "[-71.708320285117349642429594255150956 +/- 2.17e-34]",
+        "M_lower_rational": "35854159/1000000",
+        "isolation_squared_margin": 158292117816825,
+        "verified": true,
+        "R_lower_float": 0.29600216047767
+      },
+      "point": {
+        "j": 23029100361392946270776401568,
+        "q": 25068317671516326291025428585,
+        "residues": [
+          127480,
+          -112657,
+          279583,
+          104130
+        ],
+        "f_over_n_upper_rational": "-219453/2500000",
+        "M_lower_rational": "201238401/156250",
+        "R_lower_float": 10.632763953249018,
+        "certificate": "128-bit Arb point LOWER bound for M; not a global minimum",
+        "verified": true
+      },
+      "count_over_asymptotic_float": 0.6266495452967746,
+      "verified": true
+    },
+    {
+      "L": 8,
+      "X": 256,
+      "n": 95608,
+      "C": [
+        1020031312296337937006697,
+        1020031292030137197920291,
+        1020031271763937264140309,
+        1020031251497738135666703
+      ],
+      "moduli": [
+        100663297,
+        100663299,
+        100663301,
+        100663303
+      ],
+      "centers": {
+        "2": [
+          -3,
+          2,
+          6
+        ],
+        "3": [
+          9,
+          -14,
+          18
+        ],
+        "4": [
+          -27,
+          -4,
+          36
+        ],
+        "5": [
+          9,
+          20,
+          36
+        ]
+      },
+      "shell_counts": {
+        "5": 35516,
+        "4": 18776,
+        "3": 3348,
+        "2": 37968
+      },
+      "encoded_set_sha256": "34efdbe1556e2cfe5e0df2b672132c563d51725d33aae58b07ec5322653f9bbc",
+      "max_A": 399852262929228946986779454,
+      "fejer": {
+        "shell": 2,
+        "u": [
+          4,
+          1
+        ],
+        "center": [
+          -3,
+          2,
+          6
+        ],
+        "fiber_pairs": 1720,
+        "m": 63580,
+        "mean": "1",
+        "aliases": "0",
+        "H_ball": "[-281.00596710274213804257447037391898 +/- 2.56e-33]",
+        "M_lower_rational": "70251491/500000",
+        "isolation_squared_margin": 10132910381210081,
+        "verified": true,
+        "R_lower_float": 0.4544001070337943
+      },
+      "point": {
+        "j": 77105696174793768623222539217494,
+        "q": 102679714938986017765272431100009,
+        "residues": [
+          -644784,
+          -620072,
+          1050970,
+          -144930
+        ],
+        "f_over_n_upper_rational": "-30231/500000",
+        "M_lower_rational": "361290681/62500",
+        "R_lower_float": 18.695178909920923,
+        "certificate": "128-bit Arb point LOWER bound for M; not a global minimum",
+        "verified": true
+      },
+      "count_over_asymptotic_float": 0.8932596273666213,
+      "verified": true
+    }
+  ]
+}

@@ -47,3 +47,7 @@ errors are positively skewed the dense limit is >~ 0.5255. LNS/SA data rise with
   - Sidon D at small k beat Bu at equal k by central-spike vertex locking (R(A)/R_Bu = 0.80–0.94 for k = 6–8);
   - the larger-k trend (k = 9–24) is pending.
 - Status: OPEN, under test. If R_opt/R_Bu -> 1, the class is exhausted at ½, as predicted.
+
+## Boolean radial lens-shell family (2026-10-20)
+
+Exact rational Halton centers on dyadic primitive-u shells realize the disk-autocorrelation fractional profile with genuine zero/one rank-one matrices, n~(3pi/32)X^2 log X and a nonnegative limit at EVERY fixed matrix phase. FAILED as a counterexample under the stated h=6X^3+(1,3,5,7) CRT encoding: positive Fejer isolation proves M>=X^(3/2)/2^36 for L>=64. Three finite sets are independently reconstructed and certified, with point R lower bounds>6.4201,10.6327,18.6951. The construction is retained as a countercontrol to inferring global sign from a good macroscopic profile. Within-shell center correlations and other encodings are not excluded. [Generator, exact membership, proofs and checks](notes/cstar_radial_boolean_2026-10-20.md).

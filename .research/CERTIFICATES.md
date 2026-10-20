@@ -242,3 +242,7 @@ Archived copies are in examples/r7_certificates/. The originals, runnable from t
 - final_check.py → final_checks.json: hashes, binary algebra, Arb point dips of failed roundings, triangular
   repair-energy constants.
 - Lead's independent re-check: E85 (src/e85_r11_verify.py → examples/e85/e85_verify.json). All pass.
+
+## 2026-10-20 isolated lens-fiber certificates
+
+The Boolean radial family has two separate rigorous LOWER bounds for M: exact-root Arb point evaluations and a nonnegative product-Fejer measure of exactly unit mean. Strong CRT kernel separation proves zero Fourier aliases, so the second certificate reduces to a finite weighted lens sum. All three finite certificates are rechecked with independent reverse-factor enumeration and 192-bit arithmetic. These do not certify global upper bounds. [Derivation and reproduction](notes/cstar_radial_boolean_2026-10-20.md).

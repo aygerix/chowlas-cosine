@@ -1,5 +1,11 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Active continuation: deletion and partial majorants, 2026-10-20
+
+**Full Chowla is still OPEN; the goal remains active.** The proposed coefficient-rank deletion heuristic failed an exact finite test: A={1,...,9,13} has the improving subset {1,...,7,9}, but all 18 proper upper/lower rank prefixes of its saved rational dual worsen R. Rational Chebyshev evaluations and independent exact Sturm checks prove the comparisons. This does not certify the ordering of the true unrestricted optimizer or refute an asymptotic theorem on strict-record minimizers.
+
+**Paper derivation:** replacing qhat(s)=1 by qhat(s)>=1 preserves the sufficient L4 certificate while guaranteeing nonnegative nonconstant coefficients of q³ and complementary slackness. Its translation gap is conditionally negative definite and has an exact fourth-power identity. A weighted {1,5} control proves that positivity of the equality dual cannot be inferred generically from positive data. The required upper bound on relaxed cost for Boolean strict-record minimizers remains unproved; the immediate translation estimates give lower bounds instead. [Proof, data, limits, and strategic decision](notes/cstar_partial_majorants_2026-10-20.md). No independent Lean review completed; no solver job remains running from this pass.
+
 ## Active goal continuation: global L4, 2026-10-20
 
 **Full Chowla remains OPEN; the goal is active.** The latest work derives a global L4 Fourier-completion certificate with no W2 support restriction. A paper proof gives Pr[|A|>=mu/2 and M(A)>sqrt(|A|)/20]>=1149/2048 for any four-wise independent Bernoulli selectors on arbitrary positive frequencies with p_i<=1/2 and mu>=64; no PD mean profile or support filling is assumed. This is a model-specific theorem, not a universal proof. An exact affine-cube three-wise family defeats the raw fourth-moment extension, while a direct frequency-band test gives its selected sets a linear lower bound. A universal one-sign exterior correction is also refuted for every fixed constant.

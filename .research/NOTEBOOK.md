@@ -3314,3 +3314,33 @@ Reproduction (each script checks that it is running on Dirichlet):
 **Discontinue:** a universal negative-only correction; replacing four-wise by three-wise in the raw noise moment estimate; interpreting finite solver success as a universal completion bound. **Do not expand the numerical grid without a new lemma:** the current primal/dual diagnostics already locate the finite costs closely. **Construction side:** any all-output low-ratio selector law with p_i<=1/2 and large expected size must carry the stated large aggregated centered correlation defect. The affine-cube law has such a defect but has a linear negative minimum; it is not a candidate to scale up. A nonproduct, non-band-concentrated correlated law would be required. No such law or algorithm is claimed.
 
 The active goal is left intact. No universal Chowla theorem, quantified disproof algorithm, exhaustive impossibility statement, or ongoing unattended job is claimed.
+
+## 2026-10-20 — Dual deletion miss and mean-zero partial majorants
+
+Full derivations and qualification: [research note](notes/cstar_partial_majorants_2026-10-20.md). The exact target remains M(A)>=c sqrt(|A|) for every nonempty finite set of distinct positive integers, with one absolute c>0, or the quantified constructive negation. Neither is achieved here.
+
+**NEW EXACT FINITE RESULT.** Starting with the hereditary 8-set B={1,...,7,9}, augment by one or two frequencies and test the proposed Boolean deletion rule. Among 26 tested parents, A={1,...,9,13} has R(A) about 0.73413735 and the known improving subset B with R(B)=1/sqrt(2). Nevertheless every one of the 18 proper upper/lower coefficient-rank prefixes of its saved rational dual has larger R than A. The independent verifier reconstructs the dual cube by dictionary convolution, bounds M(A)<=580387/250000 by exact Sturm count, and proves each ratio comparison by a rational Chebyshev evaluation. It separately verifies M(B)=2. This refutes the computed-dual threshold heuristic, not the ordering of the unknown true unrestricted optimizer or an asymptotic large-cost theorem on strict-record minimizers.
+
+**PIVOT AND PAPER DERIVATION.** Define J_≥ by real mean-zero q with qhat(s)>=1 on S, all unused coefficients free. This weakens equality interpolation and retains the global certificate k(k+1)(J_≥/sqrt(N))²>=1. In particular J_≥^4<=128N² is sufficient for the 1/20 Chowla bound. The unique optimizer satisfies q³=c0+sum_s lambda_s e^{isx}, lambda_s>=0, and lambda_s(qhat(s)-1)=0. This is a mean-zero partial-majorant problem; a targeted primary-source check confirms the general variational framework, while our additional equality requires c0 to remain free.
+
+The translation gap g=q³(0)-q³(x) is conditionally negative definite and obeys
+
+    g(x) = (1/8) ||q-T_xq||_4^4
+         + (3/4)(||q||_4^4 - integral q(t)²q(t+x)² dt).
+
+This implies g(x)>=(N-D(x))²/2. It supplies a cost lower bound; it does not supply the upper bound needed for the conjecture. The relaxed universal all-support bound is still false on intervals. The potentially sufficient strict-record cost bound remains an actual missing theorem, not a consequence of the new sign structure.
+
+**EXACT WEIGHTED CONTROL.** The optimizer for qhat(1)=1 alone is q*=sign(cos x)|cos x|^(1/3)/integral|cos x|^(4/3). Its exact coefficients satisfy q*hat(3)=-1/5 and q*hat(5)=1/10. For prescribed positive data qhat(1)=1, qhat(5)=beta with 0<beta<1/10, strict convexity shows the true equality dual has a negative frequency-5 coefficient. The inequality problem instead has q* as optimizer and a zero frequency-5 multiplier. Thus no generic positive-data/convexity argument proves equality-dual positivity. This is weighted data, not a Boolean Chowla counterexample.
+
+**EXPERIMENTAL.** A sign screen checked all 968 subsets of [1,10] of size>=3 and found no robust negative projected-dual coefficient; this is not a theorem. Eight targeted Gurobi solves compare equality/inequality constraints on the weighted control, B, A, and [1,32]. All reached finite-QCP optimal status. Boolean costs agreed numerically. Weighted normalized costs were about 1.072574 / 1.064165, with relaxed frequency-5 slack about 0.089959, consistent with the paper proof. Computation used Dirichlet and Gurobi 13.0.3. No computation ran on the local machine or fejer. Dual integrals and solver optimality remain numerical diagnostics.
+
+Reproduce:
+
+    src/dirun.sh -c 2 -m 8 -t 300 python src/cstar_dual_deletion.py
+    src/dirun.sh -c 1 -m 4 -t 120 python src/cstar_dual_deletion_verify.py
+    src/dirun.sh -c 2 -m 8 -t 900 python src/cstar_dual_sign.py --box 10
+    src/dirun.sh -c 2 -m 8 -t 300 python src/cstar_partial_majorant.py
+
+Data live in experiments/dual_deletion_2026-10-20/{probe,verification,dual_sign,partial_majorant}.json. The scripts retain qualifications and solver versions. Paper proofs have not received independent-agent or Lean review: the configured default model was unavailable on earlier attempts to launch the required reviewer.
+
+**GLOBAL STRATEGIC REVIEW.** Stop treating rank thresholds as a guaranteed rounding mechanism. Retain the weaker partial-majorant target as a legitimate certificate tool, with positive multipliers obtained by construction rather than assumption. Do not expand the sign-search box without a theorem that would use its outcome. The next discriminating analytic question is whether Boolean strict-record extremality forces a uniform upper bound for J_≥/sqrt(N), or admits an exact countercontrol. Merely rewriting C* or deriving another lower bound for J_≥ does not answer that question. The construction line still requires genuinely correlated, non-band-concentrated selectors; this pass produces none. The three distinct lower-bound, factor/construction, and correlated-selector lines remain recorded. Full Chowla is open and the active goal is preserved; all jobs from this pass are terminal.

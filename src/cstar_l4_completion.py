@@ -57,7 +57,7 @@ def exact_boolean_certificate(A, coefficients):
                 verification='integer Laurent convolution and rational negative determinant')
 
 
-def solve(tag, indices, values, B, tl):
+def solve(tag, indices, values, B, tl, lower_bounds_only=False):
     start = time.time()
     indices, values = np.asarray(indices, dtype=int), np.asarray(values, dtype=float)
     # A zero data coefficient is an unused frequency, hence remains free.
@@ -82,7 +82,9 @@ def solve(tag, indices, values, B, tl):
     q = model.addMVar(half, lb=-GRB.INFINITY, name='q')
     y = model.addMVar(half, lb=0, name='q_squared')
     for a, val in zip(indices, values):
-        coefficients[int(a) - 1].LB = coefficients[int(a) - 1].UB = float(val) / normalization
+        coefficients[int(a) - 1].LB = float(val) / normalization
+        if not lower_bounds_only:
+            coefficients[int(a) - 1].UB = float(val) / normalization
     variables = gp.MVar.fromlist(coefficients.tolist() + q.tolist())
     model.addMConstr(hstack([csr_matrix(C), -eye(half)], format='csr'), variables, '=', np.zeros(half))
     qvars, yvars = q.tolist(), y.tolist()
@@ -92,7 +94,8 @@ def solve(tag, indices, values, B, tl):
     model.optimize()
     row = dict(tag=tag, X=int(max(indices)), B=B, grid=L,
                status=int(model.Status), gurobi=list(gp.gurobi.version()),
-               seconds=time.time() - start, sol_count=int(model.SolCount))
+               seconds=time.time() - start, sol_count=int(model.SolCount),
+               constraint_kind='lower_bounds' if lower_bounds_only else 'equalities')
     if not model.SolCount:
         print(json.dumps(row), flush=True)
         return row
@@ -110,11 +113,16 @@ def solve(tag, indices, values, B, tl):
     # Project q^3 onto the prescribed-frequency space plus its free constant.
     dual_fourier = np.zeros(dense_grid)
     dual_fourier[0] = cube_fourier[0]
-    dual_fourier[indices] = cube_fourier[indices]
-    dual_fourier[-indices] = cube_fourier[indices]
+    dual_selected = cube_fourier[indices]
+    if lower_bounds_only:
+        # The inequality problem only permits nonnegative multipliers.
+        # Clipping makes this a feasible dual polynomial even with residuals.
+        dual_selected = np.maximum(dual_selected, 0)
+    dual_fourier[indices] = dual_selected
+    dual_fourier[-indices] = dual_selected
     dual_values = np.fft.ifft(dual_fourier).real * dense_grid
     dual_norm = float(np.mean(np.abs(dual_values) ** (4 / 3)) ** (3 / 4))
-    dual_pairing = float(2 * values @ cube_fourier[indices])
+    dual_pairing = float(2 * values @ dual_selected)
     dual_lower = dual_pairing / dual_norm
     data_fourier = np.zeros(dense_grid)
     data_fourier[indices], data_fourier[-indices] = values, values
@@ -126,10 +134,11 @@ def solve(tag, indices, values, B, tl):
                dual_L4_lower_over_sqrt_N_float=dual_lower / math.sqrt(N),
                dual_primal_ratio_float=dual_lower / fourth ** .25,
                negative_dual_support_coefficients=int(np.count_nonzero(cube_fourier[indices] < -1e-7)),
+               selected_coefficient_max_slack=float(np.max(c[indices - 1] - values)),
                input_R_grid_float=Kgrid / math.sqrt(2 * N),
                support=indices.tolist(), values=values.tolist(), coefficients=c.tolist(),
                qualification='convex-QCP numerical output; dual integral and grid minima uncertified')
-    if np.all(values == 1):
+    if np.all(values == 1) and not lower_bounds_only:
         row['exact_primal'] = exact_boolean_certificate(indices.tolist(), c)
     print(json.dumps({k: row[k] for k in row if k not in ['support', 'values', 'coefficients', 'exact_primal']}), flush=True)
     model.dispose()

@@ -1,5 +1,9 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Targeted check: partial majorants (2026-10-20)
+
+Fournier–Vrecko, *Minimal Fourier majorants in L^p*, [arXiv:2112.13799v1](https://arxiv.org/html/2112.13799v1), Section 2, Lemma 2.3 / Corollary 2.4. Verified the finite-support partial-majorant variational structure for general 1<p<infinity. Our mean-zero p=4 problem requires an additional free constant multiplier. The special full-majorant conclusion at p=4/3 must not be applied to equality completion at p=4. [Own derivation and weighted sign countercontrol](notes/cstar_partial_majorants_2026-10-20.md).
+
 Convention in this project: f_A(x) = sum_{a in A} cos(a x). Papers using cos(2 pi a x) have identical minima.
 
 ## Epoch problem statement (fetched 2026-10-17)

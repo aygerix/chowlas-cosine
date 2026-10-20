@@ -549,6 +549,14 @@ The prize is (c). Everything else is support.
     (iii) Novelty check requested for P81 (likely familiar in association-scheme language). (iv) The advisor's suggestion
     to organise a note around P77/P79/P81 is NOT acted on: no manuscripts unless the user asks (CLAUDE.md).
 
+  - ADVISOR REVIEW 5 (screenshot pasted by the user): commission a LOCAL CENTROID / ANTI-CONCENTRATION inequality that
+    separates Boolean integer sets from the fractional packet model without excluding known near-extremizers; test on
+    quadrics, Bu-type near-½ sets, P61(b) packets; if it needs a uniform spectral gap, say so and move on.
+    Lead derivation: P82 (1D P77, continuous): M >= r' + ∫_B f'²/(2√2|B|^{1/2}‖f''‖₂) for ANY real C² f and B ⊂ {f <= −r'} —
+    weight-agnostic. Booleanity can enter only via BAC: share₀ = ∫_{f<=0}f'²/∫f'² >= c for Boolean dense A (⇒ T-dense for
+    all C). BAC IS a uniform anti-concentration (gap) hypothesis. PRE-REGISTERED E124: (P1) P82 <= M always; (P2) Boolean
+    dense families have share₀ >= 0.2, G₀/√n >= 0.05; (P3) fractional packets have share₀ → 0 as X grows.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

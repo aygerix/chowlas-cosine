@@ -2,7 +2,11 @@
 C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed object, the forced features, the design
 rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
 and kills. Side results are not the prize (user, 2026-10-19).
-Latest (2026-10-19, cont. 29):
+Latest (cont. 30):
+- SCP(T) REFUTED for every T by orthogonal padding (external review, lead-verified; CSTAR A8): a spread U × 0 plus a
+  random F_2^r component 0 × B has ratio → ∞ but C_CP/K → ∞. The chain "Chowla ⇐ SCP + CP-Chowla" is dead as stated.
+- Target now: CP-CHOWLA(Z), C_CP(A) >= c√|A| (sum the endpoint multiplicity losses of P76(c) over all blocks).
+Previous (2026-10-19, cont. 29):
 - F12 CORRECTED. FLAT completely positive certificates are 1.3–1.5× too expensive (N50: R_CP(flat) = 0.857 against
   R = 0.570, lead-verified). Non-flat nonnegative (two-level) CP certificates come within 1–8% of M (X30_s0:
   0.655 against 0.607, lead-verified exact). So near-optima need WEIGHTED blocks, not phase cancellation.

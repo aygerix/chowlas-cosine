@@ -141,7 +141,11 @@ The prize is (c). Everything else is support.
   What survives (the reduction):
   - ×b-invariant PD measures exist, e.g. the Riesz product Π_{i>=0}(1 + a·cos 2πb^i x), 0 < a <= 1, b >= 3, with
     nonnegative coefficients and invariance (μ̂(bj) = μ̂(j)).
-  - A set whose distribution at every scale is such a Riesz density would satisfy ALL macroscopic conditions.
+  - A set whose distribution at every scale is such a Riesz density would satisfy the b-ADIC (integer-frequency)
+    conditions. CORRECTED (review, cont. 30): it does NOT satisfy all macroscopic conditions. The main-profile
+    condition is Re ν̂(s) >= 0 at every REAL s for the profile on [0, 1], and nonnegative integer Fourier
+    coefficients on T do not give that (the untapered uniform profile already has Re ν̂ < 0 on s ∈ (½, 1)). A front
+    taper is needed in addition.
   - But it is not finite-state: realizing it as a set means ROUNDING a multifractal PD density, which is the taper
     tree again. The density is explicit: R(a/X) = Π_j (1 + a·cos 2π(a/b^j)), a Gibbs weight on digit strings.
     "Riesz rounding" is the sharpest constructive form of C* found so far.
@@ -272,7 +276,8 @@ The prize is (c). Everything else is support.
       - So BSG/Freiman-type structure (the Bedert/Shankar mechanism) can only see M <~ n^{1/3}.
       - The C* core (n^{1/3} << M = o(√n)) has an additive excess that is a vanishing relative perturbation at every
         order: the (r+1)-fold excess is K^{1−r}/(2ε²), from the exact p^{⋆r} = 1 − K^{1−r} + K^{1−r}p.
-      - Any C* proof must therefore use something other than additive energy.
+      - Reading (HEURISTIC, review cont. 30): proofs through the r-fold additive excess cannot see the C* core. This is
+        not a theorem ruling out every energy-type method.
   (ii) HOFFMAN BOUND (proved, elementary, standard Delsarte LP). If I ⊂ Z has density α and (I − I) ∩ S = ∅, then
       K >= |S|α/(1 − α). Proof: the autocorrelation of I is PD with spectral mass α and atom α² at 0, and
       0 = Σ_{s∈S}φ(s) >= |S|α² − K(α − α²).
@@ -352,6 +357,8 @@ The prize is (c). Everything else is support.
   Numbers: Bu has cliques (Sidon translates) of size k ≈ √n against n/M ≈ 1.8√n.
 
 - A6′ (cont. 29, after E110 + E111). REFORMULATED CHAIN: Chowla ⇐ SCP(T) + CP-CHOWLA(Z).
+  **SCP(T) AS STATED IS FALSE FOR EVERY T (orthogonal padding; review cont. 30, lead-verified; see A8). Do not build
+  on it. The implication below is valid but its hypothesis fails.**
   - SCP(T), group-agnostic: in any abelian group, a symmetric S with |S| <= |G|/2 and ratio |S|/K² > T has a
     completely positive certificate of cost <= C(T)·K.
   - CP-CHOWLA(Z): C_CP(A) >= c√n (P76). CP½ (c = √2) is conjectured for FLAT CP only. Non-flat CP reaches
@@ -386,9 +393,30 @@ The prize is (c). Everything else is support.
     is the C* anatomy.
   - The only known exactly two-valued asymmetric objects are Latin-square-type PDS (eigenvalues n − r and −r with
     r << n) from partial spreads / partial congruence partitions (PCPs).
-  - So the EXACT form of SCP is the classification question: are Latin-square-type PDS with small r always PCPs
+  - (A8: SCP(T) is false by padding; the question below is now a structural side question, not a chain link.)
+    So the EXACT form of SCP is the classification question: are Latin-square-type PDS with small r always PCPs
     (unions of subgroups)? This needs a literature check (queued; one agent at a time). If true, SCP is its robust
     (approximately two-valued) version, which is the "robust Ma" gap of A4 in a sharper form.
+
+- A8 (cont. 30, external review, lead-verified). SCP(T) REFUTED; CP-CHOWLA(Z) is the surviving chain link.
+  - Counterexample (orthogonal padding). B ⊂ H = F_2^r random of density ½: K(B) = O(√(N log N)) and clique number
+    polylog N, so C_CP(B) >= 2|B|/(ω − 1) >> N/polylog N (P76(b)). U = s lines of F_q² minus 0: |U| = s(q − 1),
+    Û ∈ {q − s, −s}, K(U) = s. S = (U × 0) ∪ (0 × B) in F_q² ⊕ H. Then Ŝ(ξ, η) = Û(ξ) + B̂(η), so K(S) <= K(U) + K(B)
+    <= 2s for s ≍ √(N log N), and ratio >= (q − 1)/(4s) → ∞ for q >> s. A clique of Cay(G, S) has all its
+    differences of one type (a mixed pair (u, 0), (0, b) gives a difference (u, −b) ∉ S), so it lies in a coset of one
+    factor, and the B-type blocks form a CP certificate for B. Hence C_CP(S) >= C_CP(B) and C_CP(S)/K(S) → ∞.
+    Lead check: all steps elementary and correct.
+  - What survives padding: SCP′(T), "ratio > T ⇒ some S₁ ⊂ S with |S₁| >= c(T)|S| and C_CP(S₁) <= C(T)·K(S)". It
+    still implies Chowla with CP-Chowla(Z), and in orthogonal sums the low-ratio part carries <= (2.2/T)|S|. But in Z it
+    is Chowla-strength, and NOTEBOOK cont. 29.12 (hidden pieces) is its first obstacle. NOT pursued.
+  - Decision: CP-CHOWLA(Z), C_CP(A) >= c√|A|, is the concrete target. Its proof must sum the extreme-lag
+    (endpoint) multiplicity losses of P76(c) over all blocks. It is a rigorous obstruction for the whole class of
+    nonnegative-coefficient square certificates, which by E111 is within 1–8% of M on near-optimal sets. Fourier
+    plus clique size alone caps at max(2n/(ω − 1), 2M) (NOTEBOOK cont. 29.11), so the dual must see positions inside
+    cliques.
+  - Also corrected: A2's Riesz-product line (real-frequency profile condition) and A5(i)'s reading (heuristic only).
+  - The review read the pre-retraction F12 ("flat CP 0.857 ⇒ phase cancellation"); that reading is superseded by E111
+    two-level (within 1–8%).
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

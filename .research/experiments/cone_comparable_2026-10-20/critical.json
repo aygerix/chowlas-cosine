@@ -1,0 +1,165 @@
+{
+  "qualification": "Explicit critical family and certified point lower witnesses, not a Chowla counterexample.",
+  "cases": [
+    {
+      "X": 48,
+      "n": 32840,
+      "moduli": [
+        73,
+        75,
+        77,
+        79
+      ],
+      "C": [
+        456225,
+        444059,
+        432525,
+        421575
+      ],
+      "determinant": 266435400,
+      "primitive_row_column_squared": [
+        10954,
+        12170,
+        11258,
+        11866
+      ],
+      "root_of_unity": {
+        "j": 16597426,
+        "q": 33304425,
+        "residues": [
+          0,
+          1,
+          -1,
+          0
+        ]
+      },
+      "lambda1_float": 4.0212385965949355,
+      "lambda2_float": 3.916790840839223,
+      "f_over_n_upper_rational": "-13359/200000",
+      "M_lower_rational": "10967739/5000",
+      "R_lower_float": 12.1044630323282,
+      "encoded_set_sha256": "79f50f4b10f5b8a967775197c16de63f7a60b415a872f97935d32b45edcee41a",
+      "verified": true
+    },
+    {
+      "X": 64,
+      "n": 61928,
+      "moduli": [
+        97,
+        99,
+        101,
+        103
+      ],
+      "C": [
+        1029897,
+        1009091,
+        989109,
+        969903
+      ],
+      "determinant": 799200072,
+      "primitive_row_column_squared": [
+        19210,
+        20810,
+        19610,
+        20410
+      ],
+      "root_of_unity": {
+        "j": 49825117,
+        "q": 99900009,
+        "residues": [
+          0,
+          1,
+          -1,
+          0
+        ]
+      },
+      "lambda1_float": 4.0618571682777125,
+      "lambda2_float": 3.9814243530642925,
+      "f_over_n_upper_rational": "-36987/500000",
+      "M_lower_rational": "286316367/62500",
+      "R_lower_float": 18.408679227998082,
+      "encoded_set_sha256": "d7ece2acdfcac510d26d081e7ff37c67e3cd2d6754df755fe821bc7829d5404b",
+      "verified": true
+    },
+    {
+      "X": 96,
+      "n": 150488,
+      "moduli": [
+        145,
+        147,
+        149,
+        151
+      ],
+      "C": [
+        3307353,
+        3262355,
+        3218565,
+        3175935
+      ],
+      "determinant": 3836529480,
+      "primitive_row_column_squared": [
+        42634,
+        45002,
+        43226,
+        44410
+      ],
+      "root_of_unity": {
+        "j": 239378035,
+        "q": 479566185,
+        "residues": [
+          0,
+          1,
+          -1,
+          0
+        ]
+      },
+      "lambda1_float": 4.103304690402995,
+      "lambda2_float": 4.048226775095572,
+      "f_over_n_upper_rational": "-80233/1000000",
+      "M_lower_rational": "1509262963/125000",
+      "R_lower_float": 31.124613451142356,
+      "encoded_set_sha256": "ddb7e1588365e93301c055a05c8ce8543da122cd07c4bdbaec4c0d3c08ed3368",
+      "verified": true
+    },
+    {
+      "X": 128,
+      "n": 282112,
+      "moduli": [
+        193,
+        195,
+        197,
+        199
+      ],
+      "C": [
+        7644585,
+        7566179,
+        7489365,
+        7414095
+      ],
+      "determinant": 11803239240,
+      "primitive_row_column_squared": [
+        75274,
+        78410,
+        76058,
+        77626
+      ],
+      "root_of_unity": {
+        "j": 736761481,
+        "q": 1475404905,
+        "residues": [
+          0,
+          1,
+          -1,
+          0
+        ]
+      },
+      "lambda1_float": 4.124347278558908,
+      "lambda2_float": 4.082475732583691,
+      "f_over_n_upper_rational": "-8393/100000",
+      "M_lower_rational": "73992688/3125",
+      "R_lower_float": 44.57876195262493,
+      "encoded_set_sha256": "650b4e678b8dfb448d6241b70db6891afbc3b5a883bfcb7423a374504fdcb699",
+      "verified": true
+    }
+  ]
+}

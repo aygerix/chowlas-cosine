@@ -1,0 +1,299 @@
+{
+  "qualification": "Finite certificates and exact collision witnesses; no universal exclusion of comparable encodings.",
+  "disk_at_5_upper_rational": "-45844215664440946293872334410985711412532879/349871301340432003161214583741611147102519296",
+  "gurobi": [
+    13,
+    0,
+    3
+  ],
+  "cases": [
+    {
+      "X": 4,
+      "C": [
+        449,
+        264,
+        403,
+        237
+      ],
+      "n": 104,
+      "fejer": {
+        "m": 128,
+        "alpha_rational": "5/4",
+        "mean_ball": "1.0000000000000000000000000000000000000",
+        "main_plane_integral_ball": "[-6.118813373502992141816712186748266399 +/- 5.74e-37]",
+        "alias_integral_ball": "[-5.45327350183798452975312214619991346 +/- 6.00e-36]",
+        "total_D_integral_ball": "[-11.57208687534097667156983433294817986 +/- 5.65e-36]",
+        "M_lower_rational": "5786043/1000000",
+        "R_lower_float": 0.5673681954516719,
+        "alias_weight_numerator": 953044,
+        "origin_alias_pairs": 0,
+        "qualification": "Nonnegative product-Fejer test; no point-sampling inference.",
+        "verified": true
+      },
+      "collision": {
+        "kernel": [
+          3,
+          -6,
+          0,
+          1
+        ],
+        "first": [
+          3,
+          -6,
+          0,
+          0
+        ],
+        "second": [
+          0,
+          0,
+          0,
+          -1
+        ],
+        "radius_squared": 45,
+        "radius_over_X_float": 1.6770509831248424,
+        "model_status": 2,
+        "verified": true
+      },
+      "negative_point_phase": {
+        "j": 31,
+        "q": 139,
+        "centered_residues": [
+          19,
+          -17,
+          -17,
+          -20
+        ],
+        "scaled_entries_float": [
+          [
+            3.4354106715514288,
+            -3.0737884955986465
+          ],
+          [
+            -3.0737884955986465,
+            -3.6162217595278197
+          ]
+        ],
+        "singular_values_float": [
+          4.767964277070736,
+          4.587153189094346
+        ]
+      }
+    },
+    {
+      "X": 8,
+      "C": [
+        3241,
+        2760,
+        2733,
+        2327
+      ],
+      "n": 552,
+      "fejer": {
+        "m": 256,
+        "alpha_rational": "5/8",
+        "mean_ball": "1.0000000000000000000000000000000000000",
+        "main_plane_integral_ball": "[-26.69045864740828646572630742763274000 +/- 6.74e-36]",
+        "alias_integral_ball": "[-9.37831665818168138396257057233111088 +/- 6.72e-36]",
+        "total_D_integral_ball": "[-36.0687753055899678496888779999638509 +/- 3.35e-35]",
+        "M_lower_rational": "18034387/1000000",
+        "R_lower_float": 0.7675944855990338,
+        "alias_weight_numerator": 2006852,
+        "origin_alias_pairs": 0,
+        "qualification": "Nonnegative product-Fejer test; no point-sampling inference.",
+        "verified": true
+      },
+      "collision": {
+        "kernel": [
+          9,
+          -1,
+          -2,
+          -9
+        ],
+        "first": [
+          9,
+          -1,
+          0,
+          0
+        ],
+        "second": [
+          0,
+          0,
+          2,
+          9
+        ],
+        "radius_squared": 85,
+        "radius_over_X_float": 1.1524430571616109,
+        "model_status": 2,
+        "verified": true
+      },
+      "negative_point_phase": {
+        "j": 58795,
+        "q": 262144,
+        "centered_residues": [
+          -24093,
+          7064,
+          -7537,
+          -23203
+        ],
+        "scaled_entries_float": [
+          [
+            -4.619774890316094,
+            1.354505035703021
+          ],
+          [
+            -1.4452016497867597,
+            -4.449119527663816
+          ]
+        ],
+        "singular_values_float": [
+          4.842238201416096,
+          4.6489789749656225
+        ]
+      }
+    },
+    {
+      "X": 12,
+      "C": [
+        13554,
+        9387,
+        11233,
+        7780
+      ],
+      "n": 1432,
+      "fejer": {
+        "m": 384,
+        "alpha_rational": "5/12",
+        "mean_ball": "1.0000000000000000000000000000000000000",
+        "main_plane_integral_ball": "[-54.38019212784583934189055985879910171 +/- 8.38e-36]",
+        "alias_integral_ball": "[-2.75185373914374192108235671286250925 +/- 3.36e-36]",
+        "total_D_integral_ball": "[-57.1320458669895812629729165716616110 +/- 7.31e-35]",
+        "M_lower_rational": "14283011/500000",
+        "R_lower_float": 0.7548805877414926,
+        "alias_weight_numerator": 4254812,
+        "origin_alias_pairs": 0,
+        "qualification": "Nonnegative product-Fejer test; no point-sampling inference.",
+        "verified": true
+      },
+      "collision": {
+        "kernel": [
+          6,
+          -6,
+          -14,
+          17
+        ],
+        "first": [
+          6,
+          -6,
+          0,
+          0
+        ],
+        "second": [
+          0,
+          0,
+          14,
+          -17
+        ],
+        "radius_squared": 485,
+        "radius_over_X_float": 1.8352262954621033,
+        "model_status": 2,
+        "verified": true
+      },
+      "negative_point_phase": {
+        "j": 373199,
+        "q": 1048576,
+        "centered_residues": [
+          8622,
+          -73403,
+          -62481,
+          -18724
+        ],
+        "scaled_entries_float": [
+          [
+            0.6199679228039061,
+            -5.27806836436733
+          ],
+          [
+            -4.492718137869503,
+            -1.3463557627673788
+          ]
+        ],
+        "singular_values_float": [
+          5.518226186294231,
+          4.448453185930609
+        ]
+      }
+    },
+    {
+      "X": 16,
+      "C": [
+        21122,
+        28485,
+        18196,
+        24539
+      ],
+      "n": 2776,
+      "fejer": {
+        "m": 512,
+        "alpha_rational": "5/16",
+        "mean_ball": "1.0000000000000000000000000000000000000",
+        "main_plane_integral_ball": "[-102.8798987192785745880084179449311653 +/- 1.43e-35]",
+        "alias_integral_ball": "[7.46541728982426507152320842526286868 +/- 3.93e-36]",
+        "total_D_integral_ball": "[-95.4144814294543095164852095196682966 +/- 4.01e-35]",
+        "M_lower_rational": "1192681/25000",
+        "R_lower_float": 0.9054710327871978,
+        "alias_weight_numerator": 7998966,
+        "origin_alias_pairs": 0,
+        "qualification": "Nonnegative product-Fejer test; no point-sampling inference.",
+        "verified": true
+      },
+      "collision": {
+        "kernel": [
+          14,
+          -21,
+          -9,
+          19
+        ],
+        "first": [
+          14,
+          -21,
+          0,
+          0
+        ],
+        "second": [
+          0,
+          0,
+          9,
+          -19
+        ],
+        "radius_squared": 637,
+        "radius_over_X_float": 1.5774286830154953,
+        "model_status": 2,
+        "verified": true
+      },
+      "negative_point_phase": {
+        "j": 19495,
+        "q": 46681,
+        "centered_residues": [
+          289,
+          -2101,
+          2101,
+          917
+        ],
+        "scaled_entries_float": [
+          [
+            0.6223827437372466,
+            -4.52465793976455
+          ],
+          [
+            4.52465793976455,
+            1.9748269065988064
+          ]
+        ],
+        "singular_values_float": [
+          5.383546583079679,
+          4.031102420218121
+        ]
+      }
+    }
+  ]
+}

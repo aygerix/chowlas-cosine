@@ -1,0 +1,75 @@
+{
+  "qualification": "Exact hypothesis and alias grouping checks; not an independent audit of the asymptotic proof.",
+  "sampled_hypotheses_checked": 48,
+  "front_series_orders": 12,
+  "cases": [
+    {
+      "X": 4,
+      "n": 104,
+      "alias_pairs": 134,
+      "kernel_groups": 34,
+      "max_pairs_per_kernel": 7,
+      "main_plane_points": 48,
+      "M_lower_rational": "5786043/1000000",
+      "verified": true
+    },
+    {
+      "X": 8,
+      "n": 552,
+      "alias_pairs": 134,
+      "kernel_groups": 34,
+      "max_pairs_per_kernel": 15,
+      "main_plane_points": 196,
+      "M_lower_rational": "18034387/1000000",
+      "verified": true
+    },
+    {
+      "X": 12,
+      "n": 1432,
+      "alias_pairs": 124,
+      "kernel_groups": 20,
+      "max_pairs_per_kernel": 13,
+      "main_plane_points": 440,
+      "M_lower_rational": "14283011/500000",
+      "verified": true
+    },
+    {
+      "X": 16,
+      "n": 2776,
+      "alias_pairs": 88,
+      "kernel_groups": 30,
+      "max_pairs_per_kernel": 7,
+      "main_plane_points": 796,
+      "M_lower_rational": "1192681/25000",
+      "verified": true
+    }
+  ],
+  "theorem_constants": {
+    "packing_bound": 857375,
+    "X_threshold": 30000000,
+    "long_direction_threshold_multiple": 47,
+    "verified": true
+  },
+  "critical_checks": [
+    {
+      "X": 48,
+      "n": 32840,
+      "verified": true
+    },
+    {
+      "X": 64,
+      "n": 61928,
+      "verified": true
+    },
+    {
+      "X": 96,
+      "n": 150488,
+      "verified": true
+    },
+    {
+      "X": 128,
+      "n": 282112,
+      "verified": true
+    }
+  ]
+}

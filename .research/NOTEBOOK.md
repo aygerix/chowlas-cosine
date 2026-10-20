@@ -3401,3 +3401,30 @@ Reproduce:
     src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_integer_cone_verify.py
 
 **Global review.** The logarithmic count does not overcome the integer band-edge sign obstruction in the tested cone models. Discontinue all separated Frobenius-cone product encodings and the tested box encoding. The box pivot shows that removing one resonance is insufficient; a different arithmetic phase can survive. Nonseparated near-rank-one encodings (e.g. large a,b,c with d near bc/a) and direction-dependent nonradial tapers remain untested, so neither all algebraic cones nor all encodings are ruled out. A concrete next construction test is to require exact collision-free encoding in that nonseparated class and then probe the inherited resonances before large searches. Full Chowla and the universal adaptive-certificate step remain open; the original active goal is preserved and no job from this pass is live.
+
+## 2026-10-20 — Comparable encodings, positive plane tests, and alias packing
+
+Previous turn classified as **progress**, with paper integer-cone exclusions and exact sign/point evidence. The next announced construction was actually tested. [Full derivations, constants, qualifications and data](notes/cstar_cone_alias_packing_2026-10-20.md).
+
+**Changed hypothesis.** Use C=[[a,b],[c,d]] with comparable a,b,c and d nearest bc/a, rather than separated places. The Euclidean-cone front at rank-one phase equals 2integral_0^1 r J0(sigma r/2)^2 dr>=0, so the previous fixed-scale negative front disappears. This is only a front statement, not a bound on the full scalar minimum.
+
+**Bounded test.** Seed 20261021, X=4,8,12,16, heights4X^3 and16X^3: 48 exact collision-free encodings accepted, 27 rejected for collisions or zeros. Every accepted set has a certified negative point. The weakest root-probe ratios at each X exceed 2.1709,4.2060,6.3400,8.1249. Four representatives received finer point searches and separate positive-measure tests. No sampled minimum is a global upper bound.
+
+**Paper theorem beyond the finite test.** Let C_X be the rank-one integer Frobenius cone including zero, and assume scalar encoding is injective on it. If one primitive coefficient row or column has norm>47X, the nonnegative test F_(32X)(a theta-5/X)F_(32X)(b theta) has mean one. Its main disk term is at most -pi X^2/16+45X. Injectivity forbids nonzero kernel matrices of norm<=X; three-dimensional packing leaves at most95^3 relevant short kernel vectors. Each nonplane alias has a fixed nonzero second row and at most2X+1 possible first rows. Therefore all aliases contribute only O(X), and for X>=30,000,000 the test proves M>=pi X^2/64.
+
+**Why it covers the new class.** After primitive normalization, injectivity implies H>=X^3/64 by a four-coordinate pigeonhole argument. If min|Cij|>=H/10, |det C|<=H and both primitive rows have norm<=47X, row-gcd divisibility forces X<=14,137,600 when det C is nonzero. At determinant zero, primitive factorization gives a long row or column even sooner. Thus the entire asymptotic comparable small-determinant class is excluded uniformly, not just the 48 samples.
+
+**Actual escape and a different mechanism.** For X divisible by four let h=(3X/2)+(1,3,5,7), P=product h_i, and C_i=P/h_i. Pairwise coprimality and sqrt(2)min h_i>2X prove exact injectivity on the full Euclidean ball. All primitive rows/columns have norm~(3sqrt(2)/2)X, and det C=8P>H, so the long-row proof genuinely does not apply. CRT residues (0,1,-1,0) nevertheless give a phase with both off-diagonal magnitudes tending to4pi/3. The certified negative disk band yields M>=n/100 eventually. Four explicit witnesses at n=32840,61928,150488,282112 have R>12.10,18.40,31.12,44.57 respectively. These are failed constructions, not improved records.
+
+**Verification.** Four positive Fejer tests have exact-checked means one and lower ratios>0.5673,0.7675,0.7548,0.9054. An independent reconstruction groups their aliases into34,34,20,30 exact kernel vectors, with134,134,124,88 pairs. All per-kernel counts obey2X+1. Gurobi13.0.3 finds valid short collision witnesses beyond the original cone; each integer equality is checked, without calling them shortest. The independent verifier checks all48 theorem input hypotheses, the explicit arithmetic threshold inequalities, rank-one front coefficients through order12, and all CRT identities. Ball precision is96bits for points,128 for the producer plane tests,160 for the verifier. All research computation ran on Dirichlet. A new review-agent launch again failed with the unavailable configured default; no independent-agent or Lean audit is claimed.
+
+Reproduce:
+
+    src/dirun.sh -c 2 -m 8 -t 300 python src/cstar_cone_comparable.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_cone_alias.py
+    src/dirun.sh -c 2 -m 6 -t 240 python src/cstar_cone_critical.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_cone_alias_verify.py
+
+Data: experiments/cone_comparable_2026-10-20/{results,alias,critical,verification}.json. All jobs are terminal.
+
+**Global review.** The main new fact is an arithmetic alias-packing obstruction, not an improved universal exponent. Its complete-plane hypothesis is substantial and cannot be asserted for arbitrary many-spike supports. Stop random height/sample expansion in the now-excluded comparable small-determinant class. The explicit critical CRT class also fails, but other coefficient patterns with all primitive directions short and determinant>H remain unclassified. A concrete next algebraic question is whether their gcd structure forces a CRT-like negative phase, or admits a collision-free encoding that escapes these tests; no such theorem or counterexample is claimed. The universal adaptive-profile/coupled-certificate problem remains open, and the original full Chowla goal remains active.

@@ -1,5 +1,13 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Active continuation: comparable encodings, alias packing, and a CRT escape
+
+**Full Chowla remains OPEN; the goal is active.** The previously untested comparable almost-rank-one encoding was tested: 48 exact collision-free cases, 27 rejected collisions/zeros, all with certified negative points. The investigation then produced a paper model theorem. A long primitive row/column (>47X) permits a nonnegative Fejer plane test; kernel packing gives only O(X) unwanted aliases, while the main plane contributes -cX^2. Thus M>=pi X^2/64 for X>=30,000,000. An injective primitive coefficient matrix with comparable entries (factor ten) and |det C|<=H is forced into this case by an elementary height and gcd argument. This uniformly excludes the full sampled asymptotic class. [Complete proof and scope](notes/cstar_cone_alias_packing_2026-10-20.md).
+
+The determinant hypothesis is not silently dropped. A new explicit CRT family has all primitive directions O(X), is provably injective on the full ball, and violates |det C|<=H. It too has M>=n/100 eventually, by a different negative disk phase. Four CRT witnesses up to n=282112 are certified. Four positive-measure certificates were independently reconstructed and their aliases grouped by exact kernel matrices. Gurobi supplied exact-checked short collision witnesses; no shortest-vector claim is used. The new reviewer launch again failed with the unavailable default model; no independent-agent or Lean audit is claimed.
+
+Discontinue random height tuning in the comparable small-determinant class and the tested CRT escape. Other critical encodings with all primitive directions short and determinant larger than H remain unclassified; the plane proof cannot simply be asserted there. The universal adaptive-profile/coupled-certificate step is still missing. All jobs from this pass are terminal.
+
 ## Active continuation: integer quadric construction tested and excluded
 
 **Full Chowla is still OPEN; the goal remains active.** A different construction mechanism was attempted: all bounded integer rank-one 2x2 matrices, encoded without collisions into positive integer frequencies. Their logarithmic count would help only if M=O(X). Instead a uniform mixed-place-value resonance gives a paper proof of M>=n/4000 for the Frobenius-ball cutoff and every separated product encoding. Changing to the box cutoff at B=2X+1 removes that first proof, but the explicit q=B^2+3B+1, j=2B+5 resonance gives a negative limiting sinc integral and M>=n/200 eventually. [Full model statements and proofs](notes/cstar_integer_cone_2026-10-20.md).

@@ -16,6 +16,7 @@ All minima are NUMERICAL (FFT grid + local refinement), not interval-certified.
 Usage:
   python src/e116_jl_taper.py measure p a j L [seeds]
   python src/e116_jl_taper.py milp p a j L Kthr timelimit [threads] [full]    (full: all of [−L,L]² as control)
+  python src/e116_jl_taper.py ratio p a j L rho0 timelimit [threads] [full]   (Dinkelbach certificate of sup |T|/K²)
 """
 import sys, json, time, math
 import numpy as np
@@ -167,8 +168,91 @@ def milp(p, a, j, L, Kthr, tl, threads=8, full=False):
     return out
 
 
+def ratio_cert(p, a, j, L, rho, tl, threads=8, full=False, rounds=6, tol=1e-4):
+    """Certify sup_T |T|/K(T)² over symmetric T ⊂ P_L (advisor, cont. 31) by Dinkelbach: maximise 2Σx − ρk² over
+    x ∈ {0,1}^P, k >= 0, s.t. F_T(ξ) + k >= 0 at the cut points (lazy cuts at each incumbent's true minimiser; the cut
+    list is kept across rounds). Cuts are valid for every truly feasible (T, K(T)), so ObjBound is an upper bound for the
+    true problem (modulo LP tolerances). If ObjBound <= tol then |T| <= ρK² + tol for every T, hence sup ratio <= ρ + tol
+    (K >= 1 always: ∫D_S·(1 − cos 2π s₀x) = −1 with s₀ = max S). If an incumbent has 2|T| − ρK² > tol, ρ is raised
+    to its ratio and the problem is re-solved."""
+    import gurobipy as gp
+    from gurobipy import GRB
+    D, n = jl_set(p, a, j)
+    pairs = lift(D, n, L, full=full)
+    P = len(pairs)
+    g = 2 * L + 1
+    cutpts = [(i / g, k / g) for i in range(g) for k in range(g) if (i, k) != (0, 0) and (i, k) <= ((-i) % g, (-k) % g)]
+    log = []
+    best = None
+    t0 = time.time()
+    for rd in range(rounds):
+        m = gp.Model()
+        m.Params.OutputFlag = 0
+        m.Params.TimeLimit = max(10.0, tl - (time.time() - t0))
+        m.Params.Threads = threads
+        m.Params.LazyConstraints = 1
+        m.Params.IntFeasTol = 1e-9
+        m.Params.FeasibilityTol = 1e-8
+        m.Params.MIPGapAbs = tol / 2
+        x = m.addVars(P, vtype=GRB.BINARY)
+        k = m.addVar(lb=0.0, ub=2.0 * P)
+        def row(xi):
+            return 2 * np.cos(2 * np.pi * (pairs @ np.array(xi)))
+        for xi in cutpts:
+            c = row(xi)
+            m.addConstr(gp.quicksum(float(c[t]) * x[t] for t in range(P)) + k >= 0)
+        m.setObjective(2 * gp.quicksum(x[t] for t in range(P)) - rho * k * k, GRB.MAXIMIZE)
+        st = {"lazy": 0, "inc": []}
+        def cb(model, where):
+            if where == GRB.Callback.MIPSOL:
+                v = np.array(model.cbGetSolution([x[t] for t in range(P)]))
+                kv = model.cbGetSolution(k)
+                w = (v > 0.5).astype(float)
+                if w.sum() == 0:
+                    return
+                fmin, xi, V, G = true_min(pairs, w, L, nstart=6)
+                if fmin < -kv - 1e-7:
+                    for q in [tuple(xi)] + [tuple(np.array(np.unravel_index(i, V.shape)) / G)
+                                            for i in np.argsort(V, axis=None)[:5] if V.flat[i] < -kv - 1e-7]:
+                        c = row(q)
+                        model.cbLazy(gp.quicksum(float(c[t]) * x[t] for t in range(P)) + k >= 0)
+                        cutpts.append(q)
+                        st["lazy"] += 1
+                else:
+                    st["inc"].append((round(time.time() - t0, 1), 2 * int(w.sum()), round(-fmin, 6)))
+        m.optimize(cb)
+        rec = {"round": rd, "rho": rho, "status": m.Status, "obj_bound": m.ObjBound, "lazy": st["lazy"],
+               "seconds": round(time.time() - t0, 1)}
+        if m.SolCount:
+            w = np.array([x[t].X > 0.5 for t in range(P)], dtype=float)
+            if w.sum() > 0:
+                fmin, xi, _, _ = true_min(pairs, w, L, G=1 << int(math.ceil(math.log2(32 * (2 * L + 1)))), nstart=20)
+                T = int(2 * w.sum())
+                rec.update({"T": T, "K_true": -fmin, "ratio": T / fmin ** 2, "obj": m.ObjVal})
+                if best is None or T / fmin ** 2 > best["ratio"]:
+                    best = {"T": T, "K_true": -fmin, "ratio": T / fmin ** 2, "T_pairs": pairs[w > 0.5].tolist()}
+        log.append(rec)
+        if m.Status == GRB.OPTIMAL and m.ObjBound <= tol:
+            return {"p": p, "a": a, "j": j, "n": n, "L": L, "full": full, "pairs": P, "certified": True,
+                    "sup_ratio_le": rho + tol, "best": best, "log": log}
+        if best is not None and best["ratio"] > rho + 1e-9:
+            rho = best["ratio"]
+            continue
+        break
+    return {"p": p, "a": a, "j": j, "n": n, "L": L, "full": full, "pairs": P, "certified": False,
+            "note": "time limit or no improving incumbent; sup ratio <= rho + max(0, obj_bound) (K >= 1)",
+            "sup_ratio_le": rho + max(0.0, log[-1]["obj_bound"]), "best": best, "log": log}
+
+
 if __name__ == "__main__":
     cmd = sys.argv[1]
+    if cmd == "ratio":
+        p, a, j, L = (int(t) for t in sys.argv[2:6])
+        rho, tl = float(sys.argv[6]), float(sys.argv[7])
+        th = int(sys.argv[8]) if len(sys.argv) > 8 else 8
+        full = len(sys.argv) > 9 and sys.argv[9] == "full"
+        print(json.dumps(ratio_cert(p, a, j, L, rho, tl, th, full)), flush=True)
+        sys.exit(0)
     if cmd == "measure":
         p, a, j, L = (int(t) for t in sys.argv[2:6])
         seeds = int(sys.argv[6]) if len(sys.argv) > 6 else 5

@@ -1,5 +1,5 @@
 r"""E116-FD driver: best fundamental-domain lift of a JL set (one representative per class, from [−Rn, Rn]²).
-ratio = |D|/K'² with K' re-evaluated by true_min. Usage: python src/e116_fd_driver.py p a j R iters seed [init: box|rand]
+ratio = |D|/K'² with K' re-evaluated by true_min. Usage: python src/e116_fd_driver.py p a j R iters seed [init: box|rand|taper]
 """
 import sys, os, json, subprocess, math
 import numpy as np
@@ -23,6 +23,9 @@ cur = []
 for c in reps:
     if init == "box":
         cur.append(int(np.argmin([max(abs(z[0]), abs(z[1])) for z in c])))
+    elif init == "taper":  # P(z) = Λ(z₁/n)Λ(z₂/n): the expectation is the fractional PD lift (K = r by Poisson)
+        wt = np.array([max(0.0, 1 - abs(z[0]) / n) * max(0.0, 1 - abs(z[1]) / n) for z in c])
+        cur.append(int(rng.choice(len(c), p=wt / wt.sum())))
     else:
         cur.append(int(rng.integers(len(c))))
 L = R * n

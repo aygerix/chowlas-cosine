@@ -494,6 +494,23 @@ The prize is (c). Everything else is support.
     = r + Ω(√|D|) for bounded-spread one-rep lifts. Model EXCLUDED (conditional on λ_odd <= 1 − c uniformly, numerically
     supported). Open: variable-multiplicity subsets (the MILP optima), unbounded spread, and the 1D images at small V.
 
+  - ADVISOR REVIEW 3 (cont. 31, pasted by the user): (1) prove a uniform gap λ_odd <= 1 − c for the JL family; (2) test
+    the observed law K_lift ≈ 0.92p² (certified one-rep K = 8.16, 23.35, 45.14 at p = 3, 5, 7; ρ ≈ 1.18/p) at p = 11, 13,
+    naive vs jointly optimised; (3) certify sup_T |T|/K² itself, not max |T| at a fixed K. "If the experiments contradict
+    the predicted scaling, investigate the discrepancy rather than rescue the prediction."
+  - Lead response, with PRE-REGISTERED predictions (written before E119 ran):
+    (1) A gap uniform over ALL JL depths is numerically FALSE: λ_odd = 0.61, 0.80, 0.94 at p = 3, a = 2, 3, 4 (E117).
+        The target is the a = 2 family, p → ∞ (0.30–0.61 for p <= 13). Deep lifts are worse anyway (E118).
+    (2) Taper-random one-rep lifts (P(z) = Λ(z₁/n)Λ(z₂/n), E F = fractional lift with min −r exactly; independent
+        bounded fluctuations; Hoeffding + grid union bound) give K <= r + C√(|D| log n) = O(p^{3/2}√log p) = o(p²)
+        (proof sketch; to be written as P78). So the OPTIMAL one-rep K cannot follow 0.92p²; with P77 + an a = 2 gap,
+        K_opt ∈ [r + c p^{3/2}, r + C p^{3/2}√log p] and ρ_opt ∈ [c'/log p, C'].
+        Predictions: advisor law K ≈ 111 (p = 11), 155 (p = 13); taper-random K ≈ r + √(σ̄²|D| ln 4n²) ≈ 101, 132;
+        SA-optimised one-rep K <= the taper-random K. REFUTED (lead) if taper-random K exceeds 0.92p² at p = 13 or SA
+        lands on the p² law with taper-random below it consistently (then the gap is an optimiser artefact only).
+    (3) Dinkelbach MIQP (src/e116_jl_taper.py ratio): max 2|T| − ρk², lazy cuts; ObjBound <= tol ⇒ sup ratio <= ρ + tol
+        (K >= 1 always). Replaces the threshold MILPs (stopped).
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

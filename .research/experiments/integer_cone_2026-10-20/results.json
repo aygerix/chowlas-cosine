@@ -1,0 +1,297 @@
+{
+  "qualification": "Finite rigorous lower witnesses, not numerical global minima or a universal Chowla result.",
+  "variance_identity": {
+    "boolean_vectors_checked": 32,
+    "verified": true
+  },
+  "disk_sign": {
+    "variable": "u=t^2/4",
+    "t_interval": [
+      "4",
+      "44/7"
+    ],
+    "polynomial_order": 20,
+    "coefficients_low_to_high": [
+      "1",
+      "-1/2",
+      "1/12",
+      "-1/144",
+      "1/2880",
+      "-1/86400",
+      "1/3628800",
+      "-1/203212800",
+      "1/14631321600",
+      "-1/1316818944000",
+      "1/144850083840000",
+      "-1/19120211066880000",
+      "1/2982752926433280000",
+      "-1/542861032610856960000",
+      "1/114000816848279961600000",
+      "-1/27360196043587190784000000",
+      "1/7441973323855715893248000000",
+      "-1/2277243837099849063333888000000",
+      "1/778817392288148379660189696000000",
+      "-1/295950609069496384270872084480000000",
+      "1/124299255809188481393766275481600000000"
+    ],
+    "sturm_root_count": 0,
+    "disk_transform_upper": "-1/50",
+    "qualification": "Exact Sturm certificate and alternating-series upper bound",
+    "verified": true
+  },
+  "cases": [
+    {
+      "X": 8,
+      "B": 17,
+      "n": 552,
+      "N": 1104,
+      "max_A": 39304,
+      "encoded_set_sha256": "1f9493c4a76bc3c3dd3170438e69dc05d735bb40731979d57c3fe5dfcebf5e9e",
+      "root_of_unity": {
+        "numerator": 2,
+        "denominator": 307
+      },
+      "phase_radius_float": 5.91358617146314,
+      "D_over_N_upper_rational": "-10479/62500",
+      "M_lower_rational": "1446102/15625",
+      "R_lower_float": 3.9392120692585215,
+      "count_over_leading_term_float": 1.3825827475185901,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 8,
+      "B": 33,
+      "n": 552,
+      "N": 1104,
+      "max_A": 287496,
+      "encoded_set_sha256": "853ffd8d4f2c36bf0fd8530e57a7f7f5ab7f84bb37364fd0c993aa6344e77ea3",
+      "root_of_unity": {
+        "numerator": 3,
+        "denominator": 1123
+      },
+      "phase_radius_float": 4.569589314312426,
+      "D_over_N_upper_rational": "-33973/200000",
+      "M_lower_rational": "2344137/25000",
+      "R_lower_float": 3.990923860486441,
+      "count_over_leading_term_float": 1.3825827475185901,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 8,
+      "B": 129,
+      "n": 552,
+      "N": 1104,
+      "max_A": 17173512,
+      "encoded_set_sha256": "9744a1d35a3bb4a44bcc7835144161efedee8fffa1edc3bc7f8a10a69e6446bf",
+      "root_of_unity": {
+        "numerator": 13,
+        "denominator": 16771
+      },
+      "phase_radius_float": 5.065513736020752,
+      "D_over_N_upper_rational": "-39617/200000",
+      "M_lower_rational": "2733573/25000",
+      "R_lower_float": 4.65394373711157,
+      "count_over_leading_term_float": 1.3825827475185901,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 16,
+      "B": 33,
+      "n": 2776,
+      "N": 5552,
+      "max_A": 574992,
+      "encoded_set_sha256": "2e0d28e1875fd6987672902d89dbc0819213f65cf7e5cab8998a6467443a5087",
+      "root_of_unity": {
+        "numerator": 2,
+        "denominator": 1123
+      },
+      "phase_radius_float": 6.092785752416568,
+      "D_over_N_upper_rational": "-65741/500000",
+      "M_lower_rational": "22812127/62500",
+      "R_lower_float": 6.9274919931692445,
+      "count_over_leading_term_float": 1.303685362469975,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 16,
+      "B": 65,
+      "n": 2776,
+      "N": 5552,
+      "max_A": 4394000,
+      "encoded_set_sha256": "02526b49886724a4fae54e3abb9efcd83ffe7b5972bae5308d369ce730e16f2b",
+      "root_of_unity": {
+        "numerator": 3,
+        "denominator": 4291
+      },
+      "phase_radius_float": 4.639890688378771,
+      "D_over_N_upper_rational": "-83863/500000",
+      "M_lower_rational": "29100461/62500",
+      "R_lower_float": 8.837107148098635,
+      "count_over_leading_term_float": 1.303685362469975,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 16,
+      "B": 257,
+      "n": 2776,
+      "N": 5552,
+      "max_A": 271593488,
+      "encoded_set_sha256": "0e874299762f42291ddb5c16f43e128fecab66c233ddde54169fdb566e0b4121",
+      "root_of_unity": {
+        "numerator": 13,
+        "denominator": 66307
+      },
+      "phase_radius_float": 5.085223906199821,
+      "D_over_N_upper_rational": "-7401/40000",
+      "M_lower_rational": "2568147/5000",
+      "R_lower_float": 9.748552699503655,
+      "count_over_leading_term_float": 1.303685362469975,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 32,
+      "B": 65,
+      "n": 13344,
+      "N": 26688,
+      "max_A": 8788000,
+      "encoded_set_sha256": "3b7a3f6323f555767ee998e17a66b3cbf487842b86435c942ee4ed95d1de82e9",
+      "root_of_unity": {
+        "numerator": 2,
+        "denominator": 4291
+      },
+      "phase_radius_float": 6.186520917838362,
+      "D_over_N_upper_rational": "-1598/15625",
+      "M_lower_rational": "21323712/15625",
+      "R_lower_float": 11.81407614308017,
+      "count_over_leading_term_float": 1.253341316772287,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 32,
+      "B": 129,
+      "n": 13344,
+      "N": 26688,
+      "max_A": 68694048,
+      "encoded_set_sha256": "50431043fb32a941aae42bcf5d4964b6fb9b29fb9687da3b2a936fa10c1f0480",
+      "root_of_unity": {
+        "numerator": 3,
+        "denominator": 16771
+      },
+      "phase_radius_float": 4.675858833249925,
+      "D_over_N_upper_rational": "-157329/1000000",
+      "M_lower_rational": "65606193/31250",
+      "R_lower_float": 18.174053362745035,
+      "count_over_leading_term_float": 1.253341316772287,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 32,
+      "B": 513,
+      "n": 13344,
+      "N": 26688,
+      "max_A": 4320182304,
+      "encoded_set_sha256": "843bcb4d14ae68830dfb233dc451906c8551dbc375ff80c981b5ef01f2594474",
+      "root_of_unity": {
+        "numerator": 13,
+        "denominator": 263683
+      },
+      "phase_radius_float": 5.095136623365902,
+      "D_over_N_upper_rational": "-5291/31250",
+      "M_lower_rational": "35301552/15625",
+      "R_lower_float": 19.55828437829699,
+      "count_over_leading_term_float": 1.253341316772287,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 64,
+      "B": 129,
+      "n": 61928,
+      "N": 123856,
+      "max_A": 137388096,
+      "encoded_set_sha256": "43a4d978487dc4a56e983a9ba6e76909b43047cdcf6163fdf44c82db4bb4a285",
+      "root_of_unity": {
+        "numerator": 2,
+        "denominator": 16771
+      },
+      "phase_radius_float": 6.2344784443332335,
+      "D_over_N_upper_rational": "-90667/1000000",
+      "M_lower_rational": "701853247/125000",
+      "R_lower_float": 22.56278854144567,
+      "count_over_leading_term_float": 1.2117949556772425,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 64,
+      "B": 257,
+      "n": 61928,
+      "N": 123856,
+      "max_A": 1086373952,
+      "encoded_set_sha256": "243ca22a955331d9113a1d772ee339bbc90f39536c45d4a04deaa400b575ceac",
+      "root_of_unity": {
+        "numerator": 3,
+        "denominator": 66307
+      },
+      "phase_radius_float": 4.694052836492142,
+      "D_over_N_upper_rational": "-76111/500000",
+      "M_lower_rational": "589175251/62500",
+      "R_lower_float": 37.88095776143407,
+      "count_over_leading_term_float": 1.2117949556772425,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    },
+    {
+      "X": 64,
+      "B": 1025,
+      "n": 61928,
+      "N": 123856,
+      "max_A": 68921000000,
+      "encoded_set_sha256": "9541c89d1aa77577e420f600c450b79d866d8fef7759c1aa9d083f59a0043ac5",
+      "root_of_unity": {
+        "numerator": 13,
+        "denominator": 1051651
+      },
+      "phase_radius_float": 5.1001074883643085,
+      "D_over_N_upper_rational": "-81449/500000",
+      "M_lower_rational": "630496709/62500",
+      "R_lower_float": 40.53771634469451,
+      "count_over_leading_term_float": 1.2117949556772425,
+      "arb_precision": 96,
+      "flint_version": "0.9.0",
+      "certificate": "Arb enclosure at one exact root of unity",
+      "verified": true
+    }
+  ],
+  "seconds": 0.31748056411743164
+}

@@ -1,5 +1,9 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Targeted check: singular integer matrix counts (2026-10-20)
+
+Chapman–Mudgal, *Counting 2x2 integer matrices with a given determinant*, [arXiv:2509.20259v1](https://arxiv.org/html/2509.20259v1), introduction following Proposition 1.3: the h=0 box count is (16/zeta(2))X^2 log X+O(X^2). This matches the independent elementary count used here; the counting surplus is not claimed new. The construction-side resonance exclusions have separate derivations in the [integer-cone note](notes/cstar_integer_cone_2026-10-20.md). No literature-wide novelty conclusion was drawn from the narrow search.
+
 ## Targeted check: real-matrix discrepancy (2026-10-20)
 
 Larsen, *Fast Discrepancy Minimization with Hereditary Guarantees*, [primary paper](https://cs.au.dk/~larsen/papers/Hereditary.pdf), introduction: Spencer's square-matrix theorem applies to real entries of absolute value<=1 and gives discrepancy<=6sqrt(m). Lovett–Meka, [arXiv:1203.5747v2](https://arxiv.org/pdf/1203.5747), Theorem 4, verifies the arbitrary-vector/starting-point partial-coloring formulation. The forced-plateau proof derives the required fractional rounding directly by dyadic rounding and square padding; it does not infer a real-matrix theorem merely from an incidence-matrix abstract. [Application and scope](notes/cstar_forced_plateau_2026-10-20.md).

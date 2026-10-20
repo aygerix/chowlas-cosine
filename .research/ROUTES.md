@@ -86,6 +86,15 @@ No row is a claim that the universal conjecture has been proved or refuted. Fini
 | --- | --- | --- |
 | Bounded-norm fixed-interior correction, with an explicit constant | The existing coupled-certificate target above, not a new route. It implies a universal full-W2 bound and is therefore stronger than the original Chowla assertion; it is not known to be equivalent. | C=2 REFUTED exactly by S={±1,...,±128}. An explicit affine exterior correction proves the criterion for every interval with C=95/16<6. C=6 has exact rational feasible witnesses on 1,053 tested supports (all 1,023 nonempty subsets of [1,10], four larger intervals, two saved near-optima and 24 seeded sets). This is a calibration, not a universal result. Proof and strategic decision: [NOTEBOOK](NOTEBOOK.md#2026-10-20--restart-audit-and-fixed-interior-calibration). |
 
+## Current derivation and construction test, 2026-10-20
+
+| Attempt | Relation to C* | Quantitative test / status |
+| --- | --- | --- |
+| Fractional-profile variance / prescribed-orthant smoothing | CHAIN(c), the same adaptive-certificate gap, not a new route. Booleanity gives a=Q/2+V+n-mu for q=D_A-D_p, Q=||q||_2^2, V=sum p_a(1-p_a), mu=sum p_a. | Exact identity derived. An extra weighted row is unnecessary merely for macroscopic coupling when cardinality error is small. Producing a high-variance profile with physical discrepancy O(sqrt(n)) for an arbitrary low-ratio support is still C*, not a consequence of this identity. |
+| Integer rank-one quadric with large-base scalar encoding | DESIGN / ATTACK LOG. A genuine Boolean cone has n~3X^2 log X, potentially useful only with M=O(X). | EXCLUDED on paper: M>=n/4000 eventually for all B>2X. Exact disk-transform signs and 12 finite ball evaluations verify the resonance calculations. No full Chowla result. [Proof and scope](notes/cstar_integer_cone_2026-10-20.md). |
+| Independently chosen mixed place values for the same integer cone | Removes R=S^2 while retaining injectivity: 1,S,R,RS with S>2X,R>2X(S+1). | EXCLUDED on paper uniformly in all such R,S. The negative disk band [77/20,7] has width greater than pi; denominator RS and a prescribed numerator progression force every primitive fiber into that band up to o(1). Counting error is O(X^2) against X^2 log X. Independent Bernstein/Sturm signs and 24 finite point certificates. Nonseparated encodings not excluded. [Proof](notes/cstar_integer_cone_2026-10-20.md). |
+| Box cutoff of the integer cone at the smallest injective base | A genuine pivot: the disk resonance hits sinc zeros and does not transfer. | EXCLUDED on paper for B=2X+1 by a different fixed resonance q=B^2+3B+1,j=2B+5. Its limiting phase pi*[[2,-1],[1,-2]] has integral Phi<-1/75 by an elementary Si estimate, corroborated by a validated Phi<-1/25 enclosure. Thus M>=n/200 eventually. The 28 denominator probes and four fixed witnesses are finite lower bounds only. Other windows/encodings untested. [Proof](notes/cstar_integer_cone_2026-10-20.md). |
+
 ## Active goal continuation: global interpolation, 2026-10-20
 
 | Attempt | Relation to the core | Prediction / falsification |

@@ -1,0 +1,61 @@
+{
+  "qualification": "Independent rational sign and finite parametrization checks; no external audit of the paper proof.",
+  "disk_certificates": [
+    {
+      "u_interval": [
+        "4",
+        "484/49"
+      ],
+      "margin": "1/50",
+      "leaves": [
+        {
+          "lo": "4",
+          "hi": "484/49",
+          "max_bernstein": "-47106969463082221515752653/3617584466968793462547656250"
+        }
+      ],
+      "verified": true
+    },
+    {
+      "u_interval": [
+        "5929/1600",
+        "49/4"
+      ],
+      "margin": "1/2000",
+      "leaves": [
+        {
+          "lo": "5929/1600",
+          "hi": "49/4",
+          "max_bernstein": "-6813904391785313959616464943670922157848217/8131640214559781712075292840725105868800000000"
+        }
+      ],
+      "verified": true
+    }
+  ],
+  "brute_checks": [
+    {
+      "X": 2,
+      "disk_n": 20,
+      "box_n": 64,
+      "verified": true
+    },
+    {
+      "X": 4,
+      "disk_n": 104,
+      "box_n": 272,
+      "verified": true
+    },
+    {
+      "X": 8,
+      "disk_n": 552,
+      "box_n": 1184,
+      "verified": true
+    }
+  ],
+  "box_analytic_bounds": {
+    "Si_2pi_lower": "1936597/1913940",
+    "exp_6_over_5_lower": "401/125",
+    "derived_box_integral_upper": "-1/75",
+    "verified": true
+  }
+}

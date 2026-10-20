@@ -1,5 +1,13 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Active continuation: integer quadric construction tested and excluded
+
+**Full Chowla is still OPEN; the goal remains active.** A different construction mechanism was attempted: all bounded integer rank-one 2x2 matrices, encoded without collisions into positive integer frequencies. Their logarithmic count would help only if M=O(X). Instead a uniform mixed-place-value resonance gives a paper proof of M>=n/4000 for the Frobenius-ball cutoff and every separated product encoding. Changing to the box cutoff at B=2X+1 removes that first proof, but the explicit q=B^2+3B+1, j=2B+5 resonance gives a negative limiting sinc integral and M>=n/200 eventually. [Full model statements and proofs](notes/cstar_integer_cone_2026-10-20.md).
+
+There are 12 ordinary-base, 24 mixed-encoding, and 28 box-denominator certified point probes, plus four fixed box-limit witnesses. Disk sign bounds have independent rational Bernstein and exact Sturm certificates; small cone parameterizations agree with brute four-coordinate enumeration. The box limiting integral has both an elementary negative bound and a separate validated entire-series enclosure (about -0.052409288). These prove/model-check exclusions only. The failed reviewer launch was revalidated this pass; the configured default model is unavailable. All jobs are terminal.
+
+The adaptive-profile identity a=Q/2+V+n-mu is proved directly from Booleanity; for near-matching cardinality, variance already gives coupling without a weighted p row. Profile existence for arbitrary low-ratio extremizers is still missing. Discontinue the tested separated cone constructions. A concrete remaining construction test is a nonseparated near-rank-one coefficient matrix (choose large a,b,c and d near bc/a), retain only collision-free encodings, and test the resonances before any scaling claim. This is untested, not an asserted counterexample family.
+
 ## Active continuation: uniform-completion obstruction and adaptive coupling
 
 **Full Chowla remains OPEN.** The latest pass constructs genuine Boolean A_t with n~5L/12 and a proved positive bounded Chowla ratio, but uniform selected-coefficient completion cost J_≥/sqrt(N) grows at least as L^(1/8). This refutes generic bounded-ratio control of that cost and J_≥^4=O(NK^2). It does not refute the still-unproved restriction to exact strict-record minimizers. That stronger architecture is deprioritized; return to the actual mixed certificate with variable interior coefficients and macroscopic coupling.

@@ -3371,3 +3371,33 @@ Reproduce:
 Data: experiments/forced_plateau_2026-10-20/{results,noise,verification,energy}.json. All jobs are terminal.
 
 **Global review.** Discontinue generic bounded-ratio control of uniform completion cost and the M-dependent cost estimate. Deprioritize the strict-record version until an actual inverse mechanism appears; the new theorem leaves it logically open. Continue with the genuine mixed certificate and variable interior coefficients. This is already allowed by full W2, so do not claim it is a new universal reduction. The new family demonstrates concretely why the stronger constraint can discard useful certificates. The unsolved general task is producing a comparable adaptive certificate for arbitrary hypothetical low-ratio extremizers. Merely assuming small physical discrepancy and macroscopic coupling would rename C*: the resulting bounded-supremum test already implies Chowla by ||D_A||_1<=2K. The construction track has also been checked: this particular family has a positive lower ratio and supplies no quantified disproof. The full original goal stays active and unresolved.
+
+## 2026-10-20 — Integer rank-one cone and arithmetic phase obstructions
+
+Previous goal turn classified as **progress**: the Boolean plateau family separated uniform completion from actual adaptive certificates, with exact finite lower/upper evidence. This continuation attempted the missing general profile construction, derived the exact simplification a=Q/2+V+n-mu, and recognized that profile existence itself was still the unresolved C* step. It then pursued a different construction mechanism rather than treating that recognition as completion.
+
+**DESIGN candidate.** All nonzero integer rank-one 2x2 matrices M with ||M||_F<=X have symmetric count N~6X^2 log X. A scalar encoding without collisions would give n~3X^2 log X, so M(A)=O(X) would offer a logarithmic gain. This is distinct from lifting a finite-field cone. The logarithmic matrix count is classical; no novelty claim is made.
+
+**Paper exclusion, uniform in the encoding.** Encode by 1,S,R,RS with S>2X,R>2X(S+1). At denominator RS, choose j congruent to -floor(S/X) modulo S and with 77/20<=2pi Xj/R<=7. The interval width 63/20>pi guarantees a choice. The rescaled phase has off-diagonal magnitudes in a common strictly negative disk-transform band and a diagonal error O(1/X). Primitive-fiber Riemann errors sum to O(X^2), against N~X^2 log X, so M(A)>=n/4000 eventually for every such encoding, uniformly. Ordinary bases B>2X are included. Exact Sturm and independent rational Bernstein signs verify the disk band.
+
+**Actual pivot after failure.** Change from Frobenius ball to the coordinate box and choose the smallest balanced base B=2X+1. The first limiting isoclinic phases now hit sinc zeros, so the disk proof genuinely fails to transfer. A 28-denominator probe finds a different stable phase: q=B^2+3B+1,j=2B+5. Its rescaled coefficient matrix tends to pi*[[2,-1],[1,-2]]. The normalized sum tends to
+
+    Phi=(1/2)integral_-1^1 sinc(pi(2+t))sinc(pi(1+2t))dt.
+
+An elementary product-to-sum/Si argument gives Phi<-1/75; a separate 256-bit entire-series enclosure gives Phi<-1/25, midpoint about -0.052409288. Reduced-residue averages with O(tau(H)) error and fiber Riemann sums prove D/N=Phi+O(1/log X). Thus the box model at B=2X+1 also has M(A)>=n/200 eventually. This is an infinite-family paper exclusion, not extrapolation from a grid scan.
+
+**Evidence.** Twelve ordinary-base and 24 mixed-encoding point certificates use X=8,16,32,64. The positive Frobenius counts are 552,2776,13344,61928. All tested encodings have strong certified negative values; at X=64 ordinary B=129 gives R>22.56. The box counts are 1184,5440,24128,109248; its fixed final resonance gives R>15.58 at X=64. All are failed constructions. Arb values enclose exact roots of unity and give lower bounds for M, never numerical global upper bounds. Small direct four-coordinate enumeration at X=2,4,8 agrees with the primitive parameterization and injective encoding. The two rational disk sign certificates have all Bernstein coefficients negative on their whole intervals, independently of Sturm. Exact rational checks corroborate the elementary Si bounds.
+
+**CHAIN(c) simplification, limited scope.** For arbitrary Boolean eta and fractional p, Q=2sum(eta-p)^2, V=sum p(1-p), a=2sum eta(1-p) satisfy a=Q/2+V+n-mu. Thus variance and near-matching cardinality give macroscopic coupling without a weighted p row; the older weighted row remains valid and gives a sharper asymptotic. No general high-variance profile was produced, so this is recorded as an identity, not a new universal route.
+
+Proofs and caveats: [integer-cone note](notes/cstar_integer_cone_2026-10-20.md). Data: experiments/integer_cone_2026-10-20/{results,mixed,box,box_limit,verification}.json. All computation ran on Dirichlet. A new separate-agent review launch failed with the same unavailable configured default model; no independent-agent or Lean audit is claimed.
+
+Reproduce:
+
+    src/dirun.sh -c 2 -m 4 -t 240 python src/cstar_integer_cone.py
+    src/dirun.sh -c 2 -m 4 -t 240 python src/cstar_integer_cone_mixed.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_integer_cone_box.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_integer_cone_box_limit.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/cstar_integer_cone_verify.py
+
+**Global review.** The logarithmic count does not overcome the integer band-edge sign obstruction in the tested cone models. Discontinue all separated Frobenius-cone product encodings and the tested box encoding. The box pivot shows that removing one resonance is insufficient; a different arithmetic phase can survive. Nonseparated near-rank-one encodings (e.g. large a,b,c with d near bc/a) and direction-dependent nonradial tapers remain untested, so neither all algebraic cones nor all encodings are ruled out. A concrete next construction test is to require exact collision-free encoding in that nonseparated class and then probe the inherited resonances before large searches. Full Chowla and the universal adaptive-certificate step remain open; the original active goal is preserved and no job from this pass is live.

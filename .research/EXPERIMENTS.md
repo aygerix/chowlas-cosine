@@ -1853,3 +1853,18 @@ CERTIFIED: |T| <= 0.8·K(T)² + 10⁻⁴ for every symmetric T ⊂ P_9, i.e. sup
 optimum T = 20, K = 5. (Cuts are valid for all truly feasible T, so the bound is rigorous up to LP tolerances; the cut
 generator's numerics only affect which incumbents are accepted.) Running: full box [−9, 9]² control, p = 5 (L = 25), p = 7.
 (Threshold-MILP control, full box at Kthr = 3, 1800 s: T = 6, K = 2.63, ratio 0.867 — the full box beats the D-class.)
+
+## E119b (2026-10-20, cont. 31) Crossover test of the 0.92p² law (src/e119b_batch.sh; data examples/e119/taper_large.jsonl;
+## dirichlet; K NUMERICAL: FFT grid (oversampling 8 for p = 17, 19; 4 for p >= 23) + BFGS from the 16 best basins)
+Pre-registered (src/e119b_batch.sh header, before the run): 1.25√(|D| ln n²) ⇒ K ≈ 716 (p = 29), 799 (p = 31) < 0.92p².
+  | p  | |D|   | taper-random K (3 seeds)   | K/√(|D| ln n²) | 0.92p² |
+  | 17 | 4896  | 314.2, 302.6, 310.6        | 1.29–1.33      | 265.9  |
+  | 19 | 6840  | 352.7, 332.4, 349.8        | 1.17–1.24      | 332.1  |
+  | 23 | 12144 | 485.1, 517.6, 506.2        | 1.24–1.33      | 486.7  |
+  | 29 | 24360 | 704.0, 737.7, 717.5        | 1.23–1.29      | 773.7  |
+  | 31 | 29760 | 812.2, 828.3, 783.7        | 1.23–1.30      | 884.1  |
+CONFIRMED: the constant 1.25 (fitted at p <= 13) holds out of sample to p = 31; random lifts cross 0.92p² at p ≈ 23 and lie
+7–11% below it at p = 29, 31 (all seeds). A random taper lift is a valid one-rep lift, so the OPTIMAL one-rep K is below
+0.92p² at p = 29, 31: the p² law fails for optimal lifts (as P78 proves asymptotically). The SA values at p <= 7 (0.92p²)
+sit ≈ 0.65 × the random level there; whether SA stays at ≈ 0.65 × random (⇒ K ≈ 0.8p^{3/2}√ln p) is E119's SA runs.
+Status: numerical, not interval-certified (a rigorous grid bound at p = 31 costs ~2700 in Hessian slack ≫ the 100 margin).

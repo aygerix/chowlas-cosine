@@ -530,6 +530,10 @@ The prize is (c). Everything else is support.
   - P81 (proved): quadric cones have odd concentration EXACTLY (1/p)·I, so one-rep quadric lifts are excluded like JL
     (ρ <= 5.6·10⁴V² on Z⁴). Two of the three advisor models are now excluded in the one-rep bounded-spread class.
 
+  - E119b (pre-registered, CONFIRMED): random taper lifts have K ≈ 1.25√(|D| ln n²) out to p = 31 and fall 7–11% below
+    0.92p² at p = 29, 31. So the optimal one-rep K is o(p²)-like already at p ≈ 29 (numerical). The penalty law for
+    one-rep lifts is K_opt ∈ [p + c√|D|, ≈ 1.25√(|D| ln n²)]: √|D| up to √log, i.e. ρ_opt between c/log p and C.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

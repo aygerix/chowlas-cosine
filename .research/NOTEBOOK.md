@@ -3183,3 +3183,134 @@ These are paper derivations plus integer/rational finite checks, not Lean/kernel
 **Distance to result:** the new result calibrates an already proposed certificate; it does not close CHAIN(c). **Continue:** the full-W2/fixed-interior route only as an explicit conditional conjecture with a proposed constant, after hostile tests. **Discontinue:** C=2, and treating an unproved stronger certificate as the uniquely necessary next lemma. **Do not scale up:** another unconstrained eigenvalue or set-size search; these 1,053 tests give no evidence about correlated mesoscopic counterexamples at unbounded size.
 
 The next mathematical test should target the cost that has not been controlled: the norm needed to preserve all original support coefficients while changing their energy on correlated sparse supports. A precise candidate is C=6 (or a named larger constant), checked first on the already defined growing balanced-layer/implant and coupled-axis families using their exact orbit/coordinate reductions. The earlier random/independence proof does not cover arbitrary correlated supports. A growing lower bound for the required C on one genuine integer family would kill this stronger architecture without claiming a Chowla counterexample; a uniform bound on that family would need an actual symbolic correction, not larger floating runs. In parallel, retain the original global inequality as the proof target and aperiodic correlated Boolean rounding as the constructive target; neither has acquired a new mechanism in this entry.
+
+## 2026-10-20 — active goal: global L4 completion and a four-wise selector theorem
+
+**Scope: CHAIN(c) and constructive ATTACK LOG.** The preceding goal turn established VM access and restated an open certificate; it was classified as no mathematical progress. Reloaded CSTAR, STATE, PROOFS, ROUTES and the recent notebook/proof supplements. The objective remains the full universal square-root theorem or a quantified counterexample family. It is not replaced by the model-specific result below. All computations in this entry ran on Dirichlet through `src/dirun.sh`, with at most two CPU cores and 12 GB per optimization process. The attempted separate proof/Lean-agent launch again failed because its inherited model was unavailable; no independent agent audit or new kernel verification is claimed.
+
+### Attempt 1: one-sign exterior centering fails at every constant
+
+The odds-centered noise used for Bernoulli rounding has coefficient 1 at selected frequencies and nonpositive coefficients at unused frequencies. Could this supply the universal correction? It cannot do so at a fixed norm cost, even when arbitrary exterior frequencies are allowed.
+
+For S={±1,...,±n}, take any real nonpositive Fourier correction r outside S union {0}. The interior cubic energy is 3n(n-1). The linear cross vector vanishes outside [−2n,2n]. Since all correction coefficients have one sign, all exterior-exterior energy terms are nonnegative, so discarding coefficients beyond 2n can only lower the energy. On each remaining exterior half the adjacency is a complete graph. Write A_+, A_- for the sums of absolute coefficients on the two halves and R²=||r||². Each cross coefficient is at most n. Therefore
+
+    integral D|D+r|²
+      >=3n(n-1)+(A_+²-2n A_+)+(A_-²-2n A_-)-R²
+      >=n²-3n-R².
+
+If ||D+r||²<=C N, N=2n, the right side is at least n²-(2C+1)n. It eventually exceeds C N^(3/2) for every fixed C. This excludes a universal one-sign fixed-interior correction, not arbitrary signed corrections, full W2, or Chowla. The obstruction is not a frequency cutoff or a floating eigensolver effect. The earlier signed affine interval correction escapes it.
+
+### Attempt 2: unrestricted nonlinear Fourier completion
+
+For finite symmetric S excluding 0 put N=|S|, D=sum_S e(sx), K=-min D, and define
+
+    J(S)=inf ||q||_4,
+          q real, integral q=0, qhat(s)=1 for s in S.
+
+All unused frequencies are free, with either sign. There is no W2 support restriction. An L4 function is permitted; finite polynomials approximate it while the finitely many prescribed coefficients can be repaired. This is a new optimization probe in the project, not a new universal bound merely by changing notation.
+
+For every admissible q, integral Dq=N. Put Q=integral q² and H=integral Dq². Positivity of K+D on span{1,q} gives
+
+    K² Q+K H >= N².
+
+Holder gives Q<=||q||_4² and H<=sqrt(N)||q||_4². Consequently, with j=J(S)/sqrt(N) and k=K/sqrt(N),
+
+    k(k+1)j²>=1,
+    K/sqrt(N)>=(sqrt(1+4/j²)-1)/2.                 (G4)
+
+In particular ||q||_4^4<=128N² implies M(A)>sqrt(|A|)/20. Indeed at k=sqrt(2)/20 the left side k(k+1)sqrt(128) is 4/5+sqrt(2)/25<22/25<1.
+
+There is an exact nonlinear dual object. Let V_S contain real polynomials with Fourier support in S union {0}. Then
+
+    J(S)=sup_(u in V_S, u!=0) (integral Du)/||u||_(4/3)
+        =sup (u(0)-integral u)/||u||_(4/3).        (D4)
+
+Existence follows from weak compactness in L4 of a bounded minimizing sequence and weak closedness of the finite affine constraints; strict convexity gives uniqueness. Euler variation against functions with zero prescribed coefficients gives q³=u in V_S. For this u, integral qu=integral Du=integral q^4, proving equality in the dual formula by Holder. Thus the true unrestricted minimizer obeys
+
+    P_S q=D, integral q=0, supp(q³hat) subset S union {0},
+    integral q^4=q(0)^3-integral q³.
+
+The cube root of u is continuous, so the point value is well defined. Translation and Holder also give u(x)<=u(0). These identities supply an actual nonlinear extremal object, not a fixed finite profile span.
+
+**Attempted universal derivation and exact failure.** Ordinary norm interpolation does not give the required upper bound on J. Since ||D||_1<=2K and ||D||_2=sqrt(N),
+
+    ||D||_(4/3)<=sqrt(2K) N^(1/4),
+    J(S)>=N/||D||_(4/3)>=N^(3/4)/sqrt(2K).
+
+This is the opposite direction: positivity already forces a hypothetical counterexample to have large completion cost. A bound J=O(sqrt(N)) must therefore use an additional Boolean/optimality argument. It does not follow from the generic Markov-operator or interpolation estimates. Ordinary intervals also refute an all-support uniform bound: the Fejer kernel F_(n+1) is an allowed dual test, integral D F_(n+1)=n and ||F_(n+1)||_(4/3)<=(n+1)^(1/4), so J>=n/(n+1)^(1/4). A proposed bound on strict-record global minimizers remains UNPROVED and is not asserted to be equivalent to Chowla.
+
+### A paper theorem for four-wise selectors, without a mean-profile hypothesis
+
+Let a_i be arbitrary distinct positive integers. Let eta_i be four-wise independent Bernoulli variables with probabilities 0<=p_i<=1/2 and mu=sum p_i>=64. Put A={a_i:eta_i=1}. Then
+
+    Pr[ |A|>=mu/2 and M(A)>sqrt(|A|)/20 ]
+      >=1149/2048>1/2.                             (FW)
+
+No positive-definite mean profile, consecutive ambient interval, W2 filling, or full independence is assumed. This is a model-specific global result; it does not exclude rare selected counterexamples or arbitrary correlated deterministic selections. No literature-priority claim is made. Existing P70.3 and product-Fejer results have related goals with different hypotheses/localization; (FW) is recorded here for its direct odds-completion proof.
+
+Proof: set Z_i=(eta_i-p_i)/(1-p_i) and q=2 sum_i Z_i cos(2pi a_i x). At every selected frequency qhat=1. Its mean is zero. Write v_i=E Z_i²=p_i/(1-p_i) and m_i=E Z_i^4=p_i+p_i^4/(1-p_i)^3. Four-wise independence and cosine orthogonality give the exact formula
+
+    E integral q^4=6 sum_i m_i+24 sum_(i<j) v_i v_j.
+
+Since |Z_i|<=1, sum m_i<=sum v_i<=2mu. Hence E integral q^4<=48mu²+12mu. Pairwise independence gives Pr(|A|<mu/2)<=4/mu. Markov gives Pr(integral q^4>128mu²)<=(48+12/mu)/128. Their union bound is at most 899/2048 when mu>=64. On the complementary event N=2|A|>=mu and q satisfies the G4 threshold, proving (FW). The proof uses only four-wise moments, not a central-limit approximation.
+
+An additional quantitative obstruction follows for correlated designs. If selectors are pairwise independent with the same marginals and *every nonempty* outcome satisfies M(A)<sqrt(|A|)/20, G4 forces integral q^4>128N² whenever |A|>=mu/2. Therefore
+
+    E integral q^4-(6 sum m_i+24 sum_(i<j) v_i v_j)
+      >80mu²-524mu>64mu²,                         (mu>=64).
+
+With only pairwise independence this excess can contain both three-index and four-index centered correlations; it must not be described as a pure four-distinct-index moment. With three-wise independence only the four-distinct-index contribution remains. This is an aggregated, profile-adapted correlation requirement, not an asserted contradiction for arbitrary Boolean sets.
+
+### Falsification at three-wise independence and a different mechanism
+
+The raw fourth-moment estimate cannot be extended to three-wise selectors. For d>=2 put m=2^d, Q=5^d, and
+
+    a_b=Q+sum_(i=0)^(d-1) b_i 5^i,  b in {0,1}^d.
+
+Let y be uniform on F_2^(d+1), Z_b=(-1)^(<(1,b),y>), and eta_b=(1+Z_b)/2. Every one, two, or three distinct labels (1,b) have nonzero XOR, so these are three-wise independent unbiased selectors. Every signed fourth-order frequency relation has two positive and two negative terms, and digitwise equality implies XOR zero. Thus the sign product on every contributing quadruple is 1 and, for *every* y,
+
+    integral (2 sum_b Z_b cos(2pi a_b x))^4=6*6^d.
+
+There are six solutions per binary coordinate to b+c=e+f; the high Q digit forces the 2+2 sign pattern. The four-wise formula would instead be 12m²-6m. The ratio of the actual fourth moment to m² is 6(3/2)^d, unbounded.
+
+This is an obstruction to the moment proof, not to the conclusion of a hypothetical three-wise Chowla theorem: all a_b lie in [Q,5Q/4). Evaluation at angle pi/Q gives cos(a_b*pi/Q)<=-1/sqrt(2), hence M(A)>=|A|/sqrt(2) for every nonempty output. The structured failure is handled by a direct frequency-band sign certificate. Removing it in a general inverse argument is an actual remaining task; no global random-versus-structured dichotomy has been proved.
+
+### Gurobi experiments: primal witnesses and actual-support dual diagnostics
+
+Implemented [convex L4 completion](../src/cstar_l4_completion.py). A degree-B real even polynomial is sampled on 4B+1 points, so its fourth-power quadrature is algebraically exact. Convex epigraph constraints y_j>=q(x_j)^2 and objective sum y_j² implement the problem. This restricts the *primal search*, while the dual polynomial in V_S tests the unrestricted completion. Dual L^(4/3) norms below are numerically integrated, not certified enclosures. Approximate Boolean primal coefficients are rounded to denominator 65536 and independently checked by integer Laurent convolution and a rational negative compression determinant in [verifier](../src/cstar_l4_verify.py).
+
+| Example | Primal ||q||_4/sqrt(N) | Numerical unrestricted dual lower diagnostic |
+| --- | ---: | ---: |
+| hereditary 8-frequency example | 1.4930 | 1.4776 |
+| interval of length 64 | 2.6006 | 2.5768 |
+| saved N50_x72 | 1.9755 | 1.9679 |
+| full Singer-Bu q=5, 30 positive frequencies | 1.4096 | 1.3952 |
+| full Singer-Bu q=7, 56 positive frequencies | 1.4397 | 1.4271 |
+| full Singer-Bu q=11, 132 positive frequencies | 1.5127 | 1.5006 |
+| fractional packet ambient 64 | 1.4549 | 1.4542 |
+| fractional packet ambient 128 | 1.6141 | 1.6124 |
+| fractional packet ambient 256 | 1.8746 | 1.8736 |
+| fractional packet ambient 512 | 2.0846 | 2.0831 |
+
+The Boolean profile roundings at ambient sizes 64,128,256,512 have primal costs 1.2838,1.2752,1.2520,1.2604. The finite packet comparison supports the initial discriminating prediction; it proves neither bounded Boolean cost nor asymptotic divergence from numerical samples. The packets are weighted controls, not legal Chowla sets.
+
+All 14 Boolean candidate polynomials passed the independent integer checks. Their rational negative determinants prove global finite lower bounds; they do not prove optimizer optimality, a new record, or a uniform constant. Two original optimizations returned SUBOPTIMAL and two larger ones initially returned no solution by the time limit. Scaling recovered q=11 and a packet-512 candidate. A subsequent correction freed zero-weight data frequencies; the corrected packet-512 optimization timed out with no solution. Its earlier polynomial remains feasible, and [revalidation](../src/cstar_l4_revalidate.py) rebuilt a correctly supported dual after discarding the zero-data multiplier. The resulting numerical primal/dual ratio is 0.999262. No timeout is reported as infeasibility or as an optimum.
+
+Data: [smoke suite](experiments/global_l4_2026-10-20/results.json), [corrected packet suite](experiments/global_l4_2026-10-20/packet.json), [Singer suite](experiments/global_l4_2026-10-20/singer.json), [q=11 recovery](experiments/global_l4_2026-10-20/singer_11_scaled.json), [packet-512 corrected-support revalidation](experiments/global_l4_2026-10-20/packet_512_revalidated.json), [14 exact witness checks](experiments/global_l4_2026-10-20/verification.json), [finite moment/cube checks](experiments/global_l4_2026-10-20/fourwise_checks.json). `packet_512_scaled.json` is the saved, stronger-constraint source for revalidation, not the final actual-support dual result.
+
+Reproduction (each script checks that it is running on Dirichlet):
+
+    src/dirun.sh -c 2 -m 12 -t 400 python src/cstar_l4_completion.py --suite smoke --tl 30
+    src/dirun.sh -c 2 -m 12 -t 350 python src/cstar_l4_completion.py --suite packet --tl 100 --output .research/experiments/global_l4_2026-10-20/packet.json
+    src/dirun.sh -c 2 -m 12 -t 240 python src/cstar_l4_completion.py --suite singer --tl 100 --output .research/experiments/global_l4_2026-10-20/singer.json
+    src/dirun.sh -c 1 -m 3 -t 100 python src/cstar_fourwise_check.py
+
+### Global strategic review and next derivation
+
+**What changed:** the one-sign completion shortcut is excluded at every constant; a direct global L4 certificate removes the fixed-W2 support requirement; four-wise random selectors admit an elementary square-root guarantee; an exact three-wise family blocks extending the raw moment argument, with its global sign obstruction separately understood. **What has not changed:** the universal Boolean many-spike estimate remains open. Neither an optimized norm definition nor model-specific selector theorem is a full proof path on its own.
+
+**Continue:** try to connect the nonlinear dual u=q³ to *Boolean* global extremality. A useful sufficient statement would bound J/sqrt(N) on a sequence of exact strict-record cardinality minimizers. Its missing implication is a quantitative inverse/deletion theorem: a very large evaluation-minus-mean norm on V_S must yield an actual Boolean deletion improving the normalized minimum, with the nonconstant barrier H=f_A+M controlled. The existing fractional-KKT and hereditary 8-frequency countercontrols remain mandatory tests; the existence of a fractional descent direction does not supply a Boolean deletion. **First concrete next derivation:** use the Euler constraints q³ in V_S and P_Sq=D to see whether coefficient level sets of the dual yield the required barrier-controlled deletion, or find an explicit counterexample to that implication. Ordinary interpolation has already failed in the wrong direction above.
+
+**Discontinue:** a universal negative-only correction; replacing four-wise by three-wise in the raw noise moment estimate; interpreting finite solver success as a universal completion bound. **Do not expand the numerical grid without a new lemma:** the current primal/dual diagnostics already locate the finite costs closely. **Construction side:** any all-output low-ratio selector law with p_i<=1/2 and large expected size must carry the stated large aggregated centered correlation defect. The affine-cube law has such a defect but has a linear negative minimum; it is not a candidate to scale up. A nonproduct, non-band-concentrated correlated law would be required. No such law or algorithm is claimed.
+
+The active goal is left intact. No universal Chowla theorem, quantified disproof algorithm, exhaustive impossibility statement, or ongoing unattended job is claimed.

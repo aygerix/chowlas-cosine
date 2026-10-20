@@ -1,5 +1,11 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Active goal continuation: global L4, 2026-10-20
+
+**Full Chowla remains OPEN; the goal is active.** The latest work derives a global L4 Fourier-completion certificate with no W2 support restriction. A paper proof gives Pr[|A|>=mu/2 and M(A)>sqrt(|A|)/20]>=1149/2048 for any four-wise independent Bernoulli selectors on arbitrary positive frequencies with p_i<=1/2 and mu>=64; no PD mean profile or support filling is assumed. This is a model-specific theorem, not a universal proof. An exact affine-cube three-wise family defeats the raw fourth-moment extension, while a direct frequency-band test gives its selected sets a linear lower bound. A universal one-sign exterior correction is also refuted for every fixed constant.
+
+Gurobi probes on Dirichlet and independent integer checks validate 14 finite Boolean L4 witnesses. Actual-support numerical dual diagnostics distinguish the tested fractional packets from their Boolean profile roundings; no asymptotic theorem is inferred. The remaining missing ingredient is a deterministic inverse/deletion estimate linking the nonlinear completion dual to Boolean extremality. Ordinary norm interpolation gives the opposite bound and does not close it. [Full derivations, scope, data and next proof task](NOTEBOOK.md#2026-10-20--active-goal-global-l4-completion-and-a-four-wise-selector-theorem).
+
 ## Restart audit: 2026-10-20
 
 The project remains mathematically open. The latest fixed-interior correction is a sufficient conjecture stronger than full W2, itself stronger than Chowla; no reverse equivalence is established. It should not be treated as the necessarily correct proof architecture.

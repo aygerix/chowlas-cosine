@@ -1,0 +1,145 @@
+{
+  "status": "exact feasible-witness checks; no universal theorem or optimality assertion",
+  "checks": [
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "hereditary_8",
+      "positive_frequencies": 8,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 4.968888717645457,
+      "R_lower_float": 0.3431545014924491
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "interval_16",
+      "positive_frequencies": 16,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 11.497467405773778,
+      "R_lower_float": 0.234932
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "interval_32",
+      "positive_frequencies": 32,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 22.886783963028854,
+      "R_lower_float": 0.17091398458547155
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "interval_64",
+      "positive_frequencies": 64,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 45.741150106730686,
+      "R_lower_float": 0.1230941875
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "N50_x72",
+      "positive_frequencies": 50,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 15.231799955676879,
+      "R_lower_float": 0.21311229648672317
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "N50_x71",
+      "positive_frequencies": 50,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 12.908139075402625,
+      "R_lower_float": 0.23699037324857733
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/results.json",
+      "tag": "taper_boolean_256",
+      "positive_frequencies": 44,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 2.3255087980060414,
+      "R_lower_float": 0.6130707808470897
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/packet.json",
+      "tag": "boolean_profile_64",
+      "positive_frequencies": 7,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 2.7162484112684995,
+      "R_lower_float": 0.46397784813193704
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/packet.json",
+      "tag": "boolean_profile_128",
+      "positive_frequencies": 21,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 2.644559422178681,
+      "R_lower_float": 0.5650588604243346
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/packet.json",
+      "tag": "boolean_profile_256",
+      "positive_frequencies": 31,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 2.4567102800846765,
+      "R_lower_float": 0.5617352488693105
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/packet.json",
+      "tag": "boolean_profile_512",
+      "positive_frequencies": 60,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 2.5234135756957947,
+      "R_lower_float": 0.5782030413822675
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/singer.json",
+      "tag": "full_singer_bu_q5",
+      "positive_frequencies": 30,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 3.9480181121438016,
+      "R_lower_float": 0.39812409953180217
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/singer.json",
+      "tag": "full_singer_bu_q7",
+      "positive_frequencies": 56,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 4.295669983728726,
+      "R_lower_float": 0.38384407003076876
+    },
+    {
+      "file": ".research/experiments/global_l4_2026-10-20/singer_11_scaled.json",
+      "tag": "full_singer_bu_q11",
+      "positive_frequencies": 132,
+      "interpolation_verified": true,
+      "fourth_power_verified": true,
+      "negative_determinant_verified": true,
+      "fourth_power_over_N2": 5.23563989889133,
+      "R_lower_float": 0.35122665103425005
+    }
+  ]
+}

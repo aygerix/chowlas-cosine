@@ -1,5 +1,9 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Active global-L4 attempt: 2026-10-20
+
+CHAIN(c): unrestricted signed L4 Fourier completion supplies a sufficient global square-root certificate and an exact nonlinear dual, with no W2 support constraint. Four-wise selectors with p_i<=1/2 and expected size>=64 have probability>1/2 of satisfying M(A)>sqrt(|A|)/20 (paper proof, no priority/kernel claim); an affine-cube three-wise countercontrol blocks the raw moment extension but has a separate linear sign bound. Fourteen finite Boolean witnesses pass exact integer checks. Full Chowla and the required deterministic inverse/deletion estimate remain open. [Derivations and strategic decision](NOTEBOOK.md#2026-10-20--active-goal-global-l4-completion-and-a-four-wise-selector-theorem). A one-sign exterior correction is refuted at every norm constant, not just C=2.
+
 ## Restart calibration: 2026-10-20
 
 CHAIN(c), existing fixed-interior target: C=2 is refuted exactly by an interval; an explicit affine exterior correction handles every interval with C=95/16<6. C=6 has exact rational feasible witnesses on 1,053 finite controls, without a universal assertion. Full W2 and the fixed-interior criterion remain stronger sufficient conjectures, not established equivalents of Chowla. [Proof, tests and next decision](NOTEBOOK.md#2026-10-20--restart-audit-and-fixed-interior-calibration). This is a model calibration, not resolution or progress on the universal many-spike gap.

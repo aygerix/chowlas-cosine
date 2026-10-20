@@ -1740,3 +1740,29 @@ Bernoulli(w) rounding, seeds 0–3):
   gap ratio_frac/ratio_bool grows with p. A ratio > 2 at p = 5 would refute the Gibbs-versus-rounding dichotomy.
 - MILP batch 1 (running): max |T| s.t. F_T >= −Kthr (lazy cuts at true minimisers), p = 3 (L = 9, Kthr 3–6, plus
   the unrestricted box as control) and p = 5 (L = 25, Kthr 5, 7.5, 10, 15); 1800 s each; examples/e116/milp1.jsonl.
+
+### E116 cont. — advisor's second review (2026-10-20): energy/negativity split, CERTIFIED K, where the error lives
+(src/e116_analyze.py; examples/e116/analysis1.jsonl). Ɛ = Σ_{s≠0}|a_s|² (= |T| for 0/1), ρ = Ɛ/K²,
+ρ_int/ρ_G = (Ɛ_int/Ɛ_G)·(K_G/K_int)². K is CERTIFIED for the 1D integer image A = {z₁ + Vz₂} (V = 4L + 3):
+upper end = −2·certify_lower_bound_blocked(A) (rigorous), lower end = −2 f_A(x*) at a definite x* (mpmath 60 digits).
+Both ends agree to 3 decimals in every row, so these K are certified.
+  | instance (best found)          | Ɛ   | Ɛ/Ɛ_G | K (cert.) | (K_G/K)² | ρ     | ρ_G  | K/√(Ɛ ln n²) |
+  | FD lift p=3 a=2 (SA)           | 24  | 1     | 8.164     | 0.135    | 0.360 | 2.67 | 0.80          |
+  | FD lift p=5 a=2 (SA)           | 120 | 1     | 23.354    | 0.046    | 0.220 | 4.80 | 0.84          |
+  | FD lift p=3 a=3 (SA)           | 234 | 1     | 33.240    | 0.073    | 0.212 | 2.89 | 0.83          |
+  | FD lift p=7 a=2 (SA)           | 336 | 1     | 45.137    | 0.024    | 0.165 | 6.86 | 0.88          |
+  | MILP p=3, Kthr 5 (OPTIMAL)     | 20  | 0.833 | 5.000     | 0.360    | 0.800 | 2.67 | —             |
+  | fractional τ-lift p=5 (theory) | 51  | 0.42  | 5 (exact) | 1        | 2.04  | 4.80 | —             |
+- Split: fundamental-domain (FD) lifts keep all the energy and lose everything in K. The optimal MILP subsets trade
+  some energy for K. The fractional lift keeps K and loses 58% of the energy (advisor's correction: the boundary cost is
+  NOT avoided, it is moved from K into Ɛ). The "sinc taper keeps all of ρ_G" remark is RETRACTED: sinc weights are
+  negative in places, so it is not a relaxation of a 0/1 set; with weights in [0,1] the best energy retention is open
+  (triangle: 4/9 in 2D).
+- FD scaling (p = 3, 5, 7 at a = 2): ρ = 0.360, 0.220, 0.165, DECREASING in p; K/√(Ɛ ln n²) ≈ 0.80–0.88, i.e.
+  random-level negativity K ≈ 0.85√(Ɛ ln n²). Consistent with the prediction, for this class only.
+- Where the error lives. Reference = fractional τ-lift of T's own class multiplicities (K_ref = K_G exactly on the
+  grid). Spike region Σ+ = {F_w > 0} (measure 0.24–0.39). Fraction of ∫e² on Σ+: 0.57, 0.41, 0.47, 0.28 for the FD
+  rows (1.2–1.5 × the area share) and 0.52–0.63 for the MILP optima (1.2–1.7 ×). The most negative error on the
+  background (−8.0, −22.3, −32.3, −42.5) is essentially the global minimum. So the optimiser hides only a little of the
+  rounding error under the spikes; the binding negativity is on the background.
+- Pending: certified Gurobi bounds at p = 5 (batch 1) and p = 7 (to queue); free-subset SA at p = 5, 7.

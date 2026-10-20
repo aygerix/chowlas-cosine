@@ -475,11 +475,13 @@ The prize is (c). Everything else is support.
   - (iii) Boolean: box representatives 0.115, Bernoulli rounding of the taper ≈ 0.09 (= the F10 noise prediction
     K ≈ √(2·(5/9)|D|·ln 4n²)), jointly optimised subsets (SA, short) 0.26, optimal fundamental domain (SA) 0.20.
     p = 3: finite 2.67, fractional 1.05, Boolean optimum (Gurobi, PROVEN for Kthr <= 5) <= 0.8.
-  - Reading so far: the whole loss is the 0/1 constraint; optimised Booleans sit at K ≈ 2√|D| (random level), not at
-    K ≈ r. Joint optimisation recovers only constant factors.
+  - Reading so far (CORRECTED after the advisor's second review): the fractional lift does NOT avoid the boundary
+    cost; it moves it from K into energy (Ɛ = 0.42|D|). Boolean FD lifts keep the energy and pay in K: certified
+    ρ = 0.36, 0.22, 0.165 at p = 3, 5, 7 with K ≈ 0.85√(Ɛ ln n²) (random level). The rounding error is spread: only
+    1.2–1.5 × its area share sits under the spikes, and the binding negativity is on the background.
   - PREDICTION (falsifiable): for JL lifts with a = 2, p = 3, 5, 7, the best Boolean K' grows like √(|D| log n) and the
     best ratio DEcreases with p (ratio_frac/ratio_bool grows like p·log n). Refuted if the scan (examples/e116/scan.jsonl)
-    shows best ratio increasing with p or exceeding 2.
+    shows best ratio increasing with p. (ρ > 2 at one size would refute only C½; refuting Chowla needs ρ → ∞.)
   - Precise phenomenon to explain if the prediction holds: on the coset ξ = (χ + α)/n the lift's values are the Z_n²
     transform of u_α(g) = Σ_{z∈T, z≡g} e(z·α/n). Rep choices make u_α a character twist of D only for α ∈ (1/m)Z² for
     ONE m (e.g. reps in 2Z² handle α ∈ {0, ½}²: that is the box lift of the dilate 2⁻¹D). Generic α sees non-character

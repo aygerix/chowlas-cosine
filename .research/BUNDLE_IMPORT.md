@@ -5,33 +5,42 @@ This handoff is based on the public remote history of
 `3873843090179751cb8732f5c0e9dcd21c1188bc`. The new research is committed on
 `research/oct20-handoff`. No remote push was performed.
 
-The bundle contains complete history for this branch, not an unrelated
-snapshot and not an incremental bundle requiring an unavailable local commit.
+The chat-delivered `chowlas-cosine-research-updates-2026-10-20.bundle` is an
+incremental bundle. It requires the public base commit above; it does not
+require the unavailable old local commit. It contains every new research
+change on this handoff branch. The separately generated full-history bundle
+was verified but exceeds the chat attachment-size limit.
 The former unpublished local commit `446367d` was not recovered as a Git object.
 Recovered reports and experiments are committed anew on the fetched history.
 See [recovery index](RECOVERY_INDEX.md) and [documentation audit](RECOVERY_AUDIT.md)
 for coverage and limitations.
 
-## Safest review: clone into a new directory
+## Safest review: start with a fresh public clone
 
 ```sh
-git clone --branch research/oct20-handoff \
-  /path/to/chowlas-cosine-research-2026-10-20.bundle chowla-handoff
+git clone https://github.com/aygerix/chowlas-cosine.git chowla-handoff
 cd chowla-handoff
-git log -1 --format=fuller
+git bundle verify /path/to/chowlas-cosine-research-updates-2026-10-20.bundle
+git fetch /path/to/chowlas-cosine-research-updates-2026-10-20.bundle \
+  refs/heads/research/oct20-handoff:refs/heads/research/oct20-handoff
+git switch research/oct20-handoff
+git log -2 --format=fuller
 git status --short
 ```
 
 Start with `.research/STATE.md` and `.research/RECOVERY_INDEX.md`.
+The incremental bundle cannot be cloned by itself into an empty repository.
 
 ## Bring the branch into an existing clone
 
-First make sure your working tree is clean or save your local changes.
-Fetch the bundle without changing the checked-out branch:
+First make sure your working tree is clean or save your local changes. Ensure
+the public base is present; fetching the public remote can supply it. Then
+verify and fetch the bundle without changing the checked-out branch:
 
 ```sh
-git bundle verify /path/to/chowlas-cosine-research-2026-10-20.bundle
-git fetch /path/to/chowlas-cosine-research-2026-10-20.bundle \
+git cat-file -e 3873843090179751cb8732f5c0e9dcd21c1188bc^{commit}
+git bundle verify /path/to/chowlas-cosine-research-updates-2026-10-20.bundle
+git fetch /path/to/chowlas-cosine-research-updates-2026-10-20.bundle \
   refs/heads/research/oct20-handoff:refs/heads/research/oct20-handoff
 git log --oneline main..research/oct20-handoff
 git diff --stat main...research/oct20-handoff

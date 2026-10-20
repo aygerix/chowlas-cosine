@@ -1884,3 +1884,10 @@ Against CVP 0.058 and centred 0.0086. Pre-registered (E118): "direct SA at a = 4
 (seed 2 running). Optimised one-rep ρ at p = 3: 0.36, 0.20, 0.115 for a = 2, 3, 4, although λ_odd → 1 (0.61, 0.80, 0.94):
 the weaker first-order barrier at depth is not exploited; the cost is random-level (K/√(|D| ln n²) = 0.80, 0.83, 0.99; the
 rise at a = 4 may be under-optimisation, 1400 iterations per class).
+
+## E123 (2026-10-20) P80c 1D transfer: advisor's counterexample and the repaired bound (src/e123_freiman_transfer.py;
+## dirichlet; NUMERICAL minima: dense grid/random starts + BFGS)
+- Counterexample to the z₁-only bound (advisor review 4): d = 3, T = {±e₂, ±e₃}, V = 8: K₃ = 4, K₁D = 3.850015, Σz₁² = 0.
+  Repaired full-coordinate loss (π²/(2V²))Σ(Σ_{k<d}|z_k|)² = 0.1542 >= 0.1500. CONFIRMED.
+- 120 random odd lifts (d = 2, 3, 4; n ∈ [3, 6]; 3–8 ± pairs; V ∈ (2n, 6n]): repaired bound min margin 0.096 / 0.360 / 2.359
+  (no violation); z₁-only bound violated once at d = 3 (margin −0.037).

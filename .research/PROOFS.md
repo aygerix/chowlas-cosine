@@ -2681,15 +2681,30 @@ Scope as P80: Z^r minimum; 1D Freiman images with small V, free subsets, multipl
 (η = −1 swaps the roles: then N ∖ 0 is the complement of the dual cone and the same computation gives 1 − 1/p; irrelevant,
 since η = −1 has negative spikes.)
 
-## P80c. Transfer of P80/P81 to 1D Freiman images (lead, 2026-10-20; PROVED on paper, elementary)
-Let T ⊂ Z^d (d = 2 or r) be an odd one-rep lift with spread ‖z‖_∞ <= Wn, F_T(ξ) = Σ_{z∈T} cos(2πz·ξ), and S_V = {z₁ + Vz₂ + V²z₃
-+ …} its Freiman image (V > 2Wn, injective), f_{S_V}(x) = F_T(x, Vx, V²x, …). Then
-    K₁D(S_V) >= K₂D(T) − (π²/2)·Σ_{z∈T} z₁²/V².
-Proof (d = 2; general d by the same step in the first coordinate). Let ξ* minimise F_T, so ∇F_T(ξ*) = 0. The line
-{(x, Vx)} meets ξ* + (δ, 0) for some |δ| <= 1/(2V) (solve Vδ ≡ ξ*₂ − Vξ*₁ mod 1). Taylor: F_T(ξ* + (δ, 0)) <= F_T(ξ*) +
-½·4π²Σz₁²·δ². ∎
-Consequence. With P80's sharper gain g = (1 − Λ(p))√|D|/(8√24·W) (resp. P81's for quadrics) and Σz₁² <= |D|W²n²: if
-V² >= π²|D|W²n²/g, then K₁D(S_V) >= p + g/2. I.e. V >= C·W^{3/2}·n·|D|^{1/4}/√(1 − Λ) suffices; max(S_V) is then polynomial.
-So the JL a = 2 and quadric one-rep models are excluded IN Z for such V. Small V (e.g. the experiments' V = 4L + 3 ≈ 4n)
-remain uncovered; there the line meets only n of the n² grid points and the projected centroid field can concentrate.
-(E116: K₁D at V ≈ 4n was only 1–2% below K₂D, so small V does not help in practice.)
+## P80c. Transfer of P80/P81 to 1D Freiman images (lead, 2026-10-20; d = 2 PROVED; d >= 3 statement WRONG as first
+## written, REPAIRED per the advisor's review 4 (pasted by the user); repair checked numerically E123)
+FIRST VERSION (kept for the record; WRONG for d >= 3): "K₁D(S_V) >= K_d(T) − (π²/2)Σ_{z∈T} z₁²/V² (d = 2; general d by the
+same step in the first coordinate)". The d = 2 case is correct. For d >= 3 a single coordinate cannot be steered.
+COUNTEREXAMPLE (advisor; verified E123): d = 3, T = {±e₂, ±e₃}, V = 8 (an odd one-rep lift over (Z/3)³): F_T has min −4,
+f_{S_V}(x) = 2cos(16πx) + 2cos(128πx) has min −3.850015 (8x ≡ ½ forces 64x ≡ 0), while Σz₁² = 0. A random d = 3 trial
+in E123 also violated the z₁-only bound. The quadric (r = 4) transfer claimed from it was therefore UNPROVED.
+REPAIRED STATEMENT. T ⊂ Z^d finite symmetric, F_T(ξ) = Σ_{z∈T}cos(2πz·ξ), S_V = {Σ_k V^{k−1}z_k : z ∈ T} with V > 2max‖z‖_∞
+(injective), f_{S_V}(x) = F_T(x, Vx, …, V^{d−1}x). Then
+    K₁D(S_V) >= K_d(T) − (π²/(2V²))·Σ_{z∈T}(Σ_{k=1}^{d−1}|z_k|)².
+Proof. Let ξ* minimise F_T (∇F_T(ξ*) = 0). Put x = (ξ*_d + m)/V^{d−1}, m = Σ_{i=0}^{d−2} m_iV^i, digits m_i ∈ {0, …, V−1}. Then
+V^{d−1}x ≡ ξ*_d exactly, and for k < d, V^{k−1}x ≡ m_{d−k−1}/V + o_k (mod 1), where the offset o_k ∈ [0, 1/V) depends only on
+ξ*_d and the digits m_i with i < d − k − 1. Choose m_0, m_1, …, m_{d−2} in this order; the candidates for coordinate
+k = d − 1 − i form the full grid o_k + (1/V)Z, so its distance to ξ*_k is <= 1/(2V), and later digits never change it.
+So (x, Vx, …) = ξ* + δ with δ_d = 0, |δ_k| <= 1/(2V). Taylor (integral remainder; |∂²_δF| <= 4π²Σ_z(z·δ)²):
+f_{S_V}(x) <= F_T(ξ*) + 2π²Σ_z(z·δ)² <= −K_d + (π²/(2V²))Σ_z(Σ_{k<d}|z_k|)². ∎  (d = 2: the first version.)
+Tightness: the counterexample has loss 0.1542 against actual gap 0.1500.
+CONSEQUENCES.
+- JL D_{2,j} (d = 2): unchanged. With g = (1 − Λ(p))√|D|/(8√24·W) and Σz₁² <= |D|W²n², V² >= π²|D|W²n²/g gives
+  K₁D >= p + g/2, i.e. V >= C·W^{3/2}·n·|D|^{1/4}/√(1 − Λ).
+- Quadric cones, r = 4 (d = 4): Σ_z(Σ_{k<=3}|z_k|)² <= 3Σ_zΣ_{k<=3}z_k² <= 9|A|W²p². With g_Q = (1 − 1/p)√|A|/(157W) (P81),
+  V² >= 9π²|A|W²p²/g_Q, i.e. V >= 118·W^{3/2}·p·|A|^{1/4}/√(1 − 1/p), gives K₁D >= p + 1 + g_Q/2. Same shape as JL,
+  different constant; max(S_V) ~ V³Wp is polynomial in p. So the quadric one-rep model is excluded IN Z for such V
+  (now with a valid proof).
+- Small V (e.g. V ≈ 4n in the experiments) remains uncovered.
+E123 (NUMERICAL): 120 random odd lifts in d = 2, 3, 4 with random V: repaired bound never violated (min margins 0.10,
+0.36, 2.36).

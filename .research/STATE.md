@@ -36,6 +36,9 @@ prediction or exclude an explicit model; no reformulation sweeps; target = some 
       is the KNOWN A5 regime split (visible only for M <~ n^{1/3}); not a route] the C* core (c) itself: the open item is
       still a fine-scale (beyond-moment) Booleanity inequality — P77's local Taylor-at-invariant-grid mechanism is the one
       beyond-moment tool that worked today, but it needs an exact invariant grid, which a general S ⊂ Z lacks; (iii) small-V 1D images and deep JL (a >= 3) need a second-order mechanism (P77 is first order).
+  (d') Advisor review 4: P80c d >= 3 was wrong (counterexample kept in PROOFS); repaired (E123). Queued for codex after
+      2026-10-25 14:57 (.research/agents/queued_after_quota.md): adversarial check of P78–P81 and of P80c in d >= 3 SEPARATELY;
+      Lean targets P81 (kernel identity), P79 step 5 (antisymmetric pairing), P80c (digit construction); P81 novelty.
   (e) FIRST NEXT STEP: read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
       random?), then decide whether multiplicity lifts need a theorem; codex reviews of P78–P81 after 2026-10-25 14:57.
 - FIRST NEXT STEP (cont. 31, superseded in part): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,

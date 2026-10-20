@@ -542,6 +542,13 @@ The prize is (c). Everything else is support.
     (SA free subset 0.305; one-rep optimum ≈ 0.21); refuted if the MIQP finds ρ > 0.45 or certifies < 0.305 (impossible
     unless the SA set is mis-evaluated).
 
+  - ADVISOR REVIEW 4 (pasted by the user): (i) P77 audit and P81 accepted (advisor re-ran P81 at p = 3, 5: all odd eigenvalues
+    1/p); (ii) P80c was WRONG for d >= 3 (counterexample T = {±e₂, ±e₃}, V = 8: K₁D = 3.850 < 4 with Σz₁² = 0). REPAIRED with
+    the full-coordinate loss (π²/(2V²))Σ_z(Σ_{k<d}|z_k|)² via base-V digits (E123: confirmed; repaired bound never violated
+    in 120 random trials). JL (d = 2) unaffected; the quadric (d = 4) transfer now has a valid proof with V >= 118W^{3/2}p|A|^{1/4}.
+    (iii) Novelty check requested for P81 (likely familiar in association-scheme language). (iv) The advisor's suggestion
+    to organise a note around P77/P79/P81 is NOT acted on: no manuscripts unless the user asks (CLAUDE.md).
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

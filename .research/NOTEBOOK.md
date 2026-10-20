@@ -3090,3 +3090,96 @@ Four source-backed completed passes are now integrated into the persistent ledge
 The substantive progression is from failure of restricted profiles, through failure of prescribed-bottom-mode repair, to failure of the W1-or-exterior-only alternative. The last family retains a sharp square-root full-W2 certificate through center coupling. Neither weak principal blocks nor small exterior coefficient mass license deleting cross energy. Universal full W2 and Chowla remain open.
 
 Proofs, audits, exact checks and numerical diagnostics retain their distinct statuses. The current targets and first unproved derivation are in [STATE](STATE.md); source navigation and recovery limits are in [RECOVERY_INDEX](RECOVERY_INDEX.md) and [RECOVERY_AUDIT](RECOVERY_AUDIT.md). Earlier PDF-derived reports are retained as explicitly historical reconstructions under [recovered_early](notes/recovered_early/README.md), not substitutes for original source Markdown or current status.
+
+## 2026-10-20 — restart audit and fixed-interior calibration
+
+**Scope: CHAIN(c), testing the existing coupled-certificate proposal.** The user reported that the project is stuck. The latest handoff was checked against CSTAR and ROUTES. This entry adds a concrete calibration; it does not rename the existing open problem as a new route or claim a universal advance.
+
+The target remains: either prove that some absolute c0>0 satisfies M(A)>=c0 sqrt(|A|) for every finite nonempty set of distinct positive integers, or construct a uniform family with R(A)->0 and unbounded cardinality. Neither conclusion has been obtained.
+
+**Diagnosis from the record.** Recent progress repeatedly refutes a restricted certificate: a fixed profile span, prescribed-bottom-mode repair, and separate interior/exterior negativity. The surviving full-W2 claim is sufficient for Chowla, and stronger than it; a reverse implication has not been proved. It must be treated as a conjectured proof restriction, not a necessary description of all possible Chowla proofs. The exact fixed-interior proposal is stronger still. The archive contains useful exclusions, but these exclusions do not establish that the surviving certificate must exist.
+
+### Explicit target and its consequence
+
+For S=-S with 0 not in S, let N=|S|, D=sum_{s in S}e(sx), J=W2\{0}, and E=J\S. Seek q=D+r, supp(r) subset E, with
+
+    Q=||q||_2^2 <= C N,
+    H=integral D|q|^2 <= C N^(3/2).
+
+The center-to-q coupling is exactly N. Positivity of B_W2+k sqrt(N) I would imply, by the determinant of its compression to {1,q},
+
+    (Q/N) k^2 + (H/N^(3/2)) k >= 1.
+
+Thus this criterion implies
+
+    K_W2 >= ((sqrt(1+4/C)-1)/2) sqrt(N).
+
+This is just the existing two-vector identity with constants tracked. A universal C=6 would imply the original cosine bound with c0=(sqrt(5/3)-1)/(2sqrt(2)), about 0.1029. No universal C=6 assertion is established here.
+
+### Exact refutation of C=2
+
+Take S={±1,...,±n}. Then J={±1,...,±2n}. Each of the positive and negative exterior halves induces a complete graph on n vertices, with no edges between them. Consequently the exterior adjacency satisfies B_E>=-I, including for complex coefficient vectors. The interior vector s=1_S satisfies
+
+    h=<s,B_J s>=3n(n-1),
+    g=(B_J s)|E,  ||g||^2=2 sum_(j=1)^n j^2=n(n+1)(2n+1)/3.
+
+The cross coefficients, on either half, are the integers 1,...,n in reverse order of exterior frequency. For any exterior r with ||D+r||^2<=2N=4n, orthogonality gives ||r||^2<=2n. Cauchy--Schwarz and B_E>=-I imply
+
+    integral D|D+r|^2 >= 3n(n-1)-2sqrt(2n)||g||-2n.
+
+At n=128, N=256, h=48768 and ||g||^2=1414528. Since
+
+    19029^2 < 256*1414528=362119168 < 19030^2,
+
+every such q has energy strictly greater than
+
+    48768-2*19030-256 = 10452 > 8192 = 2 N^(3/2).
+
+This refutes the fixed-interior criterion with C=2 exactly. It refutes neither the criterion for a larger constant, full W2, nor Chowla. No floating eigensolver is used in this proof.
+
+### An explicit repair for every interval
+
+For 1<=k<=n set the two exterior coefficients to
+
+    r_(n+k)=r_(-n-k)=-1/2 + (15/(2n))*(k-(n+1)/2).
+
+The interior coefficients remain exactly 1 and the constant coefficient is 0. Direct sums give
+
+    ||D+r||^2 = 95n/8 - 75/(8n) <= (95/16) N,
+    integral D|D+r|^2 = -111n/8 + 5/2 + 75/(8n) < 0.
+
+For completeness, on each exterior half the coefficient sum is -n/2 and the coefficient square sum is 79n/16-75/(16n). The cross term over both halves is -n(n+1)-(5/2)(n^2-1); the exterior quadratic term is n^2/2-79n/8+75/(8n). Adding the interior term 3n(n-1) yields the energy above. Its numerator after multiplication by 8n is -111n^2+20n+75<=-16 for n>=1. Thus the interval criterion holds with C=95/16<6 for all n, not merely for the tested values. This is an elementary model calibration, with no novelty or global-progress claim.
+
+### Sharper asymptotic calibration (paper derivation, not formalized)
+
+The exact interval minimization at exterior norm budget 2n(C-1) reduces to the mean on each half and the centered linear cross vector. Complex/unequal means cannot improve the optimum: equal real means minimize their squared norm for a given cross term, and the centered residual is optimally antiparallel to g's zero-mean part. With B=C-1 and n>=2, the exact minimum divided by n^2 is
+
+    3(1-1/n)-2B/n
+      + min_(|u|<=sqrt(B)) [2u^2-2(1+1/n)u
+          -(2/sqrt(3))*sqrt((1-1/n^2)*(B-u^2))].
+
+For a fixed C to work on all intervals, this limiting expression must be nonpositive, since C N^(3/2)/n^2 tends to zero. Equivalently,
+
+    C >= C_int := 1+min_u [u^2+(6u^2-6u+9)^2/12].
+
+The minimizer is the unique real root of 12u^3-18u^2+26u-9=0; its derivative is 36(u-1/2)^2+17>0. Numerically C_int=5.9081239802138. Below this threshold the criterion fails on sufficiently long intervals. Equality at the threshold is not asserted to settle the finite-n criterion. The simpler rational choice u=1/2 yields the explicit 95/16 repair above. This sharpens the calibration without assuming the universal conjecture.
+
+### Reproducible tests and their limits
+
+Code/data: [fixed-interior probe](experiments/restart_2026-10-20/fixed_interior_probe.py), [C2 output](experiments/restart_2026-10-20/fixed_interior_C2.json), [C6 output](experiments/restart_2026-10-20/fixed_interior_C6.json), [independent integer verifier and interval sums](experiments/restart_2026-10-20/interval_calibration.py), [receipt](experiments/restart_2026-10-20/interval_calibration.json).
+
+The numerical trust-region minimizer uses the full exterior space, its spectral secular equation and the hard case. Approximate coefficients are rounded to common denominator 65536 after a slight exterior shortening. The separate standard-library verifier reconstructs support and Laurent constant terms without importing the optimizer or its matrices. Exact rational feasible witnesses pass at C=6 for all 1,053 supports: every nonempty subset of [1,10], intervals of lengths 16,32,64,128, the two recorded N50 supports, and 24 seeded sparse/tapered sets. At C=2, 1,048 witnesses pass; five optimization/witness failures are numerical unless separately proved. The interval n=128 obstruction is separately proved above. All 27 direct interval formula checks pass. Balanced-layer limit matrices k=1,...,10 were also examined as preliminary floating controls, not integer-support certificates.
+
+Reproduce from repository root:
+
+    .venv/bin/python .research/experiments/restart_2026-10-20/fixed_interior_probe.py --output .research/experiments/restart_2026-10-20/fixed_interior_C2.json
+    .venv/bin/python .research/experiments/restart_2026-10-20/fixed_interior_probe.py --constant 6 --output .research/experiments/restart_2026-10-20/fixed_interior_C6.json
+    .venv/bin/python .research/experiments/restart_2026-10-20/interval_calibration.py
+
+These are paper derivations plus integer/rational finite checks, not Lean/kernel verification or independent human review. An attempted separate formalization-agent launch failed because the inherited model was unavailable; no agent audit is claimed.
+
+### Strategic review and next decision
+
+**Distance to result:** the new result calibrates an already proposed certificate; it does not close CHAIN(c). **Continue:** the full-W2/fixed-interior route only as an explicit conditional conjecture with a proposed constant, after hostile tests. **Discontinue:** C=2, and treating an unproved stronger certificate as the uniquely necessary next lemma. **Do not scale up:** another unconstrained eigenvalue or set-size search; these 1,053 tests give no evidence about correlated mesoscopic counterexamples at unbounded size.
+
+The next mathematical test should target the cost that has not been controlled: the norm needed to preserve all original support coefficients while changing their energy on correlated sparse supports. A precise candidate is C=6 (or a named larger constant), checked first on the already defined growing balanced-layer/implant and coupled-axis families using their exact orbit/coordinate reductions. The earlier random/independence proof does not cover arbitrary correlated supports. A growing lower bound for the required C on one genuine integer family would kill this stronger architecture without claiming a Chowla counterexample; a uniform bound on that family would need an actual symbolic correction, not larger floating runs. In parallel, retain the original global inequality as the proof target and aperiodic correlated Boolean rounding as the constructive target; neither has acquired a new mechanism in this entry.

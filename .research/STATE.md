@@ -1,5 +1,13 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Restart audit: 2026-10-20
+
+The project remains mathematically open. The latest fixed-interior correction is a sufficient conjecture stronger than full W2, itself stronger than Chowla; no reverse equivalence is established. It should not be treated as the necessarily correct proof architecture.
+
+**New calibration, proved on paper:** the proposed norm/energy criterion with C=2 fails for S={±1,...,±128}; every admissible correction has energy >10452, while the proposed upper bound is 8192. For every interval, an explicit affine exterior correction satisfies ||q||^2<=(95/16)N and negative energy. Thus the criterion is rescued on this family with C<6; no universal conclusion follows. Exact rational witnesses at C=6 also pass on 1,053 finite supports. [Proof, exact checks and strategic review](NOTEBOOK.md#2026-10-20--restart-audit-and-fixed-interior-calibration).
+
+**Decision:** discontinue C=2 and further unstructured enlargement searches. If pursuing this architecture, choose an explicit larger C and test the required correction norm on correlated growing families using exact reductions. Keep the original global target distinct from this stronger local conjecture. Historical handoffs below remain unchanged.
+
 ## Current handoff: recovered completed passes, 2026-10-20
 
 This dated supplement updates the current state; the older handoffs below are retained as history, not assertions that their jobs are still running. Full navigation and provenance: [recovery index](RECOVERY_INDEX.md) and [recovery audit](RECOVERY_AUDIT.md). Existing P/E identifiers are preserved; no new identifiers are assigned.

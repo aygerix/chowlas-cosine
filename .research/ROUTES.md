@@ -79,3 +79,9 @@ This supplements rather than erases the original ledger. Here N=|S| for the symm
 | Fully coupled/adaptive Boolean certificate | [Fixed-interior criterion and bouquet response](experiments/coupled_mode_2026-10-20/multimode/bouquet_response_and_scope.md) require a universal quantitative Boolean estimate | OPEN; criterion proved only on the selected coupled family |
 
 No row is a claim that the universal conjecture has been proved or refuted. Finite eigensolver/FFT evidence is not an asymptotic theorem. Full archive navigation: [RECOVERY_INDEX](RECOVERY_INDEX.md).
+
+## 2026-10-20 restart audit: fixed-interior correction
+
+| Route | Relation to existing work | Discriminating test / status |
+| --- | --- | --- |
+| Bounded-norm fixed-interior correction, with an explicit constant | The existing coupled-certificate target above, not a new route. It implies a universal full-W2 bound and is therefore stronger than the original Chowla assertion; it is not known to be equivalent. | C=2 REFUTED exactly by S={±1,...,±128}. An explicit affine exterior correction proves the criterion for every interval with C=95/16<6. C=6 has exact rational feasible witnesses on 1,053 tested supports (all 1,023 nonempty subsets of [1,10], four larger intervals, two saved near-optima and 24 seeded sets). This is a calibration, not a universal result. Proof and strategic decision: [NOTEBOOK](NOTEBOOK.md#2026-10-20--restart-audit-and-fixed-interior-calibration). |

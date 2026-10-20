@@ -1,0 +1,58 @@
+{
+  "status": "exact integer/rational identity checks, accompanying paper argument required",
+  "direct_formula_checks": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    32,
+    64,
+    128
+  ],
+  "interval_128_C2_obstruction": {
+    "N": 256,
+    "h": 48768,
+    "cross_vector_norm_squared": 1414528,
+    "radicand": 362119168,
+    "square_root_upper_bound": 19030,
+    "strict_energy_lower_bound": 10452,
+    "proposed_energy_upper_bound": 8192
+  },
+  "explicit_all_interval_repair": {
+    "norm_ratio_upper_bound": "95/16",
+    "norm_formula": "95*n/8 - 75/(8*n)",
+    "energy_formula": "-111*n/8 + 5/2 + 75/(8*n)"
+  },
+  "saved_witness_verification": [
+    {
+      "file": "fixed_interior_C2.json",
+      "count": 1053,
+      "exact_feasible_witnesses": 1048
+    },
+    {
+      "file": "fixed_interior_C6.json",
+      "count": 1053,
+      "exact_feasible_witnesses": 1053
+    }
+  ]
+}

@@ -1,5 +1,9 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Restart calibration: 2026-10-20
+
+CHAIN(c), existing fixed-interior target: C=2 is refuted exactly by an interval; an explicit affine exterior correction handles every interval with C=95/16<6. C=6 has exact rational feasible witnesses on 1,053 finite controls, without a universal assertion. Full W2 and the fixed-interior criterion remain stronger sufficient conjectures, not established equivalents of Chowla. [Proof, tests and next decision](NOTEBOOK.md#2026-10-20--restart-audit-and-fixed-interior-calibration). This is a model calibration, not resolution or progress on the universal many-spike gap.
+
 ## Latest CHAIN / ATTACK LOG supplement: 2026-10-20
 
 Current target and normalization are unchanged: some universal positive constant for Boolean integer supports, not the sharp half-constant. The [current STATE handoff](STATE.md) and [recovery index](RECOVERY_INDEX.md) supersede the historical commissioned-job/status wording below. All original objects, design rules and numbered records are retained.

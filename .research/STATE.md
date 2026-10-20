@@ -39,11 +39,18 @@ fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T
   - CP½ conjecture: equal-size case proved; rank and coverage give only log.
   - A6/A6′ SPREAD PRINCIPLE and the reformulated chain Chowla ⇐ SCP(T) + CP-Chowla(Z). SCP(2) is false (Paley).
     All known ratio → ∞ objects are spreads (CP).
-- FIRST NEXT STEP:
-  - E112: in moderate finite groups, search for high-ratio sets FAR from unions of subgroups and measure their
-    CP-efficiency.
-  - Test the E41 Z_p half-sets (ratio ≈ 2.14) first.
-  - A high-ratio non-spread object would break SCP and be the first candidate mechanism for C* in Z.
+- FIRST NEXT STEP (cont. 30 handoff):
+  - The CP/spread bridge is dead (A8 padding, A9 JL clique-poor objects). Every finite-group high-ratio object dies at
+    the archimedean box (A9: periodic lift = D8, single period = Gibbs, high-dim ball = E73 count). So the C* question
+    is purely: fine-scale Booleanity (p̂ ∈ {0, 1/K}) + positivity + band limit X.
+  - The model object to beat is P61(b): a FRACTIONAL C* (J = X^0.9 random PD packets, min >= −o(√X), profile
+    p = φ(w²), density ≈ 0.117). Its residuals are Gaussian, not two-valued. Next derivation: state exactly which
+    Booleanity identity beyond the second moment it violates in a way a positivity test can SEE (P63.2 says anchored
+    fixed-order tests are blind, so the test must be fine-scale/non-anchored), and attack T-dense just above
+    1/D ≈ 8.57 with it. This is the same missing ingredient as the many-spike lemma (c), at its first appearance.
+  - Three active lines: (i) fine-scale Booleanity layer (above); (ii) CP-Chowla(Z) as a side theorem (flat-CP duals
+    are extreme-lag weighted, E111); (iii) constructive: nothing alive; any new design must be aperiodic at every
+    scale and survive the box (A9), so test candidates against D8 and the E73 count first.
 
 # STATE — current targets and honest status (updated 2026-10-19 late; newest block at the END: "Handoff 2026-10-19 late (cont. 24–25)")
 

@@ -1781,6 +1781,34 @@ the centroid field's W-energy on N.
   | 13 2 1| 169 | 2184 | 0.077  | 0.3532 | 0.053          | —                                  |
   | 3 3 1 | 27  | 234  | 0.322  | 0.8007 | 0.176          | —                                  |
   | 3 3 0 | 27  | 234  | 0.322  | 0.7558 | 0.317          | —                                  |
+  | 3 3 1 | 27  | 234  |        | 0.8007 | 0.176          | 0.340 (E116 FD seed 1, K/√(Ɛ ln n²) = 0.83)      |
+  | 3 3 2 | 27  | 234  |        | 0.756  | —              | —                                  |
+  | 5 3 1 | 125 | 3000 |        | 0.672  | —              | —                                  |
+  | 3 4 1 | 81  | 2160 |        | 0.935  | —              | —                                  |
+  | 3 4 0 | 81  | 2160 |        | 0.863  | —              | —                                  |
+DEPTH (added later, cont. 31): λ_odd GROWS with the p-adic depth a (p = 3: 0.61, 0.80, 0.94 at a = 2, 3, 4; p = 5:
+0.54, 0.67 at a = 2, 3). So the P77 centroid barrier weakens for deep JL sets. The optimised a = 3 lift does NOT use the
+room: φ = 0.34 against λ_odd = 0.80, and its K/√(Ɛ ln n²) = 0.83 is no better than a = 2's 0.80. Test: E118.
 Reading: the optimiser does move the centroid field toward the spikes (φ 0.13 → 0.48 at p = 3) but cannot exceed
 λ_odd, which stays <= 0.61 for a = 2. This is the quantitative content of "the rounding error cannot hide under the
 spikes" at first order (P77).
+
+## E118 (2026-10-20, cont. 31) Does pushing the centroid field onto the spikes lower K? (src/e118_cvp.py,
+## src/e118_batch.sh; dirichlet, 1 core, ~1 min; data examples/e118/cvp.jsonl; K NUMERICAL (FFT + BFGS), not certified)
+One-rep lifts z(g) = ḡ + n·t(g), t ∈ {−1, 0}², odd. "CVP" = minimise the first-order background energy A2 (equivalently
+maximise φ, the share of the centroid field's W-energy on N) by SA on the binary QP in t (coordinates independent).
+  | p a j | n   | |D|  | λ_odd | centred φ / K / ρ        | CVP φ / K / ρ            | best direct-K SA (E116 FD) ρ |
+  | 3 2 1 | 9   | 24   | 0.605 | 0.133 / 10.3 / 0.227     | 0.476 / 10.3 / 0.225     | 0.36 (K 8.0–8.2)             |
+  | 5 2 1 | 25  | 120  | 0.542 | 0.085 / 32.3 / 0.115     | 0.342 / 23.9 / 0.209     | 0.210 (K 23.9)               |
+  | 7 2 1 | 49  | 336  | 0.390 | 0.084 / 86.3 / 0.045     | 0.185 / 70.2 / 0.068     | 0.161 (K 45.6, φ 0.110)      |
+  | 3 3 1 | 27  | 234  | 0.801 | 0.176 / 62.1 / 0.061     | 0.532 / 34.6 / 0.196     | 0.20, 0.17 (K 34.1, 37.0)    |
+  | 3 3 0 | 27  | 234  | 0.756 | 0.317 / 62.2 / 0.060     | 0.510 / 34.4 / 0.198     | —                            |
+  | 5 3 1 | 125 | 3100 | 0.671 | 0.109 / 705 / 0.0062     | 0.317 / 474 / 0.0138     | —                            |
+  | 3 4 1 | 81  | 2160 | 0.935 | 0.184 / 502 / 0.0086     | 0.575 / 194 / 0.0576     | E118b running                |
+Readings.
+- The centred lift's K is the Gibbs lobe of the box: K ≈ 0.217|D| (p = 3, a = 4: 502 vs 469). CVP smooths the box edge
+  (K 502 → 194) but stays far above random level (K/√(Ɛ ln n²) = 1.40 at a = 4).
+- CVP equals the direct optimum at p = 5 and p = 3, a = 3; at p = 7 the direct optimum has LOWER φ and much lower K.
+  So the first-order centroid term is neither necessary nor sufficient: it is not the binding cost (P77 is true but weak).
+- ρ of CVP lifts FALLS with depth at p = 3 (0.225, 0.196, 0.058 at a = 2, 3, 4) although λ_odd → 1 (0.61, 0.80, 0.94).
+  The deeper JL sets do not use the room P77 leaves. Prediction (E118b): direct SA at a = 4 stays below a = 3's 0.20.

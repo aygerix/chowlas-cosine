@@ -2525,9 +2525,12 @@ Side lemma (CSTAR A5). Setting: f_A + λ = v*Qv with v = (e(iθ))_i and diagonal
 Open: CP-Chowla, C_CP >= c√n (E111).
 
 ## P77. CENTROID BARRIER for Boolean lifts of a finite set (lead, 2026-10-20 cont. 31; PROVED on paper, elementary;
-## numerical inputs E117; context CSTAR A10 / E116; not kernel-checked)
+## codex-audited CORRECT after routine repairs; numerical inputs E117/E118; context CSTAR A10 / E116; not kernel-checked)
 Setting. n >= 2, D ⊂ Z_n² with D = −D, 0 ∉ D, finite spectrum D̂(χ) = Σ_{g∈D} cos(2πχ·g/n) (χ ∈ Z_n²).
-Fix r' and a background set B ⊂ {χ ≠ 0 : D̂(χ) <= −r'}; put N = Z_n² ∖ B. A ONE-REP LIFT is an odd map z: D → Z²
+Fix r' and a NONEMPTY SYMMETRIC (B = −B) background set B ⊂ {χ ≠ 0 : D̂(χ) <= −r'}; put N = Z_n² ∖ B; D nonempty.
+(Repairs from the codex audit, 2026-10-20: without B = −B, P_N need not preserve odd real functions — counterexample
+n = 3, D = {±(1,0)}, B = {(1,0)}; alternatively define λ_odd as the top of the quadratic-form compression to odd real
+functions. If A2 = 0, (a) reads K >= r' by evaluating at a background point. The averaging weights ω are nonnegative.) A ONE-REP LIFT is an odd map z: D → Z²
 with z(g) ≡ g (mod n); T = z(D), F(ξ) = Σ_{g∈D} cos(2π z(g)·ξ) on T², K(T) = −min F. Define
   W(χ) = Σ_g z(g) sin(2πχ·g/n) ∈ R²,   A2 = Σ_{χ∈B} |W(χ)|²,   Z4 = (Σ_g |z(g)|⁴)^{1/2},
 and λ_odd = top eigenvalue of the concentration operator C = 1_D·P_N·1_D on ODD real functions on D,
@@ -2564,6 +2567,13 @@ Remarks.
 - Inputs (E117, numerical eigenvalues, not certified): JL a = 2, j = 1: λ_odd = 0.605 (p=3), 0.542 (5), 0.390 (7),
   0.303 (11), 0.353 (13); a = 3, p = 3: 0.801 (j=1), 0.756 (j=0). Centred lifts have φ := Σ_N|W|²/Σ|W|² = 0.05–0.32;
   SA-optimised one-rep lifts (E116) push φ to 0.48, 0.27, 0.11 (p = 3, 5, 7), approaching λ_odd at p = 3.
+- AUDIT (codex, 2026-10-20, .research/agents/p77_check_report.md; lead-read): every step of (a), (b), (c) and the PD-taper
+  centroid remark CORRECT after the repairs above. Numerical falsification on dirichlet: 928 lifts (centred, random
+  one-rep with V = 1, 2) of JL(3,2,1), JL(5,2,1), JL(7,2,1, partial), 0 violations; margins K − bound >= 6.7, 26, 61
+  (the bound is far from tight). The random-D controls were not reached (agent stopped).
+- E118 (CVP test): maximising φ alone (binary QP on the rep shifts) lowers K a lot against the centred lift but does not
+  reproduce the K-optimal lifts at p = 7, where SA reaches lower K with LOWER φ. So the centroid term is real but not
+  the binding cost; P77's increment (~r + 0.1√|D|) is an order below the observed K − r.
 - So, IF λ_odd <= 1 − c uniformly in p (numerically <= 0.61 for a = 2, p <= 13; unproved), every bounded-spread
   one-rep lift of the JL a = 2 family has ratio <= C(c, V, β) uniformly in p: the "lift a high-ratio finite object"
   model cannot reach ratio → ∞. The constant is weak (p = 7: bound increment ≈ 1.2 against the observed K − r ≈ 38).

@@ -20,6 +20,21 @@ prediction or exclude an explicit model; no reformulation sweeps; target = some 
   deep lifts are worse (E118). E118: centroid-only optimisation is not the binding cost. Running: E119 (p = 11, 13
   scaling; pre-registered: advisor 0.92p² = 111, 155 vs taper-random ≈ 101, 132), E120 (Dinkelbach certified sup ρ),
   codex check of P78–P80 (.research/agents/p79_check_report.md). Threshold MILPs stopped (superseded by E120).
+- HANDOFF (cont. 31, end of advisor review 3 work):
+  (a) Proved on paper (lead; codex unavailable until 2026-10-25, lead self-checks exact for p <= 19): P78 (random taper
+      lifts K = O(√(|D| log n))), P79 (λ_odd <= 0.873 for JL D_{2,j}, j ≠ 0), P80 + P80c (bounded-spread one-rep JL a = 2
+      lifts: ρ <= 9.5·10⁴W² on Z², and in Z for Freiman V >= C·W^{3/2}n|D|^{1/4}), P81 (quadric cones: odd concentration
+      EXACTLY (1/p)I ⇒ one-rep quadric lifts excluded), P77-d (centroid barrier in Z_n^d). P77 codex-audited (repairs in).
+  (b) Certified: E120 sup ρ <= 0.8001 for JL p = 3 lifts in P_9 (Dinkelbach MIQP). Numerical: E119/E119b (random lifts
+      K ≈ 1.25√(|D| ln n²) to p = 31, below 0.92p² at p = 29, 31), E121c (λ_odd ≈ 1.2/√p), E118/E118b (depth hurts).
+  (c) Refuted/failed: my pre-registered E119 numbers (dropped √2); the advisor's 0.92p² law for OPTIMAL lifts (fails by
+      p = 29); a depth-uniform λ_odd gap (false at a >= 3).
+  (d) Three directions: (i) free-subset/multiplicity lifts — first order does NOT exclude constant multiplicity c ~ p^{1/4}
+      (ρ <= min(ρ_G/c, Cc³V⁴)); E120 p = 5, 7 and E119c measure it; (ii) C* core step (c) ⇒ (d): Booleanity of the noise
+      written as a short exponential sum forces additive closure of the spike set (NOTEBOOK cont. 31 later) — make it a
+      robust lemma; (iii) small-V 1D images and deep JL (a >= 3) need a second-order mechanism (P77 is first order).
+  (e) FIRST NEXT STEP: read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
+      random?), then decide whether multiplicity lifts need a theorem; codex reviews of P78–P81 after 2026-10-25 14:57.
 - FIRST NEXT STEP (cont. 31, superseded in part): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,
   the remaining permitted lift models are (i) variable-multiplicity subsets (P77 needs λ_odd of the sub-multiset's own
   background) and (ii) multi-scale reps (P77's spread factor degrades); attack (ii) by ball-averaging the far reps.

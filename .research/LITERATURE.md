@@ -180,3 +180,31 @@ https://epoch.ai/frontiermath/open-problems/chowla-cosine
   robust Ma theorem": nothing found. The hits are only spectral sets in cyclic groups (Forum Math Sigma 2022), which use
   Ma's lemma exactly, and PDS packings. Absence of a hit is not proof of novelty.
 
+
+## Latin-square-type PDS and subgroup structure (codex literature check, 2026-10-19 cont. 30; report .research/agents/lit_lspds_report.md)
+- Exact PCP forcing: a regular LS_r(n) PDS in ANY finite abelian group with 2 <= r < n and n > ½(r−1)(r³ − r² + r + 2)
+  (≈ r⁴/2) is a degree-r PCP (union of r order-n subgroups meeting in 0). Specialization of Bruck, Pacific J. Math. 13
+  (1963) Thm 4.3 (pseudo-net graphs, n > P(r − 1), P(x) = ½x⁴ + x³ + x² + 3x/2) plus Leung–Ma–Schmidt, JCTA 115 (2008)
+  Cor. 7–8 (abelian Singer group ⇒ the lines through 0 are subgroups). Agent read both; the combination is the agent's
+  specialization, not a quoted theorem.
+- In F_p², every nontrivial regular PDS is a union of punctured lines (Heinze thesis 2001, Prop. 3.2.19).
+- Non-PCP LS PDS exist: Shrikhande (Z_4², LS_2(4)); Davis–Xiang (Z_4^{2ℓ}, r = 4^{ℓ−1} + 1); Jedwab–Li, Comb. Theory 1
+  (2021) #18, Thm 5.3: LS_{p^{(a−1)s}}(p^{as}) in Z_{p^a}^{2s}, non-PCP for a >= 3, with ratio (n − 1)/r ≈ p^s → ∞;
+  Polhill EJC 15 (2008) R125: LS_{(p−1)(p²+1)}(p⁴) in Z_{p²}⁴. Whether these are unions of subgroups of OTHER orders:
+  queued (lit_jedwabli brief).
+- Ma (1984, 1994): a regular PDS in a CYCLIC group is a subgroup, a subgroup complement, or Paley (prime order ≡ 1 mod 4).
+  An abelian group with a cyclic Sylow subgroup (order not prime) has no nontrivial PDS (Schur–Wielandt; Heinze Thm
+  3.2.16).
+- Robust versions: Sanders, Israel J. Math. 179 (2010) Thm 1.4 (O(M) subgroups, |A △ ∪H| <= exp(O(M^C))); JMTZ
+  2509.03490v2 Thm A.1 (M <= N^γ, γ < 1/4 ⇒ |A △ H| <= δN for a subgroup H; errors relative to |G|); Ihringer, Discrete
+  Math. 346 (2023) (approximately SRGs; absolute bound, no subgroup conclusion). No near-LS ⇒ PCP stability theorem was
+  found.
+- FOLLOW-UP (codex, report .research/agents/lit_jedwabli_report.md, with exact checks on dirichlet): Jedwab–Li Thm 5.3
+  blocks in Z_{p^a}² (realization U = horizontal axis) are D_{a,j} = {(x, y) : y ≠ 0, with k = v_p(y), b = a − k,
+  z = y/p^k: [(x mod p^b)z^{−1}]_{p^b} ∈ [jp^{b−1}, (j + 1)p^{b−1})} = ⊔_k ⊔_t (H_{k,ℓ} \ K_{k,ℓ}), ℓ = t + jp^{b−1}, with
+  H_{k,ℓ} = ⟨(ℓ, p^k), (p^b, 0)⟩ (order p^a) and K = H ∩ {p^{k+1} | y} (index p). Character values exactly
+  {n − r, −r} = {p^a − p^{a−1}, −p^{a−1}}; the large-value set is J(D), J(x, y) = (−y, x). For a >= 3, D ∪ {0} is NOT a
+  union of subgroups of any orders (witness (1,1) ∈ D, (3,3) ∉ D for p = a = 3; for j ≠ 0 it contains no nontrivial
+  subgroup at all). Exact check p = 3, a = 3: |D| = 234, (v,k,λ,μ) = (729, 234, 81, 72), values 18 (×234), −9 (×494).
+  Polhill's positive ingredient in Z_{p²}⁴ likewise is a union of full punctured subgroups and subgroup shells, not
+  closed under ×p.

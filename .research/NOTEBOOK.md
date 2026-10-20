@@ -2969,3 +2969,50 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
     only flat CP is expensive. CP½ is a flat-class statement. General CP-Chowla is numerically close to Chowla, so the
     chain Chowla ⇐ SCP + CP-Chowla(Z) is logically valid but its Z-half is not much easier. The spread observation
     (all ratio → ∞ objects are subgroup unions) and the flat-spectrum barrier (A7) are unaffected.
+
+## cont. 30 (2026-10-19)
+1. External review (pasted by the user), lead-verified: SCP(T) is false for every T by orthogonal padding (CSTAR A8).
+   Adopted: drop SCP; CP-Chowla(Z) is the surviving chain link. Also corrected: A2's Riesz-product line (the profile
+   condition is Re ν̂(s) >= 0 at REAL s, not integer coefficients) and A5(i) (heuristic only). The review's reading of
+   F12 predates the E111 two-level retraction.
+2. Literature check (codex; LITERATURE.md): exact LS_r(n) PDS with n >~ r⁴/2 are PCPs (Bruck + Leung–Ma–Schmidt);
+   non-PCP LS PDS exist with r = o(n) (Jedwab–Li, Z_{p^a}^{2s}); Ma: cyclic groups have only trivial PDS and Paley.
+   No near-LS ⇒ PCP stability theorem exists.
+3. Z-feature extracted (lead): every finite quotient of Z is CYCLIC. By Ma, an exact rational-spike anatomy (spikes on
+   (1/Q)Z/Z, two-valued Z_Q spectrum) is a subgroup union in Z_Q, i.e. a union of APs through 0 in Z, which pays Gibbs
+   unless tapered (A3). The robust form ("robust Ma" for Z_Q) is the open step for rational anatomies.
+4. Reduction noted (lead, elementary): Z-Chowla ⇐ Z_p-Chowla for all primes p (sample D_S on (1/p)Z/Z with p > 2X;
+   S mod p is injective and |S| <= p/2). Z_p-Chowla is cyclic half-set Chowla (open, E41 ratio <= ~2.15). Not easier:
+   Z_p has the same Gibbs (APs are its only approximate subgroups).
+5. Bu's 1/2 from units (lead): a symmetric block B = −B gives every difference multiplicity 2 by the swap
+   x − y = (−y) − (−x). Order-3 symmetries (ωB = B) give no extra multiplicity (they permute differences). So
+   "multiplicity m > 2" (Bu Prop. 8.2) cannot come from symmetry in any abelian group; it needs closure (subgroups)
+   or AP-like structure (triangles ⇒ corrections). This is why Z's two units cap the square paradigm at ½.
+6. Jedwab–Li (A9), lead analysis. The JL blocks are a p-adic MULTIRESOLUTION: the level-k piece L_k (v_p(y) = k) is
+   spectrally invisible to every nontrivial character of valuation h > k (its shells cancel exactly), visible at h = k,
+   and absent below. Archimedean analog: a piece S_k ⊂ Z whose transform vanishes on a PUNCTURED neighbourhood of a spike.
+   Impossible: D_{S_k} is a trig polynomial, analytic, so it cannot jump. The ultrametric (totally disconnected) dual is
+   what allows exact cross-level cancellation; T is connected. Same obstruction as O6/A3, in its sharpest form.
+   Box transplant check (lead, by hand): put one period of D_{3-level} ⊂ Z_{p^a}² into a box of Z² (then Z by Freiman).
+   Off the grid, D_S is the Dirichlet interpolation of the grid values; an isolated spike of height n − r gives a
+   sidelobe ≈ −0.217·p^a, and the MAIN spike (value |D| ≈ N²/p) gives ≈ −0.217|D|: linear. With the main spike tapered
+   away, the isolated-spike Gibbs alone caps the ratio at ≈ p/(0.217p + 1)² <= 1.15. The box density is 1/p, so for
+   p <= 7 the T-dense theorem applies anyway.
+7. E113 (lead): valuation-class sets in Z_{p^a}² ((val x, val y) ∈ Ω). Exhaustive for (p, a) = (3,2), (3,3), (5,3),
+   (7,3). Excluding subgroup unions, the best ratio is p^{2a−1}/p² = |subgroup minus a valuation shell|: a large
+   subgroup with a small hole (values −p, 0, |D|). No new mechanism; JL sets are not valuation-class sets.
+   Note: e112_cpzp.py's pricing lacked z >= x_b + x_c − 1, so its pricing over-estimated reduced costs. E112a numbers
+   remain valid UPPER bounds (they were recorded as "stalled"); no lower-bound claim was made. Fixed in e114.
+8. Spike-uncertainty reformulation (lead; route-equivalent to the "uncertainty principles" row, recorded for the
+   record). Sample at N-th roots, N prime >= 4X: G(j) = K + Ŝ(j) >= 0 on Z_N, Ĝ = Kδ + 1_S exactly. Split G = G_E + G_B
+   at level λ = θ|S|/K. Then 0 <= G_B <= λ gives ‖Ĝ_B‖² <= θ|S|, and |E| <= N/(θ²ρ) (Chebyshev). So C* yields a nonneg
+   function supported on N/(θ²ρ) points whose transform is θ-close to the Boolean 1_S. A "robust nonneg Boolean
+   uncertainty principle" in Z_N (N prime) would give Chowla. Checks: intervals (Dirichlet) fail nonnegativity;
+   truncated Fejér has small support and concentrated but NON-Boolean transform (triangle). So both Booleanity and
+   nonnegativity are needed, and together they ARE the Gibbs tension: the reformulation is Chowla again. The
+   approximate-subgroup step it seems to offer (|F̂|² ≈ F̂ ⇒ E − E ≈ E) is FALSE in the C* core, because the
+   frequency-0 term K² dominates F ⋆ F (E is additively random, A5(i)).
+9. Local Booleanity rederives n^{1/3} (lead). In a window of W positions with density ρ₀ and m local spikes of equal
+   coefficient γ (mγ² ≈ ρ₀), the identity c = c ⋆ c at a spike needs γ <= R(x)γ² with R(x) ≈ m²/W representations
+   (E random-like). Hence m³ >= W²/ρ₀, i.e. ε² >= (#S in window)^{−1/3}, i.e. K >~ n^{1/3}. This is the same regime split
+   as A5(i): local triple coherence is satisfiable throughout the C* core.

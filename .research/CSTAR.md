@@ -418,6 +418,26 @@ The prize is (c). Everything else is support.
   - The review read the pre-retraction F12 ("flat CP 0.857 ⇒ phase cancellation"); that reading is superseded by E111
     two-level (within 1–8%).
 
+- A9 (cont. 30, literature agent + exact checks). SPREAD PRINCIPLE REFUTED AS STATED. Jedwab–Li LS_{p^{a−1}}(p^a) PDS
+  in Z_{p^a}² (a >= 3) are exact two-valued, ratio (n − 1)/r ≈ p, and NOT unions of subgroups (for j ≠ 0 they contain no
+  nontrivial subgroup). They are disjoint unions of index-p subgroup SHELLS H \ K, one per p-adic level of y. Each
+  shell's transform |H|1_{H⊥} − |K|1_{K⊥} has a negative part; for a character at level h, the shells at every level
+  k < h cancel exactly (the K⊥-solutions are p times the H⊥-solutions), level h gives n − r or −r, and levels > h
+  vanish. So this is CROSS-LEVEL CANCELLATION: a finite-group taper tree that closes exactly. Revised principle: all
+  known ratio → ∞ objects are built from subgroups (unions of subgroups OR of subgroup shells). The Z obstruction is
+  unchanged in kind (Z has no subgroups, so no shells: an AP minus a sub-AP pays Gibbs), but the class "cancellation
+  objects with ratio → ∞" is NOT empty, contrary to A6′. The ratio is ≈ p for every a (no gain from depth); depth
+  buys non-subgroup structure, not ratio. Next: E114 measures the CP cost of D_{3,j} ⊂ Z_27² (is it CP-efficient
+  with non-subgroup cliques, or a genuine cancellation object?).
+  - Certificate reading (lead): 1_D = Σ_shells (1_H − 1_K), so D̂ = Σ (|F_H|²/|H| − |F_K|²/|K|) is a SIGNED sum of
+    subgroup squares whose positivity holds level by level. This is the finite-group analog of Bu's paradigm
+    (2f + k = 2ρ² − g: a square minus a correction), and it reaches ratio → ∞.
+  - Why Z cannot copy it (lead): the selection freedom (one lift per slope class) needs the projective line over
+    Z_{p^a}, i.e. rank 2 over ONE prime. Z's p-adic completion Z_p has rank 1 and every finite quotient of Z is cyclic
+    (Ma: only trivial PDS and Paley). The 1-D valuation shells {v_p = k} just tile an interval. So Z's only exact
+    algebraic structure is cyclic, and its continuous part (T connected) forces Gibbs. These are the two Z-features any
+    proof must use.
+
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.
 P76 (DNN = PSD on unbounded index; CP certificates: C >= 2n/(ω−1), extreme-lag multiplicities; CP-Chowla open, E111).

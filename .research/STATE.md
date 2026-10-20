@@ -39,7 +39,13 @@ prediction or exclude an explicit model; no reformulation sweeps; target = some 
   (d') Advisor review 4: P80c d >= 3 was wrong (counterexample kept in PROOFS); repaired (E123). Queued for codex after
       2026-10-25 14:57 (.research/agents/queued_after_quota.md): adversarial check of P78–P81 and of P80c in d >= 3 SEPARATELY;
       Lean targets P81 (kernel identity), P79 step 5 (antisymmetric pairing), P80c (digit construction); P81 novelty.
-  (e) FIRST NEXT STEP: read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
+  (d'') Advisor review 5: the general local-centroid route is CLOSED (E124: P82 is weight-agnostic; BAC = gap hypothesis;
+      packets indistinguishable from Bu-type sets in derivative statistics at computable X). E125: near-floor geometry DOES
+      separate them (270–2500× in |{f <= −0.99M}|; packets = flat floor, Boolean = rare deep wells) — a model-exclusion
+      target (FLOOR), not a Chowla route, because C* (F2) only forces a background averaging −cM.
+  (e0) NEXT DERIVATION (C*): is a C* object with a half-depth background (p ≈ const < 1 on most of T) and rare deep wells
+      compatible with p̂ ∈ {0, 1/K}? If Booleanity forces the floor to be flat, FLOOR + E125 become a route; if not, record why.
+  (e) FIRST NEXT STEP (earlier): read E120 p = 5 (pre-registered sup ρ ∈ [0.305, 0.45]) and E119 SA p = 11, 13 (is K_SA ≈ 0.65 ×
       random?), then decide whether multiplicity lifts need a theorem; codex reviews of P78–P81 after 2026-10-25 14:57.
 - FIRST NEXT STEP (cont. 31, superseded in part): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,
   the remaining permitted lift models are (i) variable-multiplicity subsets (P77 needs λ_odd of the sub-multiset's own

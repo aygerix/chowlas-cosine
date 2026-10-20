@@ -1,5 +1,7 @@
 # Constructions (parametric families)
 
+2026-10-20 Sidon-fiber update: primitive ||u||<=U, lifted affine-parabola differences give a genuine Boolean family n=Theta(X^2 log U), each left fiber M<=p_u/2, and a uniform ensemble with M(mean)=O(U^2). At U=X^(1/4), a nonlinear mixed-certificate paper theorem forces Pr[M>=sqrt(n)/5]>=1/6 for ANY coupling with these whole-fiber marginals. Thus a small mean does not give a guaranteed counteralgorithm. Arbitrary deterministic parameter choices remain outside that probability theorem; a precise conditional reference-cubic bound would exclude them within this architecture. [Construction, exact mean, theorem and checks](notes/cstar_sidon_mixed_2026-10-20.md).
+
 2026-10-20 update: the truncated integer cone under the stated phase-rich CRT encoding is now excluded for **arbitrary** selections, including nonuniform/correlated/non-lens ones: ||u||>=sqrt(X), n/X^2->infinity implies M>=n/(32X) and R->infinity. Nonuniform center laws do repair the previous uniform-marginal parity obstruction, but not this deterministic residue average. Discontinue its logarithmic-gain counterexample strategy. No arbitrary-encoding or unrestricted Chowla statement follows. [Proof, finite witnesses and exact scope](notes/cstar_wide_parity_2026-10-20.md).
 
 | family | N | M bound | R limit | status |

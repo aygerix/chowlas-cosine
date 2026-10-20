@@ -1,5 +1,9 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Targeted check: finite Fourier normalization for Sidon shift moments (2026-10-20)
+
+Tao, [247B Lecture Notes9, Q3, p.13](https://www.math.ucla.edu/~tao/247b.1.07w/notes9.pdf), states finite-group Hausdorff-Young with probability measure on the group and counting measure on its dual. By duality, inverse Fourier synthesis maps counting l^(6/5) to probability L^6 with norm<=1. This is the classical ingredient used in the new cyclic-shift estimate; alternatively apply Plancherel and three-fold Young convolution. The primary source was read for this exact normalization, without a novelty/literature-wide claim. The Sidon-fiber mixed-certificate result has its own [paper derivation](notes/cstar_sidon_mixed_2026-10-20.md).
+
 ## Targeted check: singular integer matrix counts (2026-10-20)
 
 Chapman–Mudgal, *Counting 2x2 integer matrices with a given determinant*, [arXiv:2509.20259v1](https://arxiv.org/html/2509.20259v1), introduction following Proposition 1.3: the h=0 box count is (16/zeta(2))X^2 log X+O(X^2). This matches the independent elementary count used here; the counting surplus is not claimed new. The construction-side resonance exclusions have separate derivations in the [integer-cone note](notes/cstar_integer_cone_2026-10-20.md). No literature-wide novelty conclusion was drawn from the narrow search.

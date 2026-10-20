@@ -1,5 +1,9 @@
 # Certificates
 
+## 2026-10-20 — exact mixed cubic positivity on Sidon fibers
+
+For q=D_A-D_B, mean-zero and real, let a=<D_A,q>, Q=||q||_2^2, H=<D_A,q^2>, K=2M(A). The moment matrix of (D_A+K)(s+tq)^2 is positive, so QK^2+HK-a^2>=0. A rational k with Qk^2+Hk-a^2<0 certifies M(A)>k/2 on the WHOLE scalar circle. Rank-one ruling inclusion-exclusion computes H exactly with integer polynomial/sparse convolutions; encoding kernel gap>3X prevents scalar aliases. Three finite certificates have ratio>0.313; X64 is independently recounted in four coordinates. These are negative-minimum lower bounds, not all-phase construction upper bounds. [Full statement, asymptotic sampler theorem and verification limits](notes/cstar_sidon_mixed_2026-10-20.md), data `experiments/sidon_fibers_2026-10-20/`.
+
 ## 2026-10-20 — positive Gaussian and residue-average lower certificates
 
 [Statements, exact hypotheses and proofs](notes/cstar_wide_parity_2026-10-20.md). The nine disk-lens mean certificates use exact parity counts/rational CRT error; six also have positive periodic-Gaussian certificates with an explicit alias tail, independently rechecked at192 bits. Three changed center laws have exact mass/parity checks and independent endpoint-pair negative-point certificates, without global upper claims. The GL2(F_p) positive-average identity gives M(A)>=n/(8B^2) for ANY short-right-factor rank-one selection under the stated CRT encoding; it does not require enumerating all scalar phases. Two actual incomplete-fiber Boolean supports have separate192-bit scalar point checks, matching direct scalar and matrix-residue conventions. Data and rational witnesses: `experiments/wide_mean_2026-10-20/`. These are lower bounds on negative minima; no Epoch-valid all-circle upper bound, unrestricted Chowla proof, or Lean check is claimed.

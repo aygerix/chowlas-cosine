@@ -1,0 +1,63 @@
+[
+  {
+    "p": 11,
+    "distinct_affine_parabolas": 14520,
+    "normalization": "uniform over distinct point sets; equivalent to uniform GL2 and cyclic translations by constant stabilizer multiplicity",
+    "enumeration_sha256": "be7f77b1ba95474176b0b7cc92db1f6cc469560f1dee0d26da77723edd5debdf",
+    "conditional_H_max": "1643756/605",
+    "conditional_H_max_over_p3": "1643756/805255",
+    "conditional_a_min": "3739/66",
+    "conditional_a_min_over_n": "3739/3630",
+    "reference_averaged_global_M_lower": "91398161/100000000",
+    "uniform_mixed_ratio_lower": 0.12324125515118652,
+    "worst_H_points": [
+      [
+        0,
+        2
+      ],
+      [
+        0,
+        8
+      ],
+      [
+        2,
+        0
+      ],
+      [
+        2,
+        10
+      ],
+      [
+        3,
+        5
+      ],
+      [
+        5,
+        1
+      ],
+      [
+        5,
+        9
+      ],
+      [
+        9,
+        3
+      ],
+      [
+        9,
+        7
+      ],
+      [
+        10,
+        4
+      ],
+      [
+        10,
+        6
+      ]
+    ],
+    "worst_H_a": "4877/66",
+    "average_H": "17661983/23958",
+    "all_exact_certificate_inequalities_pass": true
+  }
+]

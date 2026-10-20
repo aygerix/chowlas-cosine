@@ -1,5 +1,15 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-20 — Boolean Sidon fibers, exact mixed cubics and conditional populations
+
+[Definitions, proof and scope](notes/cstar_sidon_mixed_2026-10-20.md); data in `experiments/sidon_fibers_2026-10-20/`. All jobs use `src/dirun.sh -c 2 -m 8 -t 480 python src/<script>.py`: `cstar_sidon_fibers`, `cstar_sidon_mixed`, `cstar_sidon_verify`, `cstar_sidon_population`, `cstar_sidon_lemmas_verify`. Population extra: `cstar_sidon_population.py 11`; independent extra recount: `cstar_sidon_lemmas_verify.py --extra`. Seeds are saved per case (20261021+X+rotated for realizations; 20261031+X+rotated for references).
+
+Rotated cases X64/256/1024, U=floor(X^(1/3)), have n3952/81794/1585878 and certified negative-point ratios>1.7533/1.9602/1.8541. The additional unrotated X256 control has a stronger content defect. Reverse-parameter endpoint reconstruction matches all hashes/cardinalities/max frequencies, independently reconstructs every modulus2..128 average by Mobius inversion, and directly rechecks scalar sums with192-bit Arb. Right-plane FFT points remain numerical minima; selected positive Fejer plane lower certificates are rigorous, no global right-plane upper bounds.
+
+Three integer mixed cubics (X64 rotated, X256 unrotated/rotated) give (a,Q,H)=(4558,9116,162998),(92916,185832,14878870),(92032,184064,12940846). Exact rational polynomial negativity yields global M/sqrt(n)>0.31518/0.31328/0.31857. X64 has an independent four-coordinate recount; X256 does not claim that extra recount. The finite probes use U=X^(1/3), wider than the asymptotic theorem, and do not test its conservative threshold.
+
+Exhaustive p3/5/7 affine-parabola populations contain72/600/2352 sets; separate implicit-graph enumeration and sparse convolution recount ALL conditional costs/certificates. Max conditional H/p^3=118/243,11212/9375,83159/67228. The p11 extra contains14520 sets with max1643756/805255 and also has a full independent sparse recount. Thus C=2 is REFUTED by the saved p11 maximizer, with exact gap33246/605 above2p^3. These are finite maxima, not an all-prime bound. Data: `population*.json`, `lemmas*_verification.json`, plus `results.json`, `mixed.json`, `verification.json`. One proof/Lean-agent launch failed with the unavailable configured model. All research computations were on Dirichlet; all jobs terminal.
+
 ## 2026-10-20 — widened means, changed center laws, and short-factor residue checks
 
 [Full definitions and limits](notes/cstar_wide_parity_2026-10-20.md); data in `experiments/wide_mean_2026-10-20/`. All computation on Dirichlet. Commands: `src/dirun.sh -c 2 -m 8 -t 480 python src/cstar_wide_mean.py`, then `cstar_parity_mean.py`, `cstar_wide_mean_verify.py`, `cstar_center_law_lp.py`, `cstar_residue_mean_verify.py`; `cstar_short_factor_probe.py` uses timeout240. These are deterministic probes with no random seeds. All jobs terminal and checks pass.

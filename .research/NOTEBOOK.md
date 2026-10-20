@@ -1,5 +1,13 @@
 # NOTEBOOK (dated)
 
+## 2026-10-20 — long incomplete Sidon fibers; nonlinear sign despite a small mean
+
+The promised inverse test genuinely changed the construction: lifted affine-parabola differences give integer Sidon fibers, each with M<=p/2. Uniform GL2 rotations remove the fixed parabola's missing-direction mean defect, yielding exact coefficient c_p times a product triangular taper and M(mean)=O(U^2). Actual Boolean probes have weaker tested residue/plane certificates than global negative points; right-plane global upper bounds are NOT claimed.
+
+The productive pivot is nonlinear: q=D_A-D_B, a=2|A\B|, Q=2a, H=<D_A,q^2>. Additive rank-one triples share a left/right ruling, so H=sum_left+sum_right-sum_lines. The non-left part is bounded deterministically by19683X^2U^4; cyclic-shift Lagrange interpolation and finite Hausdorff-Young bound the positive left cost in expectation by C sum p^3. At U=floor(X^(1/4)), any coupling of the uniform affine-parabola whole-fiber marginals therefore has probability>=1/6 of M>=sqrt(n)/5 eventually, although M(mean)/sqrt(n)->0. This is a model-specific sign conversion allowing arbitrary cross-fiber dependence, not merely the previous large-mean obstruction. [Complete proof and constants](notes/cstar_sidon_mixed_2026-10-20.md).
+
+Exact mixed finite ratios>0.313 survive independent four-coordinate cubic checking at X64. Entire small conditional populations are independently recounted. Next conditional lemma: E_reference H_u(A,B)<=C p^3 for EVERY fixed affine-parabola lift A. Conditional a_bar>=n_u/8 is already elementary and proved; only the cost is missing. A uniform conditional cost would exclude deterministic assignments in this architecture, but not arbitrary Chowla sets. Stop additional random global scans; attack the conditional cost adversarially while retaining the universal mixed-certificate and non-cone Riesz lines. Review-agent launch failed with the unavailable default model; no independent-agent/Lean verification.
+
 ## 2026-10-20 — widening tested; center-law escape and deterministic residue exclusion
 
 DESIGN / CHAIN(c): the promised wider staggered mean was tested with exact coefficients and a positive Gaussian measure. It fails. An elementary disk parity proof removes the previous scale-gap restriction for uniform center marginals, giving M(mean)>=s/60 after scalar transfer. Gurobi then genuinely changes the center law while preserving expected size: R8,16,32 rational laws repair all parity values, with independently confirmed negative points elsewhere. This is an explicit countercontrol to overextending the marginal theorem.

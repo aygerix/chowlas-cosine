@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 192,
+  "exhaustive_population_recounts": [
+    {
+      "p": 11,
+      "all_point_sets": 14520,
+      "conditional_moments_recounted": true,
+      "conditional_H_max": "1643756/605",
+      "all_certificate_inequalities": true
+    }
+  ],
+  "off_grid_shift_moment_checks": [
+    {
+      "p": 11,
+      "phase_turns": [
+        "1/33",
+        "2/55"
+      ],
+      "sixth_over_p3_ball": "[0.3099530806756217404194827626146278014047425528592571554 +/- 4.70e-56]",
+      "mean_centering_checked": true
+    }
+  ],
+  "qualification": "Finite checks corroborate normalizations; all-prime bounds are the paper argument."
+}

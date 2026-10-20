@@ -1,0 +1,87 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 192,
+  "cases": [
+    {
+      "X": 64,
+      "rotated": true,
+      "n": 3952,
+      "point_M_lower": "110223233/1000000",
+      "best_tested_residue": {
+        "q": 2,
+        "average_f": "-28",
+        "scalar_M_lower": "308270215364/11010048007"
+      },
+      "right_Fejer_plane_M_lower": "14338613/500000",
+      "right_Fejer_v": [
+        1,
+        0
+      ],
+      "all_phase_right_upper_claimed": false,
+      "passed": true
+    },
+    {
+      "X": 256,
+      "rotated": false,
+      "n": 81794,
+      "point_M_lower": "312999999/500000",
+      "best_tested_residue": {
+        "q": 2,
+        "average_f": "-1538/3",
+        "scalar_M_lower": "1083738280763918/2113929216021"
+      },
+      "right_Fejer_plane_M_lower": "37465467/500000",
+      "right_Fejer_v": [
+        1,
+        0
+      ],
+      "all_phase_right_upper_claimed": false,
+      "passed": true
+    },
+    {
+      "X": 256,
+      "rotated": true,
+      "n": 81794,
+      "point_M_lower": "560633189/1000000",
+      "best_tested_residue": {
+        "q": 3,
+        "average_f": "-361/4",
+        "scalar_M_lower": "254372463684063/2818572288028"
+      },
+      "right_Fejer_plane_M_lower": "78201019/1000000",
+      "right_Fejer_v": [
+        1,
+        0
+      ],
+      "all_phase_right_upper_claimed": false,
+      "passed": true
+    },
+    {
+      "X": 1024,
+      "rotated": true,
+      "n": 1585878,
+      "point_M_lower": "2334904159/1000000",
+      "best_tested_residue": {
+        "q": 2,
+        "average_f": "-598",
+        "scalar_M_lower": "3852575456895574/6442450944001"
+      },
+      "right_Fejer_plane_M_lower": "221334483/1000000",
+      "right_Fejer_v": [
+        0,
+        1
+      ],
+      "all_phase_right_upper_claimed": false,
+      "passed": true
+    }
+  ],
+  "direct_four_coordinate_cubic_check": {
+    "X": 64,
+    "a": 4558,
+    "Q": 9116,
+    "H": 162998
+  },
+  "larger_cubics": "Exact producer integer polynomial/sparse sums, with certificate algebra rechecked; not independently recounted in four coordinates.",
+  "qualification": "No numerical right-plane minima are promoted to global upper certificates."
+}

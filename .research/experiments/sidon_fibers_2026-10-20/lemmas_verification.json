@@ -1,0 +1,58 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 192,
+  "exhaustive_population_recounts": [
+    {
+      "p": 3,
+      "all_point_sets": 72,
+      "conditional_moments_recounted": true,
+      "conditional_H_max": "118/9",
+      "all_certificate_inequalities": true
+    },
+    {
+      "p": 5,
+      "all_point_sets": 600,
+      "conditional_moments_recounted": true,
+      "conditional_H_max": "11212/75",
+      "all_certificate_inequalities": true
+    },
+    {
+      "p": 7,
+      "all_point_sets": 2352,
+      "conditional_moments_recounted": true,
+      "conditional_H_max": "83159/196",
+      "all_certificate_inequalities": true
+    }
+  ],
+  "off_grid_shift_moment_checks": [
+    {
+      "p": 3,
+      "phase_turns": [
+        "1/9",
+        "2/15"
+      ],
+      "sixth_over_p3_ball": "[0.13816719482333532242501062890653143237234575482091323942 +/- 6.26e-57]",
+      "mean_centering_checked": true
+    },
+    {
+      "p": 5,
+      "phase_turns": [
+        "1/15",
+        "2/25"
+      ],
+      "sixth_over_p3_ball": "[0.2552776452665861112856311330541233041072281104869848146 +/- 6.09e-56]",
+      "mean_centering_checked": true
+    },
+    {
+      "p": 7,
+      "phase_turns": [
+        "1/21",
+        "2/35"
+      ],
+      "sixth_over_p3_ball": "[0.2292691502164482899385962398746600607439427280903297580 +/- 6.18e-56]",
+      "mean_centering_checked": true
+    }
+  ],
+  "qualification": "Finite checks corroborate normalizations; all-prime bounds are the paper argument."
+}

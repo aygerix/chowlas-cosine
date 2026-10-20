@@ -1,0 +1,113 @@
+[
+  {
+    "p": 3,
+    "distinct_affine_parabolas": 72,
+    "normalization": "uniform over distinct point sets; equivalent to uniform GL2 and cyclic translations by constant stabilizer multiplicity",
+    "enumeration_sha256": "c0d5167afca74d496899406653e9c321784dfaec21c51ecbf9699ae239e5e588",
+    "conditional_H_max": "118/9",
+    "conditional_H_max_over_p3": "118/243",
+    "conditional_a_min": "10/3",
+    "conditional_a_min_over_n": "10/9",
+    "reference_averaged_global_M_lower": "101788413/200000000",
+    "uniform_mixed_ratio_lower": 0.2938378382296741,
+    "worst_H_points": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        0
+      ]
+    ],
+    "worst_H_a": "29/6",
+    "average_H": "6",
+    "all_exact_certificate_inequalities_pass": true
+  },
+  {
+    "p": 5,
+    "distinct_affine_parabolas": 600,
+    "normalization": "uniform over distinct point sets; equivalent to uniform GL2 and cyclic translations by constant stabilizer multiplicity",
+    "enumeration_sha256": "43cc7da9916eb30f596c808d3a4288e9e7393e1f2bc0c346ddfae2b41401bc8e",
+    "conditional_H_max": "11212/75",
+    "conditional_H_max_over_p3": "11212/9375",
+    "conditional_a_min": "157/15",
+    "conditional_a_min_over_n": "157/150",
+    "reference_averaged_global_M_lower": "32906471/50000000",
+    "uniform_mixed_ratio_lower": 0.20811879623655724,
+    "worst_H_points": [
+      [
+        0,
+        0
+      ],
+      [
+        0,
+        2
+      ],
+      [
+        2,
+        4
+      ],
+      [
+        4,
+        0
+      ],
+      [
+        4,
+        4
+      ]
+    ],
+    "worst_H_a": "238/15",
+    "average_H": "57877/1125",
+    "all_exact_certificate_inequalities_pass": true
+  },
+  {
+    "p": 7,
+    "distinct_affine_parabolas": 2352,
+    "normalization": "uniform over distinct point sets; equivalent to uniform GL2 and cyclic translations by constant stabilizer multiplicity",
+    "enumeration_sha256": "2257797ad4439eaea832e0290ded8e5f6e7d43be22fe2f3be0598fd094774183",
+    "conditional_H_max": "83159/196",
+    "conditional_H_max_over_p3": "83159/67228",
+    "conditional_a_min": "305/14",
+    "conditional_a_min_over_n": "305/294",
+    "reference_averaged_global_M_lower": "38330957/50000000",
+    "uniform_mixed_ratio_lower": 0.1672900113453309,
+    "worst_H_points": [
+      [
+        0,
+        1
+      ],
+      [
+        0,
+        5
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        6
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        5,
+        2
+      ],
+      [
+        5,
+        4
+      ]
+    ],
+    "worst_H_a": "783/28",
+    "average_H": "439305/2744",
+    "all_exact_certificate_inequalities_pass": true
+  }
+]

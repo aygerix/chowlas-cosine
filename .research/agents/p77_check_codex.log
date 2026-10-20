@@ -1,0 +1,1484 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /Users/jmercedes/desktop/projects/research/chowla-cosine
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: xhigh
+reasoning summaries: detailed
+session id: 01a15725-9f42-7653-a7d6-9fc1548cba2c
+--------
+user
+Read .research/agents/p77_check_brief.md and carry out the task exactly as written.
+warning: Under-development features enabled: context_management. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/jmercedes/.codex/config.toml.
+codex
+I’ll read the brief and repository instructions, then carry out the specified checks and record the results.
+exec
+/bin/zsh -lc "pwd && rg --files -g 'AGENTS.md' -g '.research/agents/p77_check_brief.md' -g 'SKILL.md' -g '"'!node_modules'"' -g '"'!vendor'"' . .research 2>/dev/null" in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 0ms:
+/Users/jmercedes/desktop/projects/research/chowla-cosine
+.research/agents/p77_check_brief.md
+
+exec
+/bin/zsh -lc 'cat .research/agents/p77_check_brief.md' in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 0ms:
+# Adversarial check of P77 (centroid barrier for Boolean lifts) — codex agent brief
+
+You are an adversarial verifier. Do NOT do new research. Your job is to find an error in P77 or confirm each step.
+Read `.research/PROOFS.md`, section "## P77" (at the end of the file), and `.research/EXPERIMENTS.md` sections E116/E117.
+Code: `src/e116_jl_taper.py` (lift, true_min), `src/e117_concentration.py` (λ_odd), `src/e114_cp_group.py` (jl_set).
+
+Tasks:
+1. Check every step of the proof of P77 (a), (b), (c) line by line: the identity e(z(g)·(χ+α)/n) = e(χ·g/n)e(z(g)·α/n);
+   the derivative formulas for h_χ; the Parseval identity for Q_u(χ, t) at fixed u and t; the Cauchy–Schwarz over the
+   four directions; the Taylor remainder; the choice of ω and the optimisation in ρ; S₁ <= (|B|S₂)^{1/2}; S₂ >= A2/2;
+   Σ_χ|W|² = n²Σ|z|²; the concentration-operator bound in (b) (including the claim that W(0) = 0 and that odd real f
+   has purely imaginary transform). State any missing hypothesis (e.g. injectivity of z, D symmetric, n odd?).
+2. Numerically FALSIFY: on the VM (all computation via `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 3600 ...`,
+   never on the laptop), for JL sets (p, a, j) ∈ {(3,2,1), (5,2,1), (7,2,1)} and also for random symmetric D ⊂ Z_n²
+   (n ∈ {9, 15, 25}), generate >= 200 random one-rep lifts (reps in [−Vn, Vn]², V ∈ {1, 2}) plus the centred lift,
+   compute K(T) by `true_min` (2D, FFT + BFGS) and the right-hand sides of (a) and (b) (compute λ_odd with
+   e117_concentration logic for each D and B = {D̂ <= −r'} for r' = −max over the chosen B, or simply B = {χ ≠ 0 :
+   D̂(χ) <= −r'} with r' = the background level). Report any instance where K(T) < RHS (a) or (b) beyond 1e−6.
+3. Check the remark that the PD taper τ = Λ(z₁/n)Λ(z₂/n) gives Σ_{z≡g}τ(z)z = 0 and Σ_{z≡g}τ(z) = 1 for every class.
+Write the report to `.research/agents/p77_check_report.md` (verdict per step: CORRECT / GAP / ERROR with details,
+plus the numerical table). Do not edit any other file. Do not commit.
+
+codex
+I’m using the number-theory verification skill for the proof audit. I’ll keep the scope to the brief: adversarial checking, numerical falsification, and one report file.
+exec
+/bin/zsh -lc 'cat /Users/jmercedes/.codex/skills/number-theory-research/SKILL.md' in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 0ms:
+---
+name: number-theory-research
+description: Conduct sustained, original number-theory research rather than merely surveying obstacles. Use for open Diophantine problems, elliptic curves, arithmetic geometry, descent, integral/rational points, prime and congruence questions, proof development, counterexample searches, or research-team strategy. Generate and test concrete lemmas, change approaches when blocked, keep a reproducible research record, critically verify claims, and reconsider the global strategy. Not for routine homework or a request for a brief explanation.
+---
+
+# Number Theory Research — Discovery Loop
+
+You are responsible for **trying to advance the mathematics**, not for merely explaining why known methods fail. A negative literature survey, a list of obstructions, or a worker status report is preliminary work, **not completion** of an open-ended research assignment.
+
+Follow the user's actual scope, available time/tools, and explicit stop conditions. Never fabricate a theorem, computation, citation, or amount of work performed. A skill is guidance, not a guarantee of breakthroughs or unattended execution.
+
+## 0. Load project state, not just the most recent message
+
+- Read the problem statement, definitions, existing proof notes, negative results, experiment code, and any project-specific instructions. If a source is inaccessible, say which one rather than implying it was examined.
+- Write the **exact target** with all quantifiers, domains, and allowed hypotheses. Write the alternative conclusion (e.g. existence vs a uniform impossibility statement) without prematurely excluding either.
+- Make a compact *research frontier*: `KNOWN | EXACT GAP | REASON THE GAP MATTERS | CANDIDATE MECHANISM | DISCRIMINATING TEST`. Label assertions as PROVED / CITED-VERIFIED / EXPERIMENTAL / CONJECTURED / UNKNOWN.
+- Review the existing record for repeated dead ends before suggesting new lanes. Do not relaunch an already-falsified approach unless you identify a mathematical change that removes its old obstruction.
+- Check literature early **for the exact theorem used** (including hypotheses and date), but cap the initial survey: unless the task specifically asks for a survey, pivot promptly to original derivation or experiment. Claims of impossibility, completeness, priority, or "nobody knows" require evidence; absence of a search hit proves none of them.
+
+## 1. Choose attacks that can produce an actual mathematical result
+
+- State a *candidate lemma* whose proof, counterexample, or quantitative refinement would move the main problem. Include why it is nontrivial, how it links to the target, and the first falsification test. Do not assign vague work such as "try descent" or "explore the literature".
+- Prefer **structurally distinct** hypotheses where viable: e.g. local valuations/congruence obstruction; descent or height; elliptic-curve group/arithmetic geometry; constructive parametrization or inverse design; independent algebraic elimination; analytic estimates. Distinguish genuine strategy differences from re-running the same brute force with bigger bounds.
+- For each route, ask the reverse question: *If this theorem were true, what mechanism would have to make it true?* Try constructing an example/counterexample of that mechanism, not just searching for the answer directly.
+- Prioritize insight per unit effort: exact identities, symmetry reductions, constrained families, valuation patterns, and counterexample-shaped instances before expensive blind enumeration.
+- Read `references/arithmetic-methods.md` when selecting the relevant mathematical tool; read `references/experiment-design.md` before substantial computation.
+
+## 2. Do a genuine research cycle, not a status cycle
+
+For each selected attack, carry out as many of these **substantive operations as fit the task**:
+
+1. **Derive:** write out the algebra or proof to the first nontrivial step; isolate the exact lemma and its quantifiers. Don't substitute a technique name for a derivation.
+2. **Adversarially test:** try to falsify the lemma. Check boundary parameters, small primes and prime powers, high valuations, degenerate families, non-coprime cases, and rational-vs-integral leakage as appropriate. Prefer exact arithmetic with reproducible code or hand-verifiable identities.
+3. **Exploit the obstruction:** ask *which hypothesis makes the obstruction appear?* Try weakening/strengthening the target, reversing an implication, taking a minimal counterexample, changing models/invariants, restricting to a provable family, or constructing examples that violate the hoped-for lemma.
+4. **Pivot mathematically:** if the obstruction survives, formulate a **different testable lemma** motivated by that failure. An obstruction without a subsequent attempt is not a completed research cycle.
+5. **Record an artifact:** save the statement, calculation, counterexample, code/data path, proof fragment, and next decision. A precise failed lemma or rigorous exclusion of a meaningful subcase is a legitimate artifact; "nothing worked" is not.
+
+Do not call a tool simply to simulate effort. A single strong insight can be worth more than ten shallow attempts. Do not claim a new theorem without checking every hypothesis and quantifier.
+
+## 3. Global strategic reflection (mandatory for extended research)
+
+After **two materially different attempts, a major obstruction, a worker result that changes the landscape, or a sign of duplicated/no-novelty work**, perform a project-level review *before* more delegation or repetition:
+
+- **Distance to result:** Which missing mathematical statement was advanced, refuted, or sharpened? Have we moved toward the exact final target, not merely closed local tickets?
+- **Theory of success:** Why should the current strategy be capable of proving anything? Is there a credible mechanism for an eventual YES and/or NO result? What discovery would change your mind?
+- **Opportunity cost:** Is the best next action to prove a smaller lemma, test a new construction, revisit a dismissed branch, get a precise source, verify a prior claim, or stop a low-value search?
+- **Kill/pivot/continue:** Explicitly decide what to discontinue, what to pursue next, and what evidence supports that decision. Preserve previous results before killing a branch.
+- **Bias check:** Are all avenues instances of the same failed template? Was a branch declared "out of reach" without source verification? Did an easy-to-report checklist replace mathematical progress?
+
+Use `references/research-review.md` for criteria and a concrete example. **A time limit is a maximum allowed runtime, not a reason to keep an unproductive lane alive.** Don't wait for the user to diagnose stagnation.
+
+## 4. Verification rules specific to number theory
+
+- Treat exact domains and quantifiers as sacred: "for a fixed n" is not "for all n"; all tested cases are not all integers; bounded search is not global exclusion; finitely many exceptions are not none.
+- Separate rational, integral, algebraic-integer, and p-adic points. Elliptic-curve group operations preserve rational points, **not generally integral points**. Check minimal models and coordinate changes before inferring integrality.
+- A torsion condition, divisibility in E(Q), an image under an isogeny, and rational dependence are different assertions. Track exceptional primes, bad reduction, saturation, torsion, and local/global hypotheses in any support argument.
+- If using a named theorem, write its precise hypotheses and verify the **needed implication**, not a related theorem. Treat unknown, speculative, or unpublished results as such.
+- Exact computation: specify equations, bounds, exclusions, algorithms, input data, software version, and what a negative result *actually* excludes. Cross-check consequential outputs independently when feasible.
+- Critical proof review: try a counterexample; check divisibility/denominator steps, index conditions, hidden conditional assumptions, and any point where a finite computation is promoted to an infinite claim.
+
+## 5. Persistent work product, not performative bureaucracy
+
+For extended tasks, keep a concise human-readable notebook at `.research/number-theory/NOTEBOOK.md` (or use an existing project location). Record **actual math** and concise strategic decisions, not repeated assurances about being proactive. A reusable template is in `assets/NOTEBOOK_TEMPLATE.md`.
+
+An optional local command-line ledger helps prevent "worked for 3 minutes; wrote no notes":
+
+```bash
+python3 <skill-folder>/scripts/research_log.py init --root . --goal 'Exact mathematical goal'
+python3 <skill-folder>/scripts/research_log.py status --root .
+```
+
+After substantive mathematical work, record a compact attempt/review with the script (see `--help` and `references/research-review.md`). The script checks **record structure only**, never mathematical validity or honest effort. Do not fill records with placeholder claims to pass an audit.
+
+When working with subagents, require **independent, distinct mathematical tasks**, a falsification target, and a concrete evidence artifact for each. Verify results yourself; don't send workers unsupported dismissals of entire proof directions as facts. Make a global stop/pivot decision without waiting for a user complaint.
+
+## 6. Completion and communication
+
+- If the task is research rather than an explanation, do not finish after a cursory review of known obstructions while viable alternatives remain within the authorized effort budget. Pursue a new testable line or a mathematically justified strategic pivot.
+- If proof is found: present precise theorem, complete proof or transparent gap list, and independent checks. If not: provide *the strongest new lemma/conditional reduction/counterexample/computational evidence or carefully delimited negative result* with its proof/test; distinguish it from preexisting knowledge.
+- Summarize efficiently as `NEW RESULT OR TEST | VERIFIED EVIDENCE | REMAINING EXACT GAP | NEXT DISCRIMINATING EXPERIMENT | STRATEGIC DECISION`. Don't bury the output under a lengthy tour of elementary obstacles the researcher already knows.
+- Never claim "solved", "unreachable", "all routes exhausted", or "no known theorem" beyond what was established. If the remaining effort is unlikely to yield useful new evidence, explain the reasons, alternatives and stop honestly.
+- Stay within session and tool limits. Do not claim you will independently keep working after the turn unless an actual supported scheduler or process has been launched.
+
+exec
+/bin/zsh -lc "python - <<'PY'
+from pathlib import Path
+root=Path.cwd()
+paths=list(reversed(root.parents))+[root,root/'.research',root/'.research/agents',root/'src']
+for p in paths:
+ f=p/'AGENTS.md'
+ if f.exists():
+  print(f'\\n{f}\\n{f.read_text()}')
+PY
+
+git status --short
+rg -n '"'^## P77|''^## E11[67]|E116|E117'"' .research/PROOFS.md .research/EXPERIMENTS.md
+cat src/dirun.sh" in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 19ms:
+zsh:1: command not found: python
+ M CLAUDE.md
+ M examples/e61/e61b.jsonl
+ M examples/e62/e62b.jsonl
+ M examples/e64/e64_dense.jsonl
+ M src/.build/smallN_40cb5154c502.so
+?? .mcp.json
+?? .research/agents/adv_p72_74_brief.md
+?? .research/agents/adv_p72_74_codex.log
+?? .research/agents/adv_p72_74_final.md
+?? .research/agents/adv_p72_74_report.md
+?? .research/agents/adv_p72_74_scratch/
+?? .research/agents/construct_scratch/bin/
+?? .research/agents/construct_scratch/runs/ct/o50y38x72.txt
+?? .research/agents/e111_codex.log
+?? .research/agents/e111_final.md
+?? .research/agents/lambda_scratch/bin/
+?? .research/agents/lean_m4_codex.log
+?? .research/agents/lean_m4_initial_build.log
+?? .research/agents/lean_m4_scratch/
+?? .research/agents/lean_m4b_codex.log
+?? .research/agents/lean_m4b_scratch/
+?? .research/agents/lean_next_codex.log
+?? .research/agents/lean_next_scratch/
+?? .research/agents/lean_o4plus_codex.log
+?? .research/agents/lean_p31_codex.log
+?? .research/agents/lean_p31_scratch/
+?? .research/agents/lean_p34_codex.log
+?? .research/agents/lean_p34_scratch/
+?? .research/agents/lean_p71_codex.log
+?? .research/agents/lean_p71_scratch/Combined.lean
+?? .research/agents/lean_p71_scratch/certificate_part.txt
+?? .research/agents/lean_p71_scratch/final_axioms.log
+?? .research/agents/lean_p71_scratch/final_build.log
+?? .research/agents/lean_p71_scratch/final_verification.json
+?? .research/agents/lean_p71_scratch/lsp_check.py
+?? .research/agents/lean_p71_scratch/lsp_diagnostics.json
+?? .research/agents/lean_p71_scratch/lsp_progress.json
+?? .research/agents/lean_p71_scratch/lsp_stderr.log
+?? .research/agents/lean_p71_scratch/main_part.txt
+?? .research/agents/lean_p71_scratch/packet_part.txt
+?? .research/agents/lean_p73_codex.log
+?? .research/agents/lean_p73_scratch/analytic_check.log
+?? .research/agents/lean_p73_scratch/axioms.log
+?? .research/agents/lean_p73_scratch/final_verification.json
+?? .research/agents/lean_p73_scratch/full_check.log
+?? .research/agents/lean_p73_scratch/lake_build.log
+?? .research/agents/lit_jedwabli_codex.log
+?? .research/agents/lit_jedwabli_final.md
+?? .research/agents/lit_lspds_codex.log
+?? .research/agents/lit_lspds_final.md
+?? .research/agents/or2_codex.log
+?? .research/agents/or2_scratch/report_draft.md
+?? .research/agents/or3_codex.log
+?? .research/agents/p31_codex.log
+?? .research/agents/p77_check_brief.md
+?? .research/agents/p77_check_codex.log
+?? .research/agents/tdense10_codex.log
+?? .research/agents/tdense10_scratch/
+?? .research/agents/tdense11_codex.log
+?? .research/agents/tdense11_scratch/
+?? .research/agents/tdense12_codex.log
+?? .research/agents/tdense12_scratch/
+?? .research/agents/tdense13_codex.log
+?? .research/agents/tdense13_scratch/
+?? .research/agents/tdense14_codex.log
+?? .research/agents/tdense14_scratch/
+?? .research/agents/tdense15_codex.log
+?? .research/agents/tdense15_scratch/
+?? .research/agents/tdense16_codex.log
+?? .research/agents/tdense17_codex.log
+?? .research/agents/tdense17_codex_part1.log
+?? .research/agents/tdense18_codex.log
+?? .research/agents/tdense2_codex.log
+?? .research/agents/tdense3_codex.log
+?? .research/agents/tdense4_codex.log
+?? .research/agents/tdense4_scratch/bohr_vm.log
+?? .research/agents/tdense4_scratch/exact_vm.log
+?? .research/agents/tdense4_scratch/extended_vm.log
+?? .research/agents/tdense4_scratch/final_summary_vm.log
+?? .research/agents/tdense4_scratch/finite_cover_vm.log
+?? .research/agents/tdense4_scratch/hbcg_vm.log
+?? .research/agents/tdense4_scratch/meso_vm.log
+?? .research/agents/tdense4_scratch/verify_vm.log
+?? .research/agents/tdense4_scratch/zoo_vm.log
+?? .research/agents/tdense5_codex.log
+?? .research/agents/tdense5_final_msg.md
+?? .research/agents/tdense5_scratch/
+?? .research/agents/tdense6_codex.log
+?? .research/agents/tdense6_final_msg.md
+?? .research/agents/tdense6_scratch/
+?? .research/agents/tdense7_codex.log
+?? .research/agents/tdense7_scratch/
+?? .research/agents/tdense8_codex.log
+?? .research/agents/tdense8_scratch/
+?? .research/agents/tdense9_codex.log
+?? .research/agents/tdense9_scratch/
+?? .research/agents/tdense_codex.log
+?? .research/agents/tdense_final_msg.md
+?? .research/agents/tdense_scratch/moment_exhaust_vm
+?? examples/cyclic_ilp/e37g.jsonl
+?? examples/e107/
+?? examples/e108/
+?? examples/e110/e110.jsonl
+?? examples/e110/e110_run.log
+?? examples/e112/e112a_run.log
+?? examples/e115/np_k.jsonl
+?? examples/e116/fd_out_p3a2j1R1_box_s1.txt
+?? examples/e116/fd_out_p3a2j1R2_rand_s1.txt
+?? examples/e116/fd_out_p5a2j1R1_box_s1.txt
+?? examples/e116/sa_in_p3a3j1L27_bern_s1.txt
+?? examples/e116/sa_out_p3a2j1L9F_bern_s1.txt
+?? examples/e116/sa_out_p3a2j1L9_bern_s1.txt
+?? examples/e116/sa_out_p5a2j1L25_bern_s1.txt
+?? examples/e116/scan.jsonl
+?? examples/e60/e60.err
+?? examples/e61/e61.err
+?? examples/e61/e61b.err
+?? examples/e62/e62.err
+?? examples/e62/e62b.err
+?? examples/e62/e62c.err
+?? examples/e63/e63_run.log
+?? examples/e64/D_bu_k6.json
+?? examples/e64/D_bu_k7.json
+?? examples/e64/e64_bu2.jsonl
+?? examples/e64/run_D_N24_0.05.log
+?? examples/e64/run_D_N24_0.log
+?? examples/e64/run_D_N36_0.05.log
+?? examples/e64/run_D_N36_0.log
+?? examples/e64/run_D_N50_0.05.log
+?? examples/e64/run_D_N50_0.log
+?? examples/e64/run_bu2_k6_0.05.log
+?? examples/e64/run_bu2_k6_0.15.log
+?? examples/e64/run_bu2_k7_0.05.log
+?? examples/e64/run_bu2_k7_0.15.log
+?? examples/e64/run_k10.log
+?? examples/e64/run_k11.log
+?? examples/e64/run_k12.log
+?? examples/e64/run_k7.log
+?? examples/e64/run_k8.log
+?? examples/e64/run_k9.log
+?? examples/e64/streamA.out
+?? examples/e64/streamB.out
+?? examples/e64/streamC.out
+?? examples/e64/streamD.out
+?? examples/e65/e65.jsonl
+?? examples/e65/e65_run.log
+?? examples/e65/in_q11.txt
+?? examples/e65/in_q13.txt
+?? examples/e65/in_q17.txt
+?? examples/e65/in_q19.txt
+?? examples/e65/in_q23.txt
+?? examples/e67/e67_sa.jsonl
+?? examples/e68/
+?? examples/e73/e73_run.log
+?? examples/e74_run.log
+?? examples/e75_run.log
+?? examples/e76_run.log
+?? examples/e77_run.log
+?? examples/e78_run.log
+?? examples/e80_run.log
+?? examples/gurobi/e44.jsonl
+?? examples/profile_sa/e59_run.log
+?? examples/smallN_runs/local_43_60.log
+?? lean/ChowlaCosine/Beckner/ProductDerivative.lean
+?? lean/ChowlaCosine/P31/FourierL2.lean
+?? lean/ChowlaCosine/P31/SincInterpolation.lean
+?? lean/P34Scratch.lean
+?? papers/window_nikolskii/build.out
+?? papers/window_nikolskii/window_nikolskii.log
+?? src/.build/e116_fd
+?? src/.build/e116_sa
+?? src/.build/e65_bustep_sa
+?? src/.build/e67_bulk_sa
+?? src/.build/e68_pareto_sa
+?? src/.build/e72_p47_pareto
+?? src/.build/e75_runtop_sa
+?? src/.build/e83_sa
+?? src/.build/e90_zp_tabu
+?? src/.build/exh2
+?? src/.build/exh2b
+?? src/.build/lambda_ruler_sa
+?? src/.build/profile_sa
+?? src/.build/zp_half
+?? src/.build/zp_sa
+?? src/e68b_batch.sh
+.research/PROOFS.md:2527:## P77. CENTROID BARRIER for Boolean lifts of a finite set (lead, 2026-10-20 cont. 31; PROVED on paper, elementary;
+.research/PROOFS.md:2528:## numerical inputs E117; context CSTAR A10 / E116; not kernel-checked)
+.research/PROOFS.md:2564:- Inputs (E117, numerical eigenvalues, not certified): JL a = 2, j = 1: λ_odd = 0.605 (p=3), 0.542 (5), 0.390 (7),
+.research/PROOFS.md:2566:  SA-optimised one-rep lifts (E116) push φ to 0.48, 0.27, 0.11 (p = 3, 5, 7), approaching λ_odd at p = 3.
+.research/EXPERIMENTS.md:1719:- Run 2 (STOPPED at p = 83 to free the VM for E116; 37 solves, all OPTIMAL; examples/e115/np_k_run2.jsonl):
+.research/EXPERIMENTS.md:1724:## E116 (2026-10-20, cont. 31) Advisor's experiment: lifting a Jedwab–Li set to Z² (≡ Z) with a jointly optimised
+.research/EXPERIMENTS.md:1746:### E116 cont. — advisor's second review (2026-10-20): energy/negativity split, CERTIFIED K, where the error lives
+.research/EXPERIMENTS.md:1772:## E117 (2026-10-20, cont. 31) Concentration eigenvalues for the centroid barrier P77 (src/e117_concentration.py;
+.research/EXPERIMENTS.md:1776:  | p a j | n   | |D|  | |N|/n² | λ_odd  | φ centred lift | φ SA-optimised one-rep lift (E116) |
+#!/bin/zsh
+# Run one computation on the GCP VM "dirichlet" (project littlewood-paley-8375, us-east1-b; c2d-standard-8: 8 vCPU,
+# 32 GB, Ubuntu 24.04, gcc 13, venv ~/chowla_venv with numpy/scipy/mpmath/python-flint/highspy). Assigned to this
+# project by the user on 2026-10-18; the lead AND its agents run all calculations here. Do not touch the VM "fejer".
+#   src/dirun.sh [-c cores] [-m GB] [-t seconds] <command ...>    e.g.  src/dirun.sh -c 8 -t 7200 python src/exh2_driver.py 43 60
+# -c: CPU quota and thread/worker count (default 4, max 8; use 8 only for a job that should own the machine)
+# -m: memory cap enforced by the kernel, no swap (default 12 GB, max 30)
+# -t: wall-time limit (default 3600 s, max 86400 s)
+# Runs from ~/chowla_cosine on the VM, a copy of this project (code + small data; .venv, .git, lean/.lake, .build and
+# files >= 20 MB are not copied). `python` means ~/chowla_venv/bin/python. New/changed files under 20 MB are copied back.
+# C sources are compiled on the VM by the scripts themselves (cc -O3 -march=native); never copy local binaries.
+c=4; m=12; t=3600
+while getopts "c:m:t:" o; do case $o in c) c=$OPTARG;; m) m=$OPTARG;; t) t=$OPTARG;; *) exit 2;; esac; done
+shift $((OPTIND-1))
+(( $# )) || { sed -n 2,11p $0 >&2; exit 2; }
+(( c > 8 )) && c=8; (( c < 1 )) && c=1
+(( m > 30 )) && m=30
+(( t > 86400 )) && t=86400
+R=/Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+# DIRICHLET_IP (optional) skips the gcloud lookup, e.g. for codex agents whose sandbox cannot write ~/.config/gcloud.
+IP=${DIRICHLET_IP:-$(gcloud compute instances describe dirichlet --zone us-east1-b --project littlewood-paley-8375 \
+       --format='get(networkInterfaces[0].accessConfigs[0].natIP)' 2>/dev/null)}
+[[ -n $IP ]] || { echo "dirun.sh: cannot resolve dirichlet's IP (is the VM running?)" >&2; exit 255; }
+SSH=(ssh -i $HOME/.ssh/google_compute_engine -o UserKnownHostsFile=$HOME/.ssh/google_compute_known_hosts
+     -o HostKeyAlias=compute.2840844007150016813 -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=60)
+H=jmercedes@$IP
+$SSH $H true || { echo "dirun.sh: ssh to dirichlet failed" >&2; exit 255; }
+tag=$(date +%s)-$$
+rsync -a --update --max-size=20M -e "${(j: :)SSH}" --exclude '.venv' --exclude '.git' --exclude 'lean/.lake' \
+  --exclude '*.pyc' --exclude '.build' --exclude '.DS_Store' --exclude '__pycache__' $R/ ${H}:chowla_cosine/
+args=("$@"); [[ ${args[1]} == python ]] && args[1]=/home/jmercedes/chowla_venv/bin/python
+cmd=${(j: :)${(q)args}}
+$SSH $H "touch /tmp/ccmark.$tag; cd ~/chowla_cosine && sudo systemd-run --quiet --scope --uid=jmercedes \
+  -p MemoryMax=${m}G -p MemorySwapMax=0 -p CPUQuota=$((100 * c))% \
+  --setenv=PATH=/home/jmercedes/chowla_venv/bin:/opt/gurobi1303/linux64/bin:/usr/local/bin:/usr/bin:/bin --setenv=HOME=/home/jmercedes \
+  --setenv=GUROBI_HOME=/opt/gurobi1303/linux64 --setenv=LD_LIBRARY_PATH=/opt/gurobi1303/linux64/lib \
+  --setenv=GRB_LICENSE_FILE=/opt/gurobi1303/gurobi.lic \
+  --setenv=CHOWLA_WORKERS=$c --setenv=OMP_NUM_THREADS=$c --setenv=OPENBLAS_NUM_THREADS=$c \
+  --setenv=MKL_NUM_THREADS=$c --setenv=PYTHONUNBUFFERED=1 --working-directory=/home/jmercedes/chowla_cosine \
+  timeout -s KILL $t $cmd < /dev/null 2>&1; rc=\$?; \
+  find . -newer /tmp/ccmark.$tag -type f -size -20M ! -name '*.pyc' ! -path './.build/*' ! -path '*/__pycache__/*' \
+    > /tmp/ccnew.$tag; exit \$rc"
+rc=$?
+$SSH $H "cat /tmp/ccnew.$tag; rm -f /tmp/ccmark.$tag /tmp/ccnew.$tag" > /tmp/ccnew.$tag 2>/dev/null
+[[ -s /tmp/ccnew.$tag ]] && rsync -a --update -e "${(j: :)SSH}" --files-from=/tmp/ccnew.$tag ${H}:chowla_cosine/ $R/
+rm -f /tmp/ccnew.$tag
+(( rc == 137 || rc == 124 )) && echo "dirun.sh: job killed (time limit $t s or memory limit ${m} GB)" >&2
+exit $rc
+
+exec
+/bin/zsh -lc "python3 - <<'PY'
+from pathlib import Path
+root=Path.cwd()
+for p in list(reversed(root.parents))+[root,root/'.research',root/'.research/agents',root/'src']:
+ f=p/'AGENTS.md'
+ if f.exists(): print(f'\\n{f}\\n{f.read_text()}')
+PY
+sed -n '2527,"'$p'"' .research/PROOFS.md
+sed -n '1724,1810p' .research/EXPERIMENTS.md" in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 0ms:
+## P77. CENTROID BARRIER for Boolean lifts of a finite set (lead, 2026-10-20 cont. 31; PROVED on paper, elementary;
+## numerical inputs E117; context CSTAR A10 / E116; not kernel-checked)
+Setting. n >= 2, D ⊂ Z_n² with D = −D, 0 ∉ D, finite spectrum D̂(χ) = Σ_{g∈D} cos(2πχ·g/n) (χ ∈ Z_n²).
+Fix r' and a background set B ⊂ {χ ≠ 0 : D̂(χ) <= −r'}; put N = Z_n² ∖ B. A ONE-REP LIFT is an odd map z: D → Z²
+with z(g) ≡ g (mod n); T = z(D), F(ξ) = Σ_{g∈D} cos(2π z(g)·ξ) on T², K(T) = −min F. Define
+  W(χ) = Σ_g z(g) sin(2πχ·g/n) ∈ R²,   A2 = Σ_{χ∈B} |W(χ)|²,   Z4 = (Σ_g |z(g)|⁴)^{1/2},
+and λ_odd = top eigenvalue of the concentration operator C = 1_D·P_N·1_D on ODD real functions on D,
+P_N f = (1/n²)Σ_{χ∈N} f̂(χ)χ (so Σ_{χ∈N}|f̂(χ)|² = n²⟨f, Cf⟩).
+Theorem. (a) K(T) >= r' + A2/(8n|B|^{1/2}Z4).
+(b) A2 >= (1 − λ_odd)·n²·Σ_g |z(g)|². Hence, since |B| <= n²,
+        K(T) >= r' + ((1 − λ_odd)/8) · Σ_g|z(g)|² / (Σ_g|z(g)|⁴)^{1/2}.
+(c) If every |z(g)| <= √2·Vn (reps within V periods) and Σ_g|z(g)|² >= β|D|n², then
+        K(T) >= r' + (1 − λ_odd)·β·|D|^{1/2}/(16V²).
+Proof. (a) z(g) ≡ g gives e(z(g)·(χ + α)/n) = e(χ·g/n)e(z(g)·α/n). For χ ∈ B pick u_χ ∈ U = {±e₁, ±e₂} with
+u_χ·W(χ) = |W(χ)|_∞ and put h_χ(t) = F((χ + t u_χ)/n) = Σ_g cos(2π(χ·g + t z(g)·u_χ)/n). Then h_χ(0) = D̂(χ) <= −r',
+h_χ'(0) = −(2π/n)|W(χ)|_∞, h_χ''(t) = −(4π²/n²)Re Q_{u_χ}(χ, t) with Q_u(χ, t) = Σ_g e((χ·g + t z(g)·u)/n)(z(g)·u)².
+For fixed u and t, Parseval over all χ ∈ Z_n² gives Σ_χ|Q_u(χ,t)|² = n²Σ_g(z(g)·u)⁴ <= n²Z4². For weights ω on B
+(Σω = 1), Cauchy–Schwarz on each B_u = {χ : u_χ = u} and over the four u:
+  Σ_χ ω_χ|h_χ''(t)| <= (4π²/n²)·Σ_u ‖ω|_{B_u}‖₂·nZ4 <= (8π²/n)Z4‖ω‖₂.
+Taylor with integral remainder and min F <= Σ_χ ω_χ h_χ(ρ):
+  min F <= −r' − (2πρ/n)Σ_χ ω_χ|W(χ)|_∞ + (4π²ρ²/n)Z4‖ω‖₂.
+Take ω_χ = |W(χ)|_∞/S₁ (S₁ = Σ_B|W|_∞, S₂ = Σ_B|W|_∞²) and optimise ρ: min F <= −r' − S₂^{3/2}/(4nS₁Z4). Then
+S₁ <= (|B|S₂)^{1/2} and S₂ >= A2/2. ∎(a)
+(b) Each coordinate f_k = z_k·1_D is odd and real, so f̂_k = i·W_k and Σ_χ|W(χ)|² = n²Σ_g|z(g)|² (Parseval).
+Σ_{χ∈N}|W|² = Σ_k n²⟨f_k, Cf_k⟩ <= λ_odd n²Σ_g|z(g)|², and W(0) = 0. ∎(b)   (c) is (b) with Z4 <= √|D|·2V²n².
+Remarks.
+- FRACTIONAL lifts escape exactly here: for the PD taper τ = Λ(z₁/n)Λ(z₂/n), Σ_{z≡g} τ(z) z = 0 for EVERY class (the
+  τ-weighted centroid of the lattice translates vanishes), so the first-order term is identically 0, while
+  Σ_{z≡g}τ(z) = 1 and F_w >= −r (Poisson). A Boolean lift with 1 <= m(g) < n reps in class g has centroid sum
+  M_g ≡ m(g)·g (mod n), never 0 for g of order n. The same proof with z(g) replaced by M_g (and D̂ by m̂, Z4 by
+  (Σ_g(Σ_{z≡g}|z|²)²)^{1/2}) covers lifts with class multiplicities m(g); for constant m ≡ c it gives
+  ratio = c|D|/K² <= C·c³V⁴/((1 − λ_odd)²β²).
+- Scope. This is a barrier for a MODEL CLASS (Boolean lifts of a fixed finite set with bounded spread V), not for Z.
+  For an arbitrary S ⊂ Z reduced mod N the hypothesis λ_odd < 1 is exactly what a C* object would violate (its own
+  position field is concentrated on its spikes, since F' ≈ 0 on a flat background), so P77 says nothing about C*
+  in general. It lower-bounds the Z² minimum; a 1D Freiman image (z₁ + Vz₂) has K_1D <= K_2D, with K_1D → K_2D as
+  V → ∞, so P77 transfers to 1D images only for large V.
+- Inputs (E117, numerical eigenvalues, not certified): JL a = 2, j = 1: λ_odd = 0.605 (p=3), 0.542 (5), 0.390 (7),
+  0.303 (11), 0.353 (13); a = 3, p = 3: 0.801 (j=1), 0.756 (j=0). Centred lifts have φ := Σ_N|W|²/Σ|W|² = 0.05–0.32;
+  SA-optimised one-rep lifts (E116) push φ to 0.48, 0.27, 0.11 (p = 3, 5, 7), approaching λ_odd at p = 3.
+- So, IF λ_odd <= 1 − c uniformly in p (numerically <= 0.61 for a = 2, p <= 13; unproved), every bounded-spread
+  one-rep lift of the JL a = 2 family has ratio <= C(c, V, β) uniformly in p: the "lift a high-ratio finite object"
+  model cannot reach ratio → ∞. The constant is weak (p = 7: bound increment ≈ 1.2 against the observed K − r ≈ 38).
+## E116 (2026-10-20, cont. 31) Advisor's experiment: lifting a Jedwab–Li set to Z² (≡ Z) with a jointly optimised
+## Boolean taper (src/e116_jl_taper.py; dirichlet; minima NUMERICAL: FFT grid 16(2L+1) + BFGS, not certified)
+Lift P_L = {z ∈ [−L, L]² : z mod n ∈ D_{a,j}}; Boolean T ⊂ P_L maps to S = {z₁ + Vz₂} ⊂ Z (V > 4L) with
+ratio_1D >= |T|/K'_2D², R_1D <= K'/√(2|T|). ratio 2 ⟺ R = ½; best known integer sets of size ~100–250: ratio ≈ 1.4.
+Measured (i) finite, (ii) fractional PD taper w = Λ(z₁/L)Λ(z₂/L), (iii) Boolean (box = centred representatives;
+Bernoulli(w) rounding, seeds 0–3):
+  | p a j | L  | |D| | K_G | ratio_G | K_frac | Σw²   | ratio_frac | box: |T|, K', ratio | Bernoulli ratio     |
+  | 3 2 1 | 9  | 24  | 3   | 2.67    | 3.000  | 9.41  | 1.05       | 24, 10.28, 0.227   | 0.13–0.16           |
+  | 5 2 1 | 25 | 120 | 5   | 4.80    | 5.000  | 50.93 | 2.04       | 120, 32.3, 0.115   | 0.078–0.110         |
+  | 5 2 1 | 50 | 120 | 5   | 4.80    | 20.00  | 211.1 | 0.53       | 120, 32.3, 0.115   | 0.077–0.097         |
+- (ii) is exact theory: with L = n the PD taper vanishes on nZ² ∖ 0, so by Poisson F_w >= −r·τ(0) = −r (observed
+  K_frac = r to 1e−13). The fractional lift costs only the factor Σw²/|D| ≈ (2/3)² = 4/9 (a sinc taper would cost
+  nothing: Σw² = |D|). L = 2n is worse (K scales by (L/n)² = 4, Σw² only by 4, so the ratio drops by 4). So the Gibbs penalty of the box is
+  ENTIRELY avoidable for fractional weights; the whole loss is the 0/1 constraint.
+- (iii) naive Booleans lose a factor ≈ 20–60 in ratio. Bernoulli matches the noise prediction
+  K ≈ √(2·(5/9)|D|·ln(4n²)) (p = 5: 32 predicted, 31–38 observed).
+- PREDICTION (lead, falsifiable, recorded before the MILP results): the jointly optimised Boolean T stays at ratio
+  <= ~1.4 (R >= 0.6) for p = 3, 5, i.e. no better than unstructured integer optima of the same size, and the ratio
+  gap ratio_frac/ratio_bool grows with p. A ratio > 2 at p = 5 would refute the Gibbs-versus-rounding dichotomy.
+- MILP batch 1 (running): max |T| s.t. F_T >= −Kthr (lazy cuts at true minimisers), p = 3 (L = 9, Kthr 3–6, plus
+  the unrestricted box as control) and p = 5 (L = 25, Kthr 5, 7.5, 10, 15); 1800 s each; examples/e116/milp1.jsonl.
+
+### E116 cont. — advisor's second review (2026-10-20): energy/negativity split, CERTIFIED K, where the error lives
+(src/e116_analyze.py; examples/e116/analysis1.jsonl). Ɛ = Σ_{s≠0}|a_s|² (= |T| for 0/1), ρ = Ɛ/K²,
+ρ_int/ρ_G = (Ɛ_int/Ɛ_G)·(K_G/K_int)². K is CERTIFIED for the 1D integer image A = {z₁ + Vz₂} (V = 4L + 3):
+upper end = −2·certify_lower_bound_blocked(A) (rigorous), lower end = −2 f_A(x*) at a definite x* (mpmath 60 digits).
+Both ends agree to 3 decimals in every row, so these K are certified.
+  | instance (best found)          | Ɛ   | Ɛ/Ɛ_G | K (cert.) | (K_G/K)² | ρ     | ρ_G  | K/√(Ɛ ln n²) |
+  | FD lift p=3 a=2 (SA)           | 24  | 1     | 8.164     | 0.135    | 0.360 | 2.67 | 0.80          |
+  | FD lift p=5 a=2 (SA)           | 120 | 1     | 23.354    | 0.046    | 0.220 | 4.80 | 0.84          |
+  | FD lift p=3 a=3 (SA)           | 234 | 1     | 33.240    | 0.073    | 0.212 | 2.89 | 0.83          |
+  | FD lift p=7 a=2 (SA)           | 336 | 1     | 45.137    | 0.024    | 0.165 | 6.86 | 0.88          |
+  | MILP p=3, Kthr 5 (OPTIMAL)     | 20  | 0.833 | 5.000     | 0.360    | 0.800 | 2.67 | —             |
+  | fractional τ-lift p=5 (theory) | 51  | 0.42  | 5 (exact) | 1        | 2.04  | 4.80 | —             |
+- Split: fundamental-domain (FD) lifts keep all the energy and lose everything in K. The optimal MILP subsets trade
+  some energy for K. The fractional lift keeps K and loses 58% of the energy (advisor's correction: the boundary cost is
+  NOT avoided, it is moved from K into Ɛ). The "sinc taper keeps all of ρ_G" remark is RETRACTED: sinc weights are
+  negative in places, so it is not a relaxation of a 0/1 set; with weights in [0,1] the best energy retention is open
+  (triangle: 4/9 in 2D).
+- FD scaling (p = 3, 5, 7 at a = 2): ρ = 0.360, 0.220, 0.165, DECREASING in p; K/√(Ɛ ln n²) ≈ 0.80–0.88, i.e.
+  random-level negativity K ≈ 0.85√(Ɛ ln n²). Consistent with the prediction, for this class only.
+- Where the error lives. Reference = fractional τ-lift of T's own class multiplicities (K_ref = K_G exactly on the
+  grid). Spike region Σ+ = {F_w > 0} (measure 0.24–0.39). Fraction of ∫e² on Σ+: 0.57, 0.41, 0.47, 0.28 for the FD
+  rows (1.2–1.5 × the area share) and 0.52–0.63 for the MILP optima (1.2–1.7 ×). The most negative error on the
+  background (−8.0, −22.3, −32.3, −42.5) is essentially the global minimum. So the optimiser hides only a little of the
+  rounding error under the spikes; the binding negativity is on the background.
+- Pending: certified Gurobi bounds at p = 5 (batch 1) and p = 7 (to queue); free-subset SA at p = 5, 7.
+
+## E117 (2026-10-20, cont. 31) Concentration eigenvalues for the centroid barrier P77 (src/e117_concentration.py;
+## dirichlet; NUMERICAL eigenvalues, numpy eigvalsh, not certified)
+N = Z_n² ∖ B (B = {D̂ = −r}, the background), λ_odd = top eigenvalue of 1_D P_N 1_D on odd functions; φ = fraction of
+the centroid field's W-energy on N.
+  | p a j | n   | |D|  | |N|/n² | λ_odd  | φ centred lift | φ SA-optimised one-rep lift (E116) |
+  | 3 2 1 | 9   | 24   | 0.309  | 0.6055 | 0.133          | 0.476                              |
+  | 5 2 1 | 25  | 120  | 0.194  | 0.5418 | 0.085          | 0.266                              |
+  | 7 2 1 | 49  | 336  | 0.140  | 0.3897 | 0.084          | 0.110                              |
+  | 11 2 1| 121 | 1320 | 0.090  | 0.3034 | 0.058          | —                                  |
+  | 13 2 1| 169 | 2184 | 0.077  | 0.3532 | 0.053          | —                                  |
+  | 3 3 1 | 27  | 234  | 0.322  | 0.8007 | 0.176          | —                                  |
+  | 3 3 0 | 27  | 234  | 0.322  | 0.7558 | 0.317          | —                                  |
+Reading: the optimiser does move the centroid field toward the spikes (φ 0.13 → 0.48 at p = 3) but cannot exceed
+λ_odd, which stays <= 0.61 for a = 2. This is the quantitative content of "the rounding error cannot hide under the
+spikes" at first order (P77).
+
+exec
+/bin/zsh -lc 'cat src/e116_jl_taper.py
+cat src/e117_concentration.py
+cat src/e114_cp_group.py
+cat /Users/jmercedes/.codex/skills/number-theory-research/references/experiment-design.md
+cat /Users/jmercedes/.codex/skills/number-theory-research/references/arithmetic-methods.md' in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 0ms:
+r"""E116: lifting a Jedwab–Li two-valued set from Z_n² to Z² (hence Z) with a JOINTLY optimised Boolean taper
+(advisor's experiment, cont. 31). Lead.
+
+Object. D = D_{a,j} ⊂ Z_n², n = p^a, an exact LS_r(n) PDS (r = p^{a−1}): D̂ ∈ {n − r, −r} off 0, ratio_G = |D|/r².
+Lift. P_L = {z ∈ [−L, L]² : z mod n ∈ D} (symmetric, 0 ∉ P_L). A weight w on P_L gives the 2D cosine polynomial
+    F_w(ξ) = Σ_{z ∈ P_L} w_z cos(2π z·ξ),   ξ ∈ T²,   K'(w) = −min_{T²} F_w.
+A Boolean w = 1_T (T ⊂ P_L symmetric) maps to the integer set S = {z₁ + V z₂ : z ∈ T} (V > 4L), whose 1D cosine sum is
+F_T restricted to the line ξ = (t, Vt); so K'_1D <= K'_2D and ratio_1D = |S|/K'_1D² >= |T|/K'_2D².
+(Chowla on Z² is equivalent to Chowla on Z by this Freiman map.) R_1D = K'/√(2|T|) (ratio 2 ⟺ R = 1/2).
+Measured quantities (advisor):
+  (i)   ratio_G (exact on Z_n²);
+  (ii)  fractional lift w = Λ(z₁/L)Λ(z₂/L) (PD taper, F_w >= −r exactly when L = n by Poisson): K'_frac, Σw², Σw²/K'²;
+  (iii) Boolean: hard box (one representative per class), Bernoulli rounding of the taper, and a jointly optimised T
+        (Gurobi MILP: max |T| s.t. F_T >= −Kthr at cut points; lazy cuts at incumbents' true minimisers).
+All minima are NUMERICAL (FFT grid + local refinement), not interval-certified.
+Usage:
+  python src/e116_jl_taper.py measure p a j L [seeds]
+  python src/e116_jl_taper.py milp p a j L Kthr timelimit [threads] [full]    (full: all of [−L,L]² as control)
+"""
+import sys, json, time, math
+import numpy as np
+from scipy.optimize import minimize
+
+sys.path.insert(0, "src")
+from e114_cp_group import jl_set
+
+
+def lift(D, n, L, full=False):
+    pts = []
+    for z1 in range(-L, L + 1):
+        for z2 in range(-L, L + 1):
+            if (z1, z2) == (0, 0):
+                continue
+            if full or ((z1 % n, z2 % n) in D):
+                pts.append((z1, z2))
+    pairs = [z for z in pts if (z[0] > 0 or (z[0] == 0 and z[1] > 0))]  # one of each ±z
+    return np.array(pairs, dtype=np.int64)
+
+
+def grid_values(pairs, w, G):
+    """F_w on the G×G grid, w per pair (each pair contributes 2w cos)."""
+    A = np.zeros((G, G))
+    np.add.at(A, (pairs[:, 0] % G, pairs[:, 1] % G), w)
+    np.add.at(A, ((-pairs[:, 0]) % G, (-pairs[:, 1]) % G), w)
+    return np.fft.fft2(A).real  # Σ w cos(2π z·(i,j)/G) summed over ±z
+
+
+def Fval(pairs, w, xi):
+    ph = 2 * np.pi * (pairs @ xi)
+    return 2 * np.dot(w, np.cos(ph)), -2 * 2 * np.pi * (w * np.sin(ph)) @ pairs
+
+
+def true_min(pairs, w, L, G=None, nstart=12):
+    if G is None:
+        G = 1 << int(math.ceil(math.log2(16 * (2 * L + 1))))
+    V = grid_values(pairs, w, G)
+    flat = np.argsort(V, axis=None)[: 4 * nstart]
+    best = (V.flat[flat[0]], np.array(np.unravel_index(flat[0], V.shape)) / G)
+    seen = []
+    for idx in flat:
+        x0 = np.array(np.unravel_index(idx, V.shape), dtype=float) / G
+        if any(np.max(np.abs(((x0 - s + 0.5) % 1) - 0.5)) < 2.0 / G for s in seen):
+            continue
+        seen.append(x0)
+        r = minimize(lambda x: Fval(pairs, w, x), x0, jac=True, method="BFGS", options={"gtol": 1e-10})
+        if r.fun < best[0]:
+            best = (r.fun, r.x % 1)
+        if len(seen) >= nstart:
+            break
+    return float(best[0]), best[1], V, G
+
+
+def finite_K(D, n):
+    A = np.zeros((n, n))
+    for (x, y) in D:
+        A[x, y] = 1
+    F = np.fft.fft2(A).real
+    F[0, 0] = np.inf
+    return float(-F.min())
+
+
+def measure(p, a, j, L, seeds=5):
+    D, n = jl_set(p, a, j)
+    r = finite_K(D, n)
+    out = {"p": p, "a": a, "j": j, "n": n, "L": L, "D": len(D), "K_G": r, "ratio_G": len(D) / r ** 2}
+    pairs = lift(D, n, L)
+    lam = (1 - np.abs(pairs[:, 0]) / L).clip(0) * (1 - np.abs(pairs[:, 1]) / L).clip(0)
+    # (ii) fractional PD taper
+    Kf = -true_min(pairs, lam, L)[0]
+    s2 = 2 * float((lam ** 2).sum())
+    out.update({"lift_points": 2 * len(pairs), "K_frac": Kf, "sumw2_frac": s2, "ratio_frac": s2 / Kf ** 2,
+                "sumw_frac": 2 * float(lam.sum())})
+    # (iii-a) hard box: centred representative of each class
+    h = n // 2
+    box = ((np.abs(pairs[:, 0]) <= h) & (np.abs(pairs[:, 1]) <= h)).astype(float)
+    Kb = -true_min(pairs, box, L)[0]
+    out.update({"box_size": 2 * int(box.sum()), "K_box": Kb, "ratio_box": 2 * box.sum() / Kb ** 2})
+    # (iii-b) Bernoulli rounding of the taper
+    rs = []
+    for s in range(seeds):
+        rng = np.random.default_rng(s)
+        b = (rng.random(len(pairs)) < lam).astype(float)
+        Kr = -true_min(pairs, b, L)[0]
+        rs.append((2 * int(b.sum()), Kr, 2 * b.sum() / Kr ** 2))
+    out["bernoulli"] = rs
+    return out
+
+
+def milp(p, a, j, L, Kthr, tl, threads=8, full=False):
+    import gurobipy as gp
+    from gurobipy import GRB
+    D, n = jl_set(p, a, j)
+    pairs = lift(D, n, L, full=full)
+    P = len(pairs)
+    m = gp.Model()
+    m.Params.OutputFlag = 0
+    m.Params.TimeLimit = tl
+    m.Params.Threads = threads
+    m.Params.LazyConstraints = 1
+    m.Params.IntFeasTol = 1e-9
+    m.Params.FeasibilityTol = 1e-8
+    x = m.addVars(P, vtype=GRB.BINARY)
+    # initial cuts: grid of spacing 1/(2L+1) on the half torus
+    g = 2 * L + 1
+    cuts = [(i / g, k / g) for i in range(g) for k in range(g) if (i, k) != (0, 0) and (i, k) <= ((-i) % g, (-k) % g)]
+    def addcut(xi, lazy=None):
+        c = 2 * np.cos(2 * np.pi * (pairs @ np.array(xi)))
+        expr = gp.quicksum(float(c[t]) * x[t] for t in range(P))
+        if lazy is None:
+            m.addConstr(expr >= -Kthr)
+        else:
+            lazy.cbLazy(expr >= -Kthr)
+    for xi in cuts:
+        addcut(xi)
+    m.setObjective(gp.quicksum(x[t] for t in range(P)), GRB.MAXIMIZE)
+    stats = {"lazy": 0, "inc": []}
+    t0 = time.time()
+
+    def cb(model, where):
+        if where == GRB.Callback.MIPSOL:
+            v = np.array(model.cbGetSolution([x[t] for t in range(P)]))
+            w = (v > 0.5).astype(float)
+            fmin, xi, V, G = true_min(pairs, w, L, nstart=6)
+            if fmin < -Kthr - 1e-7:
+                addcut(tuple(xi), model)
+                stats["lazy"] += 1
+                # also the worst grid local minima
+                flat = np.argsort(V, axis=None)[:5]
+                for idx in flat:
+                    if V.flat[idx] < -Kthr - 1e-7:
+                        addcut(tuple(np.array(np.unravel_index(idx, V.shape)) / G), model)
+                        stats["lazy"] += 1
+            else:
+                stats["inc"].append((round(time.time() - t0, 1), 2 * int(w.sum()), round(-fmin, 6)))
+
+    m.optimize(cb)
+    out = {"p": p, "a": a, "j": j, "n": n, "L": L, "full": full, "Kthr": Kthr, "pairs": P, "status": m.Status,
+           "seconds": round(time.time() - t0, 1), "bound_T": 2 * m.ObjBound if m.SolCount or True else None,
+           "lazy": stats["lazy"], "incumbents": stats["inc"][-5:]}
+    if m.SolCount:
+        w = np.array([x[t].X > 0.5 for t in range(P)], dtype=float)
+        fmin, xi, _, _ = true_min(pairs, w, L, G=1 << int(math.ceil(math.log2(32 * (2 * L + 1)))), nstart=20)
+        T = int(2 * w.sum())
+        out.update({"T": T, "K_true": -fmin, "ratio": T / fmin ** 2, "R1D_upper": -fmin / math.sqrt(2 * T),
+                    "ratio_bound_at_Kthr": out["bound_T"] / Kthr ** 2,
+                    "T_pairs": pairs[w > 0.5].tolist()})
+    return out
+
+
+if __name__ == "__main__":
+    cmd = sys.argv[1]
+    if cmd == "measure":
+        p, a, j, L = (int(t) for t in sys.argv[2:6])
+        seeds = int(sys.argv[6]) if len(sys.argv) > 6 else 5
+        print(json.dumps(measure(p, a, j, L, seeds)), flush=True)
+    elif cmd == "milp":
+        p, a, j, L = (int(t) for t in sys.argv[2:6])
+        Kthr, tl = float(sys.argv[6]), float(sys.argv[7])
+        th = int(sys.argv[8]) if len(sys.argv) > 8 else 8
+        full = len(sys.argv) > 9 and sys.argv[9] == "full"
+        print(json.dumps(milp(p, a, j, L, Kthr, tl, th, full)), flush=True)
+r"""E117 (lead, cont. 31): centroid-lemma inputs for Jedwab–Li sets D ⊂ Z_n².
+lambda_odd = top eigenvalue of the concentration operator f ↦ 1_D·P_{N}(f) on ODD real functions on D, where
+N = Z_n² ∖ B, B = {χ : D̂(χ) <= −r'} (r' = K_G: the background). φ_B(z) <= lambda_odd for EVERY lift z (each
+coordinate of the centroid field is an odd function on D). Also reports φ_B for the canonical (centred) lift and
+for lifts read from a jsonl (fd 'reps').
+Usage: python src/e117_concentration.py p a j [jsonl idx ...]
+"""
+import sys, json, math
+import numpy as np
+sys.path.insert(0, "src")
+from e114_cp_group import jl_set
+
+p, a, j = (int(t) for t in sys.argv[1:4])
+D, n = jl_set(p, a, j)
+Dl = sorted(D)
+A = np.zeros((n, n)); 
+for (x, y) in Dl: A[x, y] = 1
+Dh = np.fft.fft2(A).real
+r = -Dh[np.unravel_index(np.argmin(np.where(np.arange(n*n).reshape(n,n)==0, np.inf, Dh)), Dh.shape)]
+B = np.isclose(Dh, -r); B[0, 0] = False
+N = ~B  # includes 0 and the spikes
+chis = np.argwhere(N)
+G = np.array(Dl)
+# odd basis: one g per ±pair
+idx = {g: i for i, g in enumerate(Dl)}
+half = [g for g in Dl if g < ((-g[0]) % n, (-g[1]) % n)]
+# C[g,g'] = (1/n²) Σ_{χ∈N} cos(2π χ·(g−g')/n); on odd functions (e_g − e_{−g}) the restricted matrix is
+# Codd[g,h] = C[g,h] − C[g,−h]  (for g,h in 'half')
+Hh = np.array(half)
+cN = np.fft.fft2(N.astype(float)).real / n ** 2   # c(h) = (1/n²) Σ_{χ∈N} cos(2π χ·h/n)  (N = −N)
+def Cmat(X, Y):
+    d = (X[:, None, :] - Y[None, :, :]) % n
+    return cN[d[..., 0], d[..., 1]]
+Codd = Cmat(Hh, Hh) - Cmat(Hh, (-Hh) % n)
+ev = np.linalg.eigvalsh(Codd)
+out = {"p": p, "a": a, "j": j, "n": n, "D": len(D), "r": float(r), "N_size": int(N.sum()), "N_frac": float(N.mean()),
+       "lambda_odd_top": float(ev[-1]), "lambda_odd_top5": [float(v) for v in ev[-5:]],
+       "trace_frac": float(ev.sum() / len(ev))}
+def phi(Z):
+    # centroid field z (one rep per class) -> fraction of Σ|W|² outside B
+    W = np.zeros((n, n, 2))
+    for g, z in Z.items():
+        ph = 2 * np.pi * (np.arange(n)[:, None] * g[0] + np.arange(n)[None, :] * g[1]) / n
+        W += np.sin(ph)[..., None] * np.array(z, dtype=float)[None, None, :]
+    tot = (W ** 2).sum(); return float((W[N] ** 2).sum() / tot), float(tot)
+cen = {g: (((g[0] + n // 2) % n) - n // 2, ((g[1] + n // 2) % n) - n // 2) for g in Dl}
+out["phi_centred"], out["W2_centred"] = phi(cen)
+for spec in sys.argv[4:]:
+    f, i = spec.rsplit(":", 1)
+    d = json.loads(open(f).read().splitlines()[int(i)])
+    Z = {}
+    for z in d["reps"]:
+        g = (z[0] % n, z[1] % n); Z[g] = tuple(z); Z[((-g[0]) % n, (-g[1]) % n)] = (-z[0], -z[1])
+    out["phi_" + spec] = phi(Z)
+print(json.dumps(out), flush=True)
+"""E114: flat completely-positive certificate cost for symmetric D in G = Z_m^2 (lead, cont. 30).
+Is the Jedwab–Li non-subgroup LS PDS (CSTAR A9) CP-efficient? Flat CP: cliques B ∋ 0 of Cay(G, D) (B ⊂ D ∪ {0},
+B − B ⊂ D ∪ {0}), weights w >= 0, Σ_B w_B m_B(h) = 1_D(h) (h ≠ 0, unordered ±pairs), cost C = Σ_B w_B |B|.
+Then Σ w_B |F_B(χ)|² = C + D̂(χ), so K <= C. Column generation: Gurobi LP master + exact Gurobi MILP pricing
+(max Σ_{pairs} y − |B| over cliques containing 0). Output: K, ratio |D|/K², clique number, C_flat (UB; LB = LP dual
+when the final pricing is optimal), and the block structure. Numerical LP (Gurobi tolerances).
+Usage: python src/e114_cp_group.py p a j [tlim]
+"""
+import sys, json, cmath, math, itertools
+import gurobipy as gp
+
+def jl_set(p, a, j):
+    m = p ** a; D = set()
+    for x in range(m):
+        for y in range(1, m):
+            k = 0; yy = y
+            while yy % p == 0: yy //= p; k += 1
+            b = a - k; mb = p ** b; z = (y // p ** k) % mb
+            v = ((x % mb) * pow(z, -1, mb)) % mb
+            if j * p ** (b - 1) <= v < (j + 1) * p ** (b - 1): D.add((x, y))
+    return D, m
+
+def main():
+    p, a, j = (int(t) for t in sys.argv[1:4]); tlim = float(sys.argv[4]) if len(sys.argv) > 4 else 600
+    D, m = jl_set(p, a, j)
+    assert all(((-x) % m, (-y) % m) in D for x, y in D) and (0, 0) not in D
+    sub = lambda u, v: ((u[0] - v[0]) % m, (u[1] - v[1]) % m)
+    key = lambda h: min(h, ((-h[0]) % m, (-h[1]) % m))
+    vals = []
+    for u in range(m):
+        for v in range(m):
+            if (u, v) == (0, 0): continue
+            vals.append(sum(math.cos(2 * math.pi * (u * x + v * y) / m) for x, y in D))
+    K = -min(vals); lags = sorted({key(h) for h in D}); V = sorted(D)
+    # pricing graph on V (0 is forced into B)
+    adj = {(s, t) for s in range(len(V)) for t in range(s + 1, len(V)) if sub(V[t], V[s]) in D}
+    def m_of(B):
+        cnt = {}
+        for s in range(len(B)):
+            for t in range(s + 1, len(B)):
+                h = key(sub(B[t], B[s])); cnt[h] = cnt.get(h, 0) + 1
+        return cnt
+    cols = [[(0, 0), h] for h in lags]
+    pr = gp.Model(); pr.Params.OutputFlag = 0; pr.Params.TimeLimit = tlim
+    x = pr.addVars(len(V), vtype=gp.GRB.BINARY)
+    z = {}
+    for s in range(len(V)):
+        for t in range(s + 1, len(V)):
+            if (s, t) in adj:
+                z[s, t] = pr.addVar(lb=0, ub=1); pr.addConstr(z[s, t] <= x[s]); pr.addConstr(z[s, t] <= x[t])
+                pr.addConstr(z[s, t] >= x[s] + x[t] - 1)
+            else:
+                pr.addConstr(x[s] + x[t] <= 1)
+    pr.update()
+    # clique number (cliques containing 0): maximise Σ x
+    pr.setObjective(gp.quicksum(x[s] for s in range(len(V))), gp.GRB.MAXIMIZE); pr.optimize()
+    omega = int(round(pr.ObjVal)) + 1; omega_status = pr.Status
+    it = 0
+    while True:
+        it += 1
+        mst = gp.Model(); mst.Params.OutputFlag = 0
+        w = [mst.addVar(lb=0) for _ in cols]; mc = [m_of(B) for B in cols]
+        cons = {h: mst.addConstr(gp.quicksum(w[i] * mc[i].get(h, 0) for i in range(len(cols))) == 1) for h in lags}
+        mst.setObjective(gp.quicksum(w[i] * len(B) for i, B in enumerate(cols)), gp.GRB.MINIMIZE); mst.optimize()
+        C = mst.ObjVal; y = {h: cons[h].Pi for h in lags}
+        obj = gp.quicksum(y[key(V[s])] * x[s] for s in range(len(V))) - gp.quicksum(x[s] for s in range(len(V)))
+        obj += gp.quicksum(y[key(sub(V[t], V[s]))] * z[s, t] for (s, t) in z)
+        pr.setObjective(obj, gp.GRB.MAXIMIZE); pr.optimize()
+        red = pr.ObjVal - 1   # the element 0 itself costs 1
+        status = "opt" if pr.Status == 2 else "timelimit"
+        print(json.dumps(dict(it=it, C=C, reduced=red, status=status, ncols=len(cols))), flush=True)
+        if red <= 1e-7: break
+        B = [(0, 0)] + [V[s] for s in range(len(V)) if x[s].X > 0.5]
+        if B in cols: status = "stalled"; break
+        cols.append(B)
+    used = [(w[i].X, len(B)) for i, B in enumerate(cols) if w[i].X > 1e-9]
+    sizes = {}
+    for wt, sz in used: sizes[sz] = sizes.get(sz, 0) + wt
+    out = dict(p=p, a=a, j=j, m=m, size=len(D), K=K, ratio=len(D) / K ** 2, omega=omega, omega_status=omega_status,
+               delsarte=1 + len(D) / K, C_flat=C, eff=C / K, final_pricing=status, weight_by_block_size=sizes)
+    print(json.dumps(out), flush=True)
+    json.dump(out, open(f"examples/e114/jl_p{p}a{a}j{j}.json", "w"))
+
+if __name__ == "__main__":
+    main()
+# Discriminating experiments for number theory
+
+Design an experiment to **separate hypotheses**, not to produce a large integer count.
+
+## Before execution
+
+State (a) exact identity or predicate; (b) finite parameter ranges, exclusions and sampling policy; (c) what outcome would refute the candidate lemma; (d) what each possible result *would and would not* imply; (e) expected runtime/memory budget and stop conditions.
+
+## During execution
+
+- Use exact integer/rational arithmetic wherever possible, not floating square tests or approximate divisibility.
+- For a square, test integer-square-root equality, not a floating `sqrt` comparison. For prime p, distinguish probable from proved primality when proof status matters.
+- For elliptic curves, record model, transformations, denominators, ranks and reduction primes. Don't infer global relations from numerically sampled reductions.
+- Separate preliminary heuristics from verified claims. Try counterexample-shaped extremes as well as uniform samples: prime powers, ramified primes, large gcd, maximal valuations, singular discriminants, high conductor, parameter boundary.
+- Save a script (Sage/GP/Python), inputs, software version, outputs, and the exact domain excluded. If an independent computation is affordable, compare.
+
+## After execution
+
+A negative bounded search only excludes the enumerated set. Ask: What pattern appeared? What explanation predicts it? What counterexample-shaped case should be tested next? Can a found invariant be turned into a provable lemma? If no new information, kill or transform the experiment; do not expand the same box by another arbitrary factor of ten.
+
+## Minimum artifact
+
+The user should be able to reconstruct the computation from the reported script, explicit bounds and predicate. For hand algebra, record the identity and its derivation sufficiently for an independent reviewer to check it.
+# Number theory attack-selection guide
+
+Use this to select **testable new mathematical mechanisms**, not as a list of topics to name-drop. Each approach below must be reduced to a lemma or a concrete experiment in the current problem.
+
+## Diophantine and integral points
+
+- **Local obstructions:** derive congruence classes modulo prime powers (including wild primes and parameters with large valuations), then determine whether the obstruction is sufficient for the global conclusion. Passing every tested modulus is not a Hasse principle.
+- **Parametrization/inverse construction:** solve the equations for one parameter to produce a structured infinite family; impose integrality, positivity, coprimality, or square conditions exactly. Check whether multiple constructions coexist at the *same* parameter values, rather than separately.
+- **Height and descent:** identify a well-founded height that *strictly decreases* under the proposed map; prove integrality/positivity persists. A decreasing rational height alone does not prove integral descent.
+- **Linear forms/Thue/Mordell:** translate to a named equation carefully; verify effective vs ineffective bounds, constants, dependence on parameters, and whether the theorem is uniform across a family.
+- **Curve genus:** computing genus or invoking Faltings's finiteness does not give a uniform numerical bound across all parameter triples. Convert finiteness to a task-specific explicit statement only when justified.
+
+## Elliptic curves and arithmetic geometry
+
+- **Model discipline:** record Weierstrass equation, discriminant, bad primes, minimal model, and birational transformations with denominators. Check what happens to integral points under each map.
+- **Group structure:** separate E(Q), integral points, torsion subgroup, rank, isogeny class, saturation, and Mordell–Weil lattice. Rational points P±Q need not be integral.
+- **Independence/support:** when seeking a local-order implication for almost all good primes, audit quantifiers carefully. A theorem for a fixed point, fixed n, special subsequence, or finite exceptional set does not automatically prove a uniform support implication. Don't assume a relation in a theorem whose purpose is to establish that relation.
+- **Reduction arguments:** specify good primes, reduction map, ℓ-primary components, and conditions for lifting global conclusions. A point's order modulo p is not determined by only checking a few small p.
+- **Heights and pairings:** write the actual inequality/pairing expression needed; explain whether the constants are effective and uniform in the varying family.
+- **Non-regular vs regular loci:** identify equations defining special loci and prove they cover what you claim; don't smuggle special-case dependence into the non-regular case.
+
+## Algebraic and analytic number theory
+
+- **Valuations/ideal factorization:** inspect ramification, units, class group obstruction, S-units, and local-to-global failures. Equality of norms alone rarely yields equality of elements.
+- **Sieve/exponential sums:** state the required uniformity, distribution level, exceptional moduli, dependence on parameters, and parity/major-minor arc barriers. A heuristic density argument is not a proof of existence.
+- **L-functions/modularity:** distinguish algebraic vs analytic rank and conjectural input. Verify conductor, root number, and exact curve label before transferring published conclusions.
+
+## Choosing a next move from a failed proof
+
+| Failure observed | Mathematical follow-up |
+|---|---|
+| Congruences don't exclude | Search for high valuation/ramified witnesses; ask if a global obstruction is required; construct locally soluble non-global examples. |
+| Brute force finds no solutions | Derive shape of a hypothetical solution; use modular filters then constrained constructive search; explicitly delimit the negative bound. |
+| Integrality fails after group operation | Calculate exact denominators; characterize when they vanish or divide; try a different model or invariant, or prove impossibility of the integrality propagation route. |
+| Need point dependence to use theorem | Identify exact missing implication; seek reduction-order evidence or a theorem with assumptions that are independently verifiable; try constructing an independent pair that falsifies naive versions. |
+| All examples show one mechanism | Check whether mechanism is necessary or merely common; construct a counterexample to necessity; reverse-engineer simultaneous mechanisms on the same parameters. |
+| A theorem only gives finiteness | Ask for an effective bound under stronger hypotheses, or a single explicit family satisfying the target; don't claim it settles a uniform counting question. |
+
+## Source discipline
+
+Consult original papers, mathematical databases (e.g. LMFDB), and code where available. Record precise proposition numbers, mathematical hypotheses, and what *exactly* was inferred. A preprint, database entry, and a proof of a global theorem have different epistemic weight.
+
+Suggested complementary reading: K-Dense AI's MIT-licensed `number-theorist` skill at https://github.com/K-Dense-AI/scientific-agents/blob/main/scientific-agents/number-theorist/skills/number-theorist/SKILL.md . It surveys tools and field-specific checks; the present skill adds a research continuation and strategy loop. Verify worked examples and factual claims in any external skill independently.
+
+codex
+The constants in (a) check out so far. I found a hypothesis gap in (b): the stated concentration operator need not preserve odd real functions when \(B\) is not symmetric. The E117 choice of \(B\) is symmetric. I’ll check the remaining steps and run 200 random lifts for each \(V\in\{1,2\}\) in every test family, plus the centred lifts, on the VM.
+**Planning launch execution**
+
+I need to ensure the launch is timely by choosing test scenarios effectively. I should consider three JL tests with random variables for the specified dates, but each must meet certain performance expectations. Since I'm contemplating a robust approach, it might be fine to have three sets for each, targeting computational efficiency. It’s crucial to prepare all code reproducibly for reporting and executing remotely, ensuring everything is safe and properly quoted. I want to anticipate runtime, too.
+**Setting up pilot run**
+
+I need to configure a pilot run to read the VM environment and measure the `true_min` with n49 variables, including one random and lambda. I should ensure to write all outputs to a specified temporary directory without editing any other files. It’s important to gather a compact summary of results along with the full code. Also, I need to remember that `PYTHONDONTWRITEBYTECODE=1` helps prevent cache writing during this process, and ensure libraries like Gurobi can read the license correctly. Time to pretest everything!
+exec
+/bin/zsh -lc "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 3600 python -B -c 'import sys,time,json,platform
+sys.dont_write_bytecode=True
+sys.path.insert(0,\"src\")
+import numpy as np, scipy
+from e114_cp_group import jl_set
+from e116_jl_taper import true_min
+D,n=jl_set(7,2,1)
+half=[g for g in sorted(D) if g<((-g[0])%n,(-g[1])%n)]
+rng=np.random.default_rng(77001)
+pairs=[]
+for g in half:
+    choices=[np.arange(g[k]-2*n,g[k]+2*n+1,n) for k in range(2)]
+    choices=[a[(a>=-2*n)&(a<=2*n)] for a in choices]
+    pairs.append([rng.choice(a) for a in choices])
+pairs=np.array(pairs,dtype=np.int64)
+t=time.time()
+f,x,grid,G=true_min(pairs,np.ones(len(pairs)),2*n)
+print(json.dumps({\"python\":platform.python_version(),\"numpy\":np.__version__,\"scipy\":scipy.__version__,\"n\":n,\"points\":len(D),\"G\":G,\"K\":-f,\"seconds\":time.time()-t}),flush=True)
+'" in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 7527ms:
+{"python": "3.12.3", "numpy": "2.5.4", "scipy": "1.18.1", "n": 49, "points": 336, "G": 4096, "K": 82.14895154915486, "seconds": 2.868558883666992}
+
+**Calculating progress updates**
+
+I’m thinking about summarizing progress every 25 iterations while keeping only meaningful “progress” without too much noise. I want to ensure each group starts clearly and that the summary is no longer than 70 words. For a group of 49, it should take around 580 seconds. I’ll need to print progress every 25 iterations, and I should also do a direct check of the K value at xi using Fval equals -K.
+exec
+/bin/zsh -lc "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 3600 python -B -c 'import sys, os, json, time, math, platform, hashlib
+sys.dont_write_bytecode = True
+sys.path.insert(0, \"src\")
+import numpy as np
+import scipy
+from e114_cp_group import jl_set
+from e116_jl_taper import true_min, Fval, lift
+
+COUNT = 200
+BASE_SEED = 770019
+RAW = \"/tmp/p77_check_770019.jsonl\"
+T0 = time.time()
+raw = open(RAW, \"w\")
+def emit(x):
+    print(json.dumps(x, sort_keys=True), flush=True)
+def record(x):
+    raw.write(json.dumps(x, sort_keys=True) + \"\\n\")
+    raw.flush()
+def neg(g, n):
+    return ((-g[0]) % n, (-g[1]) % n)
+def setup(label, D, n):
+    assert (0, 0) not in D and D and {neg(g, n) for g in D} == D
+    half = np.array([g for g in sorted(D) if g < neg(g, n)], dtype=np.int64)
+    assert 2 * len(half) == len(D)
+    arr = np.zeros((n, n))
+    for g in D:
+        arr[g] = 1
+    dhc = np.fft.fft2(arr)
+    assert np.max(np.abs(dhc.imag)) < 1e-9
+    dh = dhc.real
+    B = dh < -1e-9
+    B[0, 0] = False
+    rev = (-np.arange(n)) % n
+    assert np.array_equal(B, B[np.ix_(rev, rev)]) and B.any()
+    rp = -float(dh[B].max())
+    N = ~B
+    cN = np.fft.fft2(N.astype(float)).real / n**2
+    dm = (half[:, None, :] - half[None, :, :]) % n
+    dp = (half[:, None, :] + half[None, :, :]) % n
+    Codd = cN[dm[..., 0], dm[..., 1]] - cN[dp[..., 0], dp[..., 1]]
+    lam = float(np.linalg.eigvalsh(Codd)[-1])
+    chisN = np.argwhere(N)
+    sine = np.sin(2 * np.pi * (chisN @ half.T) / n)
+    Ccheck = 2 * sine.T @ sine / n**2
+    c_error = float(np.max(np.abs(Codd - Ccheck)))
+    assert c_error < 1e-10 and -1e-10 <= lam <= 1 + 1e-10
+    data = dict(label=label, n=n, D=len(D), B=int(B.sum()), rprime=rp,
+                lambda_odd=lam, concentration_matrix_maxerr=c_error,
+                D_sha256=hashlib.sha256(repr(sorted(D)).encode()).hexdigest())
+    emit(dict(type=\"SETUP\", **data))
+    return half, B, rp, lam, data
+
+def one(half, B, rp, lam, n, pairs, V, full_check=False):
+    assert np.array_equal(pairs % n, half)
+    assert np.max(np.abs(pairs)) <= V * n
+    field = np.zeros((n, n, 2))
+    field[half[:, 0], half[:, 1]] = pairs
+    minus = (-half) % n
+    field[minus[:, 0], minus[:, 1]] = -pairs
+    ft = np.fft.fft2(field, axes=(0, 1))
+    W = -ft.imag
+    z2 = np.sum(pairs.astype(float)**2, axis=1)
+    sumz2 = 2 * float(z2.sum())
+    Z4 = math.sqrt(2 * float(np.dot(z2, z2)))
+    total = float((W**2).sum())
+    A2 = float((W[B]**2).sum())
+    pars_err = abs(total / (n**2 * sumz2) - 1)
+    phi = float((W[~B]**2).sum() / total)
+    a2_lower = (1 - lam) * n**2 * sumz2
+    rhs_a = rp + A2 / (8 * n * math.sqrt(int(B.sum())) * Z4)
+    rhs_b = rp + (1 - lam) * sumz2 / (8 * Z4)
+    beta = sumz2 / (len(half) * 2 * n**2)
+    rhs_c = rp + (1 - lam) * beta * math.sqrt(2 * len(half)) / (16 * V**2)
+    direct_error = 0.0
+    q_pars_error = 0.0
+    if full_check:
+        chars = np.indices((n, n)).reshape(2, -1).T
+        wd = 2 * np.sin(2 * np.pi * (chars @ half.T) / n) @ pairs
+        direct_error = float(np.max(np.abs(wd - W.reshape(-1, 2))))
+        for u in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            udot = field[..., 0] * u[0] + field[..., 1] * u[1]
+            coeff = np.exp(2j * np.pi * 0.137 * udot / n) * udot**2
+            Q = n**2 * np.fft.ifft2(coeff)
+            target = n**2 * float((udot**4).sum())
+            if target:
+                q_pars_error = max(q_pars_error, abs(float((abs(Q)**2).sum()) / target - 1))
+    L = int(np.max(np.abs(pairs)))
+    fmin, xi, grid, G = true_min(pairs, np.ones(len(pairs)), L)
+    K = -fmin
+    witness_K = -float(Fval(pairs, np.ones(len(pairs)), xi)[0])
+    out = dict(K=K, rhs_a=rhs_a, rhs_b=rhs_b, rhs_c=rhs_c,
+               margin_a=K-rhs_a, margin_b=K-rhs_b, margin_c=K-rhs_c,
+               A2=A2, A2_lower=a2_lower, A2_margin=A2-a2_lower,
+               phi=phi, G=G, L=L, parseval_relerr=pars_err,
+               direct_W_maxerr=direct_error, Q_parseval_relerr=q_pars_error,
+               Fourier_real_maxerr=float(np.max(np.abs(ft.real))),
+               minvalue_recheck_error=abs(witness_K-K),
+               xi=xi.tolist())
+    assert pars_err < 1e-10 and phi <= lam + 1e-10
+    assert direct_error < 1e-7 and q_pars_error < 1e-10
+    assert abs(witness_K-K) < 1e-7
+    return out
+
+def group(label, half, B, rp, lam, n, V, centred=False, case_index=0):
+    count = 1 if centred else COUNT
+    rng = np.random.default_rng(BASE_SEED + 10000 * case_index + V)
+    candidates = [[[q for q in range(-V*n, V*n+1) if q % n == int(g[k])]
+                   for k in range(2)] for g in half]
+    allrows = []
+    violations = []
+    for i in range(count):
+        if centred:
+            pairs = ((half + n//2) % n) - n//2
+            canonical = lift(set(map(tuple, np.vstack((half, (-half) % n)))), n, n//2)
+            assert set(map(tuple, np.vstack((canonical, -canonical)))) == set(map(tuple, np.vstack((pairs, -pairs))))
+        else:
+            pairs = np.array([[rng.choice(c[0]), rng.choice(c[1])] for c in candidates], dtype=np.int64)
+        start = time.time()
+        out = one(half, B, rp, lam, n, pairs, V, full_check=(i == 0))
+        out.update(label=label, V=V, kind=\"centred\" if centred else \"random\",
+                   index=i, seconds=time.time()-start)
+        bad = out[\"margin_a\"] < -1e-6 or out[\"margin_b\"] < -1e-6 or out[\"A2_margin\"] < -1e-6
+        if bad:
+            out[\"pairs\"] = pairs.tolist()
+            violations.append(out)
+            emit(dict(type=\"VIOLATION\", **out))
+        record(out)
+        allrows.append(out)
+        if not centred and (i+1) % 25 == 0:
+            emit(dict(type=\"PROGRESS\", label=label, V=V, done=i+1,
+                      elapsed=time.time()-T0))
+    summary = dict(type=\"SUMMARY\", label=label, V=V,
+                   kind=\"centred\" if centred else \"random\", count=count,
+                   K_min=min(x[\"K\"] for x in allrows), K_max=max(x[\"K\"] for x in allrows),
+                   rhs_a_min=min(x[\"rhs_a\"] for x in allrows),
+                   rhs_a_max=max(x[\"rhs_a\"] for x in allrows),
+                   rhs_b_min=min(x[\"rhs_b\"] for x in allrows),
+                   rhs_b_max=max(x[\"rhs_b\"] for x in allrows),
+                   min_margin_a=min(x[\"margin_a\"] for x in allrows),
+                   min_margin_b=min(x[\"margin_b\"] for x in allrows),
+                   min_margin_c=min(x[\"margin_c\"] for x in allrows),
+                   min_A2_margin=min(x[\"A2_margin\"] for x in allrows),
+                   phi_max=max(x[\"phi\"] for x in allrows),
+                   parseval_relerr_max=max(x[\"parseval_relerr\"] for x in allrows),
+                   direct_W_maxerr=max(x[\"direct_W_maxerr\"] for x in allrows),
+                   Q_parseval_relerr_max=max(x[\"Q_parseval_relerr\"] for x in allrows),
+                   Fourier_real_maxerr=max(x[\"Fourier_real_maxerr\"] for x in allrows),
+                   minvalue_recheck_error_max=max(x[\"minvalue_recheck_error\"] for x in allrows),
+                   G_values=sorted(set(x[\"G\"] for x in allrows)),
+                   violations=len(violations), seconds=sum(x[\"seconds\"] for x in allrows))
+    emit(summary)
+    return summary
+
+meta = dict(type=\"META\", python=platform.python_version(), numpy=np.__version__,
+            scipy=scipy.__version__, count_per_V=COUNT, base_seed=BASE_SEED,
+            raw_path=RAW, source_sha256={p:hashlib.sha256(open(p,\"rb\").read()).hexdigest()
+                for p in (\"src/e114_cp_group.py\",\"src/e116_jl_taper.py\",\"src/e117_concentration.py\")})
+emit(meta)
+cases = []
+for p in (3, 5, 7):
+    D, n = jl_set(p, 2, 1)
+    cases.append((f\"JL({p},2,1)\", D, n))
+for n in (9, 15, 25):
+    rng = np.random.default_rng(BASE_SEED+n)
+    half_all = [(x,y) for x in range(n) for y in range(n)
+                if (x,y) < neg((x,y),n)]
+    chosen = [g for g in half_all if rng.random() < 0.30]
+    D = set(chosen) | {neg(g,n) for g in chosen}
+    cases.append((f\"random(n={n},density=0.30)\", D, n))
+summaries = []
+for ci, (label, D, n) in enumerate(cases):
+    half, B, rp, lam, data = setup(label, D, n)
+    summaries.append(group(label,half,B,rp,lam,n,1,centred=True,case_index=ci))
+    for V in (1, 2):
+        summaries.append(group(label,half,B,rp,lam,n,V,case_index=ci))
+raw.close()
+emit(dict(type=\"DONE\", trials=sum(s[\"count\"] for s in summaries),
+          violations=sum(s[\"violations\"] for s in summaries),
+          seconds=time.time()-T0, summaries=summaries))
+'" in /Users/jmercedes/desktop/projects/research/chowla-cosine
+codex
+The proof audit is complete. The \(1/8\) constant in (a), the deductions in (b)–(c), and the triangular taper’s zero-centroid identity check out. The report will flag the symmetry issue in (b), undefined empty-set cases, and the missing \(A_2=0\) case in the proof of (a).
+
+The VM run is underway. The centred \(p=3\) JL lift and the first 200 random lifts show no violation; the recomputed \(\lambda_{\rm odd}=0.6054988603\) agrees with E117.
+apply patch
+patch: completed
+/Users/jmercedes/desktop/projects/research/chowla-cosine/.research/agents/p77_check_report.md
+diff --git a/.research/agents/p77_check_report.md b/.research/agents/p77_check_report.md
+new file mode 100644
+index 0000000000000000000000000000000000000000..2437cc5040f455e523369812145a8310c684508f
+--- /dev/null
++++ b/.research/agents/p77_check_report.md
+@@ -0,0 +1,318 @@
++# Adversarial verification of P77
++
++Scope: the P77 text in `.research/PROOFS.md`, E116/E117 in `.research/EXPERIMENTS.md`, and the three source files named in the brief. No new research was undertaken. All numerical mathematical computation was run on dirichlet (`34.148.157.169`) through `src/dirun.sh -c 2 -t 3600`. No source/proof/experiment file was edited, and no commit was made.
++
++## Verdict
++
++**GAP in the literal statement; CORRECT proof and constants after the following routine repairs.** No algebraic error was found in (a), the energy bound or its consequence in (b), or (c).
++
++1. Require **nonempty D and B**. Otherwise Z4 or |B| in the denominators can vanish, and the top eigenvalue on an empty odd space is undefined.
++2. For the concentration operator in (b), require **B = -B** (equivalently N = -N), or explicitly define lambda_odd using the **compression/quadratic form on odd real functions**. An arbitrary B allowed by the current statement need not be symmetric; then the displayed C does not in general map odd real functions into themselves, so its claimed restriction has no top eigenvalue as stated. The actual E117 background set is symmetric and has no such problem.
++3. In (a), handle **A2 = 0** before choosing weights. Then the claimed bound is simply K(T) >= r', already obtained by evaluating at any chi/n with chi in B. If A2 > 0, S1 and S2 are positive and the displayed optimisation is valid.
++4. The Taylor averaging weights must be nonnegative. This is implicit in “weights” and is satisfied by the chosen weights; state it explicitly if arbitrary weights are introduced.
++
++**Numerical verdict:** RUNNING; the completed table and diagnostics will replace this sentence.
++
++## Exact statement checked and hypotheses
++
++Write e(x) = exp(2 pi i x), and use unnormalised finite Fourier transforms and the counting inner product. For a nonempty symmetric D contained in Z_n^2 minus {0}, an odd one-representative lift is a function z: D -> Z^2 with z(-g) = -z(g) and z(g) congruent to g modulo n. Put
++F(xi) = sum_D cos(2 pi z(g).xi), K = -min F,
++W(chi) = sum_D z(g) sin(2 pi chi.g/n),
++A2 = sum_B |W(chi)|^2, and Z4 = (sum_D |z(g)|^4)^(1/2).
++For a nonempty B contained in {chi != 0: Dhat(chi) <= -r'}, the checked assertions are
++
++- (a) K >= r' + A2/(8 n sqrt(|B|) Z4).
++- (b) A2 >= (1-lambda_odd) n^2 sum_D |z(g)|^2; hence
++  K >= r' + (1-lambda_odd) sum_D |z(g)|^2/(8 Z4).
++- (c) If V > 0, |z(g)| <= sqrt(2) V n and sum_D |z(g)|^2 >= beta |D| n^2, then
++  K >= r' + (1-lambda_odd) beta sqrt(|D|)/(16 V^2).
++
++In (b) and (c), lambda_odd is the stated operator eigenvalue when B is symmetric, or the top eigenvalue of its compression if that convention is explicitly adopted.
++
++**Injectivity: CORRECT, automatic.** If z(g) = z(h), reducing modulo n gives g = h. Distinct residue labels already suffice for the finite Parseval calculation. There is no separate missing injectivity hypothesis.
++
++**D symmetry: CORRECT, already stated.** It permits the odd coordinate fields used in (b). Part (a) itself only needs the residue-indexed sum and the stated background inequalities.
++
++**Odd n: not required.** Existence of a nonempty odd lift requires that D contain no nonzero g with 2g = 0: oddness would force z(g) = -z(g), hence z(g) = 0, contradicting its residue. Odd n guarantees this automatically; even n is allowed when D avoids these classes. For example, D = {+(1,0), -(1,0)} modulo 4 has an odd lift. For n = 2 there is no nonempty admissible D. This is an existence restriction already implied by “odd map”, not a hidden need for n odd in the calculations.
++
++There is no need to assume r' > 0 for the algebra. If r' > 0 is intended as a useful background level, it is an optional stronger hypothesis. For nonempty D as above, Z4 > 0.
++
++## Line-by-line audit of (a)
++
++| Step | Verdict | Verification |
++|---|---|---|
++| Exponential identity | CORRECT | Write z(g) = g + n k(g). Then e(z(g).chi/n) = e(g.chi/n) because k(g).chi is an integer. Multiplying by e(z(g).alpha/n) proves the identity for every real vector alpha and every character chi. |
++| Choose u_chi in {+e1,-e1,+e2,-e2} | CORRECT | Choose a coordinate achieving max(|W1|,|W2|) and its sign. Then u_chi.W = |W|_infinity >= 0. Zero vectors allow any direction. Freeze these choices before varying t. |
++| h_chi(0) = Dhat(chi) <= -r' | CORRECT | The residue identity removes integer multiples of 2 pi. |
++| First derivative | CORRECT | Differentiating each cosine yields h'_chi(0) = -(2 pi/n) sum_g (z(g).u_chi) sin(2 pi chi.g/n) = -(2 pi/n)|W(chi)|_infinity. |
++| Second derivative and Q | CORRECT | A second derivative gives -(4 pi^2/n^2) sum_g (z(g).u)^2 cos(2 pi(chi.g+t z(g).u)/n), exactly -(4 pi^2/n^2) Re Q_u(chi,t). |
++| Fixed-u, fixed-t Parseval | CORRECT | Define a_g = (z(g).u)^2 e(t z(g).u/n) on D and zero elsewhere. Orthogonality over all n^2 characters gives sum_chi |Q_u|^2 = n^2 sum_g |a_g|^2 = n^2 sum_g (z(g).u)^4 <= n^2 Z4^2. The t-dependent phase has modulus one. No averaging over t or changing u inside this application is allowed or needed. |
++| Cauchy-Schwarz on B_u | CORRECT | For nonnegative omega, sum_{B_u} omega_chi |Q_u| <= ||omega restricted to B_u||_2 (sum_{B_u}|Q_u|^2)^(1/2) <= n Z4 ||omega restricted to B_u||_2. |
++| Cauchy-Schwarz over four directions | CORRECT | The B_u partition B, so sum_u ||omega restricted to B_u||_2 <= sqrt(4) (sum_u ||omega restricted to B_u||_2^2)^(1/2) = 2 ||omega||_2. The two signs of a direction may be treated separately; this merely uses a valid, possibly loose bound. Thus sum_B omega |h''_chi(t)| <= (8 pi^2/n) Z4 ||omega||_2 for every t. |
++| Taylor remainder | CORRECT | For rho >= 0, h(rho) = h(0)+rho h'(0)+integral_0^rho (rho-t)h''(t) dt. The integral of (rho-t) is rho^2/2, giving the displayed +(4 pi^2 rho^2/n) Z4 ||omega||_2. Smooth periodicity puts no upper restriction on rho. |
++| min F <= sum omega h_chi(rho) | CORRECT | Every h_chi(rho) is a value of F. A convex combination of these values is at least min F. |
++| omega_chi = |W|_infinity/S1 | GAP at S1 = 0; CORRECT otherwise | The displayed formula is undefined when A2 = 0. In that case evaluate F at a background character to prove K >= r'. If A2 > 0 then S1,S2 > 0, the weights are nonnegative and sum to one, sum omega |W|_infinity = S2/S1, and ||omega||_2 = sqrt(S2)/S1. |
++| Optimisation in rho | CORRECT | The optimum is rho_* = sqrt(S2)/(4 pi Z4), and the decrement is S2^(3/2)/(4 n S1 Z4). The factor 1/n in the quadratic coefficient is essential and is used correctly. |
++| S1 <= sqrt(|B| S2) | CORRECT | Cauchy-Schwarz applied to the vector of |W|_infinity values and the all-ones vector. |
++| S2 >= A2/2 | CORRECT | For W in R^2, |W|_infinity^2 >= |W|^2/2, pointwise. |
++| Final constant 1/8 | CORRECT | S2^(3/2)/(4 n S1 Z4) >= S2/(4 n sqrt(|B|) Z4) >= A2/(8 n sqrt(|B|) Z4). |
++
++For clarity, the quadratic being minimised is
++-r' - a rho + b rho^2, where
++a = (2 pi/n) S2/S1 and b = (4 pi^2/n) Z4 sqrt(S2)/S1.
++Thus a/(2b) = sqrt(S2)/(4 pi Z4), and a^2/(4b) is exactly the stated decrement.
++
++## Line-by-line audit of (b)
++
++| Step | Verdict | Verification |
++|---|---|---|
++| f_k = z_k 1_D is odd and real | CORRECT | Extend by zero outside symmetric D. The oddness of z makes f_k(-g) = -f_k(g). |
++| Odd real f has purely imaginary transform | CORRECT | The real part is sum f(g) cos(2 pi chi.g/n), which cancels under g -> -g. The imaginary part is the sine sum. At self-inverse classes f vanishes, so the argument also works for even n. |
++| fhat_k = i W_k | CORRECT with the positive-exponent forward convention | If fhat(chi) = sum f(g)e(+chi.g/n), this is literally +i W_k and the inverse uses negative characters. With NumPy's negative-exponent FFT it is -i W_k. The sign convention has no effect on any norm, Parseval identity, projection, or conclusion. |
++| sum_chi |W|^2 = n^2 sum_g |z(g)|^2 | CORRECT | Apply unnormalised finite Parseval to each f_k, use |fhat_k|^2 = |W_k|^2, and sum over the two coordinates. There is no factor 1/2 from using sine: the odd field and both members of every +/-pair are already included. |
++| W(0) = 0 | CORRECT | Every summand contains sin(0). Oddness is not needed for this particular identity. In fact W also vanishes at each self-inverse character. Including 0 in N contributes no energy. |
++| C is an operator on odd real functions | GAP unless B is symmetric or compression is defined | The current statement permits nonsymmetric B. Then P_N need not preserve reality or oddness. A restriction to the asserted real odd space is not defined in general. See the explicit example below. |
++| Concentration identity | CORRECT | For any supported f, unnormalised Fourier orthogonality gives sum_N |fhat|^2 = n^2 <f,1_D P_N 1_D f>. This identity remains true with the usual complex inner product even if N is not symmetric. |
++| Rayleigh/eigenvalue upper bound | CORRECT with the repaired operator definition | For symmetric N, C is self-adjoint, positive semidefinite, maps odd real functions to themselves, and is a contraction. Hence 0 <= lambda_odd <= 1 and <f_k,C f_k> <= lambda_odd ||f_k||_2^2. The same variational inequality holds for the explicitly defined compression when N is not symmetric. |
++| Subtract the N energy | CORRECT | B and N partition all characters, so A2 = n^2 sum|z|^2 - sum_N |W|^2 >= (1-lambda_odd)n^2 sum|z|^2. |
++| Derived K bound | CORRECT | Substitute this into (a), giving the stronger increment (1-lambda_odd)n sum|z|^2/(8 sqrt(|B|) Z4). Since sqrt(|B|) <= n and 1-lambda_odd >= 0, this implies the displayed weaker bound. |
++
++**Explicit demonstration of the symmetry gap.** Let n = 3,
++D = {(1,0),(2,0)}, f(1,0) = 1, f(2,0) = -1, and take
++B = {(1,0)}, r' = 1. This B satisfies the current statement because Dhat(1,0) = -1.
++With the negative-exponent forward Fourier convention and positive-exponent inverse,
++C f(1,0) = 5/6 - i sqrt(3)/18 and C f(2,0) = -5/6 - i sqrt(3)/18.
++Thus C f is neither real nor odd. A “top eigenvalue of C on odd real functions” is not defined by restriction here.
++
++An adequate alternative repair is to let H be the odd real subspace and define lambda_odd as the supremum of <f,Cf>/||f||^2 over nonzero f in H, equivalently the largest eigenvalue of the real symmetric quadratic-form compression to H. Its kernel uses the cosine/symmetrised part of N, and the proof then works for arbitrary B. This is a clarification of the quantity in the given argument, not a new estimate. Adding B = -B is the simpler repair for the E117 application.
++
++**E117 matrix normalisation: CORRECT.** For one h from each +/-pair, use the orthonormal odd basis b_h = (delta_h-delta_-h)/sqrt(2). If c_N(x) = n^-2 sum_{chi in N} cos(2 pi chi.x/n), then
++<b_g,Cb_h> = c_N(g-h)-c_N(g+h).
++This is precisely the E117 code; the missing-looking factor of two is already accounted for by the basis normalisation. Equivalently the matrix is (2/n^2) S_N^T S_N, where (S_N)_{chi,h} = sin(2 pi chi.h/n). Both constructions were compared in the VM run. E117's B is the entire minimum/background level, so B and N are symmetric.
++
++## Audit of (c)
++
++**CORRECT after the hypotheses above.** The spread condition gives
++|z(g)|^4 <= (sqrt(2) V n)^4 = 4 V^4 n^4, so
++Z4 <= 2 V^2 n^2 sqrt(|D|).
++Using sum|z(g)|^2 >= beta |D| n^2 in the bound in (b) gives
++(1-lambda_odd) beta |D| n^2 /
++(8 * 2 V^2 n^2 sqrt(|D|))
++= (1-lambda_odd) beta sqrt(|D|)/(16 V^2).
++The factor 16, the power V^2, and cancellation of n^2 are all correct.
++
++## Triangular PD taper remark
++
++**CORRECT** for Lambda(t) = max(1-|t|,0), with the sums over all lattice representatives of the specified class.
++
++First work in one dimension with a in {0,...,n-1}. The only representatives with positive weight are a and a-n, with weights 1-a/n and a/n; at a = 0 the latter has weight zero, and the representative 0 has weight one. Therefore
++sum_{z congruent to a} Lambda(z/n) = (1-a/n)+a/n = 1,
++and
++sum_{z congruent to a} Lambda(z/n) z
++= a(1-a/n)+(a-n)(a/n) = 0.
++Endpoint representatives +/-n have weight zero and cause no exception.
++
++For g = (a,b), the two-dimensional weight is a product. Its mass factors as 1*1 = 1. The first-coordinate moment factors as the one-dimensional first moment in a times the one-dimensional mass in b, hence 0; the second coordinate is identical with the roles exchanged. Consequently
++sum_{z congruent to g} tau(z) = 1 and
++sum_{z congruent to g} tau(z) z = (0,0)
++for **every** class, including zero and coordinate-axis classes. The first-order contribution from these weighted class centroids is therefore identically zero. This identity does not require n odd or a special D.
++
++## Numerical falsification
++
++NUMERICAL_RESULTS_PENDING
++
++## Reproduction
++
++The exact script executed on the VM is below. It imports the unmodified `true_min` and calls it with its default FFT resolution and default 12 BFGS starts; L is the actual maximum coordinate magnitude of the particular lift. No minima or eigenvalues are interval-certified. A negative numerical result only applies to the sampled lifts.
++
++To run directly from this report without creating another repository file:
++
++```sh
++DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2 -t 3600 python -B -c "$(python3 -c 'from pathlib import Path; t=Path(".research/agents/p77_check_report.md").read_text(); print(t.split("```python\n",1)[1].split("\n```",1)[0])')"
++```
++
++Here the local Python command only extracts source text; all numerical computation is performed by Python on the VM. The script writes per-trial data only to /tmp on the VM, outside the repository. Seeds and source hashes below permit reconstruction if that temporary file is removed.
++
++```python
++import sys, os, json, time, math, platform, hashlib
++sys.dont_write_bytecode = True
++sys.path.insert(0, "src")
++import numpy as np
++import scipy
++from e114_cp_group import jl_set
++from e116_jl_taper import true_min, Fval, lift
++
++COUNT = 200
++BASE_SEED = 770019
++RAW = "/tmp/p77_check_770019.jsonl"
++T0 = time.time()
++raw = open(RAW, "w")
++def emit(x):
++    print(json.dumps(x, sort_keys=True), flush=True)
++def record(x):
++    raw.write(json.dumps(x, sort_keys=True) + "\n")
++    raw.flush()
++def neg(g, n):
++    return ((-g[0]) % n, (-g[1]) % n)
++def setup(label, D, n):
++    assert (0, 0) not in D and D and {neg(g, n) for g in D} == D
++    half = np.array([g for g in sorted(D) if g < neg(g, n)], dtype=np.int64)
++    assert 2 * len(half) == len(D)
++    arr = np.zeros((n, n))
++    for g in D:
++        arr[g] = 1
++    dhc = np.fft.fft2(arr)
++    assert np.max(np.abs(dhc.imag)) < 1e-9
++    dh = dhc.real
++    B = dh < -1e-9
++    B[0, 0] = False
++    rev = (-np.arange(n)) % n
++    assert np.array_equal(B, B[np.ix_(rev, rev)]) and B.any()
++    rp = -float(dh[B].max())
++    N = ~B
++    cN = np.fft.fft2(N.astype(float)).real / n**2
++    dm = (half[:, None, :] - half[None, :, :]) % n
++    dp = (half[:, None, :] + half[None, :, :]) % n
++    Codd = cN[dm[..., 0], dm[..., 1]] - cN[dp[..., 0], dp[..., 1]]
++    lam = float(np.linalg.eigvalsh(Codd)[-1])
++    chisN = np.argwhere(N)
++    sine = np.sin(2 * np.pi * (chisN @ half.T) / n)
++    Ccheck = 2 * sine.T @ sine / n**2
++    c_error = float(np.max(np.abs(Codd - Ccheck)))
++    assert c_error < 1e-10 and -1e-10 <= lam <= 1 + 1e-10
++    data = dict(label=label, n=n, D=len(D), B=int(B.sum()), rprime=rp,
++                lambda_odd=lam, concentration_matrix_maxerr=c_error,
++                D_sha256=hashlib.sha256(repr(sorted(D)).encode()).hexdigest())
++    emit(dict(type="SETUP", **data))
++    return half, B, rp, lam, data
++
++def one(half, B, rp, lam, n, pairs, V, full_check=False):
++    assert np.array_equal(pairs % n, half)
++    assert np.max(np.abs(pairs)) <= V * n
++    field = np.zeros((n, n, 2))
++    field[half[:, 0], half[:, 1]] = pairs
++    minus = (-half) % n
++    field[minus[:, 0], minus[:, 1]] = -pairs
++    ft = np.fft.fft2(field, axes=(0, 1))
++    W = -ft.imag
++    z2 = np.sum(pairs.astype(float)**2, axis=1)
++    sumz2 = 2 * float(z2.sum())
++    Z4 = math.sqrt(2 * float(np.dot(z2, z2)))
++    total = float((W**2).sum())
++    A2 = float((W[B]**2).sum())
++    pars_err = abs(total / (n**2 * sumz2) - 1)
++    phi = float((W[~B]**2).sum() / total)
++    a2_lower = (1 - lam) * n**2 * sumz2
++    rhs_a = rp + A2 / (8 * n * math.sqrt(int(B.sum())) * Z4)
++    rhs_b = rp + (1 - lam) * sumz2 / (8 * Z4)
++    beta = sumz2 / (len(half) * 2 * n**2)
++    rhs_c = rp + (1 - lam) * beta * math.sqrt(2 * len(half)) / (16 * V**2)
++    direct_error = 0.0
++    q_pars_error = 0.0
++    if full_check:
++        chars = np.indices((n, n)).reshape(2, -1).T
++        wd = 2 * np.sin(2 * np.pi * (chars @ half.T) / n) @ pairs
++        direct_error = float(np.max(np.abs(wd - W.reshape(-1, 2))))
++        for u in ((1, 0), (-1, 0), (0, 1), (0, -1)):
++            udot = field[..., 0] * u[0] + field[..., 1] * u[1]
++            coeff = np.exp(2j * np.pi * 0.137 * udot / n) * udot**2
++            Q = n**2 * np.fft.ifft2(coeff)
++            target = n**2 * float((udot**4).sum())
++            if target:
++                q_pars_error = max(q_pars_error, abs(float((abs(Q)**2).sum()) / target - 1))
++    L = int(np.max(np.abs(pairs)))
++    fmin, xi, grid, G = true_min(pairs, np.ones(len(pairs)), L)
++    K = -fmin
++    witness_K = -float(Fval(pairs, np.ones(len(pairs)), xi)[0])
++    out = dict(K=K, rhs_a=rhs_a, rhs_b=rhs_b, rhs_c=rhs_c,
++               margin_a=K-rhs_a, margin_b=K-rhs_b, margin_c=K-rhs_c,
++               A2=A2, A2_lower=a2_lower, A2_margin=A2-a2_lower,
++               phi=phi, G=G, L=L, parseval_relerr=pars_err,
++               direct_W_maxerr=direct_error, Q_parseval_relerr=q_pars_error,
++               Fourier_real_maxerr=float(np.max(np.abs(ft.real))),
++               minvalue_recheck_error=abs(witness_K-K),
++               xi=xi.tolist())
++    assert pars_err < 1e-10 and phi <= lam + 1e-10
++    assert direct_error < 1e-7 and q_pars_error < 1e-10
++    assert abs(witness_K-K) < 1e-7
++    return out
++
++def group(label, half, B, rp, lam, n, V, centred=False, case_index=0):
++    count = 1 if centred else COUNT
++    rng = np.random.default_rng(BASE_SEED + 10000 * case_index + V)
++    candidates = [[[q for q in range(-V*n, V*n+1) if q % n == int(g[k])]
++                   for k in range(2)] for g in half]
++    allrows = []
++    violations = []
++    for i in range(count):
++        if centred:
++            pairs = ((half + n//2) % n) - n//2
++            canonical = lift(set(map(tuple, np.vstack((half, (-half) % n)))), n, n//2)
++            assert set(map(tuple, np.vstack((canonical, -canonical)))) == set(map(tuple, np.vstack((pairs, -pairs))))
++        else:
++            pairs = np.array([[rng.choice(c[0]), rng.choice(c[1])] for c in candidates], dtype=np.int64)
++        start = time.time()
++        out = one(half, B, rp, lam, n, pairs, V, full_check=(i == 0))
++        out.update(label=label, V=V, kind="centred" if centred else "random",
++                   index=i, seconds=time.time()-start)
++        bad = out["margin_a"] < -1e-6 or out["margin_b"] < -1e-6 or out["A2_margin"] < -1e-6
++        if bad:
++            out["pairs"] = pairs.tolist()
++            violations.append(out)
++            emit(dict(type="VIOLATION", **out))
++        record(out)
++        allrows.append(out)
++        if not centred and (i+1) % 25 == 0:
++            emit(dict(type="PROGRESS", label=label, V=V, done=i+1,
++                      elapsed=time.time()-T0))
++    summary = dict(type="SUMMARY", label=label, V=V,
++                   kind="centred" if centred else "random", count=count,
++                   K_min=min(x["K"] for x in allrows), K_max=max(x["K"] for x in allrows),
++                   rhs_a_min=min(x["rhs_a"] for x in allrows),
++                   rhs_a_max=max(x["rhs_a"] for x in allrows),
++                   rhs_b_min=min(x["rhs_b"] for x in allrows),
++                   rhs_b_max=max(x["rhs_b"] for x in allrows),
++                   min_margin_a=min(x["margin_a"] for x in allrows),
++                   min_margin_b=min(x["margin_b"] for x in allrows),
++                   min_margin_c=min(x["margin_c"] for x in allrows),
++                   min_A2_margin=min(x["A2_margin"] for x in allrows),
++                   phi_max=max(x["phi"] for x in allrows),
++                   parseval_relerr_max=max(x["parseval_relerr"] for x in allrows),
++                   direct_W_maxerr=max(x["direct_W_maxerr"] for x in allrows),
++                   Q_parseval_relerr_max=max(x["Q_parseval_relerr"] for x in allrows),
++                   Fourier_real_maxerr=max(x["Fourier_real_maxerr"] for x in allrows),
++                   minvalue_recheck_error_max=max(x["minvalue_recheck_error"] for x in allrows),
++                   G_values=sorted(set(x["G"] for x in allrows)),
++                   violations=len(violations), seconds=sum(x["seconds"] for x in allrows))
++    emit(summary)
++    return summary
++
++meta = dict(type="META", python=platform.python_version(), numpy=np.__version__,
++            scipy=scipy.__version__, count_per_V=COUNT, base_seed=BASE_SEED,
++            raw_path=RAW, source_sha256={p:hashlib.sha256(open(p,"rb").read()).hexdigest()
++                for p in ("src/e114_cp_group.py","src/e116_jl_taper.py","src/e117_concentration.py")})
++emit(meta)
++cases = []
++for p in (3, 5, 7):
++    D, n = jl_set(p, 2, 1)
++    cases.append((f"JL({p},2,1)", D, n))
++for n in (9, 15, 25):
++    rng = np.random.default_rng(BASE_SEED+n)
++    half_all = [(x,y) for x in range(n) for y in range(n)
++                if (x,y) < neg((x,y),n)]
++    chosen = [g for g in half_all if rng.random() < 0.30]
++    D = set(chosen) | {neg(g,n) for g in chosen}
++    cases.append((f"random(n={n},density=0.30)", D, n))
++summaries = []
++for ci, (label, D, n) in enumerate(cases):
++    half, B, rp, lam, data = setup(label, D, n)
++    summaries.append(group(label,half,B,rp,lam,n,1,centred=True,case_index=ci))
++    for V in (1, 2):
++        summaries.append(group(label,half,B,rp,lam,n,V,case_index=ci))
++raw.close()
++emit(dict(type="DONE", trials=sum(s["count"] for s in summaries),
++          violations=sum(s["violations"] for s in summaries),
++          seconds=time.time()-T0, summaries=summaries))
++
++```
++
+
+exec
+/bin/zsh -lc "python3 - <<'PY'
+from pathlib import Path
+import ast
+p=Path('.research/agents/p77_check_report.md')
+s=p.read_text()
+code=s.split('"'```python'"\\n',1)[1].split('\\n"'```'"',1)[0]
+ast.parse(code)
+print('Report readable; embedded numerical script parses; total report lines:',len(s.splitlines()))
+PY" in /Users/jmercedes/desktop/projects/research/chowla-cosine
+ succeeded in 0ms:
+Report readable; embedded numerical script parses; total report lines: 318
+
+**Calculating processing needs**
+
+I need to consider using the whole 3600 seconds since the user has finished all tasks and there's no time budget left, meaning I’m waiting for the next 20 minutes. The main computation for the FFTs is consuming the full CPU capacity. I could speed things up with some adjustments, but the default conservative settings seem fine. Overall, I’ll be using about 12 minutes, enough for a 10k token use. I need to save context for my report without compression. Let's read the latest and send an update after the new phase is completed!
+**Analyzing computation efficiency**
+
+I'm considering how to compute the E117 code, specifically the phi_B outsideB, even if the nomenclature suggests no effect. I realize I need the source code without hidden elements like `np.linalg.eigvalsh`. The user has allowed for some flexibility, but I have to navigate concurrency limits carefully. If I end up needing to parallel-run processes, I need to keep the user’s restrictions in mind. It feels like there’s a lot of thinking about efficiency going on!
+**Considering message updates**
+
+I realize I need to provide periodic updates, but it feels challenging to avoid repeating information without adding unnecessary filler. I want to ensure that updates like "The p=5 tests are complete..." or mentioning the "p7 stage..." remain meaningful. It’s important to keep things informative to avoid causing any frustration for the user. I’m pondering how to balance between providing updates and keeping the communication concise, without making it feel redundant!
+codex
+Both 400-lift random batches for \(p=3\) and \(p=5\) are complete, with no violations. The report now contains the line-by-line audit and a concrete example showing why nonsymmetric \(B\) makes the operator definition in (b) incomplete. The larger \(p=7\) batch is running next, followed by the random symmetric sets.
+ERROR: You’ve hit your usage limit. Visit https://chatgpt.com/settings/usage to purchase more credits or try again at Oct 25th, 2026 2:57 PM.
+ERROR: You’ve hit your usage limit. Visit https://chatgpt.com/settings/usage to purchase more credits or try again at Oct 25th, 2026 2:57 PM.
+2026-10-20T02:37:27.314721Z ERROR codex_core::session: failed to record rollout items: thread 01a15725-9f42-7653-a7d6-9fc1548cba2c not found
+tokens used
+66,033

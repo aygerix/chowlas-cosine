@@ -1,0 +1,268 @@
+{
+  "exact_CF_checks": [
+    {
+      "rho": "0.811",
+      "C": "4.164",
+      "minimum_float": 4.546465632284149e-05,
+      "proved_margin_lower": "1/25000"
+    },
+    {
+      "rho": "0.77",
+      "C": "4.331",
+      "minimum_float": 1.9425182184846468e-05,
+      "proved_margin_lower": "1/100000"
+    }
+  ],
+  "profile": {
+    "C": 6.053863042705642,
+    "a": 0.656320080992,
+    "density": 0.16518378313908333,
+    "energy": 0.08673803465569628,
+    "energy_over_density": 0.525100182399041,
+    "PD_proved": true,
+    "windows_proved": true,
+    "density_origin_slack": 0.2271598234209859,
+    "energy_origin_slack": 0.00021190274969564398,
+    "density_Bernstein_leaves": 48,
+    "energy_Bernstein_leaves": 48
+  },
+  "adversarial": [
+    {
+      "name": "n128_mu0_row0",
+      "n": 128,
+      "X": 384,
+      "R": 3.133195815236102,
+      "elementary_window": 0.06614072087295622,
+      "exact_elementary": 0.06614072076910546,
+      "beckner_window": 0.05915502734361393,
+      "numerical_rho_window": 0.10874847338330171,
+      "P29": 0.029462782549439476,
+      "prefix_dip": 0.07267841733053781,
+      "P36": 0.0
+    },
+    {
+      "name": "n128_mu0_row1",
+      "n": 128,
+      "X": 384,
+      "R": 3.0551985019701466,
+      "elementary_window": 0.06135345031580776,
+      "exact_elementary": 0.0613534501142829,
+      "beckner_window": 0.055752518210039334,
+      "numerical_rho_window": 0.09455802073881794,
+      "P29": 0.04212257192615176,
+      "prefix_dip": 0.5201719860144732,
+      "P36": 0.0
+    },
+    {
+      "name": "n128_mu0.1_row2",
+      "n": 128,
+      "X": 384,
+      "R": 0.9181603488637906,
+      "elementary_window": 0.09057467979363738,
+      "exact_elementary": 0.09057467938934036,
+      "beckner_window": 0.06213074577983045,
+      "numerical_rho_window": 0.1487832837101873,
+      "P29": 0.03982079203947679,
+      "prefix_dip": 0.06264776340420826,
+      "P36": 0.0
+    },
+    {
+      "name": "n128_mu0.1_row3",
+      "n": 128,
+      "X": 384,
+      "R": 0.9175779467036769,
+      "elementary_window": 0.09765095496241219,
+      "exact_elementary": 0.0976509549332812,
+      "beckner_window": 0.04901240832121483,
+      "numerical_rho_window": 0.14554271838734992,
+      "P29": 0.06652143872490632,
+      "prefix_dip": 0.06652143872490632,
+      "P36": 0.0
+    },
+    {
+      "name": "n128_mu0.3_row4",
+      "n": 128,
+      "X": 384,
+      "R": 1.0070813885493846,
+      "elementary_window": 0.16142859208120494,
+      "exact_elementary": 0.16142859127014172,
+      "beckner_window": 0.10288454145218723,
+      "numerical_rho_window": 0.2306035593132754,
+      "P29": 0.2843618871998244,
+      "prefix_dip": 0.2843618871998244,
+      "P36": 0.0
+    },
+    {
+      "name": "n128_mu0.3_row5",
+      "n": 128,
+      "X": 384,
+      "R": 0.9347120814033882,
+      "elementary_window": 0.15440026887637945,
+      "exact_elementary": 0.15440026877488078,
+      "beckner_window": 0.10776031431188657,
+      "numerical_rho_window": 0.21394500093287305,
+      "P29": 0.31475195821789576,
+      "prefix_dip": 0.31475195821789576,
+      "P36": 0.0
+    },
+    {
+      "name": "n512_mu0_row0",
+      "n": 512,
+      "X": 1536,
+      "R": 4.810674081405307,
+      "elementary_window": 0.053326414800452665,
+      "exact_elementary": 0.053326414592893126,
+      "beckner_window": 0.030808999434166786,
+      "numerical_rho_window": 0.09425841320012174,
+      "P29": 0.029318921306522295,
+      "prefix_dip": 0.029318921306522295,
+      "P36": 0.0
+    },
+    {
+      "name": "n512_mu0.1_row1",
+      "n": 512,
+      "X": 1536,
+      "R": 1.1644637086652956,
+      "elementary_window": 0.1623120023715573,
+      "exact_elementary": 0.1623120021537786,
+      "beckner_window": 0.13866709931558924,
+      "numerical_rho_window": 0.23052857482825104,
+      "P29": 0.40476376962245825,
+      "prefix_dip": 0.40476376962245825,
+      "P36": 0.0
+    }
+  ],
+  "realizations": [
+    {
+      "name": "profile_B48_cumulative_n512",
+      "n": 512,
+      "X": 3100,
+      "R": 2.1968087131201446,
+      "elementary_window": 0.023119721748883375,
+      "exact_elementary": 0.02311972153281765,
+      "beckner_window": 0.0221911879874355,
+      "numerical_rho_window": 0.04102742241002798,
+      "P29": 0.021897500320615663,
+      "prefix_dip": 0.021897500320615663,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_conditional_bernoulli_n512",
+      "n": 512,
+      "X": 3100,
+      "R": 1.9848154261800628,
+      "elementary_window": 0.021022837828801346,
+      "exact_elementary": 0.021022837439795078,
+      "beckner_window": 0.020408770999922762,
+      "numerical_rho_window": 0.047968790080265146,
+      "P29": 0.014598333547077109,
+      "prefix_dip": 0.014598333547077109,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_cumulative_n1024",
+      "n": 1024,
+      "X": 6200,
+      "R": 2.0806151351261946,
+      "elementary_window": 0.016354021772235054,
+      "exact_elementary": 0.0163540215625,
+      "beckner_window": 0.01607079071147831,
+      "numerical_rho_window": 0.039216465404702076,
+      "P29": 0.015483870967741935,
+      "prefix_dip": 0.015483870967741935,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_conditional_bernoulli_n1024",
+      "n": 1024,
+      "X": 6200,
+      "R": 1.934010479087939,
+      "elementary_window": 0.022789137222745125,
+      "exact_elementary": 0.0227891371875,
+      "beckner_window": 0.022454012924271027,
+      "numerical_rho_window": 0.04520335846596743,
+      "P29": 0.03165970622119815,
+      "prefix_dip": 0.03165970622119815,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_cumulative_n2048",
+      "n": 2048,
+      "X": 12399,
+      "R": 2.1869925350802157,
+      "elementary_window": 0.01176347410090963,
+      "exact_elementary": 0.011763473931818442,
+      "beckner_window": 0.01167473589893967,
+      "numerical_rho_window": 0.03861604550072421,
+      "P29": 0.010949633195242931,
+      "prefix_dip": 0.010949633195242931,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_conditional_bernoulli_n2048",
+      "n": 2048,
+      "X": 12399,
+      "R": 1.8210034696790423,
+      "elementary_window": 0.01462170069553685,
+      "exact_elementary": 0.014621700525061655,
+      "beckner_window": 0.014610475724782827,
+      "numerical_rho_window": 0.026899049855016247,
+      "P29": 0.01824938865873822,
+      "prefix_dip": 0.01824938865873822,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_cumulative_n4096",
+      "n": 4096,
+      "X": 24797,
+      "R": 2.4458326823808116,
+      "elementary_window": 0.010479471304933511,
+      "exact_elementary": 0.01047947125,
+      "beckner_window": 0.012772924405140872,
+      "numerical_rho_window": 0.038115267660207675,
+      "P29": 0.0077428721216276164,
+      "prefix_dip": 0.0077428721216276164,
+      "P36": 0.0
+    },
+    {
+      "name": "profile_B48_conditional_bernoulli_n4096",
+      "n": 4096,
+      "X": 24797,
+      "R": 2.0568751382784463,
+      "elementary_window": 0.007793572580062719,
+      "exact_elementary": 0.0077935725,
+      "beckner_window": 0.007856453836279385,
+      "numerical_rho_window": 0.025247759731003943,
+      "P29": 0.0077428721216276164,
+      "prefix_dip": 0.0077428721216276164,
+      "P36": 0.0
+    }
+  ],
+  "sine_heuristic": {
+    "v": 0.7237335167120567,
+    "a": 0.6554752649114173,
+    "density": 0.1653715241428167,
+    "C": 6.046990285560826
+  },
+  "main_theorem_exact_certificates": [
+    {
+      "C": "44393/10000",
+      "rho": "769801/1000000",
+      "v_upper": "452823/500000",
+      "verified": true,
+      "margin": "3506490276101151/1052280271169087720000",
+      "margin_float": 3.33227788467936e-06,
+      "beckner_constant_less_r": true
+    },
+    {
+      "C": "4213/1000",
+      "rho": "811/1000",
+      "v_upper": "452823/500000",
+      "verified": true,
+      "margin": "63761551/443356571680",
+      "margin_float": 0.00014381550894439197,
+      "beckner_constant_less_r": true
+    }
+  ],
+  "point_certificates_count": 16
+}

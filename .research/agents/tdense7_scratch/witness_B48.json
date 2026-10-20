@@ -1,0 +1,751 @@
+{
+  "B": 48,
+  "p": [
+    "20510002531/31250000000",
+    "652941585819/1000000000000",
+    "643274500581/1000000000000",
+    "125500027347/200000000000",
+    "606058483851/1000000000000",
+    "28976191803/50000000000",
+    "548577060813/1000000000000",
+    "2055915027/4000000000",
+    "238270771719/500000000000",
+    "109275398217/250000000000",
+    "396491694417/1000000000000",
+    "22219735023/62500000000",
+    "314926786971/1000000000000",
+    "275412940371/1000000000000",
+    "237557431773/1000000000000",
+    "50474372103/250000000000",
+    "42212861883/250000000000",
+    "69366107457/500000000000",
+    "111683521683/1000000000000",
+    "43942846167/500000000000",
+    "67364846721/1000000000000",
+    "10013976999/200000000000",
+    "35866604493/1000000000000",
+    "24548298129/1000000000000",
+    "15848712423/1000000000000",
+    "2364062571/250000000000",
+    "1257362379/250000000000",
+    "2212512273/1000000000000",
+    "162706131/250000000000",
+    "720279/100000000000",
+    "2997/1000000000000",
+    "269121609/1000000000000",
+    "143617239/200000000000",
+    "235992771/200000000000",
+    "1559707731/1000000000000",
+    "360831807/200000000000",
+    "473505021/250000000000",
+    "367299333/200000000000",
+    "414442143/250000000000",
+    "348809841/250000000000",
+    "1090621287/1000000000000",
+    "783684531/1000000000000",
+    "507562929/1000000000000",
+    "57049893/200000000000",
+    "12794193/100000000000",
+    "17415567/500000000000",
+    "32967/1000000000000",
+    "1249749/125000000000",
+    "0"
+  ],
+  "density": "1982205397669/12000000000000",
+  "density_float": 0.16518378313908333,
+  "C": 6.053863042705642,
+  "amplitude": "999/1000",
+  "diagonal_repair": "1/20000",
+  "symbol_roots_in_unit_interval": 0,
+  "symbol_value_at_one": "1982205397669/125000000000",
+  "PD_proved": true,
+  "sturm_seconds": 0.5678677558898926,
+  "windows": {
+    "density": {
+      "total": "1982205397669/12000000000000",
+      "ok": true,
+      "checks": [
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.058289210689824976,
+          "depth": 0,
+          "cell": 0
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 5.5679020881033e-07,
+          "depth": 0,
+          "cell": 1
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 4.687667583795561e-06,
+          "depth": 0,
+          "cell": 2
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 1.6566088250809797e-05,
+          "depth": 0,
+          "cell": 3
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 4.092533433635486e-05,
+          "depth": 0,
+          "cell": 4
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 8.29498593276663e-05,
+          "depth": 0,
+          "cell": 5
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.00014816426039756592,
+          "depth": 0,
+          "cell": 6
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.000242322880456173,
+          "depth": 0,
+          "cell": 7
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0003713028223972967,
+          "depth": 0,
+          "cell": 8
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0005410029220880312,
+          "depth": 0,
+          "cell": 9
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0007572509085120875,
+          "depth": 0,
+          "cell": 10
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0010257205947678688,
+          "depth": 0,
+          "cell": 11
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.001351860512518842,
+          "depth": 0,
+          "cell": 12
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0017408349499927484,
+          "depth": 0,
+          "cell": 13
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.002197477916697812,
+          "depth": 0,
+          "cell": 14
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0027262599975584737,
+          "depth": 0,
+          "cell": 15
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.00333126796243499,
+          "depth": 0,
+          "cell": 16
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.004016196677362972,
+          "depth": 0,
+          "cell": 17
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.004784352142811988,
+          "depth": 0,
+          "cell": 18
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.005638663884630126,
+          "depth": 0,
+          "cell": 19
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.006581705761428794,
+          "depth": 0,
+          "cell": 20
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.007615724234418052,
+          "depth": 0,
+          "cell": 21
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.008742672106850567,
+          "depth": 0,
+          "cell": 22
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.009964246006080393,
+          "depth": 0,
+          "cell": 23
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.011281925812219642,
+          "depth": 0,
+          "cell": 24
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.012697014294603666,
+          "depth": 0,
+          "cell": 25
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.014210675354925357,
+          "depth": 0,
+          "cell": 26
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.01582396947619329,
+          "depth": 0,
+          "cell": 27
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.017537885230107818,
+          "depth": 0,
+          "cell": 28
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.019353365991501417,
+          "depth": 0,
+          "cell": 29
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.02127133137323072,
+          "depth": 0,
+          "cell": 30
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.023292693376391765,
+          "depth": 0,
+          "cell": 31
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.025418366647551063,
+          "depth": 0,
+          "cell": 32
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.027649274188359368,
+          "depth": 0,
+          "cell": 33
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.02998635015385512,
+          "depth": 0,
+          "cell": 34
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.03243053977802417,
+          "depth": 0,
+          "cell": 35
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.03498279740344969,
+          "depth": 0,
+          "cell": 36
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.03764408341835274,
+          "depth": 0,
+          "cell": 37
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.040415360779512126,
+          "depth": 0,
+          "cell": 38
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.043297591680874735,
+          "depth": 0,
+          "cell": 39
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.04629173478647065,
+          "depth": 0,
+          "cell": 40
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.049398743293015815,
+          "depth": 0,
+          "cell": 41
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.05261956393470263,
+          "depth": 0,
+          "cell": 42
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.055955136901781916,
+          "depth": 0,
+          "cell": 43
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.059406396525796705,
+          "depth": 0,
+          "cell": 44
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.06297427249586837,
+          "depth": 0,
+          "cell": 45
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.06665969132588115,
+          "depth": 0,
+          "cell": 46
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.07046357784562052,
+          "depth": 0,
+          "cell": 47
+        }
+      ]
+    },
+    "energy": {
+      "total": "12490276990420265312415389/144000000000000000000000000",
+      "ok": true,
+      "checks": [
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 5.437424557190224e-05,
+          "depth": 0,
+          "cell": 0
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 1.2017806563113245e-08,
+          "depth": 0,
+          "cell": 1
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 1.8965324211568817e-07,
+          "depth": 0,
+          "cell": 2
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 9.678569293808595e-07,
+          "depth": 0,
+          "cell": 3
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 3.099816312058071e-06,
+          "depth": 0,
+          "cell": 4
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 7.678459980147083e-06,
+          "depth": 0,
+          "cell": 5
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 1.614821230149719e-05,
+          "depth": 0,
+          "cell": 6
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 3.030383906753085e-05,
+          "depth": 0,
+          "cell": 7
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 5.227450437874898e-05,
+          "depth": 0,
+          "cell": 8
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 8.449259361840938e-05,
+          "depth": 0,
+          "cell": 9
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0001296483022262042,
+          "depth": 0,
+          "cell": 10
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.00019063228588690832,
+          "depth": 0,
+          "cell": 11
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0002704696835172616,
+          "depth": 0,
+          "cell": 12
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0003722494740052305,
+          "depth": 0,
+          "cell": 13
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0004990533803950079,
+          "depth": 0,
+          "cell": 14
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.000653888334269619,
+          "depth": 0,
+          "cell": 15
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0008396261760798939,
+          "depth": 0,
+          "cell": 16
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0010589535996230045,
+          "depth": 0,
+          "cell": 17
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.001314334238488484,
+          "depth": 0,
+          "cell": 18
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0016079834938041667,
+          "depth": 0,
+          "cell": 19
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0019418564730212414,
+          "depth": 0,
+          "cell": 20
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.002317648749098778,
+          "depth": 0,
+          "cell": 21
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0027368082570122356,
+          "depth": 0,
+          "cell": 22
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0032005563072769025,
+          "depth": 0,
+          "cell": 23
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0037099152794597165,
+          "depth": 0,
+          "cell": 24
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.004265740408355157,
+          "depth": 0,
+          "cell": 25
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.004868753146136107,
+          "depth": 0,
+          "cell": 26
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.005519573832930133,
+          "depth": 0,
+          "cell": 27
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.00621875179012147,
+          "depth": 0,
+          "cell": 28
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.006966791416224738,
+          "depth": 0,
+          "cell": 29
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.00776417340559888,
+          "depth": 0,
+          "cell": 30
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.00861137084692969,
+          "depth": 0,
+          "cell": 31
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.009508859473605436,
+          "depth": 0,
+          "cell": 32
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.01045712336804394,
+          "depth": 0,
+          "cell": 33
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.011456657750284741,
+          "depth": 0,
+          "cell": 34
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0125079688955597,
+          "depth": 0,
+          "cell": 35
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0136115721631696,
+          "depth": 0,
+          "cell": 36
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.01476798894070255,
+          "depth": 0,
+          "cell": 37
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.015977743178808824,
+          "depth": 0,
+          "cell": 38
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.01724135807161966,
+          "depth": 0,
+          "cell": 39
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.018559353297692333,
+          "depth": 0,
+          "cell": 40
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.0199322430853943,
+          "depth": 0,
+          "cell": 41
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.021360535215966422,
+          "depth": 0,
+          "cell": 42
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.022844730937886613,
+          "depth": 0,
+          "cell": 43
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.02438532564753031,
+          "depth": 0,
+          "cell": 44
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.025982810101943817,
+          "depth": 0,
+          "cell": 45
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.027637671884006933,
+          "depth": 0,
+          "cell": 46
+        },
+        {
+          "ok": true,
+          "leaves": 1,
+          "min_bernstein": 0.029350396892734804,
+          "depth": 0,
+          "cell": 47
+        }
+      ]
+    }
+  },
+  "window_status": "PROVED by exact rational Bernstein coefficients when ok=True",
+  "rho": "3849/5000"
+}

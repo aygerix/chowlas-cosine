@@ -1,0 +1,11 @@
+Preserved first certificate-port failure (before monotone rational reconstruction):
+
+File "certify_sigma.py", line 24, namespace['run'](...)
+File "round11_certifier_sigma_port", line 71, in run
+AssertionError
+
+This was the validation that the rounded Bernstein coefficients were monotone.
+The E95 floating discovery solution contains tiny decreases, including row 19.
+inspect_sigma.py reproduces all offending rows. The final port uses cumulative
+maxima and then checks all continuum inequalities from the repaired data.
+No proof was claimed from this failed attempt.

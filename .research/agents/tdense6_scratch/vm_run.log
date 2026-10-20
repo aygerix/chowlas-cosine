@@ -1,0 +1,22 @@
+{"name": "Singer_diff_7", "n": 28, "X": 55, "C": 1.9642857142857142, "M": 4.0, "R": 0.7559289460184544, "xmin": 3.141592653589793, "grid_M": 4.0, "G": 4096, "l1": 2.2286804696354388, "micro_delta": 2.2286804696354388, "H": 12.172184414459759, "M_over_H": 0.32861809054160085, "micro_delta_over_MH": 6.781977419326836, "energy_above_H": 6.93133343741475, "energy_total": 14.000000000000002}
+{"name": "Bu_Singer_7", "n": 56, "X": 165, "C": 2.9464285714285716, "M": 6.185735193016816, "R": 0.8266036349135322, "xmin": 1.0498213428541352, "grid_M": 6.184719865844508, "G": 16384, "l1": 3.43007425247969, "micro_delta": 3.43007425247969, "H": 20.471092479852693, "M_over_H": 0.30216927597316623, "micro_delta_over_MH": 11.351499061023972, "energy_above_H": 11.848932989453136, "energy_total": 28.0}
+{"name": "Singer_diff_19", "n": 190, "X": 379, "C": 1.9947368421052631, "M": 9.999962936622195, "R": 0.7254735612499771, "xmin": 0.12337464907991932, "grid_M": 9.99985035420102, "G": 32768, "l1": 4.980855793572479, "micro_delta": 4.980855793572479, "H": 51.17586602000148, "M_over_H": 0.19540388300832717, "micro_delta_over_MH": 25.490055350436503, "energy_above_H": 52.97686864016775, "energy_total": 95.0}
+{"name": "Bu_Singer_19", "n": 380, "X": 1137, "C": 2.9921052631578946, "M": 13.892472491314829, "R": 0.7126688016513762, "xmin": 3.4040812133716156, "grid_M": 13.892257089924938, "G": 131072, "l1": 8.261302739925192, "micro_delta": 8.261302739925192, "H": 86.06720456744725, "M_over_H": 0.16141424089622758, "micro_delta_over_MH": 51.18075514313723, "energy_above_H": 77.80934906330768, "energy_total": 190.00000000000003}
+{"name": "Singer_diff_43", "n": 946, "X": 1891, "C": 1.9989429175475688, "M": 22.0, "R": 0.7152816976385906, "xmin": 3.141592653589793, "grid_M": 22.0, "G": 131072, "l1": 10.391681605154083, "micro_delta": 10.391681605154083, "H": 170.57616743420692, "M_over_H": 0.12897464124632557, "micro_delta_over_MH": 80.57151006380596, "energy_above_H": 274.18949894920627, "energy_total": 473.0}
+{"name": "Bu_Singer_43", "n": 1892, "X": 5673, "C": 2.998414376321353, "M": 33.05175579583355, "R": 0.759860675302208, "xmin": 1.0471783616952675, "grid_M": 33.05028098227692, "G": 524288, "l1": 17.897112175947747, "micro_delta": 17.897112175947747, "H": 286.87377544628396, "M_over_H": 0.11521358389910537, "micro_delta_over_MH": 155.33855965821334, "energy_above_H": 410.21650995297557, "energy_total": 946.0000000000002}
+{"name": "Singer_diff_83", "n": 3486, "X": 6971, "C": 1.9997131382673552, "M": 41.99985607917219, "R": 0.7113512693597513, "xmin": 3.03705803032235, "grid_M": 41.99807075953238, "G": 524288, "l1": 17.290815094587316, "micro_delta": 17.290815094587316, "H": 453.6757199369238, "M_over_H": 0.09257682135824148, "micro_delta_over_MH": 186.77261587625284, "energy_above_H": 1204.2167013545793, "energy_total": 1743.0000000000005}
+{"name": "Bu_Singer_83", "n": 6972, "X": 20913, "C": 2.9995697074010326, "M": 51.86725368969713, "R": 0.6211758515209866, "xmin": 5.236055582067204, "grid_M": 51.86293408804784, "G": 2097152, "l1": 32.67852121035676, "micro_delta": 32.67852121035676, "H": 762.9885731652148, "M_over_H": 0.06797907008558303, "micro_delta_over_MH": 480.7144488622125, "energy_above_H": 1806.5222327936658, "energy_total": 3486.000000000001}
+Traceback (most recent call last):
+  File "/home/jmercedes/chowla_cosine/.research/agents/tdense6_scratch/audit.py", line 259, in <module>
+    if mode in ('all','zoo'):zoo()
+                             ^^^^^
+  File "/home/jmercedes/chowla_cosine/.research/agents/tdense6_scratch/audit.py", line 222, in zoo
+    jr=joint_word_lift(A,ell,optimize=ell==16)
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jmercedes/chowla_cosine/.research/agents/tdense6_scratch/audit.py", line 169, in joint_word_lift
+    spectra=np.array([tent_delta(q[:,s],G=G)[1] for s in range(ell)])
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jmercedes/chowla_cosine/.research/agents/tdense6_scratch/audit.py", line 47, in tent_delta
+    c[1:len(q)+1]=q
+    ~^^^^^^^^^^^^
+ValueError: could not broadcast input array from shape (3342,) into shape (1023,)

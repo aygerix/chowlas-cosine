@@ -1,0 +1,14 @@
+import Mathlib
+#check MeasureTheory.Measure.prod_restrict
+#check MeasureTheory.integral_integral_swap
+#check Continuous.integrableOn_Icc
+#check intervalIntegral.integral_of_le
+#check Function.Periodic.intervalIntegral_add_eq
+#check Real.periodic_cos
+#check Function.Periodic.nat_mul
+#check Finset.sum_Icc_succ_top
+#check Finset.sum_Ico_Ico_comm
+#check Complex.norm_exp_ofReal_mul_I
+#check Polynomial.IsRoot
+#check Polynomial.exists_multiset_roots
+#check Polynomial.splits_iff_card_roots

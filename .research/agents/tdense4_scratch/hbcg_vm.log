@@ -1,0 +1,102 @@
+random_dense_256
+random_dense_1024
+random_dense_4096
+E67_optimized_Bu_q7
+E67_optimized_Bu_q11
+E67_optimized_Bu_q13
+E67_optimized_Bu_q17
+E67_optimized_Bu_q23
+E67_optimized_Bu_q31
+P42_fejer_X4096
+P42_fejer_X16384
+P42_fejer_X65536
+P42_fejer_X200000
+E68_e68_0
+E68_e68_1
+E68_e68_2
+E68_e68_3
+E68_e68_4
+E68_e68_5
+E68_e68_6
+E68_e68_7
+E68_e68_8
+E68_e68_9
+E68_e68_10
+E68_e68_11
+E68_e68_12
+E68_e68_13
+E68_e68_14
+E68_e68_15
+E68_e68_16
+E68_e68_17
+E68_e68_18
+E68_e68_19
+E68_e68_20
+E68_e68_21
+E68_e68_22
+E68_e68_23
+E68_e68_24
+E68_e68_25
+E68_e68_26
+E68_e68_27
+E68_e68_28
+E68_e68_29
+E68_e68_30
+E68_e68_31
+E68_e68b_0
+E68_e68b_1
+E68_e68b_2
+E68_e68b_3
+E68_e68b_4
+E68_e68b_5
+E68_e68b_6
+E68_e68b_7
+bohr_1mode_4096_0.0
+bohr_1mode_4096_0.37
+bohr_1mode_4096_0.999
+bohr_2mode_4096_0.0
+bohr_2mode_4096_0.37
+bohr_2mode_4096_0.999
+bohr_1mode_16384_0.0
+bohr_1mode_16384_0.37
+bohr_1mode_16384_0.999
+bohr_2mode_16384_0.0
+bohr_2mode_16384_0.37
+bohr_2mode_16384_0.999
+bohr_1mode_65536_0.0
+bohr_1mode_65536_0.37
+bohr_1mode_65536_0.999
+bohr_2mode_65536_0.0
+bohr_2mode_65536_0.37
+bohr_2mode_65536_0.999
+fresh_e67_bu_q7
+fresh_e67_bu_q19
+fresh_e67_bu_q43
+centered_bu_q61
+centered_bu_q127
+{
+  "status": "NUMERICAL only",
+  "sets": 76,
+  "rows": 304,
+  "minimum_residual_plus_M_over_H": {
+    "name": "centered_bu_q127",
+    "n": 16256,
+    "X": 48765,
+    "scale": 16,
+    "M_grid_over_H": 0.03721656502438091,
+    "residual_over_X": 0.0873244702136235,
+    "expanded_measure": 8.177757263183594e-05,
+    "residual_plus_M_over_H": 0.1245410352380044
+  },
+  "minimum_residual_over_X": {
+    "name": "E68_e68_16",
+    "n": 128,
+    "X": 269,
+    "scale": 2,
+    "M_grid_over_H": 0.7774942470922064,
+    "residual_over_X": 0.04006084836788627,
+    "expanded_measure": 0.013275146484375,
+    "residual_plus_M_over_H": 0.8175550954600926
+  },
+  "convention": "K=1, expand all f>H grid points by ceil(G/(2pi X)); lower-bounds residual outside any selected center windows up to grid resolution"
+}

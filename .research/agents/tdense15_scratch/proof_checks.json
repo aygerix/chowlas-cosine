@@ -1,0 +1,221 @@
+{
+  "status": "PROVED exact algebra and finite parity; NUMERICAL stability checks; Arb prior-fake checks",
+  "exact_parity_sets": 318,
+  "stability_checks": [
+    {
+      "name": "small_enumeration_candidate",
+      "q": 5,
+      "core": 2,
+      "W": 1.2500000000000002,
+      "parity_lower_bound": 0.13932022500210303
+    },
+    {
+      "name": "small_enumeration_candidate",
+      "q": 13,
+      "core": 6,
+      "W": 3.250000000000002,
+      "parity_lower_bound": 0.1300520416416467
+    },
+    {
+      "name": "small_enumeration_candidate",
+      "q": 17,
+      "core": 8,
+      "W": 4.250000000000012,
+      "parity_lower_bound": 0.12881745799908256
+    },
+    {
+      "name": "small_enumeration_candidate",
+      "q": 29,
+      "core": 14,
+      "W": 7.2500000000000835,
+      "parity_lower_bound": 0.1272027710495843
+    },
+    {
+      "name": "small_enumeration_candidate",
+      "q": 37,
+      "core": 2,
+      "W": 769.9285929831764,
+      "parity_lower_bound": 5.0577971012886245,
+      "negative_L2_bound": 795.4228007573324,
+      "flat_rms_bound": 0.7862775556588711,
+      "flat_rms_actual": 0.21824406901496834,
+      "square_fourier_error": 0.0634035166331906
+    },
+    {
+      "name": "E41_stored",
+      "q": 41,
+      "core": 2,
+      "W": 1079.0181011500874,
+      "parity_lower_bound": 6.303233992385602,
+      "negative_L2_bound": 1047.141056885923,
+      "flat_rms_bound": 0.8112574752395195,
+      "flat_rms_actual": 0.2133664722069712,
+      "square_fourier_error": 0.0673472012280236
+    },
+    {
+      "name": "E41_stored",
+      "q": 53,
+      "core": 2,
+      "W": 1938.7766698294558,
+      "parity_lower_bound": 9.047902460916195,
+      "negative_L2_bound": 1671.564473013544,
+      "flat_rms_bound": 0.7882268191045191,
+      "flat_rms_actual": 0.19597114834391044,
+      "square_fourier_error": 0.05247033078749439
+    },
+    {
+      "name": "E41_stored",
+      "q": 61,
+      "core": 12,
+      "W": 727.6950216882531,
+      "parity_lower_bound": 0.636178679931381,
+      "negative_L2_bound": 1452.230340829689,
+      "flat_rms_bound": 0.6381048464601596,
+      "flat_rms_actual": 0.18502681946793062,
+      "square_fourier_error": 0.02573677738473446
+    },
+    {
+      "name": "E41_stored",
+      "q": 73,
+      "core": 16,
+      "W": 1902.7568756959542,
+      "parity_lower_bound": 0.9137572931019292,
+      "negative_L2_bound": 2543.6270208261017,
+      "flat_rms_bound": 0.7025125254570196,
+      "flat_rms_actual": 0.1862953958923056,
+      "square_fourier_error": 0.021279919410002814
+    },
+    {
+      "name": "E41_stored",
+      "q": 89,
+      "core": 14,
+      "W": 3109.10077758814,
+      "parity_lower_bound": 1.4251047208229848,
+      "negative_L2_bound": 3527.949495008296,
+      "flat_rms_bound": 0.6767760842089746,
+      "flat_rms_actual": 0.18277435936488762,
+      "square_fourier_error": 0.027530480384923013
+    },
+    {
+      "name": "E41_stored",
+      "q": 101,
+      "core": 2,
+      "W": 9477.786483464199,
+      "parity_lower_bound": 25.139361025950915,
+      "negative_L2_bound": 6069.466066709484,
+      "flat_rms_bound": 0.7801519103782385,
+      "flat_rms_actual": 0.2016221037423147,
+      "square_fourier_error": 0.042565202225358825
+    },
+    {
+      "name": "E90_stored_candidate",
+      "q": 149,
+      "core": 2,
+      "W": 26992.972638440864,
+      "parity_lower_bound": 53.532698805337276,
+      "negative_L2_bound": 13602.580480389228,
+      "flat_rms_bound": 0.7887480427254198,
+      "flat_rms_actual": 0.17311258768368545,
+      "square_fourier_error": 0.04332938765389968
+    },
+    {
+      "name": "E90_stored_candidate",
+      "q": 401,
+      "core": 2,
+      "W": 364589.9865584356,
+      "parity_lower_bound": 294.2263183531918,
+      "negative_L2_bound": 138531.25537722567,
+      "flat_rms_bound": 0.9305806189313588,
+      "flat_rms_actual": 0.1860380466397141,
+      "square_fourier_error": 0.03129856570743842
+    },
+    {
+      "name": "E90_stored_candidate",
+      "q": 601,
+      "core": 2,
+      "W": 1156069.8363818438,
+      "parity_lower_bound": 765.3336855939607,
+      "negative_L2_bound": 324452.61943580216,
+      "flat_rms_bound": 0.9493875223950745,
+      "flat_rms_actual": 0.18325653895413468,
+      "square_fourier_error": 0.04645375588210514
+    },
+    {
+      "name": "E90_stored_candidate",
+      "q": 1201,
+      "core": 600,
+      "W": 181903.04824831698,
+      "parity_lower_bound": 0.1880300743520189
+    },
+    {
+      "name": "E90_stored_candidate",
+      "q": 1601,
+      "core": 800,
+      "W": 281474.6855778303,
+      "parity_lower_bound": 0.1798849788524807
+    },
+    {
+      "name": "Paley",
+      "q": 257,
+      "core": 128,
+      "W": 64.25000000003938,
+      "parity_lower_bound": 0.12524378369403594
+    },
+    {
+      "name": "Paley",
+      "q": 4093,
+      "core": 2046,
+      "W": 1023.2500000175628,
+      "parity_lower_bound": 0.1250152723052451
+    },
+    {
+      "name": "Paley",
+      "q": 65537,
+      "core": 32768,
+      "W": 16384.250017531544,
+      "parity_lower_bound": 0.12500095366886127
+    }
+  ],
+  "R13_partial_fake": {
+    "q": 8120601,
+    "prime": false,
+    "J": 3,
+    "u": 201,
+    "repair_sites": 56476,
+    "support_sites": 58891,
+    "last_positive": 233162,
+    "K_sign": 201,
+    "Lambda_sign": 161403,
+    "mass_residual": "[+/- 1.28e-44]",
+    "energy_residual": "[+/- 9.60e-40]",
+    "correlations": [
+      {
+        "gamma": 1,
+        "exact_monomial_counts": {
+          "(0, 1)": 2,
+          "(2, 2)": 402
+        },
+        "residual_ball": "[+/- 1.52e-42]"
+      },
+      {
+        "gamma": 2,
+        "exact_monomial_counts": {
+          "(1, 1)": 1,
+          "(3, 3)": 402
+        },
+        "residual_ball": "[+/- 1.85e-42]"
+      },
+      {
+        "gamma": 3,
+        "exact_monomial_counts": {
+          "(4, 4)": 402
+        },
+        "residual_ball": "[+/- 1.88e-42]"
+      }
+    ],
+    "first_tested_outside_segment": 8,
+    "sign_defect_over_q2_ball": "[0.9703906670001710202791302500160207358750901200561 +/- 3.95e-50]",
+    "status": "Exact support-count check and Arb arithmetic; infinite-prime claim proved in report"
+  },
+  "note": "201^3 is an odd composite index size for this exact construction check, not a prime half-set."
+}

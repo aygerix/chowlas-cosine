@@ -1,0 +1,9 @@
+{"event": "setup", "k": null, "D_file": "examples/e64/D_bu_k7.json", "shift": null, "S": null, "nD": 42, "nEBu": 0, "M_Bu": null, "R_Bu": null, "M_D": 4.736718578532651, "R_D": 0.7308915444952662, "mt": "d", "Mt": 4.9735545074592835, "eps": 0.05, "XE": 281, "pinch": 93.94710901491857}
+{"event": "progress", "t": 304, "bound": 94.0, "best": 0, "nodes": 13681.0}
+{"event": "progress", "t": 606, "bound": 94.0, "best": 0, "nodes": 29207.0}
+{"event": "progress", "t": 911, "bound": 94.0, "best": 0, "nodes": 42644.0}
+{"event": "progress", "t": 1215, "bound": 94.0, "best": 0, "nodes": 54226.0}
+{"event": "progress", "t": 1520, "bound": 94.0, "best": 0, "nodes": 65494.0}
+{"event": "progress", "t": 1823, "bound": 94.0, "best": 0, "nodes": 80879.0}
+{"event": "progress", "t": 2123, "bound": 94.0, "best": 0, "nodes": 96528.0}
+{"event": "final", "k": null, "D_file": "examples/e64/D_bu_k7.json", "shift": null, "S": null, "nD": 42, "nEBu": 0, "M_Bu": null, "R_Bu": null, "M_D": 4.736718578532651, "R_D": 0.7308915444952662, "mt": "d", "Mt": 4.9735545074592835, "eps": 0.05, "XE": 281, "pinch": 93.94710901491857, "status": 9, "optimal": false, "bound": 94.0, "nE": 0, "E": [], "nodes": 108566.0, "secs": 2400.0, "ncand": 188, "lazy": 0, "sols": 1, "lam": 0.0, "M_A": 4.736718578532656, "R_A": 0.7308915444952669, "A": [3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36, 45, 54, 60, 63, 66, 69, 72, 81, 84, 90, 105, 117, 126, 132, 135, 138, 141, 153, 156, 162, 171, 186, 189, 195, 198, 201, 207, 216, 222, 225], "gurobi": "13.0.3"}

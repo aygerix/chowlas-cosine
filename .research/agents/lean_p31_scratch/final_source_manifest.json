@@ -1,0 +1,138 @@
+[
+  {
+    "path": "lean/ChowlaCosine/P31/AnalyticNikolskii.lean",
+    "sha256": "9f49629ba608c870faebc52b5370dda21de07d17232f55a605e1047c76342438",
+    "lines": 217,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/Averaging.lean",
+    "sha256": "3747da0399441bfc2409d66b197ae7c2800009a5d4cf187bb7cb0c8b79c10040",
+    "lines": 90,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/Corollaries.lean",
+    "sha256": "4430d068c369fc2f842b41ddb486dbf42a78c8c445d694ca6f2083c9ae52c649",
+    "lines": 144,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/ElementaryConstant.lean",
+    "sha256": "334814ef0bfed23c9ef452c7af265bcbea6deb89966576dfe141aab1ff3943d4",
+    "lines": 291,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/ElementaryConvolution.lean",
+    "sha256": "a8abe15708185130216775e88a2f4894377d65a956a5231a8dd18365e9cebdd0",
+    "lines": 491,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/Fejer.lean",
+    "sha256": "cf2ac80661d1fa67c25e3077da6fe67b5cb40d3d3004c3b277dd28c917b06e72",
+    "lines": 162,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/FejerRiesz.lean",
+    "sha256": "001d7422c09bde8886be8fa570af4a9e25560adc3dbe1f546302d178d0543f4f",
+    "lines": 817,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/Main.lean",
+    "sha256": "54ec1c9217205250de388a5cde4d9a1a822d953fbcce5878514ba12cf442b3a5",
+    "lines": 15,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/WindowBound.lean",
+    "sha256": "997bf7483cf857d51163fe27da740c0ed9c7f578e3a804450ba4980a6f980e46",
+    "lines": 298,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/P31/WindowMoments.lean",
+    "sha256": "f9a942b20f27732e7f866c4ff091af6b5786d6a758663391c12f9fc75143ec1c",
+    "lines": 239,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/Gaussian.lean",
+    "sha256": "513130422841fee83490c1455a2c5c1cc212a53e5581961166cbd860c93e8873",
+    "lines": 178,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/GeometricHeat.lean",
+    "sha256": "a71766b5b57781d95b8d7f4793bf427cb475758eaffefd932a030dcfe3f9e19d",
+    "lines": 181,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/HeatFlow.lean",
+    "sha256": "120cc9338d952ff14d1c380ef3f484363564d4ff37b57e24882c07d0cd91b142",
+    "lines": 380,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/HeatFlowDerivative.lean",
+    "sha256": "dfe5e7e49619269e17a5edce29bb6aaffc5ec9ee974fced4d07379dfa34a0fab",
+    "lines": 173,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/HeatFlowRelative.lean",
+    "sha256": "ad3ddbb03b39b7b4e984bb21f72965d4e7fbdf294aec75a0b1bbaff1b0c30ada",
+    "lines": 246,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/Young.lean",
+    "sha256": "250d2c2b7b13ed5670423dc2aa00fb91086f79ab107dc3071c355ea8e2fac047",
+    "lines": 401,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/YoungSpecial.lean",
+    "sha256": "ae6ddcbb8056bf6e1978c16c47f661484f12a1e46d21da00462e8fc20b04b459",
+    "lines": 27,
+    "sorry_tokens": 0,
+    "axiom_declarations": 0,
+    "native_decide_tokens": 0
+  }
+]

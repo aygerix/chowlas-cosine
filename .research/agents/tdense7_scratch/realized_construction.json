@@ -1,0 +1,66 @@
+[
+  {
+    "name": "profile_B48_cumulative_n512",
+    "n": 512,
+    "X": 3100,
+    "attempts": 1,
+    "forced_endpoint": true,
+    "probability_rescale": 0.999863831569448
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n512",
+    "n": 512,
+    "X": 3100,
+    "attempts": 195,
+    "forced_endpoint": true,
+    "probability_rescale": 0.999863831569448
+  },
+  {
+    "name": "profile_B48_cumulative_n1024",
+    "n": 1024,
+    "X": 6200,
+    "attempts": 1,
+    "forced_endpoint": true,
+    "probability_rescale": 0.999863831569448
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n1024",
+    "n": 1024,
+    "X": 6200,
+    "attempts": 39,
+    "forced_endpoint": true,
+    "probability_rescale": 0.999863831569448
+  },
+  {
+    "name": "profile_B48_cumulative_n2048",
+    "n": 2048,
+    "X": 12399,
+    "attempts": 1,
+    "forced_endpoint": true,
+    "probability_rescale": 0.9999444722526942
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n2048",
+    "n": 2048,
+    "X": 12399,
+    "attempts": 114,
+    "forced_endpoint": true,
+    "probability_rescale": 0.9999444722526942
+  },
+  {
+    "name": "profile_B48_cumulative_n4096",
+    "n": 4096,
+    "X": 24797,
+    "attempts": 1,
+    "forced_endpoint": true,
+    "probability_rescale": 0.999984797472368
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n4096",
+    "n": 4096,
+    "X": 24797,
+    "attempts": 52,
+    "forced_endpoint": true,
+    "probability_rescale": 0.999984797472368
+  }
+]

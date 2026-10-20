@@ -1,0 +1,11 @@
+'ChowlaCosine.FewSpike.PositiveDefinite.psi_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.FewSpike.PositiveDefinite.psi_add_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.FewSpike.fewSpike_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.FewSpike.fewSpike' depends on axioms: [propext, Classical.choice, Quot.sound]
+ChowlaCosine.FewSpike.fewSpike_core (S : Finset ℤ) (_hS : S.Nonempty) (φ : ℤ → ℂ)
+  (hφ : ChowlaCosine.FewSpike.PositiveDefinite φ) (δ : ℝ) (_hδ : 0 < δ ∧ δ < 1 / 2)
+  (hpeak : (φ 0).re < (4 - 5 * δ) / 3) : (↑S.card - 1) / 3 ≤ ↑(ChowlaCosine.FewSpike.badSet S φ δ).card
+ChowlaCosine.FewSpike.fewSpike (S : Finset ℤ) (hS : S.Nonempty) (φ : ℤ → ℂ)
+  (hφ : ChowlaCosine.FewSpike.PositiveDefinite φ) (δ : ℝ) (hδ : 0 < δ ∧ δ < 1 / 2) (hpeak : (φ 0).re < (4 - 5 * δ) / 3)
+  (E : ℝ) (hE : ∀ (F : Finset ℤ), ∑ k ∈ F, ‖φ k - ChowlaCosine.FewSpike.ind S k‖ ^ 2 ≤ E) :
+  δ ^ 2 * (↑S.card - 1) / 3 ≤ E

@@ -1,0 +1,24 @@
+note: "version 2" Tectonic command-line interface activated
+note: Running TeX ...
+note: downloading lmroman6-regular.otf
+note: downloading lmmono10-regular.otf
+warning: window_nikolskii.tex:92: Overfull \hbox (27.39697pt too wide) in paragraph at lines 89--92
+note: downloading cmbx10.tfm
+note: downloading cmbx8.tfm
+note: downloading cmbx6.tfm
+warning: window_nikolskii.tex:179: Overfull \hbox (43.70464pt too wide) in paragraph at lines 173--179
+note: downloading cmbx9.tfm
+note: downloading cmbx5.tfm
+note: Rerunning TeX because "window_nikolskii.out" changed ...
+warning: window_nikolskii.tex:92: Overfull \hbox (27.39697pt too wide) in paragraph at lines 89--92
+warning: window_nikolskii.tex:179: Overfull \hbox (43.70464pt too wide) in paragraph at lines 173--179
+warning: warnings were issued by the TeX engine; use --print and/or --keep-logs for details.
+note: Running xdvipdfmx ...
+note: downloading cmex9.pfb
+note: downloading msbm7.pfb
+note: downloading cmex10.pfb
+note: downloading cmsy8.pfb
+note: downloading cmbx10.pfb
+note: Writing `window_nikolskii.log` (11.7373046875 KiB)
+note: Writing `window_nikolskii.pdf` (103.3173828125 KiB)
+note: Skipped writing 2 intermediate files (use --keep-intermediates to keep them)

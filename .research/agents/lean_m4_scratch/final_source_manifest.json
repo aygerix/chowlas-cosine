@@ -1,0 +1,76 @@
+[
+  {
+    "path": "lean/ChowlaCosine/Beckner/HeatFlowProductLimit.lean",
+    "sha256": "1711557388235f347dbd8b58f102d8dd1c215e4774a8c823e842a639cb3de2fb",
+    "lines": 245,
+    "public_theorems": [
+      "weightedFrame_sum_weights",
+      "geometricHeatProduct_rescale",
+      "rescaled_heatFlow_gaussian_bound",
+      "integrable_plane_gaussian",
+      "integral_plane_gaussian",
+      "integral_plane_dilate",
+      "planePoint_smul",
+      "frame_heatKernel_product",
+      "integral_frame_heatKernel_product",
+      "tendsto_integral_rescaled_geometricHeatProduct",
+      "tendsto_integral_geometricHeatProduct_sq",
+      "tendsto_integral_geometricHeatProduct",
+      "integral_geometricHeatProduct_le_mass"
+    ],
+    "missing_audits": [],
+    "forbidden_tokens": []
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/HeatFlowInitial.lean",
+    "sha256": "cc8187c99bee88e7dbb34aa1fc3f39f20ea4243e4d499edab917924a6bfa304b",
+    "lines": 180,
+    "public_theorems": [
+      "heatFlow_initial_rescale",
+      "tendsto_heatFlow_initial_sq",
+      "integrable_and_integral_le_of_nonneg_limit",
+      "tendsto_geometricHeatProduct_initial_sq",
+      "geometric_brascamp_lieb_bounded_continuous",
+      "geometric_brascamp_lieb_continuous_compact"
+    ],
+    "missing_audits": [],
+    "forbidden_tokens": []
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/HeatFlowDensity.lean",
+    "sha256": "bfc54aaaeae632aefa4c6db394aff76b20791d5ffe12a8d3bd6d115c907a2bb8",
+    "lines": 256,
+    "public_theorems": [
+      "ae_plane_linear",
+      "ae_plane_inner",
+      "exists_positive_compact_datum",
+      "exists_positive_compact_approximation",
+      "exists_positive_compact_approximation_seq",
+      "exists_common_support_radius",
+      "integrable_and_integral_le_of_nonneg_limit_bounds",
+      "geometric_brascamp_lieb"
+    ],
+    "missing_audits": [],
+    "forbidden_tokens": []
+  },
+  {
+    "path": "lean/ChowlaCosine/Beckner/YoungFrame.lean",
+    "sha256": "aa72de9034fa10604fe48f92e5e347f5882f7f8efb9b78b22aba8b0c0001eb19",
+    "lines": 255,
+    "public_theorems": [
+      "isWeightedFrame_plane_of_coefficients",
+      "youngFrameMatrix_det",
+      "youngFrame_coordinate_relation",
+      "young_scalar_factor",
+      "young_scalar_factor_beckner",
+      "youngFrame_sharp_factor",
+      "youngFrame_matrix",
+      "youngFrame_isWeightedFrame",
+      "youngFrame_unit",
+      "youngFrame_relation",
+      "geometric_brascamp_lieb_youngFrame"
+    ],
+    "missing_audits": [],
+    "forbidden_tokens": []
+  }
+]

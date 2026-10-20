@@ -1,0 +1,27 @@
+{
+  "status": "PROVED",
+  "independent_method": "SymPy QQ + FLINT composition; direct exact Schur integrals/interpolation; Sturm long lines; rational finite-symbol evaluations",
+  "pointwise_leaves": 767,
+  "CF_caps": 127,
+  "support_lines": 188,
+  "schur_cells": 64,
+  "min_schur": "1704250072843/1966080000000000",
+  "D1": "73/1000",
+  "C11": "1000/73",
+  "C11_float": 13.698630136986301,
+  "binary_algebra_checked": true,
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "sha256": {
+    "certify_sigma.py": "26047f4419e7c722ddc05727508c6ebe1d3dd08be772cdeb2f53e14d5eae9ec6",
+    "finalize.py": "664cbf3a34b7ef8fa632125c83dc83ff5421494daf4f844e2626316645df4ef5",
+    "inspect_sigma.py": "3a95ab059d4cc68b1690a8f0aa5c19604e125406f881fda2d4a60bab8df504aa",
+    "mixing_sturm.py": "9bb84d7908ce137c34eaa582ad218ffa7611b33ea4ecd9d734d19cee1acff374",
+    "proof_checks.py": "5bfb64cf54dd577e469672b5bc2b22a65d63721660a26e3098f73958b45a981d",
+    "stability_probe.py": "143ea289fbab0c31246907e7610566408708544fa0b8c494b46bd34e21988394",
+    "support_counterexample.py": "870baaae8a0b9f049d6fb6f25f08e387ea354e9b0eeefb1f06debc31ca3c5d0e",
+    "verify_sigma.py": "0f861e3e1c5c74e6ffb2b30aade3004beac3d078b9c4aae83aa540d2991c55cb",
+    "certificate_sigma.json": "09d8d52b9549c2ec3e6baf7c4bcb0e876bfcb7e20f97f2d67335116b8df1d3ca"
+  },
+  "seconds": 54.78643536567688
+}

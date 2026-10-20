@@ -1,0 +1,5 @@
+'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrameMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_sharp_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb_youngFrame' depends on axioms: [propext, Classical.choice, Quot.sound]

@@ -1,0 +1,13 @@
+#print axioms ChowlaCosine.Beckner.gaussian_rpow
+#print axioms ChowlaCosine.Beckner.integrable_gaussian
+#print axioms ChowlaCosine.Beckner.integral_gaussian_exact
+#print axioms ChowlaCosine.Beckner.integral_gaussian_rpow
+#print axioms ChowlaCosine.Beckner.gaussian_mul_completed_square
+#print axioms ChowlaCosine.Beckner.gaussian_convolution
+#print axioms ChowlaCosine.Beckner.eLpNorm_complexGaussian
+#print axioms ChowlaCosine.Beckner.memLp_complexGaussian
+#print axioms ChowlaCosine.Beckner.complexGaussian_convolution
+#print axioms ChowlaCosine.Beckner.eLpNorm_complexGaussian_convolution
+#print axioms ChowlaCosine.Beckner.sharpBeta_pos
+#print axioms ChowlaCosine.Beckner.gaussian_attains_project_constant
+#print axioms ChowlaCosine.Beckner.project_constant_lower_bound

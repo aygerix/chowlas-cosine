@@ -1,0 +1,28 @@
+'ChowlaCosine.Beckner.weightedFrame_sum_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatProduct_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.rescaled_heatFlow_gaussian_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integrable_plane_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_plane_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_plane_dilate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.planePoint_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.frame_heatKernel_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_frame_heatKernel_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.tendsto_integral_rescaled_geometricHeatProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_geometricHeatProduct_le_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.heatFlow_initial_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.tendsto_heatFlow_initial_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.tendsto_geometricHeatProduct_initial_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb_bounded_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

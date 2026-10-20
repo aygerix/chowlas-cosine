@@ -1,0 +1,12 @@
+#print axioms ChowlaCosine.Beckner.abs_integral_le_scaled_integral
+#print axioms ChowlaCosine.Beckner.integrable_heatSpaceSlope_integrand
+#print axioms ChowlaCosine.Beckner.integrable_heatTimeSlope_integrand
+#print axioms ChowlaCosine.Beckner.heatFlow_space_moment_bound
+#print axioms ChowlaCosine.Beckner.heatFlow_time_moment_bound
+#print axioms ChowlaCosine.Beckner.heatFlow_space_score_bound
+#print axioms ChowlaCosine.Beckner.heatFlow_time_score_bound
+#print axioms ChowlaCosine.Beckner.weighted_product_eq_exp
+#print axioms ChowlaCosine.Beckner.hasDerivAt_weighted_product
+#print axioms ChowlaCosine.Beckner.hasDerivAt_weighted_product_slope
+#print axioms ChowlaCosine.Beckner.frame_laplacian_identity
+#print axioms ChowlaCosine.Beckner.frame_heat_defect_nonneg

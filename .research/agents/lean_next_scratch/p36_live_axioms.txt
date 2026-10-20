@@ -1,0 +1,3 @@
+'ChowlaCosine.P36.p36_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P36.p36_gap' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P36.p36_gap_pi' depends on axioms: [propext, Classical.choice, Quot.sound]

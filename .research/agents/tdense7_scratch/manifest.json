@@ -1,0 +1,31 @@
+{
+  "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+  "numpy": "2.5.4",
+  "gurobi": [
+    13,
+    0,
+    3
+  ],
+  "sympy": "1.14.0",
+  "mpmath": "1.4.1",
+  "seed": 2026101907,
+  "launcher": "DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 2",
+  "optimization_threads": 2,
+  "source_sha256": {
+    ".research/agents/tdense7_scratch/algebra.py": "d4297b2e267bfc5353512cfb8c428bd1a0e7eea6d3b69747d3e6a996add180d4",
+    ".research/agents/tdense7_scratch/envelope.py": "c23f9d4f01b54db9d219fead51a5de07a92868c45cf1c5c3a1bdd0e1837d4329",
+    ".research/agents/tdense7_scratch/envelope_exact.py": "fb81be86b20207f0c5561ed1be90fe501727084f15169a08f0c6f924ec488b59",
+    ".research/agents/tdense7_scratch/evaluate.py": "84d88aff6bcd48cc12cd86fed4e5694ff5657b62734f647b6defb30297e0b61e",
+    ".research/agents/tdense7_scratch/finalize.py": "2842b5a99cb9588e0d863de9041cb6bdaf86f1a8c5eb7f948dc0b2de8020855b",
+    ".research/agents/tdense7_scratch/moment_gap.py": "f179cf9738e4afe1b9faabafe6129c3f9f8f4c5b2abe1832a4415467dfdc0981",
+    ".research/agents/tdense7_scratch/point_certify.py": "95e4557c1df5ed5858302c26f9893b361e366a8e9b1292d320bb6f0b8da0a135",
+    ".research/agents/tdense7_scratch/profile.py": "151775e6ae2d2c8d87b272bee896e3317303844582133f0ea55aa87d2a8b5346",
+    ".research/agents/tdense7_scratch/profile_pwl.py": "31e7b0c4258278a2c610c3af2628055100d8a150c62283135d5c893c23df92ef",
+    ".research/agents/tdense7_scratch/witness.py": "5d7458b4d03481951cdd5c4cbff077b1e00446bec68b9b83726c7355a703a0f6",
+    ".research/agents/tdense7_scratch/pareto.c": "dab47266cff04cf02a4658fdd16b41e50cd4000a216c4d7ccbfb9ef19ef6c69f",
+    ".research/agents/tdense7_scratch/run_search.sh": "7856be68c31a14cd946072c6bfafa7eb8df3a44b0c7cd7d1ff385ae3dd0a435c"
+  },
+  "numerical_minima": "FFT at power of two >=128X, 24 direct local refinements; uncertified",
+  "model_scope": "PWL PD + macroscopic windows, not every microscopic alternative model",
+  "dependency_change": "SymPy 1.14 added on VM; original mpmath 1.4.1 restored after pip dependency downgrade"
+}

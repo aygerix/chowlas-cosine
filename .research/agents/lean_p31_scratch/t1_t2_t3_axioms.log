@@ -1,0 +1,785 @@
+norm_sq_sum_exp : ∀ (B : Finset ℤ) (x : ℝ),
+  ‖∑ b ∈ B, Complex.exp (↑b * ↑x * Complex.I)‖ ^ 2 =
+    ↑B.card + 2 * ∑ p ∈ B ×ˢ B with p.1 < p.2, Real.cos (↑(p.2 - p.1) * x)
+'ChowlaCosine.norm_sq_sum_exp' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_diffSet_ge_of_sidon : ∀ (B : Finset ℤ),
+  Set.InjOn (fun p => p.2 - p.1) ↑({p ∈ B ×ˢ B | p.1 < p.2}) →
+    ∀ (x : ℝ), -(↑B.card / 2) ≤ cosSum (Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2})) x
+'ChowlaCosine.cosSum_diffSet_ge_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_diffSet_of_sidon : ∀ (B : Finset ℤ),
+  Set.InjOn (fun p => p.2 - p.1) ↑(ltPairs B) → (diffSet B).card = B.card * (B.card - 1) / 2
+'ChowlaCosine.card_diffSet_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+diffSet_pos : ∀ (B : Finset ℤ), ∀ a ∈ diffSet B, 0 < a
+'ChowlaCosine.diffSet_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+two_mul_card_ltPairs : ∀ (B : Finset ℤ), 2 * (ltPairs B).card = B.card * (B.card - 1)
+'ChowlaCosine.two_mul_card_ltPairs' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_diffSet_main : ∀ (B : Finset ℤ),
+  Set.InjOn (fun p => p.2 - p.1) ↑({p ∈ B ×ˢ B | p.1 < p.2}) →
+    (∀ a ∈ Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2}), 0 < a) ∧
+      (Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2})).card = B.card * (B.card - 1) / 2 ∧
+        ∀ (x : ℝ), -(↑B.card / 2) ≤ cosSum (Finset.image (fun p => (p.2 - p.1).toNat) ({p ∈ B ×ˢ B | p.1 < p.2})) x
+'ChowlaCosine.sidon_diffSet_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cosSum : ∀ (A : Finset ℕ), (∀ a ∈ A, 0 < a) → ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x = 0
+'ChowlaCosine.integral_cosSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cosSum_sq : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) → ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x ^ 2 = Real.pi * ↑A.card
+'ChowlaCosine.integral_cosSum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+normalized_mean_sq : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) → 1 / (2 * Real.pi) * ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x ^ 2 = ↑A.card / 2
+'ChowlaCosine.normalized_mean_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_inter_ge : ∀ (A₁ A₂ : Finset ℕ),
+  (∀ a ∈ A₁, 0 < a) →
+    (∀ a ∈ A₂, 0 < a) →
+      ∀ (M₁ M₂ : ℝ),
+        (∀ (x : ℝ), -M₁ ≤ cosSum A₁ x) → (∀ (x : ℝ), -M₂ ≤ cosSum A₂ x) → ∀ (x : ℝ), -(2 * M₁ * M₂) ≤ cosSum (A₁ ∩ A₂) x
+'ChowlaCosine.cosSum_inter_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_inter_ge' : ∀ (A₁ A₂ : Finset ℕ),
+  (∀ a ∈ A₁, 0 < a) →
+    (∀ a ∈ A₂, 0 < a) →
+      ∀ (M₁ M₂ : ℝ),
+        0 ≤ M₁ →
+          0 ≤ M₂ →
+            (∀ (x : ℝ), cosSum A₁ x ≥ -M₁) →
+              (∀ (x : ℝ), cosSum A₂ x ≥ -M₂) → ∀ (x : ℝ), cosSum (A₁ ∩ A₂) x ≥ -2 * M₁ * M₂
+'ChowlaCosine.cosSum_inter_ge'' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_prod_two_cos_eq_cubeSum : ∀ {k : ℕ} (J : Finset (Finset (Fin k))) (θ : Fin k → ℝ),
+  ∑ S ∈ J, ∏ j ∈ S, 2 * Real.cos (θ j) = ∑ S ∈ J, ∑ ε, Real.cos (∑ j, ↑↑(ε j) * θ ↑j)
+'ChowlaCosine.sum_prod_two_cos_eq_cubeSum' depends on axioms: [propext, Classical.choice, Quot.sound]
+@multilinPoly_min_at_vertex : ∀ {k : ℕ} (J : Finset (Finset (Fin k))) {a b : ℝ},
+  a ≤ b →
+    ∃ v,
+      (∀ (j : Fin k), v j = a ∨ v j = b) ∧
+        ∀ (y : Fin k → ℝ), (∀ (j : Fin k), y j ∈ Set.Icc a b) → multilinPoly J v ≤ multilinPoly J y
+'ChowlaCosine.multilinPoly_min_at_vertex' depends on axioms: [propext, Classical.choice, Quot.sound]
+@multilinPoly_min_at_vertex_two : ∀ {k : ℕ} (J : Finset (Finset (Fin k))),
+  ∃ v,
+    (∀ (j : Fin k), v j = -2 ∨ v j = 2) ∧
+      ∀ (y : Fin k → ℝ), (∀ (j : Fin k), y j ∈ Set.Icc (-2) 2) → multilinPoly J v ≤ multilinPoly J y
+'ChowlaCosine.multilinPoly_min_at_vertex_two' depends on axioms: [propext, Classical.choice, Quot.sound]
+@cubeSum_min : ∀ {k : ℕ} (J : Finset (Finset (Fin k))),
+  ∃ v,
+    (∀ (j : Fin k), v j = -2 ∨ v j = 2) ∧
+      (∀ (θ : Fin k → ℝ), multilinPoly J v ≤ cubeSum J θ) ∧ ∃ θ, cubeSum J θ = multilinPoly J v
+'ChowlaCosine.cubeSum_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+@integral_cos_nat_mul_cos_int : ∀ {a : ℕ},
+  0 < a →
+    ∀ (m : ℤ), ∫ (x : ℝ) in 0..2 * Real.pi, Real.cos (↑a * x) * Real.cos (↑m * x) = if m.natAbs = a then Real.pi else 0
+'ChowlaCosine.integral_cos_nat_mul_cos_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+quadTrig_eq : ∀ (W : Finset ℤ) (v : ℤ → ℝ) (x : ℝ),
+  quadTrig W v x = (∑ u ∈ W, v u * Real.cos (↑u * x)) ^ 2 + (∑ u ∈ W, v u * Real.sin (↑u * x)) ^ 2
+'ChowlaCosine.quadTrig_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_quadTrig : ∀ (W : Finset ℤ) (v : ℤ → ℝ),
+  ∫ (x : ℝ) in 0..2 * Real.pi, quadTrig W v x = 2 * Real.pi * ∑ u ∈ W, v u ^ 2
+'ChowlaCosine.integral_quadTrig' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cosSum_mul_quadTrig : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (W : Finset ℤ) (v : ℤ → ℝ),
+      ∫ (x : ℝ) in 0..2 * Real.pi, cosSum A x * quadTrig W v x =
+        Real.pi * ∑ u ∈ W, ∑ w ∈ W, v u * v w * if (u - w).natAbs ∈ A then 1 else 0
+'ChowlaCosine.integral_cosSum_mul_quadTrig' depends on axioms: [propext, Classical.choice, Quot.sound]
+star_lemma : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (M : ℝ),
+      (∀ (x : ℝ), -M ≤ cosSum A x) →
+        ∀ (W : Finset ℤ) (v : ℤ → ℝ),
+          (∑ u ∈ W, ∑ w ∈ W, v u * v w * if (u - w).natAbs ∈ A then 1 else 0) ≥ -2 * M * ∑ u ∈ W, v u ^ 2
+'ChowlaCosine.star_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+nonneg_of_cosSum_ge : ∀ (A : Finset ℕ), (∀ a ∈ A, 0 < a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → 0 ≤ M
+'ChowlaCosine.nonneg_of_cosSum_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+star_bound : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (M : ℝ),
+      (∀ (x : ℝ), -M ≤ cosSum A x) →
+        ∀ (I : Finset ℤ), (∀ i ∈ I, i.natAbs ∈ A) → (∀ i ∈ I, ∀ j ∈ I, i ≠ j → (i - j).natAbs ∉ A) → √↑I.card / 2 ≤ M
+'ChowlaCosine.star_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+norm_sq_eq_sqTrig : ∀ (B : Finset ℤ) (q : ℤ → ℂ) (x : ℝ),
+  ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 = sqTrig B q x
+'ChowlaCosine.norm_sq_eq_sqTrig' depends on axioms: [propext, Classical.choice, Quot.sound]
+Rp_le : ∀ (q : ℤ → ℂ) (β β' : ℤ), Rp q β β' ≤ ‖q β‖ * ‖q β'‖
+'ChowlaCosine.Rp_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+lam_eq_of_sq_certificate : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          lam = ∑ β ∈ B, ‖q β‖ ^ 2
+'ChowlaCosine.lam_eq_of_sq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+coeff_eq_one_of_sq_certificate : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          ∀ {a : ℕ}, a ∈ A → (∑ β ∈ B, ∑ β' ∈ B, if (β - β').natAbs = a then Rp q β β' else 0) = 1
+'ChowlaCosine.coeff_eq_one_of_sq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_pairs_natAbs_le : ∀ (B : Finset ℤ) (a m : ℕ),
+  {β ∈ B | β - ↑a ∈ B}.card ≤ m → {β ∈ B | β - -↑a ∈ B}.card ≤ m → {p ∈ B ×ˢ B | (p.1 - p.2).natAbs = a}.card ≤ 2 * m
+'ChowlaCosine.card_pairs_natAbs_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_sq_certificate : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          ∀ (m : ℕ), (∀ (g : ℤ), g.natAbs ∈ A → {β ∈ B | β - g ∈ B}.card ≤ m) → ↑A.card ≤ 2 * ↑m * lam ^ 2
+'ChowlaCosine.card_le_of_sq_certificate' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_sq_certificate' : ∀ (A : Finset ℕ),
+  (∀ a ∈ A, 0 < a) →
+    ∀ (B : Finset ℤ) (q : ℤ → ℂ) (lam : ℝ) (G : Finset ℤ) (c : ℤ → ℝ),
+      (∀ g ∈ G, g ≠ 0 ∧ g.natAbs ∉ A) →
+        (∀ (x : ℝ),
+            lam + cosSum A x =
+              ‖∑ β ∈ B, q β * Complex.exp (↑β * ↑x * Complex.I)‖ ^ 2 - ∑ g ∈ G, c g * Real.cos (↑g * x)) →
+          ∀ (m : ℕ), (∀ (g : ℤ), g ≠ 0 → {β ∈ B | β - g ∈ B}.card ≤ m) → ↑A.card ≤ 2 * ↑m * lam ^ 2
+'ChowlaCosine.card_le_of_sq_certificate'' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_range_cos_shift : ∀ (a q : ℕ),
+  0 < q →
+    ∀ (x : ℝ),
+      ∑ j ∈ Finset.range q, Real.cos (↑a * (x + 2 * Real.pi * ↑j / ↑q)) = if q ∣ a then ↑q * Real.cos (↑a * x) else 0
+'ChowlaCosine.sum_range_cos_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_cosSum_shift : ∀ (A : Finset ℕ) (q : ℕ),
+  0 < q → ∀ (x : ℝ), ∑ j ∈ Finset.range q, cosSum A (x + 2 * Real.pi * ↑j / ↑q) = ↑q * cosSum ({a ∈ A | q ∣ a}) x
+'ChowlaCosine.sum_cosSum_shift' depends on axioms: [propext, Classical.choice, Quot.sound]
+averaging_identity : ∀ (A : Finset ℕ) (q : ℕ),
+  0 < q → ∀ (x : ℝ), 1 / ↑q * ∑ j ∈ Finset.range q, cosSum A (x + 2 * Real.pi * ↑j / ↑q) = cosSum ({a ∈ A | q ∣ a}) x
+'ChowlaCosine.averaging_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_filter_dvd_ge : ∀ (A : Finset ℕ) (q : ℕ) (M : ℝ),
+  (∀ (x : ℝ), -M ≤ cosSum A x) → ∀ (x : ℝ), -M ≤ cosSum ({a ∈ A | q ∣ a}) x
+'ChowlaCosine.cosSum_filter_dvd_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_sub_le_of_cosSum_ge : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card - ↑q * ↑{a ∈ A | q ∣ a}.card ≤ (↑q - 1) * M
+'ChowlaCosine.card_sub_le_of_cosSum_ge' depends on axioms: [propext, Classical.choice, Quot.sound]
+le_of_cosSum_ge_mixed : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → (↑A.card - ↑q * ↑{a ∈ A | q ∣ a}.card) / (↑q - 1) ≤ M
+'ChowlaCosine.le_of_cosSum_ge_mixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_no_multiples : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → (∀ a ∈ A, ¬q ∣ a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card ≤ (↑q - 1) * M
+'ChowlaCosine.card_le_of_no_multiples' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_le_of_no_multiples' : ∀ (A : Finset ℕ) (q : ℕ),
+  2 ≤ q → (∀ a ∈ A, 0 < a) → (∀ a ∈ A, ¬q ∣ a) → ∀ (M : ℝ), (∀ (x : ℝ), -M ≤ cosSum A x) → ↑A.card ≤ (↑q - 1) * M
+'ChowlaCosine.card_le_of_no_multiples'' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_buSet : ∀ (S : Finset ℤ),
+  Set.InjOn (fun p => (3 * (p.2 - p.1)).toNat) ↑(ltPairs S) →
+    Set.InjOn (fun p => (3 * (p.1 + p.2) + 1).natAbs) ↑(ltPairs S) →
+      ∀ (x : ℝ), cosSum (buSet S) x = halfP S x ^ 2 - ↑S.card / 2 - halfC S x / 2
+'ChowlaCosine.cosSum_buSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+cosSum_buSet_of_sidon : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (x : ℝ), cosSum (buSet S) x = halfP S x ^ 2 - ↑S.card / 2 - halfC S x / 2
+'ChowlaCosine.cosSum_buSet_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+two_sum_pairs_half : ∀ (S : Finset ℤ) (x : ℝ),
+  2 * ∑ p ∈ ltPairs S, Real.cos ((3 * ↑p.1 + 1 / 2) * x) * Real.cos ((3 * ↑p.2 + 1 / 2) * x) =
+    ∑ p ∈ ltPairs S, (Real.cos (↑(3 * (p.2 - p.1)) * x) + Real.cos (↑(3 * (p.1 + p.2) + 1) * x))
+'ChowlaCosine.two_sum_pairs_half' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfP_sq_sub_sum_sq : ∀ (S : Finset ℤ) (x : ℝ),
+  halfP S x ^ 2 - ∑ s ∈ S, Real.cos ((3 * ↑s + 1 / 2) * x) ^ 2 =
+    ∑ p ∈ ltPairs S, (Real.cos (↑(3 * (p.2 - p.1)) * x) + Real.cos (↑(3 * (p.1 + p.2) + 1) * x))
+'ChowlaCosine.halfP_sq_sub_sum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_cos_half_sq : ∀ (S : Finset ℤ) (x : ℝ), ∑ s ∈ S, Real.cos ((3 * ↑s + 1 / 2) * x) ^ 2 = ↑S.card / 2 + halfC S x / 2
+'ChowlaCosine.sum_cos_half_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+injOn_buSet_diff : ∀ (S : Finset ℤ), IsSidon S → Set.InjOn (fun p => (3 * (p.2 - p.1)).toNat) ↑(ltPairs S)
+'ChowlaCosine.injOn_buSet_diff' depends on axioms: [propext, Classical.choice, Quot.sound]
+injOn_buSet_sum : ∀ (S : Finset ℤ), IsSidon S → Set.InjOn (fun p => (3 * (p.1 + p.2) + 1).natAbs) ↑(ltPairs S)
+'ChowlaCosine.injOn_buSet_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+buSet_pos : ∀ (S : Finset ℤ), ∀ a ∈ buSet S, 0 < a
+'ChowlaCosine.buSet_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_buSet : ∀ (S : Finset ℤ), IsSidon S → (buSet S).card = S.card * (S.card - 1)
+'ChowlaCosine.card_buSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_quad_count : ∀ (S : Finset ℤ),
+  IsSidon S → (∑ a ∈ S, ∑ b ∈ S, ∑ c ∈ S, ∑ d ∈ S, if a + b = c + d then 1 else 0) = 2 * ↑S.card ^ 2 - ↑S.card
+'ChowlaCosine.sidon_quad_count' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_halfC_pow_four : ∀ (S : Finset ℤ),
+  IsSidon S → ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4 = Real.pi / 4 * (3 * (2 * ↑S.card ^ 2 - ↑S.card))
+'ChowlaCosine.integral_halfC_pow_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+normalized_halfC_pow_four : ∀ (S : Finset ℤ),
+  IsSidon S → 1 / (2 * Real.pi) * ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4 = 3 * ↑S.card ^ 2 / 4 - 3 * ↑S.card / 8
+'ChowlaCosine.normalized_halfC_pow_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_halfC_pow_four_le : ∀ (S : Finset ℤ),
+  IsSidon S → ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4 ≤ 2 * Real.pi * (3 * ↑S.card ^ 2 / 4)
+'ChowlaCosine.integral_halfC_pow_four_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cos_mul_triK : ∀ (b c h : ℝ),
+  0 < h → ∫ (x : ℝ) in c - h..c + h, Real.cos (b * x) * triK c h x = Real.cos (b * c) * Real.sinc (b * h / 2) ^ 2
+'ChowlaCosine.integral_cos_mul_triK' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cos_mul_triK_real : ∀ (b c h : ℝ),
+  0 < h → ∫ (x : ℝ), Real.cos (b * x) * triK c h x = Real.cos (b * c) * Real.sinc (b * h / 2) ^ 2
+'ChowlaCosine.integral_cos_mul_triK_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_triK : ∀ (c h : ℝ), 0 < h → ∫ (x : ℝ) in c - h..c + h, triK c h x = 1
+'ChowlaCosine.integral_triK' depends on axioms: [propext, Classical.choice, Quot.sound]
+@visit_lemma : ∀ {ι : Type u_1} (F : Finset ι) (b : ι → ℝ) (c h δ : ℝ),
+  0 < h → (∀ x ∈ Set.Icc (c - h) (c + h), δ ≤ |∑ s ∈ F, Real.cos (b s * x)|) → δ ≤ ∑ s ∈ F, Real.sinc (b s * h / 2) ^ 2
+'ChowlaCosine.visit_lemma' depends on axioms: [propext, Classical.choice, Quot.sound]
+@exists_visit_of_sinc_sum_lt : ∀ {ι : Type u_1} (F : Finset ι) (b : ι → ℝ) (h δ : ℝ),
+  0 < h →
+    ∑ s ∈ F, Real.sinc (b s * h / 2) ^ 2 < δ →
+      ∀ (c : ℝ), ∃ y ∈ Set.Icc (c - h) (c + h), |∑ s ∈ F, Real.cos (b s * y)| < δ
+'ChowlaCosine.exists_visit_of_sinc_sum_lt' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfC_periodic : ∀ (S : Finset ℤ), Function.Periodic (halfC S) (2 * Real.pi)
+'ChowlaCosine.halfC_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+abs_halfC_sub_le : ∀ (S : Finset ℤ) (L : ℝ),
+  (∀ s ∈ S, |↑s| ≤ L) → ∀ (x y : ℝ), |halfC S x - halfC S y| ≤ ↑S.card * (6 * L + 1) * |x - y|
+'ChowlaCosine.abs_halfC_sub_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_of_visit : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        ∀ (η : ℝ),
+          0 < η →
+            ∀ (h : ℝ),
+              0 < h →
+                (∀ (c : ℝ), ∃ y ∈ Set.Icc (c - h) (c + h), |halfP S y| < √(η * ↑S.card / 2)) →
+                  24 * Real.pi / (η ^ 4 * ↑S.card ^ 2) <
+                      2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ →
+                    ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_of_visit' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        ∀ (η : ℝ),
+          0 < η →
+            ∀ (h : ℝ),
+              0 < h →
+                ∑ s ∈ S, Real.sinc ((3 * ↑s + 1 / 2) * h / 2) ^ 2 < √(η * ↑S.card / 2) →
+                  24 * Real.pi / (η ^ 4 * ↑S.card ^ 2) <
+                      2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ →
+                    ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sinc_sq_le_min : ∀ {y : ℝ}, y ≠ 0 → Real.sinc y ^ 2 ≤ min 1 (1 / y ^ 2)
+'ChowlaCosine.sinc_sq_le_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_min : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        ∀ (η : ℝ),
+          0 < η →
+            ∀ (h : ℝ),
+              0 < h →
+                ∑ s ∈ S, min 1 (4 / ((3 * ↑s + 1 / 2) * h) ^ 2) < √(η * ↑S.card / 2) →
+                  24 * Real.pi / (η ^ 4 * ↑S.card ^ 2) <
+                      2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * h + 2 * (η / (2 * (6 * L + 1))))⌋₊ →
+                    ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_min' depends on axioms: [propext, Classical.choice, Quot.sound]
+@IsSidon.mono : ∀ {S T : Finset ℤ}, IsSidon S → T ⊆ S → IsSidon T
+'ChowlaCosine.IsSidon.mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+injOn_sub_ltPairs_of_sidon : ∀ (T : Finset ℤ), IsSidon T → Set.InjOn (fun p => p.2 - p.1) ↑(ltPairs T)
+'ChowlaCosine.injOn_sub_ltPairs_of_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_card_mul_pred_le_of_diam : ∀ (T : Finset ℤ),
+  IsSidon T → ∀ (D : ℕ), (∀ s ∈ T, ∀ t ∈ T, t - s ≤ ↑D) → T.card * (T.card - 1) ≤ 2 * D
+'ChowlaCosine.sidon_card_mul_pred_le_of_diam' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_card_mul_pred_le_of_Ico : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (a : ℤ) (m : ℕ), (∀ s ∈ S, a ≤ s ∧ s < a + ↑m) → S.card * (S.card - 1) ≤ 2 * (m - 1)
+'ChowlaCosine.sidon_card_mul_pred_le_of_Ico' depends on axioms: [propext, Classical.choice, Quot.sound]
+@le_one_add_sqrt_of_mul_pred_le : ∀ {N w : ℝ}, N * (N - 1) ≤ w → N ≤ 1 + √w
+'ChowlaCosine.le_one_add_sqrt_of_mul_pred_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_card_le_one_add_sqrt_of_Ico : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (a : ℤ) (m : ℕ), (∀ s ∈ S, a ≤ s ∧ s < a + ↑m) → ↑S.card ≤ 1 + √(2 * (↑m - 1))
+'ChowlaCosine.sidon_card_le_one_add_sqrt_of_Ico' depends on axioms: [propext, Classical.choice, Quot.sound]
+sidon_card_mul_pred_le_real : ∀ (T : Finset ℤ),
+  IsSidon T → ∀ (w : ℝ), 0 ≤ w → (∀ s ∈ T, ∀ t ∈ T, ↑t - ↑s ≤ w) → ↑T.card * (↑T.card - 1) ≤ 2 * w
+'ChowlaCosine.sidon_card_mul_pred_le_real' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_filter_abs_half_le : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (u : ℝ), 0 ≤ u → ↑{s ∈ S | |3 * ↑s + 1 / 2| ≤ u}.card * (↑{s ∈ S | |3 * ↑s + 1 / 2| ≤ u}.card - 1) ≤ 4 * u / 3
+'ChowlaCosine.card_filter_abs_half_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+card_filter_abs_half_le_sqrt : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (u : ℝ), 0 ≤ u → ↑{s ∈ S | |3 * ↑s + 1 / 2| ≤ u}.card ≤ 1 + √(4 * u / 3)
+'ChowlaCosine.card_filter_abs_half_le_sqrt' depends on axioms: [propext, Classical.choice, Quot.sound]
+absB_injective : Function.Injective absB
+'ChowlaCosine.absB_injective' depends on axioms: [propext, Classical.choice, Quot.sound]
+absB_pos : ∀ (s : ℤ), 0 < absB s
+'ChowlaCosine.absB_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+rankB_lt_rankB : ∀ (S : Finset ℤ) {s t : ℤ}, s ∈ S → absB s < absB t → rankB S s < rankB S t
+'ChowlaCosine.rankB_lt_rankB' depends on axioms: [propext, Classical.choice, Quot.sound]
+rankB_injOn : ∀ (S : Finset ℤ), Set.InjOn (rankB S) ↑S
+'ChowlaCosine.rankB_injOn' depends on axioms: [propext, Classical.choice, Quot.sound]
+rankB_lt_card : ∀ (S : Finset ℤ) {s : ℤ}, s ∈ S → rankB S s < S.card
+'ChowlaCosine.rankB_lt_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+rankB_bound : ∀ (S : Finset ℤ), IsSidon S → ∀ {s : ℤ}, s ∈ S → ↑(rankB S s) * (↑(rankB S s) + 1) ≤ 4 * absB s / 3
+'ChowlaCosine.rankB_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+one_div_sq_sq_le : ∀ (ρ : ℝ), 0 < ρ → 1 / (ρ ^ 2 * (ρ + 1) ^ 2) ≤ (1 / ρ ^ 3 - 1 / (ρ + 1) ^ 3) / 3
+'ChowlaCosine.one_div_sq_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+telG_nonneg : ∀ (R : ℕ), 1 ≤ R → ∀ (a : ℝ), 0 ≤ a → ∀ (ρ : ℕ), 0 ≤ telG R a ρ
+'ChowlaCosine.telG_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_range_telG_le : ∀ (R : ℕ),
+  1 ≤ R → ∀ (a : ℝ), 0 ≤ a → ∀ (n : ℕ), ∑ ρ ∈ Finset.range n, telG R a ρ ≤ ↑R + a / (3 * ↑R ^ 3)
+'ChowlaCosine.sum_range_telG_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+min_le_telG : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ {s : ℤ}, s ∈ S → ∀ (u0 : ℝ) (R : ℕ), 1 ≤ R → min 1 (u0 ^ 2 / absB s ^ 2) ≤ telG R (16 * u0 ^ 2 / 9) (rankB S s)
+'ChowlaCosine.min_le_telG' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_min_absB_le : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (u0 : ℝ), 0 < u0 → ∑ s ∈ S, min 1 (u0 ^ 2 / absB s ^ 2) ≤ 1 + 4 / 3 * √(4 * u0 / 3)
+'ChowlaCosine.sum_min_absB_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+sum_min_le_sidon : ∀ (S : Finset ℤ),
+  IsSidon S → ∀ (h : ℝ), 0 < h → ∑ s ∈ S, min 1 (4 / ((3 * ↑s + 1 / 2) * h) ^ 2) ≤ 1 + 4 / 3 * √(8 / (3 * h))
+'ChowlaCosine.sum_min_le_sidon' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_hcond_explicit : ∀ (k L η : ℝ),
+  1 ≤ L →
+    0 < η →
+      η ≤ 1 / 2 →
+        0 ≤ k →
+          1000 * (6 * L + 1) ≤ η ^ 6 * k ^ 3 →
+            24 * Real.pi / (η ^ 4 * k ^ 2) <
+              2 * (η / (2 * (6 * L + 1))) * ↑⌊2 * Real.pi / (2 * (64 / (3 * (η * k))) + 2 * (η / (2 * (6 * L + 1))))⌋₊
+'ChowlaCosine.halfSquare_hcond_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_explicit : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        1 ≤ L →
+          ∀ (η : ℝ),
+            0 < η →
+              η ≤ 1 / 2 → 1000 * (6 * L + 1) ≤ η ^ 6 * ↑S.card ^ 3 → ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_explicit' : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        1 ≤ L →
+          ∀ (η : ℝ),
+            0 < η → η ≤ 1 / 2 → 7000 * L ≤ η ^ 6 * ↑S.card ^ 3 → ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_explicit'' depends on axioms: [propext, Classical.choice, Quot.sound]
+@gallagher_local : ∀ {φ φ' : ℝ → ℝ},
+  (∀ (x : ℝ), HasDerivAt φ (φ' x) x) →
+    Continuous φ' →
+      ∀ {a b y : ℝ},
+        a ≤ b → y ∈ Set.Icc a b → (b - a) * φ y ≤ (∫ (x : ℝ) in a..b, φ x) + (b - a) * ∫ (x : ℝ) in a..b, |φ' x|
+'ChowlaCosine.gallagher_local' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_integral_le_of_sorted : ∀ {ψ : ℝ → ℝ},
+  Continuous ψ →
+    (∀ (x : ℝ), 0 ≤ ψ x) →
+      ∀ (s e : ℕ → ℝ) (m : ℕ),
+        (∀ j ≤ m, s j ≤ e j) →
+          (∀ j < m, e j ≤ s (j + 1)) →
+            ∑ j ∈ Finset.range (m + 1), ∫ (x : ℝ) in s j..e j, ψ x ≤ ∫ (x : ℝ) in s 0..e m, ψ x
+'ChowlaCosine.sum_integral_le_of_sorted' depends on axioms: [propext, Classical.choice, Quot.sound]
+@gallagher_sum : ∀ {φ φ' : ℝ → ℝ},
+  (∀ (x : ℝ), HasDerivAt φ (φ' x) x) →
+    Continuous φ' →
+      (∀ (x : ℝ), 0 ≤ φ x) →
+        ∀ {T : ℝ},
+          0 ≤ T →
+            Function.Periodic φ T →
+              Function.Periodic φ' T →
+                ∀ {δ0 : ℝ},
+                  0 < δ0 →
+                    ∀ (c0 : ℝ) (y : ℕ → ℝ) (m : ℕ),
+                      (∀ (j : ℕ), j + 1 < m → y j + δ0 ≤ y (j + 1)) →
+                        (∀ j < m, c0 ≤ y j - δ0 / 2) →
+                          (∀ j < m, y j + δ0 / 2 ≤ c0 + T) →
+                            ∑ j ∈ Finset.range m, φ (y j) ≤
+                              (1 / δ0 * ∫ (x : ℝ) in 0..T, φ x) + ∫ (x : ℝ) in 0..T, |φ' x|
+'ChowlaCosine.gallagher_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+continuous_halfS : ∀ (S : Finset ℤ), Continuous (halfS S)
+'ChowlaCosine.continuous_halfS' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfS_periodic : ∀ (S : Finset ℤ), Function.Periodic (halfS S) (2 * Real.pi)
+'ChowlaCosine.halfS_periodic' depends on axioms: [propext, Classical.choice, Quot.sound]
+hasDerivAt_halfC : ∀ (S : Finset ℤ) (x : ℝ), HasDerivAt (halfC S) (-halfS S x) x
+'ChowlaCosine.hasDerivAt_halfC' depends on axioms: [propext, Classical.choice, Quot.sound]
+cc_nonneg : ∀ (m n : ℤ), 0 ≤ cc m n
+'ChowlaCosine.cc_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+sin_mul_sin_int : ∀ (a b : ℤ) (y : ℝ),
+  Real.sin (↑a * y) * Real.sin (↑b * y) = (Real.cos (↑(a - b) * y) - Real.cos (↑(a + b) * y)) / 2
+'ChowlaCosine.sin_mul_sin_int' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_cos_cos_mul_sin_mul_sin : ∀ (a b c d : ℤ),
+  ∫ (y : ℝ) in 0..2 * Real.pi,
+      Real.cos (↑a * y) * (Real.cos (↑b * y) * (↑c * Real.sin (↑c * y) * (↑d * Real.sin (↑d * y)))) =
+    ↑c * ↑d * ((cc (a - b) (c - d) - cc (a - b) (c + d) + cc (a + b) (c - d) - cc (a + b) (c + d)) / 4)
+'ChowlaCosine.integral_cos_cos_mul_sin_mul_sin' depends on axioms: [propext, Classical.choice, Quot.sound]
+@sum_sq_mul_sum_sq : ∀ {ι : Type u_1} (s : Finset ι) (f g : ι → ℝ),
+  (∑ i ∈ s, f i) ^ 2 * (∑ i ∈ s, g i) ^ 2 = ∑ a ∈ s, ∑ b ∈ s, ∑ c ∈ s, ∑ d ∈ s, f a * (f b * (g c * g d))
+'ChowlaCosine.sum_sq_mul_sum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_halfC_sq_mul_halfS_sq_le : ∀ (S : Finset ℤ) (D : ℝ),
+  (∀ s ∈ S, |↑(6 * s + 1)| ≤ D) →
+    ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 2 * halfS S x ^ 2 ≤ D ^ 2 * ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4
+'ChowlaCosine.integral_halfC_sq_mul_halfS_sq_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+integral_abs_halfC_cube_mul_halfS_le : ∀ (S : Finset ℤ) (D : ℝ),
+  0 < D →
+    (∀ s ∈ S, |↑(6 * s + 1)| ≤ D) →
+      ∫ (x : ℝ) in 0..2 * Real.pi, |halfC S x ^ 3 * halfS S x| ≤ D * ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4
+'ChowlaCosine.integral_abs_halfC_cube_mul_halfS_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+sieve_halfC_pow_four : ∀ (S : Finset ℤ) (D : ℝ),
+  0 < D →
+    (∀ s ∈ S, |↑(6 * s + 1)| ≤ D) →
+      ∀ {δ0 : ℝ},
+        0 < δ0 →
+          ∀ (c0 : ℝ) (y : ℕ → ℝ) (m : ℕ),
+            (∀ (j : ℕ), j + 1 < m → y j + δ0 ≤ y (j + 1)) →
+              (∀ j < m, c0 ≤ y j - δ0 / 2) →
+                (∀ j < m, y j + δ0 / 2 ≤ c0 + 2 * Real.pi) →
+                  ∑ j ∈ Finset.range m, halfC S (y j) ^ 4 ≤
+                    (1 / δ0 + 4 * D) * ∫ (x : ℝ) in 0..2 * Real.pi, halfC S x ^ 4
+'ChowlaCosine.sieve_halfC_pow_four' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfP_visit_explicit : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (η : ℝ),
+      38 ≤ η * ↑S.card →
+        ∀ (c : ℝ),
+          ∃ y ∈ Set.Icc (c - 64 / (3 * (η * ↑S.card))) (c + 64 / (3 * (η * ↑S.card))), |halfP S y| < √(η * ↑S.card / 2)
+'ChowlaCosine.halfP_visit_explicit' depends on axioms: [propext, Classical.choice, Quot.sound]
+sieve_numerics : ∀ (η k D : ℝ),
+  0 < η →
+    η ≤ 1 / 2 → 1 ≤ k → k ^ 2 ≤ 2 * D → 600 * D ≤ η ^ 5 * k ^ 3 → 300 ≤ η ^ 5 * k ∧ 4800 ≤ η * k ∧ 600 ≤ η ^ 4 * k ^ 2
+'ChowlaCosine.sieve_numerics' depends on axioms: [propext, Classical.choice, Quot.sound]
+sieve_arith : ∀ (η k D : ℝ) (m : ℕ),
+  0 < η →
+    η ≤ 1 / 2 →
+      1 ≤ k →
+        k ^ 2 ≤ 2 * D →
+          600 * D ≤ η ^ 5 * k ^ 3 →
+            Real.pi / (2 * (64 / (3 * (η * k)))) - 1 < ↑m →
+              ↑m * (η * k) ^ 4 ≤ (1 / (2 * (64 / (3 * (η * k)))) + 4 * D) * (2 * Real.pi * (3 * k ^ 2 / 4)) → False
+'ChowlaCosine.sieve_arith' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_sieve : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        1 ≤ L →
+          ∀ (η : ℝ),
+            0 < η →
+              η ≤ 1 / 2 → 600 * (6 * L + 1) ≤ η ^ 5 * ↑S.card ^ 3 → ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_sieve' depends on axioms: [propext, Classical.choice, Quot.sound]
+halfSquare_lower_bound_sieve' : ∀ (S : Finset ℤ),
+  IsSidon S →
+    ∀ (L : ℝ),
+      (∀ s ∈ S, |↑s| ≤ L) →
+        1 ≤ L →
+          ∀ (η : ℝ),
+            0 < η → η ≤ 1 / 2 → 4200 * L ≤ η ^ 5 * ↑S.card ^ 3 → ∃ x, cosSum (buSet S) x < -((1 / 2 - η) * ↑S.card)
+'ChowlaCosine.halfSquare_lower_bound_sieve'' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.runSet_neg : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  p ≠ 2 → ∀ (d : ZMod p) (x : RunTopGroup.Γ p), -x ∈ RunTopGroup.runSet p d ↔ x ∈ RunTopGroup.runSet p d
+'ChowlaCosine.RunTopGroup.runSet_neg' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.zero_not_mem_runSet : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)] (d : ZMod p), 0 ∉ RunTopGroup.runSet p d
+'ChowlaCosine.RunTopGroup.zero_not_mem_runSet' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.card_line_inter : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)] (d : ZMod p) (x : RunTopGroup.Γ p),
+  {s | x + s • RunTopGroup.tVec p ∈ RunTopGroup.runSet p d}.card = p - 1
+'ChowlaCosine.RunTopGroup.card_line_inter' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.card_runTops : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  p ≠ 2 → ∀ (d : ZMod p), (RunTopGroup.runTops p (RunTopGroup.runSet p d) (RunTopGroup.tVec p)).card = p ^ 3
+'ChowlaCosine.RunTopGroup.card_runTops' depends on axioms: [propext, Classical.choice, Quot.sound]
+RunTopGroup.charSum_lower : ∀ (p : ℕ) [inst : Fact (Nat.Prime p)],
+  p ≠ 2 →
+    ∀ (d : ZMod p),
+      ¬IsSquare d →
+        ∀ (ψ : AddChar (ZMod p) ℂ),
+          ψ.IsPrimitive →
+            ∀ (c : RunTopGroup.Γ p),
+              c ≠ 0 →
+                (RunTopGroup.charSum p ψ (RunTopGroup.runSet p d) c).im = 0 ∧
+                  -(3 * ↑p) ≤ (RunTopGroup.charSum p ψ (RunTopGroup.runSet p d) c).re
+'ChowlaCosine.RunTopGroup.charSum_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+NegDefFibre.le_two_mul_card_of_negDef : ∀ (ℓ : ℕ),
+  1 ≤ ℓ →
+    ∀ (I : Finset (ZMod ℓ)),
+      I.Nonempty →
+        0 ∉ I →
+          (∀ s ∈ I, -s ∈ I) →
+            (∀ (j : ZMod ℓ), j ≠ 0 → ∑ s ∈ I, Real.cos (2 * Real.pi * (↑j.val * ↑s.val) / ↑ℓ) ≤ 0) → ℓ ≤ 2 * I.card
+'ChowlaCosine.NegDefFibre.le_two_mul_card_of_negDef' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_weightedCos_mul : ∀ (A : Finset ℕ) (b c : ℕ → ℝ),
+  (∀ a ∈ A, 0 < a) → (P31.circleMean fun x => P31.weightedCos A b x * P31.weightedCos A c x) = (∑ a ∈ A, b a * c a) / 2
+'ChowlaCosine.P31.circleMean_weightedCos_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_shifted_weightedCos_sq : ∀ (A : Finset ℕ) (b : ℕ → ℝ) (M : ℝ),
+  (∀ a ∈ A, 0 < a) → (P31.circleMean fun x => (M + P31.weightedCos A b x) ^ 2) = M ^ 2 + (∑ a ∈ A, b a ^ 2) / 2
+'ChowlaCosine.P31.circleMean_shifted_weightedCos_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_fejerKernel_sq : ∀ (w : ℕ), (P31.circleMean fun x => P31.fejerKernel w x ^ 2) = P31.windowMass w
+'ChowlaCosine.P31.circleMean_fejerKernel_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_cosSum_add_sq : ∀ (A : Finset ℕ) (M : ℝ),
+  (∀ a ∈ A, 0 < a) → (P31.circleMean fun x => (cosSum A x + M) ^ 2) = ↑A.card / 2 + M ^ 2
+'ChowlaCosine.P31.circleMean_cosSum_add_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.circleMean_swap : ∀ {f : ℝ → ℝ → ℝ},
+  Continuous (Function.uncurry f) →
+    (P31.circleMean fun y => P31.circleMean fun x => f y x) = P31.circleMean fun x => P31.circleMean fun y => f y x
+'ChowlaCosine.P31.circleMean_swap' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.circleMean_window_sq : ∀ {F g : ℝ → ℝ},
+  Continuous F →
+    Continuous g →
+      Function.Periodic F (2 * Real.pi) →
+        (P31.circleMean fun y => P31.circleMean fun x => (F (x - y) * g x) ^ 2) =
+          (P31.circleMean fun x => F x ^ 2) * P31.circleMean fun x => g x ^ 2
+'ChowlaCosine.P31.circleMean_window_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.averaged_window_bound : ∀ {F g : ℝ → ℝ} (C : ℝ),
+  Continuous F →
+    Continuous g →
+      Function.Periodic F (2 * Real.pi) →
+        (∀ (y : ℝ),
+            (P31.circleMean fun x => (F (x - y) * g x) ^ 2) ≤ C * (P31.circleMean fun x => F (x - y) * g x) ^ 2) →
+          ((P31.circleMean fun x => F x ^ 2) * P31.circleMean fun x => g x ^ 2) ≤
+            C * P31.circleMean fun y => (P31.circleMean fun x => F (x - y) * g x) ^ 2
+'ChowlaCosine.P31.averaged_window_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.fejer_triangle_sq : ∀ (w : ℕ) (x : ℝ),
+  (∑ j ∈ Finset.range (w + 1), Real.cos (↑j * x)) ^ 2 + (∑ j ∈ Finset.range (w + 1), Real.sin (↑j * x)) ^ 2 =
+    (↑w + 1) * P31.fejerKernel w x
+'ChowlaCosine.P31.fejer_triangle_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.fejerKernel_nonneg : ∀ (w : ℕ) (x : ℝ), 0 ≤ P31.fejerKernel w x
+'ChowlaCosine.P31.fejerKernel_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.window_nonneg : ∀ (w : ℕ) (A : Finset ℕ) (M : ℝ),
+  (∀ (x : ℝ), -M ≤ cosSum A x) → ∀ (x y : ℝ), 0 ≤ P31.fejerKernel w (x - y) * (cosSum A x + M)
+'ChowlaCosine.P31.window_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_fejerKernel_mul_cos : ∀ (w : ℕ) {a : ℕ},
+  0 < a →
+    ∀ (y : ℝ),
+      (P31.circleMean fun x => P31.fejerKernel w (x - y) * Real.cos (↑a * x)) = P31.kappa w a * Real.cos (↑a * y)
+'ChowlaCosine.P31.circleMean_fejerKernel_mul_cos' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_window : ∀ (w : ℕ) (A : Finset ℕ) (M y : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    (P31.circleMean fun x => P31.fejerKernel w (x - y) * (cosSum A x + M)) = M + P31.weightedCos A (P31.kappa w) y
+'ChowlaCosine.P31.circleMean_window' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.circleMean_window_mean_sq : ∀ (w : ℕ) (A : Finset ℕ) (M : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    (P31.circleMean fun y => (P31.circleMean fun x => P31.fejerKernel w (x - y) * (cosSum A x + M)) ^ 2) =
+      M ^ 2 + P31.windowEnergy w A / 2
+'ChowlaCosine.P31.circleMean_window_mean_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.p31_of_window_bound : ∀ (w : ℕ) (A : Finset ℕ) (M C : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    (∀ (y : ℝ),
+        (P31.circleMean fun x => (P31.fejerKernel w (x - y) * (cosSum A x + M)) ^ 2) ≤
+          C * (P31.circleMean fun x => P31.fejerKernel w (x - y) * (cosSum A x + M)) ^ 2) →
+      P31.windowMass w * (↑A.card / 2 + M ^ 2) ≤ C * (M ^ 2 + P31.windowEnergy w A / 2)
+'ChowlaCosine.P31.p31_of_window_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.p31_of_factorization : ∀ (L w : ℕ) (A : Finset ℕ) (M C : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    P31.AnalyticNikolskii L C →
+      P31.WindowFactorization L w A M →
+        P31.windowMass w * (↑A.card / 2 + M ^ 2) ≤ C * (M ^ 2 + P31.windowEnergy w A / 2)
+'ChowlaCosine.P31.p31_of_factorization' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.trigBand_mul : ∀ {L K : ℕ} {f g : ℝ → ℂ}, f ∈ P31.trigBand L → g ∈ P31.trigBand K → f * g ∈ P31.trigBand (L + K)
+'ChowlaCosine.P31.trigBand_mul' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.cos_shift_mem_trigBand : ∀ {L a : ℕ}, a ≤ L → ∀ (y : ℝ), (fun x => ↑(Real.cos (↑a * (x - y)))) ∈ P31.trigBand L
+'ChowlaCosine.P31.cos_shift_mem_trigBand' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.fejer_shift_mem_trigBand : ∀ (w : ℕ) (y : ℝ), (fun x => ↑(P31.fejerKernel w (x - y))) ∈ P31.trigBand w
+'ChowlaCosine.P31.fejer_shift_mem_trigBand' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.cosSum_add_mem_trigBand : ∀ (A : Finset ℕ) (X : ℕ) (M : ℝ),
+  (∀ a ∈ A, a ≤ X) → (fun x => ↑(cosSum A x) + ↑M) ∈ P31.trigBand X
+'ChowlaCosine.P31.cosSum_add_mem_trigBand' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.p31_of_fejerRiesz : ∀ (w X : ℕ) (A : Finset ℕ) (M C : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    (∀ a ∈ A, a ≤ X) →
+      (∀ (x : ℝ), -M ≤ cosSum A x) →
+        P31.FejerRiesz (X + w) →
+          P31.AnalyticNikolskii (X + w) C →
+            P31.windowMass w * (↑A.card / 2 + M ^ 2) ≤ C * (M ^ 2 + P31.windowEnergy w A / 2)
+'ChowlaCosine.P31.p31_of_fejerRiesz' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.p31_main_of_fejerRiesz : ∀ (w : ℕ) (A : Finset ℕ) (M C : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    (∀ (x : ℝ), -M ≤ cosSum A x) →
+      P31.FejerRiesz (A.sup id + w) →
+        P31.AnalyticNikolskii (A.sup id + w) C →
+          P31.windowMass w * (↑A.card / 2 + M ^ 2) ≤ C * (M ^ 2 + P31.windowEnergy w A / 2)
+'ChowlaCosine.P31.p31_main_of_fejerRiesz' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.windowMass_eq : ∀ (w : ℕ), P31.windowMass w = 2 * (↑w + 1) / 3 + 1 / (3 * (↑w + 1))
+'ChowlaCosine.P31.windowMass_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.windowMass_pos : ∀ (w : ℕ), 0 < P31.windowMass w
+'ChowlaCosine.P31.windowMass_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.fejerRiesz_zero : P31.FejerRiesz 0
+'ChowlaCosine.P31.fejerRiesz_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.rootReflection_rootReflection : ∀ (a : ℂ), P31.rootReflection (P31.rootReflection a) = a
+'ChowlaCosine.P31.rootReflection_rootReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.root_pair_identity : ∀ (a z : ℂ),
+  a ≠ 0 → ‖z‖ = 1 → (z - a) * (z - P31.rootReflection a) = -(z / star a) * ↑‖z - a‖ ^ 2
+'ChowlaCosine.P31.root_pair_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.factorization_of_bounded_approximation : ∀ (L : ℕ) (h : ℝ → ℝ) (B : ℝ) (ε : ℕ → ℝ),
+  Filter.Tendsto ε Filter.atTop (nhds 0) →
+    (∀ (n : ℕ), ∃ u, ‖u‖ ≤ B ∧ ∀ (x : ℝ), h x + ε n = ‖P31.analyticValue u x‖ ^ 2) →
+      ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.factorization_of_bounded_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.root_partition_off_circle : ∀ (s : Multiset ℂ),
+  Multiset.map P31.rootReflection s = s →
+    (∀ a ∈ s, a ≠ 0) →
+      (∀ a ∈ s, ‖a‖ ≠ 1) →
+        s =
+          Multiset.filter (fun a => ‖a‖ < 1) s + Multiset.map P31.rootReflection (Multiset.filter (fun a => ‖a‖ < 1) s)
+'ChowlaCosine.P31.root_partition_off_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.root_partition_of_even_fixed : ∀ (s : Multiset ℂ),
+  Multiset.map P31.rootReflection s = s →
+    (∀ a ∈ s, a ≠ 0) → (∀ (a : ℂ), ‖a‖ = 1 → Even (Multiset.count a s)) → ∃ t, s = t + Multiset.map P31.rootReflection t
+'ChowlaCosine.P31.root_partition_of_even_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.root_product_identity : ∀ (t : Multiset ℂ) (z : ℂ),
+  ‖z‖ = 1 →
+    (∀ a ∈ t, a ≠ 0) →
+      (Multiset.map (fun a => (z - a) * (z - P31.rootReflection a)) t).prod =
+        (Multiset.map (fun a => -(star a)⁻¹) t).prod * z ^ t.card * ↑(‖(Multiset.map (fun a => z - a) t).prod‖ ^ 2)
+'ChowlaCosine.P31.root_product_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.analyticValue_coeff : ∀ {L : ℕ} (q : Polynomial ℂ),
+  q.natDegree ≤ L →
+    ∀ (x : ℝ), P31.analyticValue (fun j => q.coeff ↑j) x = Polynomial.eval (Complex.exp (↑x * Complex.I)) q
+'ChowlaCosine.P31.analyticValue_coeff' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.factorization_of_polynomial_norm : ∀ (L : ℕ) (h : ℝ → ℝ) (q : Polynomial ℂ) (γ : ℂ),
+  q.natDegree ≤ L →
+    (∀ (x : ℝ), 0 ≤ h x) →
+      (∀ (x : ℝ), ↑(h x) = γ * ↑(‖Polynomial.eval (Complex.exp (↑x * Complex.I)) q‖ ^ 2)) →
+        ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.factorization_of_polynomial_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.factorization_of_root_data : ∀ (L : ℕ) (h : ℝ → ℝ) (c : ℂ) (t : Multiset ℂ),
+  t.card ≤ L →
+    (∀ a ∈ t, a ≠ 0) →
+      (∀ (x : ℝ), 0 ≤ h x) →
+        (∀ (x : ℝ),
+            Complex.exp (↑x * Complex.I) ^ t.card * ↑(h x) =
+              c *
+                (Multiset.map
+                    (fun a =>
+                      (Complex.exp (↑x * Complex.I) - a) * (Complex.exp (↑x * Complex.I) - P31.rootReflection a))
+                    t).prod) →
+          ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.factorization_of_root_data' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.factorization_of_polynomial_root_conditions : ∀ (L : ℕ) (h : ℝ → ℝ) (p : Polynomial ℂ),
+  p.natDegree = 2 * L →
+    Multiset.map P31.rootReflection p.roots = p.roots →
+      (∀ a ∈ p.roots, a ≠ 0) →
+        (∀ (a : ℂ), ‖a‖ = 1 → Even (Multiset.count a p.roots)) →
+          (∀ (x : ℝ), 0 ≤ h x) →
+            (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+              ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.factorization_of_polynomial_root_conditions' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+P31.even_of_local_nonnegative_power : ∀ (n : ℕ) (g : ℝ → ℝ) (x₀ : ℝ),
+  ContinuousAt g x₀ → g x₀ ≠ 0 → (∀ᶠ (x : ℝ) in nhds x₀, 0 ≤ (x - x₀) ^ n * g x) → Even n
+'ChowlaCosine.P31.even_of_local_nonnegative_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.analyticOrderNatAt_even_of_nonneg : ∀ (f : ℝ → ℝ) (x₀ : ℝ),
+  AnalyticAt ℝ f x₀ → (∀ᶠ (x : ℝ) in nhds x₀, 0 ≤ f x) → Even (analyticOrderNatAt f x₀)
+'ChowlaCosine.P31.analyticOrderNatAt_even_of_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.even_of_local_nonnegative_complex_power : ∀ (n : ℕ) (g : ℝ → ℂ) (h : ℝ → ℝ) (x₀ : ℝ),
+  ContinuousAt g x₀ →
+    g x₀ ≠ 0 → (∀ᶠ (x : ℝ) in nhds x₀, 0 ≤ h x) → (∀ᶠ (x : ℝ) in nhds x₀, ↑(h x) = ↑((x - x₀) ^ n) * g x) → Even n
+'ChowlaCosine.P31.even_of_local_nonnegative_complex_power' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.unit_circle_rootMultiplicity_even_at_angle : ∀ (p : Polynomial ℂ),
+  p ≠ 0 →
+    ∀ (L : ℕ) (h : ℝ → ℝ),
+      (∀ (x : ℝ), 0 ≤ h x) →
+        (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+          ∀ (x₀ : ℝ), Even (Polynomial.rootMultiplicity (Complex.exp (↑x₀ * Complex.I)) p)
+'ChowlaCosine.P31.unit_circle_rootMultiplicity_even_at_angle' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.unit_circle_rootMultiplicity_even : ∀ (p : Polynomial ℂ),
+  p ≠ 0 →
+    ∀ (L : ℕ) (h : ℝ → ℝ),
+      (∀ (x : ℝ), 0 ≤ h x) →
+        (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+          ∀ (a : ℂ), ‖a‖ = 1 → Even (Polynomial.rootMultiplicity a p)
+'ChowlaCosine.P31.unit_circle_rootMultiplicity_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.factorization_of_polynomial_root_symmetry : ∀ (L : ℕ) (h : ℝ → ℝ) (p : Polynomial ℂ),
+  p ≠ 0 →
+    p.natDegree = 2 * L →
+      Multiset.map P31.rootReflection p.roots = p.roots →
+        (∀ a ∈ p.roots, a ≠ 0) →
+          (∀ (x : ℝ), 0 ≤ h x) →
+            (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+              ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.factorization_of_polynomial_root_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.root_symmetry_of_real_circle_representation : ∀ (p : Polynomial ℂ),
+  p ≠ 0 →
+    ∀ (L : ℕ) (h : ℝ → ℝ),
+      p.natDegree = 2 * L →
+        (∀ a ∈ p.roots, a ≠ 0) →
+          (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+            Multiset.map P31.rootReflection p.roots = p.roots
+'ChowlaCosine.P31.root_symmetry_of_real_circle_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+@P31.exists_shifted_polynomial : ∀ {L : ℕ} {f : ℝ → ℂ},
+  f ∈ P31.trigBand L →
+    ∃ p,
+      p.natDegree ≤ 2 * L ∧
+        ∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * f x
+'ChowlaCosine.P31.exists_shifted_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.analytic_factor_mono : ∀ {K L : ℕ},
+  K ≤ L →
+    ∀ (h : ℝ → ℝ),
+      (∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2) → ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.analytic_factor_mono' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.shifted_polynomial_reflection : ∀ (L : ℕ) (h : ℝ → ℝ) (p : Polynomial ℂ),
+  p.natDegree ≤ 2 * L →
+    (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+      p = Polynomial.map (starRingEnd ℂ) (Polynomial.reflect (2 * L) p)
+'ChowlaCosine.P31.shifted_polynomial_reflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.shifted_polynomial_coeff_symmetry : ∀ (L : ℕ) (h : ℝ → ℝ) (p : Polynomial ℂ),
+  p.natDegree ≤ 2 * L →
+    (∀ (x : ℝ), Polynomial.eval (Complex.exp (↑x * Complex.I)) p = Complex.exp (↑x * Complex.I) ^ L * ↑(h x)) →
+      ∀ i ≤ 2 * L, p.coeff i = star (p.coeff (2 * L - i))
+'ChowlaCosine.P31.shifted_polynomial_coeff_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.finite_fejerRiesz : ∀ (L : ℕ), P31.FejerRiesz L
+'ChowlaCosine.P31.finite_fejerRiesz' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.finite_fejerRiesz_of_coefficients : ∀ (L : ℕ) (c : ℤ → ℂ) (h : ℝ → ℝ),
+  (∀ (x : ℝ), ↑(h x) = ∑ k ∈ Finset.Icc (-↑L) ↑L, c k * P31.circleCharacter k x) →
+    (∀ (x : ℝ), 0 ≤ h x) → ∃ u, ∀ (x : ℝ), h x = ‖P31.analyticValue u x‖ ^ 2
+'ChowlaCosine.P31.finite_fejerRiesz_of_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.p31_main : ∀ (w : ℕ) (A : Finset ℕ) (M C : ℝ),
+  (∀ a ∈ A, 0 < a) →
+    (∀ (x : ℝ), -M ≤ cosSum A x) →
+      P31.AnalyticNikolskii (A.sup id + w) C →
+        P31.windowMass w * (↑A.card / 2 + M ^ 2) ≤ C * (M ^ 2 + P31.windowEnergy w A / 2)
+'ChowlaCosine.P31.p31_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.elementaryWeight_pos : ∀ {A : ℝ}, A ∈ Set.Icc 0 1 → 0 < P31.elementaryWeight A
+'ChowlaCosine.P31.elementaryWeight_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.elementary_integral_constant : (1 - 71 / 100) * ∫ (A : ℝ) in 0..1, 1 / P31.elementaryWeight A ≤ 1
+'ChowlaCosine.P31.elementary_integral_constant' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.elementaryCellWeight_pos : ∀ {a b : ℝ}, a ∈ Set.Icc 0 1 → b ∈ Set.Icc 0 1 → 0 < P31.elementaryCellWeight a b
+'ChowlaCosine.P31.elementaryCellWeight_pos' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.integral_elementaryWeight : ∀ (a b : ℝ),
+  ∫ (A : ℝ) in a..b, P31.elementaryWeight A = (b - a) * P31.elementaryCellWeight a b
+'ChowlaCosine.P31.integral_elementaryWeight' depends on axioms: [propext, Classical.choice, Quot.sound]
+@P31.elementary_cell_reciprocal_bound : ∀ {a b : ℝ},
+  0 ≤ a → a ≤ b → b ≤ 1 → (b - a) / P31.elementaryCellWeight a b ≤ ∫ (A : ℝ) in a..b, 1 / P31.elementaryWeight A
+'ChowlaCosine.P31.elementary_cell_reciprocal_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.elementary_bound_of_two_estimates : ∀ (N : ℕ) (v a : ℕ → ℝ) (E : ℝ),
+  a 0 = 0 →
+    a N = 1 →
+      (∀ j ≤ N, a j ∈ Set.Icc 0 1) →
+        (∀ j < N, a (j + 1) - a j = v j ^ 2) →
+          ∑ j ∈ Finset.range N, v j ^ 2 = 1 →
+            E ≤ ↑N - ∑ j ∈ Finset.range N, (a j * (1 - a j) + a (j + 1) * (1 - a (j + 1))) →
+              E ≤ (∑ j ∈ Finset.range N, v j) ^ 2 → E ≤ 811 / 1000 * ↑N + 71 / 300
+'ChowlaCosine.P31.elementary_bound_of_two_estimates' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.discreteEnergy_le_pairCount : ∀ (N : ℕ) (v : Fin N → ℝ),
+  P31.discreteEnergy N v ≤ ∑ p, (v p.1 * v p.2) ^ 2 * P31.pairCount N p
+'ChowlaCosine.P31.discreteEnergy_le_pairCount' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.discreteEnergy_le_sum_sq : ∀ (N : ℕ) (v : Fin N → ℝ),
+  (∀ (j : Fin N), 0 ≤ v j) → ∑ j, v j ^ 2 = 1 → P31.discreteEnergy N v ≤ (∑ j, v j) ^ 2
+'ChowlaCosine.P31.discreteEnergy_le_sum_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.pairCount_le_distance : ∀ (N : ℕ) (p : Fin N × Fin N), P31.pairCount N p ≤ ↑N - |↑↑p.1 - ↑↑p.2|
+'ChowlaCosine.P31.pairCount_le_distance' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.massPrefix_zero : ∀ (N : ℕ) (v : Fin N → ℝ), P31.massPrefix N v 0 = 0
+'ChowlaCosine.P31.massPrefix_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.massPrefix_total : ∀ (N : ℕ) (v : Fin N → ℝ), P31.massPrefix N v N = ∑ j, v j ^ 2
+'ChowlaCosine.P31.massPrefix_total' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.massPrefix_bounds : ∀ (N : ℕ) (v : Fin N → ℝ), ∑ j, v j ^ 2 = 1 → ∀ (k : ℕ), P31.massPrefix N v k ∈ Set.Icc 0 1
+'ChowlaCosine.P31.massPrefix_bounds' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.massPrefix_step : ∀ (N : ℕ) (v : Fin N → ℝ) (j : Fin N),
+  P31.massPrefix N v (↑j + 1) - P31.massPrefix N v ↑j = v j ^ 2
+'ChowlaCosine.P31.massPrefix_step' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.distance_mass_identity : ∀ (N : ℕ) (v : Fin N → ℝ),
+  ∑ j, v j ^ 2 = 1 →
+    ∑ p, |↑↑p.1 - ↑↑p.2| * (v p.1 ^ 2 * v p.2 ^ 2) =
+      2 * ∑ k ∈ Finset.range N, P31.massPrefix N v (k + 1) * (1 - P31.massPrefix N v (k + 1))
+'ChowlaCosine.P31.distance_mass_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.massPrefix_trapezoid_sum : ∀ (N : ℕ) (v : Fin N → ℝ),
+  ∑ j, v j ^ 2 = 1 →
+    ∑ k ∈ Finset.range N,
+        (P31.massPrefix N v k * (1 - P31.massPrefix N v k) +
+          P31.massPrefix N v (k + 1) * (1 - P31.massPrefix N v (k + 1))) =
+      2 * ∑ k ∈ Finset.range N, P31.massPrefix N v (k + 1) * (1 - P31.massPrefix N v (k + 1))
+'ChowlaCosine.P31.massPrefix_trapezoid_sum' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.discreteEnergy_le_cumulative : ∀ (N : ℕ) (v : Fin N → ℝ),
+  ∑ j, v j ^ 2 = 1 →
+    P31.discreteEnergy N v ≤
+      ↑N -
+        ∑ k ∈ Finset.range N,
+          (P31.massPrefix N v k * (1 - P31.massPrefix N v k) +
+            P31.massPrefix N v (k + 1) * (1 - P31.massPrefix N v (k + 1)))
+'ChowlaCosine.P31.discreteEnergy_le_cumulative' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.elementary_discreteEnergy_bound : ∀ (N : ℕ) (v : Fin N → ℝ),
+  (∀ (j : Fin N), 0 ≤ v j) → ∑ j, v j ^ 2 = 1 → P31.discreteEnergy N v ≤ 811 / 1000 * ↑N + 71 / 300
+'ChowlaCosine.P31.elementary_discreteEnergy_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.discreteEnergy_eq_convolution : ∀ (N : ℕ) (v : Fin N → ℝ),
+  P31.discreteEnergy N v = ∑ k ∈ Finset.range (2 * N - 1), P31.discreteConvolution N v k ^ 2
+'ChowlaCosine.P31.discreteEnergy_eq_convolution' depends on axioms: [propext, Classical.choice, Quot.sound]
+P31.elementary_convolution_bound : ∀ (L : ℕ) (v : Fin (L + 1) → ℝ),
+  (∀ (j : Fin (L + 1)), 0 ≤ v j) →
+    ∑ j, v j ^ 2 = 1 →
+      ∑ k ∈ Finset.range (2 * (L + 1) - 1), P31.discreteConvolution (L + 1) v k ^ 2 ≤ 811 / 1000 * (↑L + 1) + 71 / 300
+'ChowlaCosine.P31.elementary_convolution_bound' depends on axioms: [propext, Classical.choice, Quot.sound]

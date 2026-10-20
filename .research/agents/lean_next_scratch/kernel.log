@@ -1,0 +1,69 @@
+ChowlaCosine/P36/Kernel.lean:65:11: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ∫ (y : ℝ) in 0..2 * π, cos (↑?m * y + ?φ) * cos (↑?n * y + ?ψ)
+in the target expression
+  (2 * π)⁻¹ * ∫ (y : ℝ) in 0..2 * π, cos (↑k * y + 0) * cos (-↑↑a * y + ↑a * x) =
+    ((if k = ↑a then 1 else 0) + if k = -↑a then 1 else 0) / 2 * cos (↑a * x)
+
+k : ℤ
+a : ℕ
+x : ℝ
+heq : (fun y => cos (↑k * y) * cos (↑a * (x - y))) = fun y => cos (↑k * y + 0) * cos (-↑↑a * y + ↑a * x)
+⊢ (2 * π)⁻¹ * ∫ (y : ℝ) in 0..2 * π, cos (↑k * y + 0) * cos (-↑↑a * y + ↑a * x) =
+    ((if k = ↑a then 1 else 0) + if k = -↑a then 1 else 0) / 2 * cos (↑a * x)
+ChowlaCosine/P36/Kernel.lean:86:48: error: `fun_prop` was unable to prove `Continuous (?m.244 j)`
+
+Issues:
+ChowlaCosine/P36/Kernel.lean:86:13: error: `simp` made no progress
+ChowlaCosine/P36/Kernel.lean:96:2: error: Tactic `rfl` failed: The left-hand side
+  (circleMean fun y => squareKernel N v y * cos (↑a * (0 - y))) * cos (↑a * x)
+is not definitionally equal to the right-hand side
+  squareCoeff N v a * cos (↑a * x)
+
+N : ℕ
+v : ℕ → ℝ
+a : ℕ
+x : ℝ
+hex :
+  ∀ (z : ℝ),
+    (circleMean fun y => squareKernel N v y * cos (↑a * (z - y))) =
+      (∑ i ∈ Finset.range N,
+          ∑ j ∈ Finset.range N, v i * v j * (((if ↑i - ↑j = ↑a then 1 else 0) + if ↑i - ↑j = -↑a then 1 else 0) / 2)) *
+        cos (↑a * z)
+hzero :
+  (circleMean fun y => squareKernel N v y * cos (↑a * (0 - y))) =
+    ∑ i ∈ Finset.range N,
+      ∑ j ∈ Finset.range N, v i * v j * (((if ↑i - ↑j = ↑a then 1 else 0) + if ↑i - ↑j = -↑a then 1 else 0) / 2)
+⊢ (circleMean fun y => squareKernel N v y * cos (↑a * (0 - y))) * cos (↑a * x) = squareCoeff N v a * cos (↑a * x)
+ChowlaCosine/P36/Kernel.lean:94:13: warning: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cos_neg, mul_zero, cos_zero, mul_one] at hzero
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ChowlaCosine/P36/Kernel.lean:94:23: warning: This simp argument is unused:
+  cos_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero, mul_zero, cos_zero, mul_one] at hzero
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ChowlaCosine/P36/Kernel.lean:110:8: error: Tactic `rewrite` failed: Did not find an occurrence of the pattern
+  ?a * ?b * ?c
+in the target expression
+  (circleMean fun y => v i * v j * cos (↑(↑i - ↑j) * y) * cos (↑a * (0 - y))) = 0
+
+N : ℕ
+v : ℕ → ℝ
+a : ℕ
+ha : N ≤ a
+hapos : 0 < a
+H : (circleMean fun y => squareKernel N v y * cos (↑a * (0 - y))) = squareCoeff N v a * cos (↑a * 0)
+i : ℕ
+hi : i ∈ Finset.range N
+j : ℕ
+hj : j ∈ Finset.range N
+⊢ (circleMean fun y => v i * v j * cos (↑(↑i - ↑j) * y) * cos (↑a * (0 - y))) = 0
+ChowlaCosine/P36/Kernel.lean:130:18: warning: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`

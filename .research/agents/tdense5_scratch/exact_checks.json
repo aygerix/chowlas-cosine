@@ -1,0 +1,649 @@
+{
+  "status": "Exact rational SG and integer energy; hinge grid is NUMERICAL",
+  "energy": [
+    {
+      "S": 1,
+      "energy": 1,
+      "normalized_fourth": "1"
+    },
+    {
+      "S": 2,
+      "energy": 6,
+      "normalized_fourth": "3/2"
+    },
+    {
+      "S": 3,
+      "energy": 19,
+      "normalized_fourth": "19/9"
+    },
+    {
+      "S": 4,
+      "energy": 44,
+      "normalized_fourth": "11/4"
+    },
+    {
+      "S": 5,
+      "energy": 85,
+      "normalized_fourth": "17/5"
+    },
+    {
+      "S": 6,
+      "energy": 146,
+      "normalized_fourth": "73/18"
+    },
+    {
+      "S": 7,
+      "energy": 231,
+      "normalized_fourth": "33/7"
+    },
+    {
+      "S": 8,
+      "energy": 344,
+      "normalized_fourth": "43/8"
+    },
+    {
+      "S": 9,
+      "energy": 489,
+      "normalized_fourth": "163/27"
+    },
+    {
+      "S": 10,
+      "energy": 670,
+      "normalized_fourth": "67/10"
+    },
+    {
+      "S": 11,
+      "energy": 891,
+      "normalized_fourth": "81/11"
+    },
+    {
+      "S": 12,
+      "energy": 1156,
+      "normalized_fourth": "289/36"
+    },
+    {
+      "S": 13,
+      "energy": 1469,
+      "normalized_fourth": "113/13"
+    },
+    {
+      "S": 14,
+      "energy": 1834,
+      "normalized_fourth": "131/14"
+    },
+    {
+      "S": 15,
+      "energy": 2255,
+      "normalized_fourth": "451/45"
+    },
+    {
+      "S": 16,
+      "energy": 2736,
+      "normalized_fourth": "171/16"
+    },
+    {
+      "S": 17,
+      "energy": 3281,
+      "normalized_fourth": "193/17"
+    },
+    {
+      "S": 18,
+      "energy": 3894,
+      "normalized_fourth": "649/54"
+    },
+    {
+      "S": 19,
+      "energy": 4579,
+      "normalized_fourth": "241/19"
+    },
+    {
+      "S": 20,
+      "energy": 5340,
+      "normalized_fourth": "267/20"
+    },
+    {
+      "S": 21,
+      "energy": 6181,
+      "normalized_fourth": "883/63"
+    },
+    {
+      "S": 22,
+      "energy": 7106,
+      "normalized_fourth": "323/22"
+    },
+    {
+      "S": 23,
+      "energy": 8119,
+      "normalized_fourth": "353/23"
+    },
+    {
+      "S": 24,
+      "energy": 9224,
+      "normalized_fourth": "1153/72"
+    },
+    {
+      "S": 25,
+      "energy": 10425,
+      "normalized_fourth": "417/25"
+    },
+    {
+      "S": 26,
+      "energy": 11726,
+      "normalized_fourth": "451/26"
+    },
+    {
+      "S": 27,
+      "energy": 13131,
+      "normalized_fourth": "1459/81"
+    },
+    {
+      "S": 28,
+      "energy": 14644,
+      "normalized_fourth": "523/28"
+    },
+    {
+      "S": 29,
+      "energy": 16269,
+      "normalized_fourth": "561/29"
+    },
+    {
+      "S": 30,
+      "energy": 18010,
+      "normalized_fourth": "1801/90"
+    },
+    {
+      "S": 31,
+      "energy": 19871,
+      "normalized_fourth": "641/31"
+    },
+    {
+      "S": 32,
+      "energy": 21856,
+      "normalized_fourth": "683/32"
+    },
+    {
+      "S": 33,
+      "energy": 23969,
+      "normalized_fourth": "2179/99"
+    },
+    {
+      "S": 34,
+      "energy": 26214,
+      "normalized_fourth": "771/34"
+    },
+    {
+      "S": 35,
+      "energy": 28595,
+      "normalized_fourth": "817/35"
+    },
+    {
+      "S": 36,
+      "energy": 31116,
+      "normalized_fourth": "2593/108"
+    },
+    {
+      "S": 37,
+      "energy": 33781,
+      "normalized_fourth": "913/37"
+    },
+    {
+      "S": 38,
+      "energy": 36594,
+      "normalized_fourth": "963/38"
+    },
+    {
+      "S": 39,
+      "energy": 39559,
+      "normalized_fourth": "3043/117"
+    },
+    {
+      "S": 40,
+      "energy": 42680,
+      "normalized_fourth": "1067/40"
+    },
+    {
+      "S": 41,
+      "energy": 45961,
+      "normalized_fourth": "1121/41"
+    },
+    {
+      "S": 42,
+      "energy": 49406,
+      "normalized_fourth": "3529/126"
+    },
+    {
+      "S": 43,
+      "energy": 53019,
+      "normalized_fourth": "1233/43"
+    },
+    {
+      "S": 44,
+      "energy": 56804,
+      "normalized_fourth": "1291/44"
+    },
+    {
+      "S": 45,
+      "energy": 60765,
+      "normalized_fourth": "4051/135"
+    },
+    {
+      "S": 46,
+      "energy": 64906,
+      "normalized_fourth": "1411/46"
+    },
+    {
+      "S": 47,
+      "energy": 69231,
+      "normalized_fourth": "1473/47"
+    },
+    {
+      "S": 48,
+      "energy": 73744,
+      "normalized_fourth": "4609/144"
+    },
+    {
+      "S": 49,
+      "energy": 78449,
+      "normalized_fourth": "1601/49"
+    },
+    {
+      "S": 50,
+      "energy": 83350,
+      "normalized_fourth": "1667/50"
+    },
+    {
+      "S": 51,
+      "energy": 88451,
+      "normalized_fourth": "5203/153"
+    },
+    {
+      "S": 52,
+      "energy": 93756,
+      "normalized_fourth": "1803/52"
+    },
+    {
+      "S": 53,
+      "energy": 99269,
+      "normalized_fourth": "1873/53"
+    },
+    {
+      "S": 54,
+      "energy": 104994,
+      "normalized_fourth": "5833/162"
+    },
+    {
+      "S": 55,
+      "energy": 110935,
+      "normalized_fourth": "2017/55"
+    },
+    {
+      "S": 56,
+      "energy": 117096,
+      "normalized_fourth": "2091/56"
+    },
+    {
+      "S": 57,
+      "energy": 123481,
+      "normalized_fourth": "6499/171"
+    },
+    {
+      "S": 58,
+      "energy": 130094,
+      "normalized_fourth": "2243/58"
+    },
+    {
+      "S": 59,
+      "energy": 136939,
+      "normalized_fourth": "2321/59"
+    },
+    {
+      "S": 60,
+      "energy": 144020,
+      "normalized_fourth": "7201/180"
+    },
+    {
+      "S": 61,
+      "energy": 151341,
+      "normalized_fourth": "2481/61"
+    },
+    {
+      "S": 62,
+      "energy": 158906,
+      "normalized_fourth": "2563/62"
+    },
+    {
+      "S": 63,
+      "energy": 166719,
+      "normalized_fourth": "7939/189"
+    },
+    {
+      "S": 64,
+      "energy": 174784,
+      "normalized_fourth": "2731/64"
+    },
+    {
+      "S": 65,
+      "energy": 183105,
+      "normalized_fourth": "2817/65"
+    },
+    {
+      "S": 66,
+      "energy": 191686,
+      "normalized_fourth": "8713/198"
+    },
+    {
+      "S": 67,
+      "energy": 200531,
+      "normalized_fourth": "2993/67"
+    },
+    {
+      "S": 68,
+      "energy": 209644,
+      "normalized_fourth": "3083/68"
+    },
+    {
+      "S": 69,
+      "energy": 219029,
+      "normalized_fourth": "9523/207"
+    },
+    {
+      "S": 70,
+      "energy": 228690,
+      "normalized_fourth": "3267/70"
+    },
+    {
+      "S": 71,
+      "energy": 238631,
+      "normalized_fourth": "3361/71"
+    },
+    {
+      "S": 72,
+      "energy": 248856,
+      "normalized_fourth": "10369/216"
+    },
+    {
+      "S": 73,
+      "energy": 259369,
+      "normalized_fourth": "3553/73"
+    },
+    {
+      "S": 74,
+      "energy": 270174,
+      "normalized_fourth": "3651/74"
+    },
+    {
+      "S": 75,
+      "energy": 281275,
+      "normalized_fourth": "11251/225"
+    },
+    {
+      "S": 76,
+      "energy": 292676,
+      "normalized_fourth": "3851/76"
+    },
+    {
+      "S": 77,
+      "energy": 304381,
+      "normalized_fourth": "3953/77"
+    },
+    {
+      "S": 78,
+      "energy": 316394,
+      "normalized_fourth": "12169/234"
+    },
+    {
+      "S": 79,
+      "energy": 328719,
+      "normalized_fourth": "4161/79"
+    },
+    {
+      "S": 80,
+      "energy": 341360,
+      "normalized_fourth": "4267/80"
+    },
+    {
+      "S": 81,
+      "energy": 354321,
+      "normalized_fourth": "13123/243"
+    },
+    {
+      "S": 82,
+      "energy": 367606,
+      "normalized_fourth": "4483/82"
+    },
+    {
+      "S": 83,
+      "energy": 381219,
+      "normalized_fourth": "4593/83"
+    },
+    {
+      "S": 84,
+      "energy": 395164,
+      "normalized_fourth": "14113/252"
+    },
+    {
+      "S": 85,
+      "energy": 409445,
+      "normalized_fourth": "4817/85"
+    },
+    {
+      "S": 86,
+      "energy": 424066,
+      "normalized_fourth": "4931/86"
+    },
+    {
+      "S": 87,
+      "energy": 439031,
+      "normalized_fourth": "15139/261"
+    },
+    {
+      "S": 88,
+      "energy": 454344,
+      "normalized_fourth": "5163/88"
+    },
+    {
+      "S": 89,
+      "energy": 470009,
+      "normalized_fourth": "5281/89"
+    },
+    {
+      "S": 90,
+      "energy": 486030,
+      "normalized_fourth": "16201/270"
+    },
+    {
+      "S": 91,
+      "energy": 502411,
+      "normalized_fourth": "5521/91"
+    },
+    {
+      "S": 92,
+      "energy": 519156,
+      "normalized_fourth": "5643/92"
+    },
+    {
+      "S": 93,
+      "energy": 536269,
+      "normalized_fourth": "17299/279"
+    },
+    {
+      "S": 94,
+      "energy": 553754,
+      "normalized_fourth": "5891/94"
+    },
+    {
+      "S": 95,
+      "energy": 571615,
+      "normalized_fourth": "6017/95"
+    },
+    {
+      "S": 96,
+      "energy": 589856,
+      "normalized_fourth": "18433/288"
+    },
+    {
+      "S": 97,
+      "energy": 608481,
+      "normalized_fourth": "6273/97"
+    },
+    {
+      "S": 98,
+      "energy": 627494,
+      "normalized_fourth": "6403/98"
+    },
+    {
+      "S": 99,
+      "energy": 646899,
+      "normalized_fourth": "19603/297"
+    },
+    {
+      "S": 100,
+      "energy": 666700,
+      "normalized_fourth": "6667/100"
+    },
+    {
+      "S": 101,
+      "energy": 686901,
+      "normalized_fourth": "6801/101"
+    },
+    {
+      "S": 102,
+      "energy": 707506,
+      "normalized_fourth": "20809/306"
+    },
+    {
+      "S": 103,
+      "energy": 728519,
+      "normalized_fourth": "7073/103"
+    },
+    {
+      "S": 104,
+      "energy": 749944,
+      "normalized_fourth": "7211/104"
+    },
+    {
+      "S": 105,
+      "energy": 771785,
+      "normalized_fourth": "22051/315"
+    },
+    {
+      "S": 106,
+      "energy": 794046,
+      "normalized_fourth": "7491/106"
+    },
+    {
+      "S": 107,
+      "energy": 816731,
+      "normalized_fourth": "7633/107"
+    },
+    {
+      "S": 108,
+      "energy": 839844,
+      "normalized_fourth": "23329/324"
+    },
+    {
+      "S": 109,
+      "energy": 863389,
+      "normalized_fourth": "7921/109"
+    },
+    {
+      "S": 110,
+      "energy": 887370,
+      "normalized_fourth": "8067/110"
+    },
+    {
+      "S": 111,
+      "energy": 911791,
+      "normalized_fourth": "24643/333"
+    },
+    {
+      "S": 112,
+      "energy": 936656,
+      "normalized_fourth": "8363/112"
+    },
+    {
+      "S": 113,
+      "energy": 961969,
+      "normalized_fourth": "8513/113"
+    },
+    {
+      "S": 114,
+      "energy": 987734,
+      "normalized_fourth": "25993/342"
+    },
+    {
+      "S": 115,
+      "energy": 1013955,
+      "normalized_fourth": "8817/115"
+    },
+    {
+      "S": 116,
+      "energy": 1040636,
+      "normalized_fourth": "8971/116"
+    },
+    {
+      "S": 117,
+      "energy": 1067781,
+      "normalized_fourth": "27379/351"
+    },
+    {
+      "S": 118,
+      "energy": 1095394,
+      "normalized_fourth": "9283/118"
+    },
+    {
+      "S": 119,
+      "energy": 1123479,
+      "normalized_fourth": "9441/119"
+    },
+    {
+      "S": 120,
+      "energy": 1152040,
+      "normalized_fourth": "28801/360"
+    },
+    {
+      "S": 121,
+      "energy": 1181081,
+      "normalized_fourth": "9761/121"
+    },
+    {
+      "S": 122,
+      "energy": 1210606,
+      "normalized_fourth": "9923/122"
+    },
+    {
+      "S": 123,
+      "energy": 1240619,
+      "normalized_fourth": "30259/369"
+    },
+    {
+      "S": 124,
+      "energy": 1271124,
+      "normalized_fourth": "10251/124"
+    },
+    {
+      "S": 125,
+      "energy": 1302125,
+      "normalized_fourth": "10417/125"
+    },
+    {
+      "S": 126,
+      "energy": 1333626,
+      "normalized_fourth": "31753/378"
+    },
+    {
+      "S": 127,
+      "energy": 1365631,
+      "normalized_fourth": "10753/127"
+    },
+    {
+      "S": 128,
+      "energy": 1398144,
+      "normalized_fourth": "10923/128"
+    }
+  ],
+  "SG_integral_cases": 271,
+  "SG_pointwise_cases": 34688,
+  "hinge_grid_points": 174165,
+  "hinge_max_error_over_proved_bound": 0.24785494377954084
+}

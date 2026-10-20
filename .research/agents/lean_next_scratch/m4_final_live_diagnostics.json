@@ -1,0 +1,987 @@
+{
+  "diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 24,
+          "line": 276
+        },
+        "start": {
+          "character": 21,
+          "line": 276
+        }
+      },
+      "message": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`",
+      "range": {
+        "end": {
+          "character": 24,
+          "line": 276
+        },
+        "start": {
+          "character": 21,
+          "line": 276
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 37,
+          "line": 368
+        },
+        "start": {
+          "character": 35,
+          "line": 368
+        }
+      },
+      "message": "Variable name `hB` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hB\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+      "range": {
+        "end": {
+          "character": 37,
+          "line": 368
+        },
+        "start": {
+          "character": 35,
+          "line": 368
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4",
+      "tags": [
+        1
+      ]
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 52,
+          "line": 382
+        },
+        "start": {
+          "character": 50,
+          "line": 382
+        }
+      },
+      "message": "Variable name `hT` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hT\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+      "range": {
+        "end": {
+          "character": 52,
+          "line": 382
+        },
+        "start": {
+          "character": 50,
+          "line": 382
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4",
+      "tags": [
+        1
+      ]
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 12,
+          "line": 732
+        },
+        "start": {
+          "character": 8,
+          "line": 732
+        }
+      },
+      "message": "this tactic is never executed\n\nNote: This linter can be disabled with `set_option linter.unreachableTactic false`",
+      "range": {
+        "end": {
+          "character": 12,
+          "line": 732
+        },
+        "start": {
+          "character": 8,
+          "line": 732
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 12,
+          "line": 732
+        },
+        "start": {
+          "character": 8,
+          "line": 732
+        }
+      },
+      "message": "Unused tactic linter: `ring` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+      "range": {
+        "end": {
+          "character": 12,
+          "line": 732
+        },
+        "start": {
+          "character": 8,
+          "line": 732
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 766
+        },
+        "start": {
+          "character": 0,
+          "line": 766
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heatTailConstant_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 766
+        },
+        "start": {
+          "character": 0,
+          "line": 766
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 767
+        },
+        "start": {
+          "character": 0,
+          "line": 767
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heatFlow_gaussian_bound_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 767
+        },
+        "start": {
+          "character": 0,
+          "line": 767
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 768
+        },
+        "start": {
+          "character": 0,
+          "line": 768
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeatProduct_gaussian_bound_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 768
+        },
+        "start": {
+          "character": 0,
+          "line": 768
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 769
+        },
+        "start": {
+          "character": 0,
+          "line": 769
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heatTimeScore_bound_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 769
+        },
+        "start": {
+          "character": 0,
+          "line": 769
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 770
+        },
+        "start": {
+          "character": 0,
+          "line": 770
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heatSpaceScore_bound_interval' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 770
+        },
+        "start": {
+          "character": 0,
+          "line": 770
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 771
+        },
+        "start": {
+          "character": 0,
+          "line": 771
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeatProduct_time_derivative_bound_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 771
+        },
+        "start": {
+          "character": 0,
+          "line": 771
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 772
+        },
+        "start": {
+          "character": 0,
+          "line": 772
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.continuous_heatFlow_space' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 772
+        },
+        "start": {
+          "character": 0,
+          "line": 772
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 773
+        },
+        "start": {
+          "character": 0,
+          "line": 773
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.continuous_heatSpaceMoment_space' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 773
+        },
+        "start": {
+          "character": 0,
+          "line": 773
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 774
+        },
+        "start": {
+          "character": 0,
+          "line": 774
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.measurable_heatTimeMoment' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 774
+        },
+        "start": {
+          "character": 0,
+          "line": 774
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 775
+        },
+        "start": {
+          "character": 0,
+          "line": 775
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.measurable_heatTimeScore' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 775
+        },
+        "start": {
+          "character": 0,
+          "line": 775
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 776
+        },
+        "start": {
+          "character": 0,
+          "line": 776
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_plane_polynomial_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 776
+        },
+        "start": {
+          "character": 0,
+          "line": 776
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 777
+        },
+        "start": {
+          "character": 0,
+          "line": 777
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heat_score_polynomial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 777
+        },
+        "start": {
+          "character": 0,
+          "line": 777
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 778
+        },
+        "start": {
+          "character": 0,
+          "line": 778
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.continuous_planePoint' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 778
+        },
+        "start": {
+          "character": 0,
+          "line": 778
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 779
+        },
+        "start": {
+          "character": 0,
+          "line": 779
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.norm_planePoint_sq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 779
+        },
+        "start": {
+          "character": 0,
+          "line": 779
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 780
+        },
+        "start": {
+          "character": 0,
+          "line": 780
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.continuous_geometricHeatProduct_space' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 780
+        },
+        "start": {
+          "character": 0,
+          "line": 780
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 781
+        },
+        "start": {
+          "character": 0,
+          "line": 781
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.measurable_geometricHeatTimeSlope_plane' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 781
+        },
+        "start": {
+          "character": 0,
+          "line": 781
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 782
+        },
+        "start": {
+          "character": 0,
+          "line": 782
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeatTimeSlope_plane_bound_interval' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 782
+        },
+        "start": {
+          "character": 0,
+          "line": 782
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 783
+        },
+        "start": {
+          "character": 0,
+          "line": 783
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_geometricHeatProduct_plane' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 783
+        },
+        "start": {
+          "character": 0,
+          "line": 783
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 784
+        },
+        "start": {
+          "character": 0,
+          "line": 784
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.hasDerivAt_integral_geometricHeatProduct_plane' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 784
+        },
+        "start": {
+          "character": 0,
+          "line": 784
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 785
+        },
+        "start": {
+          "character": 0,
+          "line": 785
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.abs_weighted_directional_score_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 785
+        },
+        "start": {
+          "character": 0,
+          "line": 785
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 786
+        },
+        "start": {
+          "character": 0,
+          "line": 786
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.abs_weighted_second_score_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 786
+        },
+        "start": {
+          "character": 0,
+          "line": 786
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 787
+        },
+        "start": {
+          "character": 0,
+          "line": 787
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.hasDerivAt_geometricHeatSpaceSlope_line' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 787
+        },
+        "start": {
+          "character": 0,
+          "line": 787
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 788
+        },
+        "start": {
+          "character": 0,
+          "line": 788
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeat_spatial_envelopes' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 788
+        },
+        "start": {
+          "character": 0,
+          "line": 788
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 789
+        },
+        "start": {
+          "character": 0,
+          "line": 789
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.measurable_heatSpaceScore' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 789
+        },
+        "start": {
+          "character": 0,
+          "line": 789
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 790
+        },
+        "start": {
+          "character": 0,
+          "line": 790
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.measurable_geometricHeat_spatial_slopes_plane' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 790
+        },
+        "start": {
+          "character": 0,
+          "line": 790
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 791
+        },
+        "start": {
+          "character": 0,
+          "line": 791
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_geometricHeat_spatial_slopes_plane' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 791
+        },
+        "start": {
+          "character": 0,
+          "line": 791
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 792
+        },
+        "start": {
+          "character": 0,
+          "line": 792
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_geometricHeatTimeSlope_plane' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 792
+        },
+        "start": {
+          "character": 0,
+          "line": 792
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 793
+        },
+        "start": {
+          "character": 0,
+          "line": 793
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeatProduct_integral_derivative_nonneg' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 793
+        },
+        "start": {
+          "character": 0,
+          "line": 793
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 794
+        },
+        "start": {
+          "character": 0,
+          "line": 794
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeatProduct_integral_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 794
+        },
+        "start": {
+          "character": 0,
+          "line": 794
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 795
+        },
+        "start": {
+          "character": 0,
+          "line": 795
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_rescaledHeatFlow' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 795
+        },
+        "start": {
+          "character": 0,
+          "line": 795
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 796
+        },
+        "start": {
+          "character": 0,
+          "line": 796
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heatKernel_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 796
+        },
+        "start": {
+          "character": 0,
+          "line": 796
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 797
+        },
+        "start": {
+          "character": 0,
+          "line": 797
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.rescaledHeatFlow_eq_heatFlow' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 797
+        },
+        "start": {
+          "character": 0,
+          "line": 797
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 798
+        },
+        "start": {
+          "character": 0,
+          "line": 798
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_heatFlow_large_time' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 798
+        },
+        "start": {
+          "character": 0,
+          "line": 798
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 799
+        },
+        "start": {
+          "character": 0,
+          "line": 799
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_sqrt_mul_heatFlow' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 799
+        },
+        "start": {
+          "character": 0,
+          "line": 799
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    }
+  ],
+  "uri": "file:///Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/lean_next_scratch/Combined.lean",
+  "version": 15
+}

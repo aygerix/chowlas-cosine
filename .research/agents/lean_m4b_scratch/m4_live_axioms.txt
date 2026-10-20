@@ -1,0 +1,5 @@
+'ChowlaCosine.Beckner.sharp_young' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.sharp_young_finite' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.young_trilinear_complement' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.becknerFactor_three_quarters_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.sharp_autocorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]

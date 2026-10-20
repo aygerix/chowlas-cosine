@@ -2,6 +2,8 @@
 
 ## Mission: sustained original mathematical research
 
+Throughout this campaign load the Number Theory research skill.
+
 This is an open-ended, **30-day mathematical research project** whose objective is to make a decisive advance on **Chowla's cosine problem**, prioritizing an explicit construction that would satisfy Epoch AI's challenge while also seriously pursuing the competing possibility that Chowla's square-root conjecture is true.
 
 It is **not** a one-session attempt, a literature survey, a request for another numerical search without mathematical understanding, or an essay about why the problem is hard. The assignment is to conduct original mathematics beyond the present frontier.
@@ -260,3 +262,5 @@ Keep asking: *What specific structural ingredient would force a square-root nega
 **Identify the missing ingredient. Attempt to derive it. If it fails, find out why, preserve the obstruction, and pursue a different mechanism.**
 
 **Do not confuse understanding the current mathematical frontier with exhausting the mathematics beyond it.**
+
+**DO NOT INVEST TIME INTO WRITING UP MANUSCRIPTS AND LATEX PAPERS UNLESS INSTRUCTED TO DO SO**

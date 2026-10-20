@@ -1,0 +1,16 @@
+'ChowlaCosine.P31.fejerRiesz_zero' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.rootReflection_rootReflection' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.root_pair_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.factorization_of_bounded_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.root_partition_off_circle' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.root_partition_of_even_fixed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.root_product_identity' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.finite_fejerRiesz' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.finite_fejerRiesz_of_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.p31_main' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.unit_circle_rootMultiplicity_even' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.root_symmetry_of_real_circle_representation' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.P31.exists_shifted_polynomial' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.P31.shifted_polynomial_coeff_symmetry' depends on axioms: [propext, Classical.choice, Quot.sound]

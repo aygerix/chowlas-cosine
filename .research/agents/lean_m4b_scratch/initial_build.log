@@ -1,0 +1,294 @@
+⚠ [8721/8757] Replayed ChowlaCosine.P31.WindowMoments
+warning: ChowlaCosine/P31/WindowMoments.lean:70:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8724/8757] Replayed ChowlaCosine.P31.WindowBound
+warning: ChowlaCosine/P31/WindowBound.lean:173:14: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ChowlaCosine/P31/WindowBound.lean:178:12: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+⚠ [8725/8757] Replayed ChowlaCosine.P31.FejerRiesz
+warning: ChowlaCosine/P31/FejerRiesz.lean:55:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ChowlaCosine/P31/FejerRiesz.lean:248:2: `push_neg` has been deprecated. Prefer using `push Not` instead.
+If you'd rather continue using `push_neg` in your project, you can implement it as follows:
+```
+open Lean.Parser.Tactic in
+macro "push_neg" cfg:optConfig loc:(location)? : tactic =>
+  `(tactic| push $cfg:optConfig Not $[$loc]?)
+```
+warning: ChowlaCosine/P31/FejerRiesz.lean:469:39: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/P31/FejerRiesz.lean:469:39: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ChowlaCosine/P31/FejerRiesz.lean:508:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ChowlaCosine/P31/FejerRiesz.lean:577:6: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ChowlaCosine/P31/FejerRiesz.lean:684:4: try 'simp' instead of 'simpa'
+
+Note: This linter can be disabled with `set_option linter.unnecessarySimpa false`
+warning: ChowlaCosine/P31/FejerRiesz.lean:687:2: Try this: 
+  letI̵
+
+The goal is a proposition, so `let` is preferred over `letI`.
+The difference between `let` and `letI` is that `letI` inlines the value.
+But this is not relevant for proofs because of proof irrelevance.
+
+Note: This linter can be disabled with `set_option linter.style.haveILetI false`
+⚠ [8727/8757] Replayed ChowlaCosine.P31.ElementaryConstant
+warning: ChowlaCosine/P31/ElementaryConstant.lean:30:42: This simp argument is unused:
+  add_neg_cancel
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mul_zero, zero_add, mul_one, one_pow, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P31/ElementaryConstant.lean:30:58: This simp argument is unused:
+  one_pow
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [mul_zero, zero_add, mul_one, add_neg_cancel, smul_eq_mul]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P31/ElementaryConstant.lean:202:4: Unused tactic linter: `change _ ≤ _` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+warning: ChowlaCosine/P31/ElementaryConstant.lean:265:55: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8728/8757] Replayed ChowlaCosine.P31.ElementaryConvolution
+warning: ChowlaCosine/P31/ElementaryConvolution.lean:331:76: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ChowlaCosine/P31/ElementaryConvolution.lean:351:53: This simp argument is unused:
+  zero_add
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [zero_mul, sub_self, mul_zero, add_zero] at hs
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8729/8757] Replayed ChowlaCosine.P36.Kernel
+warning: ChowlaCosine/P36/Kernel.lean:98:13: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cos_neg, mul_zero, cos_zero, mul_one] at hzero
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P36/Kernel.lean:98:23: This simp argument is unused:
+  cos_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero, mul_zero, cos_zero, mul_one] at hzero
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P36/Kernel.lean:173:18: Variable name `hapos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hapos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/P36/Kernel.lean:204:18: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8730/8757] Replayed ChowlaCosine.P36.SineKernel
+warning: ChowlaCosine/P36/SineKernel.lean:31:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8731/8757] Replayed ChowlaCosine.P36.Main
+warning: ChowlaCosine/P36/Main.lean:13:39: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/P36/Main.lean:14:13: Variable name `hD` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hD
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8732/8757] Replayed ChowlaCosine.Beckner.Young
+warning: ChowlaCosine/Beckner/Young.lean:36:23: Variable name `y` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _y
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/Young.lean:113:13: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [smul_eq_mul] at hholder
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/Young.lean:330:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8734/8757] Replayed ChowlaCosine.Beckner.Gaussian
+warning: ChowlaCosine/Beckner/Gaussian.lean:52:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8735/8757] Replayed ChowlaCosine.Beckner.HeatFlow
+warning: ChowlaCosine/Beckner/HeatFlow.lean:97:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ChowlaCosine/Beckner/HeatFlow.lean:123:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8737/8757] Replayed ChowlaCosine.Beckner.HeatFlowRelative
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:47:33: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:181:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:181:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8740/8757] Replayed ChowlaCosine.P31.AnalyticNikolskii
+warning: ChowlaCosine/P31/AnalyticNikolskii.lean:28:25: This simp argument is unused:
+  Complex.star_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [circleCharacter, ← Complex.exp_conj]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P31/AnalyticNikolskii.lean:106:32: This simp argument is unused:
+  Finset.sum_ite_eq'
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.sum_ite_eq, Finset.mem_univ, ↓reduceIte]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8741/8757] Replayed ChowlaCosine.P31.Corollaries
+warning: ChowlaCosine/P31/Corollaries.lean:20:25: Variable name `a` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _a
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/P31/Corollaries.lean:20:27: Variable name `ha` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _ha
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/P31/Corollaries.lean:31:38: This simp argument is unused:
+  B
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [Finset.mem_filter, ha, true_and] at hnot
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+⚠ [8748/8757] Replayed ChowlaCosine.Beckner.HeatFlowIntegral
+warning: ChowlaCosine/Beckner/HeatFlowIntegral.lean:136:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8749/8757] Replayed ChowlaCosine.Beckner.HeatFlowSpatial
+warning: ChowlaCosine/Beckner/HeatFlowSpatial.lean:17:35: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/HeatFlowSpatial.lean:31:50: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8751/8757] Replayed ChowlaCosine.Beckner.HeatFlowRescale
+warning: ChowlaCosine/Beckner/HeatFlowRescale.lean:52:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/Beckner/HeatFlowRescale.lean:52:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8755/8757] Replayed ChowlaCosine.Beckner.YoungFrame
+warning: ChowlaCosine/Beckner/YoungFrame.lean:75:43: This simp argument is unused:
+  sq_sqrt hd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hab.le, sq_sqrt had.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:76:20: This simp argument is unused:
+  sq_sqrt had.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:76:36: This simp argument is unused:
+  sq_sqrt hbd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt had.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:94:45: This simp argument is unused:
+  sq_sqrt hd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hab.le, sq_sqrt had.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:95:22: This simp argument is unused:
+  sq_sqrt had.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:95:38: This simp argument is unused:
+  sq_sqrt hbd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt had.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:177:4: This simp argument is unused:
+  Matrix.vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecTail,
+    Function.comp_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:177:20: This simp argument is unused:
+  Matrix.vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecHead,
+    Function.comp_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:177:36: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecHead,
+    Matrix.vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:233:23: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [youngFrame, planePoint, smul_add, smul_smul, Finset.sum_add_distrib, ← Finset.sum_smul, hA, hB,
+    zero_smul, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+Build completed successfully (8757 jobs).

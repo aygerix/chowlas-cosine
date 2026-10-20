@@ -1,0 +1,20 @@
+{
+  "status": "PROVED finite scalar counterexample, exact rational formulas and Arb enclosures",
+  "q": 1000033,
+  "prime": true,
+  "K": "32",
+  "weak_positive_modes": 30000,
+  "core_modes": 3720,
+  "total_positive_modes": 33720,
+  "epsilon": "1/1000033",
+  "core_h_mean": "1272583992636/155005115",
+  "core_h_variance": "1535332001746832512784/24026585676163225",
+  "core_h_high": "[8462.7356034863167032428248109659024859845055117069088956091367411 +/- 6.34e-62]",
+  "core_h_low": "[7957.1611545787316662900128634553577414602468759804264545823714552 +/- 1.62e-62]",
+  "LambdaK_over_q_ball": "[0.26977463674854943237250210138156328796300139732850924385444517903 +/- 5.28e-66]",
+  "E_over_q2_ball": "[0.01557514195497693229288464065960047462858739236189587536597581868 +/- 2.73e-66]",
+  "omitted_frequency": 500016,
+  "convolution_at_omitted_frequency": 0,
+  "required_convolution": "992032736",
+  "assignment": "core on +/-[1,s/2], high on first s/4 pairs; weak positive eigenvalues on next r/2 pairs; all other nonzero eigenvalues -K; h(0)=K-1/2"
+}

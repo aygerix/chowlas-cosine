@@ -1,0 +1,1418 @@
+
+=== PDF PAGE 1 ===
+arXiv:0807.5104v2  [math.CA]  14 Oct 2010
+CHOWLA’S COSINE PROBLEM
+TOM SANDERS
+Abstract. Suppose that G is a discrete abelian group and A ⊂G is a ﬁnite
+symmetric set. We show two main results.
+(i) Either there is a set H of O(logc |A|) subgroups of G with |A△S H| =
+o(|A|) where S H = S
+H∈H H, or there is a character γ ∈b
+G such that
+−c
+1A(γ) = Ω(logc |A|) where c > 0 is the same absolute constant.
+(ii) If G is ﬁnite and |A| = Ω(|G|) then either there is a subgroup H ⩽G
+such that |A△H| = o(|A|), or there is a character γ ∈b
+G such that
+−c
+1A(γ) = Ω(|A|Ω(1)).
+1. Introduction
+Suppose that G is an abelian group, which we shall think of as discrete. We
+write bG for the dual group, that is the compact abelian group of homomorphisms
+γ : G →S1 and denote the Haar probability measure on bG by µ. In general, if S
+is a compact open subset of a locally compact abelian group then µS denotes Haar
+measure restricted to S and normalized to be a probability measure.
+The Fourier transform is the map b. : ℓ1(G) →L∞( bG) which takes f ∈ℓ1(G) to
+bf determined by
+bf(γ) :=
+X
+x∈G
+f(x)γ(x).
+It is useful to use the Fourier transform to deﬁne the space A(G) of functions
+f ∈ℓ1(G) endowed with the norm
+∥f∥A(G) := ∥bf∥L1( b
+G) =
+Z
+| bf(γ)|dγ,
+where the integration is, of course, with respect to the Haar probability measure
+on bG. We have the Fourier inversion formula, Plancherel’s theorem and Parseval’s
+theorem which we use liberally and without further mention; the classic text [Rud90]
+of Rudin includes all the details.
+Now, suppose that A is a ﬁnite symmetric subset of G. Since A is symmetric it
+is easy to see that c
+1A is real-valued, and it becomes natural to ask how positive or
+negative it may get. The former question is trivial: a quick calculation reveals that
+c
+1A(0 b
+G) = |A|, and since trivially ∥c
+1A∥L∞( b
+G) ⩽|A|, we see that c
+1A gets as large as
+it possibly could. The latter is not so simple: writing
+MG(A) := sup
+γ∈b
+G
+−c
+1A(γ),
+we want a lower bound on MG(A) in terms of |A|.
+In the paper [Cho65], Chowla asked for such a lower bound on MZ(A). By a
+simple averaging argument and the Littlewood conjecture (resolved independently
+by Konyagin [Kon81] and McGehee, Pigno and Smith [MPS81]) one gets that
+1
+
+
+=== PDF PAGE 2 ===
+2
+TOM SANDERS
+MZ(A) = Ω(log |A|). Prior to the resolution of the Littlewood conjecture some
+progress had been made for generic A by Roth in [Rot73]. However, the logarith-
+mic barrier was ﬁrst breached by Bourgain in [Bou86], using a method which was
+later reﬁned by Ruzsa, [Ruz04], to give the following result.
+Theorem 1.1 ([Ruz04, Theorem 2]). Suppose that A is a ﬁnite, non-empty sym-
+metric set of integers. Then
+MZ(A) = exp(Ω(
+p
+log |A|)).
+This theorem is the best known to date; in the other direction there are sets A
+with MZ(A) = O(
+p
+|A|), but nothing better.
+Recently, Green and Konyagin in [GK09] began work extending Littlewood’s
+conjecture to abelian groups other than Z. In both Littlewood’s conjecture and
+Chowla’s problem there is a simple obstacle to the most obvious extension: if H is
+a ﬁnite subgroup of G then ∥1H∥A(G) = 1 and MG(H) = 0. It turns out that in a
+number of cases this is really the only barrier.
+In their work Green and Konyagin addressed the discrete analogue of the Lit-
+tlewood conjecture and their result can be used in the same way as the Littlewood
+conjecture in Z to get that MZ/pZ(A) = logΩ(1) |A| if |A| = (p + 1)/2. We are able
+to do somewhat better – even than the obvious analogue of Theorem 1.1 – and shall
+show the following.
+Theorem 1.2. Suppose that p is a prime and A ⊂Z/pZ is symmetric and of size
+(p + 1)/2. Then
+MZ/pZ(A) = Ω(pΩ(1)).
+In fact, through careful accounting one can arrange for the Ω(1) constant to be
+1/3. For comparison Spencer showed in [Spe85] that there are sets A ⊂Z/pZ of
+size (p + 1)/2 with supγ̸=0 |c
+1A(γ)| = O(p1/2) and hence MZ/pZ(A) = O(p1/2). It
+seems interesting to try to close this gap.
+As is turns out we shall prove the following generalization of the above result.
+To preserve the strength of the bound we impose the additional constraint that A
+has density bounded away from 0.
+Theorem 1.3. Suppose that G is a ﬁnite abelian group and A ⊂G is symmetric
+with |A| = Ω(|G|). Then there is a subgroup H ⩽G such that
+MG(A) = |A△H|Ω(1).
+Note that if p is prime then the only subgroups of Z/pZ are trivial, whence if
+|A| = (p + 1)/2 we se that |A△H| = Ω(p) and we have Theorem 1.2.
+Now, for comparison, if A is the union of a (large) ﬁnite subgroup H and K
+other points, then MG(A) ⩽K and minH′⩽G |A△H′| = K, so the result is best
+possible up to the power. In fact, in many cases this has to be smaller than 1 as
+noted for Z/pZ above.
+The main defect of the above theorem is that A is required to have density
+bounded away from 0 and so it has no bearing on Chowla’s original problem. Our
+next result recovers the situation although at considerable cost to the bound.
+Theorem 1.4. Suppose that G is an abelian group and A ⊂G is a non-empty
+symmetric set. Then there is a set H of subgroups of G with |H| = O(MG(A)) such
+that
+MG(A) = logΩ(1) |A△
+[
+H|,
+
+
+=== PDF PAGE 3 ===
+CHOWLA’S COSINE PROBLEM
+3
+where S H = S
+H∈H H.
+Note that we have to allow unions of subgroups. Consider, for example, the case
+of H ∪H′ where H and H′ are subgroups with H ∩H′ = {0G}. It is easy to show
+that MG(H ∪H′) ⩽1.
+We close this introduction with an outline of the paper. In §2 we illustrate some
+trivial arguments for showing when MG(A) is non-zero; these trivial arguments
+turn out to be central to our later work. Then, in §§3&4 we prove Theorem 1.3,
+through some analysis of the spectrum of boolean functions.
+The remainder of the paper is then devoted to proving Theorem 1.4 (which uses
+Theorem 1.3) in §§5–7. To do this we recall the technology of Bourgain systems
+from [GS08], although this is entirely contained in §§5&6 and may be treated as
+a black box from the perspective of the rest of the paper. Finally, §8 closes with
+some concluding remarks.
+2. A trivial estimate
+It is instructive for us to begin by proving a weak version of our main results:
+Proposition 2.1. Suppose that G is an abelian group and A ⊂G is a non-empty
+symmetric set. Then there is a subgroup H ⩽G such that
+MG(A) ⩾1
+21{x>0}(|A△H|) =
+(
+1
+2
+if A̸ = H;
+0
+if A = H. .
+The method of proof in fact gives somewhat more general results which will be
+needed later: it applies not just to functions which are boolean, but also those
+which are almost boolean, and it is stronger for functions which are constant on
+cosets of a large subgroup.
+Suppose that G is an abelian group, p ∈[1, ∞] and f ∈ℓ1(G). Then f is said to
+be (ǫ, p)-almost boolean if
+inf
+A⊂G ∥f −1A∥ℓp(G) ⩽ǫ∥f∥ℓp(G).
+In the following the reader may wish to specialize to the case V = {0G} and f = 1A,
+where ǫ = 0, which gives Proposition 2.1.
+Lemma 2.2. Suppose that G is an abelian group with a ﬁnite subgroup V and
+f ∈ℓ1(G) is a symmetric (ǫ, 1)-almost boolean function, constant on cosets of V ,
+with f(x0) > 1/2 for some x0 ∈G. Then at least one of the following holds:
+(i) there is a subgroup H ⩽G such that ∥f −1H∥ℓ1(G) ⩽ǫ∥f∥ℓ1(G);
+(ii) or there is a character γ ∈bG such that bf(γ) ⩽−|V |/8 + ǫ∥f∥ℓ1(G).
+Proof. Let H := {x : f(x) > 1/2}, and note that by deﬁnition
+|f(x) −1H(x)| ⩽min{|f(x) −1|, |f(x)|} for all x ∈G,
+so by integrating we get
+(2.1)
+∥f −1H∥ℓ1(G) ⩽inf
+A⊂G ∥f −1A∥ℓ1(G) ⩽ǫ∥f∥ℓ1(G),
+since f is (ǫ, 1)-almost boolean.
+f is symmetric, so H is symmetric and f(x0) > 1/2, so H is non-empty. Thus,
+either H is a group, or there are elements x, y ∈H such that x + y̸ ∈H. Now, f
+
+
+=== PDF PAGE 4 ===
+4
+TOM SANDERS
+is constant on cosets of V , so H is constant on cosets of V , and since cosets of V
+partition G we conclude that x + V, y + V ⊂H and (x + y + V ) ∩H = ∅.
+In view of all this information we evaluate the inner product
+⟨1H, (µV −(µx+V + µ−x+V )/2) ∗(µV −(µy+V + µ−y+V )/2)⟩.
+On the one hand, by symmetry of H, this is
+1H ∗µV (0G) −1H ∗µV (x)
+−
+1H ∗µV (y)
++
+1H ∗µV (x −y)/2 + 1H ∗µV (x + y)/2,
+which is at most 1 −1 −1 + 1/2 + 0 = −1/2, from our various assumptions on x
+and y. On the other, by Plancherel’s theorem, the inner product is equal to
+Z
+γ∈V ⊥
+c
+1H(γ)(1 −ℜγ(x))(1 −ℜγ(y))dγ ⩾4 inf
+γ∈b
+G
+c
+1H(γ)µ(V ⊥).
+The integral is well deﬁned because the range of integration is restricted to V ⊥
+and so the value of γ(x) is independent of the coset representative of x + V that is
+chosen; the inequality follows since γ maps into S1, whence |ℜγ| ⩽1 which implies
+that 2 ⩾1 −ℜγ ⩾0. We conclude that there is some character γ ∈bG such that
+c
+1H(γ) ⩽−µ(V ⊥)−1/8 = −|V |/8,
+and we are in the second case by (2.1), after noting that the symmetry of f implies
+that bf is real-valued.
+□
+A very similar argument yields another result which we shall need later, this time
+for (ǫ, ∞)-almost boolean functions. Again, if we specialize to the case V = {0G}
+and f = 1A, where ǫ = 0 we get Proposition 2.1.
+Lemma 2.3. Suppose that G is an abelian group with a ﬁnite subgroup V and
+f ∈ℓ1(G) is a real symmetric (ǫ, ∞)-almost boolean function, constant on cosets of
+V , with f(x0) > 1/2 for some x0 ∈G. Then at least one of the following holds:
+(i) the set H := {x ∈G : f(x) > 1/2} is a subgroup of G;
+(ii) or there is a character γ ∈bG such that bf(γ) ⩽−|V |(1/8 −5ǫ∥f∥ℓ∞(G)/8).
+Proof. We proceed as in the previous lemma. f is symmetric, so H is symmetric
+and f(x0) > 1/2, so H is non-empty.
+Thus, either H is a group, or there are
+elements x, y ∈H such that x + y̸ ∈H. Now, f is constant on cosets of V , so
+H is constant on cosets of V , and since cosets of V partition G we conclude that
+x + V, y + V ⊂H and (x + y + V ) ∩H = ∅.
+In view of all this information we evaluate the inner product
+⟨f, (µV −(µx+V + µ−x+V )/2) ∗(µV −(µy+V + µ−y+V )/2)⟩.
+On the one hand by symmetry of f, this is
+f ∗µV (0G) −f ∗µV (x) −f ∗µV (y) + f ∗µV (x −y)/2 + f ∗µV (x + y)/2,
+which is at most
+1 −(1 −ǫ∥f∥ℓ∞(G)) −(1 −ǫ∥f∥ℓ∞(G)) + 1/2 + ǫ∥f∥ℓ∞(G)/2,
+equals −1/2 + 5ǫ∥f∥ℓ∞(G)/2. On the other, by Plancherel’s theorem, the inner
+product is equal to
+Z
+γ∈V ⊥
+bf(γ)(1 −ℜγ(x))(1 −ℜγ(y))dγ ⩾4 inf
+γ∈b
+G
+bf(γ)µ(V ⊥).
+
+
+=== PDF PAGE 5 ===
+CHOWLA’S COSINE PROBLEM
+5
+The integral is well deﬁned because the range of integration is restricted to V ⊥
+and so the value of γ(x) is independent of the coset representative of x + V that is
+chosen; the inequality follows since γ maps into S1, whence |ℜγ| ⩽1 which implies
+that 2 ⩾1 −ℜγ ⩾0. We conclude that there is some character γ ∈bG such that
+bf(γ) ⩽(−1/8 + 5ǫ∥f∥ℓ∞(G)/8)µ(V ⊥)−1 = −|V |(1/8 −5ǫ∥f∥ℓ∞(G)/8),
+after noting that the symmetry of f implies that bf is real-valued.
+The lemma
+follows.
+□
+3. The spectrum of boolean functions
+Suppose that G is an abelian group, A is a ﬁnite subset of G and ǫ ∈(0, 1) is a
+parameter. Then the spectrum of A is deﬁned to be
+Specǫ(A) := {γ ∈bG : |c
+1A(γ)| ⩾ǫ|A|}.
+We shall be considering both powers and convolution powers and it will be useful
+to have a notation for the latter. For a function f : bG →C we write f (r) for the
+r-fold convolution of f with itself, so f (1) = f and f (r+1) = f ∗f (r).
+As ﬁrst observed by Bourgain in [Bou86], the fact that 1A is boolean gives us
+considerable information about the spectrum of A in the following sense. For any
+positive integer r we have 1r
+A = 1A, whence
+(3.1)
+c
+1A
+(r)(γ) = c
+1A(γ) for all γ ∈bG.
+This is only useful because in our problem we are able to assume that ∥1A∥A(G) is
+small, whence a small amount of ℓp( bG) information about c
+1A can be leveraged into
+much more ℓp( bG) information.
+We use these data in both the lemmas of this section; in the ﬁrst we show that
+if MG(A) is small then we either have considerable structure of the spectrum or
+there is a character at which the Fourier transform is large but not too large.
+Lemma 3.1. Suppose that G is a ﬁnite abelian group, A is a symmetric set of
+density α > 0 and ǫ ∈(0, 1) is a parameter. Then at least one of the following is
+true:
+(i) Specǫ(A) is a subgroup of bG;
+(ii) we have the estimate MG(A) ⩾ǫ2α|A|/2∥1A∥A(G) (where the A in 1A is
+not to be confused with that in the algebra norm ∥· ∥A(G));
+(iii) or there is a character γ ∈bG such that ǫ|A| > c
+1A(γ) ⩾ǫ2α|A|/2.
+Proof. Specǫ(A) is clearly a symmetric neighborhood of 0 b
+G, meaning that Specǫ(A)
+is a symmetric set containing 0 b
+G. Hence it is a group iﬀfor all γ′, γ′′ ∈Specǫ(A)
+we have γ′ + γ′′ ∈Specǫ(A). Thus we are either in the ﬁrst case of the lemma, or
+else there are characters γ′, γ′′ ∈Specǫ(A) with c
+1A(γ′ + γ′′) < ǫ|A|; suppose we are
+given such characters.
+The r = 2 instance of equation (3.1), and the fact that in our normalization
+Haar measure on bG assigns to each element of bG the mass |G|−1, tells us that
+c
+1A(γ′ + γ′′)
+=
+Z
+c
+1A(γ′ −γ)c
+1A(γ′′ + γ)dγ
+⩾
+|G|−1c
+1A(γ′)c
+1A(γ′′) −MG(A)∥1A∥A(G).
+
+
+=== PDF PAGE 6 ===
+6
+TOM SANDERS
+Since c
+1A(γ′), c
+1A(γ′′) ⩾ǫ|A| we conclude that either MG(A) ⩾ǫ2α|A|/2∥1A∥A(G)
+and we are in the second case of the lemma, or else c
+1A(γ′ + γ′′) ⩾ǫ2α|A|/2, and
+we are in the third case of the lemma with γ = γ′ + γ′′.
+□
+The following lemma makes use of (3.1) for larger values of r and is really the
+heart of Theorem 1.3. The basic idea is fairly straightforward and we explain it
+now in words.
+Suppose that γ is such that c
+1A(γ) = ǫ|A| is large and that c
+1A ⩾0 for a contra-
+diction. This positivity gives
+(c
+1A −ǫ|A|1{γ})(r)(γ) ⩾0 for all r ∈N.
+The left-hand side can (essentially) be expanded using the Bonferroni inequalities
+to give
+c
+1A
+(r)(γ) −rǫ|A|c
+1A
+(r−1) ∗1{γ}(γ) ⩾0.
+A short manipulation and (3.1) then gives us that
+ǫ|A| −rǫ|A|α ⩾0,
+which is a contradiction if r is large enough in terms of α. We now make this
+precise.
+Lemma 3.2. Suppose that G is a ﬁnite abelian group and A ⊂G is symmetric of
+density α > 0. If there is some character γ with 0 ⩽c
+1A(γ) ⩽|A|/32, then
+MG(A) ⩾αc
+1A(γ)/16∥1A∥2α−1+1
+A(G)
+.
+Proof. It will be useful to write f for the function deﬁned by f(γ) := max{c
+1A(γ), 0}.
+We claim that for any positive integer r we have
+(3.2)
+∥f (r) −c
+1A
+(r)∥L∞( b
+G) ⩽rMG(A)∥1A∥r−1
+A(G).
+Proof of claim. For r = 1 this is immediate from the deﬁnition of f. Now, suppose
+we know (3.2) for some positive integer r. Then
+∥f (r+1) −c
+1A
+(r+1)∥L∞( b
+G)
+=
+∥f ∗f (r) −c
+1A ∗c
+1A
+(r)∥L∞( b
+G)
+⩽
+∥f ∗f (r) −c
+1A ∗f (r)∥L∞( b
+G)
++∥c
+1A ∗f (r) −c
+1A ∗c
+1A
+(r)∥L∞( b
+G)
+⩽
+MG(A)∥f∥r
+L1( b
+G) + ∥c
+1A∥L1( b
+G)∥f (r) −c
+1A
+(r)∥L∞( b
+G),
+by Young’s inequality and the linearity of convolution. Now, ∥c
+1A∥L1( b
+G) = ∥1A∥A(G)
+and ∥f∥L1( b
+G) ⩽∥1A∥A(G), whence
+∥f (r+1) −c
+1A
+(r+1)∥L∞( b
+G) ⩽(r + 1)MG(A)∥1A∥r
+A(G),
+by our supposition; (3.2) now follows by induction.
+□
+Let r = 2⌈α−1⌉; the reasons for this choice of r will become apparent later.
+Since f ⩾0, we have that (f −f(γ)1{γ})(r) ⩾0, which can be expanded using the
+
+
+=== PDF PAGE 7 ===
+CHOWLA’S COSINE PROBLEM
+7
+binomial theorem to give
+0 ⩽(f −f(γ)1{γ})(r)(γ)
+=
+r
+X
+k=0
+(−f(γ))k
+r
+k
+
+f (r−k) ∗1(k)
+{γ}(γ)
+=
+r
+X
+k=0
+(−f(γ)|G|−1)k
+r
+k
+
+f (r−k)(−(k −1)γ)
+⩽
+f (r)(γ) −rf(γ)|G|−1f (r−1)(0 b
+G)
+(3.3)
++
+r
+X
+k=2
+(f(γ)|G|−1)k
+r
+k
+
+|f (r−k)(−(k −1)γ)|.
+Now, suppose that l ⩽r. Then by (3.1) and (3.2) we have that
+|f (l)(γ)| ⩽|c
+1A
+(l)(γ)| + lMG(A)∥1A∥l−1
+A(G) = |c
+1A(γ)| + lMG(A)∥1A∥l−1
+A(G).
+Trivially |c
+1A(γ)| ⩽|A|, and so
+|f (l)(γ)| ⩽|A| + rMG(A)∥1A∥r−1
+A(G).
+It follows that the sum in (3.3) is at most
+r
+X
+k=2
+(f(γ)|G|−1)k
+r
+k
+
+(|A| + rMG(A)∥1A∥r−1
+A(G)).
+Now, since f(γ) ⩽|A|/32 ⩽|G|/r we get that
+r
+X
+k=2
+(f(γ)|G|−1)k
+r
+k
+
+⩽(f(γ)|G|−1)2r2,
+and so
+0
+⩽
+f (r)(γ) −rf(γ)|G|−1f (r−1)(0 b
+G)
++(f(γ)|G|−1)2r2(|A| + rMG(A)∥1A∥r−1
+A(G)).
+Finally, equations (3.1) and (3.2) together imply that
+f (r)(γ) ⩽f(γ) + rMG(A)∥1A∥r−1
+A(G)
+and
+f (r−1)(0 b
+G)
+⩾
+c
+1A
+(r−1)(0 b
+G) −(r −1)MG(A)∥1A∥r−2
+A(G)
+=
+|A| −(r −1)MG(A)∥1A∥r−2
+A(G).
+Deﬁne ǫ by f(γ) = ǫ|A| and combining the above with the fact that 2 ⩽rα ⩽4
+we have
+0
+⩽
+ǫ|A| + rMG(A)∥1A∥r−1
+A(G) −2ǫ|A| + 2(r −1)ǫMG(A)∥1A∥r−2
+A(G)
++16ǫ2(|A| + rMG(A)∥1A∥r−1
+A(G)).
+Rearranging all this and using the fact that ∥1A∥A(G) ⩾1 and ǫ ⩽1/32 we get that
+ǫ|A| −16|A|ǫ2 ⩽2rMG(A)∥1A∥r−1
+A(G).
+Thus, again since ǫ ⩽1/32, we have
+MG(A) ⩾ǫα|A|/16∥1A∥2α−1+1
+A(G)
+.
+
+
+=== PDF PAGE 8 ===
+8
+TOM SANDERS
+□
+4. Proof of Theorem 1.3
+Theorem 1.3 follows immediately from the following more explicit version.
+Theorem 4.1. Suppose that G is a ﬁnite abelian group, A is a symmetric neigh-
+borhood of 0G (meaning that A is a symmetric set containing 0G) of size α|G| and
+K ∈(0, |A|/213] is a parameter. Then at least one of the following holds:
+(i) there is a subgroup H ⩽G such that ∥1A −1H∥ℓ1(G) ⩽K;
+(ii) there is a character γ ∈bG such that c
+1A(γ) ⩽−Kα/5/26.
+The work of the previous section combines easily to show that either the large
+spectrum forms a subgroup V or else there is a large negative Fourier coeﬃcient. In
+the former case 1A is well approximated by 1A ∗µV ⊥. It is then easy by the trivial
+estimates of §2 that either c
+1A takes a large negative value or A is approximately a
+subgroup. The details now follow.
+Before beginning the proof we require one ﬁnal technical calculation which is
+implicit in the paper [Bou02] of Bourgain.
+Lemma 4.2. Suppose that G is an abelian group, V ⩽G and A ⊂G. Then
+∥1A −1A ∗µV ∥ℓ1(G) = 2⟨1A, 1A −1A ∗µV ⟩,
+where ⟨·, ·⟩denotes the standard inner product
+Proof. µV is a probability measure so 0 ⩽1A∗µV (x) ⩽1, hence (1A−1A∗µV )(x) ⩽
+0 for all x̸ ∈A and (1A −1A ∗µV )(x) ⩾0 for all x ∈A. Consequently
+∥1A −1A ∗µV ∥ℓ1(G)
+=
+X
+x∈G
+1A(x)(1 −1A ∗µV )(x)
++
+X
+x∈G
+(1 −1A(x))1A ∗µV (x).
+However, P 1A ∗µV = P 1A from which the lemma follows.
+□
+Proof of Theorem 4.1. We may certainly suppose that A is not a subgroup of G, or
+else we are trivially done with H = A, and so it follows from Proposition 2.1 that
+MG(A) ⩾1/2. Thus
+MG(A)
+⩾
+(2MG(A) + 1A(0G))/4
+(4.1)
+=
+(2MG(A) +
+Z
+c
+1A(γ)dγ)/4 ⩾∥1A∥A(G)/4,
+where the passage from the ﬁrst to the second line is via the Fourier inversion
+formula.
+For convenience we put ν := αK/4∥1A∥A(G)|A|; the reason for this choice of
+parameter will become clear. If there is a character γ with ν|A| ⩽c
+1A(γ) ⩽|A|/25,
+then by Lemma 3.2 we have
+MG(A) ⩾α2K/26∥1A∥2α−1+2
+A(G)
+,
+and it follows from (4.1) that we are in the second case of the theorem. We may
+thus suppose that there is no such character. Apply Lemma 3.1 with parameter
+ǫ = 2−5. Either Specǫ(A) is a subgroup V of bG, or
+MG(A) ⩾α|A|/211∥1A∥A(G),
+
+
+=== PDF PAGE 9 ===
+CHOWLA’S COSINE PROBLEM
+9
+in which case it follows from (4.1) that we are in the second case of the theorem,
+or there is a character γ with
+|A|/25 = ǫ|A| > c
+1A(γ) ⩾ǫ2α|A|/2 ⩾ν|A|,
+which contradicts our earlier supposition. Thus we may assume that Specǫ(A) is a
+subgroup V of bG and Specν(A) \ Specǫ(A) = ∅, so by nesting of the spectrum
+Specν(A) = Specǫ(A) = V ⩽bG.
+In view of this
+Z
+γ̸∈V
+|c
+1A(γ)|2dγ =
+Z
+γ̸∈Specν(A)
+|c
+1A(γ)|2dγ ⩽ν|A|∥1A∥A(G).
+By Parseval’s theorem we have
+∥1A ∗µV ⊥∥2
+ℓ2(G)
+=
+Z
+γ∈V
+|c
+1A(γ)|2dγ
+⩾
+Z
+|c
+1A(γ)|2dγ −ν|A|∥1A∥A(G) > |A|/2,
+whence
+sup
+x∈G
+1A ∗µV ⊥(x).|A| ⩾∥1A ∗µV ⊥∥2
+ℓ2(G) > |A|/2,
+and we conclude that there is some x0 ∈G such that 1A ∗µV (x0) > 1/2.
+Similarly, by Plancherel’s theorem we have that
+⟨1A, 1A −1A ∗µV ⊥⟩=
+Z
+γ̸∈V
+|c
+1A(γ)|2dγ ⩽ν|A|∥1A∥A(G).
+Then, by Lemma 4.2 we have
+∥1A −1A ∗µV ⊥∥ℓ1(G) = 2⟨1A, 1A −1A ∗µV ⊥⟩⩽2ν|A|∥1A∥A(G).
+It follows that 1A ∗µV ⊥is (2ν∥1A∥A(G), 1)-almost boolean. We now apply Lemma
+2.2 to 1A ∗µV ⊥and the group V ⊥to conclude that either
+(i) there is a subgroup H ⩽G such that
+∥1A ∗µV ⊥−1H∥ℓ1(G) ⩽2ν|A|∥1A∥A(G);
+(ii) or there is a character γ ∈bG such that
+(1A ∗µV ⊥)∧(γ) ⩽−|V ⊥|/8 + 2ν|A||1A∥A(G).
+In the ﬁrst instance, by the triangle inequality we have
+∥1A −1H∥ℓ1(G)
+⩽
+∥1A −1A ∗µV ⊥∥ℓ1(G) + ∥1A ∗µV ⊥−1H∥ℓ1(G)
+⩽
+4ν|A|∥1A∥A(G) ⩽K,
+and we ﬁnd ourselves in the ﬁrst case of the theorem.
+In the second instance since (1A ∗µV ⊥)∧(γ) = c
+1A(γ)1V (γ) we see that
+(4.2)
+MG(A) ⩾|V ⊥|/8 −2ν|A|∥1A∥A(G).
+By Parseval’s theorem we have
+|A| =
+Z
+|c
+1A(γ)|2dγ ⩾µ(V ).ǫ2|A|2 = µ(V )|A|2/210,
+and it follows that µ(V ) ⩽210/|A|, and hence that |V ⊥| ⩾|A|/210.
+Finally,
+inserting this bound into (4.2) places us in the second case of the theorem and we
+
+
+=== PDF PAGE 10 ===
+10
+TOM SANDERS
+are done – in fact in this case we have MG(A) = Ω(|A|), however earlier parts of
+the proof led to the weaker conclusion in the second case.
+□
+5. Bourgain systems
+In this section we recall the notion of Bourgain system from the paper [GS08].
+Although formally new in that paper the material of this section is morally standard
+c.f. [TV06].
+We should remark that in [GS08] all the results are stated for ﬁnite abelian
+groups. There is no change in the passage to ﬁnite systems in discrete abelian
+groups which is the case we shall need; we shall make no further comment on the
+matter.
+Suppose that G is an abelian group and d ⩾1 is an integer. A Bourgain system
+B of dimension d is a collection (Bρ)ρ∈(0,2] of ﬁnite subsets of G such that the
+following axioms are satisﬁed:
+(i) (Nesting) If ρ′ ⩽ρ we have Bρ′ ⊆Bρ;
+(ii) (Zero) 0G ∈Bρ for all ρ ∈(0, 2];
+(iii) (Symmetry) If x ∈Bρ then −x ∈Bρ;
+(iv) (Addition) For all ρ, ρ′ such that ρ + ρ′ ⩽1 we have Bρ + Bρ′ ⊆Bρ+ρ′;
+(v) (Doubling) If ρ ⩽1 then |B2ρ| ⩽2d|Bρ|.
+We deﬁne the size of B = (Bρ)ρ to be |B1| and denote it |B|. Frequently we shall
+consider several Bourgain systems B, B′, B′′, ...; in this case the underlying sets will
+be denoted (Bρ)ρ, (B′
+ρ)ρ, (B′′
+ρ )ρ, .... We say that a Bourgain system B is a sub-system
+of B′ if Bρ ⊂B′
+ρ for all ρ.
+It may be useful to keep some examples of Bourgain systems in mind: the
+prototypes are coset progressions ﬁrst introduced by Green and Ruzsa in [GR07]
+in their proof of Fre˘ıman’s theorem in general abelian groups.
+Example (Coset progressions). Suppose that G is an abelian group, H ⩽G is
+ﬁnite, x ∈Gd and L ∈Nd. We deﬁne the coset progression Prog(H, x, L) to be the
+set
+{h + l1.x1 + · · · + ld.xd : h ∈H, |li| ⩽Li for all i ∈{1, . . . , d}}.
+The system B := (Prog(H, x, ρL))ρ∈(0,2] is easily seen to be a Bourgain system and
+since
+Prog(H, x, 2ρL) ⊂Prog({0G}, x′, 1) + Prog(H, x, ρL)
+where x′ = (⌈ρL1⌉.x1, . . . , ⌈ρLd⌉.xd) and 1 = (1, . . . , 1), we see that it is O(d)-
+dimensional.
+In a qualitative sense Fre˘ıman’s theorem shows that all Bourgain systems are
+essentially coset progressions. Indeed, suppose that B is an O(1)-dimensional Bour-
+gain system then |B1 + B1| = O(|B1|) and so by Fre˘ıman’s theorem there is an
+O(1)-dimensional coset progression Prog(H, x, L) of size O(|B1|) which contains
+B1. Quantitatively it is worth being more subtle and dealing with the more ab-
+stract Bourgain system.
+For more examples and a detailed explanation the reader may wish to consult
+[GS08].
+The following trivial lemma gives us a useful bound for the size of a low-
+dimensional Bourgain system.
+
+
+=== PDF PAGE 11 ===
+CHOWLA’S COSINE PROBLEM
+11
+Lemma 5.1 ([GS08, Lemma 4.4]). Suppose that G is an abelian group, B is a
+Bourgain system of dimension d and λ ∈(0, 1] is a parameter. Then λB := (Bλρ)ρ
+is a Bourgain system of dimension d and size at least (λ/2)d|B|.
+Not all Bourgain systems behave as well as we would like; we say that a Bourgain
+system B of dimension d is regular if
+1 −10d|η| ⩽
+|B1|
+|B1+η| ⩽1 + 10d|η|
+for all η with d|η| ⩽1/10. Typically, however, Bourgain systems are regular, a fact
+implicit in the usual proof of the following proposition.
+Proposition 5.2 ([GS08, Lemma 4.12]). Suppose that G is an abelian group and
+B is a Bourgain system of dimension d. Then there is a λ ∈[1/2, 1) such that λB
+is regular.
+We associate to B a system of measures denoted (βρ)ρ deﬁned by βρ = µBρ ∗
+µBρ where µBρ denotes the uniform probability measure with support Bρ. It is
+more natural to take the measures µBρ rather than βρ, however certain positivity
+requirements in [GS08] precipitated the use of these convolved measures and we
+shall in fact further leverage this convenience in the proof of Corollary 6.3 below.
+Lemma 5.3 ([GS08, Lemma 4.13]). Suppose that G is an abelian group, B is a
+regular Bourgain system of dimension d and y ∈Bη. Then
+∥(y + β) −β∥⩽20dη,
+where we recall that y + β denotes the measure induced by f 7→
+R
+f(x)dβ(y + x).
+Lemma 5.4 ([GS08, Lemma 4.15]). Suppose that G is an abelian group, B is a
+regular Bourgain system of dimension d and f ∈ℓ∞(G). Then
+sup
+x∈G
+∥f ∗β −f ∗β(x)∥ℓ∞(x+Bη) ⩽20∥f∥ℓ∞(G)dη.
+The previous lemma encodes the idea that f ∗β is in some sense continuous. We
+shall make use of this by way of a sort of intermediate value theorem; this sort of
+idea appeared ﬁrst in [GK09].
+Lemma 5.5. Suppose that G is an abelian group, B is a regular Bourgain system
+of dimension d and f : G →[−1, 1] is such that f ∗β is (ǫ, ∞)-almost boolean for
+some ǫ ∈(0, 1/3). Then S := {x : f ∗β(x) > 1/2} is constant on cosets of V , the
+group generated by Bǫ/20d.
+Proof. Suppose that x ∈S so
+|f ∗β(x) −1| ⩽ǫ∥f ∗β∥ℓ∞(G) ⩽ǫ∥f∥ℓ∞(G)∥β∥⩽ǫ.
+Now, if y ∈Bǫ/20d then
+|f ∗β(x + y) −f ∗β(x)| ⩽ǫ∥f∥ℓ∞(G)/2 ⩽ǫ
+by Lemma 5.4. Furthermore, f ∗β is (ǫ, ∞)-almost boolean whence there is some
+z ∈{0, 1} such that
+|z −f ∗β(x + y)| ⩽ǫ∥f∥ℓ∞(G) ⩽ǫ.
+Combining these three expressions using the triangle inequality we get that
+|z −1| ⩽|z −f ∗β(x + y)| + |f ∗β(x + y) −f ∗β(x)| + |f ∗β(x) −1| ⩽3ǫ < 1.
+
+
+=== PDF PAGE 12 ===
+12
+TOM SANDERS
+It follows that z = 1 so that x + y ∈S. Thus S = S + Bǫ/20d and we arrive at the
+result.
+□
+6. Quantitative notions of continuity in A(G)
+A key tool in the paper [GS08] was a localization of an argument of Green and
+Konyagin [GK09] to Bourgain systems. Roughly their result gave a quantitative
+interpretation of the qualitative fact that if f ∈A(G) then f is (essentially) con-
+tinuous. Speciﬁcally we require the following proposition which can be read out of
+the proof of [GS08, Proposition 5.1].
+Proposition 6.1. Suppose that G is an abelian group, A is a ﬁnite subset of G,
+B is a regular Bourgain system of dimension d and ǫ ∈(0, 1] is a parameter. Then
+there is a regular sub-system B′ with
+dim B′ = O(d + ǫ−2∥1A∥2
+A(G))
+and
+|B′| ⩾exp(−O(ǫ−4∥1A∥4
+A(G)d(1 + log ǫ−1∥1A∥A(G)d)))|B|,
+such that
+sup
+x∈G
+∥1A −1A ∗β′∥L2(x+B′ρ) ⩽ǫ
+for every ρ ∈[ǫ/160 dimB′, ǫ/80 dimB] for which ρB′ is regular, where we recall
+that x + B′
+ρ is endowed with x + β′
+ρ, the measure induced by f 7→
+R
+f(y)dβ′
+ρ(x + y).
+It should be remarked that it is possible to improve the powers of ∥1A∥A(G) and
+ǫ in this theorem and doing so results in an improvement to the power of log in
+Theorem 1.4.
+We also require the celebrated Balog-Szemer´edi and Fre˘ıman theorems of [BS94]
+and [Fre73]; see [TV06] for a comprehensive discussion. Our use follows the time
+honored method laid down by Gowers in [Gow98] and the weakness of the powers
+in Proposition 6.2 is the main reason we have not given an explicit constant for the
+power of log in Theorem 1.4. There is some hope that this may be remedied if the
+arguments of [GT09] are transfered to the general setting.
+The following can be read out of the proof of [GS08, Proposition 6.3].
+Proposition 6.2. Suppose that G is an abelian group and A is a ﬁnite subset of
+G with ∥1A ∗1A∥2
+ℓ2(G) ⩾c|A|3. Then there is a regular Bourgain system B with
+dim B = c−O(1) and |B| = exp(c−O(1))|A|
+such that
+∥1A ∗1A ∗β∥2
+ℓ2(G) = c−O(1)|A|3.
+The key result of this section is the following which will be the only result that
+we require again from this or the previous section.
+Corollary 6.3. Suppose that G is an abelian group and A′ ⊂A are non-empty,
+ﬁnite subsets of G with ∥1A′ ∗1A′∥2
+ℓ2(G) ⩾c|A′|3 and ǫ ∈(0, 1/2) is a parameter.
+Then there is a subgroup V ⩽G with
+|V | = exp(−ǫ−O(1)c−O(1)∥1A∥O(1)
+A(G))|A′|
+such that 1A ∗µV is (ǫ, ∞)-almost boolean and an a′ ∈A′ such that 1A ∗µV (a′) >
+1/2.
+
+
+=== PDF PAGE 13 ===
+CHOWLA’S COSINE PROBLEM
+13
+Proof. Apply Proposition 6.2 to the set A′ to get a regular Bourgain system B with
+dim B = c−O(1) and |B| = exp(−c−O(1))|A′|
+such that
+∥1A′ ∗1A′ ∗β∥2
+ℓ2(G) = c−O(1)|A′|3.
+Set the parameter η := |A′|−3∥1A′ ∗1A′ ∗β∥2
+ℓ2(G)ǫ/12 and apply Proposition 5.2 to
+pick a λ with
+(6.1)
+η/20 dim B ⩾λ ⩾η/40 dim B
+such that λB is regular.
+Now, apply Proposition 6.1 to A (not A′) with the regular Bourgain system λB
+and parameter η to get a regular sub-system B′ with
+dim B′ = ǫ−O(1)c−O(1)∥1A∥O(1)
+A(G)
+and
+|B′| ⩾exp(−ǫ−O(1)c−O(1)∥1A∥O(1)
+A(G))|A′|
+such that
+(6.2)
+sup
+x∈G
+∥1A −1A ∗β′∥L2(x+B′ρ) ⩽η
+for all ρ ∈[η/160 dim B′, η/80 dim B] such that ρB′ is regular.
+Given this, apply Lemma 5.4 and Proposition 5.2 to get a regular ρ with ρ ∈
+[η/160 dimB′, η/80 dim B] such that
+(6.3)
+sup
+x∈G
+∥1A ∗β′ −1A ∗β′(x)∥L∞(x+B′ρ) ⩽η.
+Let V be the group generated by B′
+ρ. Then, by Lemma 5.1 we have that
+|V | ⩾|B′
+ρ| ⩾(ρ/2)dim B′|B′| ⩾exp(−ǫ−O(1)c−O(1)∥1A∥O(1)
+A(G))|A′|,
+as desired.
+Suppose that there is some x0 ∈G such that |1A ∗β′(x0) −z| > 2η for all
+z ∈{0, 1}. Then we see that |1A ∗β′(x) −z| > η for all x ∈x0 + B′
+ρ by (6.3).
+However, integrating this contradicts (6.2). It follows that 1A ∗β′ is (4η, ∞)-almost
+boolean.
+Writing S := {x ∈G : 1A ∗β′(x) > 1/2} we see from the deﬁnition of V and
+Lemma 5.5 that S is constant on cosets of V . Now
+|1A ∗µV (x) −1S ∗µV (x)|
+⩽
+|1A −1S| ∗µV (x)
+=
+|1A −1S| ∗β′
+ρ ∗µV (x)
+⩽
+ |1A −1S|2 ∗β′
+ρ
+ 1
+2 ∗µV (x)
+by the Cauchy-Schwarz inequality. Hence
+|1A ∗µV (x) −1S ∗µV (x)|
+⩽
+ |1A −1A ∗β′|2 ∗β′
+ρ
+ 1
+2 ∗µV (x)
++
+ |1A ∗β′ −1S|2 ∗β′
+ρ
+ 1
+2 ∗µV (x)
+⩽
+5η.
+Since S is constant on cosets of V we have that 1S = 1S ∗µV and hence conclude
+that 1A ∗µV is (10η, ∞)-almost boolean as required (in view of the deﬁnition of η).
+
+
+=== PDF PAGE 14 ===
+14
+TOM SANDERS
+On the other hand by Lemma 5.3, the upper bound on λ and the fact that B′ is
+a sub-system of λB we get that
+∥β −β ∗β′∥⩽η.
+It follows that
+∥1A′ ∗1A′ ∗β ∗β′∥2
+ℓ2(G) ⩾∥1A′ ∗1A′ ∗β∥2
+ℓ2(G) −η|A′|3 ⩾11η|A′|3.
+But, by Parseval’s theorem
+∥1A′ ∗1A′ ∗β ∗β′∥2
+ℓ2(G)
+=
+Z
+| c
+1A′(γ)bβ(γ) bβ′(γ)|2dγ
+⩽
+|A′|2
+Z
+| c
+1A′(γ)|2 bβ′(γ)dγ
+since bβ′(γ) ⩾0. Combining these with Plancherel’s theorem tells us that
+⟨1A′ ∗β′, 1A′⟩⩾11η|A′|.
+It follows from H¨older’s inequality that there is some a′ ∈A′ for which 1A′ ∗β′(a′) ⩾
+11η.
+It remains to note that A′ ⊂A whence 1A ∗β′(a′) ⩾1A′ ∗β′(a′). Since 1A ∗β′ is
+(10η, ∞)-almost boolean we see that 1A ∗β′(a′) ⩾1 −ǫ; it follows that a′ ∈S and
+so 1A ∗µV (a′) ⩾1 −2ǫ > 1/2. The proof is complete.
+□
+7. Proof of Theorem 1.4
+Our proof of Theorem 1.4 is iterative in nature with the next lemma being driver.
+We brieﬂy sketch the statement in words to aid understanding.
+We build up a collection of subgroups. At each stage if MG(A) is small and A
+is not essentially the union of the subsgroups we have already found then we may
+ﬁnd another subgroup which is ‘very orthogonal’ to those already found and which
+is almost entirely contained in A.
+The orthogonality coupled with the algebra norm bound (resulting from the fact
+that MG(A) is small) implies that the iteration cannot proceed for too many steps.
+Lemma 7.1. Suppose that G is an abelian group, A is a non-empty, ﬁnite sym-
+metric subset of G and 2−4K′ ⩾K ⩾1 are parameters. Suppose, further, that H
+is a ﬁnite collection of subgroups of G with
+|H| ⩾K′, |H \ A| ⩽K and sup
+x̸∈H
+1A ∗µH(x) ⩽1/16∥1A∥A(G) for all H ∈H
+such that
+|H ∩H′| ⩽K for all distinct pairs H, H′ ∈H.
+Then, recalling that S H = S
+H∈H H, at least one of the following is true:
+(i) (Good approximation)
+|A \
+[
+H| ⩽24|H|2K;
+(ii) (Large negative Fourier coeﬃcient)
+MG(A) = KΩ(1);
+
+
+=== PDF PAGE 15 ===
+CHOWLA’S COSINE PROBLEM
+15
+(iii) (Unbalanced parameters)
+K′ ⩾exp(−(∥1A∥A(G) + |H|)CS)|A \
+[
+H|
+for some absolute CS > 0;
+(iv) (Correlating subgroup) there is a subgroup H0 ⩽G with
+|H0| ⩾K′, |H0 \ A| ⩽K and sup
+x̸∈H0
+1A ∗µH0(x) ⩽1/16∥1A∥A(G)
+such that
+|H0 ∩H| ⩽K for all H ∈H.
+Proof. Begin by considering the function g := P
+H∈H 1H. By the triangle inequality
+and the fact that 12
+H = 1H, we have
+∥g2 −g∥ℓ1(G) =
+X
+H̸=H′,H,H′∈H
+|H ∩H′| ⩽|H|2K,
+i.e. g behaves quite a lot like a boolean function: the indicator function of the set
+S H. In particular, g is non-negative and if x ∈supp g = S H, then g(x) ⩾1, so
+we have that
+∥g −1S H∥2
+ℓ2(G) =
+X
+x∈S H
+(g(x) −1)2
+⩽
+X
+x∈G
+g(x)(g(x) −1)
+=
+∥g2 −g∥ℓ1(G) ⩽|H|2K.
+Furthermore, since g −1S H takes values in N0 we have that
+(7.1)
+∥g −1S H∥ℓ1(G) ⩽∥g −1S H∥2
+ℓ2(G) ⩽|H|2K.
+Now, let f be the function 1A −g. It follows from the triangle inequality and
+the fact that the algebra norm of a subspace is 1 that
+∥f∥A(G) ⩽∥1A∥A(G) +
+X
+H∈H
+∥1H∥A(G) ⩽∥1A∥A(G) + |H|.
+By Parseval’s theorem we have that
+∥f ∗f∥2
+ℓ2(G) = ∥bf∥4
+L4( b
+G).
+However, by log-convexity of the Lp( bG)-norms and Parseval’s theorem
+∥bf∥4
+L4( b
+G) ⩾∥bf∥−2
+L1( b
+G)∥bf∥6
+L2( b
+G) = ∥f∥−2
+A(G)∥f∥6
+ℓ2(G),
+whence
+(7.2)
+∥f ∗f∥2
+ℓ2(G) ⩾(∥1A∥A(G) + |H|)−2∥f∥6
+ℓ2(G).
+Write A′ for the set A \ S H and E for the set S H \ A, so that
+f = 1A′ + (1S H −g) −1E.
+Since |H \ A| ⩽K for all H ∈H we have |E| ⩽K|H|, so by the triangle inequality
+for the ℓ2(G)-norm and (7.1) we have
+∥f∥ℓ2(G)
+⩾
+∥1A′∥ℓ2(G) −∥1S H −g∥ℓ2(G) −∥1E∥ℓ2(G)
+⩾
+p
+|A′| −2|H|
+√
+K.
+Thus, either |A′| ⩽24|H|2K and we are in case (i), or else
+(7.3)
+∥f∥2
+ℓ2(G) ⩾|A′|/4.
+
+
+=== PDF PAGE 16 ===
+16
+TOM SANDERS
+By the triangle inequality for the L4( bG)-norm we have
+(7.4)
+∥bf∥L4( b
+G) ⩽∥c
+1A′∥L4( b
+G) + ∥(1S H −g)∧∥L4( b
+G) + ∥c
+1E∥L4( b
+G).
+However by H¨older’s inequality, the Hausdorﬀ-Young inequality and Parseval’s the-
+orem we have that
+∥(1S H −g)∧∥4
+L4( b
+G)
+⩽
+∥(1S H −g)∧∥2
+L2( b
+G)∥(1S H −g)∧∥2
+L∞( b
+G)
+⩽
+∥1S H −g∥2
+ℓ2(G)∥1S H −g∥2
+ℓ1(G) ⩽|H|6K3.
+Where the last inequality is from (7.1). Similarly
+∥c
+1E∥4
+L4( b
+G) ⩽∥c
+1E∥2
+L2( b
+G)∥c
+1E∥2
+L∞( b
+G) ⩽∥1E∥2
+ℓ2(G)∥1E∥2
+ℓ1(G) ⩽K3|H|3.
+Inserting these estimates into (7.4) we get that
+∥bf∥L4( b
+G) ⩽∥c
+1A′∥L4( b
+G) + 2(|H|6K3)1/4.
+Now, by Parseval’s theorem we have
+∥c
+1A′∥4
+L4( b
+G) = ∥1A′ ∗1A′∥2
+ℓ2(G) ⩾|A′|2.
+Thus either |A′|8 ⩽24|H|6K3 and we are in case (i) or else
+∥1A′ ∗1A′∥2
+ℓ2(G) = ∥c
+1A′∥4
+L4( b
+G) = Ω(∥bf∥4
+L4( b
+G)) = Ω((∥1A∥A(G) + |H|)−2|A′|3)
+by Parseval’s theorem, (7.2) and (7.3).
+Now, apply Corollary 6.3 to A′ ⊂A with parameter ǫ = 1/16∥1A∥A(G) to get a
+subgroup V ⩽G with
+|V | = exp(−(∥1A∥A(G) + |H|)O(1))|A′|
+such that 1A ∗µV is (ǫ, ∞)-almost boolean and an a′ ∈A′ such that 1A ∗µV (a′) >
+1/2. We let
+H0 := {x ∈G : 1A ∗µV (x) > 1/2},
+and we shall now show that H0 has the necessary properties to be the group in case
+(iv) of the lemma.
+Claim. H0 is a subgroup.
+Proof. Apply Lemma 2.3 to 1A ∗µV . This tells us that either H0 is a subgroup or
+there is a character γ such that
+c
+1A(γ)1V ⊥(γ) = (1A ∗µV )∧(γ) ⩽−|V |/16
+since ǫ ⩽1/10. In view of the lower bound on |V | it follows that either we are in
+case (iii) or (we aren’t and are therefore) in case (ii). It follows that we may assume
+that H0 is a subgroup.
+□
+Claim. K′ ⩽|H0| < ∞
+Proof. Since V ⊂H0 we see that either we are in (iii) or else |H0| ⩾K′ as required.
+The upper bound follows since A is ﬁnite and 1A ∗µV (x) > 1/2 for all x ∈H0.
+□
+Claim. |H0 \ A| ⩽K
+
+
+=== PDF PAGE 17 ===
+CHOWLA’S COSINE PROBLEM
+17
+Proof. Apply Theorem 1.3 to the set A ∩H0 (possible since H0 is ﬁnite), so that
+either there is a subgroup H′ ⩽H0 such that
+(7.5)
+∥1A∩H0 −1H′∥ℓ1(H0) ⩽K
+or else we have a character γ (on H0 which induces a character on G) such that
+c
+1A ∗µH⊥
+0 (γ) = (1A∩H0)∧(γ) ⩽−KΩ(1).
+It follows that we are in (ii) by averaging since µH⊥
+0 is a probability measure.
+Since 1A ∗µV is (ǫ, ∞)-almost boolean (and H0 is a subgroup so 0G ∈H0) we
+have that
+1A ∗µV (x) > 3/4 for all x ∈H0.
+Furthermore, V is a subgroup of H0, so we have that 1A ∗µH0(0G) > 3/4.
+Now, H′ ⩽H0 and if it were a proper subgroup then we would have that
+|H′| ⩽|H0|/2 whence
+|H0|/4 < ∥1A∩H0 −1H′∥ℓ1(H0) ⩽K.
+by (7.5). Since |H0| ⩾|V | we conclude that we are in case (iii). Thus we may
+suppose not so that H′ = H0 and it follows that |H0 \ A| ⩽K as required.
+□
+Claim. |H ∩H0| ⩽K for all H ∈H
+Proof. Suppose that H ∈H. Since H0∩A′̸ = ∅and A′∩H = ∅we see that H0̸ ⩽H,
+whence |H0 + H| ⩾2|H|.
+Let H1 := H ∩H0 and consider the inner product
+⟨1A ∗µH1, (µH1 −µH) ∗(µH1 −µH0)⟩.
+When expanded out it is equal to
+1A ∗µH1(0G) −1A ∗µH(0G) −1A ∗µH0(0G) + 1A ∗µH0+H(0G).
+Now the ﬁrst term is at most 1, the second and third at least 1−K/|H| and, ﬁnally,
+the fourth is at most
+1
+|H0 + H|.
+ 
+|A ∩H| + |H0 + H| −|H|
+|H|
+sup
+x̸∈H
+1A ∗µH(x)
+!
+⩽(1 + 1/2)/2.
+Combining all this tells us that
+⟨1A ∗µH1, (µH1 −µH) ∗(µH1 −µH0)⟩⩽−1/8.
+By Plancherel’s theorem we conclude that
+−1/8 ⩾
+Z
+γ∈H⊥
+1
+c
+1A(γ)(1H⊥
+1 −1H⊥)(γ)(1H⊥
+1 −1H⊥
+0 )(γ)dγ ⩾inf
+γ∈b
+G
+c
+1A(γ)µ(H⊥
+1 ).
+Rearranging it follows that MG(A) = Ω(|H1|). Thus we are either in case (ii) or
+else |H1| ⩽K as desired.
+□
+Claim. supx̸∈H0 1A ∗µH0(x) ⩽1/16∥1A∥A(G)
+Proof. If x̸ ∈H0 then 1A ∗µV (x) ⩽ǫ since 1A ∗µV (x) is (ǫ, ∞)-almost boolean
+whence the desired conclusion follows on noting that V is a subgroup of H0.
+□
+It follows that H0 has all the claimed properties and we are in case (iv); the
+proof is complete.
+□
+We are now in a position to iterate the above lemma to prove the main theorem.
+
+
+=== PDF PAGE 18 ===
+18
+TOM SANDERS
+Proof of Theorem 1.4. Deﬁne the auxiliary parameter K0 to be
+min{|A△
+[
+H| : H is a collection of at most 32MG(A) subgroups.}.
+We begin as in the proof of Theorem 1.3 and may suppose that A is not a subgroup
+of G, or else we are trivially done with H = A, and so it follows from Proposition
+2.1 that MG(A) ⩾1/2. Thus
+MG(A)
+⩾
+(2MG(A) + 1A(0G))/4
+=
+(2MG(A) +
+Z
+c
+1A(γ)dγ)/4 ⩾∥1A∥A(G)/4,
+where the passage from the ﬁrst to the second line is via the Fourier inversion
+formula.
+We pick M with M = logΩ(1) K0 such that
+exp(−(9M)CS) > |K0|−1/4 and M ⩽|K0|1/8/32,
+where CS > 0 is the absolute constant in Lemma 7.1, and let K′ := K3/4
+0
+and
+K := K3/8
+0
+/211M 2.
+Now, split into two cases; if ∥1A∥A(G) ⩾M then we are done by our previous
+averaging argument, whence we shall assume that ∥1A∥A(G) ⩽M.
+We construct a sequence of ﬁnite collections of subspaces (Hi)i with
+|H| ⩾K′, |H \ A| ⩽K and sup
+x̸∈H
+1A ∗µH(x) ⩽1/2 for all H ∈Hi
+such that
+|H ∩H′| ⩽K for all distinct pairs H, H′ ∈Hi.
+We initialize with H0 = ∅which trivially satisﬁes the above and apply Lemma 7.1
+repeatedly. If i ⩽8∥1A∥A(G) then we see that
+K0 > 24|H|2K and K′ < exp(−(∥1A∥A(G) + |H|)CS)K0,
+whence each application of the lemma either tells us that MG(A) = KΩ(1)
+0
+(and we
+are done) or that there is a new subgroup H0 which may be added to Hi to get
+Hi+1 thus blessed with all the desired properties.
+However, it turns out that the iteration must terminate before this stage as we
+shall now see. Suppose that H ∈Hi. Then |H \ A| ⩽K, whence
+Z
+γ∈H⊥
+c
+1A(γ)dγ = ⟨1A, µH⟩⩾1 −K/|H|
+by Plancherel’s theorem. Now let H′ ∈Hi have H′̸ = H. Then
+Z
+c
+1A(γ)1(H+H′)⊥(γ)dγ
+=
+⟨1A, µH+H′⟩
+=
+EW∈H+H′/H1A ∗µH(V ),
+which is well deﬁned since W is a coset of H and 1A ∗µH is constant on cosets of
+H. It follows that
+|
+Z
+c
+1A(γ)1(H+H′)⊥(γ)dγ| ⩽
+|H|
+|H + H′|
+
+1 +
+1
+16∥1A∥A(G)
+.|H + H′| −|H|
+|H|
+
+.
+On the other hand |H + H′| = |H||H′|/|H ∩H′| ⩾(K′)2/K whence
+|
+Z
+c
+1A(γ)1(H+H′)⊥(γ)dγ| ⩽1/16∥1A∥A(G).
+
+
+=== PDF PAGE 19 ===
+CHOWLA’S COSINE PROBLEM
+19
+Now
+Z
+γ∈H⊥
+c
+1A(γ)dγ −
+Z
+c
+1A(γ)1H⊥\(H′)⊥(γ)dγ =
+Z
+c
+1A(γ)1(H+H′)⊥(γ)dγ,
+whence
+Z
+γ∈H⊥\(H′)⊥|c
+1A(γ)|dγ ⩾1 −K/K′ −1/16∥1A∥A(G),
+and writing SH = S{H′⊥: H′ ∈H, H′̸ = H} we get from the triangle inequality
+that
+Z
+γ∈H⊥\SH
+|c
+1A(γ)|dγ ⩾1 −8∥1A∥A(G)K/K′ −1/2 ⩾1/4.
+On the other hand the sets (H \ SH)H∈H are disjoint by design and so
+∥1A∥A(G) ⩾
+X
+H∈H
+Z
+γ∈H⊥\SH
+|c
+1A(γ)|dγ ⩾|H|/4.
+It follows that in fact |H| ⩽4∥1A∥A(G) and the iteration terminates. The theorem
+is proved.
+□
+8. Concluding remarks
+As noted in the introduction lower bounds on the algebra norm of a set can be
+converted into lower bounds for MG by averaging. In view of this it is natural to
+take the quantitative idempotent theorem of [GS08] and try to derive a version of
+Theorem 1.4.
+Theorem 8.1 (Quantitative idempotent theorem, [GS08, Theorem 1.3]). Suppose
+that G is an abelian group and A ⊂G is a ﬁnite set. Then we may write
+1A =
+L
+X
+i=1
+±1xj+Hj
+where the Hj ⩽G are subgroups and L = exp(exp(O(∥1A∥4
+A(G)))). Moreover, the
+number of distinct subgroups Hj is at most M + O(1).
+Of course doing this would require some work (most likely of the type in §2)
+to take the structure produced by this theorem and convert it into the stronger
+output of Theorem 1.4 and in any case the most one could hope for would be
+doubly logarithmic bounds.
+Our proof proceeds in a rather diﬀerent manner from that in [GS08] because we
+are unable to make use of almost boolean functions in the main iteration. This is
+largely because Chowla’s problem is even more sensitive to changing sets into func-
+tions than the idempotent theorem is, and we have to proceed in a correspondingly
+more delicate way.
+If one had the conjectural best possible version of Theorem 8.1 (where one is
+allowed to take L = exp(O(∥1A∥A(G)))) one might hope to recover a lower bound
+of Ω(log |A△S H|) in Theorem 1.4. Of course one expects the bound to be much
+stronger and the following is really the interesting question.
+
+
+=== PDF PAGE 20 ===
+20
+TOM SANDERS
+Problem. Show that there is a function ω with ω(N) →∞as N →∞such that
+for every non-empty, ﬁnite symmetric set A ⊂G there is a set H of subgroups of
+G with |H| = O(MG(A)) such that
+MG(A) = Ω(ω(|A△
+[
+H|) log |A△
+[
+H|).
+On a more technical note it is possible to avoid the use of Bourgain systems by
+working heavily with the large spectrum. Doing this results in a doubly logarithmic
+bound for Theorem 1.4 because the Fourier space analogue of Proposition 6.2 is
+not very eﬃcient at encoding the very large correlation that a set A has with the
+associated Bourgain system. In any case, proceeding in this manner does not seem
+to be of any real beneﬁt.
+To close we remark that a number of related questions about the magnitude
+and arguments of various Fourier modes have been considered in the papers [KL00]
+and [KL04] of Lev and Konyagin. Interestingly, while our work is very analytic the
+obstacles in these papers become increasingly algebraic; in [KL00], for example, the
+properties of norms of algebraic integers are used.
+Acknowledgements
+The author would like to thank Jean Bourgain for useful conversations and alert-
+ing us to the papers [ES59] and [BBR98], Ben Green for useful conversations, Seva
+Lev for bringing the paper [KL04] to our attention, and the anonymous referee for
+many useful comments and corrections.
+References
+[BBR98] J. P. Bell, P. B. Borwein, and L. B. Richmond. Growth of the product Qn
+j=1(1 −xaj).
+Acta Arith., 86(2):155–170, 1998.
+[Bou86]
+J. Bourgain. Sur le minimum d’une somme de cosinus. Acta Arith., 45(4):381–389, 1986.
+[Bou02]
+J. Bourgain. On the distributions of the Fourier spectrum of Boolean functions. Israel
+J. Math., 131:269–276, 2002.
+[BS94]
+A. Balog and E. Szemer´edi. A statistical theorem of set addition. Combinatorica,
+14(3):263–268, 1994.
+[Cho65]
+S. Chowla. Some applications of a method of A. Selberg. J. Reine Angew. Math.,
+217:128–132, 1965.
+[ES59]
+P. Erd˝os and G. Szekeres. On the product Πn
+k=1(1 −zak). Acad. Serbe Sci. Publ. Inst.
+Math., 13:29–34, 1959.
+[Fre73]
+G. A. Fre˘ıman. Foundations of a structural theory of set addition. American Mathe-
+matical Society, Providence, R. I., 1973. Translated from the Russian, Translations of
+Mathematical Monographs, Vol 37.
+[GK09]
+B. J. Green and S. V. Konyagin. On the Littlewood problem modulo a prime. Canad.
+J. Math., 61(1):141–164, 2009.
+[Gow98] W. T. Gowers. A new proof of Szemer´edi’s theorem for arithmetic progressions of length
+four. Geom. Funct. Anal., 8(3):529–551, 1998.
+[GR07]
+B. J. Green and I. Z. Ruzsa. Fre˘ıman’s theorem in an arbitrary abelian group. J. Lond.
+Math. Soc. (2), 75(1):163–175, 2007.
+[GS08]
+B. J. Green and T. Sanders. A quantitative version of the idempotent theorem in har-
+monic analysis. Ann. of Math. (2), 168(3):1025–1054, 2008.
+[GT09]
+B. J. Green and T. C. Tao. A note on the Fre˘ıman and Balog-Szemer´edi-Gowers theorems
+in ﬁnite ﬁelds. J. Aust. Math. Soc., 86(1):61–74, 2009.
+[KL00]
+S. V. Konyagin and V. F. Lev. On the distribution of exponential sums. Integers, pages
+A1, 11 pp. (electronic), 2000.
+[KL04]
+S. V. Konyagin and V. F. Lev. Character sums in complex half-planes. J. Th´eor. Nombres
+Bordeaux, 16(3):587–606, 2004.
+
+
+=== PDF PAGE 21 ===
+CHOWLA’S COSINE PROBLEM
+21
+[Kon81]
+S. V. Konyagin. On the Littlewood problem. Izv. Akad. Nauk SSSR Ser. Mat., 45(2):243–
+265, 463, 1981.
+[MPS81] O. C. McGehee, L. Pigno, and B. Smith. Hardy’s inequality and the L1 norm of expo-
+nential sums. Ann. of Math. (2), 113(3):613–618, 1981.
+[Rot73]
+K. F. Roth. On cosine polynomials corresponding to sets of integers. Acta Arith., 24:87–
+98, 1973. Collection of articles dedicated to Carl Ludwig Siegel on the occasion of his
+seventy-ﬁfth birthday, I.
+[Rud90]
+W. Rudin. Fourier analysis on groups. Wiley Classics Library. John Wiley & Sons Inc.,
+New York, 1990. Reprint of the 1962 original, A Wiley-Interscience Publication.
+[Ruz04]
+I. Z. Ruzsa. Negative values of cosine sums. Acta Arith., 111(2):179–186, 2004.
+[Spe85]
+J. Spencer. Six standard deviations suﬃce. Trans. Amer. Math. Soc., 289(2):679–706,
+1985.
+[TV06]
+T. C. Tao and H. V. Vu. Additive combinatorics, volume 105 of Cambridge Studies in
+Advanced Mathematics. Cambridge University Press, Cambridge, 2006.
+Department of Pure Mathematics and Mathematical Statistics, University of Cam-
+bridge, Wilberforce Road, Cambridge CB3 0WA, England
+E-mail address: t.sanders@dpmms.cam.ac.uk

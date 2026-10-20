@@ -1,0 +1,103 @@
+/-- The weighted adjacency form with separately specified row and column sets. -/
+noncomputable def form (A : Finset ℕ) (S T : Finset ℤ) (v : ℤ → ℝ) : ℝ :=
+  ∑ u ∈ S, ∑ w ∈ T, v u * v w * (if (u - w).natAbs ∈ A then 1 else 0)
+
+theorem form_clique {A : Finset ℕ} (h0 : 0 ∉ A) (S : Finset ℤ)
+    (v : ℤ → ℝ) (c : ℝ) (hv : ∀ u ∈ S, v u = c)
+    (he : ∀ u ∈ S, ∀ w ∈ S, u ≠ w → (u - w).natAbs ∈ A) :
+    form A S S v = c ^ 2 * ((S.card : ℝ) ^ 2 - S.card) := by
+  have hrow : ∀ u ∈ S, ∑ w ∈ S, v u * v w *
+      (if (u - w).natAbs ∈ A then 1 else 0) = (S.card : ℝ) * (c * c) - c * c := by
+    intro u hu
+    have ht : ∀ w ∈ S, v u * v w * (if (u - w).natAbs ∈ A then 1 else 0) =
+        c * c - (if u = w then c * c else 0) := by
+      intro w hw
+      rw [hv u hu, hv w hw]
+      by_cases huw : u = w
+      · subst w
+        simp [h0]
+      · simp [huw, he u hu w hw huw]
+    rw [sum_congr rfl ht, sum_sub_distrib, sum_ite_eq, if_pos hu]
+    simp
+  rw [form, sum_congr rfl hrow]
+  simp only [sum_const, nsmul_eq_mul]
+  ring
+
+theorem form_complete {A : Finset ℕ} (S T : Finset ℤ)
+    (v : ℤ → ℝ) (c d : ℝ) (hv : ∀ u ∈ S, v u = c) (hw : ∀ w ∈ T, v w = d)
+    (he : ∀ u ∈ S, ∀ w ∈ T, (u - w).natAbs ∈ A) :
+    form A S T v = (S.card : ℝ) * T.card * c * d := by
+  unfold form
+  have ht : ∀ u ∈ S, ∀ w ∈ T,
+      v u * v w * (if (u - w).natAbs ∈ A then 1 else 0) = c * d := by
+    intro u hu w hw
+    rw [hv u hu, hw w hw, if_pos (he u hu w hw), mul_one]
+  simp_rw [sum_congr rfl (fun u hu => sum_congr rfl (ht u hu))]
+  simp only [sum_const, nsmul_eq_mul]
+  ring
+
+theorem form_empty {A : Finset ℕ} (S T : Finset ℤ) (v : ℤ → ℝ)
+    (he : ∀ u ∈ S, ∀ w ∈ T, (u - w).natAbs ∉ A) : form A S T v = 0 := by
+  unfold form
+  apply sum_eq_zero
+  intro u hu
+  apply sum_eq_zero
+  intro w hw
+  simp [he u hu w hw]
+
+/-- The exact induced three-clique certificate used in P71.2. -/
+theorem three_clique_bound (A : Finset ℕ) (hA : ∀ a ∈ A, 0 < a) (M : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ cosSum A x) (U V W : Finset ℤ) (m : ℕ)
+    (hm : 0 < m) (hU : U.card = m) (hV : V.card = m) (hW : W.card = m)
+    (hUV : Disjoint U V) (hUW : Disjoint U W) (hVW : Disjoint V W)
+    (hUU : ∀ u ∈ U, ∀ w ∈ U, u ≠ w → (u - w).natAbs ∈ A)
+    (hVV : ∀ u ∈ V, ∀ w ∈ V, u ≠ w → (u - w).natAbs ∈ A)
+    (hWW : ∀ u ∈ W, ∀ w ∈ W, u ≠ w → (u - w).natAbs ∈ A)
+    (heUV : ∀ u ∈ U, ∀ w ∈ V, (u - w).natAbs ∈ A)
+    (heVW : ∀ u ∈ V, ∀ w ∈ W, (u - w).natAbs ∈ A)
+    (hnUW : ∀ u ∈ U, ∀ w ∈ W, (u - w).natAbs ∉ A) :
+    7 * (m : ℝ) / 34 + 1 / 2 ≤ M := by
+  have h0 : 0 ∉ A := fun h => by have := hA 0 h; omega
+  let v : ℤ → ℝ := fun u => if u ∈ V then -3 else 2
+  have hvU : ∀ u ∈ U, v u = 2 := by
+    intro u hu
+    exact if_neg (fun hv => disjoint_left.mp hUV hu hv)
+  have hvV : ∀ u ∈ V, v u = -3 := by intro u hu; exact if_pos hu
+  have hvW : ∀ u ∈ W, v u = 2 := by
+    intro u hu
+    exact if_neg (fun hv => disjoint_left.mp hVW hv hu)
+  have hflip (u w : ℤ) : (u - w).natAbs = (w - u).natAbs := Int.natAbs_sub_comm u w
+  have hfUU := form_clique h0 U v 2 hvU hUU
+  have hfVV := form_clique h0 V v (-3) hvV hVV
+  have hfWW := form_clique h0 W v 2 hvW hWW
+  have hfUV := form_complete U V v 2 (-3) hvU hvV heUV
+  have hfVU := form_complete V U v (-3) 2 hvV hvU
+    (fun u hu w hw => by rw [hflip]; exact heUV w hw u hu)
+  have hfVW := form_complete V W v (-3) 2 hvV hvW heVW
+  have hfWV := form_complete W V v 2 (-3) hvW hvV
+    (fun u hu w hw => by rw [hflip]; exact heVW w hw u hu)
+  have hfUW := form_empty U W v hnUW
+  have hfWU := form_empty W U v
+    (fun u hu w hw => by rw [hflip]; exact hnUW w hw u hu)
+  have hUVW : Disjoint (U ∪ V) W := disjoint_union_left.mpr ⟨hUW, hVW⟩
+  have hform : form A (U ∪ V ∪ W) (U ∪ V ∪ W) v =
+      -7 * (m : ℝ) ^ 2 - 17 * m := by
+    have hexpand : form A (U ∪ V ∪ W) (U ∪ V ∪ W) v =
+        (form A U U v + form A U V v + form A U W v) +
+        (form A V U v + form A V V v + form A V W v) +
+        (form A W U v + form A W V v + form A W W v) := by
+      simp only [form, sum_union hUVW, sum_union hUV, sum_add_distrib]
+    rw [hexpand, hfUU, hfVV, hfWW, hfUV, hfVU, hfVW, hfWV, hfUW, hfWU, hU, hV, hW]
+    ring
+  have hnorm : ∑ u ∈ U ∪ V ∪ W, (v u) ^ 2 = 17 * (m : ℝ) := by
+    rw [sum_union hUVW, sum_union hUV,
+      sum_congr rfl (fun u hu => congrArg (fun t : ℝ => t ^ 2) (hvU u hu)),
+      sum_congr rfl (fun u hu => congrArg (fun t : ℝ => t ^ 2) (hvV u hu)),
+      sum_congr rfl (fun u hu => congrArg (fun t : ℝ => t ^ 2) (hvW u hu))]
+    simp only [sum_const, nsmul_eq_mul, hU, hV, hW]
+    ring
+  have hs := star_lemma A hA M hM (U ∪ V ∪ W) v
+  change form A (U ∪ V ∪ W) (U ∪ V ∪ W) v ≥ _ at hs
+  rw [hform, hnorm] at hs
+  have hm' : (0 : ℝ) < m := by exact_mod_cast hm
+  nlinarith

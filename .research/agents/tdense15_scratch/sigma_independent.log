@@ -1,0 +1,3 @@
+INDEPENDENT_POINTWISE 767 leaves; 127 CF caps verified
+INDEPENDENT_SCHUR 64 cells, minimum margin 1704250072843/1966080000000000
+{"status": "PROVED", "independent_method": "SymPy QQ + FLINT composition; direct exact Schur integrals/interpolation; Sturm long lines; rational finite-symbol evaluations", "pointwise_leaves": 767, "CF_caps": 127, "support_lines": 188, "schur_cells": 64, "min_schur": "1704250072843/1966080000000000", "D1": "73/1000", "C11": "1000/73", "C11_float": 13.698630136986301, "binary_algebra_checked": true, "python": "3.12.3", "sympy": "1.14.0", "seconds": 55.33059811592102}

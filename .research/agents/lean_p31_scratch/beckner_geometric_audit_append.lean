@@ -1,0 +1,8 @@
+#print axioms ChowlaCosine.Beckner.hasDerivAt_heatFlow_affine
+#print axioms ChowlaCosine.Beckner.hasDerivAt_heatSpaceMoment_affine
+#print axioms ChowlaCosine.Beckner.hasDerivAt_geometricHeatProduct_time
+#print axioms ChowlaCosine.Beckner.geometricHeatPath_second_derivative
+#print axioms ChowlaCosine.Beckner.geometricHeat_defect_nonneg
+#print axioms ChowlaCosine.Beckner.integral_partial_x_eq_zero
+#print axioms ChowlaCosine.Beckner.integral_partial_y_eq_zero
+#print axioms ChowlaCosine.Beckner.parabolic_integral_derivative_nonneg

@@ -1,0 +1,594 @@
+{
+  "arb_bits": 256,
+  "sets": 38,
+  "positive_frequencies": 2377,
+  "claim": "For alpha<=1/(8r), q>r, U(gamma)=T>0: (U-T*1_gamma)^(r)(gamma)>=T/4",
+  "rows": [
+    {
+      "q": 101,
+      "r": 2,
+      "cardinality": 6,
+      "density": "6/101",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "positive_frequencies_checked": 16,
+      "min_ratio_margin_lower_float": 0.75
+    },
+    {
+      "q": 101,
+      "r": 2,
+      "cardinality": 6,
+      "density": "6/101",
+      "family": "random",
+      "pairs": [
+        12,
+        26,
+        32
+      ],
+      "positive_frequencies_checked": 26,
+      "min_ratio_margin_lower_float": 0.75
+    },
+    {
+      "q": 101,
+      "r": 3,
+      "cardinality": 4,
+      "density": "4/101",
+      "family": "interval",
+      "pairs": [
+        1,
+        2
+      ],
+      "positive_frequencies_checked": 16,
+      "min_ratio_margin_lower_float": 0.6603045039178213
+    },
+    {
+      "q": 101,
+      "r": 3,
+      "cardinality": 4,
+      "density": "4/101",
+      "family": "random",
+      "pairs": [
+        17,
+        50
+      ],
+      "positive_frequencies_checked": 24,
+      "min_ratio_margin_lower_float": 0.6602906126804061
+    },
+    {
+      "q": 101,
+      "r": 4,
+      "cardinality": 2,
+      "density": "2/101",
+      "family": "interval",
+      "pairs": [
+        1
+      ],
+      "positive_frequencies_checked": 25,
+      "min_ratio_margin_lower_float": 0.7079132622342852
+    },
+    {
+      "q": 101,
+      "r": 4,
+      "cardinality": 2,
+      "density": "2/101",
+      "family": "random",
+      "pairs": [
+        19
+      ],
+      "positive_frequencies_checked": 25,
+      "min_ratio_margin_lower_float": 0.7079132622342852
+    },
+    {
+      "q": 101,
+      "r": 5,
+      "cardinality": 2,
+      "density": "2/101",
+      "family": "interval",
+      "pairs": [
+        1
+      ],
+      "positive_frequencies_checked": 25,
+      "min_ratio_margin_lower_float": 0.7061423617280167
+    },
+    {
+      "q": 101,
+      "r": 5,
+      "cardinality": 2,
+      "density": "2/101",
+      "family": "random",
+      "pairs": [
+        6
+      ],
+      "positive_frequencies_checked": 25,
+      "min_ratio_margin_lower_float": 0.7061423617280167
+    },
+    {
+      "q": 101,
+      "r": 6,
+      "cardinality": 2,
+      "density": "2/101",
+      "family": "interval",
+      "pairs": [
+        1
+      ],
+      "positive_frequencies_checked": 25,
+      "min_ratio_margin_lower_float": 0.7039287585121999
+    },
+    {
+      "q": 101,
+      "r": 6,
+      "cardinality": 2,
+      "density": "2/101",
+      "family": "random",
+      "pairs": [
+        22
+      ],
+      "positive_frequencies_checked": 25,
+      "min_ratio_margin_lower_float": 0.7039287585121999
+    },
+    {
+      "q": 257,
+      "r": 2,
+      "cardinality": 16,
+      "density": "16/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "positive_frequencies_checked": 34,
+      "min_ratio_margin_lower_float": 0.75
+    },
+    {
+      "q": 257,
+      "r": 2,
+      "cardinality": 16,
+      "density": "16/257",
+      "family": "random",
+      "pairs": [
+        7,
+        32,
+        45,
+        81,
+        82,
+        89,
+        100,
+        126
+      ],
+      "positive_frequencies_checked": 65,
+      "min_ratio_margin_lower_float": 0.75
+    },
+    {
+      "q": 257,
+      "r": 3,
+      "cardinality": 10,
+      "density": "10/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "positive_frequencies_checked": 39,
+      "min_ratio_margin_lower_float": 0.6620511319587179
+    },
+    {
+      "q": 257,
+      "r": 3,
+      "cardinality": 10,
+      "density": "10/257",
+      "family": "random",
+      "pairs": [
+        5,
+        18,
+        32,
+        89,
+        125
+      ],
+      "positive_frequencies_checked": 61,
+      "min_ratio_margin_lower_float": 0.6620511329870731
+    },
+    {
+      "q": 257,
+      "r": 4,
+      "cardinality": 8,
+      "density": "8/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "positive_frequencies_checked": 38,
+      "min_ratio_margin_lower_float": 0.681406147798939
+    },
+    {
+      "q": 257,
+      "r": 4,
+      "cardinality": 8,
+      "density": "8/257",
+      "family": "random",
+      "pairs": [
+        3,
+        4,
+        7,
+        48
+      ],
+      "positive_frequencies_checked": 55,
+      "min_ratio_margin_lower_float": 0.6814062657066776
+    },
+    {
+      "q": 257,
+      "r": 5,
+      "cardinality": 6,
+      "density": "6/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "positive_frequencies_checked": 43,
+      "min_ratio_margin_lower_float": 0.697302998651342
+    },
+    {
+      "q": 257,
+      "r": 5,
+      "cardinality": 6,
+      "density": "6/257",
+      "family": "random",
+      "pairs": [
+        16,
+        43,
+        60
+      ],
+      "positive_frequencies_checked": 65,
+      "min_ratio_margin_lower_float": 0.6973034848694629
+    },
+    {
+      "q": 257,
+      "r": 6,
+      "cardinality": 4,
+      "density": "4/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2
+      ],
+      "positive_frequencies_checked": 42,
+      "min_ratio_margin_lower_float": 0.7149604653983717
+    },
+    {
+      "q": 257,
+      "r": 6,
+      "cardinality": 4,
+      "density": "4/257",
+      "family": "random",
+      "pairs": [
+        33,
+        98
+      ],
+      "positive_frequencies_checked": 64,
+      "min_ratio_margin_lower_float": 0.7149576424382402
+    },
+    {
+      "q": 257,
+      "r": 7,
+      "cardinality": 4,
+      "density": "4/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2
+      ],
+      "positive_frequencies_checked": 42,
+      "min_ratio_margin_lower_float": 0.7133370861417403
+    },
+    {
+      "q": 257,
+      "r": 7,
+      "cardinality": 4,
+      "density": "4/257",
+      "family": "random",
+      "pairs": [
+        8,
+        91
+      ],
+      "positive_frequencies_checked": 76,
+      "min_ratio_margin_lower_float": 0.7133330033990823
+    },
+    {
+      "q": 257,
+      "r": 8,
+      "cardinality": 4,
+      "density": "4/257",
+      "family": "interval",
+      "pairs": [
+        1,
+        2
+      ],
+      "positive_frequencies_checked": 42,
+      "min_ratio_margin_lower_float": 0.7114127432775997
+    },
+    {
+      "q": 257,
+      "r": 8,
+      "cardinality": 4,
+      "density": "4/257",
+      "family": "random",
+      "pairs": [
+        54,
+        110
+      ],
+      "positive_frequencies_checked": 62,
+      "min_ratio_margin_lower_float": 0.711407477314971
+    },
+    {
+      "q": 509,
+      "r": 2,
+      "cardinality": 30,
+      "density": "30/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "positive_frequencies_checked": 68,
+      "min_ratio_margin_lower_float": 0.75
+    },
+    {
+      "q": 509,
+      "r": 2,
+      "cardinality": 30,
+      "density": "30/509",
+      "family": "random",
+      "pairs": [
+        31,
+        48,
+        51,
+        64,
+        75,
+        88,
+        132,
+        138,
+        147,
+        163,
+        164,
+        191,
+        223,
+        238,
+        246
+      ],
+      "positive_frequencies_checked": 131,
+      "min_ratio_margin_lower_float": 0.75
+    },
+    {
+      "q": 509,
+      "r": 3,
+      "cardinality": 20,
+      "density": "20/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "positive_frequencies_checked": 70,
+      "min_ratio_margin_lower_float": 0.6610751461553498
+    },
+    {
+      "q": 509,
+      "r": 3,
+      "cardinality": 20,
+      "density": "20/509",
+      "family": "random",
+      "pairs": [
+        7,
+        32,
+        87,
+        104,
+        108,
+        111,
+        116,
+        130,
+        208,
+        212
+      ],
+      "positive_frequencies_checked": 124,
+      "min_ratio_margin_lower_float": 0.6610751481042761
+    },
+    {
+      "q": 509,
+      "r": 4,
+      "cardinality": 14,
+      "density": "14/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "positive_frequencies_checked": 72,
+      "min_ratio_margin_lower_float": 0.6900936203662463
+    },
+    {
+      "q": 509,
+      "r": 4,
+      "cardinality": 14,
+      "density": "14/509",
+      "family": "random",
+      "pairs": [
+        31,
+        41,
+        54,
+        100,
+        147,
+        226,
+        236
+      ],
+      "positive_frequencies_checked": 136,
+      "min_ratio_margin_lower_float": 0.6900936884241352
+    },
+    {
+      "q": 509,
+      "r": 5,
+      "cardinality": 12,
+      "density": "12/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "positive_frequencies_checked": 73,
+      "min_ratio_margin_lower_float": 0.6967197147683195
+    },
+    {
+      "q": 509,
+      "r": 5,
+      "cardinality": 12,
+      "density": "12/509",
+      "family": "random",
+      "pairs": [
+        47,
+        59,
+        147,
+        181,
+        182,
+        191
+      ],
+      "positive_frequencies_checked": 118,
+      "min_ratio_margin_lower_float": 0.6967213815452282
+    },
+    {
+      "q": 509,
+      "r": 6,
+      "cardinality": 10,
+      "density": "10/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "positive_frequencies_checked": 77,
+      "min_ratio_margin_lower_float": 0.7043445111375315
+    },
+    {
+      "q": 509,
+      "r": 6,
+      "cardinality": 10,
+      "density": "10/509",
+      "family": "random",
+      "pairs": [
+        9,
+        25,
+        66,
+        111,
+        147
+      ],
+      "positive_frequencies_checked": 132,
+      "min_ratio_margin_lower_float": 0.704344511541407
+    },
+    {
+      "q": 509,
+      "r": 7,
+      "cardinality": 8,
+      "density": "8/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "positive_frequencies_checked": 75,
+      "min_ratio_margin_lower_float": 0.7129131263662822
+    },
+    {
+      "q": 509,
+      "r": 7,
+      "cardinality": 8,
+      "density": "8/509",
+      "family": "random",
+      "pairs": [
+        15,
+        72,
+        192,
+        221
+      ],
+      "positive_frequencies_checked": 130,
+      "min_ratio_margin_lower_float": 0.7129131539505392
+    },
+    {
+      "q": 509,
+      "r": 8,
+      "cardinality": 6,
+      "density": "6/509",
+      "family": "interval",
+      "pairs": [
+        1,
+        2,
+        3
+      ],
+      "positive_frequencies_checked": 84,
+      "min_ratio_margin_lower_float": 0.7222429243719684
+    },
+    {
+      "q": 509,
+      "r": 8,
+      "cardinality": 6,
+      "density": "6/509",
+      "family": "random",
+      "pairs": [
+        183,
+        234,
+        252
+      ],
+      "positive_frequencies_checked": 127,
+      "min_ratio_margin_lower_float": 0.7222429688303114
+    }
+  ]
+}

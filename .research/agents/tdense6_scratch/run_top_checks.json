@@ -1,0 +1,7 @@
+{
+  "exact_integer_cases": 256,
+  "n_range": [
+    1,
+    32
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "source_sha256": "749641df19bbbe358acd0065a8adf51631888d6d721e28b46b95d1e6257e93fa",
+  "root_sha256": "632f88ce245d7f408a485d91fad740a4c2de8a761c377c8067af500cbe9c3bb0",
+  "build_exit_code": 0,
+  "axiom_audit_exit_code": 0,
+  "allowed_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "main_theorems": [
+    "ChowlaCosine.BohrTaper.lower_bound",
+    "ChowlaCosine.BohrTaper.lower_bound_card"
+  ],
+  "statement_deviations": []
+}

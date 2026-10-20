@@ -1,0 +1,265 @@
+{
+  "diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 21,
+          "line": 98
+        },
+        "start": {
+          "character": 13,
+          "line": 98
+        }
+      },
+      "message": "This simp argument is unused:\n  sub_zero\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [cos_neg, mul_zero, cos_zero, mul_one] at hzero\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 21,
+          "line": 98
+        },
+        "start": {
+          "character": 13,
+          "line": 98
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 30,
+          "line": 98
+        },
+        "start": {
+          "character": 23,
+          "line": 98
+        }
+      },
+      "message": "This simp argument is unused:\n  cos_neg\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sub_zero, mul_zero, cos_zero, mul_one] at hzero\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 30,
+          "line": 98
+        },
+        "start": {
+          "character": 23,
+          "line": 98
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 23,
+          "line": 173
+        },
+        "start": {
+          "character": 18,
+          "line": 173
+        }
+      },
+      "message": "Variable name `hapos` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hapos\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+      "range": {
+        "end": {
+          "character": 23,
+          "line": 173
+        },
+        "start": {
+          "character": 18,
+          "line": 173
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4",
+      "tags": [
+        1
+      ]
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 27,
+          "line": 204
+        },
+        "start": {
+          "character": 18,
+          "line": 204
+        }
+      },
+      "message": "Unused tactic linter: `push_cast` does nothing\n\nNote: This linter can be disabled with `set_option linter.unusedTactic false`",
+      "range": {
+        "end": {
+          "character": 27,
+          "line": 204
+        },
+        "start": {
+          "character": 18,
+          "line": 204
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 7,
+          "line": 337
+        },
+        "start": {
+          "character": 4,
+          "line": 337
+        }
+      },
+      "message": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`",
+      "range": {
+        "end": {
+          "character": 7,
+          "line": 337
+        },
+        "start": {
+          "character": 4,
+          "line": 337
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 41,
+          "line": 439
+        },
+        "start": {
+          "character": 39,
+          "line": 439
+        }
+      },
+      "message": "Variable name `hA` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hA\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+      "range": {
+        "end": {
+          "character": 41,
+          "line": 439
+        },
+        "start": {
+          "character": 39,
+          "line": 439
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4",
+      "tags": [
+        1
+      ]
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 15,
+          "line": 440
+        },
+        "start": {
+          "character": 13,
+          "line": 440
+        }
+      },
+      "message": "Variable name `hD` is not explicitly referenced.\n\nHint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:\n  [apply] _hD\n\nNote: This linter can be disabled with `set_option linter.unusedVariables false`",
+      "range": {
+        "end": {
+          "character": 15,
+          "line": 440
+        },
+        "start": {
+          "character": 13,
+          "line": 440
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4",
+      "tags": [
+        1
+      ]
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 502
+        },
+        "start": {
+          "character": 0,
+          "line": 502
+        }
+      },
+      "message": "'ChowlaCosine.P36.p36_truncation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 502
+        },
+        "start": {
+          "character": 0,
+          "line": 502
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 503
+        },
+        "start": {
+          "character": 0,
+          "line": 503
+        }
+      },
+      "message": "'ChowlaCosine.P36.p36_gap' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 503
+        },
+        "start": {
+          "character": 0,
+          "line": 503
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 504
+        },
+        "start": {
+          "character": 0,
+          "line": 504
+        }
+      },
+      "message": "'ChowlaCosine.P36.p36_gap_pi' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 504
+        },
+        "start": {
+          "character": 0,
+          "line": 504
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    }
+  ],
+  "uri": "file:///Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/lean_next_scratch/Combined.lean",
+  "version": 5
+}

@@ -1,0 +1,1281 @@
+{
+  "diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 18,
+          "line": 862
+        },
+        "start": {
+          "character": 4,
+          "line": 862
+        }
+      },
+      "message": "This simp argument is unused:\n  Matrix.vecHead\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecTail,\n    Function.comp_def]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 18,
+          "line": 862
+        },
+        "start": {
+          "character": 4,
+          "line": 862
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 34,
+          "line": 862
+        },
+        "start": {
+          "character": 20,
+          "line": 862
+        }
+      },
+      "message": "This simp argument is unused:\n  Matrix.vecTail\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecHead,\n    Function.comp_def]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 34,
+          "line": 862
+        },
+        "start": {
+          "character": 20,
+          "line": 862
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 53,
+          "line": 862
+        },
+        "start": {
+          "character": 36,
+          "line": 862
+        }
+      },
+      "message": "This simp argument is unused:\n  Function.comp_def\n\nHint: Omit it from the simp argument list.\n  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecHead,\n    Matrix.vecTail]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 53,
+          "line": 862
+        },
+        "start": {
+          "character": 36,
+          "line": 862
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 34,
+          "line": 918
+        },
+        "start": {
+          "character": 23,
+          "line": 918
+        }
+      },
+      "message": "This simp argument is unused:\n  smul_eq_mul\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [youngFrame, planePoint, smul_add, smul_smul, Finset.sum_add_distrib, \u2190 Finset.sum_smul, hA, hB,\n    zero_smul, zero_add]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 34,
+          "line": 918
+        },
+        "start": {
+          "character": 23,
+          "line": 918
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 941
+        },
+        "start": {
+          "character": 0,
+          "line": 941
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.weightedFrame_sum_weights' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 941
+        },
+        "start": {
+          "character": 0,
+          "line": 941
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 942
+        },
+        "start": {
+          "character": 0,
+          "line": 942
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometricHeatProduct_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 942
+        },
+        "start": {
+          "character": 0,
+          "line": 942
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 943
+        },
+        "start": {
+          "character": 0,
+          "line": 943
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.rescaled_heatFlow_gaussian_bound' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 943
+        },
+        "start": {
+          "character": 0,
+          "line": 943
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 944
+        },
+        "start": {
+          "character": 0,
+          "line": 944
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_plane_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 944
+        },
+        "start": {
+          "character": 0,
+          "line": 944
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 945
+        },
+        "start": {
+          "character": 0,
+          "line": 945
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integral_plane_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 945
+        },
+        "start": {
+          "character": 0,
+          "line": 945
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 946
+        },
+        "start": {
+          "character": 0,
+          "line": 946
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integral_plane_dilate' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 946
+        },
+        "start": {
+          "character": 0,
+          "line": 946
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 947
+        },
+        "start": {
+          "character": 0,
+          "line": 947
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.planePoint_smul' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 947
+        },
+        "start": {
+          "character": 0,
+          "line": 947
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 948
+        },
+        "start": {
+          "character": 0,
+          "line": 948
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.frame_heatKernel_product' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 948
+        },
+        "start": {
+          "character": 0,
+          "line": 948
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 949
+        },
+        "start": {
+          "character": 0,
+          "line": 949
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integral_frame_heatKernel_product' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 949
+        },
+        "start": {
+          "character": 0,
+          "line": 949
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 950
+        },
+        "start": {
+          "character": 0,
+          "line": 950
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_integral_rescaled_geometricHeatProduct' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 950
+        },
+        "start": {
+          "character": 0,
+          "line": 950
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 951
+        },
+        "start": {
+          "character": 0,
+          "line": 951
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct_sq' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 951
+        },
+        "start": {
+          "character": 0,
+          "line": 951
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 952
+        },
+        "start": {
+          "character": 0,
+          "line": 952
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 952
+        },
+        "start": {
+          "character": 0,
+          "line": 952
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 953
+        },
+        "start": {
+          "character": 0,
+          "line": 953
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integral_geometricHeatProduct_le_mass' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 953
+        },
+        "start": {
+          "character": 0,
+          "line": 953
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 954
+        },
+        "start": {
+          "character": 0,
+          "line": 954
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.heatFlow_initial_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 954
+        },
+        "start": {
+          "character": 0,
+          "line": 954
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 955
+        },
+        "start": {
+          "character": 0,
+          "line": 955
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_heatFlow_initial_sq' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 955
+        },
+        "start": {
+          "character": 0,
+          "line": 955
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 956
+        },
+        "start": {
+          "character": 0,
+          "line": 956
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 956
+        },
+        "start": {
+          "character": 0,
+          "line": 956
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 957
+        },
+        "start": {
+          "character": 0,
+          "line": 957
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.tendsto_geometricHeatProduct_initial_sq' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 957
+        },
+        "start": {
+          "character": 0,
+          "line": 957
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 958
+        },
+        "start": {
+          "character": 0,
+          "line": 958
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometric_brascamp_lieb_bounded_continuous' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 958
+        },
+        "start": {
+          "character": 0,
+          "line": 958
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 959
+        },
+        "start": {
+          "character": 0,
+          "line": 959
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometric_brascamp_lieb_continuous_compact' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 959
+        },
+        "start": {
+          "character": 0,
+          "line": 959
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 960
+        },
+        "start": {
+          "character": 0,
+          "line": 960
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.ae_plane_linear' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 960
+        },
+        "start": {
+          "character": 0,
+          "line": 960
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 961
+        },
+        "start": {
+          "character": 0,
+          "line": 961
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.ae_plane_inner' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 961
+        },
+        "start": {
+          "character": 0,
+          "line": 961
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 962
+        },
+        "start": {
+          "character": 0,
+          "line": 962
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.exists_positive_compact_datum' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 962
+        },
+        "start": {
+          "character": 0,
+          "line": 962
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 963
+        },
+        "start": {
+          "character": 0,
+          "line": 963
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.exists_positive_compact_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 963
+        },
+        "start": {
+          "character": 0,
+          "line": 963
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 964
+        },
+        "start": {
+          "character": 0,
+          "line": 964
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.exists_positive_compact_approximation_seq' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 964
+        },
+        "start": {
+          "character": 0,
+          "line": 964
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 965
+        },
+        "start": {
+          "character": 0,
+          "line": 965
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.exists_common_support_radius' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 965
+        },
+        "start": {
+          "character": 0,
+          "line": 965
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 966
+        },
+        "start": {
+          "character": 0,
+          "line": 966
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit_bounds' depends on axioms: [propext,\n Classical.choice,\n Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 966
+        },
+        "start": {
+          "character": 0,
+          "line": 966
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 967
+        },
+        "start": {
+          "character": 0,
+          "line": 967
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometric_brascamp_lieb' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 967
+        },
+        "start": {
+          "character": 0,
+          "line": 967
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 968
+        },
+        "start": {
+          "character": 0,
+          "line": 968
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.isWeightedFrame_plane_of_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 968
+        },
+        "start": {
+          "character": 0,
+          "line": 968
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 969
+        },
+        "start": {
+          "character": 0,
+          "line": 969
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrameMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 969
+        },
+        "start": {
+          "character": 0,
+          "line": 969
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 970
+        },
+        "start": {
+          "character": 0,
+          "line": 970
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrame_coordinate_relation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 970
+        },
+        "start": {
+          "character": 0,
+          "line": 970
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 971
+        },
+        "start": {
+          "character": 0,
+          "line": 971
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.young_scalar_factor' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 971
+        },
+        "start": {
+          "character": 0,
+          "line": 971
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 972
+        },
+        "start": {
+          "character": 0,
+          "line": 972
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.young_scalar_factor_beckner' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 972
+        },
+        "start": {
+          "character": 0,
+          "line": 972
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 973
+        },
+        "start": {
+          "character": 0,
+          "line": 973
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrame_sharp_factor' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 973
+        },
+        "start": {
+          "character": 0,
+          "line": 973
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 974
+        },
+        "start": {
+          "character": 0,
+          "line": 974
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrame_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 974
+        },
+        "start": {
+          "character": 0,
+          "line": 974
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 975
+        },
+        "start": {
+          "character": 0,
+          "line": 975
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrame_isWeightedFrame' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 975
+        },
+        "start": {
+          "character": 0,
+          "line": 975
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 976
+        },
+        "start": {
+          "character": 0,
+          "line": 976
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrame_unit' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 976
+        },
+        "start": {
+          "character": 0,
+          "line": 976
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 977
+        },
+        "start": {
+          "character": 0,
+          "line": 977
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.youngFrame_relation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 977
+        },
+        "start": {
+          "character": 0,
+          "line": 977
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 978
+        },
+        "start": {
+          "character": 0,
+          "line": 978
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.geometric_brascamp_lieb_youngFrame' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 978
+        },
+        "start": {
+          "character": 0,
+          "line": 978
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 979
+        },
+        "start": {
+          "character": 0,
+          "line": 979
+        }
+      },
+      "message": "@ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct : \u2200 {\u03b9 : Type u_1} {E : Type u_2} [inst : Fintype \u03b9]\n  [inst_1 : NormedAddCommGroup E] [inst_2 : InnerProductSpace \u211d E] (f : \u03b9 \u2192 \u211d \u2192 \u211d) (c : \u03b9 \u2192 \u211d) (u : \u03b9 \u2192 E),\n  (\u2200 (i : \u03b9), Integrable (f i) volume) \u2192\n    (\u2200 (i : \u03b9) (y : \u211d), 0 \u2264 f i y) \u2192\n      (\u2200 (i : \u03b9), 0 \u2264 c i) \u2192\n        (\u2200 (i : \u03b9), \u2016u i\u2016 = 1) \u2192\n          ChowlaCosine.Beckner.IsWeightedFrame c u \u2192\n            \u2200 (R : \u211d),\n              0 \u2264 R \u2192\n                (\u2200 (i : \u03b9) (y : \u211d), f i y \u2260 0 \u2192 |y| \u2264 R) \u2192\n                  \u2200 (b : OrthonormalBasis (Fin 2) \u211d E),\n                    Filter.Tendsto\n                      (fun t =>\n                        \u222b (z : \u211d \u00d7 \u211d),\n                          ChowlaCosine.Beckner.geometricHeatProduct f c u t\n                            (ChowlaCosine.Beckner.planePoint b z) \u2202volume.prod volume)\n                      Filter.atTop (\ud835\udcdd (\u220f i, (\u222b (y : \u211d), f i y) ^ c i))",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 979
+        },
+        "start": {
+          "character": 0,
+          "line": 979
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 980
+        },
+        "start": {
+          "character": 0,
+          "line": 980
+        }
+      },
+      "message": "@ChowlaCosine.Beckner.geometric_brascamp_lieb : \u2200 {\u03b9 : Type u_1} {E : Type u_2} [inst : Fintype \u03b9]\n  [inst_1 : NormedAddCommGroup E] [inst_2 : InnerProductSpace \u211d E] (f : \u03b9 \u2192 \u211d \u2192 \u211d) (c : \u03b9 \u2192 \u211d) (u : \u03b9 \u2192 E),\n  (\u2200 (i : \u03b9), Integrable (f i) volume) \u2192\n    (\u2200 (i : \u03b9) (y : \u211d), 0 \u2264 f i y) \u2192\n      (\u2200 (i : \u03b9), 0 \u2264 c i) \u2192\n        (\u2200 (i : \u03b9), \u2016u i\u2016 = 1) \u2192\n          ChowlaCosine.Beckner.IsWeightedFrame c u \u2192\n            \u2200 (b : OrthonormalBasis (Fin 2) \u211d E),\n              Integrable (fun z => \u220f i, f i \u27eau i, ChowlaCosine.Beckner.planePoint b z\u27eb ^ c i) (volume.prod volume) \u2227\n                \u222b (z : \u211d \u00d7 \u211d), \u220f i, f i \u27eau i, ChowlaCosine.Beckner.planePoint b z\u27eb ^ c i \u2202volume.prod volume \u2264\n                  \u220f i, (\u222b (y : \u211d), f i y) ^ c i",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 980
+        },
+        "start": {
+          "character": 0,
+          "line": 980
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 981
+        },
+        "start": {
+          "character": 0,
+          "line": 981
+        }
+      },
+      "message": "ChowlaCosine.Beckner.youngFrame_sharp_factor : \u2200 (a b d : \u211d),\n  0 < a \u2192\n    0 < b \u2192\n      0 < d \u2192\n        a + b + d = 1 \u2192\n          (ChowlaCosine.Beckner.youngFrameMatrix a b d).det /\n              \u220f i, ChowlaCosine.Beckner.youngFrameScale a b d i ^ ChowlaCosine.Beckner.youngFrameWeights a b d i =\n            \u220f i,\n              \u221a((1 / ChowlaCosine.Beckner.youngFrameWeights a b d i) ^ ChowlaCosine.Beckner.youngFrameWeights a b d i /\n                  (1 / ChowlaCosine.Beckner.youngFrameComplement a b d i) ^\n                    ChowlaCosine.Beckner.youngFrameComplement a b d i)",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 981
+        },
+        "start": {
+          "character": 0,
+          "line": 981
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 56,
+          "line": 760
+        },
+        "start": {
+          "character": 43,
+          "line": 760
+        }
+      },
+      "message": "This simp argument is unused:\n  sq_sqrt hd.le\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hab.le, sq_sqrt had.le, sq_sqrt hbd.le]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 56,
+          "line": 760
+        },
+        "start": {
+          "character": 43,
+          "line": 760
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 34,
+          "line": 761
+        },
+        "start": {
+          "character": 20,
+          "line": 761
+        }
+      },
+      "message": "This simp argument is unused:\n  sq_sqrt had.le\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt hbd.le]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 34,
+          "line": 761
+        },
+        "start": {
+          "character": 20,
+          "line": 761
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 50,
+          "line": 761
+        },
+        "start": {
+          "character": 36,
+          "line": 761
+        }
+      },
+      "message": "This simp argument is unused:\n  sq_sqrt hbd.le\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt had.le]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 50,
+          "line": 761
+        },
+        "start": {
+          "character": 36,
+          "line": 761
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 58,
+          "line": 779
+        },
+        "start": {
+          "character": 45,
+          "line": 779
+        }
+      },
+      "message": "This simp argument is unused:\n  sq_sqrt hd.le\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hab.le, sq_sqrt had.le, sq_sqrt hbd.le]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 58,
+          "line": 779
+        },
+        "start": {
+          "character": 45,
+          "line": 779
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 36,
+          "line": 780
+        },
+        "start": {
+          "character": 22,
+          "line": 780
+        }
+      },
+      "message": "This simp argument is unused:\n  sq_sqrt had.le\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt hbd.le]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 36,
+          "line": 780
+        },
+        "start": {
+          "character": 22,
+          "line": 780
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 52,
+          "line": 780
+        },
+        "start": {
+          "character": 38,
+          "line": 780
+        }
+      },
+      "message": "This simp argument is unused:\n  sq_sqrt hbd.le\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt had.le]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 52,
+          "line": 780
+        },
+        "start": {
+          "character": 38,
+          "line": 780
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    }
+  ],
+  "uri": "file:///Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/lean_m4_scratch/Combined.lean",
+  "version": 25
+}

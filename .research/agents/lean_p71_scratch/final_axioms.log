@@ -1,0 +1,38 @@
+@ChowlaCosine.BohrTaper.lower_bound : ∀ {L q P : ℕ},
+  20 ∣ L →
+    20 ≤ L →
+      100 ≤ P →
+        4 * L + 1 ≤ q →
+          ∀ (M : ℝ),
+            (∀ (x : ℝ), -M ≤ ChowlaCosine.cosSum (ChowlaCosine.BohrTaper.taper L q P) x) →
+              7 * ↑(2 * (L / 20) * (P / 8)) / 34 + 1 / 2 ≤ M
+@ChowlaCosine.BohrTaper.lower_bound_card : ∀ {L q P : ℕ},
+  20 ∣ L →
+    20 ≤ L →
+      100 ≤ P →
+        4 * L + 1 ≤ q →
+          ∀ (M : ℝ),
+            (∀ (x : ℝ), -M ≤ ChowlaCosine.cosSum (ChowlaCosine.BohrTaper.taper L q P) x) →
+              7 * ↑(ChowlaCosine.BohrTaper.taper L q P).card / 6290 + 1 / 2 ≤ M
+ChowlaCosine.BohrTaper.card_taper_le : ∀ (L q P : ℕ),
+  0 < q → 0 < P → (ChowlaCosine.BohrTaper.taper L q P).card ≤ (2 * L + 1) * P
+@ChowlaCosine.BohrTaper.packet_size_lower : ∀ {L P : ℕ}, 20 ∣ L → 100 ≤ P → ↑L * ↑P / 90 ≤ ↑(2 * (L / 20) * (P / 8))
+@ChowlaCosine.BohrTaper.centered_unique : ∀ {q : ℕ},
+  0 < q → ∀ (a r : ℤ), r % ↑q = a % ↑q → -↑q < 2 * r ∧ 2 * r ≤ ↑q → ChowlaCosine.BohrTaper.centered q a = r
+@ChowlaCosine.BohrTaper.packet_card : ∀ {h q J : ℕ},
+  80 * h + 1 ≤ q → ∀ (b : ℤ), (ChowlaCosine.BohrTaper.packet q h J b).card = 2 * h * J
+@ChowlaCosine.BohrTaper.packet_subset_taper : ∀ {h q P J : ℕ},
+  100 ≤ P →
+    80 * h + 1 ≤ q →
+      8 * J ≤ P →
+        ∀ {b a : ℤ},
+          -16 ≤ b ∧ b ≤ 14 →
+            a ∈ ChowlaCosine.BohrTaper.packet q h J b → 0 < a ∧ a.natAbs ∈ ChowlaCosine.BohrTaper.taper (20 * h) q P
+'ChowlaCosine.BohrTaper.lower_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.lower_bound_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.three_clique_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.card_taper_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.packet_size_lower' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.centered_unique' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.packet_card' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.BohrTaper.packet_subset_taper' depends on axioms: [propext, Classical.choice, Quot.sound]

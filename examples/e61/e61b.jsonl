@@ -3,3 +3,6 @@
 {"kind": "baselines", "n": 1024, "chirp": 1.1716, "rudin_shapiro": 1.4141, "random_median": 2.6456}
 {"kind": "baselines", "n": 2048, "chirp": 1.1656, "rudin_shapiro": 1.4107, "random_median": 2.7192}
 {"kind": "phases", "n": 384, "negmin_over_sqrt_n": 0.6087}
+{"kind": "phases", "n": 512, "negmin_over_sqrt_n": 0.6074}
+{"kind": "phases", "n": 768, "negmin_over_sqrt_n": 0.6088}
+{"kind": "phases", "n": 1024, "negmin_over_sqrt_n": 0.6126}

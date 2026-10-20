@@ -1,0 +1,34 @@
+{"seed": 0, "success": false, "d": 0.13865826618325727, "C": 7.211975365957288, "a": 0.49678882678879366, "phi": 0.8935344827586207, "min_FT_e": -7.683270382766172e-11, "min_win_p": 0.00019606594933843153, "min_win_e": 1.0617340557086963e-11, "J_p": 0.5913486806776032}
+{"seed": 1, "success": false, "d": 0.12668032982034289, "C": 7.8938853523525925, "a": 0.415742572406588, "phi": 0.9108980303330274, "min_FT_e": -1.009836241498089e-06, "min_win_p": 0.00012932230822276352, "min_win_e": 8.544754716590958e-06, "J_p": 0.625262919213916}
+{"seed": 2, "success": false, "d": 0.11616684273514996, "C": 8.608308330113704, "a": 0.5094716651571658, "phi": 0.728072094592966, "min_FT_e": -1.2080545906384258e-06, "min_win_p": 0.000283261236858779, "min_win_e": 4.9035338616790756e-05, "J_p": 0.5265955117663971}
+/home/jmercedes/chowla_cosine/src/e80_enlarged_reach.py:30: RuntimeWarning: overflow encountered in exp
+  g = np.exp(z[:NG])
+Traceback (most recent call last):
+  File "/home/jmercedes/chowla_cosine/src/e80_enlarged_reach.py", line 90, in <module>
+    main()
+  File "/home/jmercedes/chowla_cosine/src/e80_enlarged_reach.py", line 86, in main
+    run(seed, fh)
+  File "/home/jmercedes/chowla_cosine/src/e80_enlarged_reach.py", line 70, in run
+    res = minimize(obj, z0, method="SLSQP", constraints=cons, options={"maxiter": 400, "ftol": 1e-10})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jmercedes/chowla_venv/lib/python3.12/site-packages/scipy/optimize/_minimize.py", line 796, in minimize
+    res = _minimize_slsqp(fun, x0, args, jac, bounds,
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jmercedes/chowla_venv/lib/python3.12/site-packages/scipy/optimize/_slsqp_py.py", line 529, in _minimize_slsqp
+    fx = sf.fun(x)
+         ^^^^^^^^^
+  File "/home/jmercedes/chowla_venv/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 394, in fun
+    self._update_fun()
+  File "/home/jmercedes/chowla_venv/lib/python3.12/site-packages/scipy/optimize/_differentiable_functions.py", line 362, in _update_fun
+    fx = self._wrapped_fun(self.x)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jmercedes/chowla_venv/lib/python3.12/site-packages/scipy/_lib/_util.py", line 544, in __call__
+    fx = self.f(np.copy(x), *self.args)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/jmercedes/chowla_cosine/src/e80_enlarged_reach.py", line 64, in obj
+    p, a, phi = profile(z)
+                ^^^^^^^^^^
+  File "/home/jmercedes/chowla_cosine/src/e80_enlarged_reach.py", line 31, in profile
+    a = 1 / (1 + math.exp(-z[NG]))
+                 ^^^^^^^^^^^^^^^^
+OverflowError: math range error

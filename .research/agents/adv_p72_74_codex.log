@@ -1,0 +1,1932 @@
+Reading additional input from stdin...
+OpenAI Codex v0.163.0
+--------
+workdir: /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+model: gpt-6.1-sol
+provider: openai
+approval: never
+sandbox: danger-full-access
+reasoning effort: xhigh
+reasoning summaries: detailed
+session id: 01a155d0-3db5-7483-ae40-583e40a585b1
+--------
+user
+Read .research/agents/adv_p72_74_brief.md and carry it out exactly. Keep .research/agents/adv_p72_74_report.md current.
+warning: Under-development features enabled: context_management. Under-development features are incomplete and may behave unpredictably. To suppress this warning, set `suppress_unstable_features_warning = true` in /Users/jmercedes/.codex/config.toml.
+codex
+I’ll read the brief and repository instructions, then carry out the work and keep the report updated.
+exec
+/bin/zsh -lc 'cat /Users/jmercedes/.codex/skills/number-theory-research/SKILL.md' in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+exec
+/bin/zsh -lc 'cat .research/agents/adv_p72_74_brief.md' in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+# Adversarial verification brief (codex): P72, P73 (T version), P74
+
+You are an adversarial checker. Do NOT do new research; try to BREAK the three proofs below.
+- Read CLAUDE.md (certification and quantifier rules) and .research/PROOFS.md sections P72, P73, P74.
+- Rules:
+  - Do NOT edit .research/*.md. Do not commit. Do not launch subagents.
+  - Report: .research/agents/adv_p72_74_report.md. Scratch: .research/agents/adv_p72_74_scratch/.
+  - All numerical computation goes on the VM:
+        DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 <cmd>
+    Never run heavy numerics on the laptop.
+
+For each of P72 (a)–(e), P73 (T version and Z version) and P74:
+1. Check every step and every quantifier. Normalizations: T = R/Z with Haar probability; 1̂_Ω(k) = ∫_Ω e(−kx)dx.
+   Check:
+   - Sion minimax applicability in P72(a);
+   - the Parseval constant in P72(b);
+   - Danskin in P72(c);
+   - Macbeath/Raikov |A + B| >= min(1, |A| + |B|) for measurable sets on T in P73(T), including measurability and
+     inner-measure issues;
+   - Bernstein's inequality constant 2πL for frequencies in [−L, L] in P74;
+   - the numeric constants (1/300, 2.5e-4).
+2. Search for counterexamples numerically (on the VM).
+   - P74: random and structured symmetric unions of arcs with 1̂_Ω(k) >= 0 for |k| <= L. Check
+     U >= 2.5e-4·min(|Ω|, 1/L).
+   - P73(T): random PD trig polynomials g and sets Ω; check ‖g − 1_Ω‖² >= δ²|Ω|/3 whenever g(0) < (4 − 5δ)/3.
+   - P72(a): compare max_μ Σ(−c_a − τ|c_a|) (LP over measures on a fine grid) with min over weights (LP), for small A.
+3. Verdict per item: CORRECT / GAP (state it exactly) / FALSE (give the counterexample). Keep the report current.
+
+ succeeded in 0ms:
+---
+name: number-theory-research
+description: Conduct sustained, original number-theory research rather than merely surveying obstacles. Use for open Diophantine problems, elliptic curves, arithmetic geometry, descent, integral/rational points, prime and congruence questions, proof development, counterexample searches, or research-team strategy. Generate and test concrete lemmas, change approaches when blocked, keep a reproducible research record, critically verify claims, and reconsider the global strategy. Not for routine homework or a request for a brief explanation.
+---
+
+# Number Theory Research — Discovery Loop
+
+You are responsible for **trying to advance the mathematics**, not for merely explaining why known methods fail. A negative literature survey, a list of obstructions, or a worker status report is preliminary work, **not completion** of an open-ended research assignment.
+
+Follow the user's actual scope, available time/tools, and explicit stop conditions. Never fabricate a theorem, computation, citation, or amount of work performed. A skill is guidance, not a guarantee of breakthroughs or unattended execution.
+
+## 0. Load project state, not just the most recent message
+
+- Read the problem statement, definitions, existing proof notes, negative results, experiment code, and any project-specific instructions. If a source is inaccessible, say which one rather than implying it was examined.
+- Write the **exact target** with all quantifiers, domains, and allowed hypotheses. Write the alternative conclusion (e.g. existence vs a uniform impossibility statement) without prematurely excluding either.
+- Make a compact *research frontier*: `KNOWN | EXACT GAP | REASON THE GAP MATTERS | CANDIDATE MECHANISM | DISCRIMINATING TEST`. Label assertions as PROVED / CITED-VERIFIED / EXPERIMENTAL / CONJECTURED / UNKNOWN.
+- Review the existing record for repeated dead ends before suggesting new lanes. Do not relaunch an already-falsified approach unless you identify a mathematical change that removes its old obstruction.
+- Check literature early **for the exact theorem used** (including hypotheses and date), but cap the initial survey: unless the task specifically asks for a survey, pivot promptly to original derivation or experiment. Claims of impossibility, completeness, priority, or "nobody knows" require evidence; absence of a search hit proves none of them.
+
+## 1. Choose attacks that can produce an actual mathematical result
+
+- State a *candidate lemma* whose proof, counterexample, or quantitative refinement would move the main problem. Include why it is nontrivial, how it links to the target, and the first falsification test. Do not assign vague work such as "try descent" or "explore the literature".
+- Prefer **structurally distinct** hypotheses where viable: e.g. local valuations/congruence obstruction; descent or height; elliptic-curve group/arithmetic geometry; constructive parametrization or inverse design; independent algebraic elimination; analytic estimates. Distinguish genuine strategy differences from re-running the same brute force with bigger bounds.
+- For each route, ask the reverse question: *If this theorem were true, what mechanism would have to make it true?* Try constructing an example/counterexample of that mechanism, not just searching for the answer directly.
+- Prioritize insight per unit effort: exact identities, symmetry reductions, constrained families, valuation patterns, and counterexample-shaped instances before expensive blind enumeration.
+- Read `references/arithmetic-methods.md` when selecting the relevant mathematical tool; read `references/experiment-design.md` before substantial computation.
+
+## 2. Do a genuine research cycle, not a status cycle
+
+For each selected attack, carry out as many of these **substantive operations as fit the task**:
+
+1. **Derive:** write out the algebra or proof to the first nontrivial step; isolate the exact lemma and its quantifiers. Don't substitute a technique name for a derivation.
+2. **Adversarially test:** try to falsify the lemma. Check boundary parameters, small primes and prime powers, high valuations, degenerate families, non-coprime cases, and rational-vs-integral leakage as appropriate. Prefer exact arithmetic with reproducible code or hand-verifiable identities.
+3. **Exploit the obstruction:** ask *which hypothesis makes the obstruction appear?* Try weakening/strengthening the target, reversing an implication, taking a minimal counterexample, changing models/invariants, restricting to a provable family, or constructing examples that violate the hoped-for lemma.
+4. **Pivot mathematically:** if the obstruction survives, formulate a **different testable lemma** motivated by that failure. An obstruction without a subsequent attempt is not a completed research cycle.
+5. **Record an artifact:** save the statement, calculation, counterexample, code/data path, proof fragment, and next decision. A precise failed lemma or rigorous exclusion of a meaningful subcase is a legitimate artifact; "nothing worked" is not.
+
+Do not call a tool simply to simulate effort. A single strong insight can be worth more than ten shallow attempts. Do not claim a new theorem without checking every hypothesis and quantifier.
+
+## 3. Global strategic reflection (mandatory for extended research)
+
+After **two materially different attempts, a major obstruction, a worker result that changes the landscape, or a sign of duplicated/no-novelty work**, perform a project-level review *before* more delegation or repetition:
+
+- **Distance to result:** Which missing mathematical statement was advanced, refuted, or sharpened? Have we moved toward the exact final target, not merely closed local tickets?
+- **Theory of success:** Why should the current strategy be capable of proving anything? Is there a credible mechanism for an eventual YES and/or NO result? What discovery would change your mind?
+- **Opportunity cost:** Is the best next action to prove a smaller lemma, test a new construction, revisit a dismissed branch, get a precise source, verify a prior claim, or stop a low-value search?
+- **Kill/pivot/continue:** Explicitly decide what to discontinue, what to pursue next, and what evidence supports that decision. Preserve previous results before killing a branch.
+- **Bias check:** Are all avenues instances of the same failed template? Was a branch declared "out of reach" without source verification? Did an easy-to-report checklist replace mathematical progress?
+
+Use `references/research-review.md` for criteria and a concrete example. **A time limit is a maximum allowed runtime, not a reason to keep an unproductive lane alive.** Don't wait for the user to diagnose stagnation.
+
+## 4. Verification rules specific to number theory
+
+- Treat exact domains and quantifiers as sacred: "for a fixed n" is not "for all n"; all tested cases are not all integers; bounded search is not global exclusion; finitely many exceptions are not none.
+- Separate rational, integral, algebraic-integer, and p-adic points. Elliptic-curve group operations preserve rational points, **not generally integral points**. Check minimal models and coordinate changes before inferring integrality.
+- A torsion condition, divisibility in E(Q), an image under an isogeny, and rational dependence are different assertions. Track exceptional primes, bad reduction, saturation, torsion, and local/global hypotheses in any support argument.
+- If using a named theorem, write its precise hypotheses and verify the **needed implication**, not a related theorem. Treat unknown, speculative, or unpublished results as such.
+- Exact computation: specify equations, bounds, exclusions, algorithms, input data, software version, and what a negative result *actually* excludes. Cross-check consequential outputs independently when feasible.
+- Critical proof review: try a counterexample; check divisibility/denominator steps, index conditions, hidden conditional assumptions, and any point where a finite computation is promoted to an infinite claim.
+
+## 5. Persistent work product, not performative bureaucracy
+
+For extended tasks, keep a concise human-readable notebook at `.research/number-theory/NOTEBOOK.md` (or use an existing project location). Record **actual math** and concise strategic decisions, not repeated assurances about being proactive. A reusable template is in `assets/NOTEBOOK_TEMPLATE.md`.
+
+An optional local command-line ledger helps prevent "worked for 3 minutes; wrote no notes":
+
+```bash
+python3 <skill-folder>/scripts/research_log.py init --root . --goal 'Exact mathematical goal'
+python3 <skill-folder>/scripts/research_log.py status --root .
+```
+
+After substantive mathematical work, record a compact attempt/review with the script (see `--help` and `references/research-review.md`). The script checks **record structure only**, never mathematical validity or honest effort. Do not fill records with placeholder claims to pass an audit.
+
+When working with subagents, require **independent, distinct mathematical tasks**, a falsification target, and a concrete evidence artifact for each. Verify results yourself; don't send workers unsupported dismissals of entire proof directions as facts. Make a global stop/pivot decision without waiting for a user complaint.
+
+## 6. Completion and communication
+
+- If the task is research rather than an explanation, do not finish after a cursory review of known obstructions while viable alternatives remain within the authorized effort budget. Pursue a new testable line or a mathematically justified strategic pivot.
+- If proof is found: present precise theorem, complete proof or transparent gap list, and independent checks. If not: provide *the strongest new lemma/conditional reduction/counterexample/computational evidence or carefully delimited negative result* with its proof/test; distinguish it from preexisting knowledge.
+- Summarize efficiently as `NEW RESULT OR TEST | VERIFIED EVIDENCE | REMAINING EXACT GAP | NEXT DISCRIMINATING EXPERIMENT | STRATEGIC DECISION`. Don't bury the output under a lengthy tour of elementary obstacles the researcher already knows.
+- Never claim "solved", "unreachable", "all routes exhausted", or "no known theorem" beyond what was established. If the remaining effort is unlikely to yield useful new evidence, explain the reasons, alternatives and stop honestly.
+- Stay within session and tool limits. Do not claim you will independently keep working after the turn unless an actual supported scheduler or process has been launched.
+
+exec
+/bin/zsh -lc "pwd && rg --files -g 'AGENTS.md' -g '.research/agents/adv_p72_74_brief.md' -g '.research/agents/adv_p72_74_report.md' -g 'SKILL.md' -g '"'!node_modules'"' -g '"'!vendor'"' ." in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ exited 1 in 0ms:
+/Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+
+codex
+I’m applying the proof-verification guidance from the number-theory-research skill within the brief’s adversarial scope. I’ll leave the main research notes untouched, run numerical checks only on the VM, and write only to the designated report and scratch directory.
+exec
+/bin/zsh -lc 'cat /Users/jmercedes/.codex/skills/number-theory-research/references/experiment-design.md' in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+# Discriminating experiments for number theory
+
+Design an experiment to **separate hypotheses**, not to produce a large integer count.
+
+## Before execution
+
+State (a) exact identity or predicate; (b) finite parameter ranges, exclusions and sampling policy; (c) what outcome would refute the candidate lemma; (d) what each possible result *would and would not* imply; (e) expected runtime/memory budget and stop conditions.
+
+## During execution
+
+- Use exact integer/rational arithmetic wherever possible, not floating square tests or approximate divisibility.
+- For a square, test integer-square-root equality, not a floating `sqrt` comparison. For prime p, distinguish probable from proved primality when proof status matters.
+- For elliptic curves, record model, transformations, denominators, ranks and reduction primes. Don't infer global relations from numerically sampled reductions.
+- Separate preliminary heuristics from verified claims. Try counterexample-shaped extremes as well as uniform samples: prime powers, ramified primes, large gcd, maximal valuations, singular discriminants, high conductor, parameter boundary.
+- Save a script (Sage/GP/Python), inputs, software version, outputs, and the exact domain excluded. If an independent computation is affordable, compare.
+
+## After execution
+
+A negative bounded search only excludes the enumerated set. Ask: What pattern appeared? What explanation predicts it? What counterexample-shaped case should be tested next? Can a found invariant be turned into a provable lemma? If no new information, kill or transform the experiment; do not expand the same box by another arbitrary factor of ten.
+
+## Minimum artifact
+
+The user should be able to reconstruct the computation from the reported script, explicit bounds and predicate. For hand algebra, record the identity and its derivation sufficiently for an independent reviewer to check it.
+
+exec
+/bin/zsh -lc 'for p in /AGENTS.md /Users/AGENTS.md /Users/jmercedes/AGENTS.md /Users/jmercedes/Desktop/AGENTS.md /Users/jmercedes/Desktop/Projects/AGENTS.md /Users/jmercedes/Desktop/Projects/Research/AGENTS.md /Users/jmercedes/Desktop/Projects/Research/chowla-cosine/AGENTS.md; do if [ -f "$p" ]; then printf '"'\\n%s\\n' \""'$p"; cat "$p"; fi; done
+rg --files --hidden .research -g '"'AGENTS.md' -g '*adv_p72_74*'
+cat CLAUDE.md" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+.research/agents/adv_p72_74_brief.md
+.research/agents/adv_p72_74_codex.log
+# CLAUDE.md — Chowla's Cosine Problem (FrontierMath: Open Problems)
+
+## Mission: sustained original mathematical research
+
+Throughout this campaign load the Number Theory research skill.
+
+This is an open-ended, **30-day mathematical research project** whose objective is to make a decisive advance on **Chowla's cosine problem**, prioritizing an explicit construction that would satisfy Epoch AI's challenge while also seriously pursuing the competing possibility that Chowla's square-root conjecture is true.
+
+It is **not** a one-session attempt, a literature survey, a request for another numerical search without mathematical understanding, or an essay about why the problem is hard. The assignment is to conduct original mathematics beyond the present frontier.
+
+Official problem: https://epoch.ai/frontiermath/open-problems/chowla-cosine
+
+**Crucial distinction:** Epoch asks for an algorithm constructing counterexamples to Chowla's conjectured square-root lower bound. Such an algorithm may not exist. Do not assume that the benchmark's preferred direction is mathematically correct. Keep two honest, active tracks: **constructive disproof** and **universal lower-bound proof**. A rigorous resolution in either direction is a major success, even if a proof that Chowla is true would not produce an Epoch-valid `solution` function.
+
+Treat orientation, literature review, reproducing existing examples, and baseline code as **Phase 0 only**. Complete them efficiently and proceed to new conjectures, proofs, counterexamples, and constructions. Do not keep revisiting the literature in lieu of doing mathematics. Check novelty in detail after a serious result, not at the cost of discovering it.
+
+## Exact mathematical target and conventions
+
+Let `A` be a **finite set** of **distinct positive integers**. Define the real trigonometric polynomial
+
+    f_A(x) = sum(cos(a*x) for a in A),                 x in R.
+
+Because `f_A` is `2*pi`-periodic, its global minimum exists. Let
+
+    N(A) = |A|
+    M(A) = -min_{x in R} f_A(x)       (> 0 for nonempty A)
+    R(A) = M(A) / sqrt(N(A))
+    K(n) = inf_{|A|=n} M(A).
+
+Chowla's square-root conjecture asserts the existence of an **absolute constant** `c0 > 0` such that
+
+    M(A) >= c0 * sqrt(|A|)
+
+for **every** finite nonempty `A` of distinct positive integers. Equivalently, `K(n) >= c0*sqrt(n)` for all positive `n`.
+
+The desired constructive negation is a **uniform algorithm**, not a single example: for every real `c > 0` and every integer `n >= 1`, produce an `A` with
+
+    |A| >= n
+    min_{x in R} f_A(x) >= -c * sqrt(|A|).
+
+There must be no dependence of `c0` on `n`, `A`, `max(A)`, or the choice of `x`. Maintain exact quantifiers in every proposed proof or counterexample.
+
+**Do not confuse** an upper bound on `M(A)` (a successful *construction*) with a lower bound on `M(A)` (a *barrier* satisfied by every `A`). Do not silently switch between `cos(a*x)` and `cos(2*pi*a*t)` without the change of variables. Use the entire circle, not a sampled grid, as the mathematical domain.
+
+### Epoch submission specification — preserve verbatim in substance
+
+Implement a Python script containing
+
+```python
+def solution(c: float, n: int) -> str:
+    ...
+```
+
+For every finite positive `c` and positive integer `n`, the returned string must list **at least `n` distinct positive integers** separated by whitespace and/or commas, and those integers must satisfy
+
+    f_A(x) >= -c * sqrt(|A|)   for every real x.
+
+No zero frequencies, negatives, repeated frequencies, coefficient weights other than `+1`, or arrays of multisets. Returning a spectacular example for one `c` or one `n` does **not** solve the quantified challenge. A nonconstructive existence theorem is significant, but an Epoch submission additionally needs an effective, terminating generator (and ideally a proof of termination and correctness).
+
+Epoch warns that its **numerical verifier** may fail for very large frequencies and recommends `max(A)` **well below `10^6`**, with a lower practical ceiling for smaller `c`. This is a *verifier limitation*, **not a mathematical restriction** or a fixed cap to impose on every possible `n`. Do not mistake passing an approximate numerical verifier for a rigorous certificate. Do not pretend that a finite frequency ceiling is compatible with outputting arbitrarily many distinct positive integers.
+
+### What counts as success
+
+**Decisive constructive success:** Give an explicit, terminating algorithm for arbitrary inputs `c > 0`, `n >= 1`, together with a proof that its output is a valid set satisfying the **global** trigonometric inequality. Produce the actual `solution(c,n)` implementation and independently validated outputs. If asymptotic constructions require a threshold, prove or compute a finite-case completion; explain any verifier-size limits honestly.
+
+**Decisive proof success:** Establish Chowla's conjecture by proving a universal `c0 > 0`, with full quantitative hypotheses and a rigorous proof for all `A`. This would show that Epoch's requested algorithm cannot exist.
+
+**Substantial partial success:** Improve the exponent in a universal lower bound; improve the construction-side asymptotic constant or exponent; prove a new infinite parametric family with certified values of `R(A)`; discover a rigorous obstruction to a broad class of constructions; or give a nontrivial exact positivity certificate. Preserve partial results without presenting them as resolution of Chowla or Epoch.
+
+Distinguish **heuristic**, **numerically observed**, **interval-certified finite case**, **proved on paper**, **kernel-checked**, and **externally scrutinized**. A paper proof and its Lean formalization are separate deliverables. Never silently upgrade one status to another.
+
+## Minimum literature baseline — then do new mathematics
+
+Read only enough to understand the strongest relevant mechanisms and to avoid trivial rediscovery. As of October 2026, useful starting points include:
+
+1. Epoch's precise problem statement: https://epoch.ai/frontiermath/open-problems/chowla-cosine
+2. Benjamin Bedert, *Polynomial bounds for the Chowla Cosine Problem*: https://arxiv.org/abs/2509.05260
+3. Abhishek Shankar, *A Log-Free n^(1/5) Bound for Chowla's Cosine Problem*: https://arxiv.org/abs/2609.05338 — claimed uniform lower bound `M(A) >= C |A|^(1/5)`.
+4. Bryan Bu and collaborators, *A Half-Constant Upper Bound for Chowla's Cosine Problem*: https://arxiv.org/abs/2610.17160 — preprint claiming constructions with `K(n) <= (1/2)*sqrt(n) + O(n^(1/4)*sqrt(log n))`.
+
+These are **leads to read and verify**, not axioms or an exhaustive survey. Record versions and precise quantifiers. The square-root exponent on the construction side is not evidence by itself that the conjectured matching lower bound is true.
+
+### Baseline identity: difference sets
+
+For a finite integer set `B`, let `F_B(x) = sum_{b in B} exp(i*b*x)`. Then exactly
+
+    |F_B(x)|^2 = |B| + 2*sum_{u<v in B} cos((v-u)*x).
+
+If the positive differences `v-u` are **all distinct**, they form a genuine set `A` of size `|B|*(|B|-1)/2`, and
+
+    f_A(x) = (|F_B(x)|^2 - |B|)/2 >= -|B|/2.
+
+Thus `M(A) <= |B|/2 = O(sqrt(|A|))`. If differences collide, this identity creates **multiplicities**, not an admissible equal-coefficient cosine sum: address the collisions rigorously. This simple construction is only a starting point. Reproduce it once, then seek a genuinely different idea.
+
+Also record the exact identities
+
+    (1/(2*pi)) * integral_0^(2*pi) f_A(x) dx = 0,
+    (1/(2*pi)) * integral_0^(2*pi) f_A(x)^2 dx = |A|/2.
+
+Higher moments count signed additive relations among frequencies. Understand both their power and their limitations; low moments alone are not a solution.
+
+## Research program: maintain at least three genuinely distinct active lines
+
+### 1. Positive trigonometric polynomials and algebraic construction
+
+Seek new identities
+
+    C + 2*f_A(x) = sum_j |P_j(exp(i*x))|^2 + E(x)
+
+or other certified lower bounds, with **exactly** the desired coefficient pattern (distinct positive frequencies, coefficient `1`). Investigate Fejér–Riesz factorization, autocorrelation sequences, Sidon/Golomb-ruler differences, two-sided difference constructions, Riesz products, Fejér kernels, cyclic difference sets, combinatorial designs, and structured cancellation of multiplicities.
+
+Explore how to remove unwanted weighted coefficients **without losing the lower bound**. Generalize the ideas behind known `1/2`-constant constructions rather than endlessly tuning their parameters. Seek a mechanism that can drive `R(A)` toward zero, perhaps slowly, or prove a rigorous obstruction to whole families of such mechanisms.
+
+### 2. Additive combinatorics and spectral structure
+
+Relate the negative minimum to additive energy, signed relation counts, sumsets, difference sets, Cayley graph spectra, small eigenvalues, and large cuts. Develop inequalities that exploit the restriction that all nonzero Fourier coefficients are `0` or `1/2` with no repetitions.
+
+Try to improve `M(A) >= C |A|^(1/5)` toward a square-root lower bound, or prove bounds under meaningful additive or density hypotheses. Look for structural consequences of a hypothetical `R(A) -> 0`, then force a contradiction or exploit those consequences constructively.
+
+### 3. Extremal constructions and inverse mathematics
+
+Treat a near-optimal set `A` as an extremal object. Study which transformations preserve or change its global minimum, including dilation, unions of separated blocks, tensor/product constructions, modular lifting, random thinning, affine frequency transformations, recursive composition, and symmetrization. **Prove** any preservation claim; e.g. multiplying all frequencies by a positive integer leaves the minimum unchanged but shifting them generally does not.
+
+Search for a composition operation mapping good sets into much larger sets while improving `R(A)`. A rigorous rule with `R(A_k) -> 0` and `|A_k| -> infinity` could be a breakthrough. Analyze whether repeated composition creates collisions, amplified negative spikes, or a hidden square-root barrier.
+
+### 4. Analytic inequalities and dual certificates
+
+Investigate Fourier positivity, moment methods, `L^1`/`L^2`/`L^4` bounds, distribution of negative values, majorant/minorant constructions, Bohr sets, harmonic-analysis duality, and quantitative versions of Littlewood-type problems.
+
+For a universal lower bound, aim for a test function, measure, or dual certificate that forces `min f_A <= -C sqrt(|A|)` uniformly over all `A`. For constructions, seek certificates proving `f_A(x) >= -B` for all real `x`.
+
+### 5. Rigorously optimized finite examples as mechanism probes
+
+Use small exact searches, nonlinear optimization, SAT/ILP/SDP, additive-structure enumeration, or randomized local search to identify *why* promising families work. Define and track `R(A)` and the location(s) of the global minima. Search adversarially for counterexamples to any proposed structural theorem.
+
+A record-breaking single set is worth preserving, but finite optimization **cannot** establish the required `forall c, forall n` statement. Spend computation to distinguish mathematical mechanisms, not merely to increase input sizes.
+
+### 6. Counterexample-to-counterexample and proof-by-obstruction track
+
+Attempt to prove no proposed recursive construction can beat some positive normalized threshold, while carefully separating barriers for a **particular construction class** from the full Chowla conjecture. Conversely, deliberately attack all conjectured lower bounds with structured, pseudorandom, sparse, dense, and highly additive examples. Let the evidence choose the direction of future work; do not force a predetermined answer.
+
+Do not let one approach dominate merely because it is easy to automate. Maintain **at least three active research lines**, including at least one aimed at a global lower bound and at least one aimed at a genuine counterexample family, unless clear mathematical evidence justifies a change.
+
+## Certification: a numerical minimum is not a theorem
+
+This is the most important domain-specific safeguard.
+
+For an explicit finite candidate `A`, a floating-point plot, FFT, dense grid, or local optimizer only yields **evidence**, never a proof of
+
+    f_A(x) >= -B   for all real x.
+
+A missed, narrow negative excursion invalidates the claim. Develop at least two independent certification methods when possible:
+
+1. **Certified interval subdivision:** use directed-rounding or ball arithmetic for rigorous cosine enclosures and derivative bounds. Since `|f_A'(x)| <= sum(A)`, a grid of `K` equally spaced points on `[0,2*pi)` has a nearest point at distance at most `pi/K`; hence
+
+       min f_A >= min_{grid} f_A - (pi/K)*sum(A).
+
+   The grid evaluations must themselves have rigorous error bounds, and the error budget must be smaller than the claimed margin. Adaptive subdivision and higher derivatives can be more efficient.
+
+2. **Exact polynomial certification:** write `t = cos(x)` and `cos(a*x) = T_a(t)` using the Chebyshev polynomial `T_a`. Then
+
+       f_A(x) + B >= 0 for all real x
+       iff  sum_{a in A} T_a(t) + B >= 0 for all t in [-1,1].
+
+   For rational `B`, exact Sturm/subresultant methods, rational interval isolation, or a rigorously checked SOS/Positivstellensatz certificate may establish nonnegativity. Degree is `max(A)`; anticipate scalability limits.
+
+3. **Symbolic analytic proof:** explicit sum-of-squares identities, Fourier inequalities, or a parameterized closed-form lower bound are preferable for infinite families.
+
+For input `c` represented by a Python float, handle its exact positive value (or choose a **strictly smaller rational threshold**) and prove a bound strong enough to imply `M(A) <= c*sqrt(|A|)`. Use rigorous rational enclosures for `sqrt(|A|)` as needed. Treat very small `c`, huge `n`, numerical conditioning, overflow, and verifier frequency constraints explicitly. A library reporting `success` is not an automatic mathematical certificate unless its guarantee is understood.
+
+## Scientific workflow: proof-first, conjecture-driven, adversarial
+
+Repeat throughout the 30-day project:
+
+1. State a precise candidate theorem or construction, with quantifiers, normalization, and the exact implication to either Chowla or Epoch.
+2. Attempt the mathematical derivation before large experimentation. Identify the single missing mechanism or implication.
+3. Check easy cases and develop two independent evaluators; use targeted search to **falsify** overly strong claims and expose worst cases.
+4. When a construction appears successful, attempt a global-in-`x` certificate immediately. When a lower bound survives, seek a full proof and explicit dependence on constants.
+5. Subject each new conjecture to **adversarial examples** before investing days in it: difference-set families, arithmetic progressions, lacunary/geometric sets, unions of blocks, random sets, and deliberately optimized extremizers. Preserve failed statements and smallest counterexamples.
+6. Pass mature statements and proofs to a separate Lean formalization agent. Incorporate feedback into the next research attempt.
+7. Record exact progress and continue. A failed lemma is a research event, not permission to stop.
+
+**Never** claim an Epoch solution from a single very small normalized ratio. **Never** claim a universal lower bound because a search failed to find a counterexample. Do not confuse the mathematical problem with the constraints or numerical approximations of Epoch's verifier.
+
+## Computation: targeted, modest, reproducible
+
+The primary bottleneck should be mathematical ideas, not brute-force GPU time. Favor exact integer combinatorics, small rational LP/SDP certificates, analytic constructions, and rigorous interval arithmetic.
+
+- Build two independent cosine-sum evaluators and verify the cosine convention, periodicity, normalization, and the set constraint. Where possible, compare FFT sampling, direct high-precision evaluation, and analytic identities.
+- Record cardinality, distinctness, `max(A)`, normalization `R(A)`, estimated minimizing angle, numerical uncertainty, and **certificate status** for every notable candidate.
+- For finite integer searches, preserve seeds, search space, completeness, runtime, and source code. Label heuristic results honestly.
+- Use exact arithmetic for additive identities and collision counts. If probabilistic existence is asserted, prove the probability bound and effective sampling/derandomization algorithm; avoid presenting Monte Carlo luck as a proof.
+- Treat speed and practical `max(A)` bounds as secondary optimization criteria **after** obtaining a mathematically correct construction.
+- Prefer experiments that discriminate between a square-root barrier and a credible sub-square-root construction over incremental tuning of already understood families.
+
+## Lean 4 formalization and adversarial proof review
+
+The lead research agent discovers the mathematical argument; the Lean agent independently scrutinizes claims, tests overlooked quantifiers, and formalizes mature theorems. Both should receive the *same* exact statement, not a weakened substitute.
+
+For each prospective theorem, provide the formalizer:
+
+- Complete quantified statement, including positivity, distinctness, cardinality, `forall x`, and any dependence of constants on parameters.
+- Human-readable derivation, precise dependencies, and any non-elementary outside result cited.
+- Mathematical meaning of every definition and normalization.
+- Boundary cases and known candidate counterexamples.
+- A precise distinction between finite certified checks and global mathematical claims.
+
+Useful Lean foundations include finite sets of natural frequencies, complex exponential/trigonometric polynomials, `cos` periodicity, nonnegative squares, discrete convolution, Fourier orthogonality, and real inequalities. Formalize the difference-set identity and basic moment formulas early; after that, focus on the most consequential new lemmas. If a proof relies on specialized analytic machinery missing from mathlib, document that obstacle and provide an independent complete paper proof; do not silently replace an unformalized theorem with an approximation.
+
+Track `sorry`, new axioms, opaque `native_decide`/unchecked external solvers, and imported theorem assumptions. Only call a result **kernel-verified** when its intended statement is checked under explicitly acceptable axioms. Source compilation by itself does not prove that an intended external theorem has been formalized correctly.
+
+The formalizer must **not** replace `forall real x` with a finite grid, replace a set with a multiset, weaken an arbitrary-`c` statement to a particular constant, or restrict `n` without announcing the change. If it finds a gap, feed it back immediately.
+
+## Persistent research record
+
+Maintain a resumable record at minimum:
+
+    .research/NOTEBOOK.md         # Dated ideas, derivations, failures, and next questions
+    .research/STATE.md            # CURRENT targets and honest proof/certification status
+    .research/PROOFS.md           # Statements, proof attempts, dependency graph
+    .research/EXPERIMENTS.md      # Exact tests, seeds, candidates, global-minimum bounds
+    .research/LITERATURE.md       # Concise relevant prior art and versioned sources
+    .research/CONSTRUCTIONS.md   # Parametric families, algorithms, output sizes, limitations
+    .research/CERTIFICATES.md    # Rigorous all-x certificates and how to verify them
+    src/                       # Generators, independent evaluators, optimization tools
+    lean/                      # Definitions and formalized mature theorems
+    examples/                  # Strong examples and explicit failed conjectures
+    solution.py                # Epoch interface, only when a valid general algorithm exists
+
+For each promising candidate, save `A`, generator or seed, tested input `(c,n)`, `N`, `max(A)`, claimed and certified `M(A)` intervals, certificate proof, code version, and rationale. For infinite families, save the parameter map and the quantified theorem proving their behavior.
+
+Commit meaningful changes. Never overwrite a refuted conjecture without retaining its counterexample and explanation. **Keep `.research/STATE.md` current**: if the main route fails, update the handoff immediately, rather than allowing future sessions to continue pursuing a theorem already known to be false.
+
+At every session boundary produce a succinct handoff: (a) mathematical theorems proved and formalized; (b) constructions certified and still heuristic; (c) refuted intermediates; (d) three distinct promising active directions; and (e) the **first concrete next derivation or experiment**. Handoff documents are operational memory, not promotional summaries.
+
+## Continuation and reporting
+
+The research horizon is **30 days** subject to authorized time, cost, and execution constraints. A session ending is **not** completion of the project. If external orchestration is needed to restart work, checkpoint it; do not imply work continues without such orchestration.
+
+Report periodic, concise progress centered on newly discovered formulas, proved special cases, validated constructions, unexpectedly negative minima, killed conjectures, and precise next experiments. Do not repeatedly explain that Chowla's problem has been open for decades or that existing techniques seem inadequate.
+
+Do **not** declare the investigation finished because an approach fails, a numeric constant stalls near `1/2`, an algorithm cannot beat the verifier's practical ceiling, or a full proof has not emerged quickly. Continue to investigate genuinely different mechanisms until explicit stop, exhausted authorization, or a handoff imposed by session limits.
+
+## Immediate next task
+
+1. Verify the official Epoch task's exact input/output conditions, and implement two independent checkers for `A` distinctness, cosine values, and rigorous (or explicitly uncertified) minima. Fix the convention `cos(a*x)`.
+2. Reproduce the **difference-set square identity** symbolically and with small examples; audit collisions and the resulting coefficient multiplicities. Also reproduce one meaningful published construction-side improvement and one current universal lower-bound argument at the level required to understand their bottlenecks—not as an extended survey.
+3. Formulate **at least five genuinely different research strategies** spanning constructions, a universal lower bound, and exact certification. For each, give a precise mathematical claim that would constitute progress, how to disprove it quickly, and the first missing lemma.
+4. Maintain **at least three active lines**. Select the most promising new construction mechanism and begin deriving it **now**; in parallel pursue a lower-bound mechanism with a plausible route from exponent `1/5` toward `1/2`. Do not end after proposing a plan.
+5. If a proposed family offers `R(A_k) -> 0`, derive explicit parameter bounds sufficient for arbitrary inputs `(c,n)` and construct `solution(c,n)`. Request an independent proof and Lean review of the central theorem; construct a global-in-angle certificate, not merely a plot.
+
+## Non-negotiable research attitude
+
+**Do not respond with generic explanations of why Chowla's cosine problem is difficult.**
+
+The task is to conduct original mathematical research beyond what is already known. A literature map, a failure diagnosis, or a familiar upper-bound example is an intermediate event, **not** the end of the investigation.
+
+**Do not assume Chowla is false merely because Epoch rewards a counterexample. Do not assume it is true merely because known constructions have square-root scale.**
+
+Keep asking: *What specific structural ingredient would force a square-root negative dip? What new construction could evade it? What exact identity or invariant would distinguish the two possibilities?*
+
+**Identify the missing ingredient. Attempt to derive it. If it fails, find out why, preserve the obstruction, and pursue a different mechanism.**
+
+**Do not confuse understanding the current mathematical frontier with exhausting the mathematics beyond it.**
+
+**DO NOT INVEST TIME INTO WRITING UP MANUSCRIPTS AND LATEX PAPERS UNLESS INSTRUCTED TO DO SO**
+
+exec
+/bin/zsh -lc "rg -n '"'^#{1,6} .*P7[234]|P72|P73|P74'"' .research/PROOFS.md
+cat src/dirun.sh
+git status --short" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+2374:## P72. Robust duality for near-Boolean weights (lead, 2026-10-19; PROVED, elementary; context E103, Ruzsa's question)
+2398:## P73. Robust few-spike lemma: Boolean sets are L²-far from PD functions with peak < 4/3 (lead, 2026-10-19; PROVED, elementary)
+2432:## P74. PR(1) at the resolution scale: U >= 2.5·10^{-4}·min(|Ω|, 1/L) (lead, 2026-10-19; PROVED, elementary)
+2436:Proof. Take δ = 1/10 in P73(T), so γ₀ = (4 − 5δ)/3 = 7/6.
+2437:- (A) If γ < 7/6, P73 gives U >= δ²μ/3 = μ/300.
+#!/bin/zsh
+# Run one computation on the GCP VM "dirichlet" (project littlewood-paley-8375, us-east1-b; c2d-standard-8: 8 vCPU,
+# 32 GB, Ubuntu 24.04, gcc 13, venv ~/chowla_venv with numpy/scipy/mpmath/python-flint/highspy). Assigned to this
+# project by the user on 2026-10-18; the lead AND its agents run all calculations here. Do not touch the VM "fejer".
+#   src/dirun.sh [-c cores] [-m GB] [-t seconds] <command ...>    e.g.  src/dirun.sh -c 8 -t 7200 python src/exh2_driver.py 43 60
+# -c: CPU quota and thread/worker count (default 4, max 8; use 8 only for a job that should own the machine)
+# -m: memory cap enforced by the kernel, no swap (default 12 GB, max 30)
+# -t: wall-time limit (default 3600 s, max 86400 s)
+# Runs from ~/chowla_cosine on the VM, a copy of this project (code + small data; .venv, .git, lean/.lake, .build and
+# files >= 20 MB are not copied). `python` means ~/chowla_venv/bin/python. New/changed files under 20 MB are copied back.
+# C sources are compiled on the VM by the scripts themselves (cc -O3 -march=native); never copy local binaries.
+c=4; m=12; t=3600
+while getopts "c:m:t:" o; do case $o in c) c=$OPTARG;; m) m=$OPTARG;; t) t=$OPTARG;; *) exit 2;; esac; done
+shift $((OPTIND-1))
+(( $# )) || { sed -n 2,11p $0 >&2; exit 2; }
+(( c > 8 )) && c=8; (( c < 1 )) && c=1
+(( m > 30 )) && m=30
+(( t > 86400 )) && t=86400
+R=/Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+# DIRICHLET_IP (optional) skips the gcloud lookup, e.g. for codex agents whose sandbox cannot write ~/.config/gcloud.
+IP=${DIRICHLET_IP:-$(gcloud compute instances describe dirichlet --zone us-east1-b --project littlewood-paley-8375 \
+       --format='get(networkInterfaces[0].accessConfigs[0].natIP)' 2>/dev/null)}
+[[ -n $IP ]] || { echo "dirun.sh: cannot resolve dirichlet's IP (is the VM running?)" >&2; exit 255; }
+SSH=(ssh -i $HOME/.ssh/google_compute_engine -o UserKnownHostsFile=$HOME/.ssh/google_compute_known_hosts
+     -o HostKeyAlias=compute.2840844007150016813 -o BatchMode=yes -o ConnectTimeout=15 -o ServerAliveInterval=60)
+H=jmercedes@$IP
+$SSH $H true || { echo "dirun.sh: ssh to dirichlet failed" >&2; exit 255; }
+tag=$(date +%s)-$$
+rsync -a --update --max-size=20M -e "${(j: :)SSH}" --exclude '.venv' --exclude '.git' --exclude 'lean/.lake' \
+  --exclude '*.pyc' --exclude '.build' --exclude '.DS_Store' --exclude '__pycache__' $R/ ${H}:chowla_cosine/
+args=("$@"); [[ ${args[1]} == python ]] && args[1]=/home/jmercedes/chowla_venv/bin/python
+cmd=${(j: :)${(q)args}}
+$SSH $H "touch /tmp/ccmark.$tag; cd ~/chowla_cosine && sudo systemd-run --quiet --scope --uid=jmercedes \
+  -p MemoryMax=${m}G -p MemorySwapMax=0 -p CPUQuota=$((100 * c))% \
+  --setenv=PATH=/home/jmercedes/chowla_venv/bin:/opt/gurobi1303/linux64/bin:/usr/local/bin:/usr/bin:/bin --setenv=HOME=/home/jmercedes \
+  --setenv=GUROBI_HOME=/opt/gurobi1303/linux64 --setenv=LD_LIBRARY_PATH=/opt/gurobi1303/linux64/lib \
+  --setenv=GRB_LICENSE_FILE=/opt/gurobi1303/gurobi.lic \
+  --setenv=CHOWLA_WORKERS=$c --setenv=OMP_NUM_THREADS=$c --setenv=OPENBLAS_NUM_THREADS=$c \
+  --setenv=MKL_NUM_THREADS=$c --setenv=PYTHONUNBUFFERED=1 --working-directory=/home/jmercedes/chowla_cosine \
+  timeout -s KILL $t $cmd < /dev/null 2>&1; rc=\$?; \
+  find . -newer /tmp/ccmark.$tag -type f -size -20M ! -name '*.pyc' ! -path './.build/*' ! -path '*/__pycache__/*' \
+    > /tmp/ccnew.$tag; exit \$rc"
+rc=$?
+$SSH $H "cat /tmp/ccnew.$tag; rm -f /tmp/ccmark.$tag /tmp/ccnew.$tag" > /tmp/ccnew.$tag 2>/dev/null
+[[ -s /tmp/ccnew.$tag ]] && rsync -a --update -e "${(j: :)SSH}" --files-from=/tmp/ccnew.$tag ${H}:chowla_cosine/ $R/
+rm -f /tmp/ccnew.$tag
+(( rc == 137 || rc == 124 )) && echo "dirun.sh: job killed (time limit $t s or memory limit ${m} GB)" >&2
+exit $rc
+ M CLAUDE.md
+ M examples/e61/e61b.jsonl
+ M examples/e62/e62b.jsonl
+ M examples/e64/e64_dense.jsonl
+ M src/.build/smallN_40cb5154c502.so
+?? .mcp.json
+?? .research/agents/adv_p72_74_brief.md
+?? .research/agents/adv_p72_74_codex.log
+?? .research/agents/construct_scratch/bin/
+?? .research/agents/construct_scratch/runs/ct/o50y38x72.txt
+?? .research/agents/lambda_scratch/bin/
+?? .research/agents/lean_m4_codex.log
+?? .research/agents/lean_m4_initial_build.log
+?? .research/agents/lean_m4_scratch/
+?? .research/agents/lean_m4b_codex.log
+?? .research/agents/lean_m4b_scratch/
+?? .research/agents/lean_next_codex.log
+?? .research/agents/lean_next_scratch/
+?? .research/agents/lean_o4plus_codex.log
+?? .research/agents/lean_p31_codex.log
+?? .research/agents/lean_p31_scratch/
+?? .research/agents/lean_p34_codex.log
+?? .research/agents/lean_p34_scratch/
+?? .research/agents/lean_p71_codex.log
+?? .research/agents/lean_p71_scratch/Combined.lean
+?? .research/agents/lean_p71_scratch/certificate_part.txt
+?? .research/agents/lean_p71_scratch/final_axioms.log
+?? .research/agents/lean_p71_scratch/final_build.log
+?? .research/agents/lean_p71_scratch/final_verification.json
+?? .research/agents/lean_p71_scratch/lsp_check.py
+?? .research/agents/lean_p71_scratch/lsp_diagnostics.json
+?? .research/agents/lean_p71_scratch/lsp_progress.json
+?? .research/agents/lean_p71_scratch/lsp_stderr.log
+?? .research/agents/lean_p71_scratch/main_part.txt
+?? .research/agents/lean_p71_scratch/packet_part.txt
+?? .research/agents/lean_p73_codex.log
+?? .research/agents/lean_p73_scratch/analytic_check.log
+?? .research/agents/lean_p73_scratch/axioms.log
+?? .research/agents/lean_p73_scratch/final_verification.json
+?? .research/agents/lean_p73_scratch/full_check.log
+?? .research/agents/lean_p73_scratch/lake_build.log
+?? .research/agents/or2_codex.log
+?? .research/agents/or2_scratch/report_draft.md
+?? .research/agents/or3_codex.log
+?? .research/agents/p31_codex.log
+?? .research/agents/tdense10_codex.log
+?? .research/agents/tdense10_scratch/
+?? .research/agents/tdense11_codex.log
+?? .research/agents/tdense11_scratch/
+?? .research/agents/tdense12_codex.log
+?? .research/agents/tdense12_scratch/
+?? .research/agents/tdense13_codex.log
+?? .research/agents/tdense13_scratch/
+?? .research/agents/tdense14_codex.log
+?? .research/agents/tdense14_scratch/
+?? .research/agents/tdense15_codex.log
+?? .research/agents/tdense15_scratch/
+?? .research/agents/tdense16_codex.log
+?? .research/agents/tdense17_codex.log
+?? .research/agents/tdense17_codex_part1.log
+?? .research/agents/tdense18_codex.log
+?? .research/agents/tdense2_codex.log
+?? .research/agents/tdense3_codex.log
+?? .research/agents/tdense4_codex.log
+?? .research/agents/tdense4_scratch/bohr_vm.log
+?? .research/agents/tdense4_scratch/exact_vm.log
+?? .research/agents/tdense4_scratch/extended_vm.log
+?? .research/agents/tdense4_scratch/final_summary_vm.log
+?? .research/agents/tdense4_scratch/finite_cover_vm.log
+?? .research/agents/tdense4_scratch/hbcg_vm.log
+?? .research/agents/tdense4_scratch/meso_vm.log
+?? .research/agents/tdense4_scratch/verify_vm.log
+?? .research/agents/tdense4_scratch/zoo_vm.log
+?? .research/agents/tdense5_codex.log
+?? .research/agents/tdense5_final_msg.md
+?? .research/agents/tdense5_scratch/
+?? .research/agents/tdense6_codex.log
+?? .research/agents/tdense6_final_msg.md
+?? .research/agents/tdense6_scratch/
+?? .research/agents/tdense7_codex.log
+?? .research/agents/tdense7_scratch/
+?? .research/agents/tdense8_codex.log
+?? .research/agents/tdense8_scratch/
+?? .research/agents/tdense9_codex.log
+?? .research/agents/tdense9_scratch/
+?? .research/agents/tdense_codex.log
+?? .research/agents/tdense_final_msg.md
+?? .research/agents/tdense_scratch/moment_exhaust_vm
+?? examples/cyclic_ilp/e37g.jsonl
+?? examples/e60/e60.err
+?? examples/e61/e61.err
+?? examples/e61/e61b.err
+?? examples/e62/e62.err
+?? examples/e62/e62b.err
+?? examples/e62/e62c.err
+?? examples/e63/e63_run.log
+?? examples/e64/D_bu_k6.json
+?? examples/e64/D_bu_k7.json
+?? examples/e64/e64_bu2.jsonl
+?? examples/e64/run_D_N24_0.05.log
+?? examples/e64/run_D_N24_0.log
+?? examples/e64/run_D_N36_0.05.log
+?? examples/e64/run_D_N36_0.log
+?? examples/e64/run_D_N50_0.05.log
+?? examples/e64/run_D_N50_0.log
+?? examples/e64/run_bu2_k6_0.05.log
+?? examples/e64/run_bu2_k6_0.15.log
+?? examples/e64/run_bu2_k7_0.05.log
+?? examples/e64/run_bu2_k7_0.15.log
+?? examples/e64/run_k10.log
+?? examples/e64/run_k11.log
+?? examples/e64/run_k12.log
+?? examples/e64/run_k7.log
+?? examples/e64/run_k8.log
+?? examples/e64/run_k9.log
+?? examples/e64/streamA.out
+?? examples/e64/streamB.out
+?? examples/e64/streamC.out
+?? examples/e64/streamD.out
+?? examples/e65/e65.jsonl
+?? examples/e65/e65_run.log
+?? examples/e65/in_q11.txt
+?? examples/e65/in_q13.txt
+?? examples/e65/in_q17.txt
+?? examples/e65/in_q19.txt
+?? examples/e65/in_q23.txt
+?? examples/e67/e67_sa.jsonl
+?? examples/e68/
+?? examples/e73/e73_run.log
+?? examples/e74_run.log
+?? examples/e75_run.log
+?? examples/e76_run.log
+?? examples/e77_run.log
+?? examples/e78_run.log
+?? examples/e80_run.log
+?? examples/gurobi/e44.jsonl
+?? examples/profile_sa/e59_run.log
+?? examples/smallN_runs/local_43_60.log
+?? lean/ChowlaCosine/Beckner/ProductDerivative.lean
+?? lean/ChowlaCosine/P31/FourierL2.lean
+?? lean/ChowlaCosine/P31/SincInterpolation.lean
+?? lean/P34Scratch.lean
+?? papers/window_nikolskii/build.out
+?? papers/window_nikolskii/window_nikolskii.log
+?? src/.build/e65_bustep_sa
+?? src/.build/e67_bulk_sa
+?? src/.build/e68_pareto_sa
+?? src/.build/e72_p47_pareto
+?? src/.build/e75_runtop_sa
+?? src/.build/e83_sa
+?? src/.build/e90_zp_tabu
+?? src/.build/exh2
+?? src/.build/exh2b
+?? src/.build/lambda_ruler_sa
+?? src/.build/profile_sa
+?? src/.build/zp_half
+?? src/.build/zp_sa
+?? src/e68b_batch.sh
+
+exec
+/bin/zsh -lc "sed -n '2320,2495p' .research/PROOFS.md" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+   (P28 sample, W2, Bhatia–Davis, restricted P29(b)). Best ≈ 0.43√n; no family defeats all four.
+Status: items 1–6 are paper proofs (1 also has two independent finite certificates). The FOUR-WAY COVER remains
+OPEN. The remaining adversary class: CORRELATED (selected) roundings at vanishing density that hide P28 window
+variance without creating a sharp ambient boundary.
+
+## P71. Arc-mass bound (lead), and round-18 agent results (report .research/agents/tdense18_report.md, completed before the stop; items marked ✓ lead-checked) — 2026-10-19
+1. ✓ ARC-MASS BOUND (lead; PROVED, elementary). Let K >= 2M(A), K > 1, p = 1 + D_S/K (density w.r.t. λ = dx/2π).
+   Then for every x ∈ T and every ρ ∈ (0, π):
+       p(B(x, ρ)) < max(4/K, 2√(ρ/π)).
+   In f-terms (K = 2M): ∫_{x−ρ}^{x+ρ} (M + f) dy < max(4π, 4M√(πρ)).
+   - Proof. Y, Y' iid ~ p; Y + Y' has density p⋆p = p/K + (1 − 1/K) (P-exact mixing). Y, Y' ∈ B(x, ρ) gives
+     Y + Y' ∈ B(2x, 2ρ). So τ' := p(B(2x, 2ρ)) >= K(τ² − 2ρ/π), with τ = p(B(x, ρ)).
+   - Set τ_k = p(B(2^k x, 2^k ρ)), so τ_{k+1} >= K(τ_k² − 2^{k+1}ρ/π). If τ_0 >= 4/K and τ_0² >= 4ρ/π, induction gives
+     τ_k >= 2^k τ_0 and τ_k² >= 2^{k+2}ρ/π: the second makes the bracket >= τ_k²/2, so τ_{k+1} >= (Kτ_0/2)τ_k >= 2τ_k.
+     Hence τ_k > 1 for 2^k > 1/τ_0, while the arcs still have radius < π (2^kρ <= πτ_0/2). Contradiction. ∎
+   - Content: iterated form of the spike sub-multiplicativity (NOTEBOOK cont. 19.5(a)). A heavy arc (p-mass τ >= 4/K)
+     must have half-length > πτ²/4.
+   - Limits (checked): vacuous at the origin. There it reads Σ_{a∈A} sin(aρ)/a < 2π for ρ <= 4π/K², which every
+     A satisfies up to the harmonic tail. As an L² bound it gives only n <~ XK (P33 territory). A FACT, not a route.
+2. ✓ PERIODIC TRIANGULAR BOHR TAPERS HAVE LINEAR M (agent; lead re-derived every step). KERNEL-CHECKED 2026-10-19:
+   lean/ChowlaCosine/BohrTaper.lean (sha256 749641df…7e93fa), theorems `lower_bound` and `lower_bound_card`, exact
+   statement with no added hypotheses; axioms propext, Classical.choice, Quot.sound only (rebuilt and audited by lead).
+   - Set-up. L ∈ 20Z_{>0}, P >= 100, q >= 4L + 1, r_q = centred residue. A(L,q,P) = {1 <= a <= Pq : |r_q(a)| <= L(1 − a/(Pq))}.
+   - Packets. With h = L/20 and J = ⌊P/8⌋:
+       U = {jq + r : 1 <= j <= J, −16h <= r < −14h},  V: −h <= r < h,  W: 14h <= r < 16h.
+     - All three lie in A, since a/(Pq) <= 0.127 and the residue radius is >= 0.873L > 0.8L.
+     - U, V, W are cliques, U–V and V–W are complete, and U–W has no edges:
+       - every pairwise difference has |d| <= 0.129Pq, so the allowed radius is >= 0.871L;
+       - residue differences are < 0.85L inside packets and across U–V and V–W, and >= 1.4L across U–W;
+       - there is no wrap, since 1.6L < q/2.
+   - Certificate. The vector (2, −3, 2) has norm² 17m and form −7m² − 17m. P9 gives M >= 7m/34 + 1/2.
+   - Counting. m >= LP/90 and n <= (41/20)LP, so M >= 7n/6290 + 1/2. This holds uniformly in density: q = P = L²
+     gives n = L³ and density n^{−1/3}.
+   - Mechanism: tapering along the long coordinate does not smooth the TRANSVERSE Boolean cutoff (Gibbs seen by a
+     blown-up induced P3). This matches the per-character-envelope reduction of the quadric lift (NOTEBOOK cont. 22).
+3. BOUNDED-OCCUPANCY BLOCK SELECTORS (agent; lead checked the fourth-moment pairing E|ΣY_j|⁴ <= 3Q² + ΣE|Y_j|⁴ and
+   the logic of the Efron–Stein step, but not every constant).
+   - Set-up. Blocks are independent with arbitrary dependence inside each block, at most b selections per block,
+     and v = Σp_a(1 − p_a)w_a².
+   - Statement:
+       E B >= v/(2√(6bμ + 4b²)),   Var B <= b/2.
+     Hence M >= c√|A|/(4√(20b)) with probability >= 1 − (80b²/c² + b)/μ.
+   - This extends P70.3 to antithetic pairs and to one-point-per-cell sampling. It does not cover globally selected
+     outcomes.
+   - Exact identity (any correlated selector): the circle average of E|centred window sum|² equals v. Hidden variance
+     must therefore mean SPECTRAL CONCENTRATION, not smaller variance.
+4. NUMERICAL (agent; uncertified FFT/Newton R, certificates exact).
+   - Of 11 adversary families (cumulative, antithetic, Thue–Morse, nested Bohr of rank 1 and 2, dilation unions,
+     forced-prefix thinning), only TAPERED SINGER–BU gets R < 1:
+     - n = 756, X/n = 54: R ≈ 0.77, with W2 = 0.215√n and P28 = 0.245√n;
+     - n = 72: certified M ∈ [7.427, 7.444], so R = 0.876.
+   - All other families have R >= 2.
+   - The best adversaries are ALGEBRAIC (square/difference-set) objects, not roundings.
+
+## P72. Robust duality for near-Boolean weights (lead, 2026-10-19; PROVED, elementary; context E103, Ruzsa's question)
+Setting: finite A ⊂ Z_{>0}, n = |A|, τ ∈ [0, 1). M_τ(A) := min over w ∈ [1−τ, 1+τ]^A of max_x −Σ_a w_a cos(ax).
+For a probability measure μ on T write c_a(μ) = ∫cos(ax) dμ(x).
+(a) Duality. M_τ(A) = max over μ of Σ_a (−c_a(μ) − τ|c_a(μ)|).
+    Proof: the payoff Σ_a w_a(−c_a(μ)) is bilinear. The box and P(T) (weak-*) are compact and convex, so Sion's minimax
+    applies. The inner minimum over the box is coordinatewise: min over w_a of w_a(−c_a) is −c_a − τ|c_a|.
+(b) Flat lemma. If λ_s := |{x : f_A(x) <= −s}|/2π > 0, then M_τ(A) >= s − τ√(n(1/λ_s − 1)/2).
+    Proof: take μ = normalized Lebesgue measure on that set. Then −Σc_a = −∫f_A dμ >= s. Also c_a² <= |μ̂(a)|², and
+    Σ_{a>=1}|μ̂(a)|² = (‖dμ/dx‖²_{L²(dx/2π)} − 1)/2 = (1/λ_s − 1)/2, since μ is real. Finish with Cauchy–Schwarz over
+    the n frequencies.
+(c) Slope at τ = 0. τ ↦ M_τ is a maximum of affine functions, hence convex. Its right derivative at 0 is
+    −min over μ ∈ Opt₀ of Σ_a |c_a(μ)| (Danskin), where Opt₀ = probability measures on argmin f_A.
+    In particular M_τ >= M_0 − τ·min_{Opt₀} Σ|c_a|.
+(d) Certificate spread. Any μ certifying M_τ >= m satisfies Σ_a |c_a(μ)| <= (M_0 − m)/τ. A ROBUST √n certificate
+    (m >= c√n with M_0 <= C√n) is therefore A-spread: Σ|c_a| = O(√n/τ), whereas a point mass has Σ|c_a| ≈ (2/π)n.
+(e) Weighted intervals stay linear (continuum form; the discrete statement needs a compactness argument, not written).
+    A bounded φ on R, supported in [−1, 1], with φ >= 1 − τ > 0 there, has a jump at ±1. If φ̂ >= 0, the Fejér means at
+    0 bound ∫φ̂ <= sup φ, so φ̂ ∈ L¹ and φ is continuous: contradiction. Hence the weighted Dirichlet profile has Gibbs
+    >= c(τ)n.
+Reading (HEURISTIC): Chowla_τ (√n for all [1−τ, 1+τ] weights) is a strictly stronger statement than Chowla. On flat
+sets (negative region of positive measure) it holds by (b); E103 measures only constant-factor losses there. In the
+spiky regime (the C* regime) (b) is empty, and (d) says a proof must either use exact Booleanity or find an A-spread
+certificate that is not a level-set measure.
+
+## P73. Robust few-spike lemma: Boolean sets are L²-far from PD functions with peak < 4/3 (lead, 2026-10-19; PROVED, elementary)
+This supplies the L² (Freiman-type) robust version that NOTEBOOK cont. 19.2(iv) asked for, in Z and on T.
+Statement (Z). Let S ⊂ Z be finite and nonempty, and φ: Z -> C positive definite with φ(0) = m₀. Let
+E = ‖φ − 1_S‖²_{ℓ²(Z)}. For every δ ∈ (0, ½): if m₀ < (4 − 5δ)/3, then E >= δ²(|S| − 1)/3.
+Statement (T). Let Ω ⊂ T be measurable with 0 < |Ω| <= ½, and g ∈ C(T) positive definite with g(0) < (4 − 5δ)/3. Then
+‖g − 1_Ω‖²₂ >= δ²|Ω|/3.
+Proof (Z; T is identical, with Macbeath |A + B| >= min(1, |A| + |B|) in place of Cauchy–Davenport).
+1. ψ := m₀ − Re φ >= 0 is conditionally negative definite. Indeed, the GNS vectors e_k with ⟨e_k, e_l⟩ = φ(k − l) give
+   ‖e_k − e_l‖² = 2ψ(k − l). So √ψ is subadditive: √ψ(k + l) <= √ψ(k) + √ψ(l).
+2. Let G = {k : |φ(k) − 1_S(k)| <= δ}. Chebyshev gives |Z \ G| <= E/δ².
+3. Take k, l ∈ S ∩ G with k + l ∈ G \ S. Then ψ(k), ψ(l) <= m₀ − 1 + δ and ψ(k + l) >= m₀ − δ, so subadditivity forces
+   3m₀ >= 4 − 5δ. Under the hypothesis this is impossible, hence (S_G + S_G) ⊂ S ∪ (Z \ G), where S_G = S ∩ G.
+4. Cauchy–Davenport in Z: 2|S_G| − 1 <= |S| + |Z \ G|. With |S_G| >= |S| − |Z \ G| this gives |Z \ G| >= (|S| − 1)/3,
+   hence E >= δ²(|S| − 1)/3. ∎
+Consequences.
+- (a) Chowla architecture, cont. 19.2(iii)–(iv). If the front S' = ±B ∪ {0} is ℓ²-approximated by the PD spike sum φ
+  within δ²(|S'| − 1)/3, then the total front spike amplitude is m₀ >= 4/3 − 5δ/3. This closes the few-spike/AP
+  alternative ROBUSTLY. The core (m₀ >~ √|B|) is untouched: for large m₀ the CND metric no longer separates S' from
+  its complement (ratio (m₀ − 1)/m₀ -> 1). That is exactly the Chowla Gram problem again.
+- (b) PR(1) in its small-peak regime (cont. 20.3). For Ω = −Ω with 1̂_Ω(k) >= 0 for |k| <= L and g = P_L1_Ω:
+  - Exact identity: ∫g(1 − g) = Σ_{|k|>L} 1̂_Ω(k)² (the unresolved mass U), since ∫gh = 0 and ∫h = 0 for h = 1_Ω − g.
+  - So U >= δ²|Ω|/3 whenever g(0) = Σ_{|k|<=L} 1̂_Ω(k) <= (4 − 5δ)/3.
+  - The conjectured extremizers have g(0) ≈ 1.137 (half-density square wave) and ≈ 1.18 (arc of radius 1/(2L)), so
+    both sit in this regime. The arc allows δ <= 0.092, i.e. U >= 2.8·10^{-3}|Ω|; the square wave allows δ <= 0.118,
+    i.e. U >= 4.6·10^{-3}|Ω|. Not sharp (conjectured 0.0947).
+  - The large-peak case g(0) >= 4/3 is OPEN. Example: Ω = {D_L > 0} has g(0) ~ (2/π²)log L and still U/|Ω| ≈ 0.30, so a
+    large peak does not by itself contradict PR.
+Status: PROVED on paper; elementary. A fact, not a C* tool.
+KERNEL-CHECKED (Z version) 2026-10-19: lean/ChowlaCosine/FewSpike.lean (sha256 204985…c032731).
+- Theorems: `fewSpike_core` (bad-set count >= (#S − 1)/3) and `fewSpike` (E >= δ²(#S − 1)/3).
+- PD is defined by finite sums plus Hermitian symmetry.
+- The proof uses the 3-point test (1, −2, 1), i.e. ψ(k + l) <= 2ψ(k) + 2ψ(l), in place of the GNS square root.
+- Axioms: propext, Classical.choice, Quot.sound. Rebuilt and audited by the lead.
+
+## P74. PR(1) at the resolution scale: U >= 2.5·10^{-4}·min(|Ω|, 1/L) (lead, 2026-10-19; PROVED, elementary)
+Setting: Ω = −Ω ⊂ T = R/Z measurable, μ = |Ω| ∈ (0, ½], and a_k := 1̂_Ω(k) >= 0 for |k| <= L. Put g = P_L1_Ω (PD, real,
+γ := g(0) = ‖g‖_∞) and U := Σ_{|k|>L} a_k² = ‖1_Ω − g‖²₂ = ∫g(1 − g).
+Theorem. U >= 2.5·10^{-4}·min(μ, 1/L).
+Proof. Take δ = 1/10 in P73(T), so γ₀ = (4 − 5δ)/3 = 7/6.
+- (A) If γ < 7/6, P73 gives U >= δ²μ/3 = μ/300.
+- (B) If γ >= 7/6, apply Bernstein twice to the degree-L polynomial g: ‖g''‖_∞ <= (2πL)²γ. Since g is even with its
+  maximum at 0,
+      g(x) >= γ(1 − 2π²L²x²) >= (7/6)(1 − 2π²L²x²).
+  For |x| <= h := √(3/56)/(πL) this gives g(x) >= 25/24, so (g − 1_Ω)² >= 1/576 there (1_Ω <= 1). Hence
+      U >= 2h/576 = √(3/56)/(288πL) >= 2.5·10^{-4}/L. ∎
+Scope.
+- This is PR(1) with a non-sharp constant for every window at the resolution scale (μ <= 1/L). That includes the
+  extremal arcs of E100 (radius 1/(2L)).
+- For μL >> 1 with a large peak it is OPEN: case (B) gives only ~1/L. Numerically E105 finds U/μ >= 0.104 there (L <= 16).
+- Not a C* tool: PR is step (d) of the cont. 20 architecture, rank 1 only.
+
+exec
+/bin/zsh -lc "rg --files --hidden -g 'AGENTS.md' . .research .research/agents
+rg -n 'PR\\(1\\)|negative Fourier|U :=|U =|near-Boolean|P72|P73|P74' .research/PROOFS.md .research/agents/adv_p72_74_brief.md | tail -60" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+.research/PROOFS.md:696:  Equivalently ‖U‖₄⁴ <= ρ_L (L + 1)‖U‖₂⁴ for every ANALYTIC polynomial U = Σ_{j=0}^{L} u_j e^{ijx} (pass to
+.research/PROOFS.md:698:  U = 1 + 2cos x (ratio 19/9 > 3/2). Fejér–Riesz supplies an analytic U, so the main inequality is unaffected.
+.research/PROOFS.md:1097:- (c) Equivalently 1_A is ℓ²-close to its projection onto the characters in U = {f > λ}: ‖P_U 1_A‖² >= (1 − O(√ε))|A|,
+.research/PROOFS.md:1245:2. Split f_A = f_P + f_β (f_P = Σ_{j<=X} P_j cos jx). Then G := H f_β = T − H f_P >= −(M + U), with U := sup_x H f_P.
+.research/PROOFS.md:1816:   - Schur test with U = 1 + (4/5)x(1 − x): T_a U <= (1333/5000)U on [0, 1], exactly.
+.research/PROOFS.md:1851:     - Schur test with U = 1 + (4/5)x(1 − x): T_a U <= (259/1000)U.
+.research/PROOFS.md:2155:     In Fourier: U^{(r)} = A_r U + q m_r δ. So U⋆U = U + qcδ off zero does NOT give U^{(3)} = U; the δ term
+.research/PROOFS.md:2213:   - Schur test: U = 1 + (2/5)s(1 − s), with T_aU <= (73/500)U. Minimum margin 1704250072843/1966080000000000.
+.research/PROOFS.md:2344:       U = {jq + r : 1 <= j <= J, −16h <= r < −14h},  V: −h <= r < h,  W: 14h <= r < 16h.
+.research/PROOFS.md:2374:## P72. Robust duality for near-Boolean weights (lead, 2026-10-19; PROVED, elementary; context E103, Ruzsa's question)
+.research/PROOFS.md:2398:## P73. Robust few-spike lemma: Boolean sets are L²-far from PD functions with peak < 4/3 (lead, 2026-10-19; PROVED, elementary)
+.research/PROOFS.md:2417:- (b) PR(1) in its small-peak regime (cont. 20.3). For Ω = −Ω with 1̂_Ω(k) >= 0 for |k| <= L and g = P_L1_Ω:
+.research/PROOFS.md:2432:## P74. PR(1) at the resolution scale: U >= 2.5·10^{-4}·min(|Ω|, 1/L) (lead, 2026-10-19; PROVED, elementary)
+.research/PROOFS.md:2434:γ := g(0) = ‖g‖_∞) and U := Σ_{|k|>L} a_k² = ‖1_Ω − g‖²₂ = ∫g(1 − g).
+.research/PROOFS.md:2436:Proof. Take δ = 1/10 in P73(T), so γ₀ = (4 − 5δ)/3 = 7/6.
+.research/PROOFS.md:2437:- (A) If γ < 7/6, P73 gives U >= δ²μ/3 = μ/300.
+.research/PROOFS.md:2444:- This is PR(1) with a non-sharp constant for every window at the resolution scale (μ <= 1/L). That includes the
+.research/agents/adv_p72_74_brief.md:1:# Adversarial verification brief (codex): P72, P73 (T version), P74
+.research/agents/adv_p72_74_brief.md:4:- Read CLAUDE.md (certification and quantifier rules) and .research/PROOFS.md sections P72, P73, P74.
+.research/agents/adv_p72_74_brief.md:12:For each of P72 (a)–(e), P73 (T version and Z version) and P74:
+.research/agents/adv_p72_74_brief.md:15:   - Sion minimax applicability in P72(a);
+.research/agents/adv_p72_74_brief.md:16:   - the Parseval constant in P72(b);
+.research/agents/adv_p72_74_brief.md:17:   - Danskin in P72(c);
+.research/agents/adv_p72_74_brief.md:18:   - Macbeath/Raikov |A + B| >= min(1, |A| + |B|) for measurable sets on T in P73(T), including measurability and
+.research/agents/adv_p72_74_brief.md:20:   - Bernstein's inequality constant 2πL for frequencies in [−L, L] in P74;
+.research/agents/adv_p72_74_brief.md:23:   - P74: random and structured symmetric unions of arcs with 1̂_Ω(k) >= 0 for |k| <= L. Check
+.research/agents/adv_p72_74_brief.md:25:   - P73(T): random PD trig polynomials g and sets Ω; check ‖g − 1_Ω‖² >= δ²|Ω|/3 whenever g(0) < (4 − 5δ)/3.
+.research/agents/adv_p72_74_brief.md:26:   - P72(a): compare max_μ Σ(−c_a − τ|c_a|) (LP over measures on a fine grid) with min over weights (LP), for small A.
+
+exec
+/bin/zsh -lc "mkdir -p .research/agents/adv_p72_74_scratch
+cat > .research/agents/adv_p72_74_report.md <<'EOF'
+# Adversarial audit: P72–P74
+
+Status: IN PROGRESS. Scope: the exact brief in "'`adv_p72_74_brief.md`; no main research notes edited, no commits, no subagents. All numerical computation will run through `DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4`.
+
+## Current findings (2026-10-19)
+
+- P72(a): analytic review underway; compactness, topology, and payoff continuity appear compatible with Sion.
+- P72(b): the factor 1/2 in Parseval is correct for Haar probability and a real density. The notation `dμ/dx` must mean density relative to `dx/(2π)` in the angular convention.
+- P72(c): compactness of the moment image gives the stated right derivative; detailed check pending.
+- P72(d): domain defect identified: the displayed division by τ requires `τ > 0`, although the setting permits `τ = 0`. The point-mass comparison is not uniform in A and x.
+- P72(e): potential substantive gap: the passage from an individual negative Fourier value to a uniform `c(τ)` and the discrete statement needs the indicated compactness argument. The standalone continuum sentence does not impose a common upper bound on φ.
+- P73(Z): reviewing the empty-good-set case and the finite/infinite error cases.
+- P73(T): the one-line transfer needs explicit handling of saturated sumset bounds and Haar measurability/inner measure. These appear repairable by compact subsets of the good set.
+- P74: reviewing the integer condition on L, Bernstein normalization, the restricted Taylor neighborhood, and the final numeric comparison.
+
+## Work remaining
+
+1. Finish line-by-line analytic audit and verify the exact external theorem hypotheses.
+2. Save reproducible VM scripts and run the three requested numerical attacks.
+3. Replace provisional findings with CORRECT / GAP / FALSE verdicts and exact evidence, including limits of numerical searches.
+EOF' in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+web search: 
+web search: Sion 1958 On general minimax theorems pdf compact convex semicontinuous ...
+codex
+The main inequalities still look sound. P72(d) needs the restriction τ > 0, and its point-mass comparison is not uniform. P72(e) has a more substantive gap: an individual negative Fourier value does not establish a uniform c(τ) without a common upper bound and compactness argument. I’m also checking the measurable-set details in P73(T) before running the VM searches.
+web search: 
+web search: https://msp.org/pjm/1958/8-1/pjm-v8-n1-p14-p.pdf
+**Planning script execution**
+
+I need to create a straightforward shell script, roughly 350 lines. It shouldn't require heavy local resources. I’m thinking of using the `tee` command to save the output file while also writing JSON and printing summaries at each checkpoint. I'll have to use local shell commands to manage snapshots and include some metadata. The code won’t execute locally, and the syntax will compile on the VM, with the main portion around 250 lines. Let’s get started!
+exec
+/bin/zsh -lc "cat > .research/agents/adv_p72_74_scratch/audit_vm.py <<'PY'
+#"'!/usr/bin/env python3
+"""Adversarial numerical checks. Run ONLY through src/dirun.sh on dirichlet.
+Every cell mask denotes actual arcs of width 1/N centered at j/N, not point samples.
+Numerical comparisons are evidence, not directed-rounding certificates.
+"""
+import itertools
+import json
+import math
+import platform
+import time
+from pathlib import Path
+
+import mpmath as mp
+import numpy as np
+import scipy
+from scipy.optimize import linprog
+
+OUT = Path('"'.research/agents/adv_p72_74_scratch')
+SEED = 727374
+rng = np.random.default_rng(SEED)
+results = {'seed': SEED, 'platform': platform.platform(), 'python': platform.python_version(),
+           'numpy': np.__version__, 'scipy': scipy.__version__, 'status': 'running'}
+started = time.monotonic()
+
+def save():
+    results['elapsed_seconds'] = time.monotonic() - started
+    (OUT / 'results_vm.json').write_text(json.dumps(results, indent=2))
+
+def announce(name, data):
+    results[name] = data
+    save()
+    print(name, json.dumps(data), flush=True)
+
+def lp_pair(A, tau, N):
+    A = np.array(A)
+    C = np.cos(2*np.pi*np.outer(np.arange(N//2+1)/N, A))
+    m, n = C.shape
+    pr = linprog(np.r_[np.zeros(n), 1.], A_ub=np.c_[-C, -np.ones(m)],
+                 b_ub=np.zeros(m), bounds=[(1-tau, 1+tau)]*n+[(None,None)], method='highs')
+    # c=C"'^T p, t >= |c|. Minimize sum(c)+tau*sum(t), negate its value.
+    du = linprog(np.r_[C.sum(axis=1), np.full(n,tau)],
+                 A_ub=np.r_[np.c_[C.T,-np.eye(n)], np.c_[-C.T,-np.eye(n)]],
+                 b_ub=np.zeros(2*n), A_eq=np.array([np.r_[np.ones(m),np.zeros(n)]]),
+                 b_eq=[1.], bounds=[(0,None)]*(m+n), method='"'highs')
+    if not pr.success or not du.success:
+        raise RuntimeError((A.tolist(),tau,pr.message,du.message))
+    c = C.T @ du.x[:m]
+    actual_dual = float(np.sum(-c-tau*np.abs(c)))
+    return {'A':A.tolist(),'tau':tau,'grid':N,'primal':float(pr.fun),'dual':float(-du.fun),
+            'actual_dual':actual_dual,'gap':float(abs(pr.fun+du.fun)),
+            'primal_residual':float(max(0,np.max(-C@pr.x[:n]-pr.x[n]))),
+            'dual_mass_residual':float(abs(du.x[:m].sum()-1)),
+            'dual_abs_residual':float(max(0,np.max(np.abs(c)-du.x[m:]))) }
+
+# P72(a): all nonempty subsets of {1,...,6} of size <=4, and random sparse A.
+sets = [a for n in range(1,5) for a in itertools.combinations(range(1,7),n)]
+sets += [tuple(sorted(rng.choice(np.arange(1,25),size=int(rng.integers(2,7)),replace=False))) for _ in range(20)]
+lps = [lp_pair(a,tau,2048) for a in sets for tau in (0.,.1,.5,.9)]
+(OUT/'p72_lp_cases_vm.json').write_text(json.dumps(lps,indent=2))
+coarse_fine = []
+for case in sorted(lps,key=lambda c:c['gap'],reverse=True)[:8]:
+    fine = lp_pair(case['A'],case['tau'],8192)
+    fine['coarse_primal'] = case['primal']
+    fine['grid_change'] = fine['primal']-case['primal']
+    coarse_fine.append(fine)
+announce('p72', {'cases':len(lps),'fine_cases':coarse_fine,
+                 'max_lp_gap':max(c['gap'] for c in lps),
+                 'max_actual_dual_gap':max(abs(c['primal']-c['actual_dual']) for c in lps),
+                 'max_primal_residual':max(c['primal_residual'] for c in lps),
+                 'max_dual_mass_residual':max(c['dual_mass_residual'] for c in lps),
+                 'max_dual_abs_residual':max(c['dual_abs_residual'] for c in lps)})
+
+# Fourier integration of a union of centered grid cells is exact in formula.
+N = 2048
+x = np.arange(N)/N
+signedx = np.minimum(x,1-x)
+kall = np.arange(N//2+1)
+def coeff(mask):
+    return np.fft.rfft(mask)/N*np.sinc(kall/N)
+
+def independent_coeff(mask, ks):
+    # Direct arc integration, independent of FFT. Endpoints may lie outside [0,1].
+    centers = x[np.asarray(mask,dtype=bool)]
+    ks = np.array(ks)
+    return np.exp(-2j*np.pi*np.outer(ks,centers)).sum(axis=1)/N*np.sinc(ks/N)
+
+def symmetric_mask(score, count):
+    # Choose pairs j,-j only; omit singleton cells at 0 and 1/2.
+    pairs = np.arange(1,N//2)
+    count = min(N//4,max(1,count//2))
+    chosen = pairs[np.argpartition(score[pairs],-count)[-count:]]
+    mask = np.zeros(N)
+    mask[chosen] = mask[-chosen] = 1.
+    return mask
+
+# P73(T): nonnegative Fourier coefficients give PD, including complex-valued g.
+# Masks include independent random arcs, intervals, and adaptive near-best sets.
+p73 = []
+for rep in range(5000):
+    degree = int(rng.integers(0,25))
+    ks = np.arange(-degree,degree+1)
+    weights = rng.exponential(size=len(ks))
+    if rep%2 == 0:
+        weights = (weights+weights[::-1])/2
+    if rep%7 == 0:
+        weights *= rng.random(len(ks)) < .3
+    if weights.sum()==0:
+        weights[len(ks)//2]=1
+    gamma = float(rng.uniform(.01,1.332))
+    weights *= gamma/weights.sum()
+    delta = min(.499,(4-3*gamma)/5*.999)
+    g = weights @ np.exp(2j*np.pi*np.outer(ks,x))
+    mu_target = float(rng.uniform(.005,.5))
+    count = max(1,min(N//2,int(N*mu_target)))
+    if rep%4 == 0:
+        mask = np.zeros(N); mask[rng.choice(N,count,replace=False)] = 1
+    elif rep%4 == 1:
+        center = rng.random(); distance = np.abs((x-center+.5)%1-.5)
+        mask = np.zeros(N); mask[np.argpartition(distance,count-1)[:count]]=1
+    else:
+        # Adversarial set with largest Re g, with controlled measure <= 1/2.
+        mask = np.zeros(N); mask[np.argpartition(g.real,-count)[-count:]]=1
+    full = np.fft.fft(mask)/N*np.sinc(np.fft.fftfreq(N))
+    a = full[ks%N]
+    mu = float(mask.mean())
+    E = float(np.dot(weights,weights)+mu-2*np.dot(weights,a.real))
+    rhs = delta**2*mu/3
+    p73.append({'rep':rep,'degree':degree,'gamma':gamma,'delta':delta,'mu':mu,'E':E,
+                'rhs':rhs,'ratio':E/rhs,'margin':E-rhs})
+    if rep == 0 or E/rhs <= min(c['ratio'] for c in p73[:-1]):
+        np.savez(OUT/'p73_best_vm.npz',weights=weights,ks=ks,mask=mask)
+# Boundary cases with known PD constants, arbitrary half-circle sets.
+for gamma in (0.,.25,.5,1.,7/6):
+    delta = min(.499,(4-3*gamma)/5*.999)
+    mu=.5
+    E=gamma**2+mu-2*gamma*mu
+    p73.append({'kind':'constant','gamma':gamma,'delta':delta,'mu':mu,'E':E,
+                'rhs':delta**2*mu/3,'ratio':E/(delta**2*mu/3),'margin':E-delta**2*mu/3})
+announce('p73',{'cases':len(p73),'violations':sum(c['margin'] < -1e-10 for c in p73),
+                 'min_ratio':min(p73,key=lambda c:c['ratio']),
+                 'min_margin':min(p73,key=lambda c:c['margin'])})
+
+# P74: exact continuous arc/lattice coefficients and random symmetric cell unions.
+p74=[]; proposed={}; rejected={}; max_fft_direct_error=0.; best_ratio=float('inf')
+
+def record74(L,mu,a,kind,metadata=None,mask=None):
+    global best_ratio,max_fft_direct_error
+    proposed[kind]=proposed.get(kind,0)+1
+    if mu<=0 or mu>.5+1e-14 or min(a)<-2e-12:
+        rejected[kind]=rejected.get(kind,0)+1
+        return
+    U=float(mu-a[0]**2-2*np.dot(a[1:],a[1:]))
+    ratio=U/min(mu,1/L)
+    row={'L':L,'mu':mu,'U':U,'gamma':float(a[0]+2*sum(a[1:])),
+         'min_low_coefficient':float(min(a)),'ratio':ratio,'margin':U-2.5e-4*min(mu,1/L),
+         'kind':kind,'metadata':metadata}
+    p74.append(row)
+    if ratio<best_ratio:
+        best_ratio=ratio
+        (OUT/'p74_best_vm.json').write_text(json.dumps(row,indent=2))
+        if mask is not None:
+            np.save(OUT/'p74_best_mask_vm.npy',mask)
+    if mask is not None and len(p74)%100==0:
+        direct=independent_coeff(mask,range(L+1))
+        max_fft_direct_error=max(max_fft_direct_error,float(np.max(np.abs(direct-a))))
+
+for L in (1,2,3,4,6,8,12,16,24,32,64):
+    # Centered arc and preimages under x -> q*x (including exact coefficient zeros).
+    for q in (1,2,3,5,8,17):
+        for mu in np.geomspace(1e-5,min(.5,q/L),35):
+            ks=np.arange(L+1)
+            a=np.zeros(L+1)
+            div=ks%q==0
+            a[div]=mu*np.sinc((ks[div]/q)*mu)
+            record74(L,float(mu),a,'arc_or_lattice',{'q':q})
+    cosmat=np.cos(2*np.pi*np.outer(np.arange(1,L+1),x))
+    D=1+2*cosmat.sum(axis=0)
+    mask=(D>0).astype(float)
+    # At large L, {D>0} can have measure > 1/2. Keep as rejected if so.
+    record74(L,float(mask.mean()),coeff(mask)[:L+1].real,'dirichlet_sign',mask=mask)
+    for rep in range(400):
+        if rep%4==0:
+            # Independent symmetric random unions, rejection-sampled for positivity.
+            score=rng.random(N); score=(score+score[(-np.arange(N))%N])/2
+            count=int(rng.integers(2,N//2+1))
+            mask=symmetric_mask(score,count)
+            kind='independent_random'
+        elif rep%4==1:
+            # Automatic positivity: all selected cells inside |x|<1/(4L).
+            allowed=np.flatnonzero((signedx+1/(2*N))<1/(4*L))
+            mask=np.zeros(N)
+            pos=allowed[(allowed>0)&(allowed<N//2)]
+            take=pos[rng.random(len(pos))<rng.uniform(.05,1.)]
+            mask[take]=mask[-take]=1
+            if rep%8==1: mask[0]=1
+            kind='small_support_random'
+        else:
+            # Structured random Fourier scores with positive coefficients; filter.
+            w=rng.exponential(size=L)
+            if rep%5==0: w*=rng.random(L)<.25
+            score=w@cosmat
+            count=int(rng.integers(2,N//2+1))
+            mask=symmetric_mask(score,count)
+            kind='positive_score_random'
+        a=coeff(mask)[:L+1]
+        assert np.max(np.abs(a.imag))<1e-12
+        record74(L,float(mask.mean()),a.real,kind,{'rep':rep},mask)
+    if L in (4,16,64):
+        print('p74_progress',L,'accepted',len(p74),flush=True)
+announce('p74',{'accepted':len(p74),'proposed':proposed,'rejected':rejected,
+                'violations':sum(c['margin'] < -1e-10 for c in p74),
+                'min_ratio':min(p74,key=lambda c:c['ratio']),
+                'min_margin':min(p74,key=lambda c:c['margin']),
+                'max_fft_direct_error':max_fft_direct_error,
+                'gamma_at_least_7_over_6':sum(c['gamma']>=7/6 for c in p74)})
+(OUT/'p74_cases_vm.json').write_text(json.dumps(p74,indent=2))
+
+# Constants and the literal P72(e) missing-upper-bound adversary.
+mp.mp.dps=80
+C=mp.sqrt(mp.mpf(3)/56)/(288*mp.pi)
+constants={'p74_constant':mp.nstr(C,75),'claimed':str(mp.mpf('0.00025')),
+           'ratio_to_claimed':mp.nstr(C/mp.mpf('0.00025'),60),
+           'p74_h_at_L1':mp.nstr(mp.sqrt(mp.mpf(3)/56)/mp.pi,60),
+           'branch_A':mp.nstr(mp.mpf(1)/300,60)}
+# phi_B=c*1[-1,1]+B*(1-|x|)_+. Its transform >= -c"'^2/B exactly.
+# Evaluate close to its negative excursions, without claiming global certification.
+c=mp.mpf('"'.5'); rows=[]
+for B in (1,10,100,1000,10000):
+    z=mp.pi-c*mp.pi/B
+    value=c*mp.sin(2*z)/z+B*(mp.sin(z)/z)**2
+    rows.append({'tau':'.5','B':B,'frequency':mp.nstr(z/mp.pi,60),
+                 'transform_value':mp.nstr(value,60),'rigorous_lower_formula':mp.nstr(-c*c/B,60)})
+constants['p72e_example_evaluations']=rows
+announce('constants',constants)
+results['status']='complete'
+save()
+print('COMPLETE',flush=True)
+PY
+cp .research/PROOFS.md .research/agents/adv_p72_74_scratch/PROOFS_at_audit_start.md
+DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -t 420 python .research/agents/adv_p72_74_scratch/audit_vm.py" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+exec
+/bin/zsh -lc "cat >> .research/agents/adv_p72_74_report.md <<'EOF'
+
+## Analytic checkpoint
+
+P73(T)'s measurable-set transfer is valid using compact subsets, without assuming the sumset itself is measurable. Put "'`B={|g−1_Ω|>δ}`, `b=|B|`, and `A=Ω'"\\B"'`. The same PD argument gives `A+A ⊂ Ω∪B`. For each compact `K⊂A`, the compact-set circle sumset theorem gives `min(1,2|K|)≤|Ω∪B|≤μ+b`. Inner regularity gives `min(1,2|A|)≤μ+b`. If `b<μ/3`, then `μ+b<2/3<1`, so saturation is impossible, and `2(μ−b)≤μ+b` is a contradiction. Thus `b≥μ/3` and the claimed bound follows. No counterexample arises from a completed-Haar measurable Ω or a nonmeasurable sumset.
+
+A precise obstruction to P72(e)'"'s literal uniform conclusion has been found. Let "'`c=1−τ>0` and `φ_B(x)=c·1_[−1,1](x)+B(1−|x|)_+`. Each profile is bounded, supported in the stated interval, and at least c there. With `t=πξ` and `y=sin(t)/t`, its Fourier transform is `2cy cos(t)+By²≥−c²/B`. Therefore no common negative depth depending only on τ follows from the stated continuum hypotheses, which lack a common upper bound. This does not refute the intended box-bounded weighted-interval statement. Its missing compactness passage is still a GAP.
+
+The reproducible numerical script is `adv_p72_74_scratch/audit_vm.py`. It is now running on dirichlet only. It compares both LPs for P72(a), tests complex and real PD polynomials for P73(T), and tests exact-in-formula Fourier integrals of symmetric arc unions for P74. Floating-point computations will be labeled numerical evidence, not rigorous all-x certificates.
+EOF' in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+web search: 
+web search: https://arxiv.org/html/1711.04337v4
+ succeeded in 30972ms:
+p72 {"cases": 304, "fine_cases": [{"A": [1, 3, 4, 5], "tau": 0.9, "grid": 8192, "primal": 0.18565297865365385, "dual": 0.18565297865349017, "actual_dual": 0.18565297865335367, "gap": 1.636746294053637e-13, "primal_residual": 2.7755575615628914e-17, "dual_mass_residual": 1.5210055437364645e-13, "dual_abs_residual": 1.5226708782734022e-13, "coarse_primal": 0.18565081108332016, "grid_change": 2.167570333694302e-06}, {"A": [2, 4, 5, 6], "tau": 0.5, "grid": 8192, "primal": 1.0605245115212267, "dual": 1.0605245116084023, "actual_dual": 1.0605245115652704, "gap": 8.717560007198699e-11, "primal_residual": 2.220446049250313e-16, "dual_mass_residual": 4.8270720753862406e-11, "dual_abs_residual": 8.626299674574511e-11, "coarse_primal": 1.0605047599416209, "grid_change": 1.975157960587559e-05}, {"A": [5, 7, 12, 15], "tau": 0.9, "grid": 8192, "primal": 0.2165030610745739, "dual": 0.2165030610745512, "actual_dual": 0.2165030610745446, "gap": 2.270406085358445e-14, "primal_residual": 0.0, "dual_mass_residual": 4.440892098500626e-16, "dual_abs_residual": 4.529709940470639e-14, "coarse_primal": 0.21648063790967736, "grid_change": 2.242316489653451e-05}, {"A": [1, 2, 3, 6], "tau": 0.9, "grid": 8192, "primal": 0.20215450116476, "dual": 0.2021545011647452, "actual_dual": 0.20215450116473813, "gap": 1.479372180313021e-14, "primal_residual": 0.0, "dual_mass_residual": 2.1871393585115584e-14, "dual_abs_residual": 1.0116907311896739e-14, "coarse_primal": 0.20215263116817003, "grid_change": 1.8699965899648952e-06}, {"A": [1, 2, 4, 6], "tau": 0.5, "grid": 8192, "primal": 0.9449417227013193, "dual": 0.9449417227013299, "actual_dual": 0.9449417227013246, "gap": 1.0658141036401503e-14, "primal_residual": 0.0, "dual_mass_residual": 6.661338147750939e-15, "dual_abs_residual": 8.992806499463768e-15, "coarse_primal": 0.9449417227013193, "grid_change": 0.0}, {"A": [1, 2], "tau": 0.1, "grid": 8192, "primal": 1.0124998044307014, "dual": 1.0124998044308577, "actual_dual": 1.012499804430854, "gap": 1.5631940186722204e-13, "primal_residual": 0.0, "dual_mass_residual": 1.5054624213917123e-13, "dual_abs_residual": 3.8663516832571077e-14, "coarse_primal": 1.012497929947014, "grid_change": 1.8744836873807458e-06}, {"A": [3, 6], "tau": 0.1, "grid": 8192, "primal": 1.0124998044307014, "dual": 1.0124998044306273, "actual_dual": 1.0124998044306288, "gap": 7.416289804496046e-14, "primal_residual": 0.0, "dual_mass_residual": 7.172040739078511e-14, "dual_abs_residual": 0.0, "coarse_primal": 1.012497929947014, "grid_change": 1.8744836873807458e-06}, {"A": [1, 2, 3, 6], "tau": 0.1, "grid": 8192, "primal": 1.8354076683729508, "dual": 1.8354076683730167, "actual_dual": 1.835407668373009, "gap": 6.59472476627343e-14, "primal_residual": 0.0, "dual_mass_residual": 3.175237850427948e-14, "dual_abs_residual": 3.164135620181696e-14, "coarse_primal": 1.8353763919908461, "grid_change": 3.1276382104650224e-05}], "max_lp_gap": 1.0551337581432563e-11, "max_actual_dual_gap": 1.2822187756000858e-11, "max_primal_residual": 1.1102230246251565e-15, "max_dual_mass_residual": 6.9186878448590505e-12, "max_dual_abs_residual": 7.841616245229943e-12}
+p73 {"cases": 5005, "violations": 0, "min_ratio": {"rep": 1618, "degree": 3, "gamma": 0.5961934955408631, "delta": 0.44184161877280664, "mu": 0.23095703125, "E": 0.07174649766879951, "rhs": 0.01502945306082897, "ratio": 4.773726454210851, "margin": 0.056717044607970536}, "min_margin": {"rep": 1114, "degree": 23, "gamma": 0.24438727834217164, "delta": 0.499, "mu": 0.0048828125, "E": 0.004273824895743752, "rhs": 0.00040527506510416666, "ratio": 10.545491849209284, "margin": 0.003868549830639585}}
+p74_progress 4 accepted 1966
+p74_progress 16 accepted 3405
+p74_progress 64 accepted 4358
+p74 {"accepted": 4358, "proposed": {"arc_or_lattice": 2310, "dirichlet_sign": 11, "independent_random": 1100, "small_support_random": 1100, "positive_score_random": 2200}, "rejected": {"dirichlet_sign": 9, "positive_score_random": 1347, "independent_random": 998, "small_support_random": 9}, "violations": 0, "min_ratio": {"L": 1, "mu": 0.5, "U": 0.04735763271532442, "gamma": 1.1366197723675815, "min_low_coefficient": 0.3183098861837907, "ratio": 0.09471526543064884, "margin": 0.04723263271532442, "kind": "arc_or_lattice", "metadata": {"q": 1}}, "min_margin": {"L": 64, "mu": 1e-05, "U": 9.987100005884915e-06, "gamma": 0.0012899997057542305, "min_low_coefficient": 9.999993262351423e-06, "ratio": 0.9987100005884915, "margin": 9.984600005884915e-06, "kind": "arc_or_lattice", "metadata": {"q": 1}}, "max_fft_direct_error": 1.0838808460753297e-16, "gamma_at_least_7_over_6": 157}
+constants {"p74_constant": "0.000255813967521932794722871022425964502014133063033997958302403286659151968694", "claimed": "0.00025", "ratio_to_claimed": "1.02325587008773117889148408970385800805653225213599183320961", "p74_h_at_L1": "0.0736744226463166448801868544586777765800703221537914119910921", "branch_A": "0.00333333333333333333333333333333333333333333333333333333333333", "p72e_example_evaluations": [{"tau": ".5", "B": 1, "frequency": "0.5", "transform_value": "0.405284734569351085775517852838910555617435098688986195382436", "rigorous_lower_formula": "-0.25"}, {"tau": ".5", "B": 10, "frequency": "0.95", "transform_value": "-0.0242963374445341580811285216153262429525890409725398768784753", "rigorous_lower_formula": "-0.025"}, {"tau": ".5", "B": 100, "frequency": "0.995", "transform_value": "-0.00249931799265567508302393170867279742083321824058331363696262", "rigorous_lower_formula": "-0.0025"}, {"tau": ".5", "B": 1000, "frequency": "0.9995", "transform_value": "-0.000249999320381848224380990013237200191048449021211566542981913", "rigorous_lower_formula": "-0.00025"}, {"tau": ".5", "B": 10000, "frequency": "0.99995", "transform_value": "-0.0000249999993206229156556517294136387592903398137367168845197342", "rigorous_lower_formula": "-0.000025"}]}
+COMPLETE
+
+web search: 
+web search: site.mit.edu Bertsekas Danskin theorem compact continuous derivative max pdf
+web search: 
+web search: https://www.mit.edu/~dimitrib/convexdualitycondenced.pdf
+exec
+/bin/zsh -lc "cat .research/agents/adv_p72_74_scratch/results_vm.json
+rg -n '"'^## P7[234]'"' .research/PROOFS.md .research/agents/adv_p72_74_scratch/PROOFS_at_audit_start.md" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+{
+  "seed": 727374,
+  "platform": "Linux-7.0.0-1014-gcp-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "status": "complete",
+  "p72": {
+    "cases": 304,
+    "fine_cases": [
+      {
+        "A": [
+          1,
+          3,
+          4,
+          5
+        ],
+        "tau": 0.9,
+        "grid": 8192,
+        "primal": 0.18565297865365385,
+        "dual": 0.18565297865349017,
+        "actual_dual": 0.18565297865335367,
+        "gap": 1.636746294053637e-13,
+        "primal_residual": 2.7755575615628914e-17,
+        "dual_mass_residual": 1.5210055437364645e-13,
+        "dual_abs_residual": 1.5226708782734022e-13,
+        "coarse_primal": 0.18565081108332016,
+        "grid_change": 2.167570333694302e-06
+      },
+      {
+        "A": [
+          2,
+          4,
+          5,
+          6
+        ],
+        "tau": 0.5,
+        "grid": 8192,
+        "primal": 1.0605245115212267,
+        "dual": 1.0605245116084023,
+        "actual_dual": 1.0605245115652704,
+        "gap": 8.717560007198699e-11,
+        "primal_residual": 2.220446049250313e-16,
+        "dual_mass_residual": 4.8270720753862406e-11,
+        "dual_abs_residual": 8.626299674574511e-11,
+        "coarse_primal": 1.0605047599416209,
+        "grid_change": 1.975157960587559e-05
+      },
+      {
+        "A": [
+          5,
+          7,
+          12,
+          15
+        ],
+        "tau": 0.9,
+        "grid": 8192,
+        "primal": 0.2165030610745739,
+        "dual": 0.2165030610745512,
+        "actual_dual": 0.2165030610745446,
+        "gap": 2.270406085358445e-14,
+        "primal_residual": 0.0,
+        "dual_mass_residual": 4.440892098500626e-16,
+        "dual_abs_residual": 4.529709940470639e-14,
+        "coarse_primal": 0.21648063790967736,
+        "grid_change": 2.242316489653451e-05
+      },
+      {
+        "A": [
+          1,
+          2,
+          3,
+          6
+        ],
+        "tau": 0.9,
+        "grid": 8192,
+        "primal": 0.20215450116476,
+        "dual": 0.2021545011647452,
+        "actual_dual": 0.20215450116473813,
+        "gap": 1.479372180313021e-14,
+        "primal_residual": 0.0,
+        "dual_mass_residual": 2.1871393585115584e-14,
+        "dual_abs_residual": 1.0116907311896739e-14,
+        "coarse_primal": 0.20215263116817003,
+        "grid_change": 1.8699965899648952e-06
+      },
+      {
+        "A": [
+          1,
+          2,
+          4,
+          6
+        ],
+        "tau": 0.5,
+        "grid": 8192,
+        "primal": 0.9449417227013193,
+        "dual": 0.9449417227013299,
+        "actual_dual": 0.9449417227013246,
+        "gap": 1.0658141036401503e-14,
+        "primal_residual": 0.0,
+        "dual_mass_residual": 6.661338147750939e-15,
+        "dual_abs_residual": 8.992806499463768e-15,
+        "coarse_primal": 0.9449417227013193,
+        "grid_change": 0.0
+      },
+      {
+        "A": [
+          1,
+          2
+        ],
+        "tau": 0.1,
+        "grid": 8192,
+        "primal": 1.0124998044307014,
+        "dual": 1.0124998044308577,
+        "actual_dual": 1.012499804430854,
+        "gap": 1.5631940186722204e-13,
+        "primal_residual": 0.0,
+        "dual_mass_residual": 1.5054624213917123e-13,
+        "dual_abs_residual": 3.8663516832571077e-14,
+        "coarse_primal": 1.012497929947014,
+        "grid_change": 1.8744836873807458e-06
+      },
+      {
+        "A": [
+          3,
+          6
+        ],
+        "tau": 0.1,
+        "grid": 8192,
+        "primal": 1.0124998044307014,
+        "dual": 1.0124998044306273,
+        "actual_dual": 1.0124998044306288,
+        "gap": 7.416289804496046e-14,
+        "primal_residual": 0.0,
+        "dual_mass_residual": 7.172040739078511e-14,
+        "dual_abs_residual": 0.0,
+        "coarse_primal": 1.012497929947014,
+        "grid_change": 1.8744836873807458e-06
+      },
+      {
+        "A": [
+          1,
+          2,
+          3,
+          6
+        ],
+        "tau": 0.1,
+        "grid": 8192,
+        "primal": 1.8354076683729508,
+        "dual": 1.8354076683730167,
+        "actual_dual": 1.835407668373009,
+        "gap": 6.59472476627343e-14,
+        "primal_residual": 0.0,
+        "dual_mass_residual": 3.175237850427948e-14,
+        "dual_abs_residual": 3.164135620181696e-14,
+        "coarse_primal": 1.8353763919908461,
+        "grid_change": 3.1276382104650224e-05
+      }
+    ],
+    "max_lp_gap": 1.0551337581432563e-11,
+    "max_actual_dual_gap": 1.2822187756000858e-11,
+    "max_primal_residual": 1.1102230246251565e-15,
+    "max_dual_mass_residual": 6.9186878448590505e-12,
+    "max_dual_abs_residual": 7.841616245229943e-12
+  },
+  "elapsed_seconds": 25.59628476499347,
+  "p73": {
+    "cases": 5005,
+    "violations": 0,
+    "min_ratio": {
+      "rep": 1618,
+      "degree": 3,
+      "gamma": 0.5961934955408631,
+      "delta": 0.44184161877280664,
+      "mu": 0.23095703125,
+      "E": 0.07174649766879951,
+      "rhs": 0.01502945306082897,
+      "ratio": 4.773726454210851,
+      "margin": 0.056717044607970536
+    },
+    "min_margin": {
+      "rep": 1114,
+      "degree": 23,
+      "gamma": 0.24438727834217164,
+      "delta": 0.499,
+      "mu": 0.0048828125,
+      "E": 0.004273824895743752,
+      "rhs": 0.00040527506510416666,
+      "ratio": 10.545491849209284,
+      "margin": 0.003868549830639585
+    }
+  },
+  "p74": {
+    "accepted": 4358,
+    "proposed": {
+      "arc_or_lattice": 2310,
+      "dirichlet_sign": 11,
+      "independent_random": 1100,
+      "small_support_random": 1100,
+      "positive_score_random": 2200
+    },
+    "rejected": {
+      "dirichlet_sign": 9,
+      "positive_score_random": 1347,
+      "independent_random": 998,
+      "small_support_random": 9
+    },
+    "violations": 0,
+    "min_ratio": {
+      "L": 1,
+      "mu": 0.5,
+      "U": 0.04735763271532442,
+      "gamma": 1.1366197723675815,
+      "min_low_coefficient": 0.3183098861837907,
+      "ratio": 0.09471526543064884,
+      "margin": 0.04723263271532442,
+      "kind": "arc_or_lattice",
+      "metadata": {
+        "q": 1
+      }
+    },
+    "min_margin": {
+      "L": 64,
+      "mu": 1e-05,
+      "U": 9.987100005884915e-06,
+      "gamma": 0.0012899997057542305,
+      "min_low_coefficient": 9.999993262351423e-06,
+      "ratio": 0.9987100005884915,
+      "margin": 9.984600005884915e-06,
+      "kind": "arc_or_lattice",
+      "metadata": {
+        "q": 1
+      }
+    },
+    "max_fft_direct_error": 1.0838808460753297e-16,
+    "gamma_at_least_7_over_6": 157
+  },
+  "constants": {
+    "p74_constant": "0.000255813967521932794722871022425964502014133063033997958302403286659151968694",
+    "claimed": "0.00025",
+    "ratio_to_claimed": "1.02325587008773117889148408970385800805653225213599183320961",
+    "p74_h_at_L1": "0.0736744226463166448801868544586777765800703221537914119910921",
+    "branch_A": "0.00333333333333333333333333333333333333333333333333333333333333",
+    "p72e_example_evaluations": [
+      {
+        "tau": ".5",
+        "B": 1,
+        "frequency": "0.5",
+        "transform_value": "0.405284734569351085775517852838910555617435098688986195382436",
+        "rigorous_lower_formula": "-0.25"
+      },
+      {
+        "tau": ".5",
+        "B": 10,
+        "frequency": "0.95",
+        "transform_value": "-0.0242963374445341580811285216153262429525890409725398768784753",
+        "rigorous_lower_formula": "-0.025"
+      },
+      {
+        "tau": ".5",
+        "B": 100,
+        "frequency": "0.995",
+        "transform_value": "-0.00249931799265567508302393170867279742083321824058331363696262",
+        "rigorous_lower_formula": "-0.0025"
+      },
+      {
+        "tau": ".5",
+        "B": 1000,
+        "frequency": "0.9995",
+        "transform_value": "-0.000249999320381848224380990013237200191048449021211566542981913",
+        "rigorous_lower_formula": "-0.00025"
+      },
+      {
+        "tau": ".5",
+        "B": 10000,
+        "frequency": "0.99995",
+        "transform_value": "-0.0000249999993206229156556517294136387592903398137367168845197342",
+        "rigorous_lower_formula": "-0.000025"
+      }
+    ]
+  }
+}.research/PROOFS.md:2374:## P72. Robust duality for near-Boolean weights (lead, 2026-10-19; PROVED, elementary; context E103, Ruzsa's question)
+.research/PROOFS.md:2398:## P73. Robust few-spike lemma: Boolean sets are L²-far from PD functions with peak < 4/3 (lead, 2026-10-19; PROVED, elementary)
+.research/PROOFS.md:2432:## P74. PR(1) at the resolution scale: U >= 2.5·10^{-4}·min(|Ω|, 1/L) (lead, 2026-10-19; PROVED, elementary)
+.research/agents/adv_p72_74_scratch/PROOFS_at_audit_start.md:2374:## P72. Robust duality for near-Boolean weights (lead, 2026-10-19; PROVED, elementary; context E103, Ruzsa's question)
+.research/agents/adv_p72_74_scratch/PROOFS_at_audit_start.md:2398:## P73. Robust few-spike lemma: Boolean sets are L²-far from PD functions with peak < 4/3 (lead, 2026-10-19; PROVED, elementary)
+.research/agents/adv_p72_74_scratch/PROOFS_at_audit_start.md:2432:## P74. PR(1) at the resolution scale: U >= 2.5·10^{-4}·min(|Ω|, 1/L) (lead, 2026-10-19; PROVED, elementary)
+
+codex
+The VM searches finished without a counterexample: 304 LP comparisons, 5,005 P73(T) tests, and 4,358 accepted P74 arc-union tests. The analytic review also validates P73(T)’s measurable-set step and both constants in P74. I’m recording the final verdicts and the precise P72(e) gap, with the bounded searches clearly separated from proof.
+exec
+/bin/zsh -lc "cat > .research/agents/adv_p72_74_scratch/independent_vm.py <<'PY'
+#"'!/usr/bin/env python3
+"""Independent high-precision checks; run only on dirichlet."""
+from fractions import Fraction
+from pathlib import Path
+import json
+import math
+import mpmath as mp
+import numpy as np
+
+out=Path('"'.research/agents/adv_p72_74_scratch')
+mp.mp.dps=90
+best=np.load(out/'p73_best_vm.npz')
+weights=[mp.mpf(float(v)) for v in best['weights']]
+ks=[int(v) for v in best['ks']]
+mask=best['mask']
+N=len(mask)
+# Arc integration uses actual endpoints with arbitrary precision, independently of FFT.
+centers=[mp.mpf(int(j))/N for j in np.flatnonzero(mask)]
+def a(k):
+    if k==0: return mp.mpf(len(centers))/N
+    t=mp.pi*k/N
+    return mp.sin(t)/t/N*sum(mp.cos(2*mp.pi*k*x) for x in centers)
+mu=mp.mpf(len(centers))/N
+gamma=sum(weights)
+delta=min(mp.mpf('.499'),(4-3*gamma)/5*mp.mpf('.999'))
+E=sum(w*w for w in weights)+mu-2*sum(w*a(k) for w,k in zip(weights,ks))
+rhs=delta**2*mu/3
+C=mp.sqrt(mp.mpf(3)/56)/(288*mp.pi)
+# pi<22/7 plus this rational comparison proves C>1/4000 without floating arithmetic.
+left=Fraction(3,56)
+right=(Fraction(9,125)*Fraction(22,7))**2
+assert left>right
+assert Fraction(1,300)>Fraction(1,4000)
+# Bernstein/Taylor edge value: (7/6)*(1-2*(3/56))=25/24 exactly.
+edge=Fraction(7,6)*(1-2*Fraction(3,56))
+assert edge==Fraction(25,24)
+answer={'p73_best_independent':{'mu':str(mu),'gamma':str(gamma),'delta':str(delta),
+                              'E':str(E),'rhs':str(rhs),'ratio':str(E/rhs)},
+        'p74_rational_constant_check':{'left':str(left),'right':str(right),
+                                       'strict_difference':str(left-right),'edge':str(edge),
+                                       'C':str(C)},
+        'p74_semicircle':{'U':str(mp.mpf(1)/4-2/mp.pi**2),
+                          'ratio':str(mp.mpf(1)/2-4/mp.pi**2)},
+        'source_unchanged':(out/'PROOFS_at_audit_start.md').read_bytes()==Path('.research/PROOFS.md').read_bytes()}
+(out/'independent_results_vm.json').write_text(json.dumps(answer,indent=2))
+print(json.dumps(answer,indent=2))
+PY
+DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -t 120 python .research/agents/adv_p72_74_scratch/independent_vm.py" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+web search: 
+web search: 'Danskin'
+ succeeded in 4733ms:
+{
+  "p73_best_independent": {
+    "mu": "0.23095703125",
+    "gamma": "0.5961934955408631220397097649765782989561557769775390625",
+    "delta": "0.4418416187728066446493979668730389676056802272796630859375",
+    "E": "0.0717464976687994653291051561155228402189238671026522213601016255987472155142279644548391113",
+    "rhs": "0.0150294530608289708887999131288652756631058220503254106749250416090196779519329119459945809",
+    "ratio": "4.77372645421084837983254803355598315844805784553407735322768510046777472154839712703388093"
+  },
+  "p74_rational_constant_check": {
+    "left": "3/56",
+    "right": "39204/765625",
+    "strict_difference": "14493/6125000",
+    "edge": "25/24",
+    "C": "0.000255813967521932794722871022425964502014133063033997958302403286659151968694273110896385833"
+  },
+  "p74_semicircle": {
+    "U": "0.0473576327153244571122410735805447221912824506555069023087819362116537580755291176175814522",
+    "ratio": "0.0947152654306489142244821471610894443825649013110138046175638724233075161510582352351629043"
+  },
+  "source_unchanged": true
+}
+
+exec
+/bin/zsh -lc "cat > .research/agents/adv_p72_74_report.md <<'EOF'
+# Adversarial verification report: P72, P73, P74
+
+**Status: COMPLETE — 2026-10-19.** The assigned proofs have been checked step by step, with the three requested numerical attacks completed on dirichlet. No counterexample was found to P72(a)–(c), P73(Z), P73(T), or P74. P72(d) needs a domain correction and its point-mass comparison is false as a uniform assertion. P72(e) has a quantitative/discrete proof gap; its literal continuum hypotheses do not imply a uniform negative depth.
+
+Only this report and "'`adv_p72_74_scratch/` were written by this audit. No main research notes were edited, no commit was made, and no subagents were launched. No mathematical numerical computation was run on the laptop. The numerical results below are floating-point evidence, not rigorous certificates for untested instances or universal claims.
+
+## Verdicts
+
+| Item | Verdict | Exact qualification |
+|---|---|---|
+| P72(a) | **CORRECT** | Sion applies to the compact weight box and weak-* compact probability measures; payoff continuity and both extrema are valid. |
+| P72(b) | **CORRECT** | The Parseval factor is exactly `1/2` for the real Haar density. The angular notation for the density needs care. |
+| P72(c) | **CORRECT** | Danskin gives the maximum active slope, hence the negative of the **minimum** absolute-moment sum. |
+| P72(d) | **GAP** | The displayed bound requires `0<τ<1`; it is undefined at the allowed endpoint `τ=0`. The certificate inequality is correct after that restriction. The point-mass comparison is **FALSE** without averaging or a genericity hypothesis. |
+| P72(e) | **GAP** | The qualitative Fourier-positivity obstruction is correct. A uniform constant and the discrete weighted-interval conclusion are not established by the written proof. With only the literal continuum hypotheses, a uniform constant depending solely on τ is **FALSE**; see the explicit family below. |
+| P73(Z) | **CORRECT** | Includes complex PD functions, the empty good subset, and infinite error. |
+| P73(T) | **CORRECT** | The abbreviated transfer can be justified with compact subsets/inner measure and an explicit saturation case. No measurability obstruction survives. |
+| P74 | **CORRECT** | For the standard cutoff `L∈Z_{≥1}`, all identities, cases, constants, and the circle normalization check. Explicitly state `L≥1` to exclude the undefined expression `1/0`. |
+
+These are paper-proof verdicts. The existing Lean certification assertions were not re-audited in this assignment.
+
+## Conventions and audited text
+
+Use `T=R/Z`, Haar probability `dx`, `e(t)=exp(2πit)`, and
+
+`a_k = 1̂_Ω(k) = ∫_Ω e(−kx) dx`.
+
+In P72, the source'"'s angular function "'`Σ cos(aθ)` becomes `f_A(x)=Σ cos(2πax)` under `θ=2πx`. Its angular set measure `|{θ:f_A(θ)≤−s}|/(2π)` is the same Haar probability `λ_s`. There is no change in the minimax values or Fourier constants under this coordinate change.
+
+The starting proof text is preserved in `adv_p72_74_scratch/PROOFS_at_audit_start.md`. The independent VM check also compares it byte for byte with the source. The fixed task was adversarial verification, not advancement of the broader research program.
+
+## P72(a): minimax, topology, and signs
+
+Let `W=[1−τ,1+τ]''^A` and `P(T)` be the Borel probability measures on the compact circle. `W` is compact convex in finite-dimensional Euclidean space. `P(T)` is compact convex in the weak-* topology inherited from `C(T)*`: positivity and total mass one define a weak-* closed subset of the unit ball. The topology here is not the total variation norm topology.
+
+The payoff
+
+`F(w,ν)=−Σ_a w_a ∫cos(2πax)dν(x)`
+
+is affine and continuous in each variable (in fact jointly continuous because the sum is finite). It therefore satisfies the quasiconcavity/quasiconvexity and semicontinuity hypotheses of [Sion, *On general minimax theorems*, Theorem 3.4](https://msp.org/pjm/1958/8-1/pjm-v8-n1-p14-p.pdf).
+
+For fixed w, maximizing over ν equals maximizing the continuous integrand over x; a Dirac measure attains it. Thus Sion interchanges exactly the optimization problems in the statement. For each coordinate, minimizing `−w_a c_a` on the interval gives `−c_a−τ|c_a|`, including `c_a=0`. The resulting dual objective is continuous in ν, so the outer maximum is attained. The primal minimum is also attained. The empty set A gives zero on both sides and causes no exception.
+
+**Verdict: CORRECT.**
+
+## P72(b): the Parseval constant
+
+Put `E_s={f_A≤−s}` and suppose `λ=|E_s|>0`. Relative to Haar probability, the normalized restricted measure has real density `h=1_E_s/λ`, with
+
+`ĥ(0)=1`, `‖h‖₂²=1/λ`, and `ĥ(−k)=conj(ĥ(k))`.
+
+Consequently Parseval gives exactly
+
+`Σ_{k≥1}|ĥ(k)|² = (1/λ−1)/2`.
+
+Also `c_a=Re ĥ(a)`, so
+
+`Σ_{a∈A}|c_a| ≤ √n (Σ_{a∈A}|c_a|²)''^{1/2} ≤ √[n(1/λ−1)/2]`.
+
+The unweighted term satisfies `−Σ c_a=−∫f_A dν≥s`. Substituting this measure into (a) gives the asserted bound. Nothing replaces `|ĥ(a)|²` with a potentially signed square.
+
+The source notation `dν/dx` inside `L²(dx/(2π))` must mean the density relative to normalized Haar measure. If it meant the ordinary angular Lebesgue density, it would be `1/(2πλ)` on the set and the displayed Parseval equation would have the wrong normalization. In the stipulated `R/Z` convention this ambiguity disappears.
+
+**Verdict: CORRECT, with the density interpreted as Haar density.**
+
+## P72(c): Danskin and the optimizer set
+
+The continuous moment map sends `P(T)` to a compact subset `K⊂R''^n`. On K define `α(c)=−Σ c_a` and `β(c)=Σ|c_a|`. Then
+
+`M_τ=max_{c∈K}[α(c)−τβ(c)]`.
+
+Both α and β are continuous; the dependence on τ is affine with continuous slope `−β`. This reduces the question to the finite-dimensional compact-index version of [Danskin'"'s theorem, Bertsekas, Proposition 5.4.9](https://www.mit.edu/~dimitrib/convexdualitycondenced.pdf). The displayed maximum can be extended to all real τ to apply the theorem at an interior point; only its right derivative at zero is needed for the original domain.
+
+The active measures at zero satisfy "'`∫(f_A+M_0)dν=0`. Since the integrand is continuous and nonnegative, this is equivalent to ν being supported on `argmin f_A`. The maximum active slope is
+
+`max_{ν∈Opt₀}(−β(ν)) = −min_{ν∈Opt₀}β(ν)`.
+
+The minimum exists by compactness. Selecting that same measure at positive τ gives `M_τ≥M_0−τ min_Opt₀ β` directly. No uniqueness of the minimizing x or the optimizing measure is assumed. The absolute value is applied after averaging each cosine; replacing this by an average of absolute values would be a different statement.
+
+**Verdict: CORRECT.**
+
+## P72(d): exact domain defect and false point-mass comparison
+
+If “ν certifies `M_τ≥m`” means its dual objective is at least m, then
+
+`m ≤ −Σ c_a(ν)−τΣ|c_a(ν)| ≤ M_0−τΣ|c_a(ν)|`.
+
+For `τ>0`, division proves the stated spread inequality and, under `m≥c√n`, `M_0≤C√n`, the bound `(C−c)√n/τ`. This says nothing finite about spread when `τ=0`. At that allowed endpoint the displayed quotient is undefined, including possible `0/0`. The repair is to state (d) for `0<τ<1`.
+
+The additional assertion that a point mass has `Σ|c_a|≈(2/π)n` is not uniform. For `ν=δ_0`, the sum is exactly n for every A. For `A={1,3,...,2n−1}` and `ν=δ_{1/4}`, every `cos(2πa/4)=0`, so the sum is exactly zero. The correct unconditional statement is the spatial average
+
+`∫_T Σ_{a∈A}|cos(2πax)|dx = (2/π)n`.
+
+This false comparison does not invalidate the restricted certificate inequality.
+
+**Verdict: GAP in the displayed domain; the ancillary point-mass assertion is FALSE as a uniform claim.**
+
+## P72(e): qualitative obstruction versus uniform conclusion
+
+Assume the bounded profile is measurable and real, supported in `[−1,1]`, and at least `c=1−τ>0` on its interior. If its Fourier transform is everywhere real and nonnegative, the nonnegative Fejér-weighted integrals
+
+`∫ (1−|ξ|/R)_+ φ̂(ξ)dξ = (φ*F_R)(0) ≤ ‖φ‖∞`
+
+increase to `∫φ̂`. Here `F_R` is the real-line Fejér kernel of mass one, so the bound holds even if zero is not a Lebesgue point. Hence `φ̂∈L¹`, and Fourier inversion gives a continuous function equal to φ almost everywhere. Such a representative must be zero outside `[−1,1]` and at least c throughout `(-1,1)`, which contradicts continuity at either endpoint. Strictly speaking, inversion gives a continuous **representative**, not pointwise continuity of an arbitrary original measurable version. The contradiction is still valid.
+
+The resulting conclusion is qualitative: **each such profile has a negative Fourier value**. It does not by itself give a common negative depth, a constant depending only on τ, or a uniform discrete linear bound.
+
+There is an explicit counterexample to a uniform depth under the continuum hypotheses as literally written. For fixed c and arbitrary `B>0`, set
+
+`φ_B(x)=c·1_[−1,1](x)+B(1−|x|)_+`.
+
+This is bounded for each B, supported in the required interval, and at least c there. With the convention `φ̂(ξ)=∫_R φ(x)e(−ξx)dx`, write `t=πξ`, `y=sin(t)/t` (continuously at zero). Then
+
+`φ̂_B(ξ)=2c y cos(t)+B y²`
+
+`=B[y+c cos(t)/B]²−c² cos²(t)/B ≥ −c²/B`.
+
+Thus for every ε>0, a permitted B makes the entire Fourier transform at least `−ε`. Each individual transform still has negative values just to the left of a positive integer frequency: the first term has a simple zero and the second term a double zero there. This refutes a uniform negative constant depending only on τ for the stated class.
+
+The intended weighted interval class has the additional common upper bound `φ≤1+τ`. That excludes this family. For that intended class, one must actually supply the uniform compactness argument and the continuum-to-discrete passage (the source acknowledges the latter is not written). The audit does not label the intended box-bounded discrete theorem false.
+
+**Verdict: GAP for the intended quantitative/discrete conclusion; CORRECT qualitative obstruction; FALSE uniform conclusion under the literal continuum hypotheses without a common upper bound.**
+
+## P73(Z): every proof step
+
+Positive definiteness implies `m₀=φ(0)∈R_{≥0}`, Hermitian symmetry, and `|φ(k)|≤m₀`. The GNS construction gives `ψ(k)=m₀−Re φ(k)≥0` and a translation-invariant Hilbert distance `√(2ψ)`. Its triangle inequality yields the asserted subadditivity. In particular,
+
+`ψ(k+l)≤2ψ(k)+2ψ(l)`.
+
+If `E=∞`, the theorem is immediate. Otherwise the bad set `B={k:|φ(k)−1_S(k)|>δ}` is finite and `δ²|B|≤E`.
+
+For `k,l∈S'"\\B"'`, let `u=m₀−1+δ`. Their existence forces `u≥0`. If `k+l∉S∪B`, then
+
+`m₀−δ ≤ ψ(k+l) ≤ 4u = 4(m₀−1+δ)`,
+
+forcing `3m₀≥4−5δ`, contrary to the strict hypothesis. This is valid for complex φ: only real parts and modulus error bounds were used.
+
+Thus `A+A⊂S∪B` with `A=S'"\\B"'`. For nonempty finite A in Z, `|A+A|≥2|A|−1`; this is elementary by ordering A and does not require primality or reduction modulo anything. If A is empty, `|B|≥|S|` already proves the required bad-set bound. Otherwise,
+
+`2(|S|−|B|)−1 ≤ 2|A|−1 ≤ |S|+|B|`,
+
+so `|B|≥(|S|−1)/3`. This proves the claimed error bound, including `|S|=1` and sets S that do not contain zero.
+
+**Verdict: CORRECT.**
+
+## P73(T): measurability, inner measure, and saturation
+
+Take `δ∈(0,1/2)`, `μ=|Ω|∈(0,1/2]`, and continuous PD g with `m₀=g(0)<(4−5δ)/3`. Define the Haar measurable sets
+
+`B={x:|g(x)−1_Ω(x)|>δ}`, `b=|B|`, and `A=Ω'"\\B"'`.
+
+The same Hilbert-distance calculation as in Z proves the pointwise containment `A+A⊂Ω∪B`. Also `|A|≥μ−b`, and `‖g−1_Ω‖₂²≥δ²b`.
+
+One should not silently assume that the algebraic sum of two completed-Haar measurable sets is measurable. Instead, for every nonempty compact `K⊂A`, `K+K` is compact, and the compact connected-group sumset theorem gives
+
+`min(1,2|K|) ≤ |K+K| ≤ |Ω∪B| ≤ μ+b`.
+
+The exact required compact-set theorem is stated in [Tao, *An inverse theorem for an inequality of Kneser*, introduction, equation (1)](https://arxiv.org/html/1711.04337v4); its connected compact group hypotheses apply to `R/Z`. Haar inner regularity lets `|K|` approach `|A|`, giving `min(1,2|A|)≤μ+b`. Equivalently, one may formulate the sumset bound using inner measure throughout. There is no need to take the measure of `A+A` itself.
+
+For the remaining saturation issue, suppose `b<μ/3`. Then `μ+b<4μ/3≤2/3<1`. The saturated value 1 on the left is impossible, so
+
+`2(μ−b) ≤ 2|A| ≤ μ+b`,
+
+which implies `b≥μ/3`, a contradiction. Therefore `b≥μ/3` and
+
+`‖g−1_Ω‖₂² ≥ δ²μ/3`.
+
+If `|A|=0`, the conclusion follows immediately from `b≥μ`; under the contradiction assumption A has positive measure and compact subsets of positive measure exist. Null-set changes to Ω cause no issue with this proof. The restriction `μ≤1/2` is genuinely used; without a density restriction, `Ω=T`, `g=1` would refute the conclusion for small positive δ.
+
+The consequence P73(b) uses a non-strict peak inequality `≤` although the primary statement uses `<`. This endpoint follows by taking `δ'"'↑δ"'` with `δ'"'<δ"'`; the peak is then strictly below `(4−5δ'"')/3"'`. Thus this is not a gap.
+
+**Verdict: CORRECT; the source'"'s abbreviated “identical” transfer should be expanded as above.**
+
+## P74: projection identities, Bernstein, and constants
+
+Assume "'`L∈Z_{≥1}`. Symmetry of Ω gives real `a_k=a_−k`; nonnegativity for `|k|≤L` makes
+
+`g(x)=Σ_{|k|≤L}a_k e(kx)`
+
+continuous, real, even, and PD. The triangle inequality gives `|g(x)|≤Σa_k=g(0)=γ`, with equality at zero. Thus `γ=‖g‖∞` in the absolute-value norm, and `g'"'(0)=0"'`.
+
+Projection/Parseval give, with every integral relative to Haar probability,
+
+`U=‖1_Ω−g‖₂²=μ−Σ_{|k|≤L}a_k²=∫g−∫g²=∫g(1−g)`.
+
+The integral identity is global; its integrand need not be nonnegative pointwise. The unresolved tail is `Σ_{|k|>L}|a_k|²`; the source'"'s squares equal these absolute squares because symmetry makes all coefficients real.
+
+For a trigonometric polynomial in frequencies "'`[-L,L]`, the sharp angular Bernstein constant is L, not 2L. Changing from `θ` to `x=θ/(2π)` gives `‖g'"'‖∞≤2πL‖g‖∞"'`, and applying it to g'"' gives
+
+"'`‖g'"''‖∞≤(2πL)²γ"'`.
+
+This is the exact form of [Queffélec–Zarouf, *On Bernstein'"'s inequality for polynomials*, Theorem 1.1](https://arxiv.org/pdf/1903.10801). There is also a direct check here using nonnegative coefficients:
+
+"'`|g'"''(x)|≤Σ(2πk)²a_k≤(2πL)²Σa_k=(2πL)²γ"'`.
+
+Taylor'"'s formula at zero therefore gives "'`g(x)≥γ(1−2π²L²x²)` in the centered circle coordinate.
+
+- **Case A:** `γ<7/6` and `δ=1/10` satisfy P73(T)'"'s strict hypothesis. Its conclusion is exactly "'`U≥μ/300`, since `δ²/3=1/300`. This dominates `(1/4000)min(μ,1/L)`.
+- **Case B:** `γ≥7/6`, including equality. Restrict to `|x|≤h=√(3/56)/(πL)`. On this neighborhood, `1−2π²L²x²≥25/28>0`, so replacing γ by `7/6` is legitimate. The edge value is exactly `(7/6)(25/28)=25/24`. The source'"'s second Taylor comparison must be read on this neighborhood, not as a global comparison when its bracket is negative.
+
+For "'`L≥1`, `h<1/2`, so the neighborhood has Haar measure exactly `2h` and does not overlap itself around the circle. Since `1_Ω≤1`, the error there is at least `1/24` in absolute value, hence its square is at least `1/576`. Therefore
+
+`U≥2h/576 = [√(3/56)/(288π)]/L`.
+
+The coefficient is
+
+`0.000255813967521932794722871022425964502014133063... > 0.00025 = 1/4000`.
+
+This comparison also has an exact check: `π<22/7` and
+
+`3/56 > ((9/125)(22/7))²`
+
+imply `√(3/56)>9π/125`, which is equivalent to the required coefficient being greater than `1/4000`. The rational difference is positive in `independent_results_vm.json`. Thus the rounded constant has genuine slack; it does not depend on trusting decimal output.
+
+The two cases exhaust all γ and imply exactly the advertised minimum of μ and `1/L`. They do not imply `U≥cμ` uniformly in the large-peak, `μL≫1` regime. The source explicitly preserves that limitation.
+
+**Verdict: CORRECT, with the standard positive-integer cutoff made explicit.**
+
+## Numerical adversarial checks (VM only)
+
+Reproduce with:
+
+```sh
+DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -t 420 python .research/agents/adv_p72_74_scratch/audit_vm.py
+DIRICHLET_IP=34.148.157.169 src/dirun.sh -c 4 -t 120 python .research/agents/adv_p72_74_scratch/independent_vm.py
+```
+
+Main seed: `727374`. Environment and measured runtimes are stored with the outputs. The main run used Python 3.12.3, NumPy 2.5.4, SciPy 1.18.1, on Linux/GCP, and took about 26 seconds of script wall time. Computations used at most the requested four-core quota. The independent script uses 90-digit mpmath and exact rational arithmetic for the elementary constant comparison.
+
+### P72(a): both linear programs
+
+Tested all nonempty subsets of `{1,...,6}` of size at most four, plus 20 seeded sparse sets from `{1,...,24}` with sizes two through six; the four τ values were `0,0.1,0.5,0.9`. This gives **304 pairs** of LPs. Each used a 2048-point full-circle grid, reduced to the even half-circle without changing the finite problem. Eight cases were repeated on an 8192-point grid.
+
+The primal minimizes z over the weight box with `−Cw≤z`. The dual uses grid probability masses p, `c=Cᵀp`, and auxiliary variables `t≥±c`, maximizing `−Σc−τΣt`. The actual nonlinear dual objective `−Σc−τΣ|c|` was also evaluated at the resulting measure.
+
+- Maximum primal/dual discrepancy on the 304 coarse cases: `1.06e−11`.
+- Maximum discrepancy from the recomputed absolute-value objective: `1.29e−11`.
+- Maximum discrepancy on the eight fine cases: `8.72e−11`.
+- The largest observed coarse-to-fine value change in those repeats was `3.13e−5`, much larger than LP residuals and correctly attributable to grid resolution.
+
+No duality violation was observed. These are finite-grid comparisons; they do not replace the compact-circle proof or certify a continuum optimum.
+
+### P73(T): complex and real PD polynomials
+
+Tested **5,000 seeded random cases**, with degree zero through 24, nonnegative Fourier coefficients, and peak `0.01≤g(0)<1.332`. Both symmetric real and nonsymmetric complex PD polynomials were included. Delta was chosen strictly below the allowed peak threshold, capped at `0.499`. Sets were random cell unions, shifted intervals, and adversarial unions of cells with largest `Re g`, always with `0<μ≤1/2`. Five constant-polynomial boundary examples were added: **5,005 cases total**.
+
+Each selected grid cell represents an actual arc of width `1/2048`, centered at `j/2048`. Its Fourier coefficient is computed by integrating the arc, namely the discrete Fourier sum times the sinc factor. The exact-in-formula error is
+
+`E=Σ_k b_k²+μ−2Σ_k b_k Re(a_k)`
+
+for `g=Σ b_k e(kx)`, `b_k≥0`. This does not approximate E by point samples of `|g−1_Ω|²`.
+
+There were **zero violations**. The smallest observed ratio `E/(δ²μ/3)` was approximately **4.7737264542**, at degree three, peak `0.5961934955`, delta `0.4418416188`, and `μ=0.23095703125`. The associated coefficients and arc mask are in `p73_best_vm.npz`. Direct 90-digit integration of those arcs independently checks its error and ratio.
+
+This search covers a finite collection of trig polynomials and finite arc unions, not all continuous PD functions or all measurable sets.
+
+### P74: symmetric unions of arcs
+
+Cutoffs were `L∈{1,2,3,4,6,8,12,16,24,32,64}`. Families included centered arcs and their preimages under `x↦qx`, with `q∈{1,2,3,5,8,17}`; independent random symmetric cell unions; random symmetric unions supported in a short neighborhood of zero; unions selected by random cosine scores with nonnegative score coefficients; and signs of Dirichlet kernels.
+
+After filtering for density and nonnegative low coefficients, **4,358 cases** were accepted, of which **157** had `γ≥7/6`. Accepted counts by family:
+
+| Family | Proposed | Accepted |
+|---|---:|---:|
+| Centered arc or lattice preimage | 2310 | 2310 |
+| Dirichlet sign cell union | 11 | 2 |
+| Independent random symmetric unions | 1100 | 102 |
+| Small-support random symmetric unions | 1100 | 1091 |
+| Positive-score random symmetric unions | 2200 | 853 |
+
+Some proposed sets were empty, had density above one half, or had a negative low coefficient; those were excluded rather than tested as though they met the theorem. Floating-point admissibility used a `2e−12` allowance for tiny negative roundoff. Consequently accepted random examples are numerical admissibility checks, not certified sign proofs. Centered arc/lattice coefficients have the explicit formula `a_k=0` when `q∤k`, and `a_k=μ sinc((k/q)μ)` otherwise; the chosen density range ensures analytic nonnegativity for these structured cases.
+
+For all accepted cases U was computed as `μ−a_0²−2Σ_{k=1}''^L a_k²`, so no truncation of the unresolved tail was used. Independent direct arc integration and the FFT/sinc formula agreed within `1.09e−16` on the selected cross-checks.
+
+There were **zero violations** of `U≥2.5e−4 min(μ,1/L)`. The smallest ratio `U/min(μ,1/L)` was approximately **0.09471526543**, for the half-circle centered at zero with `L=1`. Here exactly `U=1/4−2/π²`, and the independent high-precision script verifies it. The finite search says nothing universal beyond its saved cases.
+
+### P72(e): missing-upper-bound family
+
+The VM also evaluated the displayed explicit family at τ=1/2 with `B=1,10,100,1000,10000`. For large B, values near the first integer frequency approach the exact global lower bound `−1/(4B)`. The counterexample to a common depth is the completed-square identity, not these sampled evaluations. At B=1 the particular sampled frequency happens to give a positive value; no claim of a negative global minimum is inferred from that sample.
+
+## Evidence artifacts and final disposition
+
+All paths below are relative to `adv_p72_74_scratch/`:
+
+- `audit_vm.py`: main reproducible searches and constant evaluations.
+- `results_vm.json`: completed aggregate results, environment, seed, and runtime.
+- `p72_lp_cases_vm.json`: all 304 coarse LP comparisons.
+- `p73_best_vm.npz`: coefficients and exact cell mask of the strongest observed P73 adversary.
+- `p74_cases_vm.json`: all accepted P74 cases and their parameters/ratios.
+- `p74_best_vm.json`: parameters of the smallest-ratio P74 case.
+- `independent_vm.py` and `independent_results_vm.json`: direct high-precision integration of the P73 adversary, the semicircle check, exact rational constant check, and source snapshot comparison.
+- `PROOFS_at_audit_start.md`: exact starting source snapshot.
+
+The main mathematical findings requiring attention are confined to P72(d) and P72(e). P73(T)'"'s measurability/saturation details and P74's constants survive adversarial review. No broader Chowla claim is inferred, and no ongoing computation is left running by this audit.
+EOF" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+exec
+/bin/zsh -lc "sed -n '1,46p' .research/agents/adv_p72_74_report.md
+tail -30 .research/agents/adv_p72_74_report.md" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+# Adversarial verification report: P72, P73, P74
+
+**Status: COMPLETE — 2026-10-19.** The assigned proofs have been checked step by step, with the three requested numerical attacks completed on dirichlet. No counterexample was found to P72(a)–(c), P73(Z), P73(T), or P74. P72(d) needs a domain correction and its point-mass comparison is false as a uniform assertion. P72(e) has a quantitative/discrete proof gap; its literal continuum hypotheses do not imply a uniform negative depth.
+
+Only this report and `adv_p72_74_scratch/` were written by this audit. No main research notes were edited, no commit was made, and no subagents were launched. No mathematical numerical computation was run on the laptop. The numerical results below are floating-point evidence, not rigorous certificates for untested instances or universal claims.
+
+## Verdicts
+
+| Item | Verdict | Exact qualification |
+|---|---|---|
+| P72(a) | **CORRECT** | Sion applies to the compact weight box and weak-* compact probability measures; payoff continuity and both extrema are valid. |
+| P72(b) | **CORRECT** | The Parseval factor is exactly `1/2` for the real Haar density. The angular notation for the density needs care. |
+| P72(c) | **CORRECT** | Danskin gives the maximum active slope, hence the negative of the **minimum** absolute-moment sum. |
+| P72(d) | **GAP** | The displayed bound requires `0<τ<1`; it is undefined at the allowed endpoint `τ=0`. The certificate inequality is correct after that restriction. The point-mass comparison is **FALSE** without averaging or a genericity hypothesis. |
+| P72(e) | **GAP** | The qualitative Fourier-positivity obstruction is correct. A uniform constant and the discrete weighted-interval conclusion are not established by the written proof. With only the literal continuum hypotheses, a uniform constant depending solely on τ is **FALSE**; see the explicit family below. |
+| P73(Z) | **CORRECT** | Includes complex PD functions, the empty good subset, and infinite error. |
+| P73(T) | **CORRECT** | The abbreviated transfer can be justified with compact subsets/inner measure and an explicit saturation case. No measurability obstruction survives. |
+| P74 | **CORRECT** | For the standard cutoff `L∈Z_{≥1}`, all identities, cases, constants, and the circle normalization check. Explicitly state `L≥1` to exclude the undefined expression `1/0`. |
+
+These are paper-proof verdicts. The existing Lean certification assertions were not re-audited in this assignment.
+
+## Conventions and audited text
+
+Use `T=R/Z`, Haar probability `dx`, `e(t)=exp(2πit)`, and
+
+`a_k = 1̂_Ω(k) = ∫_Ω e(−kx) dx`.
+
+In P72, the source's angular function `Σ cos(aθ)` becomes `f_A(x)=Σ cos(2πax)` under `θ=2πx`. Its angular set measure `|{θ:f_A(θ)≤−s}|/(2π)` is the same Haar probability `λ_s`. There is no change in the minimax values or Fourier constants under this coordinate change.
+
+The starting proof text is preserved in `adv_p72_74_scratch/PROOFS_at_audit_start.md`. The independent VM check also compares it byte for byte with the source. The fixed task was adversarial verification, not advancement of the broader research program.
+
+## P72(a): minimax, topology, and signs
+
+Let `W=[1−τ,1+τ]^A` and `P(T)` be the Borel probability measures on the compact circle. `W` is compact convex in finite-dimensional Euclidean space. `P(T)` is compact convex in the weak-* topology inherited from `C(T)*`: positivity and total mass one define a weak-* closed subset of the unit ball. The topology here is not the total variation norm topology.
+
+The payoff
+
+`F(w,ν)=−Σ_a w_a ∫cos(2πax)dν(x)`
+
+is affine and continuous in each variable (in fact jointly continuous because the sum is finite). It therefore satisfies the quasiconcavity/quasiconvexity and semicontinuity hypotheses of [Sion, *On general minimax theorems*, Theorem 3.4](https://msp.org/pjm/1958/8-1/pjm-v8-n1-p14-p.pdf).
+
+For fixed w, maximizing over ν equals maximizing the continuous integrand over x; a Dirac measure attains it. Thus Sion interchanges exactly the optimization problems in the statement. For each coordinate, minimizing `−w_a c_a` on the interval gives `−c_a−τ|c_a|`, including `c_a=0`. The resulting dual objective is continuous in ν, so the outer maximum is attained. The primal minimum is also attained. The empty set A gives zero on both sides and causes no exception.
+
+**Verdict: CORRECT.**
+
+## P72(b): the Parseval constant
+| Centered arc or lattice preimage | 2310 | 2310 |
+| Dirichlet sign cell union | 11 | 2 |
+| Independent random symmetric unions | 1100 | 102 |
+| Small-support random symmetric unions | 1100 | 1091 |
+| Positive-score random symmetric unions | 2200 | 853 |
+
+Some proposed sets were empty, had density above one half, or had a negative low coefficient; those were excluded rather than tested as though they met the theorem. Floating-point admissibility used a `2e−12` allowance for tiny negative roundoff. Consequently accepted random examples are numerical admissibility checks, not certified sign proofs. Centered arc/lattice coefficients have the explicit formula `a_k=0` when `q∤k`, and `a_k=μ sinc((k/q)μ)` otherwise; the chosen density range ensures analytic nonnegativity for these structured cases.
+
+For all accepted cases U was computed as `μ−a_0²−2Σ_{k=1}^L a_k²`, so no truncation of the unresolved tail was used. Independent direct arc integration and the FFT/sinc formula agreed within `1.09e−16` on the selected cross-checks.
+
+There were **zero violations** of `U≥2.5e−4 min(μ,1/L)`. The smallest ratio `U/min(μ,1/L)` was approximately **0.09471526543**, for the half-circle centered at zero with `L=1`. Here exactly `U=1/4−2/π²`, and the independent high-precision script verifies it. The finite search says nothing universal beyond its saved cases.
+
+### P72(e): missing-upper-bound family
+
+The VM also evaluated the displayed explicit family at τ=1/2 with `B=1,10,100,1000,10000`. For large B, values near the first integer frequency approach the exact global lower bound `−1/(4B)`. The counterexample to a common depth is the completed-square identity, not these sampled evaluations. At B=1 the particular sampled frequency happens to give a positive value; no claim of a negative global minimum is inferred from that sample.
+
+## Evidence artifacts and final disposition
+
+All paths below are relative to `adv_p72_74_scratch/`:
+
+- `audit_vm.py`: main reproducible searches and constant evaluations.
+- `results_vm.json`: completed aggregate results, environment, seed, and runtime.
+- `p72_lp_cases_vm.json`: all 304 coarse LP comparisons.
+- `p73_best_vm.npz`: coefficients and exact cell mask of the strongest observed P73 adversary.
+- `p74_cases_vm.json`: all accepted P74 cases and their parameters/ratios.
+- `p74_best_vm.json`: parameters of the smallest-ratio P74 case.
+- `independent_vm.py` and `independent_results_vm.json`: direct high-precision integration of the P73 adversary, the semicircle check, exact rational constant check, and source snapshot comparison.
+- `PROOFS_at_audit_start.md`: exact starting source snapshot.
+
+The main mathematical findings requiring attention are confined to P72(d) and P72(e). P73(T)'s measurability/saturation details and P74's constants survive adversarial review. No broader Chowla claim is inferred, and no ongoing computation is left running by this audit.
+
+exec
+/bin/zsh -lc "git status --short -- .research/agents/adv_p72_74_report.md .research/agents/adv_p72_74_scratch .research/PROOFS.md .research/STATE.md .research/NOTEBOOK.md
+cmp .research/PROOFS.md .research/agents/adv_p72_74_scratch/PROOFS_at_audit_start.md
+rg -n 'IN PROGRESS|pending|underway|COMPLETE|Verdict|source_unchanged' .research/agents/adv_p72_74_report.md .research/agents/adv_p72_74_scratch/independent_results_vm.json
+ls -lh .research/agents/adv_p72_74_scratch" in /Users/jmercedes/Desktop/Projects/Research/chowla-cosine
+ succeeded in 0ms:
+?? .research/agents/adv_p72_74_report.md
+?? .research/agents/adv_p72_74_scratch/
+.research/agents/adv_p72_74_report.md:3:**Status: COMPLETE — 2026-10-19.** The assigned proofs have been checked step by step, with the three requested numerical attacks completed on dirichlet. No counterexample was found to P72(a)–(c), P73(Z), P73(T), or P74. P72(d) needs a domain correction and its point-mass comparison is false as a uniform assertion. P72(e) has a quantitative/discrete proof gap; its literal continuum hypotheses do not imply a uniform negative depth.
+.research/agents/adv_p72_74_report.md:7:## Verdicts
+.research/agents/adv_p72_74_report.md:9:| Item | Verdict | Exact qualification |
+.research/agents/adv_p72_74_report.md:15:| P72(e) | **GAP** | The qualitative Fourier-positivity obstruction is correct. A uniform constant and the discrete weighted-interval conclusion are not established by the written proof. With only the literal continuum hypotheses, a uniform constant depending solely on τ is **FALSE**; see the explicit family below. |
+.research/agents/adv_p72_74_report.md:44:**Verdict: CORRECT.**
+.research/agents/adv_p72_74_report.md:64:**Verdict: CORRECT, with the density interpreted as Haar density.**
+.research/agents/adv_p72_74_report.md:80:**Verdict: CORRECT.**
+.research/agents/adv_p72_74_report.md:96:**Verdict: GAP in the displayed domain; the ancillary point-mass assertion is FALSE as a uniform claim.**
+.research/agents/adv_p72_74_report.md:106:The resulting conclusion is qualitative: **each such profile has a negative Fourier value**. It does not by itself give a common negative depth, a constant depending only on τ, or a uniform discrete linear bound.
+.research/agents/adv_p72_74_report.md:118:Thus for every ε>0, a permitted B makes the entire Fourier transform at least `−ε`. Each individual transform still has negative values just to the left of a positive integer frequency: the first term has a simple zero and the second term a double zero there. This refutes a uniform negative constant depending only on τ for the stated class.
+.research/agents/adv_p72_74_report.md:122:**Verdict: GAP for the intended quantitative/discrete conclusion; CORRECT qualitative obstruction; FALSE uniform conclusion under the literal continuum hypotheses without a common upper bound.**
+.research/agents/adv_p72_74_report.md:144:**Verdict: CORRECT.**
+.research/agents/adv_p72_74_report.md:172:**Verdict: CORRECT; the source's abbreviated “identical” transfer should be expanded as above.**
+.research/agents/adv_p72_74_report.md:217:**Verdict: CORRECT, with the standard positive-integer cutoff made explicit.**
+.research/agents/adv_p72_74_scratch/independent_results_vm.json:21:  "source_unchanged": true
+total 3232
+-rw-r--r--@ 1 jmercedes  staff   207K Oct 19 16:20 PROOFS_at_audit_start.md
+-rw-r--r--@ 1 jmercedes  staff    11K Oct 19 16:20 audit_vm.py
+-rw-r--r--@ 1 jmercedes  staff   1.0K Oct 19 16:21 independent_results_vm.json
+-rw-r--r--@ 1 jmercedes  staff   1.9K Oct 19 16:21 independent_vm.py
+-rw-r--r--@ 1 jmercedes  staff    95K Oct 19 16:20 p72_lp_cases_vm.json
+-rw-r--r--@ 1 jmercedes  staff    17K Oct 19 16:20 p73_best_vm.npz
+-rw-r--r--@ 1 jmercedes  staff   254B Oct 19 16:20 p74_best_vm.json
+-rw-r--r--@ 1 jmercedes  staff   1.2M Oct 19 16:20 p74_cases_vm.json
+-rw-r--r--@ 1 jmercedes  staff   7.8K Oct 19 16:20 results_vm.json
+
+codex
+Completed the audit and finalized [adv_p72_74_report.md](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/adv_p72_74_report.md).
+
+- **CORRECT:** P72(a)–(c), P73(Z), P73(T), and P74. The report supplies the measurable-set justification for P73(T) and verifies both constants in P74.
+- **P72(d): GAP.** The spread bound requires τ > 0. Its point-mass comparison is false as a uniform assertion.
+- **P72(e): GAP.** The qualitative obstruction holds, but the uniform and discrete conclusions need further justification. An explicit family disproves a uniform negative depth under the literal continuum hypotheses without a common upper bound.
+
+All requested numerical checks ran on the VM: **304 LP comparisons, 5,005 P73(T) tests, and 4,358 accepted P74 cases**, with no violations observed. Scripts, outputs, and independent high-precision checks are saved in the designated scratch directory.
+
+No main research notes were changed, no commits were made, and no subagents were launched.
+tokens used
+123,643
+Completed the audit and finalized [adv_p72_74_report.md](/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/adv_p72_74_report.md).
+
+- **CORRECT:** P72(a)–(c), P73(Z), P73(T), and P74. The report supplies the measurable-set justification for P73(T) and verifies both constants in P74.
+- **P72(d): GAP.** The spread bound requires τ > 0. Its point-mass comparison is false as a uniform assertion.
+- **P72(e): GAP.** The qualitative obstruction holds, but the uniform and discrete conclusions need further justification. An explicit family disproves a uniform negative depth under the literal continuum hypotheses without a common upper bound.
+
+All requested numerical checks ran on the VM: **304 LP comparisons, 5,005 P73(T) tests, and 4,358 accepted P74 cases**, with no violations observed. Scripts, outputs, and independent high-precision checks are saved in the designated scratch directory.
+
+No main research notes were changed, no commits were made, and no subagents were launched.

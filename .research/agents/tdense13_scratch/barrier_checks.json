@@ -1,0 +1,185 @@
+{
+  "barrier": [
+    {
+      "q": 8000000,
+      "prime": false,
+      "J": 3,
+      "u": 200,
+      "repair_sites": 55896,
+      "support_sites": 58299,
+      "last_positive": 230806,
+      "K_sign": 200,
+      "Lambda_sign": 159800,
+      "mass_residual": "[+/- 1.15e-56]",
+      "energy_residual": "[+/- 8.61e-52]",
+      "correlations": [
+        {
+          "gamma": 1,
+          "exact_monomial_counts": {
+            "(0, 1)": 2,
+            "(2, 2)": 400
+          },
+          "residual_ball": "[+/- 1.38e-54]"
+        },
+        {
+          "gamma": 2,
+          "exact_monomial_counts": {
+            "(1, 1)": 1,
+            "(3, 3)": 400
+          },
+          "residual_ball": "[+/- 1.08e-54]"
+        },
+        {
+          "gamma": 3,
+          "exact_monomial_counts": {
+            "(4, 4)": 400
+          },
+          "residual_ball": "[+/- 1.70e-54]"
+        }
+      ],
+      "first_tested_outside_segment": 8,
+      "sign_defect_over_q2_ball": "[0.9702438298695307695118983760773572287459462755666182244927746 +/- 3.96e-62]",
+      "status": "Exact support-count check and Arb arithmetic; infinite-prime claim proved in report"
+    },
+    {
+      "q": 64000000,
+      "prime": false,
+      "J": 5,
+      "u": 400,
+      "repair_sites": 227348,
+      "support_sites": 235351,
+      "last_positive": 1400118,
+      "K_sign": 400,
+      "Lambda_sign": 639600,
+      "mass_residual": "[+/- 2.68e-55]",
+      "energy_residual": "[+/- 7.29e-50]",
+      "correlations": [
+        {
+          "gamma": 1,
+          "exact_monomial_counts": {
+            "(0, 1)": 2,
+            "(2, 2)": 800
+          },
+          "residual_ball": "[+/- 5.44e-53]"
+        },
+        {
+          "gamma": 2,
+          "exact_monomial_counts": {
+            "(1, 1)": 1,
+            "(3, 3)": 800
+          },
+          "residual_ball": "[+/- 3.47e-53]"
+        },
+        {
+          "gamma": 3,
+          "exact_monomial_counts": {
+            "(4, 4)": 800
+          },
+          "residual_ball": "[+/- 5.44e-53]"
+        },
+        {
+          "gamma": 4,
+          "exact_monomial_counts": {
+            "(5, 5)": 800
+          },
+          "residual_ball": "[+/- 5.44e-53]"
+        },
+        {
+          "gamma": 5,
+          "exact_monomial_counts": {
+            "(6, 6)": 800
+          },
+          "residual_ball": "[+/- 5.44e-53]"
+        }
+      ],
+      "first_tested_outside_segment": 12,
+      "sign_defect_over_q2_ball": "[0.975110915715148334244380462251586714301736255812125831919529 +/- 5.79e-61]",
+      "status": "Exact support-count check and Arb arithmetic; infinite-prime claim proved in report"
+    },
+    {
+      "q": 512000000,
+      "prime": false,
+      "J": 8,
+      "u": 800,
+      "repair_sites": 921476,
+      "support_sites": 947079,
+      "last_positive": 8466126,
+      "K_sign": 800,
+      "Lambda_sign": 2559200,
+      "mass_residual": "[+/- 5.92e-54]",
+      "energy_residual": "[+/- 6.53e-48]",
+      "correlations": [
+        {
+          "gamma": 1,
+          "exact_monomial_counts": {
+            "(0, 1)": 2,
+            "(2, 2)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        },
+        {
+          "gamma": 2,
+          "exact_monomial_counts": {
+            "(1, 1)": 1,
+            "(3, 3)": 1600
+          },
+          "residual_ball": "[+/- 1.74e-51]"
+        },
+        {
+          "gamma": 3,
+          "exact_monomial_counts": {
+            "(4, 4)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        },
+        {
+          "gamma": 4,
+          "exact_monomial_counts": {
+            "(5, 5)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        },
+        {
+          "gamma": 5,
+          "exact_monomial_counts": {
+            "(6, 6)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        },
+        {
+          "gamma": 6,
+          "exact_monomial_counts": {
+            "(7, 7)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        },
+        {
+          "gamma": 7,
+          "exact_monomial_counts": {
+            "(8, 8)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        },
+        {
+          "gamma": 8,
+          "exact_monomial_counts": {
+            "(9, 9)": 1600
+          },
+          "residual_ball": "[+/- 1.75e-51]"
+        }
+      ],
+      "first_tested_outside_segment": 18,
+      "sign_defect_over_q2_ball": "[0.980046481476774151679070819025233156087817320484296428047027 +/- 5.35e-61]",
+      "status": "Exact support-count check and Arb arithmetic; infinite-prime claim proved in report"
+    }
+  ],
+  "fake_cubic": {
+    "sign_third_moment": "-(q - 1)*(3*m**2*q*u + m**2*q - 3*m**2*u**2 + 3*m**2*u - 3*m*q**2*u + 9*m*q*u**2 - 6*m*q*u + 3*m*q - 9*m*u**2 + 9*m*u - 3*m + 2*q**3 - 6*q**2*u**2 + 6*q**2*u - 6*q**2 + 12*q*u**2 - 12*q*u + 6*q - 6*u**2 + 6*u - 2)/m**2",
+    "coefficients": {
+      "0": "-(q - 1)*(m**2*q + 3*m*q - 3*m + 2*q**3 - 6*q**2 + 6*q - 2)/m**2",
+      "1": "3*(q - 1)*(-m + q - 1)*(m*q + m - 2*q + 2)/m**2",
+      "2": "3*(q - 1)*(-m + q - 1)*(-m + 2*q - 2)/m**2"
+    },
+    "note": "Nonzero u or u^2 coefficient implies irrationality for prime q."
+  }
+}

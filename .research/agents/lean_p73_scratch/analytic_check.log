@@ -1,0 +1,58 @@
+ChowlaCosine/FewSpike.lean:40:40: warning: This simp argument is unused:
+  Complex.sub_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hk, Ne.symm hk, Complex.add_re, Complex.mul_re, hφ.re_neg] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ChowlaCosine/FewSpike.lean:40:56: warning: This simp argument is unused:
+  Complex.mul_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hk, Ne.symm hk, Complex.add_re, Complex.sub_re, hφ.re_neg] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ChowlaCosine/FewSpike.lean:67:2: error: linarith failed to find a contradiction
+case neg
+φ : ℤ → ℂ
+hφ : PositiveDefinite φ
+k l : ℤ
+hkψ : 0 ≤ psi φ k
+hlψ : 0 ≤ psi φ l
+hk : ¬k = 0
+hl : ¬l = 0
+hkl : ¬k + l = 0
+hne : k ≠ k + l
+hd : k - (k + l) = -l
+hd' : k + l - k = l
+h :
+  0 ≤
+    (φ 0).re + (-(2 * (φ k).re) + (φ (-l + -k)).re) +
+      (-(2 * (φ l).re) + 2 * 2 * (φ 0).re + -(2 * (φ k).re) + ((φ (k + l)).re + (-(2 * (φ l).re) + (φ 0).re)))
+a✝ : 2 * ((φ 0).re - (φ k).re) + 2 * ((φ 0).re - (φ l).re) < (φ 0).re - (φ (k + l)).re
+⊢ False
+failed
+ChowlaCosine/FewSpike.lean:64:8: warning: This simp argument is unused:
+  hk
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Ne.symm hk, hkl, Ne.symm hkl, hne, Ne.symm hne, hd, hd', Complex.add_re, Complex.sub_re, Complex.mul_re,
+    hφ.re_neg] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ChowlaCosine/FewSpike.lean:64:24: warning: This simp argument is unused:
+  hkl
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hk, Ne.symm hk, Ne.symm hkl, hne, Ne.symm hne, hd, hd', Complex.add_re, Complex.sub_re, Complex.mul_re,
+    hφ.re_neg] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+ChowlaCosine/FewSpike.lean:65:20: warning: This simp argument is unused:
+  Complex.sub_re
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [hk, Ne.symm hk, hkl, Ne.symm hkl, hne, Ne.symm hne, hd, hd', Complex.add_re, Complex.mul_re,
+    hφ.re_neg] at h
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`

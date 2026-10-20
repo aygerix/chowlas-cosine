@@ -1,0 +1,49 @@
+'ChowlaCosine.Beckner.heatTailConstant_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.heatFlow_gaussian_bound_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatProduct_gaussian_bound_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.heatTimeScore_bound_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.heatSpaceScore_bound_interval' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatProduct_time_derivative_bound_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.continuous_heatFlow_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.continuous_heatSpaceMoment_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.measurable_heatTimeMoment' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.measurable_heatTimeScore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integrable_plane_polynomial_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.heat_score_polynomial_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.continuous_planePoint' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.norm_planePoint_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.continuous_geometricHeatProduct_space' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.measurable_geometricHeatTimeSlope_plane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatTimeSlope_plane_bound_interval' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.integrable_geometricHeatProduct_plane' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.hasDerivAt_integral_geometricHeatProduct_plane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.abs_weighted_directional_score_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.abs_weighted_second_score_le' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.hasDerivAt_geometricHeatSpaceSlope_line' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometricHeat_spatial_envelopes' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.measurable_heatSpaceScore' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.measurable_geometricHeat_spatial_slopes_plane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.integrable_geometricHeat_spatial_slopes_plane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.integrable_geometricHeatTimeSlope_plane' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatProduct_integral_derivative_nonneg' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatProduct_integral_monotone' depends on axioms: [propext, Classical.choice, Quot.sound]

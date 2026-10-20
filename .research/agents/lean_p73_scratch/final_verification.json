@@ -1,0 +1,18 @@
+{
+  "status": "complete",
+  "source": "lean/ChowlaCosine/FewSpike.lean",
+  "source_sha256": "204985012dbf40c77be6aa0a19a6807d5b2c2b7512468a6faa9e80defc032731",
+  "lean_file_exit_code": 0,
+  "exact_statement_wrappers_exit_code": 0,
+  "lake_build_exit_code": 0,
+  "lake_build_success": true,
+  "axiom_output": [
+    "'ChowlaCosine.FewSpike.PositiveDefinite.psi_nonneg' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ChowlaCosine.FewSpike.PositiveDefinite.psi_add_le' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ChowlaCosine.FewSpike.fewSpike_core' depends on axioms: [propext, Classical.choice, Quot.sound]",
+    "'ChowlaCosine.FewSpike.fewSpike' depends on axioms: [propext, Classical.choice, Quot.sound]"
+  ],
+  "forbidden_source_tokens": [],
+  "hypothesis_changes": [],
+  "commits_made": false
+}

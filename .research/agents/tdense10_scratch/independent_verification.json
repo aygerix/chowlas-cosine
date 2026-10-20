@@ -1,0 +1,24 @@
+{
+  "status": "PROVED",
+  "independent_method": "SymPy QQ + FLINT composition; direct exact Schur integrals/interpolation",
+  "pointwise_leaves": 527,
+  "CF_caps": 127,
+  "schur_cells": 64,
+  "min_schur": "18576429767/491520000000000",
+  "D1": "1333/10000",
+  "C10": "10000/1333",
+  "C10_float": 7.501875468867217,
+  "binary_algebra_checked": true,
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "sha256": {
+    "certify_td.py": "3bdcf4b58156f3030c0bdd0edd2e9345e2fe5435cc32b97b49528397e8e3c9ec",
+    "coupled.py": "2ecd27b8b2c0734e042f2fe4995e3859f4bb1f56270849356185f0bfd2fcf080",
+    "coupled_td.py": "831c993f2557ad4bad399448ea033cab952d3d21b1cf9fb51fad26c4175f99cd",
+    "diagnose_td.py": "2d44450337ec70c9cc368a79f632d3fd053b3c737dfef73ba76d35eb81761984",
+    "independent_verify.py": "f6a483a657bc26dc13ec953197acda6a8578d5ab2893e4ba185cc53f7055ecb8",
+    "third_probe.py": "5f83805105b05f6c8b2a8106515f6cf0ae7f09de312d6f543e0c8e8bd4d0072f",
+    "certificate_td.json": "5cf05ee363a9b42dc6eace52adfb62c24a95803aa7f15ff91a567efd908488c0"
+  },
+  "seconds": 34.19155812263489
+}

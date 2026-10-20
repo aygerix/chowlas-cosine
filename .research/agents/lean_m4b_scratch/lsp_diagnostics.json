@@ -1,0 +1,132 @@
+{
+  "diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 25,
+          "line": 220
+        },
+        "start": {
+          "character": 24,
+          "line": 220
+        }
+      },
+      "message": "Application type mismatch: The argument\n  ∞\nhas type\n  ℝ≥0∞\nbut is expected to have type\n  WithTop ℕ∞\nin the application\n  ContDiff ℝ ∞",
+      "range": {
+        "end": {
+          "character": 25,
+          "line": 220
+        },
+        "start": {
+          "character": 24,
+          "line": 220
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 64,
+          "line": 220
+        },
+        "start": {
+          "character": 56,
+          "line": 220
+        }
+      },
+      "message": "`fun_prop` was unable to prove `ContDiff ℝ sorry (⇑Complex.ofRealCLM ∘ ψ)`\n\nIssues:\n  No theorems found for `Complex.ofRealCLM` in order to prove `ContDiff ℝ sorry fun a0 => Complex.ofRealCLM a0`\n  No theorems found for `Complex.ofRealCLM` in order to prove `ContDiff ℝ sorry fun a => Complex.ofRealCLM (ψ a)`",
+      "range": {
+        "end": {
+          "character": 64,
+          "line": 220
+        },
+        "start": {
+          "character": 56,
+          "line": 220
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "code": "lean.unknownIdentifier",
+      "fullRange": {
+        "end": {
+          "character": 85,
+          "line": 223
+        },
+        "start": {
+          "character": 50,
+          "line": 223
+        }
+      },
+      "message": "Unknown constant `HasCompactSupport.toSchwartzMap_coe`",
+      "range": {
+        "end": {
+          "character": 85,
+          "line": 223
+        },
+        "start": {
+          "character": 50,
+          "line": 223
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 22,
+          "line": 260
+        },
+        "start": {
+          "character": 4,
+          "line": 260
+        }
+      },
+      "message": "Application type mismatch: The argument\n  LinearMap\nhas type\n  (?m.257 →+* ?m.258) →\n    (M : Type ?u.139) →\n      (M₂ : Type ?u.138) →\n        [inst : AddCommMonoid M] →\n          [inst_1 : AddCommMonoid M₂] → [Module ?m.257 M] → [Module ?m.258 M₂] → Type (max ?u.139 ?u.138)\nbut is expected to have type\n  ?m.261 → ?m.262 → ?m.263\nin the application\n  @Function.flip_def ?m.261 ?m.262 ?m.263 LinearMap",
+      "range": {
+        "end": {
+          "character": 22,
+          "line": 260
+        },
+        "start": {
+          "character": 4,
+          "line": 260
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 66,
+          "line": 262
+        },
+        "start": {
+          "character": 2,
+          "line": 259
+        }
+      },
+      "message": "Type mismatch: After simplification, term\n  VectorFourier.integral_fourierIntegral_smul_eq_flip continuous_fourierChar continuous_inner (integrable φ) hf\n has type\n  ∫ (ξ : ℝ), VectorFourier.fourierIntegral 𝐞 ?m.300 (innerₗ ℝ) (⇑φ) ξ * f ξ =\n    ∫ (x : ℝ), φ x * VectorFourier.fourierIntegral 𝐞 volume (innerₗ ℝ).flip f x ∂?m.300\nbut is expected to have type\n  ∫ (x : ℝ), (∫ (v : ℝ), 𝐞 (-inner ℝ x v) • φ v) * f x = ∫ (x : ℝ), φ x * ∫ (v : ℝ), 𝐞 (-inner ℝ x v) • f v",
+      "range": {
+        "end": {
+          "character": 0,
+          "line": 260
+        },
+        "start": {
+          "character": 2,
+          "line": 259
+        }
+      },
+      "severity": 1,
+      "source": "Lean 4"
+    }
+  ],
+  "uri": "file:///Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/lean_m4b_scratch/Combined.lean",
+  "version": 5
+}

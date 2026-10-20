@@ -1,0 +1,54 @@
+'ChowlaCosine.Beckner.weightedFrame_sum_weights' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometricHeatProduct_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.rescaled_heatFlow_gaussian_bound' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integrable_plane_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_plane_gaussian' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_plane_dilate' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.planePoint_smul' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.frame_heatKernel_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_frame_heatKernel_product' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.tendsto_integral_rescaled_geometricHeatProduct' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.tendsto_integral_geometricHeatProduct' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integral_geometricHeatProduct_le_mass' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.heatFlow_initial_rescale' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.tendsto_heatFlow_initial_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.tendsto_geometricHeatProduct_initial_sq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb_bounded_continuous' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb_continuous_compact' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.ae_plane_linear' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.ae_plane_inner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.exists_positive_compact_datum' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.exists_positive_compact_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.exists_positive_compact_approximation_seq' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.exists_common_support_radius' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.integrable_and_integral_le_of_nonneg_limit_bounds' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.isWeightedFrame_plane_of_coefficients' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrameMatrix_det' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_coordinate_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.young_scalar_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.young_scalar_factor_beckner' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_sharp_factor' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_matrix' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_isWeightedFrame' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_unit' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.youngFrame_relation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ChowlaCosine.Beckner.geometric_brascamp_lieb_youngFrame' depends on axioms: [propext, Classical.choice, Quot.sound]

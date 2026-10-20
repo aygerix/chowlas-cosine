@@ -1,0 +1,46 @@
+⚠ [8708/8713] Replayed ChowlaCosine.P31.WindowMoments
+warning: ChowlaCosine/P31/WindowMoments.lean:70:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8711/8713] Built ChowlaCosine.P36.Kernel (74s)
+warning: ChowlaCosine/P36/Kernel.lean:98:13: This simp argument is unused:
+  sub_zero
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [cos_neg, mul_zero, cos_zero, mul_one] at hzero
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P36/Kernel.lean:98:23: This simp argument is unused:
+  cos_neg
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sub_zero, mul_zero, cos_zero, mul_one] at hzero
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/P36/Kernel.lean:173:18: Variable name `hapos` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hapos
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/P36/Kernel.lean:204:18: Unused tactic linter: `push_cast` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8712/8713] Built ChowlaCosine.P36.SineKernel (80s)
+warning: ChowlaCosine/P36/SineKernel.lean:31:4: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8713/8713] Built ChowlaCosine.P36.Main (96s)
+warning: ChowlaCosine/P36/Main.lean:13:39: Variable name `hA` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hA
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/P36/Main.lean:14:13: Variable name `hD` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hD
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+Build completed successfully (8713 jobs).

@@ -1,0 +1,466 @@
+[
+  {
+    "name": "n128_mu0_row0",
+    "n": 128,
+    "X": 384,
+    "C": 3.0,
+    "R_estimate": 3.133195815236102,
+    "minimum": {
+      "M_estimate": 35.448064123820174,
+      "angle": 0.0306741689796508,
+      "FFT_M": 35.44805133755776,
+      "G": 65536,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 0.7482968358693436,
+        "h": 161,
+        "w": 27,
+        "over_sqrtn": 0.06614072087295622
+      },
+      "beckner": {
+        "bound": 0.6692627356151208,
+        "h": 161,
+        "w": 3,
+        "over_sqrtn": 0.05915502734361393
+      },
+      "numerical_rho": {
+        "bound": 1.2303485275682786,
+        "h": 8,
+        "w": 378,
+        "over_sqrtn": 0.10874847338330171
+      }
+    },
+    "exact_elementary": {
+      "h": 161,
+      "w": 27,
+      "lower": "490957553243/656100000000",
+      "lower_float": 0.7482968346944063,
+      "bound_over_sqrtn": 0.06614072076910546,
+      "square_radicand": "7555916651233303/59499067192459776",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 0.3333333333333333,
+      "h": 1,
+      "over_sqrtn": 0.029462782549439476
+    },
+    "prefix_dip": {
+      "bound": 0.822262427845267,
+      "cut": 115,
+      "Y": 159,
+      "tail": 13
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n128_mu0_row1",
+    "n": 128,
+    "X": 384,
+    "C": 3.0,
+    "R_estimate": 3.0551985019701466,
+    "minimum": {
+      "M_estimate": 34.56562525782516,
+      "angle": 0.030020841946967306,
+      "FFT_M": 34.56555047446096,
+      "G": 65536,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 0.6941350522799935,
+        "h": 0,
+        "w": 17,
+        "over_sqrtn": 0.06135345031580776
+      },
+      "beckner": {
+        "bound": 0.6307677391127247,
+        "h": 161,
+        "w": 1,
+        "over_sqrtn": 0.055752518210039334
+      },
+      "numerical_rho": {
+        "bound": 1.0698018828799418,
+        "h": 0,
+        "w": 58,
+        "over_sqrtn": 0.09455802073881794
+      }
+    },
+    "exact_elementary": {
+      "h": 0,
+      "w": 17,
+      "lower": "13882701/20000000",
+      "lower_float": 0.69413505,
+      "bound_over_sqrtn": 0.0613534501142829,
+      "square_radicand": "327041917/678758792",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 0.4765625,
+      "h": 6,
+      "over_sqrtn": 0.04212257192615176
+    },
+    "prefix_dip": {
+      "bound": 5.885074219105729,
+      "cut": 115,
+      "Y": 139,
+      "tail": 13
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n128_mu0.1_row2",
+    "n": 128,
+    "X": 384,
+    "C": 3.0,
+    "R_estimate": 0.9181603488637906,
+    "minimum": {
+      "M_estimate": 10.387798542371081,
+      "angle": 0.026163253090481536,
+      "FFT_M": 10.387790693258022,
+      "G": 65536,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 1.0247355245740986,
+        "h": 0,
+        "w": 48,
+        "over_sqrtn": 0.09057467979363738
+      },
+      "beckner": {
+        "bound": 0.7029291465775294,
+        "h": 4,
+        "w": 7,
+        "over_sqrtn": 0.06213074577983045
+      },
+      "numerical_rho": {
+        "bound": 1.683290701418807,
+        "h": 0,
+        "w": 89,
+        "over_sqrtn": 0.1487832837101873
+      }
+    },
+    "exact_elementary": {
+      "h": 0,
+      "w": 48,
+      "lower": "6404597/6250000",
+      "lower_float": 1.02473552,
+      "bound_over_sqrtn": 0.09057467938934036,
+      "square_radicand": "8035882003/7652616797",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 0.4505208333333333,
+      "h": 16,
+      "over_sqrtn": 0.03982079203947679
+    },
+    "prefix_dip": {
+      "bound": 0.7087785332685774,
+      "cut": 121,
+      "Y": 232,
+      "tail": 7
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n128_mu0.1_row3",
+    "n": 128,
+    "X": 384,
+    "C": 3.0,
+    "R_estimate": 0.9175779467036769,
+    "minimum": {
+      "M_estimate": 10.381209414102376,
+      "angle": 0.02398392404859872,
+      "FFT_M": 10.38117239784593,
+      "G": 65536,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 1.1047944390922209,
+        "h": 40,
+        "w": 97,
+        "over_sqrtn": 0.09765095496241219
+      },
+      "beckner": {
+        "bound": 0.5545121005794397,
+        "h": 0,
+        "w": 8,
+        "over_sqrtn": 0.04901240832121483
+      },
+      "numerical_rho": {
+        "bound": 1.6466278899843063,
+        "h": 40,
+        "w": 152,
+        "over_sqrtn": 0.14554271838734992
+      }
+    },
+    "exact_elementary": {
+      "h": 40,
+      "w": 97,
+      "lower": "46428986289/42025000000",
+      "lower_float": 1.1047944387626414,
+      "bound_over_sqrtn": 0.0976509549332812,
+      "square_radicand": "123033960147312317/194443769926005656",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 0.7526041666666666,
+      "h": 8,
+      "over_sqrtn": 0.06652143872490632
+    },
+    "prefix_dip": {
+      "bound": 0.7526041666666666,
+      "cut": 128,
+      "Y": 384,
+      "tail": 0
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n128_mu0.3_row4",
+    "n": 128,
+    "X": 384,
+    "C": 3.0,
+    "R_estimate": 1.0070813885493846,
+    "minimum": {
+      "M_estimate": 11.393825264800547,
+      "angle": 0.10181169011572591,
+      "FFT_M": 11.393821127850822,
+      "G": 65536,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 1.8263560342082723,
+        "h": 32,
+        "w": 171,
+        "over_sqrtn": 0.16142859208120494
+      },
+      "beckner": {
+        "bound": 1.1640057110417605,
+        "h": 32,
+        "w": 100,
+        "over_sqrtn": 0.10288454145218723
+      },
+      "numerical_rho": {
+        "bound": 2.6089814488987404,
+        "h": 10,
+        "w": 294,
+        "over_sqrtn": 0.2306035593132754
+      }
+    },
+    "exact_elementary": {
+      "h": 32,
+      "w": 171,
+      "lower": "99445085563/54450000000",
+      "lower_float": 1.8263560250321396,
+      "bound_over_sqrtn": 0.16142859127014172,
+      "square_radicand": "58881121585014877/23119658071066656",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 3.217187499999999,
+      "h": 50,
+      "over_sqrtn": 0.2843618871998244
+    },
+    "prefix_dip": {
+      "bound": 3.217187499999999,
+      "cut": 128,
+      "Y": 384,
+      "tail": 0
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n128_mu0.3_row5",
+    "n": 128,
+    "X": 384,
+    "C": 3.0,
+    "R_estimate": 0.9347120814033882,
+    "minimum": {
+      "M_estimate": 10.575060019477249,
+      "angle": 1.9565392035370943,
+      "FFT_M": 10.574571521363124,
+      "G": 65536,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 1.7468396342322263,
+        "h": 20,
+        "w": 152,
+        "over_sqrtn": 0.15440026887637945
+      },
+      "beckner": {
+        "bound": 1.2191687838836602,
+        "h": 4,
+        "w": 94,
+        "over_sqrtn": 0.10776031431188657
+      },
+      "numerical_rho": {
+        "bound": 2.4205113753695486,
+        "h": 0,
+        "w": 146,
+        "over_sqrtn": 0.21394500093287305
+      }
+    },
+    "exact_elementary": {
+      "h": 20,
+      "w": 152,
+      "lower": "77035627819/44100000000",
+      "lower_float": 1.7468396330839002,
+      "bound_over_sqrtn": 0.15440026877488078,
+      "square_radicand": "507420814967119/208266251899482",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 3.5610119047619038,
+      "h": 35,
+      "over_sqrtn": 0.31475195821789576
+    },
+    "prefix_dip": {
+      "bound": 3.5610119047619038,
+      "cut": 128,
+      "Y": 384,
+      "tail": 0
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n512_mu0_row0",
+    "n": 512,
+    "X": 1536,
+    "C": 3.0,
+    "R_estimate": 4.810674081405307,
+    "minimum": {
+      "M_estimate": 108.85312848128186,
+      "angle": 0.007366203165546824,
+      "FFT_M": 108.8516810441685,
+      "G": 262144,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 1.2066390246965362,
+        "h": 0,
+        "w": 93,
+        "over_sqrtn": 0.053326414800452665
+      },
+      "beckner": {
+        "bound": 0.6971280774870989,
+        "h": 0,
+        "w": 67,
+        "over_sqrtn": 0.030808999434166786
+      },
+      "numerical_rho": {
+        "bound": 2.1328244210460694,
+        "h": 20,
+        "w": 917,
+        "over_sqrtn": 0.09425841320012174
+      }
+    },
+    "exact_elementary": {
+      "h": 0,
+      "w": 93,
+      "lower": "60331951/50000000",
+      "lower_float": 1.20663902,
+      "bound_over_sqrtn": 0.053326414592893126,
+      "square_radicand": "6895083653/4735706792",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 0.6634114583333334,
+      "h": 5,
+      "over_sqrtn": 0.029318921306522295
+    },
+    "prefix_dip": {
+      "bound": 0.6634114583333334,
+      "cut": 512,
+      "Y": 1536,
+      "tail": 0
+    },
+    "P36": {
+      "bound": 0
+    }
+  },
+  {
+    "name": "n512_mu0.1_row1",
+    "n": 512,
+    "X": 1536,
+    "C": 3.0,
+    "R_estimate": 1.1644637086652956,
+    "minimum": {
+      "M_estimate": 26.34880591497174,
+      "angle": 2.727809719656327,
+      "FFT_M": 26.348498864947988,
+      "G": 262144,
+      "direct_difference": 0.0,
+      "certificate": "NUMERICAL, not whole-circle certified"
+    },
+    "family": {
+      "elem": {
+        "bound": 3.672701361436645,
+        "h": 51,
+        "w": 685,
+        "over_sqrtn": 0.1623120023715573
+      },
+      "beckner": {
+        "bound": 3.137678280112692,
+        "h": 51,
+        "w": 590,
+        "over_sqrtn": 0.13866709931558924
+      },
+      "numerical_rho": {
+        "bound": 5.216266192586456,
+        "h": 40,
+        "w": 1072,
+        "over_sqrtn": 0.23052857482825104
+      }
+    },
+    "exact_elementary": {
+      "h": 51,
+      "w": 685,
+      "lower": "2482746117/676000000",
+      "lower_float": 3.6727013565088757,
+      "bound_over_sqrtn": 0.1623120021537786,
+      "square_radicand": "896684542016149933/74882655867708416",
+      "status": "PROVED exact rational P31/P47 lower bound, not a minimum certificate"
+    },
+    "P29": {
+      "bound": 9.158758600917432,
+      "h": 218,
+      "over_sqrtn": 0.40476376962245825
+    },
+    "prefix_dip": {
+      "bound": 9.158758600917432,
+      "cut": 512,
+      "Y": 1536,
+      "tail": 0
+    },
+    "P36": {
+      "bound": 0
+    }
+  }
+]

@@ -1,0 +1,85 @@
+{
+  "status": "PROVED arithmetic/hash/Arb point audit; no new global minimum certificate",
+  "prior_hashes_match": {
+    "nonnested_X262144.json": true,
+    "roughness_results.json": true,
+    "roughness_probe.py": true,
+    "independent_check.py": true,
+    "independent_checks.json": true,
+    "schedule_milp.py": true,
+    "milp_N29.json": true,
+    "nonnested_X1048576.json": true,
+    "milp_N61.json": true,
+    "nonnested_X65536.json": true
+  },
+  "compiled_sources": [
+    "final_audit.py",
+    "roughness_probe.py",
+    "independent_check.py",
+    "schedule_milp.py"
+  ],
+  "progression_checks": 64,
+  "structured_schedule_count": 36,
+  "milp_offset_count": 140,
+  "actual_schedule_degrees": [
+    {
+      "N": 29,
+      "family": "bohr_slices",
+      "ambient_H": 118784,
+      "X": 110288,
+      "n": 30720
+    },
+    {
+      "N": 61,
+      "family": "bohr_slices",
+      "ambient_H": 249856,
+      "X": 241500,
+      "n": 63488
+    },
+    {
+      "N": 64,
+      "family": "coset_bohr_removal",
+      "ambient_H": 262144,
+      "X": 253398,
+      "n": 65537
+    },
+    {
+      "N": 257,
+      "family": "bohr_random_removal",
+      "ambient_H": 1052672,
+      "X": 1044394,
+      "n": 264192
+    },
+    {
+      "N": 29,
+      "family": "gurobi_nested",
+      "ambient_H": 118784,
+      "X": 110294,
+      "n": 28671
+    },
+    {
+      "N": 61,
+      "family": "gurobi_nested",
+      "ambient_H": 249856,
+      "X": 224850,
+      "n": 61442
+    }
+  ],
+  "nonnested_degrees": [
+    {
+      "ambient_H": 65536,
+      "X": 56832,
+      "n": 16512
+    },
+    {
+      "ambient_H": 262144,
+      "X": 259584,
+      "n": 63744
+    },
+    {
+      "ambient_H": 1048576,
+      "X": 1028096,
+      "n": 264704
+    }
+  ]
+}

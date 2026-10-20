@@ -1,0 +1,112 @@
+/-- P71.2 in the equivalent parametrization `L = 20h`. -/
+theorem lower_bound_mul_twenty {h q P : ℕ} (hh : 0 < h) (hP : 100 ≤ P)
+    (hq : 80 * h + 1 ≤ q) (M : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ cosSum (taper (20 * h) q P) x) :
+    7 * (2 * h * (P / 8) : ℕ) / 34 + 1 / 2 ≤ M := by
+  have hJ : 8 * (P / 8) ≤ P := Nat.mul_div_le P 8
+  have hJ0 : 0 < P / 8 := by omega
+  have hUV := packets_disjoint (J := P / 8) hh hq
+    (b := -16) (c := -1) (by norm_num) (by norm_num) (by norm_num)
+  have hUW := packets_disjoint (J := P / 8) hh hq
+    (b := -16) (c := 14) (by norm_num) (by norm_num) (by norm_num)
+  have hVW := packets_disjoint (J := P / 8) hh hq
+    (b := -1) (c := 14) (by norm_num) (by norm_num) (by norm_num)
+  apply three_clique_bound (taper (20 * h) q P) (fun _ ha => taper_pos ha) M hM
+    (packet q h (P / 8) (-16)) (packet q h (P / 8) (-1)) (packet q h (P / 8) 14)
+    (2 * h * (P / 8)) (by positivity)
+    (packet_card hq _) (packet_card hq _) (packet_card hq _) hUV hUW hVW
+  · intro u hu v hv hne
+    exact packet_edge hP hq hJ hu hv (by norm_num) hne
+  · intro u hu v hv hne
+    exact packet_edge hP hq hJ hu hv (by norm_num) hne
+  · intro u hu v hv hne
+    exact packet_edge hP hq hJ hu hv (by norm_num) hne
+  · intro u hu v hv
+    exact packet_edge hP hq hJ hu hv (by norm_num)
+      (fun he => disjoint_left.mp hUV hu (he ▸ hv))
+  · intro u hu v hv
+    exact packet_edge hP hq hJ hu hv (by norm_num)
+      (fun he => disjoint_left.mp hVW hu (he ▸ hv))
+  · exact fun u hu v hv => packet_nonedge hh hP hq hu hv
+
+/-- **P71.2 (main):** the exact linear lower bound for all admissible parameters. -/
+theorem lower_bound {L q P : ℕ} (hL : 20 ∣ L) (hL0 : 20 ≤ L)
+    (hP : 100 ≤ P) (hq : 4 * L + 1 ≤ q) (M : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ cosSum (taper L q P) x) :
+    7 * (2 * (L / 20) * (P / 8) : ℕ) / 34 + 1 / 2 ≤ M := by
+  have hLdiv : 20 * (L / 20) = L := Nat.mul_div_cancel' hL
+  have hh : 0 < L / 20 := by omega
+  have hq' : 80 * (L / 20) + 1 ≤ q := by omega
+  have hs := lower_bound_mul_twenty hh hP hq' M (by simpa only [hLdiv] using hM)
+  exact hs
+
+/-- There are at most `P` admissible frequencies for each of the `2L+1` residues. -/
+theorem card_taper_le (L q P : ℕ) (hq : 0 < q) (hP : 0 < P) :
+    (taper L q P).card ≤ (2 * L + 1) * P := by
+  let f : ℕ → ℕ × ℤ := fun a => ((a - 1) / q, centered q a)
+  have hPq : 0 < P * q := Nat.mul_pos hP hq
+  have hres : ∀ a ∈ taper L q P, (centered q a).natAbs ≤ L := by
+    intro a ha
+    have ha' := (mem_taper L q P a).mp ha
+    have hsub : P * q - a ≤ P * q := Nat.sub_le _ _
+    have := Nat.mul_le_mul_left L hsub
+    nlinarith
+  have hf : Set.MapsTo f ↑(taper L q P)
+      ↑((range P) ×ˢ Icc (-(L : ℤ)) L) := by
+    intro a ha
+    have ha' := (mem_taper L q P a).mp ha
+    simp only [mem_coe, mem_product, mem_range, mem_Icc, f]
+    constructor
+    · apply (Nat.div_lt_iff_lt_mul hq).mpr
+      omega
+    · have hr : ((centered q a).natAbs : ℤ) ≤ L := by exact_mod_cast hres a ha
+      rw [Int.natCast_natAbs, abs_le] at hr
+      exact hr
+  have hinj : Set.InjOn f ↑(taper L q P) := by
+    intro a ha b hb he
+    have ha1 := ((mem_taper L q P a).mp ha).1
+    have hb1 := ((mem_taper L q P b).mp hb).1
+    have he1 : (a - 1) / q = (b - 1) / q := congrArg Prod.fst he
+    have he2 : centered q a = centered q b := congrArg Prod.snd he
+    have hm : (a : ℤ) % (q : ℤ) = (b : ℤ) % (q : ℤ) := by
+      rw [← centered_mod q a, ← centered_mod q b, he2]
+    have hm' : ((a - 1 : ℕ) : ℤ) % (q : ℤ) = ((b - 1 : ℕ) : ℤ) % (q : ℤ) := by
+      rw [Nat.cast_sub ha1, Nat.cast_sub hb1, Nat.cast_one, Int.sub_emod, Int.sub_emod, hm]
+    have hmnat : (a - 1) % q = (b - 1) % q := by exact_mod_cast hm'
+    have hab : a - 1 = b - 1 := by
+      calc
+        a - 1 = (a - 1) % q + q * ((a - 1) / q) := (Nat.mod_add_div _ _).symm
+        _ = (b - 1) % q + q * ((b - 1) / q) := by rw [hmnat, he1]
+        _ = b - 1 := Nat.mod_add_div _ _
+    omega
+  have hc := card_le_card_of_injOn f hf hinj
+  rw [card_product, card_range, Int.card_Icc] at hc
+  have he : ((L : ℤ) + 1 - -(L : ℤ)) = ((2 * L + 1 : ℕ) : ℤ) := by push_cast; ring
+  rw [he, Int.toNat_natCast] at hc
+  simpa only [Nat.mul_comm] using hc
+
+/-- The common packet size is at least `LP/90`. -/
+theorem packet_size_lower {L P : ℕ} (hL : 20 ∣ L) (hP : 100 ≤ P) :
+    (L : ℝ) * P / 90 ≤ (2 * (L / 20) * (P / 8) : ℕ) := by
+  have hLdiv : 20 * (L / 20) = L := Nat.mul_div_cancel' hL
+  have hJ : P ≤ 9 * (P / 8) := by omega
+  have hLdiv' : (20 : ℝ) * (L / 20 : ℕ) = L := by exact_mod_cast hLdiv
+  have hJ' : (P : ℝ) ≤ 9 * (P / 8 : ℕ) := by exact_mod_cast hJ
+  have hp := mul_le_mul_of_nonneg_left hJ' (Nat.cast_nonneg (L / 20) : (0 : ℝ) ≤ (L / 20 : ℕ))
+  push_cast
+  nlinarith
+
+/-- **P71.2 (cardinality corollary):** `M ≥ 7|A|/6290 + 1/2`. -/
+theorem lower_bound_card {L q P : ℕ} (hL : 20 ∣ L) (hL0 : 20 ≤ L)
+    (hP : 100 ≤ P) (hq : 4 * L + 1 ≤ q) (M : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ cosSum (taper L q P) x) :
+    7 * ((taper L q P).card : ℝ) / 6290 + 1 / 2 ≤ M := by
+  have hs := lower_bound hL hL0 hP hq M hM
+  have hm := packet_size_lower hL hP
+  have hc := card_taper_le L q P (by omega) (by omega)
+  have hc' : ((taper L q P).card : ℝ) ≤ (2 * (L : ℝ) + 1) * P := by exact_mod_cast hc
+  have hL' : (20 : ℝ) ≤ L := by exact_mod_cast hL0
+  have hcomp : (2 * (L : ℝ) + 1) * P ≤ 41 / 20 * L * P := by
+    have hp : (0 : ℝ) ≤ P := Nat.cast_nonneg _
+    nlinarith
+  nlinarith

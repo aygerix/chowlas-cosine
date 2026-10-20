@@ -1,0 +1,152 @@
+{
+  "seed": 2026101910,
+  "gadgets": [
+    {
+      "X": 4096,
+      "L": 776,
+      "B": 9.189401784414079,
+      "nonzero": 5,
+      "first": 0.003498761162693081,
+      "second": 0.011877591994081421,
+      "third": 0.043330807315206436,
+      "third_target": 0.04908738521234052,
+      "fourth": 0.16390895932383417,
+      "l1": 14.33092572239086,
+      "fft": {
+        "min": -3.747125751721624,
+        "index": 324,
+        "grid": 65536,
+        "angle": 0.031063110954684232,
+        "status": "NUMERICAL"
+      },
+      "l1_ball": "[14.330925722390862299922542230425217723538161322564555 +/- 3.06e-52]",
+      "global_certificate": "For all real x, Z(x)>=-L^(1/3)*sum_n cbrt(s(nL/X)); exact triangle inequality."
+    },
+    {
+      "X": 65536,
+      "L": 7131,
+      "B": 19.24790554600559,
+      "nonzero": 9,
+      "first": 0.0008394164217918301,
+      "second": 0.006056563448423938,
+      "third": 0.04652522516468654,
+      "third_target": 0.04908738521234052,
+      "fourth": 0.36935790328573503,
+      "l1": 55.01199461854938,
+      "fft": {
+        "min": -10.855417817899934,
+        "index": 604487,
+        "grid": 1048576,
+        "angle": 3.622154080182139,
+        "status": "NUMERICAL"
+      },
+      "l1_ball": "[55.01199461854940140919490215669103026482771263220440 +/- 1.25e-51]",
+      "global_certificate": "For all real x, Z(x)>=-L^(1/3)*sum_n cbrt(s(nL/X)); exact triangle inequality."
+    },
+    {
+      "X": 1048576,
+      "L": 65536,
+      "B": 40.317473596635935,
+      "nonzero": 16,
+      "first": 0.00019602571651483117,
+      "second": 0.002982318381704499,
+      "third": 0.04795903218840333,
+      "third_target": 0.04908738521234052,
+      "fourth": 0.7960988434742476,
+      "l1": 205.5478617202556,
+      "fft": {
+        "min": -34.40649149242822,
+        "index": 242,
+        "grid": 16777216,
+        "angle": 9.063070084675908e-05,
+        "status": "NUMERICAL"
+      },
+      "l1_ball": "[205.54786172025563493653555494672602246318805971991579 +/- 8.25e-51]",
+      "global_certificate": "For all real x, Z(x)>=-L^(1/3)*sum_n cbrt(s(nL/X)); exact triangle inequality."
+    }
+  ],
+  "demos": [
+    {
+      "name": "base",
+      "X": 65536,
+      "J": 21618,
+      "first": 0.10653537219879325,
+      "second": 0.10615755449795891,
+      "third": 0.05767660264897224,
+      "fourth": 0.06660160601550831,
+      "raw_target": 0.10729711236575534,
+      "residual_cube": 0.0003295537748159229,
+      "residual_cube_target": 0.04908738083148434,
+      "fraction_outside_0_1": 0.3975830078125,
+      "fft": {
+        "min": -51.65058787232389,
+        "index": 142825,
+        "grid": 1048576,
+        "angle": 0.8558234610537762,
+        "status": "NUMERICAL"
+      },
+      "ideal_global_bound_formula": "-sqrt(J/8)-1/4",
+      "rounding_energy": 0.05382397286572975,
+      "rounded_fft": {
+        "min": -171.2586834211973,
+        "index": 526017,
+        "grid": 1048576,
+        "angle": 3.151953016020474,
+        "status": "NUMERICAL"
+      },
+      "rounded_R": 2.0795707882631707,
+      "point_certificate": {
+        "status": "PROVED_POINT_DIP",
+        "A_file": "rounded_base.txt",
+        "n": 6782,
+        "X": 46260,
+        "angle_exact": "2*pi*526017/1048576",
+        "value_ball": "[-171.258683421197271039429256184548457430781038083 +/- 7.43e-46]",
+        "R_strict_lower": "2079/1000",
+        "scope": "Rigorous lower bound on M/sqrt(n), not a global minimum enclosure."
+      },
+      "ideal_global_lower_ball": "[-52.233170353490368854424991080407045387366011823643237 +/- 3.14e-52]"
+    },
+    {
+      "name": "direct_cubic",
+      "X": 65536,
+      "J": 21618,
+      "first": 0.10737478862058508,
+      "second": 0.11289165978779181,
+      "third": 0.11363462025285209,
+      "fourth": 0.5490599713052035,
+      "raw_target": 0.10729711236575534,
+      "residual_cube": 0.05347118327421173,
+      "residual_cube_target": 0.04908738083148434,
+      "fraction_outside_0_1": 0.397674560546875,
+      "fft": {
+        "min": -62.423826292580785,
+        "index": 166882,
+        "grid": 1048576,
+        "angle": 0.9999757103278577,
+        "status": "NUMERICAL"
+      },
+      "ideal_global_bound_formula": "-sqrt(J/8)-1/4-sum_abs_z",
+      "rounding_energy": 0.05896194258396216,
+      "rounded_fft": {
+        "min": -171.51034625580547,
+        "index": 522559,
+        "grid": 1048576,
+        "angle": 3.131232291159112,
+        "status": "NUMERICAL"
+      },
+      "rounded_R": 2.0813994553196067,
+      "point_certificate": {
+        "status": "PROVED_POINT_DIP",
+        "A_file": "rounded_direct_cubic.txt",
+        "n": 6790,
+        "X": 64179,
+        "angle_exact": "2*pi*522559/1048576",
+        "value_ball": "[-171.510346255805460794264546396335224410141056799 +/- 5.02e-46]",
+        "R_strict_lower": "2081/1000",
+        "scope": "Rigorous lower bound on M/sqrt(n), not a global minimum enclosure."
+      },
+      "ideal_global_lower_ball": "[-107.24516497203977026361989323709807565219372445584764 +/- 4.58e-51]"
+    }
+  ]
+}

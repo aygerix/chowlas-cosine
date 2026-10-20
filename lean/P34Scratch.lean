@@ -1,0 +1,11 @@
+import ChowlaCosine.P31.Corollaries
+open ChowlaCosine.P31
+#check Complex.normSq_apply
+#check Complex.normSq_eq_norm_sq
+#check Complex.sq_norm
+#check Complex.norm_exp
+#check Complex.norm_exp_ofReal_mul_I
+#check Finset.sum_Icc_eq_sum_range
+#check Continuous.exists_isMinOn
+#check Function.Periodic.exists_le
+#check Function.Periodic.exists_isMinOn

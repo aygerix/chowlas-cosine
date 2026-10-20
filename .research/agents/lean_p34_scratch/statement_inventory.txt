@@ -1,0 +1,235 @@
+# P34 source statement inventory: full build and axiom audit passed
+
+### `circleMean_trigSum_mul`
+
+`lean/ChowlaCosine/P34/Moments.lean:67`
+
+```lean
+theorem circleMean_trigSum_mul (A : Finset ℕ) (b c : ℕ → ℂ)
+    (hA : ∀ j ∈ A, 0 < j) :
+    circleMean (fun x => trigSum A b x * trigSum A c x) =
+      (∑ j ∈ A, (b j * star (c j)).re) / 2
+```
+
+### `circleMean_trigSum_add_sq`
+
+`lean/ChowlaCosine/P34/Moments.lean:88`
+
+```lean
+theorem circleMean_trigSum_add_sq (A : Finset ℕ) (b : ℕ → ℂ) (M : ℝ)
+    (hA : ∀ j ∈ A, 0 < j) :
+    circleMean (fun x => (trigSum A b x + M) ^ 2) = M ^ 2 + energy A b / 2
+```
+
+### `circleMean_fejer_mul_re`
+
+`lean/ChowlaCosine/P34/Moments.lean:115`
+
+```lean
+theorem circleMean_fejer_mul_re (w : ℕ) {j : ℕ} (hj : 0 < j) (b : ℂ) (y : ℝ) :
+    circleMean (fun x => fejerKernel w (x - y) *
+      (b * circleCharacter (j : ℤ) x).re) =
+        kappa w j * (b * circleCharacter (j : ℤ) y).re
+```
+
+### `circleMean_window_mean_sq`
+
+`lean/ChowlaCosine/P34/Moments.lean:181`
+
+```lean
+theorem circleMean_window_mean_sq (w : ℕ) (A : Finset ℕ) (b : ℕ → ℂ) (M : ℝ)
+    (hA : ∀ j ∈ A, 0 < j) :
+    circleMean (fun y => circleMean
+      (fun x => fejerKernel w (x - y) * (trigSum A b x + M)) ^ 2) =
+        M ^ 2 + windowEnergy w A b / 2
+```
+
+### `p34_main`
+
+`lean/ChowlaCosine/P34/Main.lean:39`
+
+```lean
+theorem p34_main (w n : ℕ) (A : Finset ℕ) (b : ℕ → ℂ) (M C : ℝ)
+    (hA : ∀ j ∈ A, 0 < j) (hn : ∀ j ∈ A, j ≤ n)
+    (hM : ∀ x : ℝ, -M ≤ trigSum A b x)
+    (hFR : FejerRiesz (n + w)) (hnik : AnalyticNikolskii (n + w) C) :
+    windowMass w * (M ^ 2 + energy A b / 2) ≤
+      C * (M ^ 2 + windowEnergy w A b / 2)
+```
+
+### `p34_main_bounded`
+
+`lean/ChowlaCosine/P34/Main.lean:88`
+
+```lean
+theorem p34_main_bounded (w n : ℕ) (A : Finset ℕ) (b : ℕ → ℂ) (M C : ℝ)
+    (hA : ∀ j ∈ A, 0 < j) (hn : ∀ j ∈ A, j ≤ n)
+    (hb : ∀ j ∈ A, ‖b j‖ ^ 2 ≤ 1) (hM : ∀ x : ℝ, -M ≤ trigSum A b x)
+    (hFR : FejerRiesz (n + w)) (hnik : AnalyticNikolskii (n + w) C) :
+    windowMass w * (M ^ 2 + energy A b / 2) ≤
+      C * (M ^ 2 + (∑ j ∈ windowFreq w, kappa w j ^ 2) / 2)
+```
+
+### `p34_elementary`
+
+`lean/ChowlaCosine/P34/Main.lean:99`
+
+```lean
+theorem p34_elementary (w n : ℕ) (A : Finset ℕ) (b : ℕ → ℂ) (M : ℝ)
+    (hA : ∀ j ∈ A, 0 < j) (hn : ∀ j ∈ A, j ≤ n)
+    (hb : ∀ j ∈ A, ‖b j‖ ^ 2 ≤ 1) (hM : ∀ x : ℝ, -M ≤ trigSum A b x) :
+    windowMass w * (M ^ 2 + energy A b / 2) ≤
+      elementaryC (n + w) * (M ^ 2 + (windowMass w - 1) / 4)
+```
+
+### `p34_main_real`
+
+`lean/ChowlaCosine/P34/RealForm.lean:51`
+
+```lean
+theorem p34_main_real (w n : ℕ) (a c : ℕ → ℝ) (M C : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ realTrigSum n a c x)
+    (hFR : FejerRiesz (n + w)) (hnik : AnalyticNikolskii (n + w) C) :
+    windowMass w * (M ^ 2 + realEnergy n a c / 2) ≤
+      C * (M ^ 2 + (∑ j ∈ windowFreq (min w n),
+        kappa w j ^ 2 * (a j ^ 2 + c j ^ 2)) / 2)
+```
+
+### `p34_main_real_bounded`
+
+`lean/ChowlaCosine/P34/RealForm.lean:62`
+
+```lean
+theorem p34_main_real_bounded (w n : ℕ) (a c : ℕ → ℝ) (M C : ℝ)
+    (hb : ∀ j ∈ windowFreq n, a j ^ 2 + c j ^ 2 ≤ 1)
+    (hM : ∀ x : ℝ, -M ≤ realTrigSum n a c x)
+    (hFR : FejerRiesz (n + w)) (hnik : AnalyticNikolskii (n + w) C) :
+    windowMass w * (M ^ 2 + realEnergy n a c / 2) ≤
+      C * (M ^ 2 + (∑ j ∈ windowFreq w, kappa w j ^ 2) / 2)
+```
+
+### `p34_A`
+
+`lean/ChowlaCosine/P34/Corollaries.lean:60`
+
+```lean
+theorem p34_A (n : ℕ) (hn : 1 ≤ n) (b : ℕ → ℂ) (M : ℝ)
+    (hb : ∀ j ∈ windowFreq n, ‖b j‖ ^ 2 = 1)
+    (hM : ∀ x : ℝ, -M ≤ trigSum (windowFreq n) b x) :
+    Real.sqrt n / 4 ≤ M
+```
+
+### `p34_A_real`
+
+`lean/ChowlaCosine/P34/RealForm.lean:75`
+
+```lean
+theorem p34_A_real (n : ℕ) (hn : 1 ≤ n) (a c : ℕ → ℝ) (M : ℝ)
+    (hb : ∀ j ∈ windowFreq n, a j ^ 2 + c j ^ 2 = 1)
+    (hM : ∀ x : ℝ, -M ≤ realTrigSum n a c x) : Real.sqrt n / 4 ≤ M
+```
+
+### `p34_A_phases`
+
+`lean/ChowlaCosine/P34/RealForm.lean:103`
+
+```lean
+theorem p34_A_phases (n : ℕ) (hn : 1 ≤ n) (θ : ℕ → ℝ) (M : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ ∑ j ∈ windowFreq n, Real.cos ((j : ℝ) * x - θ j)) :
+    Real.sqrt n / 4 ≤ M
+```
+
+### `p34_A_exists_le`
+
+`lean/ChowlaCosine/P34/Littlewood.lean:34`
+
+```lean
+theorem p34_A_exists_le (n : ℕ) (hn : 1 ≤ n) (b : ℕ → ℂ)
+    (hb : ∀ j ∈ windowFreq n, ‖b j‖ ^ 2 = 1) :
+    ∃ x : ℝ, trigSum (windowFreq n) b x ≤ -Real.sqrt n / 4
+```
+
+### `p34_A_exists_ge`
+
+`lean/ChowlaCosine/P34/Littlewood.lean:43`
+
+```lean
+theorem p34_A_exists_ge (n : ℕ) (hn : 1 ≤ n) (b : ℕ → ℂ)
+    (hb : ∀ j ∈ windowFreq n, ‖b j‖ ^ 2 = 1) :
+    ∃ x : ℝ, Real.sqrt n / 4 ≤ trigSum (windowFreq n) b x
+```
+
+### `p34_B`
+
+`lean/ChowlaCosine/P34/Littlewood.lean:66`
+
+```lean
+theorem p34_B (n : ℕ) (hn : 1 ≤ n) (ε : ℕ → ℝ)
+    (hε : ∀ j : ℕ, ε j = -1 ∨ ε j = 1) :
+    (∃ x : ℝ, littlewoodSum n ε x ≤ 1 - Real.sqrt n / 4) ∧
+      (∃ x : ℝ, Real.sqrt n / 4 - 1 ≤ littlewoodSum n ε x)
+```
+
+### `p34_C`
+
+`lean/ChowlaCosine/P34/Corollaries.lean:126`
+
+```lean
+theorem p34_C (n : ℕ) (b : ℕ → ℂ) (M : ℝ)
+    (hb : ∀ j ∈ windowFreq n, ‖b j‖ ^ 2 ≤ 1)
+    (hdensity : (41 / 100 : ℝ) * n ≤ energy (windowFreq n) b)
+    (hM : ∀ x : ℝ, -M ≤ trigSum (windowFreq n) b x) :
+    Real.sqrt n / 1000 ≤ M
+```
+
+### `p34_C_real`
+
+`lean/ChowlaCosine/P34/RealForm.lean:109`
+
+```lean
+theorem p34_C_real (n : ℕ) (a c : ℕ → ℝ) (M : ℝ)
+    (hb : ∀ j ∈ windowFreq n, a j ^ 2 + c j ^ 2 ≤ 1)
+    (hdensity : (41 / 100 : ℝ) * n ≤ realEnergy n a c)
+    (hM : ∀ x : ℝ, -M ≤ realTrigSum n a c x) : Real.sqrt n / 1000 ≤ M
+```
+
+### `p33_ratio`
+
+`lean/ChowlaCosine/P34/Secondary.lean:106`
+
+```lean
+theorem p33_ratio (A : Finset ℕ) (hne : A.Nonempty) (m X : ℕ) (hm : 1 ≤ m)
+    (hlo : ∀ a ∈ A, m ≤ a) (hhi : ∀ a ∈ A, a ≤ X)
+    (M : ℝ) (hM : ∀ x : ℝ, -M ≤ cosSum A x) :
+    (A.card : ℝ) * m / X ≤ M
+```
+
+### `p33_ratio_min_max`
+
+`lean/ChowlaCosine/P34/Secondary.lean:151`
+
+```lean
+theorem p33_ratio_min_max (A : Finset ℕ) (hne : A.Nonempty)
+    (hA : ∀ a ∈ A, 0 < a) (M : ℝ) (hM : ∀ x : ℝ, -M ≤ cosSum A x) :
+    (A.card : ℝ) * A.min' hne / A.max' hne ≤ M
+```
+
+### `dilation_identity`
+
+`lean/ChowlaCosine/P34/Secondary.lean:160`
+
+```lean
+theorem dilation_identity (A : Finset ℕ) (q : ℕ) (hq : 1 ≤ q) :
+    (∑ j ∈ Finset.range q, cosSum A (2 * π * j / q)) =
+      (q : ℝ) * (A.filter (fun a => q ∣ a)).card
+```
+
+### `dilation_pinch`
+
+`lean/ChowlaCosine/P34/Secondary.lean:166`
+
+```lean
+theorem dilation_pinch (A : Finset ℕ) (q : ℕ) (hq : 1 ≤ q) (M : ℝ)
+    (hM : ∀ x : ℝ, -M ≤ cosSum A x) :
+    (A.card : ℝ) / q - (1 - 1 / (q : ℝ)) * M ≤ (A.filter (fun a => q ∣ a)).card
+```

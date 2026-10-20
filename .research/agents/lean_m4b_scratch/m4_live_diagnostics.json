@@ -1,0 +1,281 @@
+{
+  "diagnostics": [
+    {
+      "fullRange": {
+        "end": {
+          "character": 54,
+          "line": 280
+        },
+        "start": {
+          "character": 34,
+          "line": 280
+        }
+      },
+      "message": "This simp argument is unused:\n  Matrix.cons_val_zero\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [k, Matrix.cons_val_one, Matrix.cons_val_two]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 54,
+          "line": 280
+        },
+        "start": {
+          "character": 34,
+          "line": 280
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 75,
+          "line": 280
+        },
+        "start": {
+          "character": 56,
+          "line": 280
+        }
+      },
+      "message": "This simp argument is unused:\n  Matrix.cons_val_one\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [k, Matrix.cons_val_zero, Matrix.cons_val_two]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 75,
+          "line": 280
+        },
+        "start": {
+          "character": 56,
+          "line": 280
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 96,
+          "line": 280
+        },
+        "start": {
+          "character": 77,
+          "line": 280
+        }
+      },
+      "message": "This simp argument is unused:\n  Matrix.cons_val_two\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [k, Matrix.cons_val_zero, Matrix.cons_val_one]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 96,
+          "line": 280
+        },
+        "start": {
+          "character": 77,
+          "line": 280
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 42,
+          "line": 310
+        },
+        "start": {
+          "character": 23,
+          "line": 310
+        }
+      },
+      "message": "This simp argument is unused:\n  add_sub_cancel_left\n\nHint: Omit it from the simp argument list.\n  [apply] simp only [P, e]\n\nNote: This linter can be disabled with `set_option linter.unusedSimpArgs false`",
+      "range": {
+        "end": {
+          "character": 42,
+          "line": 310
+        },
+        "start": {
+          "character": 23,
+          "line": 310
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 48,
+          "line": 474
+        },
+        "start": {
+          "character": 4,
+          "line": 474
+        }
+      },
+      "message": "Try this: \n  letI\u0335\n\nThe goal is a proposition, so `let` is preferred over `letI`.\nThe difference between `let` and `letI` is that `letI` inlines the value.\nBut this is not relevant for proofs because of proof irrelevance.\n\nNote: This linter can be disabled with `set_option linter.style.haveILetI false`",
+      "range": {
+        "end": {
+          "character": 48,
+          "line": 474
+        },
+        "start": {
+          "character": 4,
+          "line": 474
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 597
+        },
+        "start": {
+          "character": 0,
+          "line": 597
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.sharp_young' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 597
+        },
+        "start": {
+          "character": 0,
+          "line": 597
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 598
+        },
+        "start": {
+          "character": 0,
+          "line": 598
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.sharp_young_finite' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 598
+        },
+        "start": {
+          "character": 0,
+          "line": 598
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 599
+        },
+        "start": {
+          "character": 0,
+          "line": 599
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.young_trilinear_complement' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 599
+        },
+        "start": {
+          "character": 0,
+          "line": 599
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 600
+        },
+        "start": {
+          "character": 0,
+          "line": 600
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.becknerFactor_three_quarters_fourth' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 600
+        },
+        "start": {
+          "character": 0,
+          "line": 600
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 6,
+          "line": 601
+        },
+        "start": {
+          "character": 0,
+          "line": 601
+        }
+      },
+      "message": "'ChowlaCosine.Beckner.sharp_autocorrelation' depends on axioms: [propext, Classical.choice, Quot.sound]",
+      "range": {
+        "end": {
+          "character": 6,
+          "line": 601
+        },
+        "start": {
+          "character": 0,
+          "line": 601
+        }
+      },
+      "severity": 3,
+      "source": "Lean 4"
+    },
+    {
+      "fullRange": {
+        "end": {
+          "character": 25,
+          "line": 618
+        },
+        "start": {
+          "character": 22,
+          "line": 618
+        }
+      },
+      "message": "Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice\n\nNote: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`",
+      "range": {
+        "end": {
+          "character": 25,
+          "line": 618
+        },
+        "start": {
+          "character": 22,
+          "line": 618
+        }
+      },
+      "severity": 2,
+      "source": "Lean 4"
+    }
+  ],
+  "uri": "file:///Users/jmercedes/Desktop/Projects/Research/chowla-cosine/.research/agents/lean_m4b_scratch/Combined.lean",
+  "version": 28
+}

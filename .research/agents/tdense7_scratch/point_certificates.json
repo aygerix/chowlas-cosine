@@ -1,0 +1,162 @@
+[
+  {
+    "name": "n128_mu0_row0",
+    "n": 128,
+    "X": 384,
+    "rational_angle": "613483379593/20000000000000",
+    "cosine_ball": "[-35.44806412382017534264830706688363941496041404833460160 +/- 3.20e-54]",
+    "R_lower": "313/100",
+    "negative_slack_ball": "[-0.036156521997875320654021412672799527575830288895821845 +/- 7.68e-55]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n128_mu0_row1",
+    "n": 128,
+    "X": 384,
+    "rational_angle": "3002084194697/100000000000000",
+    "cosine_ball": "[-34.56562525782516135140184518013044894977114914205007641 +/- 5.24e-54]",
+    "R_lower": "61/20",
+    "negative_slack_ball": "[-0.058814335921642160640640309413815832671155382852543429 +/- 7.63e-55]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n128_mu0.1_row2",
+    "n": 128,
+    "X": 384,
+    "rational_angle": "327040663631/12500000000000",
+    "cosine_ball": "[-10.387798542371082847439930182974938669693397673825154249 +/- 7.96e-55]",
+    "R_lower": "91/100",
+    "negative_slack_ball": "[-0.09232380829495089216363627072833665770618642108097228 +/- 4.04e-54]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n128_mu0.1_row3",
+    "n": 128,
+    "X": 384,
+    "rational_angle": "119919620243/5000000000000",
+    "cosine_ball": "[-10.381209414102375580560109241183587485438860889941310049 +/- 7.57e-55]",
+    "R_lower": "91/100",
+    "negative_slack_ball": "[-0.085734680026243625283815328936985473451649637197128076 +/- 5.90e-55]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n128_mu0.3_row4",
+    "n": 128,
+    "X": 384,
+    "rational_angle": "10181169011573/100000000000000",
+    "cosine_ball": "[-11.39382526480054030998483305534368251585889424035279542 +/- 4.16e-54]",
+    "R_lower": "1",
+    "negative_slack_ball": "[-0.080116765815779919571323261666097887301519237337210838 +/- 7.46e-55]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n128_mu0.3_row5",
+    "n": 128,
+    "X": 384,
+    "rational_angle": "195653920353709/100000000000000",
+    "cosine_ball": "[-10.5750600194773056702344311056746967904847094874071596 +/- 1.09e-53]",
+    "R_lower": "93/100",
+    "negative_slack_ball": "[-0.0533111154214785071498669975545430859263507346026659 +/- 4.65e-53]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n512_mu0_row0",
+    "n": 512,
+    "X": 1536,
+    "rational_angle": "147324063311/20000000000000",
+    "cosine_ball": "[-108.8531284812818618616500605819036185254963628844947922 +/- 4.15e-53]",
+    "R_lower": "481/100",
+    "negative_slack_ball": "[-0.0152527210484669058720963667252543987744153554848685 +/- 2.99e-53]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "n512_mu0.1_row1",
+    "n": 512,
+    "X": 1536,
+    "rational_angle": "272780971965633/100000000000000",
+    "cosine_ball": "[-26.348805914970357539981447379974641550830264596238873 +/- 2.64e-52]",
+    "R_lower": "29/25",
+    "negative_slack_ball": "[-0.101002197325713434222104658642645212577154589242717 +/- 5.03e-52]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_cumulative_n512",
+    "n": 512,
+    "X": 3100,
+    "rational_angle": "290321281429981/100000000000000",
+    "cosine_ball": "[-49.708106816543857802545275879720809173222354559218892 +/- 2.27e-52]",
+    "R_lower": "219/100",
+    "negative_slack_ball": "[-0.154063590990607292534102983412988500141052046010631 +/- 7.05e-52]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n512",
+    "n": 512,
+    "X": 3100,
+    "rational_angle": "60014536608387/20000000000000",
+    "cosine_ball": "[-44.911246312178915641577934376607241145823246355648981 +/- 5.12e-52]",
+    "R_lower": "99/50",
+    "negative_slack_ball": "[-0.108960656199264495540435593644006016736041343707266 +/- 5.54e-52]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_cumulative_n1024",
+    "n": 1024,
+    "X": 6200,
+    "rational_angle": "109839217781027/50000000000000",
+    "cosine_ball": "[-66.579684324037199532390011073399135740739942010184437 +/- 8.13e-52]",
+    "R_lower": "52/25",
+    "negative_slack_ball": "[-0.019684324037199532390011073399135740739942010184437 +/- 8.13e-52]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n1024",
+    "n": 1024,
+    "X": 6200,
+    "rational_angle": "4244942247737/3125000000000",
+    "cosine_ball": "[-61.888335330816191622766813959909245431341899899209552 +/- 5.37e-52]",
+    "R_lower": "193/100",
+    "negative_slack_ball": "[-0.128335330816191622766813959909245431341899899209552 +/- 5.37e-52]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_cumulative_n2048",
+    "n": 2048,
+    "X": 12399,
+    "rational_angle": "58961548870221/25000000000000",
+    "cosine_ball": "[-98.97198412542059093696402259597619688528527217387971 +/- 6.83e-51]",
+    "R_lower": "109/50",
+    "negative_slack_ball": "[-0.31644601427348033255821719510765892426496214758382 +/- 6.79e-51]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n2048",
+    "n": 2048,
+    "X": 12399,
+    "rational_angle": "11000392278993/12500000000000",
+    "cosine_ball": "[-82.40920972635539287973848774377624755377939636254127 +/- 4.96e-51]",
+    "R_lower": "91/50",
+    "negative_slack_ball": "[-0.04541185374633723752813644580343145788170634058781 +/- 1.14e-51]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_cumulative_n4096",
+    "n": 4096,
+    "X": 24797,
+    "rational_angle": "21765906656639/10000000000000",
+    "cosine_ball": "[-156.5332916723465717968214945639945014576211586092478 +/- 3.15e-50]",
+    "R_lower": "61/25",
+    "negative_slack_ball": "[-0.3732916723465717968214945639945014576211586092478 +/- 3.15e-50]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  },
+  {
+    "name": "profile_B48_conditional_bernoulli_n4096",
+    "n": 4096,
+    "X": 24797,
+    "rational_angle": "3852204889369/25000000000000",
+    "cosine_ball": "[-131.64000884982120398292817147653468113325701734574416 +/- 1.33e-51]",
+    "R_lower": "41/20",
+    "negative_slack_ball": "[-0.44000884982120398292817147653468113325701734574416 +/- 1.33e-51]",
+    "status": "PROVED ball-arithmetic point certificate M>=R_lower sqrt(n); not an upper bound on M"
+  }
+]

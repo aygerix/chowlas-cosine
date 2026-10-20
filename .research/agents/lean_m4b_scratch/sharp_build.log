@@ -1,0 +1,146 @@
+⚠ [8706/8722] Replayed ChowlaCosine.Beckner.Young
+warning: ChowlaCosine/Beckner/Young.lean:36:23: Variable name `y` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _y
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/Young.lean:113:13: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [smul_eq_mul] at hholder
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/Young.lean:330:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8708/8722] Replayed ChowlaCosine.Beckner.Gaussian
+warning: ChowlaCosine/Beckner/Gaussian.lean:52:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8709/8722] Replayed ChowlaCosine.Beckner.HeatFlow
+warning: ChowlaCosine/Beckner/HeatFlow.lean:97:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ChowlaCosine/Beckner/HeatFlow.lean:123:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8711/8722] Replayed ChowlaCosine.Beckner.HeatFlowRelative
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:47:33: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:181:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:181:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8714/8722] Replayed ChowlaCosine.Beckner.HeatFlowIntegral
+warning: ChowlaCosine/Beckner/HeatFlowIntegral.lean:136:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8715/8722] Replayed ChowlaCosine.Beckner.HeatFlowSpatial
+warning: ChowlaCosine/Beckner/HeatFlowSpatial.lean:17:35: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/HeatFlowSpatial.lean:31:50: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8717/8722] Replayed ChowlaCosine.Beckner.HeatFlowRescale
+warning: ChowlaCosine/Beckner/HeatFlowRescale.lean:52:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/Beckner/HeatFlowRescale.lean:52:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8721/8722] Replayed ChowlaCosine.Beckner.YoungFrame
+warning: ChowlaCosine/Beckner/YoungFrame.lean:75:43: This simp argument is unused:
+  sq_sqrt hd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hab.le, sq_sqrt had.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:76:20: This simp argument is unused:
+  sq_sqrt had.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:76:36: This simp argument is unused:
+  sq_sqrt hbd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt had.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:94:45: This simp argument is unused:
+  sq_sqrt hd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hab.le, sq_sqrt had.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:95:22: This simp argument is unused:
+  sq_sqrt had.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt hbd.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:95:38: This simp argument is unused:
+  sq_sqrt hbd.le
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [sq_sqrt ha.le, sq_sqrt hb.le, sq_sqrt hd.le, sq_sqrt hab.le, sq_sqrt had.le]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:177:4: This simp argument is unused:
+  Matrix.vecHead
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecTail,
+    Function.comp_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:177:20: This simp argument is unused:
+  Matrix.vecTail
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecHead,
+    Function.comp_def]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:177:36: This simp argument is unused:
+  Function.comp_def
+
+Hint: Omit it from the simp argument list.
+  [apply] simp [Fin.sum_univ_three, youngFrameWeights, youngFrameFirst, youngFrameSecond, Matrix.vecHead,
+    Matrix.vecTail]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/YoungFrame.lean:233:23: This simp argument is unused:
+  smul_eq_mul
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [youngFrame, planePoint, smul_add, smul_smul, Finset.sum_add_distrib, ← Finset.sum_smul, hA, hB,
+    zero_smul, zero_add]
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+✖ [8722/8722] Building ChowlaCosine.Beckner.YoungSharp (93s)
+trace: .> LEAN_PATH=/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/Cli/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/batteries/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/Qq/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/aesop/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/proofwidgets/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/importGraph/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/LeanSearchClient/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/plausible/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/packages/mathlib/.lake/build/lib/lean:/Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/build/lib/lean /Users/jmercedes/.elan/toolchains/leanprover--lean4---v4.33.1/bin/lean /Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/ChowlaCosine/Beckner/YoungSharp.lean -o /Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/build/lib/lean/ChowlaCosine/Beckner/YoungSharp.olean -i /Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/build/lib/lean/ChowlaCosine/Beckner/YoungSharp.ilean -c /Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/build/ir/ChowlaCosine/Beckner/YoungSharp.c --setup /Users/jmercedes/Desktop/Projects/Research/chowla-cosine/lean/.lake/build/ir/ChowlaCosine/Beckner/YoungSharp.setup.json --json
+error: Lean exited with code 143
+Some required targets logged failures:
+- ChowlaCosine.Beckner.YoungSharp
+error: build failed

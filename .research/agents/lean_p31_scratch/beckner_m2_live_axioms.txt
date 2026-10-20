@@ -1,0 +1,1 @@
+'ChowlaCosine.Beckner.young_four_thirds' depends on axioms: [propext, Classical.choice, Quot.sound]

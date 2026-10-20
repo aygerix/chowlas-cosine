@@ -1,0 +1,24 @@
+{
+  "build": {
+    "command": "lake build",
+    "cwd": "lean",
+    "exit_code": 0,
+    "jobs": 8739,
+    "log": "final_full_build.log"
+  },
+  "audit": {
+    "command": "lake env lean AxiomCheck.lean",
+    "cwd": "lean",
+    "exit_code": 0,
+    "entries": 272,
+    "unexpected_axioms": [],
+    "sorryAx": false,
+    "log": "final_axioms.log"
+  },
+  "source_manifest_matches": true,
+  "proof_modules": 17,
+  "sorry_tokens": 0,
+  "new_axiom_declarations": 0,
+  "native_decide_tokens": 0,
+  "t5_status": "M1 finite exponents checked; optional M2 sharp shortcut skipped; M3 finite Gaussian computations/project attainment checked; M4 partial; M5 and sinc P31-N not checked"
+}

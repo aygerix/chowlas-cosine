@@ -1,0 +1,56 @@
+{
+  "status": "NUMERICAL, not global certificates",
+  "python": "3.12.3",
+  "numpy": "2.5.4",
+  "scipy": "1.18.1",
+  "finite_count": 22,
+  "zoo_count": 90,
+  "tall_count": 360,
+  "max_direct_error": 9.777068044058979e-12,
+  "max_parseval_error": 3.33148242407666e-16,
+  "counterexample_height_condition_rows": 0,
+  "cyclic_count": 360,
+  "cyclic_max_S": 282,
+  "cyclic_max_D": 2432,
+  "exact_counts": {
+    "SG_integral_cases": 271,
+    "SG_pointwise_cases": 34688,
+    "hinge_grid_points": 174165,
+    "hinge_max_error_over_proved_bound": 0.24785494377954084
+  },
+  "source_counts": {
+    "Bohr": 4,
+    "random": 2,
+    "residue": 6,
+    "Singer": 3,
+    "Bu": 3,
+    "e68": 40,
+    "e72": 32
+  },
+  "noncentral_peaks_k4": {
+    "e68": 9,
+    "e72": 0
+  },
+  "tall_by_k": {
+    "2": {
+      "nonempty": 90,
+      "max_S": 67,
+      "min_residual_over_n": 0.037942450745242745
+    },
+    "4": {
+      "nonempty": 90,
+      "max_S": 9,
+      "min_residual_over_n": 0.04215593969224607
+    },
+    "8": {
+      "nonempty": 66,
+      "max_S": 3,
+      "min_residual_over_n": 0.05007435475273024
+    },
+    "16": {
+      "nonempty": 20,
+      "max_S": 3,
+      "min_residual_over_n": 0.05988441023885695
+    }
+  }
+}

@@ -1,0 +1,68 @@
+⚠ [8706/8719] Replayed ChowlaCosine.Beckner.Young
+warning: ChowlaCosine/Beckner/Young.lean:36:23: Variable name `y` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _y
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/Young.lean:113:13: This simp argument is unused:
+  Pi.smul_apply
+
+Hint: Omit it from the simp argument list.
+  [apply] simp only [smul_eq_mul] at hholder
+
+Note: This linter can be disabled with `set_option linter.unusedSimpArgs false`
+warning: ChowlaCosine/Beckner/Young.lean:330:6: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8708/8719] Replayed ChowlaCosine.Beckner.Gaussian
+warning: ChowlaCosine/Beckner/Gaussian.lean:52:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8709/8719] Replayed ChowlaCosine.Beckner.HeatFlow
+warning: ChowlaCosine/Beckner/HeatFlow.lean:97:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+warning: ChowlaCosine/Beckner/HeatFlow.lean:123:2: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8711/8719] Replayed ChowlaCosine.Beckner.HeatFlowRelative
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:47:33: Variable name `hR` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hR
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:181:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/Beckner/HeatFlowRelative.lean:181:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+⚠ [8714/8719] Replayed ChowlaCosine.Beckner.HeatFlowIntegral
+warning: ChowlaCosine/Beckner/HeatFlowIntegral.lean:136:21: Used `tac1 <;> tac2` where `(tac1; tac2)` would suffice
+
+Note: This linter can be disabled with `set_option linter.unnecessarySeqFocus false`
+⚠ [8715/8719] Replayed ChowlaCosine.Beckner.HeatFlowSpatial
+warning: ChowlaCosine/Beckner/HeatFlowSpatial.lean:17:35: Variable name `hB` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hB
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+warning: ChowlaCosine/Beckner/HeatFlowSpatial.lean:31:50: Variable name `hT` is not explicitly referenced.
+
+Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:
+  [apply] _hT
+
+Note: This linter can be disabled with `set_option linter.unusedVariables false`
+⚠ [8717/8719] Replayed ChowlaCosine.Beckner.HeatFlowRescale
+warning: ChowlaCosine/Beckner/HeatFlowRescale.lean:52:8: this tactic is never executed
+
+Note: This linter can be disabled with `set_option linter.unreachableTactic false`
+warning: ChowlaCosine/Beckner/HeatFlowRescale.lean:52:8: Unused tactic linter: `ring` does nothing
+
+Note: This linter can be disabled with `set_option linter.unusedTactic false`
+✔ [8718/8719] Built ChowlaCosine.Beckner.HeatFlowProductLimit (108s)
+✔ [8719/8719] Built ChowlaCosine.Beckner.HeatFlowInitial (81s)
+Build completed successfully (8719 jobs).

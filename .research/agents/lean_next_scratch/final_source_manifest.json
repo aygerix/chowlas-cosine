@@ -1,0 +1,66 @@
+[
+  {
+    "file": "lean/ChowlaCosine/P36/Kernel.lean",
+    "lines": 306,
+    "sha256": "1a6c0794171bf5649f2367e5f845fb4a9884d925a36e9cd12e31b5610dd08ae3",
+    "public_theorems": 13,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/P36/Main.lean",
+    "lines": 75,
+    "sha256": "fbd4f2ee6ac8dd97fa7c9bb1167c29714b11f233d0d7db9e6cd6a8ea054b2fbd",
+    "public_theorems": 3,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/P36/SineKernel.lean",
+    "lines": 121,
+    "sha256": "c00d8b986560d09e47d5570d1f5d21d7db2a80bfc61ee9b3379425f3f55c0008",
+    "public_theorems": 13,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/Beckner/HeatFlowUniform.lean",
+    "lines": 140,
+    "sha256": "bb61af662b2445b2a253290922fc2670823e9cdfa770a6e8b8bff142fc721a95",
+    "public_theorems": 6,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/Beckner/HeatFlowIntegral.lean",
+    "lines": 212,
+    "sha256": "d91b6660b8d92a7f5757a6e5a9227e477fd42dfa9199a9e5d2d0a9613a8a7421",
+    "public_theorems": 13,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/Beckner/HeatFlowSpatial.lean",
+    "lines": 227,
+    "sha256": "b57ea606ca0abb58a170b9492b91297d1997a292f2e8df6076f779c64f2baa9c",
+    "public_theorems": 8,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/Beckner/HeatFlowMonotone.lean",
+    "lines": 104,
+    "sha256": "daec23f75841abe2d67378555eb1e8357a7498770511344fe9f9796395257984",
+    "public_theorems": 2,
+    "not_audited": [],
+    "forbidden_tokens": []
+  },
+  {
+    "file": "lean/ChowlaCosine/Beckner/HeatFlowRescale.lean",
+    "lines": 85,
+    "sha256": "a9b36ea6f7ae5993444b1f96699a075a074a699e10aa09e6a7087ef239f7c667",
+    "public_theorems": 5,
+    "not_audited": [],
+    "forbidden_tokens": []
+  }
+]

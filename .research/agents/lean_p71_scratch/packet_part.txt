@@ -1,0 +1,97 @@
+/-- Each packet has exactly `2hJ` distinct integer vertices. -/
+theorem packet_card {h q J : ℕ} (hq : 80 * h + 1 ≤ q) (b : ℤ) :
+    (packet q h J b).card = 2 * h * J := by
+  have hq0 : 0 < q := by omega
+  have hq' : 80 * (h : ℤ) + 1 ≤ q := by exact_mod_cast hq
+  have hinj : Set.InjOn (fun p : ℤ × ℤ => p.1 * (q : ℤ) + p.2)
+      ↑((Icc (1 : ℤ) J) ×ˢ Ico (b * h) ((b + 2) * h)) := by
+    intro x hx y hy he
+    simp only [mem_coe, mem_product, mem_Icc, mem_Ico] at hx hy
+    have hxx : 2 * |x.2 - b * h| < q := by
+      rw [abs_of_nonneg (by omega)]
+      nlinarith
+    have hyy : 2 * |y.2 - b * h| < q := by
+      rw [abs_of_nonneg (by omega)]
+      nlinarith
+    have hi := repr_inj hq0 hxx hyy
+      (show x.1 * (q : ℤ) + (x.2 - b * h) = y.1 * q + (y.2 - b * h) by linarith)
+    exact Prod.ext hi.1 (by linarith [hi.2])
+  rw [packet, card_image_of_injOn hinj, card_product, Int.card_Icc, Int.card_Ico]
+  have he : (b + 2) * (h : ℤ) - b * h = (2 * h : ℕ) := by push_cast; ring
+  rw [he]
+  simp [Nat.mul_comm, Nat.mul_left_comm]
+
+/-- Coordinate bounds shared by the three packets. -/
+theorem packet_coordinates {h q J : ℕ} {b a : ℤ} (hb : -16 ≤ b ∧ b ≤ 14)
+    (ha : a ∈ packet q h J b) : ∃ j r : ℤ,
+    (1 ≤ j ∧ j ≤ J) ∧ (-16 * h ≤ r ∧ r < 16 * h) ∧
+      (b * h ≤ r ∧ r < (b + 2) * h) ∧ a = j * q + r := by
+  obtain ⟨j, r, hj, hr, he⟩ := (mem_packet q h J b a).mp ha
+  refine ⟨j, r, hj, ?_, hr, he⟩
+  constructor <;> nlinarith [Int.natCast_nonneg h]
+
+theorem packets_disjoint {h q J : ℕ} (hh : 0 < h) (hq : 80 * h + 1 ≤ q)
+    {b c : ℤ} (hb : -16 ≤ b ∧ b ≤ 14) (hc : -16 ≤ c ∧ c ≤ 14)
+    (hbc : b + 2 ≤ c) : Disjoint (packet q h J b) (packet q h J c) := by
+  apply disjoint_left.mpr
+  intro a ha hac
+  obtain ⟨j, r, _, hr, hbr, he⟩ := packet_coordinates hb ha
+  obtain ⟨k, s, _, hs, hcs, he'⟩ := packet_coordinates hc hac
+  have hq' : 80 * (h : ℤ) + 1 ≤ q := by exact_mod_cast hq
+  have hres := repr_inj (show 0 < q by omega)
+    (show 2 * |r| < q by rw [abs_lt]; omega)
+    (show 2 * |s| < q by rw [abs_lt]; omega) (he.symm.trans he')
+  have hh' : (0 : ℤ) < h := by exact_mod_cast hh
+  nlinarith [hres.2]
+
+/-- The three packets themselves consist of admissible positive frequencies. -/
+theorem packet_subset_taper {h q P J : ℕ} (hP : 100 ≤ P)
+    (hq : 80 * h + 1 ≤ q) (hJ : 8 * J ≤ P) {b a : ℤ}
+    (hb : -16 ≤ b ∧ b ≤ 14) (ha : a ∈ packet q h J b) :
+    0 < a ∧ a.natAbs ∈ taper (20 * h) q P := by
+  obtain ⟨j, r, hj, hr, _, rfl⟩ := packet_coordinates hb ha
+  have hq' : 80 * (h : ℤ) + 1 ≤ q := by exact_mod_cast hq
+  have hpos : 0 < j * (q : ℤ) + r := by nlinarith [Int.natCast_nonneg h]
+  exact ⟨hpos, short_mem hP hq hJ j r (ne_of_gt hpos)
+    (by rw [abs_of_nonneg (by omega)]; omega) (by rw [abs_le]; omega)⟩
+
+/-- All distinct pairs within a packet or between adjacent packets are edges. -/
+theorem packet_edge {h q P J : ℕ} (hP : 100 ≤ P)
+    (hq : 80 * h + 1 ≤ q) (hJ : 8 * J ≤ P) {b c u v : ℤ}
+    (hu : u ∈ packet q h J b) (hv : v ∈ packet q h J c)
+    (hbc : |b - c| ≤ 15) (hne : u ≠ v) :
+    (u - v).natAbs ∈ taper (20 * h) q P := by
+  obtain ⟨j, r, hj, hr, rfl⟩ := (mem_packet q h J b u).mp hu
+  obtain ⟨k, s, hk, hs, rfl⟩ := (mem_packet q h J c v).mp hv
+  have he : j * (q : ℤ) + r - (k * q + s) = (j - k) * q + (r - s) := by ring
+  rw [he]
+  apply short_mem hP hq hJ (j - k) (r - s)
+  · rw [← he]
+    exact sub_ne_zero.mpr hne
+  · rw [abs_le]
+    omega
+  · rw [abs_le] at hbc ⊢
+    constructor <;> nlinarith [Int.natCast_nonneg h]
+
+/-- The outer packets have no connecting edges. -/
+theorem packet_nonedge {h q P J : ℕ} (hh : 0 < h) (hP : 100 ≤ P)
+    (hq : 80 * h + 1 ≤ q) {u v : ℤ}
+    (hu : u ∈ packet q h J (-16)) (hv : v ∈ packet q h J 14) :
+    (u - v).natAbs ∉ taper (20 * h) q P := by
+  obtain ⟨j, r, hj, hr, rfl⟩ := (mem_packet q h J (-16) u).mp hu
+  obtain ⟨k, s, hk, hs, rfl⟩ := (mem_packet q h J 14 v).mp hv
+  intro ha
+  have hq' : 80 * (h : ℤ) + 1 ≤ q := by exact_mod_cast hq
+  have hh' : (0 : ℤ) < h := by exact_mod_cast hh
+  have he : j * (q : ℤ) + r - (k * q + s) = (j - k) * q + (r - s) := by ring
+  rw [he] at ha
+  have hres := centered_natAbs_repr (show 0 < q by omega) (j - k) (r - s)
+    (show 2 * |r - s| < q by rw [abs_of_neg (by nlinarith)]; nlinarith)
+  have ha' := (mem_taper (20 * h) q P _).mp ha
+  rw [hres] at ha'
+  have hrad : (r - s).natAbs ≤ 20 * h := by
+    have hPq : 0 < P * q := Nat.mul_pos (by omega) (by omega)
+    nlinarith [Nat.mul_le_mul_left (20 * h) (show P * q - ((j - k) * (q : ℤ) + (r - s)).natAbs ≤ P * q by omega)]
+  have hrad' : |r - s| ≤ 20 * (h : ℤ) := by exact_mod_cast hrad
+  rw [abs_of_neg (by nlinarith)] at hrad'
+  nlinarith

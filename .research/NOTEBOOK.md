@@ -3016,3 +3016,11 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
    coefficient γ (mγ² ≈ ρ₀), the identity c = c ⋆ c at a spike needs γ <= R(x)γ² with R(x) ≈ m²/W representations
    (E random-like). Hence m³ >= W²/ρ₀, i.e. ε² >= (#S in window)^{−1/3}, i.e. K >~ n^{1/3}. This is the same regime split
    as A5(i): local triple coherence is satisfiable throughout the C* core.
+10. CORRECTION to item 3 (same session). "Finite quotients of Z are cyclic" constrains only RATIONAL-spike anatomies.
+    It is not an obstruction to C*: Chowla(Z^d) ⇔ Chowla(Z) (Freiman map x + My), and Z² has rank-2 quotients, so JL
+    sets lift to Z as rank-2 Bohr-spike objects. The lead's box computations (CSTAR A9): periodic lifts lose the ratio
+    linearly in the number of periods (D8); a single period pays Dirichlet/ball Gibbs; a 2s-dim ball has relative Gibbs
+    (2/e)^s but needs (const)^s·p^{(2a−1)s} points, so (2/e)^s|S| >> √|S|; a radial LP-packing taper keeps local
+    two-valuedness but each spike profile is a ball indicator. The obstruction is the archimedean box + aperiodicity.
+11. E114 final (exact ω): JL j ≠ 0 has ω = K + 1 for (p, a) = (3,3), (5,2), (5,3) [K = 9, 5, 25], hence
+    C_CP >= ratio·K. Clique-poor exact high-ratio cancellation objects exist in finite groups.

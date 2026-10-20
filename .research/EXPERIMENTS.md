@@ -1689,3 +1689,21 @@ Reading:
   - E41's SA data put the Z_p half-set ratio at a peak of ≈ 2.15 (p = 80–150), declining for larger p
     (search-limited). This is consistent with a bounded ratio in Z_p and a spread threshold T ≈ 2.2 rather than 2.
   - No refutation of SCP(T) for any fixed T: finite data cannot test the C(T) constant.
+
+## E113–E114 (2026-10-19, cont. 30) Finite-group probes after the Jedwab–Li literature check (lead; dirichlet)
+E113 (src/e113_valclass.py, exact): valuation-class sets in Z_{p^a}² (membership by (v_p(x), v_p(y)) ∈ Ω), exhaustive
+for (p, a) = (3,2), (3,3), (5,3), (7,3). Subgroup unions dominate (K = 1). Excluding them, the best is a large subgroup
+minus a small valuation shell (values −p, 0, |D|): ratio p^{2a−3}, no new mechanism.
+E114 (src/e114_cp_group.py, e114b_cliques.py, e114c_omega.py; exact combinatorics, networkx):
+CP structure of the Jedwab–Li blocks D_{a,j} ⊂ Z_{p^a}² (exact LS_{p^{a−1}}(p^a), K = p^{a−1}, ratio ≈ p).
+  | p | a | j | |D| | K | ratio | Delsarte 1+|D|/K | ω (exact) | max cliques | C_CP lower = |D|/(ω−1) | /K |
+  | 3 | 2 | 0 | 24 | 3 | 2.67 | 9 | 9 | 3 subgroups | — (C_flat = 3 = K, opt) | 1 |
+  | 3 | 3 | 0 | 234 | 9 | 2.89 | 27 | 27 | only the 3 subgroups ⟨(0,1)⟩, ⟨(3,1)⟩, ⟨(6,1)⟩ | — | — |
+  | 3 | 3 | 1, 2 | 234 | 9 | 2.89 | 27 | 10 | 540 of size 10 | 26 | 2.89 |
+  | 5 | 2 | 1 | 120 | 5 | 4.8 | 25 | 6 | — | 24 | 4.8 |
+  | 5 | 3 | 1 | 3100 | 25 | 4.96 | 125 | 26 (252 s) | — | 124 | 4.96 |
+- j = 0 (a = 3) is NOT geometric: the only 27-cliques are its three subgroups (78 of 234 elements covered).
+- j ≠ 0: ω = K + 1 in both cases, so C_CP >= |D|/K = ratio·K. These exact two-valued sets with ratio > 2 are
+  CP-INEFFICIENT by a factor equal to their ratio: genuine CANCELLATION objects (clique-poor), not spreads.
+- Bug note: the first e114 pricing lacked z >= x_s + x_t − 1 (fixed before any reported number); the full column
+  generation on Z_27² was too slow (killed) and replaced by the exact clique computations above.

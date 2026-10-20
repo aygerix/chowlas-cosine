@@ -5,7 +5,13 @@ and kills. Side results are not the prize (user, 2026-10-19).
 Latest (cont. 30):
 - SCP(T) REFUTED for every T by orthogonal padding (external review, lead-verified; CSTAR A8): a spread U × 0 plus a
   random F_2^r component 0 × B has ratio → ∞ but C_CP/K → ∞. The chain "Chowla ⇐ SCP + CP-Chowla" is dead as stated.
-- Target now: CP-CHOWLA(Z), C_CP(A) >= c√|A| (sum the endpoint multiplicity losses of P76(c) over all blocks).
+- Literature + E113/E114: the spread principle is FALSE as stated. Jedwab–Li LS PDS in Z_{p^a}² (ratio ≈ p, exact
+  two-valued) are unions of subgroup SHELLS with cross-level cancellation, and for j ≠ 0 they have clique number K + 1
+  (exact, p = 3, 5), so C_CP >= ratio·K: high-ratio CANCELLATION objects exist in finite groups. The CP bridge is dead
+  in two ways. CP-Chowla(Z) remains a meaningful side theorem (obstruction to nonneg-square constructions), not a link.
+- Corrected the same session: "Z has rank-1 (cyclic) quotients" is NOT an obstruction (Chowla(Z^d) ⇔ Chowla(Z)). The
+  obstruction to transplanting finite objects is the archimedean box: periodic lifts lose the ratio (D8), single
+  periods pay Gibbs, high-dimensional balls fail the E73 count (CSTAR A9).
 Previous (2026-10-19, cont. 29):
 - F12 CORRECTED. FLAT completely positive certificates are 1.3–1.5× too expensive (N50: R_CP(flat) = 0.857 against
   R = 0.570, lead-verified). Non-flat nonnegative (two-level) CP certificates come within 1–8% of M (X30_s0:

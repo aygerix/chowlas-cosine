@@ -432,11 +432,34 @@ The prize is (c). Everything else is support.
   - Certificate reading (lead): 1_D = Σ_shells (1_H − 1_K), so D̂ = Σ (|F_H|²/|H| − |F_K|²/|K|) is a SIGNED sum of
     subgroup squares whose positivity holds level by level. This is the finite-group analog of Bu's paradigm
     (2f + k = 2ρ² − g: a square minus a correction), and it reaches ratio → ∞.
-  - Why Z cannot copy it (lead): the selection freedom (one lift per slope class) needs the projective line over
-    Z_{p^a}, i.e. rank 2 over ONE prime. Z's p-adic completion Z_p has rank 1 and every finite quotient of Z is cyclic
-    (Ma: only trivial PDS and Paley). The 1-D valuation shells {v_p = k} just tile an interval. So Z's only exact
-    algebraic structure is cyclic, and its continuous part (T connected) forces Gibbs. These are the two Z-features any
-    proof must use.
+  - Why Z cannot copy it (lead; CORRECTED the same session). A first draft blamed "rank 1" (every finite quotient of Z
+    is cyclic, Ma). That is WRONG as an obstruction: Chowla(Z^d) ⇔ Chowla(Z) by a Freiman map x + My (M >> box²), and
+    Z² has the rank-2 quotients Z_{p^a}², so JL sets lift to Z ⊂ "Z²". In Z they appear as rank-2 BOHR spikes (irrational
+    points of T), not rational ones. The real obstruction is the archimedean box (lead computation):
+    - Periodic lift (V lattice points, V >> |G| so that the grid is resolved): every character value, including the
+      negative −r, is multiplied by ~V/|G|, so ratio ≈ (finite ratio)·|G|/V → 0. This is D8.
+    - One period (V ≈ |G|): the box is not resolved; Dirichlet interpolation gives sidelobes ≈ −0.217·(spike), and the
+      main spike's Gibbs is ≈ −0.217|D| for a cube. A 2s-dimensional ball box (JL in Z_{p^a}^{2s}, ratio ≈ p^s) has
+      relative Gibbs (2/e)^s, but the ball needs |S| >= (const)^s·p^{(2a−1)s} points, so (2/e)^s|S| >> √|S| always (the
+      E73 counting obstruction).
+    - A radial "packing taper" (use t(x) of the p disjoint LP-packing blocks at radius |x|; a union of t blocks is
+      LS_{tr}(n)) keeps exact two-valuedness locally but each spike's profile is a ball indicator, so the same Gibbs.
+    So the Z-features any proof must use are the band limit/box (T connected) together with aperiodicity at every scale;
+    "rank" and "cyclic quotients" are not invariants of the problem.
+  - E114 RESULT (exact clique numbers). For j ≠ 0 the JL graphs have ω = K + 1 (p = 3, a = 3: ω = 10 against Delsarte
+    27; p = 5, a = 2: ω = 6 against 25), so C_CP >= |D|/K = ratio·K: CP-inefficient by exactly the ratio. They are
+    clique-poor CANCELLATION objects with ratio ≈ p → ∞ (exact two-valued). j = 0 (a = 3) is not geometric either
+    (its only 27-cliques are its three subgroups). So in finite groups "high ratio" does NOT force CP-efficiency even
+    without padding: the CP bridge is dead in two independent ways (A8 padding, A9 JL). E112a's Z_p half-sets
+    (ratio 2.05–2.17, C_CP/K 2.6–5.5) were already small examples of the same kind.
+  - Consequence for C* in Z: a counterexample is either CP-efficient (blocked iff CP-Chowla(Z) holds; CP-Chowla is now
+    a side theorem, not a chain link) or a cancellation object. Finite cancellation objects with ratio → ∞ exist (JL)
+    and lift to Z only through a box, which pays Gibbs (above). The open Z-question is a ROBUST statement:
+    approximately two-valued spiky spectra on T force approximate subgroups (Bohr sets of some rank), and every
+    tapering of their box pays Gibbs or periodicity noise.
+  - E111 dual observation (lead): the optimal flat-CP duals y_k on dense near-optima are small and signed for small k
+    and increase steeply toward the top (N50_x72: y ≈ 0 for k <= 20, y_49..y_72 ≈ 0.6–1.5). The flat-CP lower bound is
+    carried by extreme lags, as P76(c) predicts.
 
 ## 6. Side results (recorded; NOT the prize)
 P71.2 (kernel), P72 (a–c proved; d, e gaps), P73 (kernel, Z), P74, E103–E105, Ruzsa-question status. See PROOFS.

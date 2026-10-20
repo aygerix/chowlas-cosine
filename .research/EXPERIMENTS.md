@@ -1707,3 +1707,5 @@ CP structure of the Jedwab–Li blocks D_{a,j} ⊂ Z_{p^a}² (exact LS_{p^{a−1
   CP-INEFFICIENT by a factor equal to their ratio: genuine CANCELLATION objects (clique-poor), not spreads.
 - Bug note: the first e114 pricing lacked z >= x_s + x_t − 1 (fixed before any reported number); the full column
   generation on Z_27² was too slow (killed) and replaced by the exact clique computations above.
+- (3, 4, 1) (K = 27): the exact max-clique run produced no output within its wall-time limit (no
+  value claimed). The ω = K + 1 pattern is verified only for (3,3), (5,2), (5,3).

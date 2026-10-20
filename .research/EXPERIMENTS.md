@@ -1663,8 +1663,14 @@ Reading:
 | interval [1, 20] | 20 | 20 | 1.110 | 1.112 |
 - Adversarial local search over A ⊂ [1, X], X = 10…39 (20 s per X, seed 20271109): best R_CP 0.754 (X = 12, 13).
   The X = 23, 24 and 30 optima are single Sidon blocks.
-- Reading: the best known sets need phase cancellation (CSTAR F12). Flat CP stays above ≈ 0.75 at these sizes,
-  consistent with CP½.
+- Reading (CORRECTED after the final report):
+  - Flat CP stays above ≈ 0.74 at these sizes, consistent with flat CP½.
+  - TWO-LEVEL nonnegative blocks (values {0,1,2}·√w) are far cheaper. Lead-verified exact rational certificate for
+    X30_s0 (38 blocks): C = 5.857342 against flat 7.230, R_CP <= 0.6549 against R = 0.6073, i.e. C/(2M) = 1.078.
+  - Agent's two-level optima: X11 0.682 (R 0.675), X12 0.690 (R 0.687), X13 0.714 (R 0.712),
+    X14 0.751 (R 0.751), X30_s1 0.724 (R 0.601).
+  - So "the best sets need phase cancellation" is WRONG. They need non-flat weights. Report:
+    .research/agents/e111_report.md.
 
 ## E112a (2026-10-19, cont. 29) CP-efficiency in prime cyclic groups (src/e112_cpzp.py; examples/e112/e112a.jsonl)
 - Setup: Z_p has no nontrivial subgroups, so it has no spreads.

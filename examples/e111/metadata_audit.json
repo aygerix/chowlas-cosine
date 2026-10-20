@@ -1,0 +1,69 @@
+{
+  "args": {
+    "X": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "eval_price_seconds": 0.5,
+    "eval_seconds": 2,
+    "mode": "audit",
+    "moves": 60,
+    "only": [],
+    "price_seconds": 10,
+    "restarts": 3,
+    "resume": false,
+    "search_seconds": 30,
+    "seconds": 120
+  },
+  "command": [
+    "src/e111_cp.py",
+    "audit"
+  ],
+  "gurobi": [
+    13,
+    0,
+    3
+  ],
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "numpy": "2.5.4",
+  "python": "3.12.3",
+  "source_sha256": "d0553766db02db48720fa45cc1ab098d4b5af5b2ad32585e25d28c451d35c18d",
+  "tolerances": {
+    "FeasibilityTol": 1e-09,
+    "IntFeasTol": 1e-09,
+    "MIPGap": 0,
+    "MIPGapAbs": 1e-09,
+    "OptimalityTol": 1e-09,
+    "column_reduced_cost": 1e-08
+  },
+  "unix_time": 1792454270.9333875
+}

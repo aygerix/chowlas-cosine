@@ -3,9 +3,10 @@ C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed o
 rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
 and kills. Side results are not the prize (user, 2026-10-19).
 Latest (2026-10-19, cont. 29):
-- F12: C* needs PHASE CANCELLATION. The best dense set N50 has R = 0.570, but its cheapest completely positive
-  (cancellation-free) certificate has R_CP = 0.857 (lead-verified LP optimum). Its DNN certificate at minimal
-  degree is exact. The gap lives in DNN \ CP.
+- F12 CORRECTED. FLAT completely positive certificates are 1.3–1.5× too expensive (N50: R_CP(flat) = 0.857 against
+  R = 0.570, lead-verified). Non-flat nonnegative (two-level) CP certificates come within 1–8% of M (X30_s0:
+  0.655 against 0.607, lead-verified exact). So near-optima need WEIGHTED blocks, not phase cancellation.
+  DNN = M at minimal degree.
 - A6/A6′ SPREAD PRINCIPLE: every known ratio → ∞ object in any abelian group is a union of subgroups (CP). Hence
   Chowla ⇐ SCP(T) (group-agnostic: high ratio ⇒ CP-efficient) + CP-Chowla(Z) (Z-specific, P76). SCP(2) is false
   (Paley); E112a puts T > ~2.2.
@@ -21,9 +22,8 @@ fail the FPC (interval-certified, linear M). P75 is a partial general theorem; T
 - A5 (cont. 28): regime split at n^{1/3} (additive structure is visible only for M <~ n^{1/3}; the C* core is
   random-dominated). Hoffman bound recorded as a fact. The rank dichotomy (rigorous E73) is DEPRIORITISED.
 - cont. 29 (E110 + E111 done, lead-verified):
-  - F12 (C* needs phase cancellation; numerical). N50_x72 has R = 0.570, flat-CP R_CP = 0.857 (optimum verified by
-    exact primal identity and Gurobi dual pricing), and DNN at minimal degree = M exactly. So the cancellation lives
-    in the DNN \ CP gap.
+  - F12 corrected: flat CP is 1.3–1.5× M (N50, verified); two-level nonnegative CP is within 1–8% of M
+    (X30_s0, verified). Not phase cancellation: weighted blocks.
   - P76 (proved): DNN = PSD on an unbounded index set; C_CP >= 2n/(ω − 1); extreme-lag multiplicities; sublattice
     restriction.
   - CP½ conjecture: equal-size case proved; rank and coverage give only log.

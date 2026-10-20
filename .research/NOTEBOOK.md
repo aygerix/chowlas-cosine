@@ -2956,3 +2956,16 @@ to a recorded dead end on paper. No agent round and no VM time was spent on any 
     - Any CP-Chowla proof must put the Z-specific extreme-lag multiplicity structure (P76(c)) INTO the dual
       (h depending on where k sits in the cliques' multiplicity profiles). Fourier plus clique size alone caps at
       max(clique bound, 2M).
+12. F_p² line decomposition (lead; exact identities):
+    - Write S = ⊔_L U_L·v_L (U_L ⊂ F_p^*). Then Ŝ(ξ) = Σ_L Û_L(v_L·ξ), and only full or empty lines have constant
+      Û_L on F_p^* (−1 or 0).
+    - With S = (m full lines) ∪ S_P: Ŝ = F + Ŝ_P, where F ∈ {p − m (on the m dual lines Λ_j), −m (elsewhere)}.
+    - High ratio needs Ŝ_P >= −(K − m) on the bulk. S_P may HIDE negative values on the Λ_j, with forced average
+      Σ_{ξ∈Λ_j∖0}Ŝ_P = −|S_P|. This is the finite form of D9 (pieces hiding noise under other pieces' spikes).
+    - A robust SCP(F_p²) must bound |S_P| given that its negativity is confined to m dual lines. That is again a
+      relative Chowla problem, so even the toy is not immediate.
+13. CORRECTION (same session, after the final E111 report). Two-level nonnegative CP certificates come within 1–8%
+    of M. Lead-verified X30_s0: C/(2M) = 1.078, R_CP 0.655 < 1/√2. So F12 "needs phase cancellation" is RETRACTED;
+    only flat CP is expensive. CP½ is a flat-class statement. General CP-Chowla is numerically close to Chowla, so the
+    chain Chowla ⇐ SCP + CP-Chowla(Z) is logically valid but its Z-half is not much easier. The spread observation
+    (all ratio → ∞ objects are subgroup unions) and the flat-spectrum barrier (A7) are unaffected.

@@ -1,0 +1,178 @@
+{
+  "A": [
+    1,
+    4,
+    5,
+    6,
+    7,
+    11,
+    12,
+    16,
+    17,
+    18,
+    21,
+    22,
+    23,
+    28,
+    29
+  ],
+  "C_flat_UB": 6.0,
+  "C_lp": 6.0,
+  "FFT_direct_error": 4.440892098500626e-16,
+  "M_grid": 2.902544107005671,
+  "R_CP_flat_UB": 0.7745966692414834,
+  "R_grid": 0.7494336658710294,
+  "R_refined_uncertified": 0.7494338702825547,
+  "X": 29,
+  "active_blocks": 1,
+  "block_sizes": {
+    "6": 1
+  },
+  "block_types": {
+    "Sidon": 1
+  },
+  "blocks_numerical": [
+    {
+      "B": [
+        0,
+        1,
+        6,
+        18,
+        22,
+        29
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "Sidon",
+      "weight": 1.0
+    }
+  ],
+  "certificate": {
+    "C_exact": "6",
+    "C_exact_float": 6.0,
+    "blocks": [
+      {
+        "B": [
+          0,
+          1,
+          6,
+          18,
+          22,
+          29
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "Sidon",
+        "weight": "1",
+        "weight_float": 1.0
+      }
+    ],
+    "exact_identity_checked": true,
+    "rational_round_denominator_limit": 1000000000,
+    "rounding_scale": "1"
+  },
+  "columns": 36,
+  "flat_class_LP_lower": 6.0,
+  "grid_index": 1584,
+  "grid_size": 65536,
+  "history": [
+    {
+      "C": 6.0,
+      "heuristic_added": 7,
+      "iteration": 0
+    },
+    {
+      "C": 6.0,
+      "heuristic_added": 4,
+      "iteration": 1
+    },
+    {
+      "C": 6.0,
+      "duals": {
+        "1": 0.0,
+        "4": 2.0,
+        "5": 0.0,
+        "6": 0.0,
+        "7": -0.0,
+        "11": 0.0,
+        "12": 0.0,
+        "16": 1.0,
+        "17": 0.0,
+        "18": 0.0,
+        "21": 1.0,
+        "22": 0.0,
+        "23": 0.0,
+        "28": -0.0,
+        "29": 2.0
+      },
+      "iteration": 2,
+      "pricing": {
+        "bound": -0.0,
+        "nodes": 1.0,
+        "runtime": 0.0025758743286132812,
+        "status": 2,
+        "value": -0.0
+      },
+      "scaled_dual_lower": 6.0
+    }
+  ],
+  "input_info": {
+    "B": [
+      0,
+      1,
+      6,
+      18,
+      22,
+      29
+    ],
+    "cyclic_modulus": 31,
+    "warm": [
+      [
+        0,
+        1,
+        6,
+        18,
+        22,
+        29
+      ]
+    ]
+  },
+  "iterations": 3,
+  "last_master_duals": {
+    "1": 0.0,
+    "4": 2.0,
+    "5": 0.0,
+    "6": 0.0,
+    "7": -0.0,
+    "11": 0.0,
+    "12": 0.0,
+    "16": 1.0,
+    "17": 0.0,
+    "18": 0.0,
+    "21": 1.0,
+    "22": 0.0,
+    "23": 0.0,
+    "28": -0.0,
+    "29": 2.0
+  },
+  "max_primal_residual": 0.0,
+  "n": 15,
+  "name": "Singer_q5",
+  "numerical_gap": 0.0,
+  "seconds": 0.011766680996515788,
+  "seed": 20261019,
+  "stop": "pricing_proved_no_improvement_to_tolerance",
+  "theta_refined": 0.024166082988867226
+}

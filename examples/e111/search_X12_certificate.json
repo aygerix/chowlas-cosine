@@ -1,0 +1,495 @@
+{
+  "A": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    10,
+    11,
+    12
+  ],
+  "C_flat_UB": 5.0,
+  "C_lp": 4.999999999999999,
+  "FFT_direct_error": 2.6645352591003757e-15,
+  "M_grid": 2.2775802989210865,
+  "R_CP_flat_UB": 0.753778361444409,
+  "R_grid": 0.6867162983115216,
+  "R_refined_uncertified": 0.68671632328079,
+  "X": 12,
+  "active_blocks": 10,
+  "block_sizes": {
+    "2": 1,
+    "3": 2,
+    "5": 2,
+    "6": 4,
+    "7": 1
+  },
+  "block_types": {
+    "AP": 2,
+    "Sidon": 1,
+    "other": 7
+  },
+  "blocks_numerical": [
+    {
+      "B": [
+        0,
+        12
+      ],
+      "levels": [
+        1,
+        1
+      ],
+      "type": "AP",
+      "weight": 0.062499999999999806
+    },
+    {
+      "B": [
+        0,
+        2,
+        5,
+        7,
+        10,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.062499999999999944
+    },
+    {
+      "B": [
+        0,
+        6,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1
+      ],
+      "type": "AP",
+      "weight": 0.12500000000000003
+    },
+    {
+      "B": [
+        0,
+        1,
+        8,
+        11,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.12500000000000006
+    },
+    {
+      "B": [
+        0,
+        1,
+        6,
+        8,
+        11,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.125
+    },
+    {
+      "B": [
+        0,
+        2,
+        8,
+        10,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.12499999999999993
+    },
+    {
+      "B": [
+        0,
+        1,
+        4,
+        7,
+        11,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.18749999999999994
+    },
+    {
+      "B": [
+        0,
+        1,
+        4,
+        6,
+        8,
+        11,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.062499999999999965
+    },
+    {
+      "B": [
+        0,
+        2,
+        4,
+        7,
+        10,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "other",
+      "weight": 0.06250000000000014
+    },
+    {
+      "B": [
+        0,
+        7,
+        12
+      ],
+      "levels": [
+        1,
+        1,
+        1
+      ],
+      "type": "Sidon",
+      "weight": 0.06250000000000011
+    }
+  ],
+  "certificate": {
+    "C_exact": "5",
+    "C_exact_float": 5.0,
+    "blocks": [
+      {
+        "B": [
+          0,
+          1,
+          4,
+          6,
+          8,
+          11,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "1/16",
+        "weight_float": 0.0625
+      },
+      {
+        "B": [
+          0,
+          1,
+          4,
+          7,
+          11,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "3/16",
+        "weight_float": 0.1875
+      },
+      {
+        "B": [
+          0,
+          1,
+          6,
+          8,
+          11,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "1/8",
+        "weight_float": 0.125
+      },
+      {
+        "B": [
+          0,
+          1,
+          8,
+          11,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "1/8",
+        "weight_float": 0.125
+      },
+      {
+        "B": [
+          0,
+          2,
+          4,
+          7,
+          10,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "1/16",
+        "weight_float": 0.0625
+      },
+      {
+        "B": [
+          0,
+          2,
+          5,
+          7,
+          10,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "1/16",
+        "weight_float": 0.0625
+      },
+      {
+        "B": [
+          0,
+          2,
+          8,
+          10,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "other",
+        "weight": "1/8",
+        "weight_float": 0.125
+      },
+      {
+        "B": [
+          0,
+          6,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1
+        ],
+        "type": "AP",
+        "weight": "1/8",
+        "weight_float": 0.125
+      },
+      {
+        "B": [
+          0,
+          7,
+          12
+        ],
+        "levels": [
+          1,
+          1,
+          1
+        ],
+        "type": "Sidon",
+        "weight": "1/16",
+        "weight_float": 0.0625
+      },
+      {
+        "B": [
+          0,
+          12
+        ],
+        "levels": [
+          1,
+          1
+        ],
+        "type": "AP",
+        "weight": "1/16",
+        "weight_float": 0.0625
+      }
+    ],
+    "exact_identity_checked": true,
+    "rational_round_denominator_limit": 1000000000,
+    "rounding_scale": "1"
+  },
+  "columns": 46,
+  "flat_class_LP_lower": 5.0,
+  "grid_index": 14452,
+  "grid_size": 65536,
+  "history": [
+    {
+      "C": 4.999999999999999,
+      "heuristic_added": 7,
+      "iteration": 0
+    },
+    {
+      "C": 5.000000000000001,
+      "heuristic_added": 10,
+      "iteration": 1
+    },
+    {
+      "C": 4.999999999999999,
+      "duals": {
+        "1": -0.5,
+        "2": -0.0,
+        "3": -0.0,
+        "4": -0.5,
+        "5": -0.0,
+        "6": 0.5,
+        "7": 1.0,
+        "8": 1.0,
+        "10": 0.5,
+        "11": 1.0,
+        "12": 2.0
+      },
+      "iteration": 2,
+      "pricing": {
+        "bound": -0.0,
+        "nodes": 1.0,
+        "runtime": 0.002947092056274414,
+        "status": 2,
+        "value": -0.0
+      },
+      "scaled_dual_lower": 5.0
+    }
+  ],
+  "iterations": 3,
+  "last_master_duals": {
+    "1": -0.5,
+    "2": -0.0,
+    "3": -0.0,
+    "4": -0.5,
+    "5": -0.0,
+    "6": 0.5,
+    "7": 1.0,
+    "8": 1.0,
+    "10": 0.5,
+    "11": 1.0,
+    "12": 2.0
+  },
+  "max_primal_residual": 1.1102230246251565e-16,
+  "n": 11,
+  "name": "search_X12",
+  "numerical_gap": -8.881784197001252e-16,
+  "search": {
+    "accepted": 29,
+    "elapsed_seconds": 4.2451028210052755,
+    "evaluated_distinct": 44,
+    "evaluation_pricing_seconds_limit": 0.25,
+    "evaluation_seconds_limit": 1.0,
+    "max_A_fixed_at_X": true,
+    "moves": {
+      "add": 84,
+      "remove": 66,
+      "start": 3,
+      "swap": 82
+    },
+    "moves_per_restart_limit": 80,
+    "objective": "numerical C_flat upper bound / (2 sqrt(n)); full re-solve for winner",
+    "restarts_started": 3,
+    "search_time_limit": 20.0,
+    "seed": 20273127
+  },
+  "seconds": 0.01275243099371437,
+  "seed": 20273127,
+  "stop": "pricing_proved_no_improvement_to_tolerance",
+  "theta_refined": 0.779484542239187
+}

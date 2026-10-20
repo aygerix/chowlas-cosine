@@ -1,0 +1,289 @@
+{
+  "A": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    11,
+    12,
+    13,
+    15,
+    17,
+    19,
+    20,
+    21,
+    26,
+    28,
+    31,
+    32
+  ],
+  "C_flat_UB": 7.0,
+  "C_lp": 7.0,
+  "FFT_direct_error": 3.552713678800501e-15,
+  "M_grid": 3.4715922731119537,
+  "R_CP_flat_UB": 0.7637626158259734,
+  "R_grid": 0.7575635415980636,
+  "R_refined_uncertified": 0.7575635932079189,
+  "X": 32,
+  "active_blocks": 1,
+  "block_sizes": {
+    "7": 1
+  },
+  "block_types": {
+    "Sidon": 1
+  },
+  "blocks_numerical": [
+    {
+      "B": [
+        0,
+        11,
+        19,
+        26,
+        28,
+        31,
+        32
+      ],
+      "levels": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "type": "Sidon",
+      "weight": 1.0
+    }
+  ],
+  "certificate": {
+    "C_exact": "7",
+    "C_exact_float": 7.0,
+    "blocks": [
+      {
+        "B": [
+          0,
+          11,
+          19,
+          26,
+          28,
+          31,
+          32
+        ],
+        "levels": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1
+        ],
+        "type": "Sidon",
+        "weight": "1",
+        "weight_float": 1.0
+      }
+    ],
+    "exact_identity_checked": true,
+    "rational_round_denominator_limit": 1000000000,
+    "rounding_scale": "1"
+  },
+  "clique_bound": null,
+  "columns": 77,
+  "enumeration_heuristic": {
+    "blocks": 0,
+    "complete": false,
+    "enabled": false
+  },
+  "flat_class_LP_lower": 7.0,
+  "grid_index": 13611,
+  "grid_size": 65536,
+  "history": [
+    {
+      "C": 7.0,
+      "heuristic_added": 23,
+      "iteration": 0
+    },
+    {
+      "C": 7.0,
+      "heuristic_added": 9,
+      "iteration": 1
+    },
+    {
+      "C": 7.0,
+      "heuristic_added": 5,
+      "iteration": 2
+    },
+    {
+      "C": 7.0,
+      "heuristic_added": 7,
+      "iteration": 3
+    },
+    {
+      "C": 7.0,
+      "duals": {
+        "1": 0.0,
+        "11": 0.0,
+        "12": -0.6666666666666666,
+        "13": 0.0,
+        "15": 1.0,
+        "17": 0.0,
+        "19": 1.333333333333333,
+        "2": -0.0,
+        "20": 0.0,
+        "21": 0.666666666666667,
+        "26": -1.3333333333333335,
+        "28": 0.9999999999999996,
+        "3": -0.0,
+        "31": 2.0,
+        "32": 1.0000000000000004,
+        "4": 0.0,
+        "5": 2.0,
+        "6": -0.0,
+        "7": 0.0,
+        "8": -0.0,
+        "9": -0.0
+      },
+      "iteration": 4,
+      "pricing": {
+        "bound": 0.9999999999999996,
+        "nodes": 1.0,
+        "runtime": 0.026950836181640625,
+        "status": 2,
+        "value": 0.9999999999999996
+      },
+      "scaled_dual_lower": 4.666666666666667
+    },
+    {
+      "C": 7.0,
+      "duals": {
+        "1": 0.0,
+        "11": 0.0,
+        "12": -0.0,
+        "13": 0.0,
+        "15": 0.5,
+        "17": -0.0,
+        "19": 1.0,
+        "2": -0.0,
+        "20": 0.0,
+        "21": 1.0,
+        "26": -1.5,
+        "28": 1.0,
+        "3": -0.0,
+        "31": 2.0,
+        "32": 1.0,
+        "4": 0.0,
+        "5": 2.0,
+        "6": -0.0,
+        "7": 0.0,
+        "8": -0.0,
+        "9": -0.0
+      },
+      "iteration": 5,
+      "pricing": {
+        "bound": -0.0,
+        "nodes": 1.0,
+        "runtime": 0.013804912567138672,
+        "status": 2,
+        "value": -0.0
+      },
+      "scaled_dual_lower": 7.0
+    }
+  ],
+  "iterations": 6,
+  "last_master_duals": {
+    "1": 0.0,
+    "11": 0.0,
+    "12": -0.0,
+    "13": 0.0,
+    "15": 0.5,
+    "17": -0.0,
+    "19": 1.0,
+    "2": -0.0,
+    "20": 0.0,
+    "21": 1.0,
+    "26": -1.5,
+    "28": 1.0,
+    "3": -0.0,
+    "31": 2.0,
+    "32": 1.0,
+    "4": 0.0,
+    "5": 2.0,
+    "6": -0.0,
+    "7": 0.0,
+    "8": -0.0,
+    "9": -0.0
+  },
+  "max_primal_residual": 0.0,
+  "n": 21,
+  "name": "search_X32",
+  "numerical_gap": 0.0,
+  "search": {
+    "accepted": 6,
+    "elapsed_seconds": 33.186975264994544,
+    "evaluated_distinct": 32,
+    "evaluation_pricing_seconds_limit": 0.25,
+    "evaluation_seconds_limit": 1.0,
+    "max_A_fixed_at_X": true,
+    "moves": {
+      "add": 11,
+      "remove": 12,
+      "start": 2,
+      "swap": 9
+    },
+    "moves_per_restart_limit": 80,
+    "objective": "numerical C_flat upper bound / (2 sqrt(n)); full re-solve for winner",
+    "polish": {
+      "distinct_evaluations": 11,
+      "elapsed_seconds": 10.85848959100258,
+      "endpoint_sidon_start": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        13,
+        15,
+        17,
+        19,
+        20,
+        21,
+        26,
+        28,
+        31,
+        32
+      ],
+      "moves_per_restart_limit": 60,
+      "seed": 20297403,
+      "sidon_block": [
+        0,
+        1,
+        4,
+        6,
+        13,
+        21,
+        32
+      ],
+      "temperature": "0.015*(1-move/moves)+0.0005",
+      "time_limit": 10.0
+    },
+    "restarts_started": 2,
+    "search_time_limit": 20.0,
+    "seed": 20293307
+  },
+  "seconds": 0.05801421499927528,
+  "seed": 20297403,
+  "stop": "pricing_proved_no_improvement_to_tolerance",
+  "theta_refined": 0.7923152000990573
+}

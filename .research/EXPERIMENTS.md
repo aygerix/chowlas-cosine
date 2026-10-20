@@ -1812,3 +1812,20 @@ Readings.
   So the first-order centroid term is neither necessary nor sufficient: it is not the binding cost (P77 is true but weak).
 - ρ of CVP lifts FALLS with depth at p = 3 (0.225, 0.196, 0.058 at a = 2, 3, 4) although λ_odd → 1 (0.61, 0.80, 0.94).
   The deeper JL sets do not use the room P77 leaves. Prediction (E118b): direct SA at a = 4 stays below a = 3's 0.20.
+
+## E121 / E121b (2026-10-20, cont. 31) Character reduction of λ_odd for JL D_{2,j} (P79), and exact self-checks
+src/e121_lambda_char.py, src/e121_check.py (dirichlet). λ_char (block norms ‖M_ψ‖²/p²) = λ_direct (E117 method) to 1e−15 at
+(p, j) = (3,1), (3,2), (5,1), (5,2), (7,1), (7,3), (11,1), (13,1), (13,5), (17,1), (19,2). Exact integer checks for every j,
+p <= 19: orbits/free action, two-valued spectrum, N ∖ 0 = N₁ ∪ N₂, β bound — all TRUE. H antisymmetric with doubled top
+singular value for every primitive odd ψ. max_{j,ψ} λ: 0.605 (3), 0.542 (5), 0.469 (7), 0.348 (11), 0.353 (13), 0.287 (17),
+0.306 (19) against Λ(p) = 0.873, 0.746, 0.684, 0.623, 0.606, 0.582, 0.574. σ₁(H)²/p² = 0.25–0.37 (bound (p−1)/(2p)).
+
+## E122 / E122b (2026-10-20, cont. 31) Quadric cones in F_p^4, F_p^6: P77 inputs (src/e122_quadric_lambda.py,
+## src/e122_odd_spectrum.py; dirichlet; NUMERICAL)
+  | p form | |A| | spectrum   | ρ_G  | λ_odd  | φ centred | K centred lift (T^4) | ρ centred lift |
+  | 3 hyp  | 32  | −4, 5      | 2.0  | 1/3    | 1/3       | 12.0                 | 0.222          |
+  | 5 hyp  | 144 | −6, 19     | 4.0  | 1/5    | 1/5       | 37.3                 | 0.103          |
+  | 7 hyp  | 384 | −8, 41     | 6.0  | 1/7    | 1/7       | 40.9                 | 0.230          |
+  | 3,5,7 ell | 20, 104, 300 | spikes negative | 0.41, 0.24, 0.16 | 1 − 1/p | — | — | — |
+Full odd spectrum (E122b): every eigenvalue = 1/p, off-diagonal <= 1e−17, for r = 4 (p = 3, 5, 7, 11) and r = 6 (p = 3, 5).
+This is P81 (proved).

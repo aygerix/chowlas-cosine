@@ -2639,9 +2639,44 @@ Statement. p odd prime, j ≠ 0, z: D_{2,j} → Z² an odd one-rep lift with ‖
 Proof. P77(c) with r' = p, B = {D̂ = −p} (nonempty, symmetric), |z| <= √2Vn, and β >= 1/12: |z(g)|² >= (g_k)_c² for each
 coordinate k (centred residue), and on O_s the second coordinate of u·g_s is u, on O_* the first coordinate of u·g_* is uj,
 each running over all units once. So Σ|z|² >= (p+1)Σ_{u unit}u_c² = (p+1)(p² − 1)p²(p² − p + 1)/12 = |D|n²(p³ + 1)/(12p³). ∎
+SHARPER FORM (lead, same day): Σ|z|⁴ <= max|z|²·Σ|z|² gives Σ|z|²/Z4 >= (Σ|z|²)^{1/2}/max|z|, so P77(b) yields
+    K₂D >= p + (1 − Λ(p))·(Σ|z|²)^{1/2}/(8 max|z|) >= p + (1 − Λ(p))√|D|/(8√24·V) >= p + 0.00325·√|D|/V,
+    ρ <= (8√24·V/(1 − Λ(p)))² <= 9.5·10⁴·V²   (V² instead of V⁴).
+Self-check (E121b, codex unavailable until 2026-10-25): exact set identities (orbits, free action, two-valued spectrum,
+N ∖ 0 = N₁ ∪ N₂), β >= (p³+1)/(12p³) (observed β ≈ 0.167–0.185), H antisymmetric with doubled top singular value for every
+primitive odd ψ, and max_{j,ψ}‖M_ψ‖²/p² <= Λ(p): all TRUE for p = 3, 5, 7, 11, 13, 17, 19 and every j = 1..p−1;
+reduction = direct eigenvalue at (17,1), (19,2).
 With P78: K_opt(one-rep) ∈ [p + c√|D|, p + C√(|D| log p)], so the advisor's "K ≈ 0.92p²" cannot hold for optimal lifts as
 p → ∞ (it is o(p²)); P77's √|D| order is the right order up to √log.
 Scope (important). This bounds the Z² minimum. A 1D Freiman image S_V = {z₁ + Vz₂} has K₁D <= K₂D, with K₁D >= K₂D − 1 once
 V >= C·n|D| (Lipschitz); for small V the 1D image is a different object and is NOT covered. Free subsets / variable
 multiplicities (E116 SA, E120 MIQP), unbounded spread and depth a >= 3 are not covered. The constant is useless numerically
 (observed ρ ~ 0.2); the content is uniformity in p: the JL a = 2 one-rep model cannot give ρ → ∞.
+
+## P77-d. The centroid barrier in Z_n^d (lead, 2026-10-20; same proof as P77 with 2d directions; PROVED on paper)
+D ⊂ Z_n^d ∖ 0 symmetric, B ⊂ {χ ≠ 0 : D̂(χ) <= −r'} nonempty symmetric, z: D → Z^d odd one-rep lift, W, A2, Z4, λ_odd as
+in P77 (Parseval now n^d). Then
+    K(T) >= r' + A2/(2√2·d^{3/2}·n^{d/2}·|B|^{1/2}·Z4)   and   K(T) >= r' + (1 − λ_odd)·(Σ|z|²)^{1/2}/(2√2·d^{3/2}·max|z|).
+Changes from P77: U = {±e_k} has 2d elements, |W|_∞² >= |W|²/d, Σ_u‖ω|_{B_u}‖₂ <= √(2d)‖ω‖₂, Σ_χ|Q_u|² = n^dΣ(z·u)⁴ <= n^d Z4²;
+the optimised decrement is S₂^{3/2}/(2√(2d)·n^{d/2}·S₁·Z4); then S₁ <= √(|B|S₂), S₂ >= A2/d, A2 >= (1−λ)n^dΣ|z|²,
+|B| <= n^d, Z4 <= max|z|·(Σ|z|²)^{1/2}. (d = 2 recovers the constant 8 of P77.)
+
+## P81. Quadric cones: the odd concentration operator is EXACTLY (1/p)·I; one-rep lifts are excluded (lead, 2026-10-20;
+## PROVED on paper, two lines; E122b numerics: all odd eigenvalues = 1/p to 1e−15, r = 4 (p = 3..11), r = 6 (p = 3, 5))
+Setting. p odd prime, r >= 4 even, Q nondegenerate on F_p^r with Gauss sign η = +1 (CSTAR O6), A = {x ≠ 0 : Q(x) = 0}.
+Â(χ) = p^{r/2−1}(p−1) − 1 on the dual cone {Q*(χ) = 0, χ ≠ 0} and −p^{r/2−1} − 1 off it; r' = p^{r/2−1} + 1,
+B = {Q*(χ) ≠ 0}, N = {Q*(χ) = 0} (including 0).
+Theorem. On odd functions on A, 1_A P_N 1_A = (1/p)·Id. So λ_odd = 1/p and every odd function puts exactly 1/p of its
+spectral energy on N (in particular the centred position field: φ = 1/p, observed).
+Proof. c_N(d) := p^{−r}Σ_{χ∈N}e(χ·d/p) = p^{−r}[1 + Σ_{χ∈cone*∖0}e(χ·d/p)], and the dual cone's transform depends only on
+whether d = 0, Q(d) = 0 or Q(d) ≠ 0 (same Gauss-sum computation with Q** ∝ Q; same sign η). For g ≠ ±h in A,
+Q(g − h) = −B(g, h) = −Q(g + h) and g ± h ≠ 0, so c_N(g − h) = c_N(g + h): the odd kernel c_N(g − h) − c_N(g + h) vanishes
+off the diagonal. On the diagonal 2g ∈ A, and c_N(0) − c_N(2g) = p^{−r}[|{Q = 0}| − p^{r/2−1}(p − 1)] = p^{−r}·p^{r−1} = 1/p,
+using |{Q = 0}| = p^{r−1} + p^{r/2−1}(p − 1). ∎
+Corollary (model exclusion). Every odd one-rep lift z: A → Z^r with ‖z‖_∞ <= Vp has (P77-d, β: on each line {ug}, a nonzero
+coordinate g_k makes (ug_k) run over F_p^*, so Σ_{g∈A}|g_c|² >= |A|p(p+1)/12)
+    K(T) >= p^{r/2−1} + 1 + (1 − 1/p)·√|A|/(4√6·r²·V),     r = 4:  K >= p + 1 + (1 − 1/p)√|A|/(157V),
+and |A| = (p²−1)(p+1) for r = 4, so ρ = |A|/K² <= (157V)²/(1 − 1/p)² <= 5.6·10⁴V² uniformly in p (finite ρ_G = p − 1).
+Scope as P80: Z^r minimum; 1D Freiman images with small V, free subsets, multiplicities and unbounded spread not covered.
+(η = −1 swaps the roles: then N ∖ 0 is the complement of the dual cone and the same computation gives 1 − 1/p; irrelevant,
+since η = −1 has negative spikes.)

@@ -2,7 +2,24 @@
 C* (the mesoscopic many-spike regime) IS the problem. CSTAR.md holds the fixed object, the forced features, the design
 rules, the proof chain and the attack log. Everything below is the record: proved side results, certified constructions
 and kills. Side results are not the prize (user, 2026-10-19).
-Latest (cont. 30):
+Latest (cont. 31, 2026-10-20) — ADVISOR RULE IN FORCE (CSTAR header): every idea must give a falsifiable quantitative
+prediction or exclude an explicit model; no reformulation sweeps; target = some c > 0.
+- E116 (advisor's experiment): lift a Jedwab–Li set Z_n² → Z² (≡ Z) with a jointly optimised Boolean taper. Certified
+  (1D images, arb): one-rep lifts have ρ = 0.36, 0.22, 0.165 at p = 3, 5, 7 (finite ρ_G = 2.67, 4.8, 6.86), K ≈
+  0.85√(Ɛ ln n²); free subsets (SA) 0.305 at p = 5; Gurobi optimum at p = 3 (proven, Kthr <= 6) 0.8. The fractional PD
+  lift keeps K = r exactly but only 42% of the energy. Rounding error is NOT hidden under the spikes (1.2–1.7 × area share).
+- P77 (proved on paper; codex check running): CENTROID BARRIER. Boolean lifts have class-centroid sums M_g ≡ m(g)g
+  (mod n) ≠ 0, so the first-order term W(χ) (transform of the centroid field) is nonzero; at most a λ_odd share of its
+  energy can sit on spikes (E117: λ_odd = 0.30–0.61 for JL a = 2, p <= 13), giving K >= r + ((1−λ_odd)/8)Σ|z|²/(Σ|z|⁴)^{1/2}
+  = r + Ω(√|D|) for bounded-spread one-rep lifts. Fractional tapers escape because their centroids vanish exactly.
+- E115: exact Z_p ILP (Gurobi). Sub-half optima never beat the E41 half-sets; max ρ ≈ 2.0 at p <= 83.
+- Running: E116 MILP p = 5 (batch 1) and p = 7 (batch 2) certified bounds; spread test (reps in [−Rn, Rn]², R = 2, 3).
+- FIRST NEXT STEP (cont. 31): read the p = 5, 7 MILP bounds and the spread test. If ρ stays bounded and falls with p,
+  the remaining permitted lift models are (i) variable-multiplicity subsets (P77 needs λ_odd of the sub-multiset's own
+  background) and (ii) multi-scale reps (P77's spread factor degrades); attack (ii) by ball-averaging the far reps.
+  If anything beats the random level, analyse that instance first.
+
+Previous (cont. 30):
 - SCP(T) REFUTED for every T by orthogonal padding (external review, lead-verified; CSTAR A8): a spread U × 0 plus a
   random F_2^r component 0 × B has ratio → ∞ but C_CP/K → ∞. The chain "Chowla ⇐ SCP + CP-Chowla" is dead as stated.
 - Literature + E113/E114: the spread principle is FALSE as stated. Jedwab–Li LS PDS in Z_{p^a}² (ratio ≈ p, exact

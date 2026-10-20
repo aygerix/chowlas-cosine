@@ -4,7 +4,7 @@ E F = F_τ (fractional PD lift, min = −r exactly). Fluctuation = sum of indepe
 K <= r + C√(|D| log n) with positive probability (Hoeffding + union bound on a grid): K_opt = O(p^{3/2}√log p) = o(p²).
 This script measures K (NUMERICAL: FFT grid + BFGS) for several seeds and compares with
   advisor's law K ≈ 0.92p²  and  noise law  K ≈ r + √(σ̄²·|D|·ln(4n²)), σ̄² = mean over classes of (1 − Σ_z τ(z)²).
-Usage: python src/e119_taper_random.py p seeds
+Usage: python src/e119_taper_random.py p seeds [oversampling, default 16]
 """
 import sys, json, math
 import numpy as np
@@ -13,6 +13,7 @@ from e114_cp_group import jl_set
 from e116_jl_taper import true_min
 
 p, seeds = int(sys.argv[1]), int(sys.argv[2])
+os_ = int(sys.argv[3]) if len(sys.argv) > 3 else 16
 D, n = jl_set(p, 2, 1)
 half = np.array([g for g in sorted(D) if g < ((-g[0]) % n, (-g[1]) % n)])
 opts = []
@@ -26,7 +27,7 @@ for s in range(1, seeds + 1):
     rng = np.random.default_rng(1000 + s)
     Z = np.array([c[rng.choice(4, p=w)] for c, w in opts], dtype=np.int64)
     L = int(np.abs(Z).max())
-    fmin, xi, _, _ = true_min(Z, np.ones(len(Z)), L, G=1 << int(math.ceil(math.log2(16 * (2 * L + 1)))), nstart=16)
+    fmin, xi, _, _ = true_min(Z, np.ones(len(Z)), L, G=1 << int(math.ceil(math.log2(os_ * (2 * L + 1)))), nstart=16)
     print(json.dumps({"p": p, "n": n, "D": len(D), "seed": s, "K": -fmin, "ratio": len(D) / fmin ** 2,
-                      "pred_p2": 0.92 * p * p, "pred_noise": pred_noise, "sigma2_bar": sig2,
+                      "pred_p2": 0.92 * p * p, "pred_noise_registered": pred_noise, "pred_noise_corrected": p + math.sqrt(2) * (pred_noise - p), "G": os_, "sigma2_bar": sig2,
                       "K_over_sqrt_Dlog": -fmin / math.sqrt(len(D) * math.log(n * n))}), flush=True)

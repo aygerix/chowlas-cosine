@@ -1,0 +1,93 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "full_W2_rows": 269,
+  "reversed_Bareiss_positive_pivots": 269,
+  "full_W2_K_upper": "15/2",
+  "prefix_dual_independent_rational_Schur": true,
+  "prefix_H_lower": "-295241/40",
+  "polynomials": [
+    {
+      "degree": 72,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H": "-244835031572595503/343597383680000",
+      "global_M_lower": "104482333/40000000",
+      "below_prefix_dual": false,
+      "above_W2_cap": false
+    },
+    {
+      "degree": 144,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H": "-764514557979819053/343597383680000",
+      "global_M_lower": "131484457/40000000",
+      "below_prefix_dual": false,
+      "above_W2_cap": false
+    },
+    {
+      "degree": 288,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H": "-1525039225350492803/343597383680000",
+      "global_M_lower": "184782857/50000000",
+      "below_prefix_dual": false,
+      "above_W2_cap": false
+    },
+    {
+      "degree": 576,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H": "-2338674133531280303/343597383680000",
+      "global_M_lower": "155174303/40000000",
+      "below_prefix_dual": false,
+      "above_W2_cap": true
+    },
+    {
+      "degree": 1152,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H": "-2946171810440610303/343597383680000",
+      "global_M_lower": "790943649/200000000",
+      "below_prefix_dual": true,
+      "above_W2_cap": true
+    }
+  ],
+  "negative_form_at_K_79_over_10": "-596337414288051139/54288386621440000",
+  "independent_Sturm_upper": "20154679/5000000",
+  "Sturm_chain_length": 73,
+  "singleton_formula_checks": [
+    {
+      "B": 2,
+      "Q": "5/8",
+      "H": "-1/2"
+    },
+    {
+      "B": 4,
+      "Q": "85/128",
+      "H": "-21/32"
+    },
+    {
+      "B": 8,
+      "Q": "21845/32768",
+      "H": "-5461/8192"
+    },
+    {
+      "B": 16,
+      "Q": "1431655765/2147483648",
+      "H": "-357913941/536870912"
+    }
+  ],
+  "screened_literature_identity_counterexample": {
+    "S": [
+      0,
+      1,
+      3
+    ],
+    "q": 7,
+    "c_minus1": 1,
+    "c_qminus1": 0,
+    "scope": "This invalidates the literal c_-l=c_(q-l) equality used in the screened source; no general flatness theorem is assumed or globally adjudicated."
+  },
+  "qualification": "Exact achieved certificates and whole-space upper bounds. Numerical resolvent integrals, optimal lambda and full-space optimum remain uncertified diagnostics."
+}

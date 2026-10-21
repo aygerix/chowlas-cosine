@@ -1,5 +1,11 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Paused checkpoint: full-space resolvent witness
+
+User paused the goal during this pass. All jobs are terminal; final verifier exited0/PASS. This checkpoint preserves the [full-space resolvent derivation and exact separation](notes/cstar_fullspace_resolvent_2026-10-20.md), src/cstar_resolvent_witness.py, src/cstar_resolvent_verify.py and experiments/resolvent_2026-10-20/. On October 21 the user requested a commit and push; that request does not resume the research goal. Broader index integration remains unfinished. Previous research goal turn was progress (a66fdc6).
+
+For lambda>K, I=int1/(lambda+D), the full L2 fixed-coupling optimizer is q=n[I-1/(lambda+D)]/(lambda I-1); choosing its norm fixes lambda. A uniform cost bound is still UNPROVED. The criterion would force L1 flatness on bounded-ratio classes, so do not assume it equivalent to Chowla or discard direct negative-Rayleigh witnesses. On the saved n50,maxA72 set a degree1152 exact witness gives M>3.954718245, exceeding a certified3.75 cap for the ENTIRE full-W2 space. Exact prefix dual also bounds its constrained cost above the new witness's cost. This is finite separation, not an asymptotic refutation of W2 square-root strength. Independent Sturm upper M<=4.0309358 rechecked. Full Chowla remains OPEN; no agent/Lean review. Resume from the linked note; do not restart research until the user resumes the goal.
+
 ## Active continuation: arbitrary-support spaces with fixed coupling
 
 **Goal resumed; full Chowla remains OPEN. Previous research goal turn: progress.** The advisor-directed change is implemented: a growing prefix/suffix autocorrelation space is built from arbitrary A, with no density or construction-family input. Fifty achieved Rayleigh witnesses have independent scalar checks. Strong eigenvalues did not guarantee macroscopic coupling on the larger forced plateau, so the actual a,Q,H target was then enforced.

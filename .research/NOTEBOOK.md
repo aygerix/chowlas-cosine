@@ -1,5 +1,27 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — dilation falsifies a naive reading of the energy exceptions
+
+Prior goal turn PROGRESS (a65a2ea). Proof-first audit of the next step:
+take A'=L*A, L>4maxA. This is an exact M/G isometry, yet H=F_A'-F_A
+has both mixed energies E4(F_A)+n² and fourth moment2E4(F_A)+4n².
+Since E4(F_A)>=2n²-n, the mixed ratio exceeds the preceding threshold
+for EVERY n>1. Thus a failed mixed-energy condition alone is not
+discriminating Boolean inverse information. No canonical sweep needed.
+
+Advisor derived a conditional direct-Rayleigh transfer from the actual
+phase Hessian: R=H/(lambda+F), q=Im R,
+<Dq²><=2<|lambda+F|q²>-2lambda<q²>. Its normalized weighted ratio,
+not curvature divided by ||H||², is what can prove a negative dip.
+No universal ratio estimate is obtained. This retains the direct
+spectral branch without declaring another modulus surrogate proved.
+[Complete paper audit](notes/advisor_collective_rayleigh_2026-10-21.md).
+
+The user requested commit and push during this derivation. Checkpoint
+the completed identities and current limitation; no new experiments,
+GPU deployment or spending. The remote was verified PRIVATE. Preserve
+the active full goal and the independent all-circle construction track.
+
 ## 2026-10-21 — pointwise recurrence fails; local stability; direct Rayleigh pivot
 
 Previous goal turn PROGRESS (9704e40). This turn obtains quantitative

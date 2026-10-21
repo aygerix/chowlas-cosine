@@ -2,6 +2,26 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
+**Current checkpoint, requested commit/push:** the next collective-energy
+test found an immediate symmetry obstruction. For A'=L*A, L>4maxA,
+M and G are unchanged, s=||F_A'-F_A||²=2n, but both mixed energies
+are E4(F_A)+n². Their ratio to n*s is at least3/2-1/(2n)>1 for n>1.
+Thus every separated dilation is automatically in the earlier
+"exceptional" mixed-energy branch. Its failure ALONE is not new
+inverse structure and cannot be presented as evidence of weak coupling.
+The prior conditional lemma remains correct. [Current advisor audit](notes/advisor_collective_rayleigh_2026-10-21.md).
+
+A checked conditional spectral transfer retains the actual phase and
+normalization: R=H/(lambda+F), q=Im R, C=<|lambda+F|q²>, Q=<q²>.
+Then <Dq²><=2C-2lambda*Q, so C/Q<=lambda-eta*sqrt(n) would supply a
+negative-Rayleigh witness. Small C relative to ||H||² alone does NOT
+give this conclusion; Q may also be small. No such universal ratio
+bound, new Boolean flatness estimate or counterexample is proved.
+Next work must handle the symmetry and normalized phase information,
+rather than treat raw additive-energy excess as a sign certificate.
+No new computation or GPU spend in this checkpoint; all earlier jobs
+remain terminal. Full GOAL ACTIVE, Chowla OPEN.
+
 **Latest continuation / read first:** PROGRESS in quantitative perturbation
 and certification, with no universal Chowla bound. The selected-coefficient
 recurrence gives only a>=n/(1+n/(2lambda*c0)), c0=1+1/sqrt(2).

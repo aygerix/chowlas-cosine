@@ -1,5 +1,41 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — Boolean boundary falsifiers, coupled recovery, full-space residuals
+
+Previous goal turn PROGRESS: persistent GOAL.md refreshed with the advisor.
+This turn performs a mathematical derive–test–certify–review cycle; full
+Chowla remains OPEN and the goal active. [Complete cycle record](notes/cstar_boolean_boundary_cycle_2026-10-21.md).
+
+The advisor proved B_N>=t v-t²mu² by torsion-free popular differences.
+The O(n) or O(K mu) upper repair is REFUTED inside lowK by the existing
+no-carry difference control, where B_N>=k^4/20000. The next signed pivot,
+u_h=D(1-cos hx)+1_A(h), has automatic coupling and norm but is also
+insufficient universally: a two-block Boolean control has a'=n,Q'<=8n,
+H'>=n²/2048 for EVERY integer h. Only mixed cost fails. Complete
+coefficient proofs were independently checked, not inferred from tests.
+
+A positive changed mechanism is exact additivity of a,Q,H for sums of
+signed block witnesses across sufficiently separated INTEGER dilations.
+The same nonnegative beta,gamma work under iteration. A n706 lowK union
+inherits the saved broader n496 witness with unchanged moments; independent
+signed Python products also check a second witness's additive closure.
+This repairs the restricted examples without claiming a decomposition
+of arbitrary supports. Genuine witness-band separation is required.
+
+The lead also derived an advisor-checked full-L2 residual upper and a
+finite-rank Toeplitz approximation rate. The inverse verifier now includes
+every exterior residual through B+maxA. Thus its new full_L2 fields bracket
+the ENTIRE unrestricted leverage, not merely a finite band. The singleton
+distinguishes8/15 from4-2sqrt(3); exact counts, all-shift small controls,
+five analytic rate controls and reused larger inputs PASS on Dirichlet.
+
+All jobs terminal. No active GPU worker or new GPU spend; cumulative$0.10.
+Stop generic leakage-vs-PSD, its small-leakage repair, and universal
+single-notch sufficiency. Continue actual signed cross-term control for
+arbitrary overlapping supports; full-space residuals now distinguish a
+subspace miss from a genuinely weak unrestricted input. No universal
+exponent improvement or counterconstruction upper bound is claimed.
+
 ## 2026-10-21 — averaged positive references fail too; arbitrary signed witnesses retained
 
 Previous goal turn classified PROGRESS (94d0623,30d76c9). Resumed actual

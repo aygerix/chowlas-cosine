@@ -1,5 +1,30 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Latest cycle: coupled signed closure and full-space upper certificates
+
+The [new boundary cycle](notes/cstar_boolean_boundary_cycle_2026-10-21.md)
+proves a torsion-free popular-difference estimate, but its missing O(n)
+leakage upper bridge is REFUTED inside lowK. A subsequent single boundary
+notch has automatic coupling/norm yet fails for EVERY integer shift on a
+two-block Boolean control: normalized a=n,Q<=8n,H>=n²/2048 eventually.
+Arbitrary signed witnesses survive. Exact frequency separation instead
+gives additive a,Q,H for sums of block witnesses, preserving common
+nonnegative beta,gamma without block-count loss. A broader n706 witness
+inherits unchanged moments and passes independent convolution checks.
+
+The exact inverse verifier now counts the EXTERIOR residual as well,
+certifying upper bounds for the ENTIRE mean-zero L2 leverage rather than
+just the chosen band. The elementary Toeplitz boundary proof gives
+J_inf-J_B<=16X sqrt(n)/(B+1) under actual lowK. Singleton, exact counts,
+and existing controls pass; this is certification/approximation progress,
+not a uniform Boolean lower bound or an exponent improvement.
+[Independent audits](notes/advisor_boolean_boundary_2026-10-21.md),
+[full-space proof](notes/advisor_fullspace_residual_2026-10-21.md).
+All jobs terminal, no active GPU worker, cumulative additional spend$0.10.
+Next work must control the signed cross terms for arbitrary supports;
+separation is not available as an unrestricted hypothesis. Full Chowla,
+L25 and OP140 remain OPEN; the goal remains active.
+
 ## Latest obstruction: bounded-mean positive references fail even in averaged cost
 
 The [new advisor-checked theorem](notes/advisor_averaged_reference_2026-10-21.md)

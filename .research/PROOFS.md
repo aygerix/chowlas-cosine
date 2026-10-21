@@ -2,6 +2,68 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Full-L2 inverse residual and finite-band approximation (PROVED on paper, 2026-10-21)
+
+For every real even trigonometric D of degree X and mean zero, let
+w=D+lambda>=delta>0 globally. For mean-zero real q, put
+J_inf=sup(2<D,q>-<wq²>)=lambda-1/<1/w>. For ANY finite q of degree B,
+
+    E=2<D,q>-<wq²>, r=P0(D-wq),
+    E<=J_inf<=E+||r||²/delta.
+
+Every residual coefficient through B+X must be included. Interior-only
+residuals certify J_B, not J_inf. In addition the finite-rank Laurent
+boundary argument proves
+
+    0<=J_inf-J_B<=2X lambda²/[(B+1)delta].
+
+Under K<=2sqrt(n), lambda=4sqrt(n), this is16X sqrt(n)/(B+1).
+These statements do not supply the missing Boolean leverage lower bound.
+The same FLINT and independent Python products now check exterior tails.
+Singleton finite8/15 differs from full4-2sqrt(3), correctly enclosed by
+121/225. Existing n496/8128 full-space normalized brackets are
+[.205283186,.205719643] and[.170095211,.170231911].
+[Proof and independent advisor audit](notes/advisor_fullspace_residual_2026-10-21.md),
+[finite data](experiments/fullspace_residual_2026-10-21/results.json).
+
+## Boolean leakage bridge and single-notch cost principle (REFUTED, 2026-10-21)
+
+Let S=+/-A,m=2n,N=D_-,mu=<N>,v=<N²>,r(h)=|S intersect(S+h)|.
+The exact projection leakage B_N=sum_h|hat N(h)|²(m-r(h)) satisfies
+B_N>=t v-t²mu² for every integer0<=t<=m (PROVED, torsion-free
+monotone-chain counting). Under lowK this lower bound cannot exceed m/2,
+while the available PSD upper W>=m²/4. The proposed O(n) or O(K mu)
+upper bridge is FALSE: no-carry difference supports have K<=k and
+B_N>=k^4/20000, with n=k(k-1)/2.
+
+A changed signed witness u_z=D(1-cos(zx))+1_A(z) has a_z=m-r(z),
+Q_z<=2a_z. Nevertheless, a two-scale lowK Boolean union forces, for
+EVERY z>=1 and all sufficiently large construction parameters,
+
+    a'_z=n, Q'_z<=8n, H'_z>=n²/2048.
+
+Thus universal single-notch sufficiency is refuted by mixed COST alone.
+No unrestricted certificate or Chowla claim is refuted. Complete
+[proofs, constants and independent audit](notes/advisor_boolean_boundary_2026-10-21.md)
+and [exact finite controls](experiments/boolean_boundary_2026-10-21/results.json).
+
+## Additive closure of separated signed certificates (PROVED on paper, 2026-10-21)
+
+Let D_i,q_i be finite real mean-zero trigonometric polynomials. If D_0
+has degree X0, q_0 degree B0 and the positive integer L satisfies
+L>max(2B0,X0+B0,X0), then D=D_0+D_1(Lx), q=q_0+q_1(Lx) have
+
+    a=a_0+a_1, Q=Q_0+Q_1, H=H_0+H_1.
+
+The four mixed cubic terms vanish by exact Fourier separation. Iteration
+preserves a=n,Q<=beta n,H<=gamma n^1.5 with the SAME beta>=0,gamma>=0
+when each component has these budgets. No arbitrary-support decomposition
+is inferred. A low-block witness also retains a,Q,H if every added
+frequency exceeds twice its degree. Independent signed convolution checks
+inheritance and additivity on a lowK n706 support.
+[Proof and separation qualifications](notes/advisor_boolean_boundary_2026-10-21.md#9-positive-changed-mechanism-additive-closure-under-separated-dilation),
+[finite check](experiments/boolean_boundary_2026-10-21/inheritance.json).
+
 ## L25. Low-ratio L1 flatness (CONJECTURED, 2026-10-21)
 
 Canonical statement of the advisor's proposed unrestricted target. For EVERY

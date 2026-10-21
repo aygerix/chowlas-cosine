@@ -1,5 +1,44 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-21 — boundary identities, coupled recovery and entire-space residuals
+
+Reproduce on Dirichlet:
+
+```
+src/dirun.sh -c 4 -m 12 -t 180 python src/cstar_boolean_boundary_verify.py
+src/dirun.sh -c 4 -m 12 -t 120 python src/cstar_boolean_boundary_verify.py --inheritance-only
+src/dirun.sh -c 4 -m 12 -t 240 python src/cstar_inverse_residual.py --output .research/experiments/fullspace_residual_2026-10-21/results.json
+```
+
+Data: experiments/boolean_boundary_2026-10-21/{results,inheritance}.json
+and experiments/fullspace_residual_2026-10-21/results.json. Final runs
+exited0/PASS; all jobs terminal, no new GPU deployment/spend. Initial
+output-directory and Arb/Fraction comparison errors were fixed before
+these saved runs. [Derivation, paper scope and advisor audits](notes/cstar_boolean_boundary_cycle_2026-10-21.md).
+
+Six exact no-carry root controls k4,5,6,8,10,12 verify every popular-
+difference threshold, maximum nonzero overlap, fourth moment, and a
+separate signed triangle-convolution identity (seed20261021). Three
+small lowK two-block controls check EVERY potentially nonconstant cubic
+shift through543,6066,109434. Selected notch squares have independent
+sparse rational counts. Small-case formulas, including negative finite
+H lower bounds, are not the separate asymptotic all-h falsifier.
+
+Singleton analytic J_inf=4-2sqrt(3) differs from finite J_B=8/15;
+its exterior residual is essential. Five exact tridiagonal/160-bit
+controls check the Toeplitz boundary-rate inequalities. On reused
+n496/8128 supports, independent full product decoding gives normalized
+ENTIRE-L2 leverage brackets[.205283186,.205719643] and
+[.170095211,.170231911]. Earlier finite-band fields keep their meaning;
+the new full_L2 fields alone include exterior residuals through B+X.
+No new canonical-family trend sweep or uniform leverage theorem.
+
+A lowK n706 union with block sizes32/21 inherits the saved n496 broader
+witness, independently recounting exactly the same a,Q,H. A second
+high-block witness checks exact additive a,Q,H closure by direct signed
+convolution; its uniform mixed-cost strength is not asserted. This is
+positive recovery after testing/refuting single-notch sufficiency.
+
 ## 2026-10-21 — a finite positive-packet premise for the averaged-reference obstruction
 
 Run: `src/dirun.sh -c 2 -m 4 -t 90 python src/cstar_positive_packet.py`.

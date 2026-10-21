@@ -2,6 +2,40 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
+**Latest research continuation / read first:** PROGRESS. The
+[Boolean boundary cycle](notes/cstar_boolean_boundary_cycle_2026-10-21.md)
+proves a popular-difference leakage lower bound but REFUTES both its
+small-leakage upper bridge and a universal SINGLE boundary-notch cost
+claim, inside actual lowK Boolean supports. The all-shift notch obstruction
+has a=n after normalization, Q<=8n, yet H>=n²/2048: only cost fails.
+An advisor-checked positive closure lemma combines signed a,Q,H exactly
+across sufficiently separated integer dilations, with no loss of the
+nonnegative budget constants as the block count grows. A n706 lowK
+union inherits a broader exact certificate; independent convolution also
+checks additive closure. These refute restricted universal proof steps,
+not Chowla, L25 or unrestricted signed witnesses.
+
+**New unrestricted certification:** src/cstar_inverse_residual.py now
+includes every exterior residual frequency through B+maxA, giving rigorous
+lower AND upper bounds for the ENTIRE mean-zero L2 inverse leverage.
+The [paper audit](notes/advisor_fullspace_residual_2026-10-21.md) also proves
+J_inf-J_B<=16*maxA*sqrt(n)/(B+1) in the actual lowK domain. This is an
+approximation theorem, not a uniform Boolean lower bound. The singleton
+distinguishes finite8/15 from full4-2sqrt(3); reused n496/8128 full-space
+normalized brackets are[.205283186,.205719643] and[.170095211,.170231911].
+Exact root/triangle counts, three ALL-shift small controls, five analytic
+Toeplitz controls and the n706 inheritance/closure check PASS on Dirichlet.
+All jobs terminal; no active GPU worker or new spend (cumulative$0.10).
+
+**Next actual derivation:** keep the arbitrary-support signed cross terms
+which vanish in the proved separated-block closure but persist for general
+A. No universal bounded-cost decomposition has been proved. Use the new
+full-space residual upper to distinguish a narrow search-space failure
+from genuinely low unrestricted leverage. Stop generic leakage-vs-PSD,
+the O(n) leakage repair, and single-notch sufficiency; do not enlarge the
+successful canonical-control sweep. Independent all-circle construction
+and full-band negative-Rayleigh alternatives remain active and unresolved.
+
 **Advisor goal review:** keep the already active objective "Pursue the goal
 outlined in GOAL.md". GOAL.md now replaces the completed first milestone
 with a forward research cycle and explicitly carries the cumulative GPU
@@ -10,7 +44,7 @@ is saved for resumption; its identities do not yet yield a Chowla-scale
 estimate or distinguish weighted escapes. No new mathematical claim,
 computation, or spending resulted from this strategy review.
 
-**Latest continuation / read first:** previous goal turn was PROGRESS
+**Prior continuation:** previous goal turn was PROGRESS
 (94d0623,30d76c9). This continuation has now REFUTED the exact averaged
 positive-reference target too, not only its L-infinity surrogate. The
 [advisor-checked theorem](notes/advisor_averaged_reference_2026-10-21.md)

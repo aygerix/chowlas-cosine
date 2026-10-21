@@ -1,0 +1,541 @@
+{
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "analytic_inverse": {
+    "singleton_exact_optimizer": [
+      "8/15",
+      "-2/15"
+    ],
+    "finite_J": "8/15",
+    "full_J": "4-2*sqrt(3)",
+    "physical_residual_squared": "2/225",
+    "full_upper": "121/225",
+    "boundary_rate_controls": [
+      {
+        "B": 1,
+        "I_B": "2/7",
+        "trace_inverse": "8/15",
+        "rank_boundary_rate_verified": true
+      },
+      {
+        "B": 2,
+        "I_B": "15/52",
+        "trace_inverse": "23/28",
+        "rank_boundary_rate_verified": true
+      },
+      {
+        "B": 4,
+        "I_B": "209/724",
+        "trace_inverse": "1091/780",
+        "rank_boundary_rate_verified": true
+      },
+      {
+        "B": 8,
+        "I_B": "40545/140452",
+        "trace_inverse": "386373/151316",
+        "rank_boundary_rate_verified": true
+      },
+      {
+        "B": 12,
+        "I_B": "7865521/27246964",
+        "trace_inverse": "108850055/29354524",
+        "rank_boundary_rate_verified": true
+      }
+    ]
+  },
+  "root_checks": [
+    {
+      "k": 4,
+      "base": 5,
+      "m": 12,
+      "max_nonzero_overlap": 4,
+      "fourth_moment": 540,
+      "L1_squared_lower": "16/5",
+      "variance_lower": "4/75",
+      "leakage_lower": "32/75",
+      "sine_Q": 40,
+      "sine_H": -28,
+      "matrix_row_norm": 26,
+      "all_popular_difference_thresholds_verified": true
+    },
+    {
+      "k": 5,
+      "base": 6,
+      "m": 20,
+      "max_nonzero_overlap": 6,
+      "fourth_moment": 1860,
+      "L1_squared_lower": "400/93",
+      "variance_lower": "500/8649",
+      "leakage_lower": "7000/8649",
+      "sine_Q": 52,
+      "sine_H": -12,
+      "matrix_row_norm": 46,
+      "all_popular_difference_thresholds_verified": true
+    },
+    {
+      "k": 6,
+      "base": 7,
+      "m": 30,
+      "max_nonzero_overlap": 8,
+      "fourth_moment": 4770,
+      "L1_squared_lower": "300/53",
+      "variance_lower": "375/5618",
+      "leakage_lower": "4125/2809",
+      "sine_Q": 166,
+      "sine_H": 84,
+      "matrix_row_norm": 208,
+      "all_popular_difference_thresholds_verified": true
+    },
+    {
+      "k": 8,
+      "base": 9,
+      "m": 56,
+      "max_nonzero_overlap": 12,
+      "fourth_moment": 19320,
+      "L1_squared_lower": "3136/345",
+      "variance_lower": "10976/119025",
+      "leakage_lower": "482944/119025",
+      "sine_Q": 266,
+      "sine_H": -212,
+      "matrix_row_norm": 160,
+      "all_popular_difference_thresholds_verified": true
+    },
+    {
+      "k": 10,
+      "base": 11,
+      "m": 90,
+      "max_nonzero_overlap": 16,
+      "fourth_moment": 54270,
+      "L1_squared_lower": "900/67",
+      "variance_lower": "1125/8978",
+      "leakage_lower": "41625/4489",
+      "sine_Q": 374,
+      "sine_H": -188,
+      "matrix_row_norm": 280,
+      "all_popular_difference_thresholds_verified": true
+    },
+    {
+      "k": 12,
+      "base": 13,
+      "m": 132,
+      "max_nonzero_overlap": 20,
+      "fourth_moment": 123156,
+      "L1_squared_lower": "5808/311",
+      "variance_lower": "15972/96721",
+      "leakage_lower": "1788864/96721",
+      "sine_Q": 472,
+      "sine_H": 340,
+      "matrix_row_norm": 642,
+      "all_popular_difference_thresholds_verified": true
+    }
+  ],
+  "notch_checks": [
+    {
+      "prime": 5,
+      "full_B": [
+        0,
+        1,
+        6,
+        18,
+        22,
+        29
+      ],
+      "subset_B": [
+        0,
+        1
+      ],
+      "k": 6,
+      "h": 2,
+      "modulus": 31,
+      "dilation": 181,
+      "n": 16,
+      "A": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        11,
+        12,
+        16,
+        17,
+        18,
+        21,
+        22,
+        23,
+        28,
+        29,
+        181
+      ],
+      "K_upper": 8,
+      "lowK_exact": true,
+      "cubic_0": [
+        444,
+        0
+      ],
+      "all_shifts_through": 543,
+      "minimum_single_notch_H": "-22",
+      "minimizer": 6,
+      "paper_H_lower": "-960",
+      "direct_checks": [
+        {
+          "shift": 1,
+          "a": "14",
+          "Q": "31/2",
+          "H": "19"
+        },
+        {
+          "shift": 6,
+          "a": "12",
+          "Q": "31/2",
+          "H": "-22"
+        },
+        {
+          "shift": 30,
+          "a": "26",
+          "Q": "36",
+          "H": "297"
+        },
+        {
+          "shift": 90,
+          "a": "32",
+          "Q": "49",
+          "H": "693"
+        },
+        {
+          "shift": 91,
+          "a": "32",
+          "Q": "49",
+          "H": "693"
+        },
+        {
+          "shift": 181,
+          "a": "32",
+          "Q": "95/2",
+          "H": "544"
+        },
+        {
+          "shift": 182,
+          "a": "30",
+          "Q": "44",
+          "H": "558"
+        },
+        {
+          "shift": 362,
+          "a": "31",
+          "Q": "46",
+          "H": "666"
+        },
+        {
+          "shift": 544,
+          "a": "32",
+          "Q": "48",
+          "H": "666"
+        }
+      ],
+      "qualification": "Finite all-shift algebra/control; asymptotic positive cost is proved separately."
+    },
+    {
+      "prime": 7,
+      "full_B": [
+        0,
+        1,
+        6,
+        15,
+        22,
+        26,
+        45,
+        55
+      ],
+      "subset_B": [
+        0,
+        1,
+        6
+      ],
+      "k": 8,
+      "h": 3,
+      "modulus": 57,
+      "dilation": 337,
+      "n": 31,
+      "A": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        14,
+        15,
+        16,
+        19,
+        20,
+        21,
+        22,
+        23,
+        25,
+        26,
+        29,
+        30,
+        33,
+        39,
+        40,
+        44,
+        45,
+        49,
+        54,
+        55,
+        337,
+        1685,
+        2022
+      ],
+      "K_upper": 11,
+      "lowK_exact": true,
+      "cubic_0": [
+        1518,
+        12
+      ],
+      "all_shifts_through": 6066,
+      "minimum_single_notch_H": "13",
+      "minimizer": 15,
+      "paper_H_lower": "-2338",
+      "direct_checks": [
+        {
+          "shift": 1,
+          "a": "30",
+          "Q": "75/2",
+          "H": "84"
+        },
+        {
+          "shift": 15,
+          "a": "26",
+          "Q": "69/2",
+          "H": "13"
+        },
+        {
+          "shift": 56,
+          "a": "50",
+          "Q": "69",
+          "H": "891"
+        },
+        {
+          "shift": 168,
+          "a": "62",
+          "Q": "94",
+          "H": "2346"
+        },
+        {
+          "shift": 169,
+          "a": "62",
+          "Q": "94",
+          "H": "2346"
+        },
+        {
+          "shift": 337,
+          "a": "60",
+          "Q": "177/2",
+          "H": "2052"
+        },
+        {
+          "shift": 338,
+          "a": "60",
+          "Q": "89",
+          "H": "2091"
+        },
+        {
+          "shift": 674,
+          "a": "61",
+          "Q": "92",
+          "H": "2286"
+        },
+        {
+          "shift": 6067,
+          "a": "62",
+          "Q": "93",
+          "H": "2295"
+        }
+      ],
+      "qualification": "Finite all-shift algebra/control; asymptotic positive cost is proved separately."
+    },
+    {
+      "prime": 11,
+      "full_B": [
+        0,
+        1,
+        25,
+        30,
+        40,
+        46,
+        53,
+        96,
+        100,
+        114,
+        122,
+        131
+      ],
+      "subset_B": [
+        0,
+        1,
+        25,
+        30,
+        40,
+        46
+      ],
+      "k": 12,
+      "h": 6,
+      "modulus": 133,
+      "dilation": 793,
+      "n": 81,
+      "A": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        21,
+        22,
+        23,
+        24,
+        25,
+        26,
+        28,
+        29,
+        30,
+        31,
+        35,
+        39,
+        40,
+        43,
+        45,
+        46,
+        47,
+        50,
+        52,
+        53,
+        54,
+        56,
+        60,
+        61,
+        66,
+        68,
+        69,
+        70,
+        71,
+        74,
+        75,
+        76,
+        78,
+        82,
+        84,
+        85,
+        89,
+        91,
+        92,
+        95,
+        96,
+        97,
+        99,
+        100,
+        101,
+        106,
+        113,
+        114,
+        121,
+        122,
+        130,
+        131,
+        793,
+        3965,
+        4758,
+        7930,
+        11895,
+        12688,
+        16653,
+        19032,
+        19825,
+        22997,
+        23790,
+        30927,
+        31720,
+        35685,
+        36478
+      ],
+      "K_upper": 18,
+      "lowK_exact": true,
+      "cubic_0": [
+        8298,
+        336
+      ],
+      "all_shifts_through": 109434,
+      "minimum_single_notch_H": "595",
+      "minimizer": 31,
+      "paper_H_lower": "-8244",
+      "direct_checks": [
+        {
+          "shift": 1,
+          "a": "84",
+          "Q": "235/2",
+          "H": "765"
+        },
+        {
+          "shift": 31,
+          "a": "80",
+          "Q": "213/2",
+          "H": "595"
+        },
+        {
+          "shift": 132,
+          "a": "135",
+          "Q": "189",
+          "H": "9849/2"
+        },
+        {
+          "shift": 396,
+          "a": "162",
+          "Q": "244",
+          "H": "13086"
+        },
+        {
+          "shift": 397,
+          "a": "162",
+          "Q": "244",
+          "H": "13086"
+        },
+        {
+          "shift": 793,
+          "a": "150",
+          "Q": "437/2",
+          "H": "11976"
+        },
+        {
+          "shift": 794,
+          "a": "160",
+          "Q": "239",
+          "H": "12411"
+        },
+        {
+          "shift": 1586,
+          "a": "161",
+          "Q": "245",
+          "H": "25611/2"
+        },
+        {
+          "shift": 109435,
+          "a": "162",
+          "Q": "243",
+          "H": "12951"
+        }
+      ],
+      "qualification": "Finite all-shift algebra/control; asymptotic positive cost is proved separately."
+    }
+  ]
+}

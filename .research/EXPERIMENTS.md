@@ -1,5 +1,38 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-21 — exact finite analytic square-root witnesses
+
+Reproduce: `src/dirun.sh -c 2 -m 6 -t 180 python src/cstar_analytic_sqrt.py`.
+Data: experiments/analytic_sqrt_2026-10-21/results.json (four cases).
+The final job exited0/PASS. An initial empty Python sum produced a float;
+using an exact Fraction zero fixed it before the saved successful run.
+No GPU job, no new spend, all jobs terminal.
+
+These tests use rational lambda=2ceil(sqrt(n))>=2sqrt(n), so the general
+bounds with lambda apply; the paper lambda=2sqrt(n) need not be rational.
+The exact recurrence is generated through2X-1 and VP tapered, preserving
+coupling. Full rational cosine vectors, exact a,Q,H and determinant
+bisection brackets for achieved M lower bounds are saved. FLINT squares
+and a separate sparse double product agree exactly on H. Norm Q<=2n
+and |H|<=36sqrt(2)lambda*n are checked by rational comparisons.
+
+| Input | n | X | Certified interval for a/n |
+|---|---:|---:|---|
+| singleton | 1 | 1 | [1,1.000000001] |
+| interlaced two squares p5 | 16 | 29 | [.876135529,.876135530] |
+| interlaced two squares p7 | 31 | 55 | [.852799991,.852799992] |
+| saved Sturm-certified input | 50 | 72 | [.785775500,.785775501] |
+
+The two interlaced controls have exact disjoint positive-difference
+supports, overlapping frequency ranges and mixed additive triangles.
+Their lowM hypotheses follow from two difference-square identities;
+the saved n50 global upper reuses its prior exact Sturm certificate.
+All four meet the TESTED half-coupling threshold. Neither that threshold
+nor any positive uniform coupling is proved universally. The finite
+minimum certificates here are weaker than prior best certificates.
+Weighted Fejer failure and the higher-power obstruction are separate
+paper results in [the independent advisor audit](notes/advisor_analytic_sqrt_2026-10-21.md).
+
 ## 2026-10-21 — boundary identities, coupled recovery and entire-space residuals
 
 Reproduce on Dirichlet:

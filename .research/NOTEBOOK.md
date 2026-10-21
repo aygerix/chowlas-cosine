@@ -1,5 +1,40 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — analytic square-root seed: automatic cost, unresolved Boolean coupling
+
+Changed mechanism after the separated-block closure: use the analytic
+F=sum z^a to treat overlapping frequencies directly, rather than bound
+each cross term. For actual lowM and lambda=2sqrt(n), the signed seed
+q=2sqrt(lambda) Re(sqrt(lambda+F)-sqrt(lambda)) satisfies Q<=2n,
+|H|<=8sqrt(2)n^1.5. A VP multiplier preserves coupling and puts it in
+degree<2maxA with cost constant72sqrt(2). The advisor independently
+verified every factor and the exact rational/algebraic coefficient
+recurrence. [Complete proof and strategic review](notes/advisor_analytic_sqrt_2026-10-21.md).
+
+The attempted new lower bound G>=epsilon sqrt(n), equivalently a>=alpha n,
+turns out to be equivalent up to constants to the existing qualitative
+L1 flatness gap. This is a concrete certificate and diagnostic, not a
+new route or a proof of the missing Boolean inequality. Weighted Fejer
+profiles refute the coefficient-relaxed assertion. A dense-front argument
+also rules out every fixed unfiltered analytic power alpha>1/2 as a
+universal bounded-cost replacement, including after coupling normalization.
+Do not report an exact asymptotic or an exclusion of all nonlinear seeds.
+
+Bounded exact test on Dirichlet: singleton, interlaced two-square unions
+n16/31 and saved n50; rational lambda=2ceil(sqrt(n)). All four have a/n>1/2;
+norm/cost bounds and independent sparse/FLINT cubic products PASS.
+These achieved minimum lower bounds are weaker than existing certificates.
+Initial empty-sum float coercion was fixed; final run exited0. No GPU
+work/spend, all jobs terminal. Finite success does not justify a larger sweep.
+
+DECISION: retain the seed as an exact Boolean coefficient probe. Next
+derive a bound on cancellation in sum_(a in A)v_a using actual zero/one
+coefficients and lowM. The undecomposable-frequency subcase is already
+an easy P9 branch. If no different Boolean input emerges, pivot rather
+than recast G flatness as progress. Keep the independent all-circle
+construction and unrestricted inverse/direct-Rayleigh alternatives.
+Full Chowla remains OPEN; active GOAL.md is unchanged.
+
 ## 2026-10-21 — Boolean boundary falsifiers, coupled recovery, full-space residuals
 
 Previous goal turn PROGRESS: persistent GOAL.md refreshed with the advisor.

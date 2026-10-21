@@ -2,7 +2,50 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
-**Latest research continuation / read first:** PROGRESS. The
+**Latest continuation / read first:** an explicit analytic square-root
+signed witness now has advisor-checked, arbitrary-support norm and mixed
+cost bounds under ACTUAL M<=sqrt(n). With F=sum z^a, lambda=2sqrt(n),
+g=sqrt(lambda+F)-sqrt(lambda), q=2sqrt(lambda) Re g, G=<|g|²>,
+
+    Q=2lambda G<=2n, a>=(1+1/sqrt(2))Q,
+    |H|<=8sqrt(2)n^1.5.
+
+The VP multiplier gives degree<2maxA with exactly the same coupling,
+Q contraction and |H_B|<=72sqrt(2)n^1.5. This controls overlapping
+frequencies directly. **The missing a>=alpha*n estimate is NOT proved.**
+G>=epsilon*sqrt(n) and qualitative low-M L1 flatness are equivalent up
+to absolute constants; this seed does not create a new independent
+route around L25. [Complete independent internal paper audit](notes/advisor_analytic_sqrt_2026-10-21.md).
+
+The exact finite recurrence v_j=1_A(j)-sum(v_u*v_(j-u))/(4lambda)
+supplies coupling=sum_(a in A)v_a using only coefficients through maxA.
+Weighted Fejer profiles refute the coefficient-relaxed coupling estimate.
+Every fixed unfiltered analytic power alpha>1/2 has excessive cost on
+dense low-M Boolean supports, including after coupling normalization.
+This is a witness limitation, not a new construction exclusion or
+universal Chowla bound. Smaller powers and other nonlinear witnesses
+are not excluded by that proof.
+
+Dirichlet src/cstar_analytic_sqrt.py exited0/PASS on singleton, two
+interlaced disjoint-difference unions n16/31 with mixed additive triples,
+and saved n50. These exact rational tests use lambda=2ceil(sqrt(n));
+all four have a/n>1/2. Independent sparse and FLINT square products
+agree. The resulting finite lower certificates are weaker than existing
+best certificates; do not infer improvement or expand a successful
+control sweep. Data: experiments/analytic_sqrt_2026-10-21/results.json.
+Initial empty-sum float coercion was fixed before this saved run.
+All jobs terminal; no GPU worker or new spend (cumulative$0.10).
+
+**Next substantive derivation:** exploit the BOOLEAN right side of the
+selected-coefficient recurrence to bound its cancellation, or pivot to
+a signed witness with a demonstrably different missing estimate.
+Indecomposable frequencies are already an easy P9/star branch; counting
+them alone does not address highly decomposable supports. No additional
+GPU deployment is justified by these four finite successes. Preserve
+the unrestricted inverse/direct-Rayleigh and independent all-circle
+construction tracks. Full Chowla remains OPEN and the goal ACTIVE.
+
+**Previous research continuation:** PROGRESS. The
 [Boolean boundary cycle](notes/cstar_boolean_boundary_cycle_2026-10-21.md)
 proves a popular-difference leakage lower bound but REFUTES both its
 small-leakage upper bridge and a universal SINGLE boundary-notch cost

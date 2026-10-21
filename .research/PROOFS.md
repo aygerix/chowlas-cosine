@@ -2,6 +2,48 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Analytic square-root signed witness (PROVED bounds; coupling OPEN, 2026-10-21)
+
+For EVERY finite nonempty Boolean A with ACTUAL M<=sqrt(n), let
+F=sum z^a, lambda=2sqrt(n), g=sqrt(lambda+F)-sqrt(lambda),
+G=<|g|²>, q=2sqrt(lambda) Re g. The principal root is analytic on
+a neighborhood of the closed disk. With a=<Dq>, Q=<q²>, H=<Dq²>,
+
+    Q=2lambda G<=2n/(1+1/sqrt(2))²,
+    a>=(1+1/sqrt(2))Q, |H|<=8sqrt(2)n^1.5.
+
+V=2Fejer_(2X)-Fejer_X preserves a exactly, contracts Q, and gives
+degree(V*q)<2X and |<D(V*q)²>|<=72sqrt(2)n^1.5. No hypothesis on
+frequency density or separated blocks is used. These estimates alone
+also apply to weighted inputs; they do not supply the Boolean step.
+
+For h=2sqrt(lambda)g=sum v_j z^j,
+
+    v_j=1_A(j)-(1/(4lambda))*sum_(u=1)^(j-1)v_u*v_(j-u),
+    a=sum_(a in A)v_a.
+
+The coefficients lie in Q(sqrt(n)). Macroscopic coupling a>=alpha*n
+is OPEN. It is equivalent up to changing absolute constants to
+G>=epsilon*sqrt(n) and qualitative low-M L1 flatness. Specifically,
+with t=G/sqrt(n),
+
+    [(1+sqrt(2))/2]*t²<=||f||_1/sqrt(n)<=2sqrt(t)+t.
+
+L25 would imply t>=(sqrt(11/10)-1)², not conversely with the same
+numerical constant. Weighted Fejer inputs have G=O(log X)=o(sqrt(n_eff))
+and rigorously refute the coefficient-relaxed claim. Boolean intervals
+are inadmissible falsifiers because their M has linear scale.
+
+The changed power q_alpha=lambda^(1-alpha) Re((lambda+F)^alpha-lambda^alpha)
+fails the universal normalized mixed-cost target for EVERY fixed alpha>1/2:
+on dense low-M Boolean sequences, H_alpha>=c n^(1+alpha), and after
+nonzero coupling is normalized to n its cost is >=c n^(1+alpha) for
+alpha<=1 and >=c n² for alpha>=1. This is an unfiltered-power obstruction;
+it does not exclude other nonlinear functions or smaller powers.
+[Complete proofs and independent internal audit](notes/advisor_analytic_sqrt_2026-10-21.md).
+Four exact finite VP seeds PASS on Dirichlet; they establish neither
+the open coupling estimate nor a stronger finite minimum than prior work.
+
 ## Full-L2 inverse residual and finite-band approximation (PROVED on paper, 2026-10-21)
 
 For every real even trigonometric D of degree X and mean zero, let

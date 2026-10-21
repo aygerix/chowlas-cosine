@@ -1,6 +1,34 @@
 # CSTAR — THE problem. Read this first, every session.
 
-## Latest cycle: coupled signed closure and full-space upper certificates
+## Latest cycle: analytic square-root seed and its precise Boolean gap
+
+For arbitrary A under ACTUAL M<=sqrt(n), let F=sum z^a, lambda=2sqrt(n),
+g=sqrt(lambda+F)-sqrt(lambda), q=2sqrt(lambda) Re g. The independent
+[advisor audit](notes/advisor_analytic_sqrt_2026-10-21.md) proves
+Q=2lambda*<|g|²><=2n, a>=(1+1/sqrt(2))Q, |H|<=8sqrt(2)n^1.5.
+VP filtering gives degree<2maxA, unchanged a, contracted Q and cost
+<=72sqrt(2)n^1.5. These estimates do not need separated frequencies.
+
+Still OPEN: a>=alpha*n uniformly on Boolean low-M inputs. This seed's
+coupling and G>=epsilon sqrt(n) are equivalent up to absolute constants
+to qualitative low-M L1 flatness. Thus the nonlinear formula does not
+bypass the old gap. Weighted Fejer profiles refute the relaxed assertion.
+An elementary dense-front proof rules out every fixed unfiltered power
+alpha>1/2 as a universal normalized bounded-cost alternative; smaller
+powers and other nonlinear functions remain unclassified.
+
+An exact finite recurrence computes a using only coefficients through
+maxA; through2maxA-1 it constructs the rational/algebraic VP witness.
+Four exact Dirichlet tests PASS, including interlaced n16/31 supports
+and saved n50. Rational lambda=2ceil(sqrt(n)) is used in these finite
+tests. All four have a/n>1/2, but their achieved minimum lower bounds
+are weaker than existing best certificates. No universal coupling
+claim or additional GPU deployment follows. All jobs terminal; no new
+spend. Next: a new Boolean cancellation estimate for the selected
+recurrence coefficients, or a distinct signed mechanism. Counting
+undecomposable frequencies alone is already an easy P9 branch.
+
+## Previous cycle: coupled signed closure and full-space upper certificates
 
 The [new boundary cycle](notes/cstar_boolean_boundary_cycle_2026-10-21.md)
 proves a torsion-free popular-difference estimate, but its missing O(n)

@@ -1,0 +1,252 @@
+{
+  "backend": "cupy",
+  "host": "a793e34053e8",
+  "gpu": {
+    "name": "NVIDIA L4",
+    "totalGlobalMem": 23661248512,
+    "major": 8,
+    "minor": 9
+  },
+  "dtype": "float64",
+  "seed": 20261021,
+  "exact_controls": [
+    {
+      "A": [
+        1
+      ],
+      "B": [
+        1
+      ],
+      "fft_length": 4,
+      "max_operator_error": 0.0,
+      "hand_H": "0"
+    },
+    {
+      "A": [
+        2
+      ],
+      "B": [
+        1
+      ],
+      "fft_length": 8,
+      "max_operator_error": 0.0,
+      "hand_H": "1/2"
+    },
+    {
+      "A": [
+        101
+      ],
+      "B": [
+        1
+      ],
+      "fft_length": 256,
+      "max_operator_error": 0.0,
+      "hand_H": "0"
+    },
+    {
+      "A": [
+        1,
+        3,
+        8
+      ],
+      "B": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "fft_length": 64,
+      "max_operator_error": 1.7763568394002505e-15,
+      "hand_H": "None"
+    },
+    {
+      "A": [
+        1,
+        17,
+        1009
+      ],
+      "B": [
+        1,
+        16,
+        17,
+        18,
+        992,
+        1009
+      ],
+      "fft_length": 4096,
+      "max_operator_error": 3.1086244689504383e-15,
+      "hand_H": "None"
+    }
+  ],
+  "saved_witness": {
+    "a": "50",
+    "Q": "15448763910249267/13743895347200",
+    "H": "-2946171810440610303/343597383680000",
+    "global_M_lower": "790943649/200000000",
+    "numeric_H": -8574.488486747181,
+    "numeric_error": 1.0913936421275139e-11,
+    "status": "Exact integer moments PASS; FFT agrees numerically"
+  },
+  "benchmarks": [
+    {
+      "label": "small",
+      "n": 50,
+      "max_A": 72,
+      "witness_frequencies": 144,
+      "fft_length": 512,
+      "batch": 1,
+      "setup_seconds": 0.033197815995663404,
+      "input_transfer_seconds": 0.00011410599108785391,
+      "kernel_median_seconds": 0.00026861901278607547,
+      "actions_per_second": 3722.744677035897,
+      "cpu_dense_median_seconds": 4.9000082071870565e-06,
+      "diagnostic_L1_over_sqrt_n": 0.7890399733972447,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "small",
+      "n": 50,
+      "max_A": 72,
+      "witness_frequencies": 144,
+      "fft_length": 512,
+      "batch": 8,
+      "setup_seconds": 0.033197815995663404,
+      "input_transfer_seconds": 0.0001128639851231128,
+      "kernel_median_seconds": 0.0002587810158729553,
+      "actions_per_second": 30914.168773212794,
+      "cpu_dense_median_seconds": 1.6139994841068983e-05,
+      "diagnostic_L1_over_sqrt_n": 0.7890399733972447,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "small",
+      "n": 50,
+      "max_A": 72,
+      "witness_frequencies": 144,
+      "fft_length": 512,
+      "batch": 32,
+      "setup_seconds": 0.033197815995663404,
+      "input_transfer_seconds": 0.00011495800572447479,
+      "kernel_median_seconds": 0.00023232100647874177,
+      "actions_per_second": 137740.450099712,
+      "cpu_dense_median_seconds": 6.302900146692991e-05,
+      "diagnostic_L1_over_sqrt_n": 0.7890399733972447,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "large_band",
+      "n": 256,
+      "max_A": 4095,
+      "witness_frequencies": 8192,
+      "fft_length": 32768,
+      "batch": 1,
+      "setup_seconds": 0.08710605400847271,
+      "input_transfer_seconds": 0.00011961700511164963,
+      "kernel_median_seconds": 0.00025292098871432245,
+      "actions_per_second": 3953.803933328416,
+      "cpu_dense_median_seconds": null,
+      "diagnostic_L1_over_sqrt_n": 1.1007859760040468,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "large_band",
+      "n": 256,
+      "max_A": 4095,
+      "witness_frequencies": 8192,
+      "fft_length": 32768,
+      "batch": 8,
+      "setup_seconds": 0.08710605400847271,
+      "input_transfer_seconds": 0.00018440998974256217,
+      "kernel_median_seconds": 0.0005913920176681131,
+      "actions_per_second": 13527.406121483311,
+      "cpu_dense_median_seconds": null,
+      "diagnostic_L1_over_sqrt_n": 1.1007859760040468,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "large_band",
+      "n": 256,
+      "max_A": 4095,
+      "witness_frequencies": 8192,
+      "fft_length": 32768,
+      "batch": 32,
+      "setup_seconds": 0.08710605400847271,
+      "input_transfer_seconds": 0.02005914700566791,
+      "kernel_median_seconds": 0.001000499993097037,
+      "actions_per_second": 31984.008216676084,
+      "cpu_dense_median_seconds": null,
+      "diagnostic_L1_over_sqrt_n": 1.1007859760040468,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "wide_sparse",
+      "n": 8,
+      "max_A": 131071,
+      "witness_frequencies": 12,
+      "fft_length": 524288,
+      "batch": 1,
+      "setup_seconds": 0.0036111049994360656,
+      "input_transfer_seconds": 0.00010966899571940303,
+      "kernel_median_seconds": 0.0007997479988262057,
+      "actions_per_second": 1250.3938759055418,
+      "cpu_dense_median_seconds": 1.8739956431090832e-06,
+      "diagnostic_L1_over_sqrt_n": 1.1374344570969044,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "wide_sparse",
+      "n": 8,
+      "max_A": 131071,
+      "witness_frequencies": 12,
+      "fft_length": 524288,
+      "batch": 8,
+      "setup_seconds": 0.0036111049994360656,
+      "input_transfer_seconds": 0.00010245500016026199,
+      "kernel_median_seconds": 0.003098732006037608,
+      "actions_per_second": 2581.701155315368,
+      "cpu_dense_median_seconds": 4.528992576524615e-06,
+      "diagnostic_L1_over_sqrt_n": 1.1374344570969044,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    },
+    {
+      "label": "wide_sparse",
+      "n": 8,
+      "max_A": 131071,
+      "witness_frequencies": 12,
+      "fft_length": 524288,
+      "batch": 32,
+      "setup_seconds": 0.0036111049994360656,
+      "input_transfer_seconds": 0.000217762979445979,
+      "kernel_median_seconds": 0.013037627999437973,
+      "actions_per_second": 2454.4341962648004,
+      "cpu_dense_median_seconds": 2.695014700293541e-06,
+      "diagnostic_L1_over_sqrt_n": 1.1374344570969044,
+      "L1_status": "Uncertified grid diagnostic",
+      "optimized_cost_claim": false
+    }
+  ],
+  "numpy_version": "2.4.6",
+  "backend_version": "14.2.0",
+  "qualification": "Operator pilot only; no new universal or optimized-cost bound."
+}

@@ -1,0 +1,17 @@
+{
+  "scope": "Quick Chowla-only pilot within approximately $7 existing credit",
+  "pod_id": "p33yudhsp0g5xl",
+  "name": "chowla-gpu-pilot-20261021",
+  "gpu": "NVIDIA L4",
+  "advertised_cost_per_hour_usd": 0.59,
+  "created_at_utc": "2026-10-21T15:36:01Z",
+  "requested_auto_termination_at_utc": "2026-10-21T15:56:01Z",
+  "manual_delete_returned_deleted_true": true,
+  "verified_at_utc": "2026-10-21T15:39:44.539448Z",
+  "remaining_named_pilot_pods": 0,
+  "observed_account_balance_before_usd": 7.4312024352,
+  "observed_account_balance_after_usd": 7.4120309232,
+  "account_spend_per_hour_before_and_after_usd": 0.008,
+  "existing_pods_and_storage_untouched": true,
+  "qualification": "Account balance observations are not a reconciled pod invoice. Auto-termination was requested; the worker was manually deleted first. No pilot worker remains."
+}

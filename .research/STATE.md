@@ -1,5 +1,13 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Completed bounded GPU pilot and advisor review, 2026-10-21
+
+The user separately authorized one QUICK Chowla-only RunPod kernel pilot within approximately $7 credit and one internal PhD Advisor subagent at GPT-6.1 Sol/MAX. This bounded task is complete; the original sustained research goal remains paused. [Pilot report](notes/cstar_gpu_pilot_2026-10-21.md), [independent internal advisor review](notes/phd_advisor_review_2026-10-21.md), src/cstar_gpu_kernel.py and experiments/gpu_pilot_2026-10-21/ preserve the work. No Wilf work or additional agents.
+
+The float64 NumPy/CuPy operator passed Dirichlet checks before deployment and CPU/GPU checks on one L4 worker. The existing degree1152 exact witness was reproduced. Same-host large-band batches1/8/32 show warmed operator speedups2.22x/4.91x/18.22x; batch32 input allocation/transfer was20.06ms, so no one-shot or end-to-end solver speedup is established. Keep iterative vectors resident; direct CPU actions remain better for the small/wide-sparse controls. The new worker was DELETED and no named pilot pods remain. Balance after the check was about$7.41; existing account resources were untouched.
+
+Advisor paper audit accepts the full-L2 optimizer/flatness derivations and finite-separation interpretation; no Lean/kernel or external review. It derives an additional full-space cost lower bound from certified K/L1 upper bounds and proposes the conjectural unrestricted target K<=2sqrt(n) => ||D||_1>=sqrt(n)/5, which would imply M>=sqrt(n)/20. This is not proved or tested by the timing pilot. First integration on resumption: use the optional GPU operator for genuinely large-band repeated projected actions with state resident on device, retaining exact CPU certification and direct/sparse dispatch. Full Chowla remains OPEN.
+
 ## Paused checkpoint: full-space resolvent witness
 
 User paused the goal during this pass. All jobs are terminal; final verifier exited0/PASS. This checkpoint preserves the [full-space resolvent derivation and exact separation](notes/cstar_fullspace_resolvent_2026-10-20.md), src/cstar_resolvent_witness.py, src/cstar_resolvent_verify.py and experiments/resolvent_2026-10-20/. On October 21 the user requested a commit and push; that request does not resume the research goal. Broader index integration remains unfinished. Previous research goal turn was progress (a66fdc6).

@@ -1,0 +1,86 @@
+{
+  "gpu": {
+    "name": "NVIDIA L4",
+    "totalGlobalMem": 23661248512,
+    "major": 8,
+    "minor": 9
+  },
+  "same_host": true,
+  "comparisons": [
+    {
+      "label": "small",
+      "batch": 1,
+      "cpu_ms": 0.03443498280830681,
+      "gpu_ms": 0.2686190127860755,
+      "speedup": 0.1281926489534468,
+      "cpu_direct_ms": 0.0049000082071870565
+    },
+    {
+      "label": "small",
+      "batch": 8,
+      "cpu_ms": 0.05638698348775506,
+      "gpu_ms": 0.2587810158729553,
+      "speedup": 0.21789459051910287,
+      "cpu_direct_ms": 0.016139994841068983
+    },
+    {
+      "label": "small",
+      "batch": 32,
+      "cpu_ms": 0.13288197806105018,
+      "gpu_ms": 0.23232100647874177,
+      "speedup": 0.5719757333834096,
+      "cpu_direct_ms": 0.06302900146692991
+    },
+    {
+      "label": "large_band",
+      "batch": 1,
+      "cpu_ms": 0.560223008506,
+      "gpu_ms": 0.25292098871432245,
+      "speedup": 2.2150119345721015,
+      "cpu_direct_ms": null
+    },
+    {
+      "label": "large_band",
+      "batch": 8,
+      "cpu_ms": 2.9028099961578846,
+      "gpu_ms": 0.5913920176681131,
+      "speedup": 4.9084362139411395,
+      "cpu_direct_ms": null
+    },
+    {
+      "label": "large_band",
+      "batch": 32,
+      "cpu_ms": 18.23260899982415,
+      "gpu_ms": 1.000499993097037,
+      "speedup": 18.223497376931814,
+      "cpu_direct_ms": null
+    },
+    {
+      "label": "wide_sparse",
+      "batch": 1,
+      "cpu_ms": 21.463671990204602,
+      "gpu_ms": 0.7997479988262057,
+      "speedup": 26.838044010997145,
+      "cpu_direct_ms": 0.0018739956431090832
+    },
+    {
+      "label": "wide_sparse",
+      "batch": 8,
+      "cpu_ms": 111.52396400575526,
+      "gpu_ms": 3.098732006037608,
+      "speedup": 35.99019333987599,
+      "cpu_direct_ms": 0.004528992576524615
+    },
+    {
+      "label": "wide_sparse",
+      "batch": 32,
+      "cpu_ms": 372.3467260133475,
+      "gpu_ms": 13.037627999437973,
+      "speedup": 28.559391787325016,
+      "cpu_direct_ms": 0.002695014700293541
+    }
+  ],
+  "exact_witness_status": "Exact integer moments PASS; FFT agrees numerically",
+  "max_control_error": 3.1086244689504383e-15,
+  "qualification": "Warmed float64 operator medians, seven repeats. Transfers and setup excluded from speedup; not a solver or proof speedup."
+}

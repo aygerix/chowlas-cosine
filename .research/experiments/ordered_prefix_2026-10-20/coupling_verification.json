@@ -1,0 +1,187 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "label": "hereditary8",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "274983129/200000000"
+    },
+    {
+      "label": "hereditary8",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "274983129/200000000"
+    },
+    {
+      "label": "interval64",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "38753829/6250000"
+    },
+    {
+      "label": "interval64",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "155015317/25000000"
+    },
+    {
+      "label": "N50_x72",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "24895883/8000000"
+    },
+    {
+      "label": "N50_x72",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "124762511/40000000"
+    },
+    {
+      "label": "N50_x71",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "279698399/100000000"
+    },
+    {
+      "label": "N50_x71",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "587348557/200000000"
+    },
+    {
+      "label": "root_difference_r12",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "43971877/25000000"
+    },
+    {
+      "label": "root_difference_r12",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "514747713/200000000"
+    },
+    {
+      "label": "balanced_r8_k2",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "226446397/25000000"
+    },
+    {
+      "label": "balanced_r8_k2",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "481906889/50000000"
+    },
+    {
+      "label": "sparse_seed20261023",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "202345483/200000000"
+    },
+    {
+      "label": "sparse_seed20261023",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "567292703/200000000"
+    },
+    {
+      "label": "forced_plateau_L64",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "804306693/200000000"
+    },
+    {
+      "label": "forced_plateau_L64",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "203922733/50000000"
+    },
+    {
+      "label": "forced_plateau_L729",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "76866857/6250000"
+    },
+    {
+      "label": "forced_plateau_L729",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "2520162581/200000000"
+    },
+    {
+      "label": "cyclic_cone_lift_p7",
+      "suffix": false,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "990789591/200000000"
+    },
+    {
+      "label": "cyclic_cone_lift_p7",
+      "suffix": true,
+      "a_equals_n": true,
+      "Q_at_most_25n": true,
+      "H_nonpositive": true,
+      "certified_integer_gamma": 0,
+      "global_M_lower": "251147873/40000000"
+    }
+  ],
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "qualification": "Achieved exact witnesses only; no numerical optimum or universal estimate certified."
+}

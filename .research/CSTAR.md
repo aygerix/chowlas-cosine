@@ -1,5 +1,17 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## User-directed priority override: arbitrary supports first
+
+The latest advisor discussion redirects the primary effort to the unrestricted Boolean inverse/mixed-certificate problem, starting with arbitrary A and the exact coefficient identity a_j^2=a_j. Use P31/P61/P63/P66 to identify the missing Boolean input; the density theorems do not themselves remove the density hypothesis. Target macroscopic coupling, O(n) witness norm and O(n^(3/2)) mixed cubic cost with absolute constants. Uniform selected-coefficient completion is already refuted by the Boolean forced-plateau family; allow variable interior coefficients and signed directions. Weighted escapes and genuine Boolean countercontrols are mandatory adversaries. This is the existing CHAIN(c) gap, not a new route or theorem.
+
+Keep an independent construction track requiring an all-circle upper bound and a path to vanishing Chowla ratio. Specialized models, including critical Sidon windows, are subordinate diagnostics unless they test an explicit arbitrary-support principle or offer a credible new counterexample mechanism. The user deferred consolidation, specialist review and submission. The goal is active again; [current scope and restart question](STATE.md) supersede the older next-task recommendations below.
+
+## Latest arbitrary-support attempt: coupling and norm constrained directly
+
+Resumed CHAIN(c): prefix/suffix autocorrelation directions are constructed from arbitrary A. Fifty exact scalar Rayleigh witnesses pass, but strong eigenvalues did not ensure strong coupling on the plateau. The subsequent proposal fixes a=n,Q<=25n and minimizes H by Gram normalization and a ball-constrained quadratic. All20 finite trials have independently verified H<0; no uniform cost bound or universal Chowla result follows. [Derivation and exact scopes](notes/cstar_arbitrary_coupling_2026-10-20.md).
+
+An interval calibration gives an unbounded signed gain over the entire nonnegative-coefficient cone on A. A period-five P61 weighted control matches two Boolean profiles but forces divergent normalized constrained cost; its nearest Boolean rounding becomes an arithmetic progression with linear M. Continue aggregate mixed-cost estimates on arbitrary supports, rather than unconstrained eigenvalue scans or new specialized exclusions. All jobs terminal; no independent-agent/Lean audit or push.
+
 ## Latest deterministic step: selective references and a sharp ruling count
 
 CHAIN(c) / DESIGN, 2026-10-20: the marginal-law restriction in the Sidon-fiber model is REMOVED. For ANY deterministic p-point cyclic Sidon sets in the prescribed primitive-u fibers, U=sqrt(X), n=Theta(X^2 log X), a paper proof gives M>=sqrt(n)/16 eventually under encoding kernel gap>3X. The sharper Cp^3 conditional cost is unnecessary: pairwise completion gives416p^3(3+2log p)^4, and freezing ONLY the reference below a polylogarithmic direction cutoff absorbs the loss without removing actual frequencies. A boundary-free congruence-lattice argument proves the formerly missing off-left bound O(X^2U^2 log U), replacing U^4.

@@ -1,5 +1,11 @@
 # NOTEBOOK (dated)
 
+## 2026-10-20 — resumed arbitrary-support fixed-coupling attempt
+
+Built growing prefix/suffix autocorrelation spaces from arbitrary A. Fifty numerical Rayleigh proposals pass independent scalar checks, but the plateau exposed weakening coupling. The actual objective was then imposed: a=n,Q<=25n,minimize H. Write q=D/2+u with u perpendicular to D; this is a quadratic on a ball. Numerical multiplier proposals are rationally repaired and checked exactly. All20 trials on ten Boolean supports in two spaces have H<0. No uniform theorem follows.
+
+An interval positive cone cannot give determinant root K>=2, yet q=4D_(2m)-7D_m yields (a,Q,H)=(2m,50m,-4m^2-26m), giving an unbounded signed benefit. A deterministic period-five P61 control matches two binary profiles with global weighted M<=3/4 and forces growing normalized fixed-coupling cost. Its nearest Boolean rounding is an arithmetic progression and fails with linear M. [Complete proofs, evidence and strategic review](notes/cstar_arbitrary_coupling_2026-10-20.md). Next: bound aggregate signed cross terms by Booleanity for arbitrary A. All jobs terminal on Dirichlet; no universal exponent gain or new model-exclusion programme. User-deferred consolidation/review/submission remain outside scope.
+
 ## 2026-10-20 — deterministic reference cutoff and profile matching
 
 The last conditional Cp^3 target was stronger than needed. Completion plus exact Sidon L4 gives the PAIRWISE bound H<=416p^3(3+2log p)^4 for any p-point cyclic Sidon actual/reference sets. Freeze the reference below (1+log X)^4, leaving actual A intact: the coupling loses only O(X^2 loglog X) out of n~X^2log X, while the left cubic becomes O(X^3). A congruence-lattice boundary argument additionally proves D(U)=sum1/ell^2<=4000000U^2(1+2log U), so the off-left cubic is O(X^2U^2 log U). At U=sqrt(X), H=o(n^(3/2)) and the fixed-A averaged positive moment matrix proves M>=sqrt(n)/16 for EVERY actual cyclic-Sidon assignment. No marginal or independence premise remains. [Complete proof and checks](notes/cstar_sidon_deterministic_2026-10-20.md).

@@ -2,6 +2,12 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## 2026-10-20 supplement: arbitrary-support fixed-coupling attempt
+
+Uniform adaptive a,Q,H remains OPEN. In any finite mean-zero trial space containing D_A, a=n iff q=D_A/2+u with u perpendicular to D_A; then Q=n/2+||u||^2 and H=<D_A^3>/4+<D_A^2,u>+<D_A,u^2>. This gives an exact finite ball-constrained quadratic, whose numerical solutions are proposals only. FINITE EXACT:20 reconstructed witnesses satisfy a=n,Q<=25n,H<0 on ten supports in two spaces. No arbitrary-support bound follows.
+
+PROVED elementary calibration: on A=[1,n], nonnegative selected-frequency q has H=2(sum c)^2-Q+2sum_(i+j<=n)c_i c_j, so its two-dimensional determinant root is below2. For n=2m, signed q=4D_(2m)-7D_m has a=2m,Q=50m,H=-4m^2-26m and M>=(n+13)/50. A period-five P61 weighted control rigorously defeats positivity/two-profile-only bounds on constrained H; nearest Boolean rounding becomes a progression with linear M. [Proofs and limitations](notes/cstar_arbitrary_coupling_2026-10-20.md). No novelty, universal or kernel-verification claim.
+
 ## P1. Fejér–Riesz reformulation (PROVED, standard)
 For finite A ⊂ N, M(A) = min ||q||_2^2 over finitely supported q: Z -> C with autocorrelation
 r_q(d) = sum_k q_{k+d} conj(q_k) = (1/2) 1_{±A}(d) for all d != 0.

@@ -1,5 +1,11 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-20 — arbitrary-support prefix spaces and fixed coupling
+
+[Definitions, controls and limitations](notes/cstar_arbitrary_coupling_2026-10-20.md). Data: `experiments/ordered_prefix_2026-10-20/`, results.json, extra.json, verification.json, coupling.json, coupling_verification.json. Run `src/dirun.sh -c 2 -m 8 -t 480 python src/cstar_ordered_prefix.py` (also --extra), cstar_ordered_prefix_verify.py, cstar_coupling_ball.py and cstar_coupling_ball_verify.py. Sparse seed20261023; other inputs explicit/saved. Both verifiers exited0/PASS; all jobs terminal.
+
+Fifty scalar Rayleigh witnesses cover19 Boolean sets and six weighted controls in two spaces. Twenty fixed-coupling witnesses independently have a=n,Q<=25n,H<0. Eight exact interval checks and three rational period-five control checks pass. Nearest binary controls are progressions with n7,14,28,max A35,70,140,M>7n/33 and trivial all-circle M<=n. Weighted controls are not Chowla sets. An extra-suite checkpoint TypeError from variable shadowing was repaired after confirmed termination; final data are checked. No numerical optimality, exact Gram-rank, universal theorem or exponent gain is asserted.
+
 ## 2026-10-20 — frozen references, profile mismatch and sharp ruling counts
 
 [Paper results and exact limitations](notes/cstar_sidon_deterministic_2026-10-20.md). Data: `experiments/sidon_cutoff_2026-10-20/`. All computations on Dirichlet. Sources `cstar_sidon_cutoff.py`/`_verify.py`, `cstar_cyclic_sidon_probe.py`, `cstar_sidon_profile_probe.py`/`_verify.py`, `cstar_sidon_partial.py`, `cstar_ruling_triples.py`, `cstar_ruling_count_verify.py`. Run via `src/dirun.sh -c 2 -m 8 -t 480 python src/<script>`; profile arc adds `--arc`, windowed construction adds `--window`. All jobs terminal.

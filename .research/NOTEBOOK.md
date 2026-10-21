@@ -1,5 +1,17 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — advisor target L25 explicitly indexed
+
+Recorded the existing advisor proposal in the original cosine normalization:
+for every nonempty Boolean positive-integer support A, M(A)<=sqrt(n) should
+force the normalized circle average <|f_A|>>=sqrt(n)/10. This is CONJECTURED;
+the constants are provisional and the GPU timing pilot supplies no test of
+it. [Canonical statement, exact quantifiers, elementary implication to
+M(A)>=sqrt(n)/20, and rigorous falsification standard](PROOFS.md#l25-low-ratio-l1-flatness-conjectured-2026-10-21).
+The equivalent D_A=2f_A statement and advisor's paper audit remain in the
+[review](notes/phd_advisor_review_2026-10-21.md). This is a documentation
+checkpoint; no new search, GPU job, or proof is claimed.
+
 ## 2026-10-20 — resumed arbitrary-support fixed-coupling attempt
 
 Built growing prefix/suffix autocorrelation spaces from arbitrary A. Fifty numerical Rayleigh proposals pass independent scalar checks, but the plateau exposed weakening coupling. The actual objective was then imposed: a=n,Q<=25n,minimize H. Write q=D/2+u with u perpendicular to D; this is a quadratic on a ball. Numerical multiplier proposals are rationally repaired and checked exactly. All20 trials on ten Boolean supports in two spaces have H<0. No uniform theorem follows.

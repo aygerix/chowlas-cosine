@@ -1,5 +1,15 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Recorded advisor target L25 (CONJECTURED, 2026-10-21)
+
+For every nonempty Boolean positive-integer support A, the proposed estimate
+M(A)<=sqrt(n) => (1/(2*pi))*integral_0^(2*pi)|f_A(x)|dx>=sqrt(n)/10 would imply
+M(A)>=sqrt(n)/20 universally. It is unproved; constants are provisional and
+the GPU timing pilot did not test it. [Canonical quantifiers, normalization,
+conditional proof and falsification standard](PROOFS.md#l25-low-ratio-l1-flatness-conjectured-2026-10-21);
+[advisor review](notes/phd_advisor_review_2026-10-21.md). This is a sufficient
+target for CHAIN(c), not an established equivalence with Chowla.
+
 ## User-directed priority override: arbitrary supports first
 
 The latest advisor discussion redirects the primary effort to the unrestricted Boolean inverse/mixed-certificate problem, starting with arbitrary A and the exact coefficient identity a_j^2=a_j. Use P31/P61/P63/P66 to identify the missing Boolean input; the density theorems do not themselves remove the density hypothesis. Target macroscopic coupling, O(n) witness norm and O(n^(3/2)) mixed cubic cost with absolute constants. Uniform selected-coefficient completion is already refuted by the Boolean forced-plateau family; allow variable interior coefficients and signed directions. Weighted escapes and genuine Boolean countercontrols are mandatory adversaries. This is the existing CHAIN(c) gap, not a new route or theorem.

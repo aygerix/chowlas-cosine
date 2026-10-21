@@ -2,6 +2,41 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## L25. Low-ratio L1 flatness (CONJECTURED, 2026-10-21)
+
+Canonical statement of the advisor's proposed unrestricted target. For EVERY
+finite nonempty set A of distinct positive integers, put n=|A|,
+f_A(x)=sum_{a in A} cos(ax), M(A)=-min_{x in R} f_A(x), and use the normalized
+circle average <g>=(1/(2*pi))*integral_0^(2*pi) g(x) dx. The conjecture is
+
+    M(A)<=sqrt(n)  ==>  <|f_A|> >= sqrt(n)/10.             L25
+
+Equivalently, with D_A=2f_A and K=2M(A), it says
+
+    K<=2*sqrt(n)  ==>  ||D_A||_1 >= sqrt(n)/5.
+
+STATUS: CONJECTURED and unproved. Constants 1 and 1/10 are provisional.
+There is no density, max-frequency, Sidon, or construction-family hypothesis.
+The GPU timing pilot did not test or establish this conjecture. The name L25
+comes from its connection to the beta=25 sign-witness norm budget, not a
+claim that 25 is optimal. See the [independent internal advisor review](notes/phd_advisor_review_2026-10-21.md#6-one-prioritized-post-pilot-mathematical-test).
+
+Conditional implication (PROVED, elementary): since <f_A>=0,
+
+    <|f_A|> = 2*<(f_A)_-> <= 2*M(A).
+
+Thus L25 would give M(A)>=sqrt(n)/20 when M(A)<=sqrt(n); the complementary
+case M(A)>sqrt(n) already satisfies that conclusion. A proof of L25 would
+therefore prove square-root Chowla for every A with absolute constant 1/20.
+The reverse implication from Chowla to L25 is not established.
+
+Falsification standard: exhibit a genuine Boolean set with a certified
+ALL-CIRCLE upper M(A)<=sqrt(n) and a certified upper <|f_A|><sqrt(n)/10.
+Sampled minima and sampled absolute averages are diagnostics only. A violation
+would refute L25's stated constants, without disproving Chowla or every
+possible low-ratio flatness constant. Weighted escape controls are outside
+the Boolean domain and must be labeled as such.
+
 ## 2026-10-20 supplement: arbitrary-support fixed-coupling attempt
 
 Uniform adaptive a,Q,H remains OPEN. In any finite mean-zero trial space containing D_A, a=n iff q=D_A/2+u with u perpendicular to D_A; then Q=n/2+||u||^2 and H=<D_A^3>/4+<D_A^2,u>+<D_A,u^2>. This gives an exact finite ball-constrained quadratic, whose numerical solutions are proposals only. FINITE EXACT:20 reconstructed witnesses satisfy a=n,Q<=25n,H<0 on ten supports in two spaces. No arbitrary-support bound follows.

@@ -1,5 +1,39 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Latest cycle: retire modulus surrogate; test changed Boolean construction
+
+Campaign PAUSED at the user's request; all jobs terminal and audits
+complete. This frontier is retained for a later explicit resume.
+
+The [phase audit](notes/advisor_phase_modulus_2026-10-21.md) proves the
+unrestricted normalized Hessian quotient is exactly min|lambda+F|,
+agreeing with the external review. Keeping the full sign term recovers
+odd Rayleigh; dropping it is a stronger modulus problem. The advisor's
+Joukowski estimate explicitly links qualitative L1 flatness to a
+root-scale modulus deficit, without proving the Boolean premise.
+Phase averages recover the existing real resolvent. Positive reciprocal
+carriers have bounded normalized amplitude and retain a flatness gap.
+
+The independent coordinated Boolean-projection construction pilot is
+complete. Its final arbitrary supports, n56 and306, have certified
+ratios about.642 and.651, respectively. Both strictly improve their
+particular unoptimized seeds and both are provably ABOVE.5. No record,
+asymptotic mechanism or GPU deployment follows; stop this pilot.
+All-circle Arb/Taylor bounds and separate exact n56 Sturm check PASS.
+
+The exceptional ZERO-carrier odd reciprocal has an unbounded possible
+normalized amplitude and is not covered by that retirement argument.
+Full signed energies, including the positive correction -T0/2, are
+negative on those same two supports. Exact residuals bound the infinite
+reciprocal, and an independent sparse product/formal inverse verifies
+the saved intervals. These are two finite successes, not a Boolean
+uniform theorem. A separate saved n337 coherent-prefix adversarial
+test remains negative and independently verified; no enlargement.
+The sign audit needs an UPPER bound on tau=-lambda*T0/[2(lambda²S-1)],
+while lowM alone only supplies a lower bound. No Boolean upper proved.
+[Current full derivation and decisions](notes/cstar_projection_phase_cycle_2026-10-21.md).
+All jobs terminal/PASS, no new spend. Full Chowla remains OPEN.
+
 ## Latest cycle: Boolean perturbations and full-space Rayleigh certification
 
 The [new advisor audit](notes/advisor_sqrt_boolean_2026-10-21.md) proves

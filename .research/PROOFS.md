@@ -2,6 +2,39 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Phase quotient and reciprocal audit (PROVED identities; Boolean estimates OPEN, 2026-10-21)
+
+For actual lowM and lambda=2sqrt(n), W=lambda+F, the infimum over
+all real-coefficient polynomial H, H(0)=0, of
+<|W|Im(H/W)²>/<Im(H/W)²> is EXACTLY min|W|. The substitution H=W P
+permits every sine polynomial and paired odd localization. The earlier
+conditional sufficient inequality is correct but supplies no independent
+route around modulus. The full identity includes the nonnegative phase
+deficit <(|W|-Re W)q²>; dropping it strengthens the needed conclusion.
+
+With m=min|W|, the nonnegative-real-part function W-m²/W proves
+
+    ||f||1<=2(lambda-m²/lambda)+(m/lambda)sqrt((lambda²-m²)/2).
+
+Thus qualitative L1 flatness implies a root modulus deficit, which
+implies Chowla. No equivalence with Chowla alone is established.
+Averaging reciprocal phases gives the existing real-resolvent leverage;
+high-carrier reciprocal norm gaps are equivalent to qualitative flatness.
+[Complete proof and scope audit](notes/advisor_phase_modulus_2026-10-21.md).
+
+For the exceptional zero carrier q0=Im p, p=1/W, S=<|p|²>,
+
+    Q0=(S-lambda^-2)/2,
+    H0=1/lambda-lambda S-T0/2,
+    T0=sum_A[z^a]p²<0.
+
+Indeed sum_A[z^a]p=-2< (Im F)²/|W|²>; differentiate in lambda.
+The correction -T0/2 is positive and must be retained. Its relative
+size is not bounded by a proved universal Boolean estimate. Two saved
+actual-lowM supports have rigorously negative full quotients, with
+independent exact-residual/formal-inverse checks. No universal sign or
+root rate follows from them. [Derivation and certification](notes/cstar_projection_phase_cycle_2026-10-21.md).
+
 ## Boolean square-root perturbations (PROVED local bounds; global gap OPEN, 2026-10-21)
 
 For lambda=2sqrt(n), actual M<=sqrt(n), put

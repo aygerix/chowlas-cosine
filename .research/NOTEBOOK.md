@@ -1,5 +1,53 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — phase quotient retirement, changed construction, zero-carrier test
+
+Subsequent status: user PAUSED the campaign. All jobs terminal; internal
+advisor audits complete. Checkpoint committed/pushed on explicit request;
+research is not resumed by that administrative action.
+
+Prior checkpoint b430687 PROGRESS in correction/conditional transfer,
+not a universal estimate. External review correctly identifies the
+unrestricted normalized phase-Hessian quotient with minimum modulus;
+the advisor independently proved the equality. Retire its independent
+route interpretation. A new paper Joukowski comparison makes explicit
+that qualitative L1 flatness implies a root modulus deficit; it does
+not prove Boolean flatness. Reciprocal phase averaging is the known
+real resolvent, and positive carriers retain an equivalent flatness gap.
+[Complete independent internal audit](notes/advisor_phase_modulus_2026-10-21.md).
+
+CHANGED CONSTRUCTION TEST: coordinated projection/reflection between
+sampled lower bounds and exact cardinality-n Boolean Fourier spectra,
+with arbitrary final supports within [1,X]. Four replicas/2000steps on
+two unoptimized Bu seeds. Certified final ratios are[.641353,.642277]
+(n56) and[.650394,.650696] (n306). Both improve those seeds, both are
+ABOVE.5, and both miss target.45. Separate exact Sturm verifies the
+first upper; all-grid Arb plus Taylor verifies both. No record/family
+claim and NO GPU follow-up. Stop enlarging this pilot.
+
+FOLLOW-UP DERIVATION: zero-carrier q0=Im(1/(lambda+F)) has denominator
+(S-lambda^-2)/2, so the bounded-amplitude argument for positive carriers
+does not apply. Its full energy has a POSITIVE correction -T0/2 with
+T0<0. Exact integer polynomial residuals enclose the infinite reciprocal
+moments on the same two supports; full normalized quotients are negative,
+about-.36 and-.30. Saved finite dyadic sine vectors have exact negative
+energies. A separate768-bit verifier reconstructs the residual by sparse
+shifts and T0 by formal analytic inversion; PASS. No successful-control
+sweep. A single structurally different saved n337 coherent-prefix
+adversarial test remains negative (about-.544sqrt(n)), independently
+verified. The advisor locates the missing upper bound on tau;
+T0<0 itself gives no negative-energy implication. Separated padding
+does not transfer prefix energy, because S and unshifted T0 retain
+pure high-block contributions. No sign falsifier or bound obtained.
+
+GLOBAL REVIEW: discontinue unrestricted phase/modulus reparameterizations
+and the failed construction pilot, preserve the full signed energy and
+the precise zero-carrier exception. Next progress must be a Boolean
+estimate or a falsifier followed by a changed mathematical mechanism,
+not additional controls or throughput. All final jobs terminal/PASS;
+no new GPU spend, cumulative$0.10. Full GOAL ACTIVE, Chowla OPEN.
+[Full cycle, formulas, data and reproduction](notes/cstar_projection_phase_cycle_2026-10-21.md).
+
 ## 2026-10-21 — dilation falsifies a naive reading of the energy exceptions
 
 Prior goal turn PROGRESS (a65a2ea). Proof-first audit of the next step:

@@ -1,5 +1,46 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-21 — coordinated Boolean projection and zero-carrier reciprocal
+
+Reproduce via src/dirun.sh with2cores/6GB:
+
+    python src/cstar_boolean_projection.py
+    python src/cstar_boolean_projection_verify.py
+    python src/cstar_zero_reciprocal.py
+    python src/cstar_zero_reciprocal_verify.py
+
+Time caps180seconds for projection/verification,150seconds for reciprocal.
+Data: experiments/boolean_projection_2026-10-21/{results,verification}.json
+and experiments/zero_reciprocal_2026-10-21/{results,verification}.json.
+All final jobs terminal/PASS; no GPU worker or spend.
+
+Projection search: n56/306, ambient X165/915,4replicas,2000iterations,
+seeds20261028/20261107, target9/20. Arbitrary final supports have actual
+max87/743 and exchange29/167 frequencies. Exact nearest-Boolean and
+difference-square fixed-point controls PASS. All-circle Arb/Taylor
+ratio intervals[.641353485,.642276974] and[.650394348,.650695123]
+strictly improve their PARTICULAR seeds but are provably ABOVE1/2.
+Not records or a scalable construction. No GPU follow-up justified.
+Independent256-bit point checks PASS; exact n56 Sturm chain88 confirms
+its upper. No n306 independent Sturm claim.
+
+Exceptional reciprocal: original lambda=2sqrt(n), band8maxA, dyadic
+denominator2^64. An exact integer residual bounds the infinite reciprocal
+in L2 from the known all-circle inverse margin. Full signed quotients
+are negative, roughly-.36sqrt(n),-.30sqrt(n). Separate768-bit sparse
+residual/formal-inverse verification PASS, including T0<0. Exact finite
+sine moments match selected correlation sums. These two successes do
+not prove a universal sign or rate and do not warrant a control sweep.
+The additional predeclared --prefix adversarial test uses the saved
+actual-lowM n337 occupied-prefix243 support; its quotient stays negative,
+about-.544sqrt(n), and the separate --prefix verifier PASSes. Saved
+{prefix,prefix_verification}.json, no size/parameter enlargement.
+An initial reciprocal assertion failed because one denominator step
+did not cover floating ulps in an OUTWARD proposal bound. Corrected
+8-ulp rational padding is explicitly checked by Arb; only the final
+PASS run supplies the saved bounds.
+[Complete math and decisions](notes/cstar_projection_phase_cycle_2026-10-21.md).
+
 ## 2026-10-21 — Boolean prefix and full real Rayleigh certification
 
 Reproduce on Dirichlet:

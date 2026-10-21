@@ -1,0 +1,23 @@
+{
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision": 768,
+  "cases": [
+    {
+      "label": "projection_n56",
+      "residual_rebuilt_by_sparse_shifts": true,
+      "T0_direct_formal_inverse_ball": "[-0.01126914203430263477475527845321316163878377970804509363781777053315000345717401593081002971115432158122820719242864997900024434242388434174425414682205852237420158844876002308255242141833026789197933851001165531518801591566150957 +/- 6.90e-231]",
+      "T0_negative": true,
+      "infinite_quotient_interval_independently_verified": true,
+      "finite_exact_odd_energy_verified": true
+    },
+    {
+      "label": "projection_n306",
+      "residual_rebuilt_by_sparse_shifts": true,
+      "T0_direct_formal_inverse_ball": "[-0.004070469712171811585150267451909296659719037660453814086351601885212006423259805062606437919933124320677682537765170585372035614602028532867719629846739450852247305599938317452152660930847581464976053401735718249830555728320 +/- 5.34e-226]",
+      "T0_negative": true,
+      "infinite_quotient_interval_independently_verified": true,
+      "finite_exact_odd_energy_verified": true
+    }
+  ],
+  "status": "PASS"
+}

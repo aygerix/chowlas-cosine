@@ -2,6 +2,53 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
+**Campaign PAUSED at the user's request.** All research jobs are terminal,
+no GPU worker is active, and the advisor's audits are complete. The
+frontier below is saved for a later explicit resume. The present
+commit/push request publishes this checkpoint and does not resume research.
+
+**READ FIRST — phase audit and construction checkpoint.** The unrestricted
+normalized phase-Hessian infimum is EXACTLY min|lambda+F|; its earlier
+interpretation as a new independent Rayleigh mechanism is retired.
+The external review and [internal audit](notes/advisor_phase_modulus_2026-10-21.md)
+agree. The full phase-deficit identity remains valid. The advisor proved
+an explicit L1-to-modulus comparison, while phase averaging recovers
+the old real resolvent and individual positive carriers retain a
+flatness requirement. No Boolean uniform bound follows.
+
+A genuinely changed construction pilot used coordinated Boolean
+projection/reflection, allowing arbitrary final supports within the
+ambient interval. All-circle certificates give ratios[.641353,.642277]
+at n56 and[.650394,.650696] at n306. Both improve their particular
+unoptimized Bu seeds, both remain provably ABOVE1/2 and miss the.45
+target. No record or asymptotic claim. Independent exact Sturm additionally
+checks the n56 upper; n306 uses Arb all-grid/Taylor. Stop this pilot;
+the go/no-go criterion gives NO GPU deployment.
+
+The zero-carrier odd reciprocal q=Im(1/(lambda+F)), unlike positive
+carriers, escapes the bounded normalized-amplitude argument. Its FULL
+signed energy is tested on those same two outputs: residual-certified
+infinite quotients are negative, about-.36sqrt(n) and-.30sqrt(n).
+The exact finite sine vectors and a separate sparse-residual/formal-inverse
+verifier PASS. A separate single adversarial saved n337 coherent-prefix
+test is also negative (about-.544sqrt(n)), with independent verification.
+No universal sign or rate is proved; the advisor's sign audit locates
+the unresolved bound on tau=-lambda*T0/[2(lambda²S-1)]: lowM proves
+tau>=1-M/lambda, whereas negative energy requires tau<1. Do not
+enlarge these tests. [Complete current cycle](notes/cstar_projection_phase_cycle_2026-10-21.md).
+All CPU jobs terminal; GPU cumulative spend remains$0.10, no worker.
+Full GOAL PAUSED; Chowla/L25/OP140 and the construction goal OPEN.
+
+**Next exact testable statement (UNPROVED, provisional R0):** at fixed
+lambda=2sqrt(n), EVERY Boolean actual-lowM support has
+tau<=1-1/400, equivalently H0/Q0<=-sqrt(n)/100. This would imply
+Chowla with c=1/200. The advisor's elementary Schur/Cauchy estimate
+handles only g=lambda²S-1>9/16 (a high-gap/flatness subcase); the
+small-g Boolean upper estimate is missing. Derive/refute that estimate;
+do not expand the three successful controls or shift lambda.
+
+### Previous pushed checkpoint
+
 **Current checkpoint, requested commit/push:** the next collective-energy
 test found an immediate symmetry obstruction. For A'=L*A, L>4maxA,
 M and G are unchanged, s=||F_A'-F_A||²=2n, but both mixed energies

@@ -1,0 +1,59 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "cases": [
+    {
+      "n": 56,
+      "X_actual": 87,
+      "frequencies_removed": 29,
+      "frequencies_added": 29,
+      "candidate_mod3_counts": [
+        20,
+        20,
+        16
+      ],
+      "seed_mod3_counts": [
+        28,
+        9,
+        19
+      ],
+      "actual_lowM_verified": true,
+      "R_lower_ball": "[0.6413534850845988160992620253269339239099436530001360400080278802202356215763 +/- 6.40e-77]",
+      "R_upper_ball": "[0.6422769733733847687177736684028389840102845608999158728545900047019617997420 +/- 4.80e-77]",
+      "point_lower_independently_checked": true,
+      "all_circle_Sturm_upper_verified": true,
+      "Sturm_chain_length": 88,
+      "all_circle_Arb_upper_from_producer": true,
+      "strict_seed_improvement_verified": true,
+      "below_half_constant": false,
+      "qualification": "Improves the specified seed; no global or repository record claim."
+    },
+    {
+      "n": 306,
+      "X_actual": 743,
+      "frequencies_removed": 167,
+      "frequencies_added": 167,
+      "candidate_mod3_counts": [
+        96,
+        106,
+        104
+      ],
+      "seed_mod3_counts": [
+        153,
+        71,
+        82
+      ],
+      "actual_lowM_verified": true,
+      "R_lower_ball": "[0.6503943481370947523602554964070475263344061887865880525398134865644847214408 +/- 4.20e-77]",
+      "R_upper_ball": "[0.6506951223043250620172167383741816978848694010182198471284740852953864971258 +/- 3.19e-77]",
+      "point_lower_independently_checked": true,
+      "all_circle_Sturm_upper_verified": false,
+      "Sturm_chain_length": null,
+      "all_circle_Arb_upper_from_producer": true,
+      "strict_seed_improvement_verified": true,
+      "below_half_constant": false,
+      "qualification": "Improves the specified seed; no global or repository record claim."
+    }
+  ],
+  "GPU_deployment_justified": false
+}

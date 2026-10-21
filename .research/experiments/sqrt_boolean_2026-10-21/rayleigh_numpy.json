@@ -1,0 +1,299 @@
+{
+  "status": "PASS",
+  "backend": "numpy",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "seed": 20261021,
+  "numpy_version": "2.5.4",
+  "backend_version": "2.5.4",
+  "actions": [
+    {
+      "A": [
+        1
+      ],
+      "band": 1,
+      "parity": "even",
+      "max_exact_energy_error": 0.0,
+      "max_action_error": 4.440892098500626e-16
+    },
+    {
+      "A": [
+        1
+      ],
+      "band": 1,
+      "parity": "odd",
+      "max_exact_energy_error": 0.0,
+      "max_action_error": 0.0
+    },
+    {
+      "A": [
+        2
+      ],
+      "band": 1,
+      "parity": "even",
+      "max_exact_energy_error": 8.881784197001252e-16,
+      "max_action_error": 4.440892098500626e-16
+    },
+    {
+      "A": [
+        2
+      ],
+      "band": 1,
+      "parity": "odd",
+      "max_exact_energy_error": 8.881784197001252e-16,
+      "max_action_error": 0.0
+    },
+    {
+      "A": [
+        1,
+        2
+      ],
+      "band": 8,
+      "parity": "even",
+      "max_exact_energy_error": 7.105427357601002e-15,
+      "max_action_error": 8.881784197001252e-16
+    },
+    {
+      "A": [
+        1,
+        2
+      ],
+      "band": 8,
+      "parity": "odd",
+      "max_exact_energy_error": 7.105427357601002e-15,
+      "max_action_error": 8.881784197001252e-16
+    },
+    {
+      "A": [
+        1,
+        3,
+        8
+      ],
+      "band": 17,
+      "parity": "even",
+      "max_exact_energy_error": 1.4210854715202004e-14,
+      "max_action_error": 1.7763568394002505e-15
+    },
+    {
+      "A": [
+        1,
+        3,
+        8
+      ],
+      "band": 17,
+      "parity": "odd",
+      "max_exact_energy_error": 8.881784197001252e-15,
+      "max_action_error": 2.6645352591003757e-15
+    },
+    {
+      "A": [
+        101
+      ],
+      "band": 2,
+      "parity": "even",
+      "max_exact_energy_error": 1.0691675905281631e-16,
+      "max_action_error": 4.801012252088476e-17
+    },
+    {
+      "A": [
+        101
+      ],
+      "band": 2,
+      "parity": "odd",
+      "max_exact_energy_error": 7.773999875415778e-17,
+      "max_action_error": 7.087707045522586e-17
+    }
+  ],
+  "kernels": [
+    {
+      "N": 1,
+      "exact_shift_bounds_verified": true
+    },
+    {
+      "N": 2,
+      "exact_shift_bounds_verified": true
+    },
+    {
+      "N": 4,
+      "exact_shift_bounds_verified": true
+    },
+    {
+      "N": 8,
+      "exact_shift_bounds_verified": true
+    }
+  ],
+  "global_caps": [
+    {
+      "A": [
+        1
+      ],
+      "band": 1,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "379625061/268435456",
+        "47453133/33554432"
+      ],
+      "global_error_upper": "2/3",
+      "certified_global_upper": "209468263/100663296",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1
+      ],
+      "band": 2,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "232471923/134217728",
+        "464943849/268435456"
+      ],
+      "global_error_upper": "6/19",
+      "certified_global_upper": "10444545867/5100273664",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1
+      ],
+      "band": 4,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "510594579/268435456",
+        "255297291/134217728"
+      ],
+      "global_error_upper": "2/17",
+      "certified_global_upper": "4608489403/2281701376",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1
+      ],
+      "band": 8,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "132178659/67108864",
+        "528714639/268435456"
+      ],
+      "global_error_upper": "6/163",
+      "certified_global_upper": "87791098893/43754979328",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1,
+        2
+      ],
+      "band": 1,
+      "K_global_exact": "9/4",
+      "K_band_bracket": [
+        "268435455/268435456",
+        "67108865/67108864"
+      ],
+      "global_error_upper": "10/3",
+      "certified_global_upper": "872415235/201326592",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1,
+        2
+      ],
+      "band": 2,
+      "K_global_exact": "9/4",
+      "K_band_bracket": [
+        "217168845/134217728",
+        "434337695/268435456"
+      ],
+      "global_error_upper": "30/19",
+      "certified_global_upper": "16305479885/5100273664",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1,
+        2
+      ],
+      "band": 4,
+      "K_global_exact": "9/4",
+      "K_band_bracket": [
+        "268435455/134217728",
+        "536870915/268435456"
+      ],
+      "global_error_upper": "10/17",
+      "certified_global_upper": "11811160115/4563402752",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        1,
+        2
+      ],
+      "band": 8,
+      "K_global_exact": "9/4",
+      "K_band_bracket": [
+        "144301205/67108864",
+        "577204825/268435456"
+      ],
+      "global_error_upper": "30/163",
+      "certified_global_upper": "102137450155/43754979328",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        101
+      ],
+      "band": 1,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "0",
+        "3/268435456"
+      ],
+      "global_error_upper": "20402/3",
+      "certified_global_upper": "5476620173321/805306368",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        101
+      ],
+      "band": 2,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "0",
+        "3/268435456"
+      ],
+      "global_error_upper": "61206/19",
+      "certified_global_upper": "16429860519993/5100273664",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        101
+      ],
+      "band": 4,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "0",
+        "3/268435456"
+      ],
+      "global_error_upper": "20402/17",
+      "certified_global_upper": "5476620173363/4563402752",
+      "exact_PSD_bisection": true
+    },
+    {
+      "A": [
+        101
+      ],
+      "band": 8,
+      "K_global_exact": "2",
+      "K_band_bracket": [
+        "0",
+        "3/268435456"
+      ],
+      "global_error_upper": "61206/163",
+      "certified_global_upper": "16429860520425/43754979328",
+      "exact_PSD_bisection": true
+    }
+  ],
+  "qualification": "Finite action/certification controls for a general approximation theorem; no new universal Chowla bound or GPU performance claim."
+}

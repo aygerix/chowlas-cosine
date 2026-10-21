@@ -1,6 +1,34 @@
 # CSTAR — THE problem. Read this first, every session.
 
-## Latest cycle: analytic square-root seed and its precise Boolean gap
+## Latest cycle: Boolean perturbations and full-space Rayleigh certification
+
+The [new advisor audit](notes/advisor_sqrt_boolean_2026-10-21.md) proves
+only a>=n/(1+n/(2lambda*c0)) from selected Hankel cancellation. It
+exposes all four earlier half-coupling tests as automatic calibrations.
+Pointwise occupied-coefficient lower bounds are FALSE even in actual
+lowM: long prefixes have v_j<=2sqrt(lambda/j), and elementary separated
+padding preserves b>>sqrt(n). A saved lowM n337 input has v243<1/2,
+but aggregate a/n>.634568965, beyond the automatic small-n branch.
+
+Deletion and single-exchange Hessian bounds are PROVED. If G=o(sqrt n),
+all but o(n) coefficient indices have small gradient; swapping between
+ordinary indices increases G. An actual fractional improvement theta
+requires at least theta²*G*sqrt(n)/4 replacements. The collective
+Hessian is also controlled when the signed fourth moment and both
+endpoint mixed energies are bounded as in the audit. Macroscopic
+nonincreasing moves from weak G must violate one of those explicit
+additive hypotheses. No Boolean flatness bound follows. Next examine
+these exceptional correlations, retaining coordinate cross terms.
+
+The direct Rayleigh branch now has an explicit all-circle error:
+0<=K-K_B<=6sum a²/[2(B+1)²+1] in the FULL real band. Constants and
+both parity sectors are essential. The new NumPy/CuPy interface passes
+10 independent CPU action checks and12 rational finite-PSD/global caps;
+no GPU run/performance claim. This is an approximation/certification
+theorem, not a universal negative direction, and does not assume L25.
+All jobs terminal, no new spend. Full Chowla remains open.
+
+## Previous cycle: analytic square-root seed and its precise Boolean gap
 
 For arbitrary A under ACTUAL M<=sqrt(n), let F=sum z^a, lambda=2sqrt(n),
 g=sqrt(lambda+F)-sqrt(lambda), q=2sqrt(lambda) Re g. The independent
@@ -21,7 +49,7 @@ An exact finite recurrence computes a using only coefficients through
 maxA; through2maxA-1 it constructs the rational/algebraic VP witness.
 Four exact Dirichlet tests PASS, including interlaced n16/31 supports
 and saved n50. Rational lambda=2ceil(sqrt(n)) is used in these finite
-tests. All four have a/n>1/2, but their achieved minimum lower bounds
+tests. All four have a/n>1/2 (now proved automatic at these sizes), but their achieved minimum lower bounds
 are weaker than existing best certificates. No universal coupling
 claim or additional GPU deployment follows. All jobs terminal; no new
 spend. Next: a new Boolean cancellation estimate for the selected

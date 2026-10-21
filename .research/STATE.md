@@ -2,7 +2,63 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
-**Latest continuation / read first:** an explicit analytic square-root
+**Latest continuation / read first:** PROGRESS in quantitative perturbation
+and certification, with no universal Chowla bound. The selected-coefficient
+recurrence gives only a>=n/(1+n/(2lambda*c0)), c0=1+1/sqrt(2).
+At lambda=2sqrt(n) this is order sqrt(n), not order n. It also proves
+that ALL FOUR earlier >half-coupling tests were automatic at their
+rounded lambda and sizes; they are calibration, not discriminating
+evidence. [New complete internal advisor audit](notes/advisor_sqrt_boolean_2026-10-21.md).
+
+A stronger pointwise proposal is FALSE: on an occupied prefix [1,b],
+0<v_j<=min(1,2sqrt(lambda/j)). Existing Boolean forced prefixes, padded
+by a highly dilated no-carry difference block, satisfy ACTUAL lowM yet
+v_b->0. Aggregate coupling is not refuted. On the saved n337 input,
+already globally lowM, independent256-bit formulae certify
+v243=.4210680121...<1/2 while aggregate a/n=.6345689651...>1/2.
+This aggregate test is beyond the automatic n<=46 branch.
+
+**New quantitative necessary condition:** the analytic-root energy
+G=<|lambda+F|>-lambda has uniformly positive curvature along deletion
+and single-frequency exchange directions. Under hypothetical G=o(sqrt n),
+all but o(n) Fourier indices have small gradient; exchanges avoiding
+those indices INCREASE G. A fractional improvement theta requires
+replacing at least theta²*G*sqrt(n)/4 frequencies. Thus a greedy
+one-frequency/minimal-deletion proof supplies no contradiction.
+These lemmas do not prove that a weak-G Boolean set exists or is impossible.
+
+**Substantive pivot:** retain direct negative-Rayleigh certification
+without the stronger L1-flatness requirement. For the FULL real space
+of degree B (constant, cosine AND sine), K_B=-lambda_min(T_D) satisfies
+
+    0<=K-K_B<=6 sum_(a in A)a²/[2(B+1)²+1].
+
+This advisor-checked Fejer-square theorem turns a certified finite PSD
+cap into an ALL-CIRCLE upper bound as well as capturing any actual
+square-root dip at B=O(maxA*n^1/4). It does not force such a dip.
+src/cstar_full_rayleigh.py includes both parity actions with a NumPy/CuPy
+interface. Ten CPU FFT actions match independent matrices and exact
+Laurent moments; four kernel controls and twelve rational PSD/global
+caps PASS. CuPy execution is not tested in this continuation. No GPU
+deployment or spending was needed. All CPU jobs terminal/PASS.
+
+**Collective extension / next concrete gap:** the weighted phase Hessian
+bound is now PROVED when H=F_A'-F_A, s=2m, ||H||4^4<=L*s² and both
+mixed energies ||H F_A||²,||H F_A'||²<=n*s. With
+c_L=1/[16(2+16sqrt(L))³], any nonincreasing move has
+m<=4G*sqrt(n)/c_L². A macroscopic descent from weak G must therefore
+have unbounded signed fourth moment or excess mixed energy. These
+are exact integer additive counts, not phase-grid statistics.
+Next determine whether those exceptional correlations can reduce G
+while preserving lowM, or instead produce a direct negative-Rayleigh
+certificate. Do not assume coordinate curvature sums across directions
+or enlarge successful calibration sweeps.
+Use full-space Rayleigh/PSD certificates when testing actual M, rather
+than identifying a failed flatness seed with a Chowla counterexample.
+Independent all-circle construction remains active and unresolved.
+Full Chowla OPEN, GOAL ACTIVE; cumulative new-budget GPU spend$0.10.
+
+**Previous continuation:** an explicit analytic square-root
 signed witness now has advisor-checked, arbitrary-support norm and mixed
 cost bounds under ACTUAL M<=sqrt(n). With F=sum z^a, lambda=2sqrt(n),
 g=sqrt(lambda+F)-sqrt(lambda), q=2sqrt(lambda) Re g, G=<|g|²>,
@@ -29,7 +85,8 @@ are not excluded by that proof.
 Dirichlet src/cstar_analytic_sqrt.py exited0/PASS on singleton, two
 interlaced disjoint-difference unions n16/31 with mixed additive triples,
 and saved n50. These exact rational tests use lambda=2ceil(sqrt(n));
-all four have a/n>1/2. Independent sparse and FLINT square products
+all four have a/n>1/2, now proved automatic at these sizes and rounded
+lambda values. Independent sparse and FLINT square products
 agree. The resulting finite lower certificates are weaker than existing
 best certificates; do not infer improvement or expand a successful
 control sweep. Data: experiments/analytic_sqrt_2026-10-21/results.json.

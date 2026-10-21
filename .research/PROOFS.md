@@ -2,6 +2,67 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Boolean square-root perturbations (PROVED local bounds; global gap OPEN, 2026-10-21)
+
+For lambda=2sqrt(n), actual M<=sqrt(n), put
+G=<|lambda+F_A|>-lambda and c0=1+1/sqrt(2). The selected Hankel
+matrix row bound gives a>=n/(1+n/(2lambda*c0)), only order sqrt(n).
+It guarantees a/n>1/2 for n<=46. All four previous rounded-lambda
+tests also satisfy its automatic half-coupling branch.
+
+On a fully occupied prefix [1,b], 0<v_j<=min(1,2sqrt(lambda/j)).
+The forced-prefix family plus elementary no-carry difference padding
+refutes EVERY fixed pointwise positive lower bound under actual lowM.
+It does not refute aggregate coupling; a saved lowM n337 input has
+v243<1/2 but a/n>.634568965, both certified at256-bit Arb.
+
+Writing d_j=partial_j G, Parseval gives sum_(j>=1)d_j²<=4G/lambda.
+Every unit deletion has second derivative>=1/(3456sqrt(n)) for n>=4.
+Every occupied/unoccupied unit exchange has the SAME bound for n>=9;
+the proof uses nonnegative autocorrelations of the interpolated coefficients.
+Consequently, under G=o(sqrt n), all but o(n) coefficient indices avoid
+|d_j|>1/(27648sqrt n), and a swap avoiding the exceptions INCREASES G
+by at least1/(13824sqrt n). Swapped sets need not remain lowM; this
+holds in the larger well-defined neighborhood and for feasible swaps.
+Any same-cardinality fractional improvement G(A')<=(1-theta)G(A)
+requires m>=theta²*lambda*G/8 replaced frequencies. These are necessary
+conditions and an obstruction to a greedy proof, not a flatness theorem.
+[Full derivations and independent internal review](notes/advisor_sqrt_boolean_2026-10-21.md).
+
+For a collective exchange between two ACTUAL lowM n-element sets, put
+H=F_A'-F_A, s=||H||2²=2m. If ||H||4^4<=L*s² and BOTH
+||H F_A||2²,||H F_A'||2²<=n*s, L>=1, then with
+c_L=1/[16(2+16sqrt(L))³],
+
+    G(A')-G(A)>=c_L*m/sqrt(n)-sqrt(8mG(A)/lambda).
+
+Thus any nonincreasing such move has m<=4G(A)*sqrt(n)/c_L².
+Together with the lower change-size condition, this restricts ordinary
+fractional improvements to the G*sqrt(n) scale, up to the displayed
+constants. A macroscopic descent from G=o(sqrt n) must have divergent
+signed fourth moment or excess mixed energy. These hypotheses are
+exact finite signed additive counts. No improving move is asserted.
+
+## Full real Rayleigh band approximates the global minimum (PROVED, 2026-10-21)
+
+Let K=-min D=2M and K_B=-inf <Dq²>/<q²> over ALL nonzero real
+trigonometric polynomials of degree<=B, including constants and both
+cosine/sine sectors. For EVERY Boolean A, without lowM assumptions,
+
+    0<=K-K_B<=6sum_(a in A)a²/[2(B+1)²+1]
+              <=3n(max A)²/(B+1)².
+
+Proof: take a translated Fejer_(B+1) as q at a global minimum. Its
+normalized square multiplier kappa_a has 1-kappa_a<=3a²/[2(B+1)²+1],
+by the l2 translation telescoping inequality on triangular coefficients.
+A certified finite PSD cap plus this error is a global UPPER K;
+a negative Rayleigh witness alone only gives a LOWER K. Any actual
+K>=c sqrt(n) is captured at half that scale when
+B+1>=sqrt(6/c)*maxA*n^(1/4). No such dip is forced by this theorem.
+The full real FFT action, separate even/odd matrices, rational small
+PSD caps and exact translation coefficients pass Dirichlet checks.
+[Proof and normalization audit](notes/advisor_sqrt_boolean_2026-10-21.md).
+
 ## Analytic square-root signed witness (PROVED bounds; coupling OPEN, 2026-10-21)
 
 For EVERY finite nonempty Boolean A with ACTUAL M<=sqrt(n), let

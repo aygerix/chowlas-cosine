@@ -1,5 +1,40 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-21 — Boolean prefix and full real Rayleigh certification
+
+Reproduce on Dirichlet:
+
+```
+src/dirun.sh -c 2 -m 4 -t 90 python src/cstar_sqrt_prefix.py
+src/dirun.sh -c 2 -m 4 -t 120 python src/cstar_full_rayleigh.py
+```
+
+Data: experiments/sqrt_boolean_2026-10-21/{prefix,rayleigh_numpy}.json.
+Final runs exited0/PASS; all jobs terminal, no GPU work/spend. A first
+prefix assertion below1/4 failed; the corrected threshold below1/2
+is what the saved ball proves. No failed assertion was presented as evidence.
+
+One SAVED actual-lowM n337 input has occupied prefix243. At original
+lambda=2sqrt(337), a positive derivative generating function and a
+separate formal recurrence agree at256-bit Arb. v243=.421068012199...
+<1/2, prefix coupling148.05601759..., total a/n=.634568965197...>1/2.
+The global M upper is REUSED from its earlier Arb all-circle certificate,
+checked algebraically below sqrt337; global quadrature is not rerun.
+The aggregate test is outside the automatic n<=46 branch. It is one
+finite separation of pointwise and aggregate assertions, not a proof
+of uniform aggregate coupling. The infinite pointwise failure is paper.
+
+Seed20261021: ten NumPy even/odd full-band actions agree with exact
+Laurent rational energies and independent Toeplitz +/- Hankel matrices,
+including the constant row and a wide sparse padding control. Four
+exact triangular coefficient tests verify every shift through2N+2.
+Twelve finite Toeplitz PSD bounds are bisected with rational Schur
+elimination for bands1,2,4,8 on A={1},{1,2},{101}; analytic global K
+values2,9/4,2 lie below finite caps plus the proved error. Floating
+actions are implementation checks; rational PSD caps and the paper
+error are the global certificates. No universal eigenvalue estimate,
+CuPy execution or GPU speed claim is established.
+
 ## 2026-10-21 — exact finite analytic square-root witnesses
 
 Reproduce: `src/dirun.sh -c 2 -m 6 -t 180 python src/cstar_analytic_sqrt.py`.
@@ -27,7 +62,9 @@ The two interlaced controls have exact disjoint positive-difference
 supports, overlapping frequency ranges and mixed additive triangles.
 Their lowM hypotheses follow from two difference-square identities;
 the saved n50 global upper reuses its prior exact Sturm certificate.
-All four meet the TESTED half-coupling threshold. Neither that threshold
+All four meet the half-coupling threshold, now proved AUTOMATIC by
+a>=n/(1+n/(2lambda*c0)) at these sizes and rounded lambda values.
+They are calibration rather than discriminating large-n evidence. Neither that threshold
 nor any positive uniform coupling is proved universally. The finite
 minimum certificates here are weaker than prior best certificates.
 Weighted Fejer failure and the higher-power obstruction are separate

@@ -1,5 +1,52 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — pointwise recurrence fails; local stability; direct Rayleigh pivot
+
+Previous goal turn PROGRESS (9704e40). This turn obtains quantitative
+perturbation bounds and a new global certification error, not a universal
+Chowla bound. [Complete internal advisor review and proofs](notes/advisor_sqrt_boolean_2026-10-21.md).
+
+Selected Hankel cancellation only gives a>=n/(1+n/(2lambda*c0)). It
+also exposes ALL FOUR previous >half coupling tests as automatic at
+their sizes; they are calibration, not evidence for the difficult
+large-n estimate. Corrected the operational record accordingly.
+
+The pointwise repair v_a>=c>0 is FALSE even in actual lowM. An occupied
+prefix has 0<v_j<=min(1,2sqrt(lambda/j)); forced-prefix Boolean sets can
+be padded with highly dilated no-carry differences to achieve lowM
+while retaining b>>sqrt(n). One saved n337 input already needs no
+padding: two independent256-bit coefficient formulae give v243=.421068...
+but the full aggregate a/n=.634568965...>1/2. This latter input is
+beyond the automatic n<=46 branch. No trend enlargement is justified.
+
+An independently audited local derivation shows every single deletion
+and exchange has positive G-curvature of order1/sqrt(n). Parseval
+then shows a hypothetical weak-G support is stable under almost all
+single exchanges. Fractional improvement theta requires replacing at
+least theta²*G*sqrt(n)/4 frequencies. A minimal-deletion or greedy
+exchange contradiction therefore fails; coordinate curvature cannot
+be summed while discarding cross terms. No weak-G Boolean set is found.
+
+PIVOT: retain direct negative-Rayleigh without assuming L1 flatness.
+Proved 0<=K-K_B<=6sum a²/[2(B+1)²+1] for the FULL real band.
+src/cstar_full_rayleigh.py includes the constant and both parity
+sectors in orthonormal coordinates. Ten CPU FFT actions, four exact
+Fejer coefficient controls and twelve rational PSD/global caps PASS.
+This provides ALL-CIRCLE upper certificates from finite PSD bounds,
+as well as a band sufficing to recover any actual root-scale dip.
+It is not a universal eigenvalue bound. CuPy is supported but not run.
+
+The collective weighted phase Hessian bound has also been proved and
+independently checked: bounded signed fourth moment and both mixed
+energies<=n*||H||2² prevent macroscopic nonincreasing exchanges when
+G=o(sqrt n). Exact constants are in the advisor note. Next investigate
+the exceptional high-energy correlations, rather than assume all
+collective directions inherit single-coordinate curvature.
+Stop treating local exchange success or the
+four small half-coupling calibrations as evidence for full Chowla.
+Keep the independent all-circle construction track. All jobs terminal;
+no GPU deployment/spend, cumulative$0.10, GOAL active, Chowla open.
+
 ## 2026-10-21 — analytic square-root seed: automatic cost, unresolved Boolean coupling
 
 Changed mechanism after the separated-block closure: use the analytic

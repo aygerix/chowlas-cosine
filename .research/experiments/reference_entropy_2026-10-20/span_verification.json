@@ -1,0 +1,193 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "certificates": [
+    {
+      "label": "prefix",
+      "grid": 7,
+      "exact_form": -46612153594347,
+      "global_M_lower": "5/4",
+      "strict": true,
+      "independent_scalar_square": true
+    },
+    {
+      "label": "prefix",
+      "grid": 9,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "544/5",
+        "10467/136",
+        "828212/10467",
+        "3405141/207053",
+        "76232896/3405141",
+        "401900547/19058224",
+        "4855884056/401900547",
+        "1801405598/606985507",
+        "17492319504/900702799"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "prefix",
+      "grid": 10,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "544/5",
+        "1346/17",
+        "100145/2692",
+        "3184448/100145",
+        "1263772/49757"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "quadratic_arc",
+      "grid": 7,
+      "exact_form": -3820258789567,
+      "global_M_lower": "5/4",
+      "strict": true,
+      "independent_scalar_square": true
+    },
+    {
+      "label": "quadratic_arc",
+      "grid": 9,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "584/5",
+        "3628/73",
+        "37771/907"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "quadratic_arc",
+      "grid": 10,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "584/5",
+        "3628/73",
+        "37771/907"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "random",
+      "grid": 7,
+      "exact_form": -9797265628527,
+      "global_M_lower": "5/4",
+      "strict": true,
+      "independent_scalar_square": true
+    },
+    {
+      "label": "random",
+      "grid": 9,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "624/5",
+        "11731/156",
+        "398448/11731",
+        "2119121/24903",
+        "58370248/2119121",
+        "193676362/7296281"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "random",
+      "grid": 10,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "624/5"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "spread",
+      "grid": 7,
+      "exact_form": -47999218751724,
+      "global_M_lower": "5/4",
+      "strict": true,
+      "independent_scalar_square": true
+    },
+    {
+      "label": "spread",
+      "grid": 9,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "624/5",
+        "1207/12",
+        "34856/1207",
+        "3240988/56641",
+        "24613820/810247",
+        "67296723/1230691",
+        "1697507613/112161205",
+        "508146992/33284463",
+        "108788818473/2159624716",
+        "1058449094144/108788818473"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "spread",
+      "grid": 10,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "624/5",
+        "1605/13"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "endpoint",
+      "grid": 7,
+      "exact_form": -44635233281023,
+      "global_M_lower": "5/4",
+      "strict": true,
+      "independent_scalar_square": true
+    },
+    {
+      "label": "endpoint",
+      "grid": 9,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "744/5",
+        "8480/93",
+        "86327/2120",
+        "3857832/86327",
+        "50694121/964458"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    },
+    {
+      "label": "endpoint",
+      "grid": 10,
+      "exact_PSD_at_K_target": true,
+      "rational_positive_pivots": [
+        "5",
+        "544/5",
+        "1110/17"
+      ],
+      "global_M_target": "5/4",
+      "qualification": "PSD excludes a strict negative-form certificate at this target in the complete enumerated signed span only."
+    }
+  ],
+  "qualification": "Negative scalar forms certify lower bounds; rational PSD checks exclude strict negative forms at the target only in the complete stated finite spans."
+}

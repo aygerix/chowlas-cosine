@@ -1,0 +1,419 @@
+{
+  "qualification": "Finite reference optimization; no global optimality claim without separate exhaustive verification.",
+  "cases": [
+    {
+      "p": 11,
+      "grid": 3,
+      "label": "prefix",
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "k": 5,
+      "n": 10,
+      "candidates": 60,
+      "frequencies": 129,
+      "quadratic_terms": 855,
+      "K_target": "5/2",
+      "solver_status": 2,
+      "solver_bound_float": 240.0,
+      "solver_optimality_independently_verified": false,
+      "reference_points": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          3,
+          7
+        ],
+        [
+          6,
+          7
+        ]
+      ],
+      "a": 20,
+      "Q": 40,
+      "H": 12,
+      "H_over_k3": 0.096,
+      "integer_difference_overlap": 0,
+      "global_M_lower": "7539583/5000000",
+      "global_M_upper": "5/2",
+      "front_diagnostic_float": 0.24634532509497453,
+      "margin_twice": 240,
+      "target_certified": true,
+      "baseline_best_M_lower": "119392821/100000000"
+    },
+    {
+      "p": 11,
+      "grid": 7,
+      "label": "prefix",
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "k": 5,
+      "n": 10,
+      "candidates": 12,
+      "frequencies": 37,
+      "quadratic_terms": 163,
+      "K_target": "5/2",
+      "solver_status": 2,
+      "solver_bound_float": -72.0,
+      "solver_optimality_independently_verified": false,
+      "reference_points": [
+        [
+          0,
+          1
+        ],
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "a": 18,
+      "Q": 36,
+      "H": 54,
+      "H_over_k3": 0.432,
+      "integer_difference_overlap": 1,
+      "global_M_lower": "234232919/200000000",
+      "global_M_upper": "5/2",
+      "front_diagnostic_float": 0.10300250732832758,
+      "margin_twice": -72,
+      "target_certified": false,
+      "baseline_best_M_lower": "115035773/100000000"
+    },
+    {
+      "p": 11,
+      "grid": 3,
+      "label": "random",
+      "actual_points": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "k": 5,
+      "n": 10,
+      "candidates": 72,
+      "frequencies": 141,
+      "quadratic_terms": 981,
+      "K_target": "5/2",
+      "solver_status": 9,
+      "solver_bound_float": 240.0,
+      "solver_optimality_independently_verified": false,
+      "reference_points": [
+        [
+          0,
+          7
+        ],
+        [
+          6,
+          2
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          10,
+          3
+        ],
+        [
+          10,
+          6
+        ]
+      ],
+      "a": 16,
+      "Q": 32,
+      "H": -12,
+      "H_over_k3": -0.096,
+      "integer_difference_overlap": 2,
+      "global_M_lower": "302213509/200000000",
+      "global_M_upper": "5/2",
+      "front_diagnostic_float": 0.18855343907853647,
+      "margin_twice": 172,
+      "target_certified": true,
+      "baseline_best_M_lower": "189026459/200000000"
+    },
+    {
+      "p": 11,
+      "grid": 7,
+      "label": "random",
+      "actual_points": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "k": 5,
+      "n": 10,
+      "candidates": 12,
+      "frequencies": 42,
+      "quadratic_terms": 169,
+      "K_target": "5/2",
+      "solver_status": 2,
+      "solver_bound_float": -272.0,
+      "solver_optimality_independently_verified": false,
+      "reference_points": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          8,
+          4
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "a": 8,
+      "Q": 16,
+      "H": 40,
+      "H_over_k3": 0.32,
+      "integer_difference_overlap": 6,
+      "global_M_lower": "55424763/100000000",
+      "global_M_upper": "5/2",
+      "front_diagnostic_float": 0.06941392412407382,
+      "margin_twice": -272,
+      "target_certified": false,
+      "baseline_best_M_lower": "176517157/200000000"
+    },
+    {
+      "p": 11,
+      "grid": 3,
+      "label": "endpoint",
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "k": 5,
+      "n": 10,
+      "candidates": 53,
+      "frequencies": 169,
+      "quadratic_terms": 1028,
+      "K_target": "5/2",
+      "solver_status": 2,
+      "solver_bound_float": 60.0,
+      "solver_optimality_independently_verified": false,
+      "reference_points": [
+        [
+          1,
+          3
+        ],
+        [
+          1,
+          8
+        ],
+        [
+          2,
+          3
+        ],
+        [
+          7,
+          4
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "a": 20,
+      "Q": 40,
+      "H": 48,
+      "H_over_k3": 0.384,
+      "integer_difference_overlap": 0,
+      "global_M_lower": "8183423/6250000",
+      "global_M_upper": "5/2",
+      "front_diagnostic_float": 0.3324767518690965,
+      "margin_twice": 60,
+      "target_certified": true,
+      "baseline_best_M_lower": "6819709/6250000"
+    },
+    {
+      "p": 11,
+      "grid": 7,
+      "label": "endpoint",
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "k": 5,
+      "n": 10,
+      "candidates": 14,
+      "frequencies": 48,
+      "quadratic_terms": 172,
+      "K_target": "5/2",
+      "solver_status": 2,
+      "solver_bound_float": -138.0,
+      "solver_optimality_independently_verified": false,
+      "reference_points": [
+        [
+          1,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          8
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "a": 14,
+      "Q": 28,
+      "H": 36,
+      "H_over_k3": 0.288,
+      "integer_difference_overlap": 3,
+      "global_M_lower": "41597481/40000000",
+      "global_M_upper": "5/2",
+      "front_diagnostic_float": 0.0839740372557247,
+      "margin_twice": -138,
+      "target_certified": false,
+      "baseline_best_M_lower": "5375919/5000000"
+    }
+  ]
+}

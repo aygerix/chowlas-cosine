@@ -1,5 +1,9 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Paused handoff: reference entropy and signed spans, 2026-10-20
+
+User paused the goal and requested progress, then requested a remote push. Latest work is recorded in [reference entropy note](notes/cstar_reference_entropy_2026-10-20.md): a paper p^4 counterfamily refutes automatic cubic-cost control from fixed3x3 counts plus maximum turnover;87 independent scalar witnesses and30 complete p11 reference frontiers pass. Signed combinations recover M>5/4 in all five g7 classes although every single reference misses that target. Independent scalar squares verify all five negative forms; exact rational Schur complements prove PSD at the same target in all ten g9/g10 spans. Final verifier exited0, PASS, five negative forms and ten PSD tests. All jobs from this pass are terminal. Full Chowla is OPEN. Sources/data/note and ROUTES rows accompany this checkpoint. Broader index integration is unfinished. Resume from this note, not the older first-next-test below.
+
 ## Active continuation: deterministic Sidon fibers and window matching
 
 **Full Chowla remains OPEN; goal active. Previous turn classified as progress.** The announced conditional estimate was attacked and a weaker PAIRWISE bound was proved: H(P,P')<=416p^3(3+2log p)^4 for any two p-point cyclic Sidon sets in the p-box. A reference frozen on the shortest directions retains1-o(1) of the coupling while removing their large cubic cost. Thus the sharp Cp^3 conditional bound remains open but is NO LONGER a required gap in this architecture. The actual support is unchanged.

@@ -1,0 +1,4304 @@
+{
+  "qualification": "Exact finite Boolean references and mixed certificates; no all-input theorem from MIP success, and no exact infeasibility claim without a separate enumeration.",
+  "seed": 20261104,
+  "cases": [
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 3,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "0,1": 1,
+        "0,2": 1,
+        "1,1": 1
+      },
+      "candidates": 60,
+      "pair_variables": 1770,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 84,
+          "H_over_k3": 0.672,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "228204139/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.14261582890651192,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              7
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              5,
+              5
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -4.2787931597871506e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 106,
+          "H_over_k3": 0.848,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "210364767/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.07727313971963631,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              9
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              6
+            ],
+            [
+              4,
+              7
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -4.19090117474195e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 72,
+          "H_over_k3": 0.576,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "119392821/100000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.20201786293544635,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              7
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              6,
+              6
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -4.110851984252348e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "119392821/100000000",
+      "best_ratio_lower": 0.3775532506327821,
+      "label": "prefix"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 5,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "0,1": 1,
+        "1,2": 1,
+        "1,4": 1
+      },
+      "candidates": 23,
+      "pair_variables": 253,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 96,
+          "H_over_k3": 0.768,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "6819709/6250000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.1106261810048278,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              3
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -2.374768587041139e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 78,
+          "H_over_k3": 0.624,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "233417283/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.03075227845798217,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -2.1988773106306326e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 104,
+          "H_over_k3": 0.832,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "211906417/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.10900551525792569,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              10
+            ],
+            [
+              4,
+              5
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -2.2324099304807556e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "233417283/200000000",
+      "best_ratio_lower": 0.3690651297640502,
+      "label": "prefix"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 7,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "1,2": 1,
+        "1,5": 1,
+        "2,3": 1
+      },
+      "candidates": 12,
+      "pair_variables": 66,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 18,
+          "Q": 36,
+          "H": 66,
+          "H_over_k3": 0.528,
+          "integer_difference_overlap": 1,
+          "global_M_lower": "222025501/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.09116119482783197,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": 1.0000164878750155
+        },
+        {
+          "a": 18,
+          "Q": 36,
+          "H": 86,
+          "H_over_k3": 0.688,
+          "integer_difference_overlap": 1,
+          "global_M_lower": "8138381/8000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.08233596178410252,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": 0.9999786792148553
+        },
+        {
+          "a": 18,
+          "Q": 36,
+          "H": 58,
+          "H_over_k3": 0.464,
+          "integer_difference_overlap": 1,
+          "global_M_lower": "115035773/100000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.10659942503632962,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              4,
+              6
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": 0.999983613383234
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "115035773/100000000",
+      "best_ratio_lower": 0.3637750550781008,
+      "label": "prefix"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 3,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        5,
+        6,
+        10
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "1,0": 2,
+        "2,0": 1
+      },
+      "candidates": 44,
+      "pair_variables": 946,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 94,
+          "H_over_k3": 0.752,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "219851817/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.4944684052877065,
+          "points": [
+            [
+              0,
+              3
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              9,
+              1
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -3.658502393533692e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 116,
+          "H_over_k3": 0.928,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "202886473/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.25681367294390706,
+          "points": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              9,
+              2
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -4.1979747303949556e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 100,
+          "H_over_k3": 0.8,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "5375919/5000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.34819833023691943,
+          "points": [
+            [
+              1,
+              1
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              7,
+              2
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -4.139130370484215e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "219851817/200000000",
+      "best_ratio_lower": 0.3476162447232633,
+      "label": "quadratic_arc"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 5,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        5,
+        6,
+        10
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "2,1": 2,
+        "4,0": 1
+      },
+      "candidates": 19,
+      "pair_variables": 171,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 84,
+          "H_over_k3": 0.672,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "228204139/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.12816987279717768,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -1.3242096168211408e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 76,
+          "H_over_k3": 0.608,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "235189337/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.252348102945807,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              9,
+              0
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -1.5962546239758843e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 92,
+          "H_over_k3": 0.736,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "8859569/8000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.09574860750027192,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              9,
+              1
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -1.4617310195977002e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "235189337/200000000",
+      "best_ratio_lower": 0.3718669931524562,
+      "label": "quadratic_arc"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 7,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        5,
+        6,
+        10
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "3,1": 2,
+        "6,0": 1
+      },
+      "candidates": 10,
+      "pair_variables": 45,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 14,
+          "Q": 28,
+          "H": 76,
+          "H_over_k3": 0.608,
+          "integer_difference_overlap": 3,
+          "global_M_lower": "161637973/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.05060059560325527,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": 3.000008372189474
+        },
+        {
+          "a": 14,
+          "Q": 28,
+          "H": 40,
+          "H_over_k3": 0.32,
+          "integer_difference_overlap": 3,
+          "global_M_lower": "101309471/100000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.05069263336185699,
+          "points": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": 2.99997421308732
+        },
+        {
+          "a": 14,
+          "Q": 28,
+          "H": 64,
+          "H_over_k3": 0.512,
+          "integer_difference_overlap": 3,
+          "global_M_lower": "86958863/100000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.04761275272686049,
+          "points": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": 2.99998575759561
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "101309471/100000000",
+      "best_ratio_lower": 0.3203686769067763,
+      "label": "quadratic_arc"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 3,
+      "n": 10,
+      "actual_t_indices": [
+        2,
+        5,
+        7,
+        9,
+        10
+      ],
+      "actual_points": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,1": 1,
+        "1,0": 1,
+        "1,1": 1,
+        "2,0": 1,
+        "2,1": 1
+      },
+      "candidates": 72,
+      "pair_variables": 2556,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 136,
+          "H_over_k3": 1.088,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "189026459/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.22944456060182314,
+          "points": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              4
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              9,
+              2
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -4.02552075091474e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 152,
+          "H_over_k3": 1.216,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "44729333/50000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.1393266561768897,
+          "points": [
+            [
+              2,
+              5
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              7,
+              5
+            ],
+            [
+              9,
+              2
+            ],
+            [
+              9,
+              6
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -4.5485328200858555e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 164,
+          "H_over_k3": 1.312,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "171862041/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.10364362324124102,
+          "points": [
+            [
+              0,
+              7
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              9,
+              3
+            ],
+            [
+              9,
+              5
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -4.08518662971392e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "189026459/200000000",
+      "best_ratio_lower": 0.298877074238217,
+      "label": "random"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 5,
+      "n": 10,
+      "actual_t_indices": [
+        2,
+        5,
+        7,
+        9,
+        10
+      ],
+      "actual_points": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,1": 1,
+        "2,1": 1,
+        "3,2": 1,
+        "4,0": 1,
+        "4,1": 1
+      },
+      "candidates": 24,
+      "pair_variables": 276,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 140,
+          "H_over_k3": 1.12,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "37284161/40000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.18132448533901488,
+          "points": [
+            [
+              1,
+              4
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              9,
+              0
+            ],
+            [
+              9,
+              3
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -1.7627633545260323e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 116,
+          "H_over_k3": 0.928,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "202886473/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.1816973989053507,
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              4
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -2.0672919531983252e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 136,
+          "H_over_k3": 1.088,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "189026459/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.15914824002161793,
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              8,
+              5
+            ],
+            [
+              10,
+              1
+            ],
+            [
+              10,
+              3
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -2.2680134137507017e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "202886473/200000000",
+      "best_ratio_lower": 0.3207916805591275,
+      "label": "random"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 7,
+      "n": 10,
+      "actual_t_indices": [
+        2,
+        5,
+        7,
+        9,
+        10
+      ],
+      "actual_points": [
+        [
+          2,
+          4
+        ],
+        [
+          5,
+          3
+        ],
+        [
+          7,
+          5
+        ],
+        [
+          9,
+          4
+        ],
+        [
+          10,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "1,2": 1,
+        "3,1": 1,
+        "4,3": 1,
+        "5,2": 1,
+        "6,0": 1
+      },
+      "candidates": 12,
+      "pair_variables": 66,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 164,
+          "H_over_k3": 1.312,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "171862041/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.1861547837710586,
+          "points": [
+            [
+              2,
+              4
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -2.014900457452312e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 156,
+          "H_over_k3": 1.248,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "176517157/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.13760666970252378,
+          "points": [
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              2
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              8,
+              4
+            ],
+            [
+              10,
+              1
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -2.8980134059369803e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 160,
+          "H_over_k3": 1.28,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "21770717/25000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.22100416658678113,
+          "points": [
+            [
+              3,
+              4
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              9,
+              4
+            ],
+            [
+              10,
+              0
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": 1.956895464497887e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "176517157/200000000",
+      "best_ratio_lower": 0.2790981311087672,
+      "label": "random"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 3,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 1,
+        "0,1": 1,
+        "1,0": 1,
+        "1,1": 1,
+        "2,2": 1
+      },
+      "candidates": 73,
+      "pair_variables": 2628,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 90,
+          "H_over_k3": 0.72,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "223143037/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.2977932894400414,
+          "points": [
+            [
+              3,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              7,
+              6
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -4.128726053245103e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 82,
+          "H_over_k3": 0.656,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "229924801/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.22852113681803413,
+          "points": [
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              7
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -4.407252201599394e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 106,
+          "H_over_k3": 0.848,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "210364767/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.2546469334523232,
+          "points": [
+            [
+              1,
+              7
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -4.086217456482294e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "229924801/200000000",
+      "best_ratio_lower": 0.36354303086048007,
+      "label": "spread"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 5,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 1,
+        "0,1": 1,
+        "1,2": 1,
+        "2,1": 1,
+        "3,4": 1
+      },
+      "candidates": 27,
+      "pair_variables": 351,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 84,
+          "H_over_k3": 0.672,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "228204139/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.09635986199841039,
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              7,
+              10
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -2.3563014166217507e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 88,
+          "H_over_k3": 0.704,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "112406689/100000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.19342688182841494,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -3.145756416708608e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 90,
+          "H_over_k3": 0.72,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "223143037/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.14221045346318908,
+          "points": [
+            [
+              1,
+              4
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              8,
+              10
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -3.013942237212861e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "228204139/200000000",
+      "best_ratio_lower": 0.36082242535882975,
+      "label": "spread"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 7,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          6,
+          3
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 1,
+        "1,2": 1,
+        "2,3": 1,
+        "3,1": 1,
+        "5,5": 1
+      },
+      "candidates": 16,
+      "pair_variables": 120,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 98,
+          "H_over_k3": 0.784,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "13539107/12500000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.09187285193656944,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -2.247728072296901e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 104,
+          "H_over_k3": 0.832,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "211906417/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.18538693041820156,
+          "points": [
+            [
+              1,
+              1
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              5,
+              3
+            ],
+            [
+              8,
+              8
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -4.682026757188978e-06
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 130,
+          "H_over_k3": 1.04,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "48259141/50000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.03811977476423138,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -4.230979074516187e-06
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "13539107/12500000",
+      "best_ratio_lower": 0.3425153248378346,
+      "label": "spread"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 3,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        3,
+        4,
+        8
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "0,2": 1,
+        "1,1": 1,
+        "2,2": 1
+      },
+      "candidates": 53,
+      "pair_variables": 1378,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 116,
+          "H_over_k3": 0.928,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "202886473/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.10079217100089245,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              1
+            ],
+            [
+              2,
+              10
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              8,
+              10
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -4.222242607671041e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 112,
+          "H_over_k3": 0.896,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "205832327/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.1747858852342086,
+          "points": [
+            [
+              0,
+              10
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              7,
+              7
+            ],
+            [
+              9,
+              10
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -4.1349467145610016e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 96,
+          "H_over_k3": 0.768,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "6819709/6250000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.2635223027136029,
+          "points": [
+            [
+              2,
+              3
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              3,
+              2
+            ],
+            [
+              4,
+              4
+            ],
+            [
+              10,
+              9
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -4.2139108860226434e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "6819709/6250000",
+      "best_ratio_lower": 0.3450530147127878,
+      "label": "endpoint"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 5,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        3,
+        4,
+        8
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "1,2": 1,
+        "1,4": 1,
+        "3,4": 1
+      },
+      "candidates": 21,
+      "pair_variables": 210,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 110,
+          "H_over_k3": 0.88,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "207327853/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.18363568801484065,
+          "points": [
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              3,
+              5
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              8,
+              10
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -3.139222646721339e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 92,
+          "H_over_k3": 0.736,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "8859569/8000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.14828445627775524,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              4,
+              10
+            ],
+            [
+              7,
+              9
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -2.662488702038198e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 124,
+          "H_over_k3": 0.992,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "197171831/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.04706449135652504,
+          "points": [
+            [
+              0,
+              1
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              4,
+              9
+            ],
+            [
+              8,
+              9
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": -2.3568523375507987e-05
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "8859569/8000000",
+      "best_ratio_lower": 0.35020521409275385,
+      "label": "endpoint"
+    },
+    {
+      "p": 11,
+      "k": 5,
+      "grid": 7,
+      "n": 10,
+      "actual_t_indices": [
+        0,
+        1,
+        3,
+        4,
+        8
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          5
+        ],
+        [
+          8,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "1,5": 1,
+        "2,3": 1,
+        "5,5": 1
+      },
+      "candidates": 14,
+      "pair_variables": 91,
+      "overlap_cap": 7,
+      "references": [
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 112,
+          "H_over_k3": 0.896,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "205832327/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.09078783572245239,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "attempt": 0,
+          "status": 2,
+          "solver_objective": -3.0879025651369576e-06
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 100,
+          "H_over_k3": 0.8,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "5375919/5000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.04115896264090564,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "attempt": 1,
+          "status": 2,
+          "solver_objective": -1.0828988485964785e-05
+        },
+        {
+          "a": 20,
+          "Q": 40,
+          "H": 104,
+          "H_over_k3": 0.832,
+          "integer_difference_overlap": 0,
+          "global_M_lower": "211906417/200000000",
+          "global_M_upper": "5/2",
+          "front_diagnostic_float": 0.08501633998837761,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              4,
+              6
+            ],
+            [
+              9,
+              8
+            ]
+          ],
+          "attempt": 2,
+          "status": 2,
+          "solver_objective": 3.916539094503393e-06
+        }
+      ],
+      "statuses": [
+        2,
+        2,
+        2
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "5375919/5000000",
+      "best_ratio_lower": 0.34000297113149464,
+      "label": "endpoint"
+    },
+    {
+      "p": 31,
+      "k": 15,
+      "grid": 5,
+      "n": 105,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          5,
+          25
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          19
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          10
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 4,
+        "0,1": 1,
+        "0,2": 1,
+        "0,4": 1,
+        "1,0": 1,
+        "1,1": 1,
+        "1,2": 1,
+        "1,3": 2,
+        "1,4": 1,
+        "2,1": 1,
+        "2,2": 1
+      },
+      "candidates": 433,
+      "pair_variables": 93528,
+      "overlap_cap": 78,
+      "references": [
+        {
+          "a": 178,
+          "Q": 356,
+          "H": 3018,
+          "H_over_k3": 0.8942222222222223,
+          "integer_difference_overlap": 16,
+          "global_M_lower": "76296587/25000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.10313119632315255,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              1
+            ],
+            [
+              2,
+              12
+            ],
+            [
+              3,
+              6
+            ],
+            [
+              3,
+              17
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              27
+            ],
+            [
+              7,
+              22
+            ],
+            [
+              8,
+              8
+            ],
+            [
+              8,
+              24
+            ],
+            [
+              9,
+              6
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              11,
+              26
+            ],
+            [
+              18,
+              12
+            ],
+            [
+              18,
+              15
+            ]
+          ],
+          "attempt": 0,
+          "status": 9,
+          "solver_objective": 15.99987209133929
+        },
+        {
+          "a": 180,
+          "Q": 360,
+          "H": 2844,
+          "H_over_k3": 0.8426666666666667,
+          "integer_difference_overlap": 15,
+          "global_M_lower": "39539423/12500000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.07670942543561725,
+          "points": [
+            [
+              0,
+              30
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              1,
+              8
+            ],
+            [
+              4,
+              3
+            ],
+            [
+              5,
+              17
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              6,
+              6
+            ],
+            [
+              7,
+              8
+            ],
+            [
+              8,
+              23
+            ],
+            [
+              9,
+              5
+            ],
+            [
+              9,
+              22
+            ],
+            [
+              10,
+              29
+            ],
+            [
+              11,
+              14
+            ],
+            [
+              17,
+              18
+            ],
+            [
+              18,
+              10
+            ]
+          ],
+          "attempt": 1,
+          "status": 9,
+          "solver_objective": 14.999881108544837
+        },
+        {
+          "a": 182,
+          "Q": 364,
+          "H": 3026,
+          "H_over_k3": 0.8965925925925926,
+          "integer_difference_overlap": 14,
+          "global_M_lower": "78113037/25000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.09481803582555952,
+          "points": [
+            [
+              0,
+              3
+            ],
+            [
+              0,
+              6
+            ],
+            [
+              1,
+              9
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              5,
+              1
+            ],
+            [
+              5,
+              28
+            ],
+            [
+              7,
+              20
+            ],
+            [
+              8,
+              9
+            ],
+            [
+              8,
+              24
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              11,
+              28
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              15,
+              15
+            ],
+            [
+              16,
+              10
+            ]
+          ],
+          "attempt": 2,
+          "status": 9,
+          "solver_objective": 13.999878296502914
+        }
+      ],
+      "statuses": [
+        9,
+        9,
+        9
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "39539423/12500000",
+      "best_ratio_lower": 0.30869220632034333,
+      "label": "prefix"
+    },
+    {
+      "p": 31,
+      "k": 15,
+      "grid": 7,
+      "n": 105,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          4,
+          16
+        ],
+        [
+          5,
+          25
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          9,
+          19
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          13,
+          14
+        ],
+        [
+          14,
+          10
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 3,
+        "0,2": 1,
+        "0,3": 1,
+        "1,0": 1,
+        "1,1": 1,
+        "1,4": 1,
+        "1,5": 1,
+        "2,1": 1,
+        "2,3": 1,
+        "2,4": 2,
+        "2,6": 1,
+        "3,2": 1
+      },
+      "candidates": 247,
+      "pair_variables": 30381,
+      "overlap_cap": 78,
+      "references": [
+        {
+          "a": 186,
+          "Q": 372,
+          "H": 2684,
+          "H_over_k3": 0.7952592592592592,
+          "integer_difference_overlap": 12,
+          "global_M_lower": "334439763/100000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.0779196446993707,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              13
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              3,
+              1
+            ],
+            [
+              3,
+              16
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              5,
+              18
+            ],
+            [
+              8,
+              24
+            ],
+            [
+              11,
+              22
+            ],
+            [
+              11,
+              27
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              7
+            ],
+            [
+              13,
+              18
+            ],
+            [
+              16,
+              9
+            ]
+          ],
+          "attempt": 0,
+          "status": 9,
+          "solver_objective": 11.999884448504938
+        },
+        {
+          "a": 178,
+          "Q": 356,
+          "H": 2598,
+          "H_over_k3": 0.7697777777777778,
+          "integer_difference_overlap": 16,
+          "global_M_lower": "323308833/100000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.06883028340161572,
+          "points": [
+            [
+              0,
+              0
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              2,
+              2
+            ],
+            [
+              2,
+              9
+            ],
+            [
+              2,
+              14
+            ],
+            [
+              5,
+              8
+            ],
+            [
+              6,
+              4
+            ],
+            [
+              6,
+              19
+            ],
+            [
+              8,
+              25
+            ],
+            [
+              11,
+              15
+            ],
+            [
+              11,
+              21
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              12,
+              28
+            ],
+            [
+              13,
+              6
+            ],
+            [
+              16,
+              10
+            ]
+          ],
+          "attempt": 1,
+          "status": 9,
+          "solver_objective": 15.999894663415986
+        },
+        {
+          "a": 172,
+          "Q": 344,
+          "H": 3138,
+          "H_over_k3": 0.9297777777777778,
+          "integer_difference_overlap": 19,
+          "global_M_lower": "288675709/100000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.04407343577013231,
+          "points": [
+            [
+              0,
+              13
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              3,
+              15
+            ],
+            [
+              5,
+              25
+            ],
+            [
+              8,
+              3
+            ],
+            [
+              8,
+              7
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              11,
+              19
+            ],
+            [
+              11,
+              28
+            ],
+            [
+              12,
+              5
+            ],
+            [
+              12,
+              16
+            ],
+            [
+              13,
+              20
+            ],
+            [
+              14,
+              12
+            ]
+          ],
+          "attempt": 2,
+          "status": 9,
+          "solver_objective": 18.999921377962373
+        }
+      ],
+      "statuses": [
+        9,
+        9,
+        9
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "334439763/100000000",
+      "best_ratio_lower": 0.32637978910859017,
+      "label": "prefix"
+    },
+    {
+      "p": 31,
+      "k": 15,
+      "grid": 5,
+      "n": 105,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        8,
+        10,
+        15,
+        16,
+        21,
+        23,
+        25,
+        28,
+        29,
+        30
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          28,
+          9
+        ],
+        [
+          29,
+          4
+        ],
+        [
+          30,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 4,
+        "0,1": 1,
+        "1,0": 1,
+        "1,1": 1,
+        "2,1": 2,
+        "3,0": 1,
+        "3,1": 1,
+        "4,0": 3,
+        "4,1": 1
+      },
+      "candidates": 361,
+      "pair_variables": 64980,
+      "overlap_cap": 78,
+      "references": [
+        {
+          "a": 180,
+          "Q": 360,
+          "H": 3900,
+          "H_over_k3": 1.1555555555555554,
+          "integer_difference_overlap": 15,
+          "global_M_lower": "55076309/20000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.08317768102608776,
+          "points": [
+            [
+              0,
+              1
+            ],
+            [
+              1,
+              5
+            ],
+            [
+              3,
+              3
+            ],
+            [
+              4,
+              5
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              12,
+              1
+            ],
+            [
+              12,
+              7
+            ],
+            [
+              17,
+              10
+            ],
+            [
+              17,
+              12
+            ],
+            [
+              19,
+              11
+            ],
+            [
+              22,
+              5
+            ],
+            [
+              26,
+              11
+            ],
+            [
+              27,
+              4
+            ],
+            [
+              28,
+              0
+            ],
+            [
+              30,
+              3
+            ]
+          ],
+          "attempt": 0,
+          "status": 9,
+          "solver_objective": 14.999887635504361
+        },
+        {
+          "a": 166,
+          "Q": 332,
+          "H": 3246,
+          "H_over_k3": 0.9617777777777777,
+          "integer_difference_overlap": 22,
+          "global_M_lower": "136264821/50000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.04521041556947643,
+          "points": [
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              4
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              6,
+              3
+            ],
+            [
+              6,
+              9
+            ],
+            [
+              7,
+              3
+            ],
+            [
+              7,
+              12
+            ],
+            [
+              14,
+              8
+            ],
+            [
+              17,
+              8
+            ],
+            [
+              20,
+              2
+            ],
+            [
+              21,
+              8
+            ],
+            [
+              27,
+              11
+            ],
+            [
+              28,
+              3
+            ],
+            [
+              28,
+              6
+            ],
+            [
+              30,
+              1
+            ]
+          ],
+          "attempt": 1,
+          "status": 9,
+          "solver_objective": 21.999890490947756
+        },
+        {
+          "a": 180,
+          "Q": 360,
+          "H": 3480,
+          "H_over_k3": 1.031111111111111,
+          "integer_difference_overlap": 15,
+          "global_M_lower": "290689207/100000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.10599323765293067,
+          "points": [
+            [
+              1,
+              0
+            ],
+            [
+              2,
+              4
+            ],
+            [
+              2,
+              8
+            ],
+            [
+              4,
+              2
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              9,
+              1
+            ],
+            [
+              11,
+              12
+            ],
+            [
+              13,
+              11
+            ],
+            [
+              17,
+              7
+            ],
+            [
+              20,
+              11
+            ],
+            [
+              23,
+              0
+            ],
+            [
+              26,
+              1
+            ],
+            [
+              27,
+              2
+            ],
+            [
+              28,
+              7
+            ],
+            [
+              29,
+              4
+            ]
+          ],
+          "attempt": 2,
+          "status": 9,
+          "solver_objective": 14.999881255328873
+        }
+      ],
+      "statuses": [
+        9,
+        9,
+        9
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "290689207/100000000",
+      "best_ratio_lower": 0.2836836183166513,
+      "label": "quadratic_arc"
+    },
+    {
+      "p": 31,
+      "k": 15,
+      "grid": 7,
+      "n": 105,
+      "actual_t_indices": [
+        0,
+        1,
+        2,
+        3,
+        6,
+        8,
+        10,
+        15,
+        16,
+        21,
+        23,
+        25,
+        28,
+        29,
+        30
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          2,
+          4
+        ],
+        [
+          3,
+          9
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          8,
+          2
+        ],
+        [
+          10,
+          7
+        ],
+        [
+          15,
+          8
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          25,
+          5
+        ],
+        [
+          28,
+          9
+        ],
+        [
+          29,
+          4
+        ],
+        [
+          30,
+          1
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 3,
+        "0,2": 1,
+        "1,0": 1,
+        "1,1": 1,
+        "2,1": 1,
+        "3,1": 2,
+        "4,1": 1,
+        "5,0": 1,
+        "5,1": 1,
+        "6,0": 2,
+        "6,2": 1
+      },
+      "candidates": 218,
+      "pair_variables": 23653,
+      "overlap_cap": 78,
+      "references": [
+        {
+          "a": 168,
+          "Q": 336,
+          "H": 2834,
+          "H_over_k3": 0.8397037037037037,
+          "integer_difference_overlap": 21,
+          "global_M_lower": "73395101/25000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.03641064533305123,
+          "points": [
+            [
+              0,
+              2
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              1,
+              11
+            ],
+            [
+              2,
+              0
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              7,
+              4
+            ],
+            [
+              10,
+              7
+            ],
+            [
+              16,
+              7
+            ],
+            [
+              17,
+              8
+            ],
+            [
+              19,
+              8
+            ],
+            [
+              23,
+              3
+            ],
+            [
+              24,
+              8
+            ],
+            [
+              27,
+              3
+            ],
+            [
+              27,
+              10
+            ],
+            [
+              30,
+              0
+            ]
+          ],
+          "attempt": 0,
+          "status": 9,
+          "solver_objective": 20.999896989170345
+        }
+      ],
+      "statuses": [
+        9,
+        9
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "73395101/25000000",
+      "best_ratio_lower": 0.28650513767985986,
+      "label": "quadratic_arc"
+    },
+    {
+      "p": 31,
+      "k": 15,
+      "grid": 5,
+      "n": 105,
+      "actual_t_indices": [
+        0,
+        1,
+        6,
+        7,
+        11,
+        12,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        27,
+        28
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          27,
+          16
+        ],
+        [
+          28,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 3,
+        "1,2": 1,
+        "1,3": 1,
+        "1,4": 1,
+        "2,1": 2,
+        "2,2": 1,
+        "3,0": 1,
+        "3,1": 1,
+        "3,3": 1,
+        "3,4": 1,
+        "4,1": 1,
+        "4,2": 1
+      },
+      "candidates": 451,
+      "pair_variables": 101475,
+      "overlap_cap": 78,
+      "references": [
+        {
+          "a": 192,
+          "Q": 384,
+          "H": 4220,
+          "H_over_k3": 1.2503703703703704,
+          "integer_difference_overlap": 9,
+          "global_M_lower": "573876231/200000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.07846315372180256,
+          "points": [
+            [
+              0,
+              3
+            ],
+            [
+              6,
+              1
+            ],
+            [
+              6,
+              2
+            ],
+            [
+              7,
+              29
+            ],
+            [
+              8,
+              15
+            ],
+            [
+              10,
+              19
+            ],
+            [
+              13,
+              7
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              15,
+              16
+            ],
+            [
+              19,
+              20
+            ],
+            [
+              23,
+              30
+            ],
+            [
+              24,
+              5
+            ],
+            [
+              24,
+              9
+            ],
+            [
+              27,
+              18
+            ],
+            [
+              30,
+              12
+            ]
+          ],
+          "attempt": 0,
+          "status": 9,
+          "solver_objective": 8.999869431026347
+        },
+        {
+          "a": 198,
+          "Q": 396,
+          "H": 3976,
+          "H_over_k3": 1.178074074074074,
+          "integer_difference_overlap": 6,
+          "global_M_lower": "612441227/200000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.0869924214462187,
+          "points": [
+            [
+              4,
+              6
+            ],
+            [
+              5,
+              5
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              8,
+              14
+            ],
+            [
+              9,
+              29
+            ],
+            [
+              10,
+              23
+            ],
+            [
+              13,
+              7
+            ],
+            [
+              14,
+              14
+            ],
+            [
+              15,
+              7
+            ],
+            [
+              22,
+              26
+            ],
+            [
+              24,
+              0
+            ],
+            [
+              24,
+              9
+            ],
+            [
+              24,
+              19
+            ],
+            [
+              25,
+              14
+            ],
+            [
+              29,
+              8
+            ]
+          ],
+          "attempt": 1,
+          "status": 9,
+          "solver_objective": 5.999873108919827
+        },
+        {
+          "a": 194,
+          "Q": 388,
+          "H": 4256,
+          "H_over_k3": 1.261037037037037,
+          "integer_difference_overlap": 8,
+          "global_M_lower": "289422323/100000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.053501803697873745,
+          "points": [
+            [
+              4,
+              4
+            ],
+            [
+              5,
+              0
+            ],
+            [
+              6,
+              0
+            ],
+            [
+              7,
+              26
+            ],
+            [
+              11,
+              16
+            ],
+            [
+              12,
+              19
+            ],
+            [
+              13,
+              9
+            ],
+            [
+              16,
+              10
+            ],
+            [
+              16,
+              16
+            ],
+            [
+              19,
+              29
+            ],
+            [
+              21,
+              11
+            ],
+            [
+              23,
+              5
+            ],
+            [
+              24,
+              20
+            ],
+            [
+              29,
+              10
+            ],
+            [
+              29,
+              17
+            ]
+          ],
+          "attempt": 2,
+          "status": 9,
+          "solver_objective": 7.999869408251705
+        }
+      ],
+      "statuses": [
+        9,
+        9,
+        9
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "612441227/200000000",
+      "best_ratio_lower": 0.2988407190529946,
+      "label": "random"
+    },
+    {
+      "p": 31,
+      "k": 15,
+      "grid": 7,
+      "n": 105,
+      "actual_t_indices": [
+        0,
+        1,
+        6,
+        7,
+        11,
+        12,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21,
+        23,
+        27,
+        28
+      ],
+      "actual_points": [
+        [
+          0,
+          0
+        ],
+        [
+          1,
+          1
+        ],
+        [
+          6,
+          5
+        ],
+        [
+          7,
+          18
+        ],
+        [
+          11,
+          28
+        ],
+        [
+          12,
+          20
+        ],
+        [
+          16,
+          8
+        ],
+        [
+          17,
+          10
+        ],
+        [
+          18,
+          14
+        ],
+        [
+          19,
+          20
+        ],
+        [
+          20,
+          28
+        ],
+        [
+          21,
+          7
+        ],
+        [
+          23,
+          2
+        ],
+        [
+          27,
+          16
+        ],
+        [
+          28,
+          9
+        ]
+      ],
+      "cell_counts": {
+        "0,0": 2,
+        "1,1": 1,
+        "1,4": 1,
+        "2,4": 1,
+        "2,6": 1,
+        "3,1": 1,
+        "3,2": 1,
+        "4,1": 1,
+        "4,3": 1,
+        "4,4": 1,
+        "4,6": 1,
+        "5,0": 1,
+        "6,2": 1,
+        "6,3": 1
+      },
+      "candidates": 283,
+      "pair_variables": 39903,
+      "overlap_cap": 78,
+      "references": [
+        {
+          "a": 198,
+          "Q": 396,
+          "H": 4294,
+          "H_over_k3": 1.2722962962962963,
+          "integer_difference_overlap": 6,
+          "global_M_lower": "590943531/200000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.0453161161222729,
+          "points": [
+            [
+              1,
+              3
+            ],
+            [
+              4,
+              1
+            ],
+            [
+              6,
+              5
+            ],
+            [
+              8,
+              20
+            ],
+            [
+              10,
+              18
+            ],
+            [
+              10,
+              28
+            ],
+            [
+              16,
+              6
+            ],
+            [
+              17,
+              13
+            ],
+            [
+              19,
+              14
+            ],
+            [
+              20,
+              30
+            ],
+            [
+              21,
+              20
+            ],
+            [
+              22,
+              6
+            ],
+            [
+              23,
+              3
+            ],
+            [
+              27,
+              17
+            ],
+            [
+              29,
+              10
+            ]
+          ],
+          "attempt": 0,
+          "status": 9,
+          "solver_objective": 5.999912964139339
+        },
+        {
+          "a": 196,
+          "Q": 392,
+          "H": 3872,
+          "H_over_k3": 1.1472592592592592,
+          "integer_difference_overlap": 7,
+          "global_M_lower": "306214691/100000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.048411730907357904,
+          "points": [
+            [
+              2,
+              4
+            ],
+            [
+              3,
+              0
+            ],
+            [
+              5,
+              6
+            ],
+            [
+              6,
+              18
+            ],
+            [
+              10,
+              27
+            ],
+            [
+              12,
+              18
+            ],
+            [
+              14,
+              12
+            ],
+            [
+              17,
+              7
+            ],
+            [
+              18,
+              30
+            ],
+            [
+              20,
+              8
+            ],
+            [
+              20,
+              14
+            ],
+            [
+              20,
+              22
+            ],
+            [
+              23,
+              4
+            ],
+            [
+              27,
+              12
+            ],
+            [
+              27,
+              15
+            ]
+          ],
+          "attempt": 1,
+          "status": 9,
+          "solver_objective": 6.999875650110069
+        },
+        {
+          "a": 194,
+          "Q": 388,
+          "H": 4158,
+          "H_over_k3": 1.232,
+          "integer_difference_overlap": 8,
+          "global_M_lower": "585383601/200000000",
+          "global_M_upper": "15/2",
+          "front_diagnostic_float": 0.100441331092676,
+          "points": [
+            [
+              0,
+              4
+            ],
+            [
+              1,
+              0
+            ],
+            [
+              5,
+              22
+            ],
+            [
+              6,
+              8
+            ],
+            [
+              9,
+              20
+            ],
+            [
+              11,
+              30
+            ],
+            [
+              15,
+              7
+            ],
+            [
+              15,
+              11
+            ],
+            [
+              21,
+              16
+            ],
+            [
+              22,
+              6
+            ],
+            [
+              22,
+              20
+            ],
+            [
+              22,
+              27
+            ],
+            [
+              25,
+              2
+            ],
+            [
+              28,
+              17
+            ],
+            [
+              29,
+              11
+            ]
+          ],
+          "attempt": 2,
+          "status": 9,
+          "solver_objective": 7.999892819910096
+        }
+      ],
+      "statuses": [
+        9,
+        9,
+        9
+      ],
+      "feasible": true,
+      "infeasibility_independently_verified": false,
+      "best_M_lower": "306214691/100000000",
+      "best_ratio_lower": 0.2988349392848126,
+      "label": "random"
+    }
+  ]
+}

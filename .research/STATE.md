@@ -1,5 +1,11 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+**Paused resumption handoff:** [RESUME.md](RESUME.md) states the exact R0
+target, missing upper bound, first derive/falsify steps, failed shortcuts,
+certificate paths and resource constraints. Read it BEFORE starting new
+work when the user explicitly resumes. The requested documentation and
+novelty check do not resume the research campaign.
+
 ## Active GOAL.md campaign, 2026-10-21
 
 **Campaign PAUSED at the user's request.** All research jobs are terminal,
@@ -44,8 +50,15 @@ lambda=2sqrt(n), EVERY Boolean actual-lowM support has
 tau<=1-1/400, equivalently H0/Q0<=-sqrt(n)/100. This would imply
 Chowla with c=1/200. The advisor's elementary Schur/Cauchy estimate
 handles only g=lambda²S-1>9/16 (a high-gap/flatness subcase); the
-small-g Boolean upper estimate is missing. Derive/refute that estimate;
+fixed R0 margin follows there from g>=10000/17689. The Boolean upper
+estimate for0<g<10000/17689 is missing. Derive/refute that estimate;
 do not expand the three successful controls or shift lambda.
+
+**Bounded novelty review while paused:** no exact R0 antecedent located;
+classical analytic machinery, precise uniform Boolean claim UNPROVED,
+priority UNVERIFIED. Read the [primary-source comparison](notes/R0_novelty_2026-10-21.md)
+and [independent antecedent audit](notes/advisor_R0_novelty_2026-10-21.md).
+No proof work or experiments were resumed by this review.
 
 ### Previous pushed checkpoint
 

@@ -1,5 +1,30 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — paused resumption handoff and bounded R0 novelty check
+
+The user explicitly declined to resume the goal and requested clear
+resumption documents plus a novelty check of the specific reciprocal
+conjecture R0. Created [RESUME.md](RESUME.md), linked from GOAL/STATE/CSTAR,
+with exact quantifiers, fixed lambda, the missing upper-correction
+estimate, first derive/falsify steps, failed padding shortcut, completed
+tests and resource constraints. No new proof work, mathematical
+experiments, VM/GPU jobs or spending.
+
+The bounded review inspected relevant primary-source statements and
+arguments in Ruzsa2004, Sandersv2, Bedertv3, Shankarv1, JMTZv2,
+Bu et al.v1 and Yipv2. The independent advisor checked classical
+Cayley/Caratheodory/Schur, Hardy and Toeplitz antecedents. No exact
+fixed-lambda uniform Boolean R0 statement was located. Its method is
+classical; its truth and publication priority remain UNVERIFIED.
+Search absence is not a novelty certificate. [Full comparison and
+limits](notes/R0_novelty_2026-10-21.md), [advisor audit](notes/advisor_R0_novelty_2026-10-21.md).
+
+Handoff precision: the saved Cauchy estimate gives negative SIGN at
+g>9/16. Substitution of the actual R0 margin gives the sufficient
+cutoff g>=10000/17689; hence the unresolved quantitative range includes
+the interval just above9/16. This clarification is not a new proof
+attack. Campaign remains PAUSED pending explicit user resumption.
+
 ## 2026-10-21 — phase quotient retirement, changed construction, zero-carrier test
 
 Subsequent status: user PAUSED the campaign. All jobs terminal; internal

@@ -233,3 +233,19 @@ The rank-two hyperbolic quadric's two rulings and projective grid are classical:
 
 - Amir Dembo, [Probability Theory: STAT310/MATH230](https://stanford.edu/~montanar/TEACHING/Stat310A/lnotes.pdf), September12,2010, Theorem3.1.3, p.96. Checked the within-row independent triangular-array CLT with normalized variance sum tending to1 and vanishing truncated variance. The current array has maximal normalized summand O(X^(-1/2)); its third-moment Lyapunov ratio is also O(X^(-1/2)). No independence across different X is assumed.
 - [NIST DLMF10.17.3](https://dlmf.nist.gov/10.17.E3), checked for fixed real order nu=1 on the positive real axis: J1(s)=O(s^(-1/2)). This gives disk-transform decay O(s^(-3/2)). The weighted parity-coset O(R^(2/3)) estimate is DERIVED in the current note via smooth disk comparison and absolutely convergent Poisson summation; it is not quoted from DLMF. That estimate makes the positive-Gram origin cost sharp and extends to growing isoclinic phases. No novelty claim for these classical ingredients or the project's consequences.
+
+## 2026-10-21 addendum — exact reciprocal-witness conjecture R0
+
+Bounded novelty check requested while the campaign is PAUSED. No exact
+R0 antecedent was located; mathematical priority remains UNVERIFIED.
+The reciprocal/Caratheodory–Schur machinery, signed weighted certificates
+and exploitation of Boolean idempotency have established antecedents.
+The unproved content is a uniform selected-coefficient upper bound at
+lambda=2sqrt(n), under ACTUAL lowM, sufficient for full Chowla.
+
+[Full versioned primary-source comparison, exact statement, search scope
+and limitations](notes/R0_novelty_2026-10-21.md). The review includes
+Ruzsa2004, Sanders0807.5104v2, Bedert2509.05260v3,
+Shankar2609.05338v1, Jin–Milojevic–Tomon–Zhang2509.03490v2,
+Bu et al.2610.17160v1 and Yip2610.01657v2. Do not treat search absence
+as evidence of truth, priority or an established route to Chowla.

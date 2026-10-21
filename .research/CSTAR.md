@@ -1,5 +1,10 @@
 # CSTAR — THE problem. Read this first, every session.
 
+The campaign remains PAUSED. On an explicit resume, start with the
+actionable [RESUME.md handoff](RESUME.md), then the linked audits and
+novelty review. No experiments or workers are authorized by the current
+documentation/novelty task.
+
 ## Latest cycle: retire modulus surrogate; test changed Boolean construction
 
 Campaign PAUSED at the user's request; all jobs terminal and audits

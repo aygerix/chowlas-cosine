@@ -9,7 +9,7 @@ counterexample construction, implement and verify the quantified
 Epoch solution(c,n) interface.
 
 On activation and after compaction, load the Number Theory research
-skill and read AGENTS.md, .research/STATE.md, CSTAR.md, PROOFS.md,
+skill and read AGENTS.md, .research/RESUME.md, .research/STATE.md, CSTAR.md, PROOFS.md,
 ROUTES.md, the latest NOTEBOOK entries, and the linked advisor,
 resolvent, and GPU-pilot reports. Resume from the recorded frontier.
 Update STATE to reflect this active goal; honor any subsequent pause.

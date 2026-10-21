@@ -1,5 +1,18 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Latest obstruction: bounded-mean positive references fail even in averaged cost
+
+The [new advisor-checked theorem](notes/advisor_averaged_reference_2026-10-21.md)
+refutes EVERY absolute bounded positive-reference mean, not just IPD's
+uniform approximation. Explicit low-K Boolean unions of positive-front
+blocks force H/n^1.5->infinity for ALL q=D+b-P with P>=0, meanP=b<=B,
+Q<=beta*n, for any fixedB,beta. One finite Boolean packet premise is
+Arb-certified, n12688,M<=112<sqrt n. This is not a counterexample to
+L25, OP140 or unrestricted signed witnesses. Keep the actual averaged
+H target without this false positive-reference restriction; no optimizer
+for a bounded-mean PD residual can be universal. All jobs terminal,
+no new RunPod spend; full Chowla remains OPEN. [Canonical statement](PROOFS.md#positive-reference-mixed-cost-principle-refuted-2026-10-21).
+
 ## Active frontier: finite band and Boolean inverse OP140, 2026-10-21
 
 First derive–test–certify–review cycle is complete under GOAL.md. Full Chowla

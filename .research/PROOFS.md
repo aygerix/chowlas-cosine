@@ -167,6 +167,56 @@ Uniform L-infinity reference approximation is therefore not necessary
 even when L25 itself holds. Return to averaged mixed cost or OP140;
 do not build an optimizer for the refuted reference hypothesis.
 
+## Positive-reference mixed-cost principle (REFUTED, 2026-10-21)
+
+This refutes the EXACT averaged replacement for IPD, not merely a uniform
+approximation surrogate or a fixed-interior subspace. For every fixed B>=0
+and beta>0 there are Boolean A_m with K_m<=2sqrt(n_m) such that, uniformly
+over ALL nonnegative measurable P_m of mean b_m in[0,B] satisfying
+q_m=D_m+b_m-P_m and ||q_m||²<=beta*n_m,
+
+    <D_m q_m²>/n_m^1.5 -> +infinity.
+
+Thus no absolute bounded positive-reference mean repairs this architecture.
+Mass-matched peak-one PD profiles are included, since their residuals
+automatically have Q<=4n. This does NOT refute the unrestricted a,Q,H
+target, OP140, L25 or Chowla: general signed q impose no such positive
+reference constraint. Lead derivation, independently checked advisor paper
+proof; no formalization or novelty claim.
+
+General budget lemma (PROVED): if D>=-K, P>=0 has mean b, q=D+b-P,
+and E is a positive set with sigma=integral_E(D+b)-b>0, then
+
+    <Dq²> >= sigma²/(integral_E 1/D)-K||q||².
+
+Indeed integral_E q>=sigma, weighted Cauchy bounds its positive cost,
+and the rest costs at least-K||q||². A positive reference cannot cover
+more exceptional positive mass than its whole mean budget.
+
+The mean-one counterfamily uses a canonical Singer B of size k, Q0=k(k-1)+1,
+its sorted3-of-4 subset B' of size h=floor3k/4, and
+A=diff_+(B) union Q0³*diff_+(B'). It is Boolean and K<=k+h<=2sqrt(n)
+for k>=56. Two central fronts have exact overlap1/Q0², measureO(k^-2),
+height>=k²/10, and total D mass eventually>=17/16. Hence EVERY profile
+has H>=k⁴/10240-8k³. An explicit DFT estimate proves the front limit;
+no independence or MZ theorem is needed. For any other fixed mean boundB,
+finitely many full Singer blocks of geometrically spaced sizes and
+exactly controlled overlaps exceed B while preserving lowK. [Complete
+proof, constants, existence input and bounded-mean extension](notes/advisor_averaged_reference_2026-10-21.md).
+
+FINITE INTERVAL-CERTIFIED PREMISE: full/subset sizes128/96, dilationQ0,
+n12688, all-circle M<=112<sqrt(n); packet D mass>1.165974519 and height
+>3167.694262769. Analytic sine integrals agree with independent midpoint
+ball quadrature and a second-derivative remainder. The finite achieved
+H lower bound is NEGATIVE; no finite positive-cost claim is made.
+Data: experiments/positive_packet_2026-10-21/results.json. Source
+src/cstar_positive_packet.py; Dirichlet run exited0/PASS.
+
+Decision: stop the whole bounded-mean positive-reference residual target,
+not only IPD. Preserve arbitrary signed witnesses and the actual averaged
+cost / OP140 question. The P73 automatic coupling corollary remains true
+but cannot make this restricted residual class universally useful.
+
 ## 2026-10-20 supplement: arbitrary-support fixed-coupling attempt
 
 Uniform adaptive a,Q,H remains OPEN. In any finite mean-zero trial space containing D_A, a=n iff q=D_A/2+u with u perpendicular to D_A; then Q=n/2+||u||^2 and H=<D_A^3>/4+<D_A^2,u>+<D_A,u^2>. This gives an exact finite ball-constrained quadratic, whose numerical solutions are proposals only. FINITE EXACT:20 reconstructed witnesses satisfy a=n,Q<=25n,H<0 on ten supports in two spaces. No arbitrary-support bound follows.

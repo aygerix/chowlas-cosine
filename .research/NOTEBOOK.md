@@ -1,5 +1,42 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — averaged positive references fail too; arbitrary signed witnesses retained
+
+Previous goal turn classified PROGRESS (94d0623,30d76c9). Resumed actual
+averaged peak-one PD reference target after IPD's uniform discrepancy
+failed. A new positive-front budget lemma refutes this exact averaged
+target, including ALL adaptive coefficients and unrestricted bandwidth.
+For P>=0 of meanb, q=D+b-P, the positive mass on E gives
+H>=sigma²/(int_E1/D)-KQ, sigma=int_E(D+b)-b>0.
+
+Lead proposed two separated Singer-difference fronts; advisor simplified
+to retaining3of4 sorted points and checked a fully quantified proof.
+Full/subset sizesk/floor3k/4 give n~25k²/32 and exactK<=2sqrt n eventually.
+Their central mass>(25/16)(1-pi²/36)>325/288 exceeds the entire reference
+mean1; height~k² and measure~k^-2 force H>=k⁴/10240-8k³ for EVERY profile.
+The finite DFT front argument is elementary. Geometric full-block sizes
+extend this to every absolute bounded reference mean, even for arbitrary
+nonnegative measurable references with residual normO(n).
+
+One carefully chosen finite premise, not a sweep: savedp127B,3of4subset,
+n12688, dilationQ0. Arb certifies packet D mass>1.165974519 and height
+>3167.694262769, with all-circle M<=112<sqrt n. Analytic sine integrals
+have independent midpoint-ball/remainder checks. The finite cost lower
+bound is negative; only the packet premise is certified there. Source
+cstar_positive_packet.py, data positive_packet_2026-10-21/results.json;
+run on Dirichlet exited0/PASS. A Fraction/Arb API mismatch in the first
+attempt was corrected before the successful run. All jobs terminal.
+
+Global review: this is a counterexample to an intended arbitrary-support
+principle, not another attempt to improve a settled family's M bound.
+Stop bounded-mean positive-reference optimization, including convex
+averages and a repair from mean1 to any fixed meanB. P73 variance and
+coupling remain correct but cannot control this residual cost. Full
+signed a=n,Q<=beta*n,H<=gamma*n^1.5 and OP140 remain unrefuted/unproved;
+direct negative-Rayleigh and independent all-circle construction tracks
+remain active. No new RunPod worker or GPU spend; total remains$0.10.
+[Complete advisor-checked proof and extension](notes/advisor_averaged_reference_2026-10-21.md).
+
 ## 2026-10-21 — active L25 cycle, a finite-band lemma and a certified GPU escape
 
 GOAL.md activated. The one advisor and lead independently derive the

@@ -1,5 +1,22 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-21 — a finite positive-packet premise for the averaged-reference obstruction
+
+Run: `src/dirun.sh -c 2 -m 4 -t 90 python src/cstar_positive_packet.py`.
+Data: experiments/positive_packet_2026-10-21/results.json. Exactlyone saved
+canonicalp127 Singer set, full/subset sizes128/96, actual Boolean union
+of differences with dilationQ0=16257, n12688. The exact square identities
+give globalM<=112 and112²<n. No sampled minimum.
+
+At160-bit Arb, analytic integral sums and independent256-midpoint ball
+quadrature with second-derivative errors certify packet mass>1.165974519
+and packet height>3167.694262769. Overlap1/Q0² and unionmeasure2/Q0-1/Q0²
+are exact. Output includes the universal positive-reference H lower bound,
+which is negative at this finite size. It is evidence for the packet
+premises; the all-profile asymptotic cost obstruction has a separate
+advisor-checked paper proof. Final run exited0/PASS after an initial
+Fraction/Arb conversion repair. All jobs terminal; no new GPU run.
+
 ## 2026-10-21 — L25, scalar caps and integrated GPU projected proposals
 
 [Derivation, exact scopes and reproduction commands](notes/cstar_l25_gpu_cycle_2026-10-21.md).

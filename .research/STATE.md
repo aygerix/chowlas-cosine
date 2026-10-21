@@ -2,6 +2,39 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
+**Latest continuation / read first:** previous goal turn was PROGRESS
+(94d0623,30d76c9). This continuation has now REFUTED the exact averaged
+positive-reference target too, not only its L-infinity surrogate. The
+[advisor-checked theorem](notes/advisor_averaged_reference_2026-10-21.md)
+shows: for every absolute mean budgetB and norm budgetbeta, there are
+low-K Boolean supports for which EVERY nonnegative referenceP of mean
+b in[0,B] with q=D+b-P,Q<=beta*n has H/n^1.5->+infinity. Two positive
+fronts exceed mean1; finitely many geometric blocks exceed any fixedB.
+The general positive-front budget lemma and an elementary finite-DFT
+front limit prove this, uniformly over adaptive coefficients, unbounded
+bandwidth and even measurable non-Fourier references. This tests an
+explicit universal certificate principle; it is not a new M-bound
+exclusion programme. General signed q, L25, OP140 and full Chowla remain
+OPEN and unrefuted. Do not build bounded-mean PD-reference optimizers.
+
+Finite premise verified once on Dirichlet: src/cstar_positive_packet.py,
+experiments/positive_packet_2026-10-21/results.json. n12688, globalM<=112
+with112²<n, packet D mass>1.165974519 and height>3167.694262769. Analytic
+sine integrals agree with independent midpoint-ball quadrature plus a
+rigorous remainder. The finite H lower bound is negative; the uniform
+asymptotic divergence is a separate paper theorem. All jobs terminal;
+no active process or GPU worker, no new GPU spend (cumulative$0.10).
+
+**Next actual derivation:** arbitrary signed fixed-coupling cost or
+OP140, with no positivity requirement on D+b-q for an absolute b. The
+P73 automatic coupling corollary survives but cannot make the restricted
+PD residual class universally useful. The bounded-mean theorem rules out
+convex averaging and increasing1 to another fixed reference budget.
+Future tests must target the unrestricted operator or a genuinely changed
+construction mechanism; stop successful Singer trend enlargement.
+Direct negative-Rayleigh certificates and the independent all-circle
+construction track remain part of the active full goal.
+
 The user cleared the old goal and activated "Pursue the goal outlined in GOAL.md". The root GOAL.md is authoritative and supersedes historical paused-status paragraphs below. Full unrestricted Chowla remains OPEN. The previous completed work changed authoritative state (pilot, independent advisor audit and canonical L25 entry: progress); this is the first research continuation under the new goal.
 
 Exactly one GPT-6.1 Sol/MAX PhD Advisor is reused. The first integrated derive–test–certify–review cycle is COMPLETE: [cycle record](notes/cstar_l25_gpu_cycle_2026-10-21.md), [independent paper audit](notes/advisor_L25_derivation_2026-10-21.md). The full GOAL remains ACTIVE and unresolved. Low moments, finite-band failures and timing speedups are not universal results. The independent all-circle construction and direct-Rayleigh tracks remain open. GPU authorization is $6.50 total additional prepaid spend, at least$0.50 balance retained, one new worker at a time, <=30min/$1 per run. Ledger: GPU_BUDGET.json. Conservative cumulative additional spend$0.10; observed balance$7.3765. No new GPU worker is active; pod jfom1hoabqgu1w deleted and list cleanup verified. All first-cycle CPU/GPU jobs are terminal/PASS.

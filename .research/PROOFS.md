@@ -37,6 +37,68 @@ would refute L25's stated constants, without disproving Chowla or every
 possible low-ratio flatness constant. Weighted escape controls are outside
 the Boolean domain and must be labeled as such.
 
+## L26. Finite-band sign witness for arbitrary A (PROVED on paper, 2026-10-21)
+
+Put D=2f_A, n=|A|, X=max(A), L=||D||_1. For EVERY nonempty finite Boolean
+positive-integer A, there is a real mean-zero q of degree<2X with
+
+    a=n, Q<=n^2/L^2, |H|<=8n^2/L.
+
+Take V=2F_(2X)-F_X for normalized Fejer kernels and q=(n/L)(V*signD-<signD>).
+Vhat=1 through X, lies in[0,1], vanishes at2X, and ||V||_1<=3. Exact coupling,
+Parseval contraction, and ||q||_infinity<=4n/L prove the assertions; D's
+positive/negative masses are both L/2. Lead derivation, independent advisor
+paper audit; no kernel/priority claim. Thus L25 implies a=n,Q<=25n,H<=40n^1.5
+in the FULL band below2X. This controls sufficient-witness bandwidth, not
+arbitrary approximation of the full-space optimum. [Proof](notes/advisor_L25_derivation_2026-10-21.md#7-positive-finite-band-theorem-for-arbitrary-supports).
+
+## Fixed-degree scalar witness principle (REFUTED, 2026-10-21)
+
+Canonical cyclic perfect-difference supports satisfy M<=sqrt(n) exactly,
+yet for every fixed d, all sufficiently large members have H>0 and
+a²/H<=C_d for EVERY nonzero mean-zero q=P(D), degP<=d. Hence a=n forces
+H>=n²/C_d and such certificates give only constant dip bounds. This is a
+paper theorem with the verified classical MZ sampling dependency, not a
+statement about arbitrary representatives, growing degree or general
+Fourier seeds. The normalized cubic also grows as(11/5)sqrt(n), so low M
+does not force bounded normalized triples. [Complete proof and scope](notes/advisor_L25_derivation_2026-10-21.md).
+
+FINITE EXACT: n496/8128 have complete degree4 M caps13.7233/31.3755, while
+broader rational witnesses prove M>15.091991495/58.53525904. Integer moments
+through9 have independent packed-integer recounts; rational Schur checks
+verify all caps. CPU and GPU witnesses have independently recounted square
+moments. Arb quadrature certifies L25 on both inputs. These are method
+separations, not counterexamples to L25 or Chowla. [Integrated cycle](notes/cstar_l25_gpu_cycle_2026-10-21.md).
+
+## OP140. Linked Boolean inverse target (CONJECTURED, 2026-10-21)
+
+For arbitrary A, X=max A, let c=1_A in R^(2X) and
+
+    C_jk=(1_A(|j-k|)+1_A(j+k))/2, 1<=j,k<=2X,
+    Z=C+2sqrt(n)I, J=c^T Z^(-1)c.
+
+Conjecture: K=-min D<=2sqrt(n) implies J>=sqrt(n)/140. In this domain
+C>=-sqrt(n)I, hence Z>=sqrt(n)I. L26 gives
+
+    J >= L²/(8L+4sqrt(n)),
+
+so L25 implies OP140. Conversely positivity gives a²<=K(H+KQ), hence
+J=sup (c·v)²/(v^TZv)<=K. OP140 would therefore prove universal
+M>=sqrt(n)/280. No proof is known in this record. This is the SAME C* gap
+in an explicit finite operator, not an independently resolved mechanism.
+
+For any rational w, put r=c-Zw and E=2c^Tw-w^TZw. Exactly,
+
+    J=E+r^TZ^(-1)r, so E<=J<=E+||r||²/sqrt(n).
+
+Exact/ball Cw and sqrt(n) enclosures can rigorously bracket J, including an
+upper bound capable of refuting OP140 on a certified low-K input. Merely
+failing to find a witness proves nothing. The stronger finite-C-only branch
+C>=-sqrt(n)I is optional/unproved and must not be confused with the global
+low-K hypothesis. Positive weighted Fejer escapes refute the non-Boolean
+relaxation even with n interpreted as squared coefficient mass. A proof
+must use linked zero/one entries c and C. [Advisor derivation](notes/advisor_L25_derivation_2026-10-21.md).
+
 ## 2026-10-20 supplement: arbitrary-support fixed-coupling attempt
 
 Uniform adaptive a,Q,H remains OPEN. In any finite mean-zero trial space containing D_A, a=n iff q=D_A/2+u with u perpendicular to D_A; then Q=n/2+||u||^2 and H=<D_A^3>/4+<D_A^2,u>+<D_A,u^2>. This gives an exact finite ball-constrained quadratic, whose numerical solutions are proposals only. FINITE EXACT:20 reconstructed witnesses satisfy a=n,Q<=25n,H<0 on ten supports in two spaces. No arbitrary-support bound follows.

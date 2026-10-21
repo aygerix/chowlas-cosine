@@ -1,5 +1,26 @@
 # CSTAR — THE problem. Read this first, every session.
 
+## Active frontier: finite band and Boolean inverse OP140, 2026-10-21
+
+First derive–test–certify–review cycle is complete under GOAL.md. Full Chowla
+and L25 remain OPEN. A positive arbitrary-A paper lemma realizes the sign
+witness in degree<2max A with a=n,Q<=n²/L²,|H|<=8n²/L. Under L25 this is
+Q<=25n,H<=40n^1.5 in the full2X band. Fixed-degree scalar q=P(D) is
+rigorously insufficient even INSIDE L25's low-ratio Boolean domain;
+canonical Singer controls supply the positive limiting H matrix. CPU/GPU
+general seeds escape the exact finite cap: n8128, degree4 cap31.3755,
+broader exact M>58.53525904, exact M<=64. This is an architecture decision,
+not unrestricted Chowla progress by an exponent. [Cycle and artifacts](notes/cstar_l25_gpu_cycle_2026-10-21.md),
+[independently reviewed proofs](notes/advisor_L25_derivation_2026-10-21.md).
+
+Next target is [OP140](PROOFS.md#op140-linked-boolean-inverse-target-conjectured-2026-10-21):
+under actual K<=2sqrt(n), prove c^T(C+2sqrt(n)I)^(-1)c>=sqrt(n)/140 for the
+linked Boolean Toeplitz-Hankel operator. It is implied by L25 and would itself
+give M>=sqrt(n)/280. Residual brackets can certify both sides without a
+large exact inverse. This remains C*, not a new route by renaming it.
+Weighted escapes defeat positivity-only proofs. No new GPU worker is active;
+conservative additional spend$0.10/$6.50, ledger GPU_BUDGET.json.
+
 ## Recorded advisor target L25 (CONJECTURED, 2026-10-21)
 
 For every nonempty Boolean positive-integer support A, the proposed estimate

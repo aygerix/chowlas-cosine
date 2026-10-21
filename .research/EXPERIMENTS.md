@@ -1,5 +1,24 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-21 — L25, scalar caps and integrated GPU projected proposals
+
+[Derivation, exact scopes and reproduction commands](notes/cstar_l25_gpu_cycle_2026-10-21.md).
+Data: experiments/l25_2026-10-21/{probe,scalar_barrier,scalar_singer,projected_cpu,
+projected_cpu_verification,projected_gpu,projected_gpu_verification,projected_pod_cpu}.json.
+Sources: src/cstar_l25_probe.py, cstar_scalar_moment_barrier.py,
+cstar_gpu_projected.py and cstar_projected_verify.py. All ordinary research
+and exact certification ran on Dirichlet. One RunPodL4 worker, now DELETED,
+ran CPU/GPU proposals with seed20261021. All jobs terminal.
+
+The n496/8128 Singer inputs have exact full-degree4 caps13.7233/31.3755
+and escaped exact M lower15.091991495/58.53525904, with exact square-identity
+M upper16/64. Scalar moments are independently recounted through9 on
+these inputs; older plateau recount only through7. Broader witness moments
+have a separate signed packed-integer square check. Arb global L1 brackets
+certify L25 on both; the large interval has small L1 but fails the low-M
+hypothesis. Other Singer trend values are numerical only. No universal
+convergence, matrix optimum or Chowla conclusion is inferred.
+
 ## 2026-10-20 — arbitrary-support prefix spaces and fixed coupling
 
 [Definitions, controls and limitations](notes/cstar_arbitrary_coupling_2026-10-20.md). Data: `experiments/ordered_prefix_2026-10-20/`, results.json, extra.json, verification.json, coupling.json, coupling_verification.json. Run `src/dirun.sh -c 2 -m 8 -t 480 python src/cstar_ordered_prefix.py` (also --extra), cstar_ordered_prefix_verify.py, cstar_coupling_ball.py and cstar_coupling_ball_verify.py. Sparse seed20261023; other inputs explicit/saved. Both verifiers exited0/PASS; all jobs terminal.

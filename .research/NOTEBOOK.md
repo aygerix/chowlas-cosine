@@ -1,5 +1,41 @@
 # NOTEBOOK (dated)
 
+## 2026-10-21 — active L25 cycle, a finite-band lemma and a certified GPU escape
+
+GOAL.md activated. The one advisor and lead independently derive the
+canonical Singer fixed-degree scalar obstruction INSIDE M<=sqrt(n): H>0,
+a²/H<=C_d uniformly over all coefficients at fixed degree. The high cubic
+cost grows as(11/5)sqrt(n), disproving another tempting inverse shortcut.
+These control families test explicit arbitrary-support principles; stop
+expanding their normalized-L1 trend sweep. MZ is the verified primary
+dependency. A separate positive arbitrary-A result uses V=2F_(2X)-F_X to
+realize exact a=n,Q<=n²/L²,|H|<=8n²/L in degree<2X. L25 itself is unproved.
+
+Exact degree4 caps13.7233/31.3755 on n496/8128 are escaped by full-band
+general-seed witnesses proving M>15.091991495/58.53525904. Independent
+Python moments through9 plus rational Schur/linear-system identities
+check the caps; independent signed convolution checks the broader
+witnesses. Arb+distributional-second-derivative quadrature certifies
+L25's conclusion on both. The n4096 interval is a necessary small-L1,
+large-M control, not a L25 counterexample.
+
+The GPU operator is now integrated with device-resident block projected
+trust-region proposals, tested first on Dirichlet. One bounded L4 run
+produced the same exact certificates. Single larger solver trial0.127s
+GPU/0.395s samehostCPU; smallfirstGPU2.583s/CPU0.034s. Setup prevents a
+blanket speedup claim. Pod deleted/list cleanup confirmed; conservatively
+charged$0.10, observed balance$7.3765; no active jobs. [Full cycle, exact
+data and reproduction commands](notes/cstar_l25_gpu_cycle_2026-10-21.md).
+
+Global review after the failed scalar/cubic principles: pursue the SAME
+Boolean inverse problem through explicit OP140, not more specialized
+exclusions. L25 implies the linked matrix leverage J>=sqrt(n)/140, and
+J<=K gives a direct Chowla consequence. A rational approximate inverse
+and its residual give certified BOTH-sided J bounds. That is the next
+discriminating implementation/derivation. Retain direct negative-Rayleigh
+and independent all-circle construction tracks. No universal bound,
+formalization, external review or priority claim; goal remains active.
+
 ## 2026-10-21 — advisor target L25 explicitly indexed
 
 Recorded the existing advisor proposal in the original cosine normalization:

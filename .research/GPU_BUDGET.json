@@ -1,0 +1,31 @@
+{
+  "authorization_source": "GOAL.md activated 2026-10-21",
+  "additional_spend_limit_usd": 6.5,
+  "minimum_account_balance_usd": 0.5,
+  "per_run_spend_limit_usd": 1.0,
+  "per_run_minutes_limit": 30,
+  "maximum_simultaneous_workers": 1,
+  "top_ups_allowed": false,
+  "new_billing_commitments_allowed": false,
+  "conservative_spend_committed_usd": 0.1,
+  "active_worker": null,
+  "runs": [{
+    "name": "chowla-projected-20261021",
+    "pod_id": "jfom1hoabqgu1w",
+    "reserved_usd": 1.0,
+    "gpu": "NVIDIA L4",
+    "advertised_hourly_usd": 0.59,
+    "provisioning_utc": "2026-10-21T16:26:16Z",
+    "automatic_termination_utc": "2026-10-21T16:56:16Z",
+    "status": "deleted-and-verified",
+    "deletion_verified_utc": "2026-10-21T16:30:28Z",
+    "conservative_final_charge_usd": 0.1,
+    "results": "experiments/l25_2026-10-21/projected_gpu.json",
+    "cleanup": "Provider deletion true; follow-up list showed no chowla-* pods. Existing other resources untouched.",
+    "question": "Does the general-seed projected Fourier optimizer recover exact square-root-scale cost beyond the complete degree4 polynomial space on a high-cubic L25-domain Boolean control?"
+  }],
+  "prior_pilot_excluded_from_new_budget": "gpu_pilot_2026-10-21/runpod_lifecycle.json",
+  "last_observed_balance_usd": 7.3765012365,
+  "last_observation_utc": "2026-10-21T16:30:28Z",
+  "accounting_policy": "Refresh provider balance and own worker list before provisioning. Reserve each run's maximum authorized cost; settle conservatively using advertised hourly rate times creation-to-deletion elapsed time plus $0.05 overhead reserve. Keep balance reserve and aggregate cap even if provider settlement is delayed. Verify worker deletion on every exit."
+}

@@ -2,6 +2,14 @@
 
 ## Active GOAL.md campaign, 2026-10-21
 
+**Advisor goal review:** keep the already active objective "Pursue the goal
+outlined in GOAL.md". GOAL.md now replaces the completed first milestone
+with a forward research cycle and explicitly carries the cumulative GPU
+budget across resets. The interrupted [negative-part projection attempt](notes/advisor_boolean_negativepart_2026-10-21.md)
+is saved for resumption; its identities do not yet yield a Chowla-scale
+estimate or distinguish weighted escapes. No new mathematical claim,
+computation, or spending resulted from this strategy review.
+
 **Latest continuation / read first:** previous goal turn was PROGRESS
 (94d0623,30d76c9). This continuation has now REFUTED the exact averaged
 positive-reference target too, not only its L-infinity surrogate. The

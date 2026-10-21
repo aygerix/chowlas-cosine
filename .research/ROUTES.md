@@ -19,6 +19,7 @@ User-directed priority revision (after checkpoint608cd3d): primary work is the e
 ## Ledger
 | Route | Where | Reduces to | Status |
 |---|---|---|---|
+| Mass-matched peak-one PD reference with ||D_A-D_p||inf<=C sqrt(n) under lowK | PROOFS P73 corollary; advisor_OP140_attempt_2026-10-21.md | stronger adaptive-reference realization of C*, not an equivalent route | REFUTED for EVERY fixed C by base-(k+1) Sidon differences: lowK and L25 hold, but positive-tail integral diverges, ruling out even arbitrary mean-one nonnegative approximants. Keep averaged H target; do not optimize this false L-infinity surrogate. |
 | OP140: linked Boolean band inverse c^T(C+2sqrt(n)I)^(-1)c>=sqrt(n)/140 under K<=2sqrt(n) | PROOFS OP140; advisor_L25_derivation_2026-10-21.md | = C*: L25 implies it by the explicit VP witness; Boolean coefficient-relaxed claim is false | CONJECTURED; residual upper/lower certification is the next discriminating test, not a new independent route |
 | Full-band sign witness with degree<2max(A) | PROOFS L26; cstar_l25_gpu_cycle_2026-10-21.md | conditional implementation of existing L1 sufficient mechanism | PROVED paper for arbitrary A: a=n,Q<=n²/L²,|H|<=8n²/L; does not prove L25 |
 | Fixed-degree scalar polynomial witnesses on every low-ratio Boolean support | advisor_L25_derivation_2026-10-21.md | proposed restricted realization of C* | REFUTED: canonical Singer controls force H>=n²/C_d; exact finite caps independently recounted through9, escaped by CPU/GPU general seeds |

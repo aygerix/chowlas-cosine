@@ -99,6 +99,74 @@ low-K hypothesis. Positive weighted Fejer escapes refute the non-Boolean
 relaxation even with n interpreted as squared coefficient mass. A proof
 must use linked zero/one entries c and C. [Advisor derivation](notes/advisor_L25_derivation_2026-10-21.md).
 
+Elementary calibration: w=c yields J>=sqrt(n)/(tau/4+2), tau=<D³>/n^1.5.
+Thus tau<=552 suffices for OP140, and a meaningful inverse probe must also
+test beyond it. FINITE EXACT/Arb: the saved p509 input (n129795,tau780.35)
+has 78522003/500000000<=J/sqrt(n)<=31408803/200000000. The action is
+independently recounted with Python integer products; this is not a
+universal estimate. Data: experiments/l25_2026-10-21/inverse_high_triples.json.gz.
+Singleton exact J=8/15 and p31/p127 brackets are in inverse_residual.json.
+The non-Boolean Fejer control with X120000, effective n=4800020000/120001,
+has full-space J<=250312893/250000000<sqrt(effective_n)/140. This is a
+rigorous failed relaxation, not a Chowla/L25 counterexample.
+
+## P73 corollary: mass-matched PD references have Boolean coupling (PROVED on paper)
+
+This is a new application of EXISTING P73, not a new variance-gap theorem.
+Let p:Z->R be finite, even, positive definite, p(0)=1 and0<=p<=1.
+Put mu=sum_(a>0)p(a), V=sum_(a>0)p(a)(1-p(a)). Then
+
+    V>=mu/77.
+
+Proof: threshold S={p>=1/2}, let t=(|S|-1)/2, and use P73 with
+delta increasing to1/5. Its error E<=2V and E>=2t/75 imply t<=75V.
+Also mu<=t+2V<=77V. This uses torsion-free P73; it is not true on arbitrary
+finite groups. For Boolean A of size n, let D_p=2sum p(a)cos(ax), q=D_A-D_p.
+Orthogonality gives the exact identities
+
+    a=<D_A,q>=Q/2+V+n-mu,
+    Q=2sum_(a>0)(1_A(a)-p(a))².
+
+If mu=n, then a>=n/77 and Q=2a-2V<=2a<=4n. The algebraic identity also
+holds for general real coefficients when n=sum coefficients²; Booleanity
+additionally identifies that n with the positive coefficient MASS and the
+front value D_A(0)/2. Do not claim that identity alone excludes weighted data.
+
+**Stronger reference hypothesis IPD(C), now REFUTED:** under K<=2sqrt(n), choose such
+a mass-matched p with ||D_A-D_p||_infinity<=C sqrt(n), for one absolute C.
+If possible, H<=||q||inf||D_A||2||q||2<=2sqrt(2)C n^1.5; the three mixed
+estimates would prove universal square-root Chowla. Normalizing a to n
+gives Q<=154n using Q<=2a. The sufficient implication is valid, but the
+existence assertion is false for EVERY absolute C. This is stronger than
+the required mixed-cost target; its failure leaves L25/OP140/Chowla open.
+
+Elementary counterfamily (lead derivation, advisor audit): take
+B_k={1,q,...,q^(k-1)}, q=k+1, A_k its positive integer differences,
+n=k(k-1)/2 and D=|F_B|²-k. Differences are unique by the least base-q
+digit, and M<=k/2<=sqrt(n). Write Y=|F_B|²/k. For any fixed r with q>2r,
+base-q sums have no carrying, so
+
+    <Y^r> >= r! (k)_r/k^r, <Y^(2r)> <=(2r)!.
+
+Fix C>0 and t=1+C; choose r with r!>=4(2t)^r. For
+k>=max(2r,r(r-1)), Cauchy gives
+
+    Pr[Y>2t] >= (r!)²/[16(2r)!] = eta_r>0,
+    <(1+D-Csqrt(n))_+> >= k*t*eta_r -> infinity.
+
+Any nonnegative P with mean1 and ||D-(P-1)||inf<=C sqrt(n) must instead
+have that same positive-tail integral<=1. Thus no such reference exists,
+even when the coefficient and mass restrictions on P are removed.
+This is a rigorous falsification of a proposed arbitrary-support inverse
+principle, not a sub-square-root construction or a new family exclusion.
+
+Moreover these SAME inputs satisfy L25 for k>=66: the counting bounds give
+<D²>=k²-k>=3k²/4 and <D⁴><=k⁴(9+66/k)<=10k⁴. Interpolation yields
+||D||_1²>=<D²>³/<D⁴> >=27k²/640>k²/25, hence ||D||_1>=sqrt(n)/5.
+Uniform L-infinity reference approximation is therefore not necessary
+even when L25 itself holds. Return to averaged mixed cost or OP140;
+do not build an optimizer for the refuted reference hypothesis.
+
 ## 2026-10-20 supplement: arbitrary-support fixed-coupling attempt
 
 Uniform adaptive a,Q,H remains OPEN. In any finite mean-zero trial space containing D_A, a=n iff q=D_A/2+u with u perpendicular to D_A; then Q=n/2+||u||^2 and H=<D_A^3>/4+<D_A^2,u>+<D_A,u^2>. This gives an exact finite ball-constrained quadratic, whose numerical solutions are proposals only. FINITE EXACT:20 reconstructed witnesses satisfy a=n,Q<=25n,H<0 on ten supports in two spaces. No arbitrary-support bound follows.

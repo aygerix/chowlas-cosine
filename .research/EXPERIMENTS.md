@@ -19,6 +19,16 @@ certify L25 on both; the large interval has small L1 but fails the low-M
 hypothesis. Other Singer trend values are numerical only. No universal
 convergence, matrix optimum or Chowla conclusion is inferred.
 
+Follow-on source cstar_inverse_residual.py brackets OP140 by a rational CG
+proposal's rigorously enclosed residual; FLINT2Cw matches independent Python
+products. inverse_residual.json covers singleton/p31/p127. The selected
+p509 high-triple test (tau780.35>552,n129795) exited0/PASS, J/sqrt(n) in
+[0.157044006,0.157044015]. Full record is inverse_high_triples.json.gz,
+retrieved explicitly after exceeding the wrapper's20MB limit. Reproduce:
+`src/dirun.sh -c 2 -m 8 -t 180 python src/cstar_inverse_residual.py --primes 509 --output .research/experiments/l25_2026-10-21/inverse_high_triples.json`.
+Weighted Fejer X120000 rigorously fails the coefficient-relaxed OP140;
+it is labeled Boolean=false. No new GPU run, no universal conclusion.
+
 ## 2026-10-20 — arbitrary-support prefix spaces and fixed coupling
 
 [Definitions, controls and limitations](notes/cstar_arbitrary_coupling_2026-10-20.md). Data: `experiments/ordered_prefix_2026-10-20/`, results.json, extra.json, verification.json, coupling.json, coupling_verification.json. Run `src/dirun.sh -c 2 -m 8 -t 480 python src/cstar_ordered_prefix.py` (also --extra), cstar_ordered_prefix_verify.py, cstar_coupling_ball.py and cstar_coupling_ball_verify.py. Sparse seed20261023; other inputs explicit/saved. Both verifiers exited0/PASS; all jobs terminal.

@@ -21,6 +21,14 @@ large exact inverse. This remains C*, not a new route by renaming it.
 Weighted escapes defeat positivity-only proofs. No new GPU worker is active;
 conservative additional spend$0.10/$6.50, ledger GPU_BUDGET.json.
 
+Follow-on paper decision: P73 supplies a>=n/77,Q<=4n for ANY mass-matched
+peak-one PD reference, but choosing one with controlled mixed cost remains
+open. The stronger uniform approximation IPD(C) is REFUTED even on a
+low-K Boolean family satisfying L25: base-(k+1) difference sets have
+unbounded positive tails at every fixed root-scale height. Do not replace
+the averaged-cost problem by this false L-infinity condition. [Full
+advisor-checked argument](notes/advisor_OP140_attempt_2026-10-21.md).
+
 ## Recorded advisor target L25 (CONJECTURED, 2026-10-21)
 
 For every nonempty Boolean positive-integer support A, the proposed estimate

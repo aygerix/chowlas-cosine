@@ -36,6 +36,35 @@ discriminating implementation/derivation. Retain direct negative-Rayleigh
 and independent all-circle construction tracks. No universal bound,
 formalization, external review or priority claim; goal remains active.
 
+Follow-on OP140 test completed: exact FLINT Cw and independent Python
+products plus Arb residual error yield BOTH-sided J brackets. Singleton
+matches8/15. The first Singer controls satisfy even the trivial cubic
+branch tau<=552, so selected the saved p509 support with tau780.35.
+Its n129795 bracket is J/sqrt(n) in[0.157044006,0.157044015], decisively
+above1/140; no violation. This checks the harder branch once, not an
+invitation to grow another family sweep. Weighted Fejer X120000 defeats
+the non-Boolean relaxation rigorously. Source cstar_inverse_residual.py;
+data inverse_residual.json and inverse_high_triples.json.gz. The latter
+was compressed/retrieved explicitly because the wrapper skips20MB files.
+All jobs terminal. Next work must quantify Booleanity with adaptive
+interior coefficients; fixed-interior Schur cancellation repeats an
+already recorded failed completion principle.
+
+The advisor's attempted Schur step did not yield a Boolean inverse bound.
+Its P73 corollary is valid: for every finite peak-one PD profile, V>=mu/77;
+mass matchmu=n gives residual a>=n/77,Q<=2a<=4n automatically. The stronger
+proposed uniform-reference approximation IPD(C) was then falsified BEFORE
+another optimizer was built. Lead constructed B_k={1,(k+1),...,(k+1)^(k-1)};
+its differences are Boolean and exactlylowK. No-carry moments up to2r
+give a positive tail of |F_B|²/k above EVERY fixed level, forcing
+int(1+D-Csqrt(n))_+->infinity. Mean-one nonnegative references cannot
+track D uniformly to Csqrt(n). Fourth-moment interpolation proves L25 on
+the SAME family for k>=66. Advisor independently checked the full proof;
+no CLT, new external theorem or computation. [Attempt and complete
+falsification](notes/advisor_OP140_attempt_2026-10-21.md). This kills only
+the stronger L-infinity surrogate. Keep actual mixed average H and OP140,
+and preserve the independent all-circle construction track.
+
 ## 2026-10-21 — advisor target L25 explicitly indexed
 
 Recorded the existing advisor proposal in the original cosine normalization:

@@ -4,6 +4,44 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 aggregation follow-up within the SAME P2 route:
+the proposed stronger finite target is
+Nminus+(5lambda/(2t))*C2²>=y/2-y² atlambda2sqrt(n),
+Nminus=sum_(j=1)^D [lambda*sum_(a>=j)(p²)_(a-j)]².
+Attempt terminal-band Boolean row aggregation, comparing its sparse
+no-carry obstruction. Before further proof investment, attack this
+NEW stronger estimate on ONE existing certified n56 DR support,
+whose original reciprocal negative margin is smaller than L36's.
+No new support search, family enlargement or GPU. Exact finite
+recurrences plus independent reversed-polynomial convolution test
+the sign; exact Chebyshev/Sturm rechecks the actual-lowM premise.
+A positive result falsifies this sufficient strengthening only,
+not original P2. A negative result is one case, not universal evidence.
+RESULT: n56 has rigorously positivePsi_minus>.0995, so this
+strengthening is FALSE. Advisor found the simpler paper falsifier
+A={1,...,8}, exactM<=11/4<sqrt8. One Q(sqrt32) check corroborates
+the closed-form sign, and a full inverse residual checks ORIGINAL
+P2 on that same set. Stop this negative-block closure; no expansion.
+Mathematical pivot: retain positive scalar phase using the GLOBAL
+inner allpass B=Wrev/W, W=lambda+F monic and zero-free, B0=1/lambda.
+Exact correlations give Eplus>=(( (1+y)/lambda+lambda*p_D )²+p_D²)
+/(1-lambda^-2). These two correlations exhaust ALL powers of B;
+there is no escalating same-allpass sweep. Test only the SAME n8
+and n56 falsifiers for recovery. This is a whole-polynomial,
+zero-free/endpoint coupling, not more positive Fourier modes.
+Also derive the exact finite inverse-norm kernel matrix C with
+||p||²=(C^-1)00; this is an exact representation of the existing
+norm-gap C*, not a new universal proof. Keep the actual half-plane
+condition: zero-freeness alone admits prefix g tending to0.
+RESULT: n8 recovers with allpassfloor, but n56 leaves
+Psi_cyclic>.0810. The COMPLETE cyclic-power sufficient closure
+is FALSE; no more powers. Full covariance is retained exactly
+by C^-1 and the necessary half-plane constraint
+Re(T_D(p))>=lambda*C^-1/2. Next adaptive signed-vector work is
+the existing norm-gap C*, not a new route. Multi-row M bounds
+and tracecentroid gains are dominated by P9/P29/P13 respectively.
+See notes/P2_full_phase_2026-10-23.md for all proofs/statuses.
+
 2026-10-23 refinement of the SAME reciprocal/phase route: retain
 the complete phase SOS K=(F²+lambda*conjugate(F))/(lambda+F)²,
 not a modulus surrogate. Orthogonal projections give a sharper

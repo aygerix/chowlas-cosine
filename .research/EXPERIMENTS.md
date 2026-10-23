@@ -2390,3 +2390,31 @@ Reproduce on Dirichlet, with2CPU/4GB caps:
 All own jobs terminal/PASS. No new GPU use or VM lifecycle action.
 The scan is stopped; do not enlarge it. The Gminus full-negative
 projection has one exact finite recovery, not a universal theorem.
+
+## 2026-10-23: full-negative and complete cyclic closures refuted
+
+The same finite full-negative strengthening is now rigorously false
+on an existing n56,degree87 support, with Psi_minus>.0995. Exact
+Sturm rechecks its all-circle upperM, inverse-square convolution
+and reversed-polynomial multiplication independently check the
+finite pairings, and an earlier complete inverse certificate is
+matched to the identical support. Adding the COMPLETE allpass
+cyclic contribution still leaves Psi_cyclic>.0810. More powers
+have exactly zero additional correlations; stop this closure.
+
+The simpler A={1,...,8} has a paper proof M<=11/4<sqrt8 and
+reverse finite-inequality gap>449/62500. A rational quadratic-field
+implementation independently verifies every sign and matches the
+geometric closed forms. Exact Sturm checks the all-circle bound.
+The new global allpass floor recovers this ONE case; the full
+original determinant remains negative. Its exact finite-kernel
+norm agrees with an independent infinite inverse residual enclosure.
+
+    src/dirun.sh -c 2 -m 4 -t 120 python src/P2_aggregation_test.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/P2_prefix8_exact.py
+
+Data: experiments/P2_aggregation_2026-10-23/{n56,prefix8}.json.
+[Proof/status record](notes/P2_full_phase_2026-10-23.md),
+[independent advisor review](notes/advisor_P2_aggregation_2026-10-23.md).
+No new support search or GPU. All own jobs terminal/PASS; no
+original P2 falsifier, universal exponent or vanishing-ratio family.

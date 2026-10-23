@@ -1,5 +1,23 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Current continuation: the stronger FULL-negative-block target is
+REFUTED even by A={1,...,8}, exactM<=11/4<sqrt8. A global
+allpass positive-phase bound recovers that example, but its ENTIRE
+cyclic-power sufficient closure fails on the existing actual-lowM
+n56 support. More powers have exactly zero new correlations.
+Stop both closures; original P2/S0 are not refuted.
+[Current derivations and certificates](notes/P2_full_phase_2026-10-23.md),
+[independent audit](notes/advisor_P2_aggregation_2026-10-23.md).
+
+The full scalar norm now has an exact finite kernel representation,
+||p||²=(C^-1)00. The actual half-plane implies the coupled necessary
+matrix Re(T_D(p))>=lambda*C^-1/2. C>0 or bare Toeplitz positivity
+alone are insufficient; prefixes give an explicit scope counter.
+Next test the adaptive signed Schur vectors in this FULL inequality.
+The target1+L>=eta*n is the existing norm-gap C*, not a new route.
+Do not claim centroid gains already dominated by P29/P13. Goal active;
+all own jobs terminal, no GPU or VM lifecycle action.
+
 Current continuation: a phase-retaining norm identity sharpens
 the generic reciprocal sign branch to g>=4/25. It does not bound
 g away from0 for Boolean sets. The finite rank-two projection

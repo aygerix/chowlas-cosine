@@ -2,6 +2,38 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Full scalar phase: exact closure falsifications and retained kernel (2026-10-23)
+
+REFUTED on paper and exact finite checks: the proposed universal
+Nminus+(5lambda/(2t))*C2²>=y/2-y², with actuallowM and
+lambda2sqrt n. A={1,...,8} has M<=11/4<sqrt8 and reverse
+gap>449/62500. OriginalP2 remains negative on this same set.
+An existing n56 support also refutes the stronger condition.
+
+PROVED global allpass bound: for B=Wrev/W and
+v=(1+y)/lambda+lambda*p_D,
+
+    ||Kplus||²>=[v²+p_D²]/(1-lambda^-2).
+
+The two coordinates exhaust its COMPLETE cyclic power space;
+every later orthogonalized power correlation vanishes. It recovers
+n8, but the UNIVERSAL sufficient closure using this entire space
+is REFUTED by n56, Psi_cyclic>.0810. No originalP2 falsifier.
+
+PROVED exact full-norm representation: with the explicitly defined
+finite kernelC, ||p||²=(C^-1)00. Actualhalfplane gives the
+necessary coupled constraint Re(T_D(p))>=(lambda-M)*C^-1.
+This is a representation of the existing norm gap, not a solved
+Boolean leverage bound. Prefixg=n/[(lambda-1)(lambda+n)]
+shows whyzero-freeC>0 alone is insufficient. A prefix256 paper
+test also separates the coupled constraint from bare Toeplitz
+positivity. No novel centroid gain: oldP29/P13 dominate it.
+
+[Full proofs, exact certificates, limits and next signed-vector calculation](notes/P2_full_phase_2026-10-23.md),
+[advisor audit](notes/advisor_P2_aggregation_2026-10-23.md).
+Paper proofs/internal review and exact finite certificates only;
+no new Lean/kernel verification or universal exponent gain.
+
 ## Reciprocal phase projections and exact closure boundaries (2026-10-23)
 
 PROVED on paper, independently internally checked: with real Boolean

@@ -1,0 +1,133 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 384,
+  "source": ".research/experiments/boolean_projection_2026-10-21/results.json",
+  "A": [
+    1,
+    2,
+    3,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    36,
+    37,
+    38,
+    39,
+    40,
+    42,
+    43,
+    45,
+    46,
+    47,
+    48,
+    49,
+    54,
+    56,
+    57,
+    59,
+    61,
+    62,
+    64,
+    69,
+    70,
+    76,
+    85,
+    87
+  ],
+  "n": 56,
+  "D": 87,
+  "t_exact": 1315,
+  "M_upper_exact": "7902460565/1644167168",
+  "all_circle_Sturm_chain_length": 88,
+  "actual_lowM_exact": true,
+  "intervals": {
+    "C1": [
+      "-1978497918975063809/18446744073709551616",
+      "-1978497918975059711/18446744073709551616"
+    ],
+    "C2": [
+      "-3768297268245758977/18446744073709551616",
+      "-3768297268245750783/18446744073709551616"
+    ],
+    "T": [
+      "-207878979037063585/18446744073709551616",
+      "-207878979037063071/18446744073709551616"
+    ],
+    "y": [
+      "3111247669876209151/18446744073709551616",
+      "3111247669876217345/18446744073709551616"
+    ],
+    "Nminus": [
+      "956746085968771967/18446744073709551616",
+      "956746085968774017/18446744073709551616"
+    ],
+    "Gminus": [
+      "1540797559928246783/18446744073709551616",
+      "1540797559928250881/18446744073709551616"
+    ],
+    "Psi_minus": [
+      "1835549273609855999/18446744073709551616",
+      "1835549273609860097/18446744073709551616"
+    ],
+    "allpass_v": [
+      "416578840248392639/18446744073709551616",
+      "416578840248393665/18446744073709551616"
+    ],
+    "p_D": [
+      "-68407190019773625/18446744073709551616",
+      "-68407190019773495/18446744073709551616"
+    ],
+    "allpass_positive_phase_floor": [
+      "9704512328603585/18446744073709551616",
+      "9704512328603619/18446744073709551616"
+    ],
+    "allpass_corrected_Psi": [
+      "1494485611361596415/18446744073709551616",
+      "1494485611361600513/18446744073709551616"
+    ],
+    "equivalent_finite_inequality_margin": [
+      "-52228110253915409/18446744073709551616",
+      "-52228110253915279/18446744073709551616"
+    ]
+  },
+  "full_negative_strengthening_refuted": true,
+  "full_negative_strengthening_holds_on_this_support": false,
+  "allpass_corrected_strengthening_refuted": true,
+  "allpass_corrected_strengthening_holds": false,
+  "independent_inverse_square_and_negative_block_checks": true,
+  "prior_full_inverse_certificate": ".research/experiments/zero_reciprocal_2026-10-21/results.json",
+  "prior_full_inverse_support_matches": true,
+  "original_P2_violation_bracket": [
+    "-27818989904760578049/18446744073709551616",
+    "-27775156965168160767/18446744073709551616"
+  ],
+  "original_P2_holds": true,
+  "qualification": "One existing actual-lowM Boolean support. A positive Psi_minus refutes the stronger finite-projection closure only; it does not refute original P2 or Chowla."
+}

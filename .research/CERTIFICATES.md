@@ -376,3 +376,26 @@ Its coefficients are not Boolean, so it is a relaxation falsifier.
 
 These are paper/exact finite certificates, internally audited, not
 new Lean/kernel checks or an unrestricted Chowla result.
+
+## 2026-10-23: actual Boolean falsifiers and two full-norm methods
+
+The negative-block strengthening is refuted by A={1,...,8}, with
+paper all-circle M<=11/4 and an exact rational reverse gap. Exact
+Q(sqrt32) field arithmetic separately corroborates the recurrence
+and closed forms. Sturm gives an independent global upper proof.
+Original P2 holds, by both an infinite residual certificate and
+the independent exact finite reproducing-kernel norm formula.
+
+On the degree87,n56 support,384-bit balls refute both negative-only
+and COMPLETE cyclic-allpass sufficient closures. Independent finite
+convolution and reversed polynomial products agree. Exact Sturm
+rechecks lowM; the earlier full inverse certificate is matched to
+the identical frequency set and proves original P2 negative.
+
+[Certificate data](experiments/P2_aggregation_2026-10-23/prefix8.json),
+[n56 data](experiments/P2_aggregation_2026-10-23/n56.json),
+[complete statements and analytic proof](notes/P2_full_phase_2026-10-23.md),
+[independent internal audit](notes/advisor_P2_aggregation_2026-10-23.md).
+Neither a sampled minimum nor a finite inverse truncation is being
+used as proof of the whole-circle or full inverse claims. No new
+kernel check, universal Chowla result or novelty certification.

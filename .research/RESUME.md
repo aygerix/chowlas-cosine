@@ -1,5 +1,41 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: negative and complete cyclic phase closures are false
+
+Previous4bdf346 was progress. Full GOAL active and unresolved.
+Read [full-phase proof/test record](notes/P2_full_phase_2026-10-23.md)
+and [sole advisor audit](notes/advisor_P2_aggregation_2026-10-23.md).
+
+Do NOT resume trying to prove the prior finite negative-block target:
+A={1,...,8} refutes it with a paper deficit>449/62500 and exact
+all-circle M<=11/4<sqrt8. n56 separately refutes it. Original
+full P2 is certified NEGATIVE on both. The new true allpass bound
+Eplus>=([((1+y)/lambda+lambda*p_D)²+p_D²])/(1-lambda^-2)
+recovers n8 but its universal sufficient closure fails on n56,
+Psi_cyclic>.0810. Higher powers give no additional contribution.
+The terminal many-row M-bound is dominated by oldP9; the trace
+centroid corollary is dominated by oldP29/P13. Stop those upgrades.
+
+Retain the FULL scalar norm as C^-1, where C is the finite kernel
+matrix of W=lambda+F and its reversal. Definitions/proof in current
+note. The actual lowM hypothesis supplies the necessary matrix
+Re(T_D(p))>=lambda*C^-1/2, not merely C>0 or Re(T_D(W)) positivity.
+Prefix256 separates these constraints on paper; prefixnorm
+g=n/[(lambda-1)(lambda+n)] rules out dropping the half-plane.
+
+First next derivation: Ctail removesrow/column0,
+v0_j=lambda*1_A(j)-1_A(D-j), x=Ctail^-1v0. Use adaptive signed
+vectors(0,x),(1,-x) in the FULL covariance constraint. Attempt a
+Boolean inequality for their joint forms rather than discard terms.
+The quantitative target is1+L>=eta*n,L=v0·x, since
+1+L=4n*g/(1+g). This is the existing C*normgap, not a novel or
+complete route. L>=eta*n is false for singletons; retain allsmall
+cases. If no useful inequality follows, pivot mathematically rather
+than expand another projected-success scan.
+
+Three active lines listed in STATE. Exact jobs terminal/PASS;
+Dirichlet shared and on, no new GPU spend or lifecycle changes.
+
 ## Newest checkpoint: keep the phase residual; rank-two closure is false
 
 Read [current proof/test record](notes/P2_phase_projection_2026-10-23.md)

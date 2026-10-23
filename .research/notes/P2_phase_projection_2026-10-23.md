@@ -5,6 +5,13 @@ unresolved. Paper identities were independently checked by the sole
 [internal advisor](advisor_P2_coupling_2026-10-23.md); finite certificates
 ran on Dirichlet. No new Lean/kernel verification or priority claim.
 
+Continuation: the full-negative sufficient target in this checkpoint
+has since been REFUTED on A={1,...,8} and the saved n56 support.
+Its complete cyclic-allpass upgrade is also refuted. See the newer
+[full-phase record](P2_full_phase_2026-10-23.md) before resuming
+the final next-step section below. Earlier identities and finite
+certificates retain their stated status.
+
 ## Exact target and new analytic result
 
 Let A be a finite nonempty set of distinct positive integers, n=|A|,

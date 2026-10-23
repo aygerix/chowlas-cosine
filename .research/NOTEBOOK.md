@@ -1,5 +1,48 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — full-negative and cyclic phase closures refuted; keep full covariance
+
+Previous4bdf346 was progress. The announced many-row attempt was
+carried out. Terminal disjoint pairs give a valid inverse-coefficient
+bound, but its M-bound is dominated by P9 and can remain one pair
+along growing lowM no-carry supports. Stop this as a universal upgrade.
+
+The stronger full-negative finite inequality is FALSE. One predeclared
+n56 fixture gives Psi_minus>.0995, rechecked by exact Sturm and two
+independent finite inverse implementations. Advisor found a simpler
+PAPER falsifier A={1,...,8}, all-circle M<=11/4<sqrt8 and reverse
+gap>449/62500. ExactQsqrt32 arithmetic corroborates closed forms;
+Sturm independently rechecks the circle premise. Original P2 holds
+on both examples by support-matched full inverse certificates.
+
+Mathematical pivot: the globalinner allpass B=Wrev/W yields a
+positive-phase floor [v²+p_D²]/(1-lambda^-2),
+v=(1+y)/lambda+lambda*p_D. ALL powers ofB give only these two
+coordinates; later correlations are zero. This recovers n8, but
+the same n56 has correctedPsi>.0810, refuting its universal
+sufficiency. Stop the COMPLETE cyclic closure; do not add powers.
+
+An elementary finite reproducing-kernel derivation now preserves
+||p||²=(C^-1)00 exactly. The exact prefix formula agrees with a
+separate infinite residual certificate for n8. Prefixes also prove
+zero-freeness alone cannot force the norm gap; actuallowM must
+enter the coupled matrix Re(T_D(p))>=lambda*C^-1/2. A paper
+prefix256 test separates that full covariance constraint from
+bare Toeplitz positivity. The tempting tracecentroid consequence
+is already dominated by oldP29/P13 and is NOT counted as progress.
+
+GLOBAL REVIEW: stop the refuted selective closures and control
+expansion. Retain the trueallpass bound/fullkernel, with no new
+universal norm-gap claim. First next calculation uses signed
+x=Ctail^-1v0 and(1,-x) in the FULL matrix condition, where
+v0_j=lambda*1_A(j)-1_A(D-j). Target1+L>=eta*n,L=v0·x,
+is precisely theexisting C*gap; L>=eta*n alone failssingletons.
+Keep allBoolean entries/covariances; no genericopnorm replacement.
+[Complete record](notes/P2_full_phase_2026-10-23.md),
+[independent advisor review](notes/advisor_P2_aggregation_2026-10-23.md).
+No universal exponent or vanishing-ratio family. Jobs terminal/PASS,
+Dirichlet unchanged and on, no GPU use, conservative total$0.10.
+
 ## 2026-10-23 — sharper phase gate; exact Boolean falsification of a finite closure
 
 Previousa5ced79 was progress. The full signed P2 target was retained.

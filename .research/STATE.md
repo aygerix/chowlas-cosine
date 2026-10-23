@@ -1,5 +1,74 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — negative-block target refuted; keep positive phase, 2026-10-23
+
+Previous4bdf346 was progress; full GOAL remains active and unresolved.
+The proposed stronger finite target from that checkpoint is now REFUTED:
+Nminus+(5lambda/(2t))*C2²>=y/2-y² fails for A={1,...,8},
+with rigorous all-circle M<=11/4<sqrt8. The advisor has a complete
+paper proof, including a rational deficit>449/62500. Exact quadratic-
+field corroboration and independent Sturm check also pass. The existing
+n56 support separately gives Psi_minus>.0995. Original P2 is NOT
+refuted: its full inverse determinant is negative on these examples.
+Stop trying to prove the discarded-positive-phase strengthening.
+[Current advisor derivations](notes/advisor_P2_aggregation_2026-10-23.md).
+[Complete current proof, counterexamples and next calculation](notes/P2_full_phase_2026-10-23.md).
+
+The conditioning-free terminal multi-row bound is valid, but its
+M-bound is dominated by P9 and it has a no-carry growing-family
+obstruction. Do not advertise it as a new universal lower bound.
+
+New mathematical pivot, paper checked by advisor: W=lambda+F is
+monic and zero-free; B=Wrev/W is INNER with B0=1/lambda.
+The FULL positive-frequency part Kplus satisfies
+
+    ||Kplus||² >= [v²+p_D²]/(1-lambda^-2),
+    v=(1+y)/lambda+lambda*p_D.
+
+This keeps scalar positive phase through the WHOLE polynomial,
+instead of dropping it or adding more Fourier modes. All powers
+of this same allpass supply exactly these two correlations; more
+powers do not improve the bound. It recovers n8 on paper and in
+exact quadratic-field arithmetic. But on SAME n56 support the
+complete cyclic correction still leavesPsi>.0810162273>0.
+Thus its UNIVERSAL sufficient closure is also REFUTED. Do not
+add more powers or call the cyclic space complete for full Kplus.
+Original S0/P2 hold on both examples. No new support search.
+
+Also derived and advisor checked: a finite reproducing-kernel matrix
+C has ||p||²=(C^-1)00, retaining the full infinite inverse exactly.
+This is a representation of the existing gap, not a new theorem
+forcing it. The actual half-plane condition remains essential:
+prefixA[1,n] has zero-free W for EVERYlambda>1 and exact
+g=n/[(lambda-1)(lambda+n)], tending to0 atlambda2sqrt(n).
+Do not drop actual lowM when using this finite matrix.
+
+Retained exact half-plane constraint, for P=T_D(p):
+
+    Re(P)>=(lambda-M)*C^-1 >=(lambda/2)*C^-1.
+
+This is necessary, not claimed sufficient at dimensionD. It uses
+FULL inverse covariance; bare Re(T_D(W))>=lambda I/2 does not
+encode the actual hypothesis. A paper prefix256 test separates them.
+The trace-centroid M² consequence is already dominated by oldP29
+andP13; no new arbitrary-support lower bound is claimed from it.
+
+First concrete next calculation: v0_j=lambda*1_A(j)-1_A(D-j),
+Ctail=C withfirstrow/columnremoved, x=Ctail^-1v0. Test(0,x)
+and(1,-x) against the FULL matrix inequality above. Keep all signed
+and covariance terms; no trace/opnorm replacements. Quantitative
+target1+L>=eta*n, L=v0·x, is EXACTLY the existing norm-gap route:
+1+L=4n*g/(1+g). L>=eta*n withoutsmallcasequalification is
+false for singletons. This is a representation of the open C*
+gap, not a newly proved route or a witness completeness claim.
+
+Global decision: stop negative-only/cyclic closures and their control
+expansion, retain true formulas and full scalar matrix. Three lines
+remain signed Boolean inverse coupling, actual mixed/scalar factor
+coefficients, and genuine growing all-circle constructions. All own
+jobs terminal/PASS; no GPU deployment or VM lifecycle operation;
+shared Dirichlet left running, cumulative conservative GPU$0.10.
+
 ## Current continuation — phase gate and an exact Boolean projection failure, 2026-10-23
 
 Previous a5ced79 was progress. Full GOAL is active and unresolved.

@@ -1,106 +1,89 @@
-Pursue a rigorous resolution of Chowla’s square-root conjecture.
+# Chowla research goal
 
 For every nonempty finite set A of distinct positive integers, define
-f_A(x)=sum_{a in A} cos(ax), n=|A|, and M(A)=-min_{x in R} f_A(x).
-Establish either an absolute c>0 with M(A)>=c*sqrt(n) for EVERY A,
-or a rigorous counterexample family with n tending to infinity and
-all-circle bounds M(A)/sqrt(n) tending to zero. For an effective
-counterexample construction, implement and verify the quantified
-Epoch solution(c,n) interface.
+f_A(x)=sum_{a in A}cos(ax), n=|A|, M(A)=-min_{x in R}f_A(x).
+Resolve either direction rigorously:
 
-On activation and after compaction, load the Number Theory research
-skill and read AGENTS.md, .research/RESUME.md, .research/STATE.md, CSTAR.md, PROOFS.md,
-ROUTES.md, the latest NOTEBOOK entries, and the linked advisor,
-resolvent, and GPU-pilot reports. Resume from the recorded frontier.
-Update STATE to reflect this active goal; honor any subsequent pause.
+- Prove an absolute c>0 with M(A)>=c*sqrt(n) for EVERY A; or
+- Give a growing family with all-circle upper bounds M(A)/sqrt(n)->0.
+  An effective disproof additionally needs the quantified Epoch
+  solution(c,n) generator and proof of termination/correctness.
+  For every c>0 and integer n>=1 it must return at least n distinct
+  positive integers with f_A(x)>=-c*sqrt(|A|) for EVERY real x.
 
-Execution correction after the user's October 23 feedback:
-the goal is currently PAUSED. When the user resumes it, the FIRST
-milestone must be a completed GPU-driven mathematical feedback cycle,
-as specified in .research/GPU_WORKFLOW.md. Do not begin another
-paper-only sequence of sufficient conditions and model exclusions.
-Use the existing validated Fourier operator; prepare and test the
-new experiment on Dirichlet before RunPod. One bounded derivation
-may define the question, but exploratory proof work may not postpone
-the experiment indefinitely. Report executable code, actual GPU
-results on new adversarial inputs, exact CPU follow-up, and the
-advisor's evidence-based decision. Another benchmark, repeated
-successful control, unexecuted plan, or renamed open inequality does
-not fulfill this milestone. Keep the original full objective and
-all pause, spending, shared-VM and certification constraints intact.
+## Execution
 
-Make arbitrary-support Boolean mathematics the primary effort.
-Continue attempting to derive and adversarially test conjecture L25:
-M(A)<=sqrt(n) implies the normalized circle average of |f_A| is at
-least sqrt(n)/10. Treat its constants as provisional. It is a
-sufficient target, not an assumption or an established equivalence
-with Chowla. L25 and the recorded OP140 inverse target are possible
-routes, not mandatory paths; pivot if a better mechanism emerges.
-Preserve direct negative-Rayleigh and other certificate
-routes, and maintain an independent construction track requiring
-genuine Boolean sets and rigorous all-circle UPPER bounds on M.
+The pause/running status and next task live ONLY in .research/STATE.md.
+Load the Number Theory research skill and read the project instructions,
+this file and STATE. Consult proof notes and historical catalogs only
+when needed for the current question. Do not reload all old journals.
+Honor pauses; resume only when the user instructs it.
 
-Use exactly one internal PhD Advisor subagent, GPT-6.1 Sol with MAX
-reasoning. Reuse the existing advisor; recreate it only if absent.
-Have it independently check consequential derivations, challenge
-experimental interpretations, and review strategy after major
-obstructions. Launch no additional agents.
+The FIRST resumed milestone is a completed GPU-driven mathematical
+feedback cycle, using the validated Fourier operator:
 
-Use Dirichlet through src/dirun.sh for ordinary research computation
-and exact certification. Use RunPod selectively for repeated,
-device-resident large-band Fourier operations and optimization.
-Dirichlet is SHARED with other agents. Leave it running; never stop,
-restart, suspend, reset or schedule an automatic shutdown without a NEW
-explicit user instruction. End only this project's own bounded jobs.
-Keep direct/sparse CPU methods for small or sparse spaces.
-Floating-point optimization proposes candidates; exact arithmetic
-and rigorous global certificates establish mathematical claims.
+1. Define one falsifiable quantitative question and new adversarial
+   inputs. Cap initial exploratory derivation at 30 minutes, then
+   implement/test the actual runner on Dirichlet before RunPod.
+2. Run a bounded device-resident GPU search. Existing successful
+   controls are regression tests; another benchmark or control sweep
+   does not fulfill the milestone. Changes to A need tested operator
+   updates; the current kernel batches vectors for a fixed A.
+3. Perform exact CPU follow-up on consequential outputs. Certify any
+   low-M premise as well as the claimed violation. Numerical optimizer
+   failure is not a bound on the entire witness space.
+4. Have the advisor review the evidence and decide the next test or
+   lemma. Save code, inputs/seeds, outputs, scope, end-to-end timing,
+   costs and verified worker cleanup. Report real external blockers.
 
-Limit additional RunPod spending to $6.50 TOTAL from existing prepaid
-credit, while retaining at least $0.50 balance. This cumulative cap
-does not renew on compaction or a goal reset; consult the existing
-.research/GPU_BUDGET.json ledger before every deployment.
-No top-ups or new billing commitments. Use at most one new GPU
-worker at a time, with
-automatic termination and limits of 30 minutes and $1 per run,
-including startup. Track cumulative spending across compaction.
-Retrieve results, delete workers after every run or failure, and
-verify cleanup. When GPU funds are exhausted, continue mathematical
-and existing CPU work without further GPU spending.
+Keep proof and computation interleaved afterward; do not run two
+consecutive paper-only exploratory turns while a discriminating
+experiment and authorized GPU resources are available. Complete a
+ready short proof or certificate, but do not open another speculative
+proof chain instead of the computational cycle.
 
-The first integrated derive–test–certify–review milestone is complete;
-resume from STATE rather than repeat it. Next milestone: derive a
-new quantitative consequence of Booleanity for unrestricted signed
-witnesses, or test a genuinely changed counterexample mechanism.
-State a precise candidate estimate and its implication for Chowla,
-attempt its proof, and use adversarial computation only where it
-can discriminate that estimate. Certify consequential finite claims
-and obtain an advisor-reviewed decision: a useful lemma, a precise
-falsification followed by a mathematical pivot, or a rigorous new
-construction bound. A restatement of the open gap, another successful
-control sweep, or a throughput benchmark does not meet this milestone.
+Prioritize arbitrary-support Boolean mathematics. Maintain distinct
+universal signed-witness, genuine construction and exact-certification
+lines. L25 and OP140 are possible unproved targets, not assumptions
+or mandatory routes. A construction needs an all-circle UPPER bound
+on M. Use experiments to reveal mechanisms, not just larger examples.
+After two materially different failures, review the whole strategy.
+Do not restart refuted fixed-degree scalar or bounded-mean positive-
+reference architectures without an explicit mathematical change.
 
-Every experiment must address a precise quantitative mathematical
-question. Attempt the derivation before expanding computation.
-After two materially different failed attempts, reconsider the
-global strategy. Pursue specialized models only when they test an
-explicit arbitrary-support principle or offer a credible new
-counterexample mechanism. Fixed-degree scalar witnesses and all
-bounded-mean nonnegative-reference residual architectures are already
-refuted as universal methods; do not restart them without an explicit
-mathematical change that removes the recorded obstruction.
-Consolidation, submission, specialist outreach, and Wilf remain
-outside scope.
+## People and resources
 
-Keep STATE current. Record exact statements, proof gaps, failed
-conjectures, counterexamples, reproducible artifacts, advisor
-findings, GPU costs, active jobs, and the next concrete derivation.
-Commit meaningful checkpoints before compaction or resource limits.
-Clearly distinguish numerical evidence, exact finite certificates,
-paper proofs, independent review, and kernel-checked mathematics.
+Use exactly one existing PhD Advisor agent, GPT-6.1 Sol/MAX; recreate
+only if absent. No additional agents. It independently checks
+consequential mathematics and challenges experimental interpretations.
 
-Continue autonomously while this goal is active and within
-authorized resources. A failed route calls for a mathematical pivot.
-Mark the goal complete only when the stated resolution is supported
-by a complete, critically reviewed argument. At a pause or resource
-limit, stop the affected work safely and preserve a resumable handoff.
+Run research calculations and exact checks through src/dirun.sh on
+Dirichlet. Dirichlet is SHARED: never stop, restart, suspend, reset or
+schedule its shutdown without a NEW explicit user instruction. End
+only this project's own bounded jobs. Use direct/sparse CPU methods
+when appropriate; use GPU for repeated large-band resident operations.
+
+RunPod limits are cumulative: $6.50 additional spend, at least $0.50
+balance retained, one new worker at a time, <=30 minutes and $1 per
+run including startup, automatic worker termination, no top-ups or
+new billing commitments. Read .research/GPU_BUDGET.json and refresh
+provider balance/inventory before provisioning. Retrieve results,
+delete only our worker and verify cleanup. When funds are exhausted,
+continue computational research on existing CPU resources.
+
+## Record and scope
+
+Update ONLY .research/STATE.md for a checkpoint. Put the actual new
+result, experiment, failure and advisor review together in ONE artifact
+when a substantive record is needed; code/data remain beside their
+experiments. Do not copy each update into RESUME, CSTAR, NOTEBOOK,
+PROOFS, ROUTES, EXPERIMENTS, CONSTRUCTIONS, CERTIFICATES and LITERATURE.
+Those legacy files are compatibility pointers or reference catalogs.
+Preserve failed claims and their counterexamples; consult them before
+repeating work. Commit meaningful checkpoints. Distinguish numerical,
+interval-certified, paper-proved, internally reviewed, externally
+reviewed and kernel-checked claims. Never promote one status silently.
+
+No manuscripts, LaTeX papers, submissions, specialist outreach or Wilf.
+The full objective persists across sessions; mark it complete only
+with a complete critically reviewed resolution, not a partial result.

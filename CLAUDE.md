@@ -213,25 +213,21 @@ The formalizer must **not** replace `forall real x` with a finite grid, replace 
 
 ## Persistent research record
 
-Maintain a resumable record at minimum:
+Use `.research/STATE.md` as the ONLY live handoff and `GOAL.md` for
+stable execution rules. Update STATE once per checkpoint. Do not copy
+status into multiple catalogs or create a separate note for each turn.
 
-    .research/NOTEBOOK.md         # Dated ideas, derivations, failures, and next questions
-    .research/STATE.md            # CURRENT targets and honest proof/certification status
-    .research/PROOFS.md           # Statements, proof attempts, dependency graph
-    .research/EXPERIMENTS.md      # Exact tests, seeds, candidates, global-minimum bounds
-    .research/LITERATURE.md       # Concise relevant prior art and versioned sources
-    .research/CONSTRUCTIONS.md   # Parametric families, algorithms, output sizes, limitations
-    .research/CERTIFICATES.md    # Rigorous all-x certificates and how to verify them
-    src/                       # Generators, independent evaluators, optimization tools
-    lean/                      # Definitions and formalized mature theorems
-    examples/                  # Strong examples and explicit failed conjectures
-    solution.py                # Epoch interface, only when a valid general algorithm exists
+Store substantive mathematics, failures, experiments and the advisor's
+review together in one artifact when needed, linked from STATE. Keep
+code in `src/`, raw results in `.research/experiments/` or `examples/`,
+and formalizations in `lean/`. `.research/GPU_BUDGET.json` remains the
+resource ledger. Historical catalogs and archived journals are references
+read on demand; they are not parallel working documents.
 
-For each promising candidate, save `A`, generator or seed, tested input `(c,n)`, `N`, `max(A)`, claimed and certified `M(A)` intervals, certificate proof, code version, and rationale. For infinite families, save the parameter map and the quantified theorem proving their behavior.
-
-Commit meaningful changes. Never overwrite a refuted conjecture without retaining its counterexample and explanation. **Keep `.research/STATE.md` current**: if the main route fails, update the handoff immediately, rather than allowing future sessions to continue pursuing a theorem already known to be false.
-
-At every session boundary produce a succinct handoff: (a) mathematical theorems proved and formalized; (b) constructions certified and still heuristic; (c) refuted intermediates; (d) three distinct promising active directions; and (e) the **first concrete next derivation or experiment**. Handoff documents are operational memory, not promotional summaries.
+Preserve exact statements, quantifiers, seeds, all-circle certificates,
+failed claims and counterexamples. Commit meaningful checkpoints. Never
+claim a finite computation proves the full quantified conjecture. Create
+`solution.py` only when a valid general Epoch algorithm exists.
 
 ## Continuation and reporting
 
@@ -241,13 +237,14 @@ Report periodic, concise progress centered on newly discovered formulas, proved 
 
 Do **not** declare the investigation finished because an approach fails, a numeric constant stalls near `1/2`, an algorithm cannot beat the verifier's practical ceiling, or a full proof has not emerged quickly. Continue to investigate genuinely different mechanisms until explicit stop, exhausted authorization, or a handoff imposed by session limits.
 
-## Immediate next task
+## Session startup and continuation
 
-1. Verify the official Epoch task's exact input/output conditions, and implement two independent checkers for `A` distinctness, cosine values, and rigorous (or explicitly uncertified) minima. Fix the convention `cos(a*x)`.
-2. Reproduce the **difference-set square identity** symbolically and with small examples; audit collisions and the resulting coefficient multiplicities. Also reproduce one meaningful published construction-side improvement and one current universal lower-bound argument at the level required to understand their bottlenecks—not as an extended survey.
-3. Formulate **at least five genuinely different research strategies** spanning constructions, a universal lower bound, and exact certification. For each, give a precise mathematical claim that would constitute progress, how to disprove it quickly, and the first missing lemma.
-4. Maintain **at least three active lines**. Select the most promising new construction mechanism and begin deriving it **now**; in parallel pursue a lower-bound mechanism with a plausible route from exponent `1/5` toward `1/2`. Do not end after proposing a plan.
-5. If a proposed family offers `R(A_k) -> 0`, derive explicit parameter bounds sufficient for arbitrary inputs `(c,n)` and construct `solution(c,n)`. Request an independent proof and Lean review of the central theorem; construct a global-in-angle certificate, not merely a plot.
+Read `GOAL.md` and `.research/STATE.md`, honor the pause, and resume
+from their current task. The October 23 GPU-first execution correction
+takes precedence over historical proof-first next-step notes. Do not
+restart Phase 0, read all old journals, or synchronize status across
+multiple Markdown files. Consult a prior proof or failed route only
+when it is relevant to the current experiment or derivation.
 
 ## Non-negotiable research attitude
 

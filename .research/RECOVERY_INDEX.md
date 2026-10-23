@@ -15,8 +15,8 @@ The public repository and its history have now been restored through commit
 `3873843090179751cb8732f5c0e9dcd21c1188bc`, including the earlier public baseline
 `dfd51a19d0b094850f451d1cc82c88880be77b17`. The original public research indices,
 `src/` and `examples/` are present. The six persistent ledgers have dated
-source-linked updates: [STATE](STATE.md), [CSTAR](CSTAR.md), [PROOFS](PROOFS.md),
-[ROUTES](ROUTES.md), [NOTEBOOK](NOTEBOOK.md) and [EXPERIMENTS](EXPERIMENTS.md).
+source-linked updates: [STATE](STATE.md), [CSTAR](archive/handoffs-2026-10-23/CSTAR.md), [PROOFS](PROOFS.md),
+[ROUTES](ROUTES.md), [NOTEBOOK](archive/handoffs-2026-10-23/NOTEBOOK.md) and [EXPERIMENTS](EXPERIMENTS.md).
 
 This does **not** recover the unpublished local Git object
 `446367d948fedba07c5e70e3fdf9d9fcd106b08b`, or establish that every uncommitted

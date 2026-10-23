@@ -1,5 +1,20 @@
 # Certificates
 
+## 2026-10-23 — odd-zero disk phase certificates, paper scope only
+
+An odd-zero disk of lambda+f_A gives an explicit positive lower
+bound on conjugate-reversal energy for every complex polynomial
+factor and every integer dilation. Multiple disks combine with
+an exact finite-dimensional sampling Gram norm. These are paper
+certificates; no numerical root-disk bounds were computed here.
+
+The entire nonnegative-weight disk class cannot yield the proposed
+universal n/M-scale bound: a band-limited vector majorant proves
+the optimized functional too small on actual Bu supports. This
+does not prove scalar factors close to real squares.
+[Proof and independent audit](notes/odd_zero_phase_stability_2026-10-23.md).
+No kernel verification or new finite-minimum claim.
+
 ## 2026-10-23 — exhaustive finite square checks and an all-degree paper theorem
 
 For all8190 first-half bit vectors at even root degrees2..24,

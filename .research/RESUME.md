@@ -1,5 +1,43 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: stop the odd-zero certificate route at the proved boundary
+
+Read [stability/no-go proof](notes/odd_zero_phase_stability_2026-10-23.md)
+and [advisor audit](notes/advisor_mixed_stability_2026-10-23.md).
+Previous2b7b13f was progress; full GOAL remains active.
+
+For every fixed Boolean A,n>=3,lambda>=M, conjugate-reversal
+energy of EVERY complex polynomial factor stays positively
+bounded under ALL dilations and global phases. The explicit
+root-disk bound follows Rouché, Poisson and exact residue sampling;
+Boolean power rigidity supplies the odd zero. Constants depend
+on A/lambda and do NOT prove a uniform n-scale estimate.
+
+Crucially, the full optimized multi-disk Gram certificate IS
+refuted as a universal mechanism. Its strength is O(k4/5) along
+the actual Bu Boolean family while n/lambda~2k. The proof uses
+actual minimal bandwidth and actual M, plus a vector majorant;
+it does not assume a nearby scalar branch or falsify the scalar
+anti-energy conjecture. Do not optimize more disks/weights,
+expand branch controls or assert uniform scalar continuity.
+
+First concrete next derivation: the retained P2 FULL Rayleigh
+energy matrix at lambda_R=2sqrt(n) has determinant controlled by
+C2²-2tH0. Attempt a new coupled Boolean estimate for that scalar,
+keeping the known both-sign residual. P2 remains a sufficient
+unproved universal principle, not a theorem. Keep independent
+mixed-correction constructions requiring growing sets and global
+upper bounds. No computations/active jobs/GPU spend this cycle;
+Dirichlet stays shared and on. Current STATE supersedes older targets.
+
+Exact first-next form (definitions in the current proof Section7):
+lambda_R*C2=-t/lambda_R-(2n-1)C1-R_A(r),
+r=(lambda_R+F)^(-1), lambda_R=2sqrt(n). Seek or falsify
+[t/lambda_R+(2n-1)C1+R_A(r)]²>=2t lambda_R² H0 with ACTUAL
+lowM and the FULL inverse norm. Do not assign R_A a sign;
+it already has both signs on genuine lowM examples. This target
+is retained from the earlier P2 route, not new or assumed complete.
+
 ## Newest checkpoint: the exact power architecture is completely settled
 
 Read [Boolean power proof](notes/boolean_power_rigidity_2026-10-23.md)

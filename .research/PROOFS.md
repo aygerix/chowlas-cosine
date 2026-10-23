@@ -2,6 +2,30 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Complex factor phase stability and all-disk certificate obstruction (2026-10-23)
+
+PROVED on paper and independently internally reviewed. For every
+fixed Boolean A,n>=3,lambda>=M, an odd-zero disk(zeta,rho) of
+p=lambda+f_A with boundary minimumeta>0 forces, for ALL integer
+dilations, ALL complex factors and ALL phases,
+
+    ||Q-Q^dagger||²>=4eta/[3(D+1)exp(D(|Im zeta|+2rho))].
+
+Dagger is conjugate reversal. Exact power rigidity guarantees
+an odd off-circle zero. No simple-root/continuity assumption.
+A finite family of weighted disks gives the stronger lower
+bound4sum(w eta)/(3Lambda), Lambda the exact sampling Gram norm.
+
+The universal target sup sum(w eta)/Lambda>=c*n/lambda is
+REFUTED. A general vector majorant of p-R² bounds this entire
+functional. Removing the largest cosine of the Bu trial square
+gives an error with coefficient energyO(k), and the optimized
+root certificate is O(k4/5)=o(n/lambda) at ACTUAL M/bandwidth.
+This does NOT show actual scalar anti-energy small or refute
+Chowla. [Complete proof](notes/odd_zero_phase_stability_2026-10-23.md),
+[advisor audit](notes/advisor_mixed_stability_2026-10-23.md).
+No new kernel check, computation or universal exponent.
+
 ## Perfect-power rigidity from exact Boolean coefficients (2026-10-23)
 
 PROVED on paper and independently internally audited. For arbitrary

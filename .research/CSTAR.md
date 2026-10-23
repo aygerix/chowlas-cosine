@@ -1,5 +1,20 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Current continuation: fixed-support phase energy now has an
+explicit positive lower bound uniform in every dilation, complex
+factor branch and global phase. Odd-zero Rouché/Poisson sampling
+proves it; the exact Boolean power theorem supplies an odd root.
+[Proof and scope](notes/odd_zero_phase_stability_2026-10-23.md).
+
+Its proposed universal upgrade is FALSIFIED for the entire
+weighted odd-zero/Gram certificate class. The actual Bu family
+has optimized certificate O(k4/5)=o(n/M), even at actual bandwidth
+and actual M. A cheap vector majorant proves the no-go without
+exhibiting a cheap scalar factor. Stop this universal certificate
+route; retain fixed-family stability. Next pursue full signed
+RayleighP2 determinant with Boolean residuals coupled. Goal active;
+no new computation or resource action.
+
 Latest continuation: exact0/1 coefficient equations give an
 all-degree perfect-power rigidity theorem. P_lambda=H^q is possible
 only for q2 and the singleton or two-harmonic A={d,2d}; lambda1

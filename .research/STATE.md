@@ -1,5 +1,47 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — uniform phase stability and a certificate no-go, 2026-10-23
+
+Previous2b7b13f was progress. Full GOAL remains active. New
+paper proofs independently checked by the one advisor are in
+[odd-zero stability and no-go](notes/odd_zero_phase_stability_2026-10-23.md)
+and [audit](notes/advisor_mixed_stability_2026-10-23.md).
+
+For fixed Boolean A,n>=3,lambda>=M, every complex polynomial
+factor of p(Lx)=lambda+f_A(Lx), every dilationL and every global
+phase satisfy E=||Q-Q^dagger||²>=delta(A,lambda)>0. Dagger is
+conjugate reversal after trimming monomial shifts. An odd-zero
+disk(zeta,rho) with eta=min_boundary|p| gives explicitly
+delta=4eta/[3(D+1)exp(D(|Im zeta|+2rho))]. Exact Boolean power
+rigidity guarantees a suitable odd off-circle zero. No simple-
+zero or spectral-factor continuity assumption is needed.
+
+The stronger arbitrary weighted-disk certificate uses exact
+sampling Gram normLambda and gives E>=4sum(w_j eta_j)/(3Lambda).
+Its full optimized strength F_D=sup sum(w eta)/Lambda is now
+PROVED too weak for a universal n/lambda bound: on the actual
+Boolean Bu family, with ACTUAL bandwidthD and ACTUAL minimum,
+F_D=O(k^(4/5))=o(n/lambda). Remove the largest cosine from the
+trial real square; the remaining error has squared coefficient
+sumO(k), and a complex band-limited vector majorant bounds EVERY
+disk/weight choice. This does not show the actual scalar factors
+have small anti-energy; that stronger question remains open.
+
+Stop optimizing odd-zero/Poisson/sampling certificates toward a
+universal root bound. Keep the fixed-support stability lemma.
+Do not invoke scalar branch continuity from Bu signal closeness;
+the checked outer-factor continuity literature does not give it.
+
+First next derivation: return to the retained FULL signed Rayleigh
+coupling, concretely P2's determinant C2²-2tH0 at lambda_R=2sqrt(n),
+with all signed Boolean residual terms retained. Its universal
+nonnegativity is still unproved; the old residual has BOTH signs.
+Any test must attack this estimate, not recertify successful
+n5/Sidon controls. Preserve independent mixed-norm constructions
+with a genuine growing-cardinality/all-circle upper target.
+No new computation or GPU use this cycle, no own live jobs or
+VM lifecycle actions; shared Dirichlet unchanged, GPU total$0.10.
+
 ## Current continuation — exact Boolean power rigidity, 2026-10-23
 
 Previous turn5678d00 was progress. Full GOAL remains active and

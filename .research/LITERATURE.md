@@ -1,5 +1,21 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Scoped source check: phase stability (2026-10-23)
+
+Ephremidze--Shargorodsky--Spitkovsky,
+[scalar spectral-factor continuity, v2, Theorems1--2](https://arxiv.org/html/1603.01101v2),
+was inspected in primary text. Its perturbation results concern
+the OUTER factor; they do not establish a uniform choice among
+all polynomial root-reflection branches. They were not used to
+infer scalar closeness from a near-square signal.
+
+Bu et al., [v1 Proposition2.1 and Theorem1.2](https://arxiv.org/html/2610.17160v1),
+were rechecked for the precise two-sided identity and construction
+upper bound; Sections3--6 give ambient spanO(k²). Combined with
+the repository's P16' lower theorem this supplies the cited
+near-square asymptotic in the new certificate-class no-go.
+No external novelty claim or broad absence-of-prior-art claim.
+
 ## Bounded priority check: exact power rigidity (2026-10-23)
 
 Six targeted queries on reciprocal0/1 polynomial powers, a free

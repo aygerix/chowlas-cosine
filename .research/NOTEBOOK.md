@@ -1,5 +1,33 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — fixed-support phase gap survives dilation; universal disk upgrade fails
+
+Previous2b7b13f was progress. The actual new archimedean result
+is ||Q-Qdagger||²>=4eta/[3(D+1)e^(D(|Imzeta|+2rho))] for ANY
+complex branch, phase or dilation of a fixed Boolean support.
+Rouché handles any odd-multiplicity zero, Poisson costs3, and
+L-point residue orthogonality costsD+1, independent of L. The
+power theorem guarantees an odd off-circle root for every n>=3.
+[Proof and audit links](notes/odd_zero_phase_stability_2026-10-23.md).
+
+The next candidate was stronger: aggregate all odd-zero disks
+with exact sampling Gram norm, aiming for certificate>=c*n/M.
+It is rigorously FALSE. For actual Bu supports, removing the
+largest cosine from the trial real square keeps bandwidth exact;
+the error has coefficient l2 normO(sqrtk). A five-function
+complex majorant gives certificate<=3(|M-k/2+.5|+1.5sqrt(k-1))
+=O(k4/5)=o(n/M). This covers ALL nonnegative disk weights and
+all finite disk collections. No scalar-factor continuity or
+near-palindromic branch was assumed or obtained. Stop this
+universal root certificate route, preserve its fixed-symbol lemma.
+
+Preliminary positive/negative convolution and Hermite-completion
+ideas were route-checked and dropped: they repeat the n1/3
+background and H1/Parseval-noise barriers. Neither is new progress.
+Next retain actual scalar coupling in full signed RayleighP2;
+the mixed residual remains signed, no successful-control sweep.
+Paper-only cycle, no GPU/VM operations or active jobs.
+
 ## 2026-10-23 — a full-coefficient rigidity theorem and arithmetic extension
 
 Previous5678d00 was progress. This cycle used the actual0/1

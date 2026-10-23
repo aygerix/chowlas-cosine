@@ -4,6 +4,17 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 refinement and stop within the existing factor-phase
+route: [odd-zero stability](notes/odd_zero_phase_stability_2026-10-23.md)
+proves an explicit positive complex-factor asymmetry gap uniform
+in every dilation/phase for fixed A. The stronger ALL-weighted-
+disk Gram functional is PROVED too small on actual Bu supports,
+O(k4/5)=o(n/M). This is a universal-certificate-class obstruction,
+not a scalar near-factor construction or a Chowla counterexample.
+Do not optimize that functional toward a universal n/M bound. Next retains full
+signed Rayleigh coupling; outer-factor continuity supplies no
+unrestricted polynomial branch-selection theorem.
+
 2026-10-23 refinement of the EXISTING signed-centroid route:
 [joint-factor proof](notes/joint_factor_budget_2026-10-23.md)
 gives full polyphase constraints, a coupled output mass/variance

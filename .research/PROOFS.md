@@ -2,6 +2,34 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Signed centroid constraint on arbitrary Boolean factors (2026-10-23)
+
+For any real finite factor lambda+f_A=|Q|², orient S=sumq>0 and
+put Nminus=sum q_-, mu=sum bq/S, Vplus/minus=sum q_±(b-mu)²,
+alpha=Vminus/(Vplus+Vminus),qmax=max|q|. Then
+
+    S(1-4alpha)<=4(lambda-1/2)qmax+2Nminus,
+    S²=lambda+n, Vplus-Vminus=sum_A a²/(2S)>0.
+
+The new paper proof uses the exact Boolean Gram and cancellation of
+the constant midpoint term on ZERO correlations. Its missing-lag
+bound is Tmissing>=-(Nminus Vplus+P Vminus). It retains U0² and
+all ordered-pair factors. Real factors exist at optimality for every
+A, so there is no nonnegative-factor representation assumption.
+However qmax<=C,Nminus/S<=1/8,alpha<=1/8 remain extra hypotheses;
+they imply M>=sqrt(n)/(16C), not a proved universal conclusion.
+[Proof](notes/signed_centroid_2026-10-23.md),
+[independent paper audit](notes/advisor_signed_centroid_2026-10-23.md).
+
+Finite interval-certified falsification/recovery: A=[1,5], actual
+M about1.728768207<sqrt5. Every optimal nonnegative real factor
+has qmax about1.043796702>1, by exact contraction and four-branch
+classification. A signed reflected branch at the same A/M has all
+three C1 stable conditions. This refutes the positive constant1,
+not every absolute bound, and does not establish universal selection.
+[Full finite proof](notes/optimal_endpoint_n5_2026-10-23.md).
+No new Lean checks, external priority claim or universal exponent.
+
 ## Span-free multiplicity-defect and weighted centroid inequalities (2026-10-23)
 
 For every k>=2 point real set B and real r>=2,

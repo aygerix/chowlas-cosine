@@ -1,5 +1,49 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — signed centroid, endpoint falsification, and exact phase recovery
+
+Prior turn classified as progress (1735ac3). Root extended the new
+centroid method to arbitrary real Fejer--Riesz coefficient signs.
+The exact missing-lag identity and cancellation bound prove
+S(1-4alpha)<=4(lambda-1/2)qmax+2Nminus. This is an unconditional
+Boolean autocorrelation constraint; a root theorem follows only
+under the three stated amplitude/negative-mass/negative-variance
+conditions. Real factors exist at optimality for every A, but no
+general selection estimate was proved.
+[Paper proof](notes/signed_centroid_2026-10-23.md),
+[independent audit](notes/advisor_signed_centroid_2026-10-23.md).
+
+The old positive-factor floating artifact identified ONE useful
+adversarial branch: interval A=[1,5]. A five-variable polynomial
+system parametrizes Q=(z²-2cz+1)*(a+bz+dz²+ez³). Exact rational
+contraction proves a true positive factor with q0>1,lambda<2.
+The unit factor proves lambda=M on the entire circle. A separate
+direct-convolution/dual-interval checker passes. The residual cubic
+has one real outside root and an outside conjugate pair; all four
+real spectral branches are classified. Only the positive branch
+and its reversal are nonnegative, so even existential selection
+cannot satisfy qmax<=1. qmax about1.043796702, M about1.728768207.
+No growing-qmax counterfamily or refutation of a larger C follows.
+[Finite proof](notes/optimal_endpoint_n5_2026-10-23.md).
+
+Reflecting the same real root gives a signed optimal factor with
+qmax<.786161,Nminus/S<.068887,alpha<.002623, all exact rational
+enclosures. The negative coefficient is near the new centroid.
+Thus all C1 sufficient conditions recover on the SAME A/M; no new
+root search, support sweep or finite minimum improvement. Signed
+variance Vintrinsic=sum_A a²/(2S) is branch-independent. The
+allpass expansion also kills a careless endpoint-descent argument:
+q'_1=q1/t+(1-t^-2)q0 can carry almost the full endpoint peak.
+
+Global decision after endpoint and greedy failures: keep the
+unrestricted signed theorem; do not replace1 by an arbitrary C or
+assume stable-factor completeness. Next derive joint root-reflection
+budgets, including moving centroids, rather than count only endpoint
+improvements. Preserve full signed Rayleigh, all-scale susceptibility
+and independently changed constructions. No universal exponent or
+vanishing family obtained. All three bounded Dirichlet jobs terminal,
+advisor audits complete, no GPU or VM lifecycle action.
+
 ## 2026-10-23 — exponential audit, changed count pilot, and centroid theorem
 
 Prior turn was progress (f5801d2). The all-order coefficient recurrence

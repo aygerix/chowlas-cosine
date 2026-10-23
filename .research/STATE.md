@@ -1,5 +1,58 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — signed centroid and exact factor recovery, 2026-10-23
+
+Previous goal turn was progress (1735ac3). Full GOAL remains active
+and unresolved. This turn extends the centroid inequality to arbitrary
+REAL factor signs, and certifies a precise failure/recovery on one
+optimal five-frequency example. All own jobs terminal/PASS; no GPU
+or VM lifecycle action, shared Dirichlet left running, cumulative
+conservative RunPod spend remains$0.10. Exactly one advisor reused.
+
+For lambda+f_A=|Q|², orient S=sumq=sqrt(lambda+n)>0, let
+Nminus=sum q_-, mu=sum bq/S, Vplus/minus=sum q_±(b-mu)²,
+alpha=Vminus/(Vplus+Vminus), qmax=max|q|. A new internally reviewed
+paper inequality valid for every real factor is
+
+    S(1-4alpha)<=4(lambda-1/2)qmax+2Nminus.
+
+Real Fejer--Riesz factors exist at lambda=M for every A; positivity
+of coefficients is no longer assumed. The proof controls missing-lag
+cancellation by signed midpoint sums and uses the exact Boolean
+identity R(d)²=R(d)/2. If qmax<=C,Nminus/S<=1/8,alpha<=1/8,
+it gives M>=sqrt(n)/(16C). No universal selection/control of these
+three quantities has been proved. [Proof](notes/signed_centroid_2026-10-23.md),
+[independent audit](notes/advisor_signed_centroid_2026-10-23.md).
+
+The provisional positive endpoint constant1 is FALSE. Exact rational
+contraction and independent convolution/dual differentiation certify
+A=[1,5], actual M about1.728768207<sqrt5. All four real optimal
+factor branches are classified; the only nonnegative branches are
+reversals with qmax about1.043796702>1. This does not refute every
+absolute C. The reflected SIGNED branch at the SAME A and M has
+certified qmax<.786161,Nminus/S<.068887,alpha<.002623, satisfying
+all C1 stable conditions. This finite recovery is not a universal
+selection theorem or a new minimum record.
+[Certificate/proof](notes/optimal_endpoint_n5_2026-10-23.md).
+
+First next derivation: use exact root-reflection updates to control
+the JOINT coefficient maximum, negative mass and negative variance.
+Vintrinsic=Vplus-Vminus=sum_A a²/(2S) is branch-independent;
+alpha<=1/8 exactly means Vminus<=Vintrinsic/6. For a negative
+real root−t, the signed centroid shifts by(t-1)/(t+1); for a
+conjugate pair z²-2uz+v, it shifts by2(v-1)/(v+1-2u).
+Derive a joint budget or a counterexample, without assuming that a
+prescribed stable-factor class is complete. Balancing endpoints
+alone is already refuted as a global-max descent: q'_1 can retain
+almost the entire large q0. Do not replace1 by another arbitrary
+constant or launch a successful-control/factor-branch sweep.
+
+Retain unrestricted signed Rayleigh, all-scale Boolean susceptibility,
+and independent constructions with genuine signed correction as
+distinct lines. No universal exponent, vanishing family or Epoch
+solution was established. The older same-date targets below are
+historical checkpoints and do not override this next step.
+
 ## Current continuation checkpoint — centroid progress, 2026-10-23
 
 Full GOAL remains active and unresolved. Previous goal turn was

@@ -1,5 +1,38 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — one certified optimal endpoint branch and signed recovery
+
+Predeclared A=[1,5], no support/factor-family sweep. An old numerical
+positive-factor artifact supplied the branch seed. Producer
+src/optimal_endpoint_n5.py uses mpmath only to propose a center and
+inverse Jacobian. Exact Fraction interval arithmetic certifies a
+five-dimensional invariant contraction box for the five off-zero
+autocorrelations of Q=(z²-2cz+1)*(a+bz+dz²+ez³). Positive q,
+q0>1,|c|<1 and lambda<2 prove actual all-circle optimality.
+
+src/optimal_endpoint_n5_verify.py independently reconstructs Q by
+convolution and differentiates by dual intervals, with exact Gaussian
+rank and contraction checks. Both share the small exact rational
+interval primitive; no independent arithmetic-backend/Lean claim.
+Producer and checker terminal/PASS through dirun,2cores/4GB/120s cap.
+Artifacts: experiments/optimal_endpoint_2026-10-23/
+{n5,n5_verification}.json, with version metadata in n5.json.
+
+Exact cubic discriminant/root/modulus and reflection-sign gates
+classify ALL four real optimal branches. The only nonnegative pair
+is reversal-equivalent, with qmax about1.043796702>1. Actual M is
+about1.728768207<sqrt5. This refutes constant1 even with branch
+choice, not every absolute C or the broader signed target.
+
+src/optimal_endpoint_phase.py then analyzes the SAME certified box;
+no root search is rerun. phase_recovery.json certifies a signed
+branch with qmax<.786161,Nminus/S<.068887,alpha<.002623. All C1
+stable conditions hold. This changes factor signs while preserving
+A and exact M; it supplies no new minimum record or universal
+selection evidence. Phase job terminal/PASS with60s cap.
+[Proof and interpretation](notes/optimal_endpoint_n5_2026-10-23.md).
+No GPU use or VM lifecycle operation; no case enlargement follows.
+
 ## 2026-10-23 — one growing-multiplicity l1 mechanism pilot
 
 src/multiplicity_l1_pilot.py used k128,r8,B subset[0,2048], one

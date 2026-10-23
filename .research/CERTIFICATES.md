@@ -1,5 +1,28 @@
 # Certificates
 
+## 2026-10-23 — rational contraction certifies an optimal n5 factor
+
+For A=[1,5], the saved center/radius and rational inverse R certify
+that x-RF(x) maps its closed rational box strictly into itself and
+has derivative norm<1. Exact rank of R is5. Banach therefore gives
+a true zero of the five autocorrelation polynomials in the box.
+The corresponding Q has positive coefficients and includes
+z²-2cz+1 with |c|<1. Exact coefficient matching gives
+|Q|²=lambda+f_A; the unit-circle zero proves M(A)=lambda globally.
+No cosine sample is used as an optimality premise.
+
+The independent checker rebuilds Q by convolution and uses dual
+interval derivatives rather than expanded SymPy polynomials. Both
+use the same Fraction interval primitive, so independence is in
+construction/differentiation, not the arithmetic backend. Additional
+cubic root/discriminant gates exhaust real spectral branches and
+prove all nonnegative optimal branches have qmax>1. The same saved
+box certifies a signed branch satisfying the signed-centroid C1
+conditions. [Complete statement/proof and source paths](notes/optimal_endpoint_n5_2026-10-23.md).
+Status: interval-certified finite existence plus paper all-circle
+and branch proofs, independently AI-reviewed; not Lean-checked and
+not a universal factor-selection theorem.
+
 ## 2026-10-23 — exact all-class multiplicity/l1 upper and its barrier
 
 For a k-point integer B, retain every nonzero positive difference

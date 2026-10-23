@@ -1,5 +1,21 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Latest continuation: the signed centroid inequality now applies to
+arbitrary Boolean A through real optimal Fejer--Riesz factors:
+S(1-4alpha)<=4(lambda-1/2)qmax+2Nminus. Its proof controls actual
+missing-lag sign cancellation. Stable amplitude/mass/variance
+conditions imply a root bound; no universal branch selection is
+proved. [Full statement](notes/signed_centroid_2026-10-23.md).
+
+An exact n5 certificate refutes qmax<=1 for EVERY nonnegative
+optimal branch, but a signed reflection at the same A/M satisfies
+all three C1 stable conditions. No new minimum or universal evidence.
+[Finite proof and scope](notes/optimal_endpoint_n5_2026-10-23.md).
+Next work is joint root-reflection control, not endpoint balancing
+alone or an arbitrary larger constant. See current STATE/RESUME.
+
+### Earlier same-date centroid checkpoint
+
 Current continuation, October23: a new general centroid inequality
 proves E_r>=((r-2)k+2r)/6 for every real k-point B, with no span or
 symmetry assumption. It closes the changed all-class l1 multiplicity

@@ -98,3 +98,10 @@ or extend (4)--(5) to factors with signed/complex coefficients while
 quantifying the phase-cancellation terms. It must not assume that
 all Boolean supports have positive factors, or identify a lower
 certificate-energy bound with a lower bound on actual M(A).
+
+Subsequent continuation: the [n5 exact certificate](optimal_endpoint_n5_2026-10-23.md)
+refutes the provisional constant1 for every optimal nonnegative
+branch, while leaving a larger absolute bound open. The
+[signed-centroid extension](signed_centroid_2026-10-23.md) is now
+proved; the same n5 reflection satisfies its C1 conditions. These
+supersede the next-step paragraph without changing this theorem.

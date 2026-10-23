@@ -7,6 +7,45 @@ Dirichlet is SHARED with other agents. The user explicitly instructed
 us to leave it running. No shutdown traps, stops, restarts, suspensions,
 resets or lifecycle changes without a NEW explicit user instruction.
 
+## Latest signed continuation — read before older targets
+
+The signed centroid paper theorem is now proved and internally
+reviewed for arbitrary real factor coefficients, hence available
+for every A at lambda=M via real Fejer--Riesz:
+
+    S(1-4alpha)<=4(lambda-1/2)qmax+2Nminus,
+    S=sqrt(lambda+n), alpha=Vminus/(Vplus+Vminus).
+
+The signed centroid is mu=sum bq/S, and Vplus/minus=sum q_±(b-mu)².
+If qmax<=C,Nminus/S<=1/8,alpha<=1/8, the result is
+M>=sqrt(n)/(16C). Those three general factor estimates remain
+unproved. Read [proof](notes/signed_centroid_2026-10-23.md) and
+[audit](notes/advisor_signed_centroid_2026-10-23.md).
+
+Completed falsification: A=[1,5] has actual M about1.728768207,
+and EVERY optimal nonnegative real factor has qmax about1.043797>1.
+The exact rational contraction certificate plus unit-circle factor
+proves actual all-circle optimality. A cubic discriminant/root
+classification exhausts all real branches; the other pair is signed.
+That signed pair has qmax<.786161,Nminus/S<.068887,alpha<.002623,
+so all C1 sufficient conditions are recovered at the SAME A and M.
+No new minimum record or universal branch-selection evidence.
+[Full finite certificate](notes/optimal_endpoint_n5_2026-10-23.md).
+
+First concrete next derivation: control the JOINT cost of root
+reflections. Vintrinsic=Vplus-Vminus=sum_A a²/(2S) is fixed,
+and alpha<=1/8 iff Vminus<=Vintrinsic/6. Exact coefficient,
+centroid and negative-variance updates for real-root/conjugate-pair
+reflections are in the signed audit. Balancing endpoints alone
+does not decrease the global maximum; a large q0 can move almost
+intact to q'_1. Seek a coupled budget or a precise falsifier, not
+another arbitrary endpoint constant or successful-control sweep.
+The stable-factor condition is sufficient, not assumed complete.
+
+All own jobs terminal/PASS; Dirichlet unchanged, no GPU spend,
+cumulative conservative$0.10. Older first-next instructions below
+are historical; full Chowla remains open and goal active.
+
 ## Current continuation: what actually advanced and what comes next
 
 The new span-free centroid theorem gives

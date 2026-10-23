@@ -5,6 +5,16 @@ instructions. Research is PAUSED. No derivation, experiment or
 advisor work is scheduled. Shared Dirichlet remains running;
 all this project's jobs are terminal. Resume only on user instruction.
 
+FIRST RESUMED MILESTONE has changed after the user's workflow
+criticism. Read [GPU_WORKFLOW](GPU_WORKFLOW.md) and the new
+execution rule in GOAL.md BEFORE the proof notes. Complete a new
+GPU-driven adversarial discovery cycle with exact CPU follow-up
+and advisor review. Do not start with another paper-only derivation
+of the coherence inequality below. Default target is recorded OP140
+on new Boolean adversaries, using the validated Fourier operator.
+Existing controls alone, another benchmark or an unexecuted plan
+do not meet this requirement. All spending/VM/pause constraints hold.
+
 ## Read first: new signed translation floor; old universal branch budget is false
 
 Previous 1f2d803 was progress; full GOAL unresolved and paused.

@@ -1,5 +1,28 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — workflow correction while research remains paused
+
+The user challenged the drift from GPU-supercharged feedback into
+repeated sufficient conditions and exclusions. This was a workflow
+failure: useful paper results did not justify letting the validated
+computational discovery capability become an optional future task.
+
+Updated GOAL.md's execution rules without changing the mathematical
+objective. New GPU_WORKFLOW.md requires the FIRST resumed milestone
+to complete a new adversarial GPU/CPU exact/advisor cycle, with
+bounded initial derivation and observable run artifacts. STATE,
+RESUME and CSTAR put that ahead of the old proof-first next task.
+Default computational target is recorded OP140 on new Boolean
+adversaries using the validated Fourier operator; old successful
+Singer controls alone do not fulfill the milestone. The new runner
+and experiment have NOT been implemented or executed by this change.
+
+Only process/handoff files were edited. No research resumed, no
+advisor activated, no calculation or GPU/VM action launched, and
+no budget changed. The goal remains paused until user instructions.
+The next actual cycle, not this policy, must provide the evidence
+that the workflow has changed. [Execution rules](GPU_WORKFLOW.md).
+
 ## 2026-10-23 — signed translation theorem, growing mass obstructions, user pause
 
 Previous 1f2d803 was progress. The full cross-component calculation

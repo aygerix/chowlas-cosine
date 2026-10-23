@@ -5,6 +5,13 @@ unresolved. Read current STATE/RESUME for the saved proofs and
 deferred first derivation; do not resume work without user instructions.
 All own jobs terminal, advisor stopped, shared Dirichlet stays running.
 
+WORKFLOW OVERRIDE FOR RESUMPTION: the user's criticism of the
+paper-only loop has been recorded in GOAL.md and
+[GPU_WORKFLOW](GPU_WORKFLOW.md). The first resumed milestone
+must complete a NEW GPU-driven adversarial discovery/CPU exact
+certification/advisor review cycle. This supersedes the older
+deferred proof-first task below. The pause remains in force.
+
 CURRENT: bounded translations prove a root floor for ONE exact
 nonnegative real factor, with no coefficient bound, and a signed
 factor floor under N/Q(1)<=1/64. These are conditional certificate

@@ -4,6 +4,14 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+EXECUTION ORDER CORRECTION, October23 user feedback: research is
+still PAUSED. On resumption, GOAL.md and GPU_WORKFLOW.md require
+a completed new GPU-driven discovery/CPU certification/advisor
+cycle BEFORE another paper-only route sequence. Default OP140 is
+the EXISTING arbitrary-support target, not a newly named theorem;
+new adversarial inputs and executed evidence are required. This
+supersedes historical proof-first next-task wording below.
+
 2026-10-23 consequential upgrade of the signed-mass adversary:
 THREE equal separated blocks have no mixed-color triangles. The
 finite weighted graph Goodman lower bound and per-color spectral

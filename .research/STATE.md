@@ -13,6 +13,26 @@ cited dependencies and deferred next derivation are organized below
 and in [the proof note](notes/signed_translation_2026-10-23.md).
 No manuscripts, outreach or push. RunPod total remains $0.10.
 
+## Workflow correction while paused — GPU cycle takes precedence on resumption
+
+The user challenged the drift into repeated paper-only conditions
+and exclusions. The FIRST resumed milestone is now the completed
+GPU-driven discovery cycle in [GPU_WORKFLOW](GPU_WORKFLOW.md),
+also required by GOAL.md. It supersedes the older deferred
+proof-first instruction below. Initial derivation is bounded;
+then build/test the new adversarial runner on Dirichlet, execute
+one budgeted device-resident GPU experiment, perform exact CPU
+follow-up, and obtain an advisor decision from its outputs.
+
+Default first experiment attacks the recorded arbitrary-support
+OP140 target using NEW adversarial Boolean inputs and broad Fourier
+directions, retaining exact premise checks. Existing successful Singer
+controls are regression fixtures, not the research objective.
+The current multi-component coherence inequality remains available
+for a later targeted test; another paper-only derivation is not the
+next milestone. No jobs, advisor work or deployment were started
+by this organizational correction. The user pause remains in force.
+
 ## Current continuation — translation theorem; universal stable-branch target refuted
 
 Previous 1f2d803 was progress. Full GOAL is unresolved, now paused.

@@ -14,6 +14,21 @@ ROUTES.md, the latest NOTEBOOK entries, and the linked advisor,
 resolvent, and GPU-pilot reports. Resume from the recorded frontier.
 Update STATE to reflect this active goal; honor any subsequent pause.
 
+Execution correction after the user's October 23 feedback:
+the goal is currently PAUSED. When the user resumes it, the FIRST
+milestone must be a completed GPU-driven mathematical feedback cycle,
+as specified in .research/GPU_WORKFLOW.md. Do not begin another
+paper-only sequence of sufficient conditions and model exclusions.
+Use the existing validated Fourier operator; prepare and test the
+new experiment on Dirichlet before RunPod. One bounded derivation
+may define the question, but exploratory proof work may not postpone
+the experiment indefinitely. Report executable code, actual GPU
+results on new adversarial inputs, exact CPU follow-up, and the
+advisor's evidence-based decision. Another benchmark, repeated
+successful control, unexecuted plan, or renamed open inequality does
+not fulfill this milestone. Keep the original full objective and
+all pause, spending, shared-VM and certification constraints intact.
+
 Make arbitrary-support Boolean mathematics the primary effort.
 Continue attempting to derive and adversarially test conjecture L25:
 M(A)<=sqrt(n) implies the normalized circle average of |f_A| is at

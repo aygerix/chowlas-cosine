@@ -1,5 +1,25 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Current continuation: the P14 joint-boundary task produced an exact
+admissible-t group obstruction to raw jointL1 averaging. The endpoint
+pivot then refuted H_t<=C K|B_t| on genuine integer sets by an
+infinite family; one reused certified pilot has H/(K|B|)>15.
+Neither is a Chowla counterexample or a universal exponent gain.
+[Proof and test](notes/ordered_boundary_2026-10-23.md),
+[independent internal audit](notes/advisor_joint_boundary_2026-10-23.md).
+
+Retain the TRUE new cancellation |q_t|²<=4m(N-D), yielding
+H_t<=6K²m+integral_(K²<D<N-K)D|q_t|². The middle integral is
+the remaining integer-only target. A uniformO(K²m) bound would give
+exponent1/4, not full Chowla; it is OPEN. ExistingP22/O4, repaired
+byadding±t to make t admissible, places all positive q-energy at
+heightTheta(K³) in this band and refutes a group proof. Do not
+revive historical groupG3 or drop q0=-1_(-t∈B) when centering.
+First next: finite t-run summation by parts WITH the retained middle
+multiplier, before absolute values; isolate actual endpoint terms.
+STATE/RESUME give scope and stop/pivot rule. Own jobs terminal,
+no GPU/lifecycle action; full GOAL active, sharedDirichlet on.
+
 Current continuation: stop generic covariance polishing. The full
 matrix is exactly the old Schur cap, and the proposed two-vector
 compression misses growing prefix countermodels to that relaxation.

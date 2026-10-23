@@ -1,5 +1,28 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — reuse of a certified pilot for ordered endpoint energy
+
+No fresh sampling, search or optimization. Append65536 to the saved
+triangular pilot; newn32788,maxA=t65536. ComputeB_t independently
+from shifted-set intersections; m10921, exact first moment357859328.
+q=(1-z^t)F_B hascoupling10921 and norm²21842. Two distinct exact
+identities giveH=integralD|q|²=146387604: direct int64 boundary-pair
+kernel counts (explicit overflow bound) and full FLINT polynomial
+autocorrelation. The old all-circle certificate transfers from
+M<=75623/180 toM<=75803/180 by addingcos(65536x). Therefore
+H/(actualK*m)>=13174884360/827844563>15. This refutes constant15
+in the proposed linear-K endpoint estimate, not Chowla.
+
+    src/dirun.sh -c 2 -m 4 -t 120 python src/ordered_boundary_verify.py
+
+Data: experiments/ordered_boundary_2026-10-23/verification.json,
+including parent certificate hashes and derived set/boundary hashes.
+One modified example, no asymptotic selection implementation. Its
+all-circle bound is inherited rather than independently reevaluated
+in this script. Initial verification and a rerun after tightening the
+assertion from>10 to>15 are terminal/PASS on the SAME fixed input;
+each compute<1second on Dirichlet. [Paper theorem and scope](notes/ordered_boundary_2026-10-23.md).
+
 ## 2026-10-23 — one triangular Boolean modulation pilot, two global arguments
 
 Single predeclared pilot Q65536,seed20261023,t=Q/4 forced occupied,

@@ -1,5 +1,23 @@
 # Constructions (parametric families)
 
+## 2026-10-23 — integer obstruction to linear-K endpoint energy
+
+An OBSTRUCTION family, not a vanishing-ratio construction. For every
+integerQ>=2^21, independently selectingj<Q withprobability1-j/Q
+and forcingQ yields a positive-probability genuineA⊂[1,Q] with
+H_Q>=Q²/80 and actualK=2M<=4+sqrt(2Qlog(128Q²)). Thus
+H_Q/(K|B_Q|)→infinity; no universal linear-K energy estimate exists.
+The expectation constant43/1260 and explicit bounded-difference/
+whole-circle derivative bounds prove existence. No sampler claiming
+guaranteed output, Epoch solution, or effective asymptotic selection
+is implemented. One modified saved pilot separately certifies ratio>15.
+
+The admissibility repair S_O4 union{±t} keeps P22's group boundary
+and actualK unchanged; its exact middle energy obstructs a generic
+quadratic-K estimate. This is a consequence of an EXISTING finite-
+group construction; it has no demonstrated all-circle integer lift.
+[Full statements and limitations](notes/ordered_boundary_2026-10-23.md).
+
 ## 2026-10-23 — bounded-ratio integer family forcing quadratic convolution loss
 
 This is an OBSTRUCTION family, not a candidate vanishing-ratio family.

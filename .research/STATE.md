@@ -1,5 +1,64 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — endpoint cancellation isolates an integer middle-band target
+
+Previousa33f2bd was progress. Full GOAL active; Chowla unresolved.
+[Current proof, exact test and next derivation](notes/ordered_boundary_2026-10-23.md),
+[sole advisor audit](notes/advisor_joint_boundary_2026-10-23.md).
+
+The retained P14 joint calculation was carried out. Raw exact-B
+sum_(t in S)||F_Bt||1²<=C(NK+K⁴) FAILS in the group analogue even
+with ALL t admissible: elliptic-quadric S has K=p,N~p⁴ and every
+boundary L1 betweenp/3 and4p-1. This does not refute the Z claim
+or the older chosen-Q1 estimate. Stop group-independent Gram proofs.
+
+The actual INTEGER endpoint pivot also refutes the stronger local
+H_t<=C K|B_t| claim. For every Q>=2^21, triangular Bernoulli
+selection plus forcedQ admits H>=Q²/80 while actual
+K<=4+sqrt(2Q log(128Q²)). RatioH/(K|B|)→infinity. No grid minimum
+is used: the upper bound has a uniform probability/derivative proof.
+This is not a vanishing-ratio construction. A single deterministic
+reuse of the saved pilot, appendingQ65536, gives n32788,m10921,
+exactH146387604 and inherited all-circleM<=75803/180, so ratio>15.
+Independent integer pair-kernel and full-polynomial autocorrelation
+checks agree. No fresh seed, search, GPU or asymptotic implementation.
+
+NEW PAPER LOCALIZATION, internally audited: for S=±A,N=2n,
+D=2f_A,K=2M, q_t=(1-e^(itx))F_Bt, m=|B_t|,
+
+    |q_t|²<=4m(N-D),
+    H_t=integral D|q_t|²<=6K²m+J_t,
+    J_t=integral_(K²<D<N-K)D|q_t|².
+
+Thus top spikes and low positive values costO(K²m). Only the
+middle band needs a new gain. Candidate J_t<=C K²m in Z is OPEN;
+it would give cubic run-tops and universal exponent1/4 via Shankar,
+not full Chowla. Center q correctly: q0=-epsilon, epsilon=1_(-t∈B),
+r=q+epsilon has norm²2m-epsilon and cubicH+2epsilon*m. The exact
+determinant is m²<=K[H+2epsilon*m+K(2m-epsilon)].
+
+P22/O4 ALREADY obstructs a group proof of the remaining target.
+Explicitly repair its original nonadmissiblet by adding±t. B,q
+unchanged and actualK unchanged; with r=2^a,odd a>=3,
+H/(K²m)=K(r-2)/(2r)-2/K²→infinity. All its positive q-energy
+lies atD=K(r-1)~K³/2 INSIDE the middle window. This is a new
+diagnostic of the existing P22 family, not a new construction.
+Do not revive the historical group cubic window or call t admissible
+before the repair. No transfer of that counterexample to Z is shown.
+
+GLOBAL DECISION: retire linear-K endpoint energy and group-agnostic
+raw-joint/middle estimates. Do not weaken powers just to fit models.
+First next derivation: keep full finite integer t-run polynomials in
+the exact kernelH=sum_(b,c∈B)[2a_(b-c)-a_(b-c+t)-a_(b-c-t)].
+Apply summation by parts with the retained middle-band multiplier
+before absolute values. Identify and try to bound its signed endpoint/
+multiplier-difference term byO(K²m), using a feature that fails under
+O4's period4 wrap. If this only gives an uncontrolled derivative,
+pivot away from boundary compression rather than calibrate again.
+Keep signed Boolean coupling, mixed/scalar factor selection and
+growing genuine constructions distinct. All own jobs terminal/PASS;
+no GPU/VM lifecycle operation, sharedDirichlet on, cumulative$0.10.
+
 ## Current continuation — covariance closes back to Schur; quadratic loss has an integer family
 
 Previous1a2026f was progress. Full GOAL active, Chowla unresolved.

@@ -2,6 +2,48 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Joint boundaries and a localized endpoint-energy target (2026-10-23)
+
+SettingS=±A,N=2n,D=2f_A,K=2M, probability Haar, t∈S,
+B_t={s∈S:s-t∈S,s+t∉S}, m=|B_t|. Full statements/proofs:
+[lead record](notes/ordered_boundary_2026-10-23.md),
+[independent internal audit](notes/advisor_joint_boundary_2026-10-23.md).
+
+PROVED GROUP COUNTER: raw sum_t||F_Bt||1²<=C(NK+K⁴) fails
+even with EVERYt admissible in the elliptic-quadric complement:
+K=p,N~p⁴, p/3<=||F_Bt||1<=4p-1. Ratio>=p/11.
+Integer and historical chosen-Q1 statements remain OPEN.
+
+PROVED INTEGER COUNTER: for everyQ>=2^21, genuineA⊂[1,Q]
+containingQ exists with H_Q>=Q²/80 while actual
+K<=4+sqrt(2Qlog(128Q²)), whereq_t=(1-e^(itx))F_Bt and
+H_t=integralD|q_t|². Hence H_t<=C K m is REFUTED for everyC.
+Expectation leading coefficient43/1260; explicit collision and
+concentration bounds in advisorSection9. Not a Chowla counterexample.
+
+PROVED CANCELLATION: B_t-t andB_t disjoint insideS imply
+|q_t|²<=4m(N-D), and therefore
+
+    H_t<=6K²m+integral_(K²<D<N-K)D|q_t|².
+
+An O(K²m) bound on the remaining integral in Z would give exponent1/4
+by P14/Shankar; it is UNPROVED. The exact centered determinant is
+m²<=K[H_t+2epsilon*m+K(2m-epsilon)], epsilon=1_(-t∈B_t),
+becauseq0=-epsilon. Dropping this mean term is invalid in general.
+
+P22/O4 ALREADY refutes a group bound for the remaining integral.
+Repair admissibility by adding±(1,0), leavingB,q and actualK unchanged.
+Withr=2^a,odd a>=3, H/(K²m)=K(r-2)/(2r)-2/K²→infinity.
+Its positive energy lies atD=K(r-1)~K³/2 inside that band. This is
+a derived energy consequence of P22, not a new group construction.
+No torsion-free transfer, new universal exponent, novelty or kernel
+claim. Stop groupG3, raw group averaging and linear-K endpoint gains.
+
+FINITE EXACT: appending65536 to the previous certified pilot gives
+n32788,m10921,H146387604,M<=75803/180 andH/(K*m)>15. Direct
+integer pairs and full exact polynomial autocorrelation agree; the
+all-circle bound transfers from the existing certificate by adding1.
+
 ## Quadratic modulated-convolution loss: an actual integer counterfamily (2026-10-23)
 
 PROVED on paper using classical real-matrix Spencer discrepancy,

@@ -1,5 +1,27 @@
 # Certificates
 
+## 2026-10-23 — exact endpoint energy and transferred global bound
+
+The existing triangular pilot enlarged by frequency65536 has
+n32788,B65536 size10921 and exactH146387604. Direct integer
+boundary-pair summation and full-polynomial integer autocorrelation
+agree. Its global cosine floor follows analytically from the old
+all-circleM<=75623/180 certificate and |cos(65536x)|<=1, giving
+M<=75803/180. No grid minimum is used or recomputed. This proves
+H/(actualK*|B|)>15 for that explicit set. Parent artifact hashes and
+derived set hashes are saved in the verification JSON.
+
+The separate asymptotic integer obstruction to EVERY linear-K
+energy constant has a paper concentration/derivative proof; it is
+not inferred from the finite ratio. New true endpoint cancellation
+localizes the weaker quadratic-K energy question to an intermediate
+spectral band. P22, with explicit admissibility repair, refutes its
+group analogue, not the integer statement. Neither statement is
+Lean/kernel checked; no full Chowla resolution or priority claim.
+[Proof and artifacts](notes/ordered_boundary_2026-10-23.md),
+[verification](experiments/ordered_boundary_2026-10-23/verification.json),
+[independent internal review](notes/advisor_joint_boundary_2026-10-23.md).
+
 ## 2026-10-23 — quadratic convolution-loss family and independent finite bounds
 
 The asymptotic theorem uses exact Boolean Fourier identities, a

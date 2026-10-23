@@ -4,6 +4,35 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 retained-P14 joint-boundary refinement: test the exact-B
+target sum_(t in S)||F_Bt||_1^2 <= C(NK+K^4), not the older chosen
+Q1 decomposition. Its conditional consequence is exponent1/4.
+The sole advisor's exact admissible-t elliptic-quadric calculation
+REFUTES its group analogue: N=p(p-1)(p^2+1), K=p and every
+||F_Bt||_1 is between p/3 and4p-1. Ratio to NK+K^4 is >=p/11.
+Lead independently checked the Gaussian sums, boundary sections,
+null-cone count and ratio. This does not refute the integer target.
+Stop group-independent joint Gram/positivity proofs of that target.
+Mathematical pivot within P14/P20: use the ordered t-run endpoints,
+sum_(s in B_t)s=t|S intersect(S+t)|/2, and the signed polynomial
+q_t=(1-e^(itx))F_Bt. Derive its exact mixed cubic form and try to
+control it using endpoint order. No bound on that form is assumed;
+more finite-field calibration or a weaker power without a mechanism
+would not advance this route. [Admissible-t proof](notes/advisor_joint_boundary_2026-10-23.md).
+RESULT: the order pivot REFUTES H<=C K|B| on actual integers,
+withH>=Q²/80,K<=4+sqrt(2Qlog(128Q²)) for everyQ>=2^21.
+One saved-pilot modification has exact ratio>15; no new search.
+Retained TRUE cancellation |q|²<=4m(N-D) gives
+H<=6K²m+integral_(K²<D<N-K)D|q|². Only the middle band remains.
+ItsO(K²m) bound would yield exponent1/4 in Z; OPEN. ExistingP22
+already prevents a group proof: adding±t explicitly repairs its
+nonadmissiblet, preservingB,q,K, and H/(K²m)~K/2 diverges.
+Positive energy lies atTheta(K³), inside the surviving band.
+Do not revive groupG3 or silently omit q0=-1_(-t∈B). Next retain
+the middle multiplier during finite t-run summation by parts;
+if it only exposes an uncontrolled derivative, pivot mathematically.
+[Complete current record](notes/ordered_boundary_2026-10-23.md).
+
 2026-10-23 global covariance review and P14/P19 pivot:
 the FULL covariance matrix is exactly the old finite Schur cap,
 H=(I-Toeplitz_D(|lambda*p-1|²))/(2lambda). Its proposed two-vector

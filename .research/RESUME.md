@@ -1,5 +1,44 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: endpoint cancellation leaves the intermediate spectrum
+
+Previousa33f2bd was progress. Full GOAL active; Chowla unresolved.
+Read [current derivations and exact test](notes/ordered_boundary_2026-10-23.md)
+and [sole advisor audit](notes/advisor_joint_boundary_2026-10-23.md).
+
+The announced P14 joint task now has precise answers. Raw exact-B
+jointL1<=C(NK+K⁴) is false in finite groups even for everyt∈S;
+Z and chosen-Q1 statements remain open. Integer endpoint
+H_t<=C K|B_t| is FALSE by an infinite triangular-rounding family:
+H>=Q²/80,K<=4+sqrt(2Qlog(128Q²)),Q>=2^21. Saved-pilot reuse
+plusone endpoint gives exactH146387604,m10921,n32788 and
+all-circleM<=75803/180, hence H/(K*m)>15. No fresh search.
+
+Retain new audited paper cancellation:
+
+    q_t=(1-e^(itx))F_Bt, |q_t|²<=4m(N-D),
+    H_t<=6K²m+integral_(K²<D<N-K)D|q_t|².
+
+HereD=2f_A,N=2n,K=2M,m=|B_t|. Candidate middle integral
+<=C K²m in Z would imply exponent1/4, but is UNPROVED.
+Use the corrected centeringq0=-epsilon, r=q+epsilon and
+m²<=K[H+2epsilon*m+K(2m-epsilon)]. No false mean-zero shortcut.
+
+P22/O4 already refutes a group proof, precisely in that middle band.
+Adding±t repairs originalt∉S without changingB,q or actualK;
+H/(K²m)=K(r-2)/(2r)-2/K²→infinity and positive q-energy
+is atD=K(r-1)~K³/2. This is an energy diagnostic of the EXISTING
+family, not new group construction or integer counterexample.
+
+FIRST NEXT DERIVATION: expand finite integer t-run polynomials in
+the exact signed kernelH. Retain the middle-band multiplier during
+summation by parts, and isolate its endpoint/multiplier-difference
+term before absolute values. Need O(K²m) and a quantitative failure
+under period4 wrap. If only uncontrolled derivatives remain, pivot
+mathematically; do not run more bounded-ratio controls or restore
+groupG3. Three lines/resources in STATE. Own jobs terminal/PASS,
+Dirichlet shared/on; no GPU/lifecycle actions, total$0.10.
+
 ## Newest checkpoint: a rigorous quadratic-loss family after covariance reduction
 
 Previous1a2026f was progress. Full GOAL remains active and unresolved.

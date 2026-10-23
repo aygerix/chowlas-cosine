@@ -1,5 +1,57 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — joint-boundary obstruction, integer endpoint counterfamily and middle-band localization
+
+Previousa33f2bd was progress. Carried out the announced P14 joint
+calculation rather than extending the quadratic-floor pilot. The
+sole advisor derived an exact counterfamily to the GROUP analogue
+of raw sum_t||F_Bt||1²<=C(NK+K⁴), with EVERYt admissible. Elliptic
+quadric complement: K=p,N~p⁴, every boundary normTheta(p), ratio
+>=p/11. Lead independently checked the finite-field character sums.
+Integer statement and chosen-Q1 decomposition remain open.
+
+MATHEMATICAL PIVOT: use finite integer t-run endpoints via
+q_t=(1-e^(itx))F_Bt. Exact order moment holds, but linear-K energy
+does not. New paper theorem: every Q>=2^21 admits genuineA⊂[1,Q]
+containingQ with H_Q>=Q²/80 and actualK<=4+sqrt(2Qlog(128Q²)).
+Expectation coefficient43/1260, at most30Q collisions, bit influence
+<=16Q; concentration and a uniform-grid derivative proof give a
+simultaneous realization. Thus H/(K|B|)→infinity in Z. It is an
+obstruction family, not an Epoch or vanishing-ratio construction.
+Advisor independently audited all constants. Corrected intermediate
+centering/exponent slips before use: q0=-epsilon, and the centered
+determinant is m²<=K[H+2epsilon*m+K(2m-epsilon)].
+
+EXACT FINITE CHECK: no new random draw. Add65536 to the prior
+certified pilot. n32788,m10921,norm²21842,H146387604 exactly,
+via integer pair kernels and full FLINT autocorrelation. Existing
+globalM upper transfers to75803/180, giving H/(actualK*m)>15.
+The initial check and tightened>15 assertion rerun use the same input,
+each<1second on Dirichlet; both terminal/PASS.
+
+USEFUL LEMMA AFTER THE OBSTRUCTION: equal-size disjoint subsets
+B andB-t give |q_t|²<=4m(N-D). Thus
+H_t<=6K²m+J_t, J_t=integral_(K²<D<N-K)D|q_t|². This precisely
+removes low and near-maximum positive spectrum. BoundingJ_t by
+CK²m would imply cubic run-tops and exponent1/4 via P14, but is
+unproved in Z. ExistingP22/O4 blocks a group proof: its original
+t is nonadmissible; adding±t fixes this EXACTLY, leavesB,q,K
+unchanged, and gives H/(K²m)=K(r-2)/(2r)-2/K²→infinity.
+All positive q-energy is at D=K(r-1)~K³/2 in the middle window.
+This is a new diagnostic of an old counterfamily, not a new family.
+
+GLOBAL REVIEW: stop the raw group-independent averaging and the
+linear-K endpoint estimate. No unsupported NK+K⁶ replacement and
+no further familiar controls. First next derivation is finite t-run
+summation by parts with the middle-band multiplier RETAINED,
+isolating actual signed endpoints/multiplier differences. It must
+use a feature absent from O4's period4 wrap. If only an uncontrolled
+derivative remains, pivot away from boundary compression. Full
+Chowla and both endgame tracks remain open. Three lines in STATE;
+Dirichlet shared/on, no GPU/lifecycle action, cumulative$0.10.
+[Detailed record](notes/ordered_boundary_2026-10-23.md),
+[advisor derivations](notes/advisor_joint_boundary_2026-10-23.md).
+
 ## 2026-10-23 — conditional discrepancy proves genuine quadratic convolution loss
 
 Previous1a2026f was progress. The next full-covariance derivation

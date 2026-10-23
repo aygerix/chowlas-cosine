@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "elapsed_seconds": 0.6166948120007874,
+  "Q": 65536,
+  "t": 65536,
+  "n": 32788,
+  "maxA": 65536,
+  "added_frequency": 65536,
+  "source_pilot": ".research/experiments/modulated_triangle_2026-10-23/pilot.json",
+  "source_verification": ".research/experiments/modulated_triangle_2026-10-23/verification.json",
+  "source_pilot_sha256": "5450db9ef96271c28779d54c1101add26d47f76ef1a620ce083c053632a0b73a",
+  "source_verification_sha256": "801c51585c744630a3df39ac77aa2062757a4e1fb586180d87782f4be3e0956f",
+  "A_sha256": "2c536448895de90ee8ce78b143b17843fe60952c2e9a57a8178533f9d459dc62",
+  "B_size": 10921,
+  "B_sha256": "db4e2c0f564f438ec9e1c6e3fcf11affed4116bd49ad9510c30ab3b9648f06e0",
+  "endpoint_first_moment": 357859328,
+  "coupling": 10921,
+  "squared_norm": 21842,
+  "H_exact_integer": 146387604,
+  "exact_pair_energy": 146387604,
+  "H_methods": [
+    "integer boundary-pair kernel",
+    "full polynomial exact autocorrelation"
+  ],
+  "inherited_all_circle_M_upper": "75623/180",
+  "all_circle_M_upper": "75803/180",
+  "all_circle_K_upper": "75803/90",
+  "all_circle_bound_method": "Previously certified M plus1 for adding cos(Q*x)",
+  "H_over_actual_K_B_lower_bound": "13174884360/827844563",
+  "asymptotic_selection_implemented": false,
+  "qualification": "A deterministic modification of the saved pilot, not a new search. The all-circle bound is inherited from its previously checked certificate. Exact energies refute constant15 in H<=C*K*|B|. This is not a Chowla counterexample."
+}

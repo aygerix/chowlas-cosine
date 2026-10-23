@@ -1,5 +1,52 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — exact five-count phase-plane falsification
+
+Predeclared claim: the plane{ImF,ImF²} should have a nonpositive
+D-energy direction on every Boolean actual-lowM support. Exact
+matrices on the already certified n56,n306,n337 inputs refute it:
+4det(E) is respectively824676026,27563561416035,53118035714906,
+all strictly positive with positive first diagonals. Both energy and
+norm matrices independently match signed Laurent convolution. The
+n56 integers are separately checked by the advisor. These are exact
+finite counterexamples to the proposed phase-plane sign; the existing
+all-circle certificates supply the actual-lowM premises.
+
+Run: src/dirun.sh -c2 -m4 -t120 python src/cstar_phase_five_count.py.
+Terminal/PASS, all artifacts retrieved under
+experiments/phase_five_count_2026-10-23/results.json. The optional
+small-support enumeration was not executed because the first declared
+falsification succeeded. No new optimization, GPU use or VM lifecycle
+operation. The result led to a paper obstruction for every fixed-degree
+polynomial in both phases, rather than another successful-control sweep.
+[Derivation and interpretation](notes/cstar_phase_five_count_2026-10-23.md).
+
+## 2026-10-23 — one bounded adversarial reciprocal search
+
+Predeclared n56, ambient1..165, grid8192,4chains*3000 proposals,
+seed20261023, correlated exchanges of1/2/4 frequencies. Objective
+maximizes H/(Qsqrt(n)), with a sampled .98sqrt(n) lowM cap; it is
+not a min-M construction search or a successful-control enlargement.
+The saved support made no improvement over its initial score:
+best_step=-1, energy near-.359898. No R0/S0 falsifier or universal
+conclusion. No box enlargement or GPU deployment is justified.
+
+src/cstar_R0_adversary.py ran on Dirichlet with2cores/6GB and180s cap;
+src/cstar_zero_reciprocal_verify.py --artifact then independently checked
+the saved result with150s cap. Both mathematical jobs terminal/PASS,
+all artifacts retrieved under experiments/R0_adversary_2026-10-23/
+{results,results_verification}.json. The saved actual-lowM premise is
+an Arb all-grid/Taylor certificate; full reciprocal moments use exact
+integer residuals and32maxA retained coefficients, with a separate
+768-bit sparse/formal-inverse verifier. Floating proposals alone have
+no certification status. Old result schemas and defaults are retained.
+
+The initial local lifecycle wrapper submitted a shutdown before the
+user clarified that Dirichlet is shared. It was cancelled, its shutdown
+trap removed, and running status restored and verified. No further VM
+lifecycle action is authorized; terminate only our own bounded jobs.
+No RunPod use or additional GPU spending.
+
 ## 2026-10-21 — coordinated Boolean projection and zero-carrier reciprocal
 
 Reproduce via src/dirun.sh with2cores/6GB:

@@ -1,10 +1,125 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
-**Paused resumption handoff:** [RESUME.md](RESUME.md) states the exact R0
-target, missing upper bound, first derive/falsify steps, failed shortcuts,
-certificate paths and resource constraints. Read it BEFORE starting new
-work when the user explicitly resumes. The requested documentation and
-novelty check do not resume the research campaign.
+## Resumed campaign — 2026-10-23
+
+**SHARED VM — current user instruction:** Dirichlet is used by other
+agents. Leave it RUNNING. Never shut down/restart/suspend/reset it or
+install an automatic shutdown; terminate only our own bounded jobs.
+The initial shutdown wrapper was cancelled/removed after the user
+clarified this. A stop had already reached GCP; the VM was restored
+and its running status was verified. No lifecycle actions are pending.
+
+The user explicitly reactivated the full GOAL. The prior goal work is
+classified PROGRESS: verified finite certificates and corrected route
+interpretations changed the frontier; the later pause/novelty handoff
+is complete. Full Chowla remains open. The two-variable prefix/pad
+interaction is now fully quantified and internally reviewed; it gives
+a new sufficient sign target described next. No old control sweep is
+being repeated.
+
+Dirichlet is shared and must remain running. Our bounded CPU search
+and independent verifier both completed and artifacts were retrieved.
+No active GPU worker; cumulative new RunPod spend remains$0.10.
+Exactly one existing PhD Advisor is reused.
+The historical PAUSED notices below describe the previous checkpoint;
+this resumed status is authoritative.
+
+### Current mathematical frontier: a universal sign would suffice
+
+For every Boolean A with actual M(A)<=sqrt(n), fix lambda=2sqrt(n),
+p=1/(lambda+F_A), q=Im p. The current conjectural target S0 is
+only H=<2f_A q²><=0, equivalently tau<=1. It does not require the
+earlier numerical R0 margin399/400.
+
+A new paper theorem, independently checked by the advisor, proves
+that universal S0 would imply full Chowla with c=2^-85. A Boolean V
+with M(V)<=sqrt(N)/2 and g_V<=2^-82 can be augmented by a small,
+explicit no-carry difference block; the complete mixed cost and a
+finite integer-dilation bound show that the augmented Boolean support
+has H>0. Therefore universal S0 rules out these weak-gap inputs and
+forces qualitative L1 flatness on strict lowM classes. S0 itself is
+not proved. No converse from Chowla to this prescribed sign is known.
+[Complete derivation](notes/cstar_R0_tensor_2026-10-23.md),
+[independent internal audit](notes/advisor_R0_resume_2026-10-23.md).
+
+The same probe applied to an explicit weighted Fejer taper produces
+a positive-energy counterfamily with coefficients in(0,1]. Thus
+positivity and a coefficient cap alone cannot prove S0; exact unit
+amplitude is essential. This is not a Boolean counterexample.
+
+One predeclared adversary maximized the reciprocal energy in the n56,
+ambient165 box with4chains*3000 proposals. It made no improvement:
+best_step=-1, normalized energy near-.359898. Its saved all-circle
+premise and full reciprocal certificate pass independent verification.
+No R0 or S0 falsifier, no completeness claim, no enlargement/GPU.
+
+The next paper attempt was completed and internally checked:
+H=t/(2lambda^4)-lambda||h||²-<F,h²>/2, h=F²/[lambda²(lambda+F)].
+The shortcut <F,h²>>=0 is false on actual-lowM A={1,5,6}; the
+norm term alone is insufficient on existing dense Sidon controls.
+Sum-free fixed-calibration tests at n<=16 are automatic. Stop those
+component proofs and small successful tests.
+[Complete counterchecks](notes/cstar_S0_remainder_2026-10-23.md).
+
+The current weaker target P2 permits a nonzero combination of
+Im F and Im p with nonpositive energy. Its exact joint condition is
+2tH<=C2² for t>0, C2=<F²,p>; t=0 is automatic. A new internally
+reviewed amplification proves universal P2 would imply full Chowla
+with c=2^-107, even without a uniform margin or the S0 prescribed
+direction. P2 remains conjectural. The entire plane is positive on
+an explicit weighted relaxation, so its proof still needs Booleanity.
+[Full reduction](notes/cstar_two_direction_sign_2026-10-23.md),
+[advisor Section8](notes/advisor_S0_boolean_2026-10-23.md).
+
+### New obstruction: fixed-degree phase polynomials are insufficient
+
+A separate exact five-count test found the full plane{ImF,ImF²}
+positive definite on all three existing actual-lowM n56,n306,n337
+supports. Its integer matrices independently match Laurent convolution.
+No small-support enumeration or additional optimization followed.
+[Exact result](notes/cstar_phase_five_count_2026-10-23.md).
+
+The ensuing paper theorem, independently checked by the advisor, is
+broader: for every fixed total degree d, every real polynomial witness
+P(ReF,ImF) on the dense Boolean Singer sequence has Rayleigh>=-C_d.
+Coefficients may depend on the set; constants and both phases are
+included. The nonconstant energy block converges to a strictly positive
+Fejer-front Gram matrix. Therefore adding another fixed number of
+powers cannot prove a universal root-scale bound.
+[Full proof](notes/cstar_phase_polynomial_obstruction_2026-10-23.md),
+[independent audit](notes/advisor_P2_boolean_2026-10-23.md).
+This is a certificate-architecture obstruction, not another construction
+record or an unrestricted impossibility theorem.
+
+The advisor's exact Boolean inverse identity is
+lambda*C2=-t/lambda-(2n-1)*C1-R, C1=sum_A p_a. The backtracking
+coefficient2n-1 uses unit amplitudes. But R is positive on{1,2} and
+negative on{1,2,3}, both with actual lowM, so a new residual-sign
+shortcut is refuted. No coupled Boolean estimate or P2 proof emerged.
+
+Global decision: retire fixed-degree phase-polynomial architectures
+and separate residual signs. P2 is sufficient, but potentially
+stronger than necessary; no converse from Chowla was established.
+It must not become a required bottleneck for the full goal.
+
+First next derivation: in the existing all-order/Gibbs C* programme,
+let E_s=exp(-sF)=sum_j c_j(s)z^j and Z=sum_j c_j². The exact Boolean
+coefficient ODE is c_j'=-sum_A c_(j-a); the missing estimate is
+log Z(s)>=c*s*sqrt(n) for some s<=C*sqrt(n)*log(2n), uniformly in A.
+The advisor checks its equivalence to Chowla using Bohr localization
+with no max-frequency dependence. This is not a new result or route;
+it removes the additional unproved restriction to a prescribed plane.
+Attempt a unit-coefficient bound on the signed correlations before
+any new pilot. Initial curvature Z''(0)=2n alone is insufficient.
+
+The three continuing lines are all-order Boolean norm growth,
+coupled reciprocal/full signed witnesses, and the independent scalable
+construction track with all-circle upper bounds. No new GPU deployment
+is justified by the present results.
+
+Current [RESUME.md](RESUME.md) states the exact next derivation,
+refuted architectures, certificate paths and resource constraints.
+The paused sections below are historical, not the current goal status.
 
 ## Active GOAL.md campaign, 2026-10-21
 

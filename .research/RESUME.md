@@ -1,4 +1,60 @@
-# Paused handoff — start here on explicit resumption
+# Research handoff — current October23 frontier
+
+2026-10-23 STATUS UPDATE: the user explicitly reactivated the goal.
+This handoff is now being executed; its older paused notices record
+the previous checkpoint. Current status is at the top of STATE.md.
+Dirichlet is SHARED with other agents. The user explicitly instructed
+us to leave it running. No shutdown traps, stops, restarts, suspensions,
+resets or lifecycle changes without a NEW explicit user instruction.
+
+Current proof frontier: the internally reviewed padding reductions show
+that qualitative universal S0 would imply Chowla with c=2^-85, and
+the weaker adaptive two-direction sign P2 would suffice with c=2^-107.
+Neither sign hypothesis is proved. Read [S0](notes/cstar_R0_tensor_2026-10-23.md),
+[P2](notes/cstar_two_direction_sign_2026-10-23.md), and their linked audits.
+The arbitrary R0 numerical margin is no longer necessary for this
+sufficient route. No weak-gap Boolean input has been constructed.
+
+The current session also proves a broader architecture obstruction:
+every fixed-degree real polynomial in BOTH ReF and ImF has Rayleigh
+bounded below by -C_d along the actual-lowM dense Singer sequence.
+This includes arbitrary parameter-dependent coefficients and constants.
+The full nonconstant polynomial energy block is eventually positive.
+Read [the proof](notes/cstar_phase_polynomial_obstruction_2026-10-23.md)
+and [advisor audit](notes/advisor_P2_boolean_2026-10-23.md). Do not return
+to another fixed number of analytic powers or scalar powers of D.
+
+First concrete next derivation: return to the existing all-order/Gibbs
+C* programme rather than require the unproved P2 plane to be complete.
+For E_s=exp(-sF)=sum_j c_j(s)z^j, use the exact unit-coefficient ODE
+c_j'=-sum_A c_(j-a), c_0=1, c_j(0)=0 for j>0, and Z=sum_j c_j².
+The target is a Boolean cancellation estimate forcing
+log Z(s)>=c*s*sqrt(n) for some s<=C*sqrt(n)*log(2n).
+This is equivalent to Chowla up to constants, as advisor Section6
+checks with a frequency-independent Bohr localization bound. It is
+an explicit remaining estimate in the existing C* route, not a new
+proved inequality or reason to run a larger finite search. Derive a
+unit-amplitude bound on these signed coefficient correlations first.
+
+P2 is an auxiliary falsifiable sufficient target. Its exact Boolean
+identity lambda*C2=-t/lambda-(2n-1)*C1-R has R of both signs on
+actual-lowM A={1,2} and {1,2,3}. The missing joint determinant
+2tH<=C2² involves the full inverse norm. Neither component signs nor
+positivity plus a coefficient cap establish it. Do not make the full
+goal depend on an unproved completeness assertion for this plane.
+
+Three retained lines: (1) all-order Boolean exponential growth;
+(2) coupled reciprocal and unrestricted signed Rayleigh; (3) independent
+counterexample construction, requiring a changed scalable mechanism
+and an all-circle upper bound. None is resolved by the present theorem.
+
+Completed computation: one n56 reciprocal adversary made no improvement;
+its full residual certificate independently passes. A separate exact
+five-count test refutes the polynomial plane on the existing n56,n306,
+n337 inputs, with independent Laurent matrices; no enumeration followed.
+All own jobs terminal. No new GPU spend; cumulative conservative$0.10.
+
+## Historical October21 paused handoff, superseded above
 
 Last updated: 2026-10-21. The user has NOT resumed the research goal.
 This handoff and the requested novelty review are bounded documentation

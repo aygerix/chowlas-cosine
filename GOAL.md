@@ -34,6 +34,9 @@ obstructions. Launch no additional agents.
 Use Dirichlet through src/dirun.sh for ordinary research computation
 and exact certification. Use RunPod selectively for repeated,
 device-resident large-band Fourier operations and optimization.
+Dirichlet is SHARED with other agents. Leave it running; never stop,
+restart, suspend, reset or schedule an automatic shutdown without a NEW
+explicit user instruction. End only this project's own bounded jobs.
 Keep direct/sparse CPU methods for small or sparse spaces.
 Floating-point optimization proposes candidates; exact arithmetic
 and rigorous global certificates establish mathematical claims.

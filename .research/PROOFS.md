@@ -2,6 +2,97 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## All fixed-degree phase-polynomial witnesses fail as universal certificates (2026-10-23)
+
+For every fixed d, there are C_d,k_d such that every cyclic perfect
+difference set B of size k>=k_d in Z/(k(k-1)+1) gives an actual-lowM
+Boolean positive-difference set A for which
+
+    <2f_A P(f_A,ImF_A)²>/<P(f_A,ImF_A)²> >= -C_d
+
+for every nonzero polynomial witness of total degree<=d. Coefficients
+may depend arbitrarily on the set; constants and both phases are
+included. The nonconstant monomial block is eventually positive
+definite, including after centering. Thus no fixed-degree polynomial
+in the full complex signal can give a universal root-scale certificate.
+
+Paper proof: cardinal interpolation gives a uniform elementary
+Dirichlet/log bound on the Singer error. Every fixed Lp moment,p>2,
+approaches the analytic Fejer-front profile H(t)=int_0^1(1-u)e^(iut)du.
+The energy Gram is strict because ReH>=0 and H(t),H(-t) have no
+polynomial relation, as the t=iy exponential-growth test proves.
+Centering and a constant-block Schur bound give the O_d(1) cap.
+[Full proof](notes/cstar_phase_polynomial_obstruction_2026-10-23.md),
+[independent internal audit](notes/advisor_P2_boolean_2026-10-23.md).
+Not kernel-checked or externally scrutinized; novelty unverified.
+
+Finite trigger: the exact odd plane{ImF,ImF²} is positive definite
+on the already actual-lowM n56,n306,n337 supports, independently
+checked by Laurent convolution. For n56,4det(E)=824676026>0.
+[Counts and interpretation](notes/cstar_phase_five_count_2026-10-23.md).
+The reciprocal witnesses there remain negative; non-polynomial,
+growing-degree and unrestricted signed spaces are not ruled out.
+
+## Adaptive two-direction sign P2 (conditional paper theorem, 2026-10-23)
+
+P2 asserts that for every Boolean actual-lowM A, at lambda=2sqrt(n),
+some nonzero real q in span{Im F_A,Im(1/(lambda+F_A))} has
+<2f_A q²><=0. The exact energy matrix in that basis is
+[[t/2,C2/2],[C2/2,H0]], with t=#ordered a+b=c and C2=<F²,p>.
+For t>0 the condition is 2tH0<=C2²; t=0 is automatic.
+
+A complete internally checked amplification proves universal P2
+would imply Chowla with c=2^-107. Strengthen the weak-gap premise
+in the prior padding theorem to g_V<=2^-104. It makes Hqq positive;
+weak L1 then forces many additive triples, giving Hbb>2^45N^1.5,
+while Hqq>2^-77/sqrt(N) and cross²<2^-36N. Thus the entire energy
+plane is positive definite on the amplified Boolean support. If P2
+were universal, weak-gap inputs would be impossible, supplying
+flatness and Chowla. No such Boolean input or proof of P2 is known.
+[Complete proof](notes/cstar_two_direction_sign_2026-10-23.md),
+[independent internal audit Section8](notes/advisor_S0_boolean_2026-10-23.md).
+
+The exact remainder identity H0=t/(2lambda^4)-lambda||h||²-<F,h²>/2
+is proved. Its two component shortcuts are refuted inside actual lowM:
+{1,5,6} has <F,h²>=(3-2lambda)/lambda^8<0; existing dense Sidon
+controls have too many triples for the norm term alone. An explicit
+weighted Fejer amplification also makes the entire P2 plane positive,
+with occupied-count calibration and coefficients in(0,1]. It refutes
+the cap-only relaxation, not Boolean P2. These are constraints on the
+proof mechanism, not a new unconditional universal exponent.
+
+## Universal reciprocal sign self-improves (conditional paper theorem, 2026-10-23)
+
+Let S0 assert H_A=<2f_A(Im(2sqrt(n)+F_A)^-1)²><=0 for every Boolean
+A with actual M(A)<=sqrt(n). A complete internally reviewed padding
+argument proves S0 implies Chowla with c=2^-85. S0 is conjectural;
+the reduction is proved on paper, not kernel-checked or externally reviewed.
+
+For independent U(z)+V(w), p_mix=p-p_U-p_V+1/lambda has both
+indices positive. Orthogonality gives g=g_U+g_V+lambda²||p_mix||²,
+T=T_U+T_V and H=H_U+H_V-lambda||p_mix||². If M(V)<=sqrt(N)/2,
+N>=2^44 and g_V(2sqrt N)<=2^-82, choose
+k=floor(sqrt(N)/2^20), U the positive differences of{1,9,...,9^(k-1)},
+n'=N+k(k-1)/2, lambda=2sqrt(n'), L=2^16*n'*9^k.
+Then U union L*V is actual-lowM Boolean and has H>0. The proof
+uses exact t_U=2binom(k,3), fourth moment<=24k^4, a global remainder
+bound giving H_U>=k³/(48lambda^4), and the full mixed cost<=36g_V/lambda.
+The finite transfer error is <=22sum(U)/(L*n'). No prefix-only energy
+or false uniform Neumann expansion is used.
+
+Universal S0 therefore forces a positive norm gap and L1 flatness on
+every strict-margin class; constants can depend on the margin. Together
+with ||f||1<=2M this gives c=2^-85. A sign check for one set does not
+give such a rate; the global quantifier and Boolean closure are essential.
+The arbitrary R0 numerical margin is unnecessary for this sufficient route.
+[Full proof](notes/cstar_R0_tensor_2026-10-23.md),
+[independent internal review and weighted sign falsifier](notes/advisor_R0_resume_2026-10-23.md).
+
+An explicit Fejer-weight pad with N>=2^336 has g<=3N^-1/4; the same
+probe gives H>0 at occupied-count calibration, with all coefficients
+in(0,1]. This refutes the coefficient-cap relaxation of S0, not Boolean
+S0. Exact unit amplitudes are still an unproved ingredient in its sign.
+
 ## Phase quotient and reciprocal audit (PROVED identities; Boolean estimates OPEN, 2026-10-21)
 
 For actual lowM and lambda=2sqrt(n), W=lambda+F, the infimum over

@@ -25,10 +25,13 @@ def main():
     flint.ctx.prec = 768
     parser = argparse.ArgumentParser()
     parser.add_argument('--prefix', action='store_true')
+    parser.add_argument('--artifact', type=Path,
+                        help='Verify a separate saved artifact with the same exact certificate schema')
     args = parser.parse_args()
-    base = Path('.research/experiments/zero_reciprocal_2026-10-21')
+    base = (args.artifact.parent if args.artifact else
+            Path('.research/experiments/zero_reciprocal_2026-10-21'))
     name = 'prefix' if args.prefix else 'results'
-    data = json.loads((base/f'{name}.json').read_text())
+    data = json.loads((args.artifact or base/f'{name}.json').read_text())
     out = dict(host=socket.gethostname(), precision=flint.ctx.prec, cases=[])
     for row in data['cases']:
         A, n, B, den = row['A'], row['n'], row['band'], row['finite_denominator']
@@ -95,7 +98,8 @@ def main():
         out['cases'].append(result)
         print(json.dumps(result), flush=True)
     out['status'] = 'PASS'
-    verified = 'prefix_verification' if args.prefix else 'verification'
+    verified = (args.artifact.stem+'_verification' if args.artifact else
+                ('prefix_verification' if args.prefix else 'verification'))
     (base/f'{verified}.json').write_text(json.dumps(out,indent=2)+'\n')
 
 

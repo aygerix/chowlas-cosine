@@ -1,5 +1,89 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — coupled sign audit and a full phase-polynomial obstruction
+
+New sufficient reduction: the weaker movable P2 plane{ImF,Im p},
+p=(2sqrt(n)+F)^-1, needs only a qualitative nonpositive direction
+on every actual-lowM Boolean support to imply Chowla, c=2^-107.
+Its determinant condition2tH<=C2² is exact but unproved. Both S0
+component shortcuts fail inside actual lowM, and the advisor's new
+unit-coefficient recurrence lambda*C2=-t/lambda-(2n-1)C1-R has a
+residual R of both signs on{1,2} and{1,2,3}. No coupled estimate follows.
+
+Changed attempt: replace the reciprocal with{ImF,ImF²} and try a
+Boolean five-count determinant inequality. Exact integer counts
+refute even its non-strict sign on all existing certified n56,n306,
+n337 controls. Independent Laurent matrices match; no new search,
+small-support enumeration or GPU followed.
+[Finite artifact](notes/cstar_phase_five_count_2026-10-23.md).
+
+The useful mathematical consequence is broader: for every fixed d,
+all real degree<=d polynomials in both ReF and ImF have Rayleigh>=-C_d
+along the actual-lowM dense Singer sequence, with arbitrary adaptive
+coefficients. A self-contained profile proof uses elementary cardinal
+interpolation and Dirichlet log bounds; no sampling theorem is assumed.
+Strict Gram positivity follows from the algebraic independence of the
+analytic Fejer profile H(t),H(-t), proved by continuation to t=iy.
+Centering and the constant block give the uniform Rayleigh cap.
+[Proof](notes/cstar_phase_polynomial_obstruction_2026-10-23.md),
+[independent internal audit](notes/advisor_P2_boolean_2026-10-23.md).
+
+Global review: adding phase to a fixed-degree polynomial does not
+remove the known positive-front obstruction. Stop all fixed-degree
+power repairs and separately signed residual components. Preserve
+P2 as a sufficient conjecture, not an assumed complete route. The
+primary next derivation returns to all-order exponential coefficient
+growth in the existing Gibbs C* programme, whose equivalence to the
+goal the advisor quantifies. The missing signed-correlation estimate
+is explicit in STATE/RESUME; no new norm-growth bound is claimed.
+Coupled inverse estimates remain auxiliary non-polynomial targets.
+Maintain the separate construction track with an actually changed
+scalable mechanism and all-circle upper bounds. No unconditional
+universal exponent or construction constant improved this cycle.
+All own computations terminal/PASS, no new GPU spend, shared VM on.
+
+## 2026-10-23 — Boolean padding makes a qualitative sign sufficient
+
+Previous goal work classified as progress: exact certificates and a
+checked route correction changed the frontier; the pause/novelty review
+was complete. User resumed the full goal. Main new paper result:
+universal S0, H_A<=0 for the prescribed zero-carrier reciprocal at
+lambda=2sqrt(|A|) on every actual-lowM Boolean support, implies full
+Chowla with c=2^-85. Neither S0 nor Chowla is proved. The numerical
+R0 margin is no longer required as a sufficient target.
+
+Derivation: complete two-variable orthogonality gives H=H_U+H_V
+-lambda||p_mix||². A Boolean no-carry difference block has positive
+energy at the total-cardinality lambda, proved by exact triple/fourth
+counts and a global remainder. A weak-gap V with a strict lowM budget
+can be augmented; full mixed costs and an explicit finite integer lift
+give H_A>0. Universal S0 rules this out and self-improves to flatness
+and then Chowla. [Full derivation](notes/cstar_R0_tensor_2026-10-23.md),
+[independent internal audit](notes/advisor_R0_resume_2026-10-23.md).
+
+Advisor also gives an explicit coefficient-cap weighted sign falsifier,
+with N>=2^336 Fejer weights and the same occupied-count calibration.
+It is not Boolean and not a Chowla counterexample. It rules out the
+generic positivity/cap shortcut, locating the remaining unit-amplitude
+step. A single n56 adversarial energy search in one fixed box made no
+improvement; saved premise and infinite moments independently PASS.
+Stop its enlargement and do not deploy a GPU from that failure.
+
+Global review: the missing prefix/pad transfer is now proved, and the
+arbitrary quantitative R0 constant can be replaced by a global sign.
+The sign still needs a coefficientwise Boolean argument. The next
+paper attempt resolves H into its leading additive-triple term and
+the signed Hankel correction of h=F²/[lambda²(lambda+F)]; an algebraic
+reformulation alone is not progress. Retain unrestricted signed
+Rayleigh and a structurally changed construction track if this ansatz
+stalls; no repeated model exclusions or successful-control sweep.
+
+Operational correction: Dirichlet is shared. A cleanup trap had already
+submitted a stop when the user clarified this; it was cancelled and
+removed, and the VM restored and verified running. The no-lifecycle
+rule is recorded in GOAL/STATE/RESUME. All our mathematical jobs are
+terminal; no new GPU spend, cumulative$0.10; full goal remains active.
+
 ## 2026-10-21 — paused resumption handoff and bounded R0 novelty check
 
 The user explicitly declined to resume the goal and requested clear

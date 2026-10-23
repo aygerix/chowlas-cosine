@@ -1,9 +1,41 @@
 # CSTAR — THE problem. Read this first, every session.
 
-The campaign remains PAUSED. On an explicit resume, start with the
-actionable [RESUME.md handoff](RESUME.md), then the linked audits and
-novelty review. No experiments or workers are authorized by the current
-documentation/novelty task.
+2026-10-23: the user has explicitly RESUMED the goal. Read the top of
+STATE for current status; older PAUSED notes below are historical.
+R0 and its two-variable prefix/pad transfer are the initial derivations.
+
+Current paper results: universal qualitative reciprocal sign S0 would
+imply Chowla with c=2^-85; the weaker adaptive plane P2 would suffice
+with c=2^-107. Both implications are internally reviewed, and both sign
+hypotheses remain unproved. [S0 proof](notes/cstar_R0_tensor_2026-10-23.md),
+[P2 proof](notes/cstar_two_direction_sign_2026-10-23.md).
+
+The next attempt exposed a broader obstruction: for every fixed d,
+all real polynomial witnesses P(ReF,ImF) of total degree<=d have
+Rayleigh>=-C_d along an actual-lowM Boolean Singer sequence, even with
+arbitrary adaptive coefficients. Adding another fixed number of powers
+cannot supply a universal root-scale certificate. The complete proof
+uses elementary interpolation, a Fejer-front moment limit, and strict
+positivity of its phase Gram matrix.
+[Proof](notes/cstar_phase_polynomial_obstruction_2026-10-23.md),
+[independent internal audit](notes/advisor_P2_boolean_2026-10-23.md).
+
+Exact n56/n306/n337 integer matrices already falsify the two-power
+odd plane, whereas the saved reciprocal directions are negative.
+The coefficientwise inverse recurrence also has a genuinely Boolean
+backtracking term, but its remaining residual has both signs on
+actual-lowM supports. No unconditional universal gain follows.
+Keep the terms coupled; P2 remains auxiliary, with no proved converse
+from Chowla. The first next derivation returns to all-order exponential
+coefficient growth in the existing Gibbs C* programme, as specified in
+RESUME and advisor Section6. Its quantitative norm growth is unproved;
+no further fixed-degree or successful-control sweep.
+
+The one bounded n56 reciprocal adversary made no improvement. All
+own CPU jobs are terminal/PASS; no GPU worker or new spend. Shared
+Dirichlet is running and must be left on. [Current handoff](RESUME.md).
+
+## Historical paused checkpoint, superseded by the October23 resumption
 
 ## Latest cycle: retire modulus surrogate; test changed Boolean construction
 

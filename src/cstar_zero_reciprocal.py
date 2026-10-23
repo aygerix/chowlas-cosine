@@ -36,14 +36,15 @@ def bracket(lo, hi, den=1 << 64):
     return [str(lower), str(higher)]
 
 
-def one(A, M_upper, label):
+def one(A, M_upper, label, band_multiple=8):
     A = sorted(A)
     n, X = len(A), max(A)
     assert len(set(A)) == n and min(A) > 0 and M_upper*M_upper <= n
     lam = 2*flint.arb(n).sqrt()
     margin = lam-ball(M_upper)
     assert margin > 0
-    B = 8*X
+    assert band_multiple >= 8
+    B = band_multiple*X
     grid = 1 << (8*(B+1)).bit_length()
     spectral = np.zeros(grid, dtype=np.complex128)
     spectral[A] = 1

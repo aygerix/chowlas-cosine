@@ -2,6 +2,46 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Reciprocal phase projections and exact closure boundaries (2026-10-23)
+
+PROVED on paper, independently internally checked: with real Boolean
+F,actualM<=sqrt(n),lambda2sqrt(n),p=(lambda+F)^-1,g=||F*p||²,
+h=lambda<2f(Im p)²>,C1=<F,p>,
+
+    K=(F²+lambda*conjugate(F))*p²,
+    ||K||²=g-4h>=4(g+h)²+4(C1+2g+2h)².
+
+Strict Cauchy gives g>=4/25=>h<0, improving the old9/16 branch.
+The claim applies to weighted F with actual norm calibration too;
+it is NOT an absolute Boolean norm-gap bound or full Chowla proof.
+Both parity planes being PD forces g+C1<0 and
+(2C1+1/2)²<-16(t/lambda³)(g+C1), t=<F,F²>.
+
+REFUTED exact Boolean finite shortcut: y=-lambda<F,p²>,
+G3=[y²+4(C1+y)²+2y]/5<=g does NOT universally make
+Psi3=2t(-G3/lambda-<F,p²>/2)-C2² nonpositive. A saved n76
+actual-lowM Boolean support has Psi3>0.9990 while its full
+original determinant is certified negative near-3.3081.
+The discarded phase energy is exactly5(g-G3). This does not
+refute originalP2. Separately, a finite weighted geometric model
+makes BOTH parity planes PD at actual coefficient-energy calibration.
+
+PROVED finite recovery on SAME Boolean support: the full negative
+Fourier projection gives Gminus>=G3 and Psi_minus<-.7399; already
+2Gminus>y proves H<0. No universal truth is inferred. The remaining
+finite sufficient target is Nminus+(5lambda/(2t))*C2²>=y/2-y².
+
+PROVED Boolean boundary lemma, n>=2,m=minA,D=maxA:
+k_D=1/lambda,k_(D-m)=1_A(D-m)/lambda-2/lambda². Hence the
+negative block's excess energy over span{conjugate(F)} is
+at least2/lambda⁴ and g-G3>=1/(40n²) at the stated calibration.
+The two selected residual rows prove this directly. This small
+bound is not a macroscopic norm-gap or exponent improvement.
+
+[Statements, proofs, certificates and derived full-negative-block target](notes/P2_phase_projection_2026-10-23.md),
+[advisor audit](notes/advisor_P2_coupling_2026-10-23.md).
+No new kernel check, Boolean universal exponent or priority claim.
+
 ## Complex factor phase stability and all-disk certificate obstruction (2026-10-23)
 
 PROVED on paper and independently internally reviewed. For every

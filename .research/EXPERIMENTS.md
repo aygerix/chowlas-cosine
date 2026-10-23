@@ -2359,3 +2359,34 @@ Recovery-time checks and their limits are recorded in [RECOVERY_AUDIT](RECOVERY_
 ## 2026-10-20 independent and correlated small-fiber centers
 
 [Statements, proofs, bug repair and reproduction](notes/cstar_fiber_centers_2026-10-20.md). Data: experiments/fiber_centers_2026-10-20/{independent,correlated,countercontrol,verification}.json. Seed20261026 supplies full finite-population numerical moments and96 sampled center assignments at X=64,128,256; selected negative samples have rigorous point R>2.6182,3.3424,4.8221. Seed20261027/Gurobi13 fixes n=1599 and repairs8,9,10 finite phases, each with an Arb floor -10^(-6), while separate points give R>1.8052,2.1552,1.8608. Deterministic mod5 full/empty controls have positive tested zero-circle values and t=5 R>5.1019,11.3456,24.3083. An independent endpoint-pair reconstruction, exact parity coefficient comparison, separate Sturm sign check and192-bit evaluations verify the stored bounds. A mutable-list serialization bug was repaired without reoptimizing candidates; every original target-prefix floor was rechecked. Finite expectation bounds for ANY original-marginal coupling are also rigorous; finite population moments/CLT fits remain numerical. All jobs ran on Dirichlet and are terminal. No global upper bound for an individual Boolean set or external/Lean audit is claimed.
+
+## 2026-10-23: reciprocal phase closure, one exact Boolean falsifier
+
+Current [proof/test record](notes/P2_phase_projection_2026-10-23.md)
+and [advisor audit](notes/advisor_P2_coupling_2026-10-23.md).
+
+* `P2_alias_2026-10-23/results.json`:47 admitted disjoint unions,
+  L1..128, fixed n76; exact all-circle M<=17/2<sqrt76. The FFT
+  determinant probe found no falsifier. Only L36 subsequently has
+  a certified full inverse sign; no finite-class theorem.
+* `P2_geometric_2026-10-23/results.json`: one finite WEIGHTED
+  r99/101,N1024 model, exact energy calibration. Rational uniform
+  tail transfer proves both complete parity planes PD. Nonboolean.
+* `P2_projection_2026-10-23/results.json`: one saved Boolean L36
+  support, maxA396,t1617. Finite inverse and inverse-square
+  recurrences rigorously give Psi3>0.9990, falsifying the stronger
+  rank-two projection closure. Full inverse residual certification
+  gives originalPhi near-3.3081<0. Independent selected convolution
+  and sparse integer residual reconstruction pass. The full negative
+  block recovers Psi_minus<-.7399 on this SAME support, already
+  proving H<0 through2Gminus>y. P2 not refuted; no universal claim.
+
+Reproduce on Dirichlet, with2CPU/4GB caps:
+
+    src/dirun.sh -c 2 -m 4 -t 180 python src/P2_alias_adversary.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/P2_geometric_certificate.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/P2_projection_bound.py
+
+All own jobs terminal/PASS. No new GPU use or VM lifecycle action.
+The scan is stopped; do not enlarge it. The Gminus full-negative
+projection has one exact finite recovery, not a universal theorem.

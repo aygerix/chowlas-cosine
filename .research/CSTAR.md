@@ -1,5 +1,24 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Current continuation: a phase-retaining norm identity sharpens
+the generic reciprocal sign branch to g>=4/25. It does not bound
+g away from0 for Boolean sets. The finite rank-two projection
+closure is exactly FALSE at an actual-lowM Boolean n76 support,
+even though its original full P2 determinant is certified negative.
+The missing residual is Rperp=5(g-G3). [Proof, artifacts, next](notes/P2_phase_projection_2026-10-23.md).
+
+A finite positive-cap geometric polynomial makes BOTH full parity
+planes PD at ACTUAL coefficient-energy calibration. It is not
+Boolean. Stop generic Gram closure and the bounded alias scan.
+The FULL negative Fourier projection RECOVERS that same Boolean
+case exactly, Psi_minus<-.7399; it retains every inverse-input
+coefficient position. Its universal truth remains unproved, and the
+geometric relaxation has Gminus=G3. Full signed Boolean coupling
+is still required. A new two-row Boolean identity gives residual
+energy>=2/lambda⁴, hence g-G3>=1/(40n²), too small for Chowla.
+Next aggregate exact rows toward the finite Nminus/C2 target in
+STATE. Current STATE/RESUME supersede older checkpoints.
+
 Current continuation: fixed-support phase energy now has an
 explicit positive lower bound uniform in every dilation, complex
 factor branch and global phase. Odd-zero Rouché/Poisson sampling

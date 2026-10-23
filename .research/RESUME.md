@@ -1,5 +1,46 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: keep the phase residual; rank-two closure is false
+
+Read [current proof/test record](notes/P2_phase_projection_2026-10-23.md)
+and [advisor audit](notes/advisor_P2_coupling_2026-10-23.md).
+Full GOAL active, Chowla/P2 unresolved. New generic analytic
+branch g>=4/25 proves the odd reciprocal H<0 atlambda2sqrt(n).
+No absolute lower bound on g is proved.
+
+The stronger finite criterion using G3 instead of the FULL inverse
+gap is exactly FALSE at a Boolean n76 support with all-circle
+M<=17/2<sqrt76. Psi3>0.9990 while the original full determinant
+is certified negative near-3.3081. Its omitted phase energy is
+Rperp=5(g-G3); do not drop it. A separate finite weighted geometric
+example makes BOTH parity planes PD at actual energy calibration;
+it is not Boolean and refutes neither P2 nor Chowla.
+
+The ALL-negative block consists of
+k_j=lambda*sum_(a∈A,a>=j)[z^(a-j)]p²,j1..D. The exact lower
+bound Gminus=[y²+sum k_j²+2y]/5<=g is stronger than G3.
+On the SAME L36 support it certifies Psi_minus<-.7399,
+recovering that finite case; 2Gminus>y already proves H<0.
+The positive-frequency remainder is
+5(g-Gminus)=||P_>0 K||². On geometric weighted inputs Gminus=G3,
+so a generic positivity argument still cannot finish it. Compare
+the existing false uniform Hankel operator shortcut before claiming
+a new mechanism. Its universal truth is unproved.
+
+First actual next derivation: aggregate exact Boolean row identities
+toward Nminus+(5lambda/(2t))*C2²>=y/2-y² (t>0). The paper
+boundary lemma now gives k_D=1/lambda and
+k_(D-minA)=1_A(D-minA)/lambda-2/lambda². Hence negative-block
+excess over span{conjugate(F)} is>=2/lambda⁴ and
+g-G3>=1/(40n²). This uses exact unit bits but is too small
+for a root bound. Retain C2 and both-sign inverse coefficients;
+do not replace a vector-specific lower bound with the old false
+uniform Hankel norm estimate. No more support search is yet justified.
+
+Stop the47-case alias scan and generic finite-rank Gram polishing.
+Retain the three lines listed in STATE; no GPU justified. All own
+jobs terminal, shared Dirichlet on and untouched, GPU total$0.10.
+
 ## Newest checkpoint: stop the odd-zero certificate route at the proved boundary
 
 Read [stability/no-go proof](notes/odd_zero_phase_stability_2026-10-23.md)

@@ -4,6 +4,40 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 refinement of the SAME reciprocal/phase route: retain
+the complete phase SOS K=(F²+lambda*conjugate(F))/(lambda+F)²,
+not a modulus surrogate. Orthogonal projections give a sharper
+generic norm-gap gate; they do not supply the Boolean determinant.
+Test that boundary on ONE exact weighted geometric polynomial,
+r=99/101,N=1024, at actual coefficient-energy calibration, using
+a rational all-circle tail transfer from its closed-form series.
+This is an adversary to positivity/norm-only proofs, not a Boolean
+construction or an enlarged successful-control scan. No GPU.
+One follow-up Boolean falsification target uses only the already
+saved L36 support: with y=-lambda*<F,p²>, the three orthogonal
+projections give G3=[y²+4(C1+y)²+2y]/5<=g. Test the STRONGER
+finite criterion 2t(-G3/lambda-<F,p²>/2)-C2²<=0 by exact
+recurrences. Failure rules out this finite-projection shortcut,
+not P2. No new support search or quadrature is involved.
+RESULT: the G3 criterion is exactly false on that Boolean support,
+Psi3>0.9990, while the FULL inverse proves originalPhi<0.
+Retaining the ENTIRE negative Fourier block recovers Psi_minus<-.7399
+and already H<0 on SAME support. This is one finite recovery only.
+New two-row Boolean identity gives residual>=2/lambda⁴, hence
+g-G3>=1/(40n²), too small for Chowla. Next derive an aggregate
+specific-input bound, not a uniform Hankel operator norm estimate.
+
+2026-10-23 retained P2 coupling test (same unresolved route):
+one finite-alias adversary A=diff_+(Singer11) union L*diff_+(B5),
+B5={0,1,4,9,11}, only L1..128 with DISJOINT supports. It has
+n76 and exact all-circle M<=17/2<sqrt76. Score the FULL P2
+determinant2tH-C2² atlambda2sqrt76; finiteL admits correlations
+absent from the independent-axis formula. This differs from the
+old n56 one-swap search. A positive determinant or positive H
+requires an infinite-reciprocal certificate before any falsification
+claim; negative proposals do not prove a universal inequality.
+One bounded scan only, no box enlargement without a new mechanism.
+
 2026-10-23 refinement and stop within the existing factor-phase
 route: [odd-zero stability](notes/odd_zero_phase_stability_2026-10-23.md)
 proves an explicit positive complex-factor asymmetry gap uniform

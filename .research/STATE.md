@@ -1,5 +1,63 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — phase gate and an exact Boolean projection failure, 2026-10-23
+
+Previous a5ced79 was progress. Full GOAL is active and unresolved.
+[Current derivations, certificates and stop decision](notes/P2_phase_projection_2026-10-23.md),
+[sole advisor's independent audit](notes/advisor_P2_coupling_2026-10-23.md).
+
+New paper result: for p=(lambda+F)^-1,lambda=2sqrt(n),
+g=||F/(lambda+F)||² and H=<2f(Im p)²>, the phase-retaining
+K=(F²+lambda*conjugate(F))*p² has ||K||²=g-4lambda H.
+Orthogonal projections give
+g-4h>=4(g+h)²+4(C1+2g+2h)²,h=lambda H.
+Thus g>=4/25 forces H<0; the smaller-gap branch is OPEN.
+This is generic analytic progress, not a new Boolean norm-gap bound.
+
+The tempting finite closure G3=[y²+4(C1+y)²+2y]/5<=g,
+y=-lambda*<F,p²>, is NOT enough for universal P2. An exact
+actual-lowM Boolean A with n76,maxA396,t1617 has
+Psi3=2t(-G3/lambda-<F,p²>/2)-C2²>0.9990, yet its FULL
+inverse certificate gives H<0 and originalPhi2tH-C2² near-3.3081.
+The missing phase energy is exactlyRperp=5(g-G3), not a term
+that may be discarded. [Finite/full certificates](experiments/P2_projection_2026-10-23/results.json).
+The one alias scan is terminal:47 admitted supports with exact
+M<=17/2<sqrt76; no FFT falsifier. Only L36 was full-certified.
+Do not enlarge its L range or call the other46 signs proved.
+
+A separate exact weighted geometric polynomial, r99/101,N1024,
+has BOTH complete parity planes positive definite at ACTUAL
+coefficient-energy calibration and all-circle M<=.505001.
+It is NOT Boolean. This practical relaxation falsifier proves
+more generic positivity/norm manipulation cannot supply the
+missing unit-coefficient input. Stop generic Gram polishing.
+
+The FULL support-dependent negative Fourier block is
+k_j=lambda*sum_(a>=j)[z^(a-j)]p²,j1..maxA.
+Gminus=[y²+sum k_j²+2y]/5<=g, Gminus>=G3, with
+5(g-Gminus)=||P_>0 K||². On SAME L36 it recovers the finite
+criterion: Psi_minus=-.739972557097924...<0, and already proves
+H<0 through 2Gminus>y. One certified finite recovery, no universal
+truth or new route assumed.
+On the geometric relaxation Gminus=G3 exactly. An advance must
+use Boolean inverse-input coupling, not an operator norm shortcut.
+
+New Boolean paper lemma: n>=2,m=minA,D=maxA give k_D=1/lambda,
+k_(D-m)=1_A(D-m)/lambda-2/lambda². Two residual rows force
+Nminus-4(C1+y)²>=2/lambda⁴ and g-G3>=1/(40n²),
+Nminus=sum k_j². This is a small exact0/1 contribution, not a
+root-scale bound. First next derivation: aggregate such Boolean
+rows toward Nminus+(5lambda/(2t))*C2²>=y/2-y²,t>0,
+or falsify this stronger finite sufficient criterion. Keep signed
+coefficients and C2 coupled; no larger successful-control scan.
+
+Three retained lines: arbitrary-support signed Boolean coupling;
+actual scalar-factor/mixed-norm coefficient control; and growing
+Boolean constructions with all-circle upper bounds. No universal
+exponent improvement or vanishing-ratio family. All own jobs
+terminal/PASS, no GPU deployment or VM lifecycle action, shared
+Dirichlet left on, cumulative conservative GPU spend$0.10.
+
 ## Current continuation — uniform phase stability and a certificate no-go, 2026-10-23
 
 Previous2b7b13f was progress. Full GOAL remains active. New

@@ -1,0 +1,168 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "python": "3.12.3",
+  "polynomial": {
+    "N": 1024,
+    "r": "99/101",
+    "coefficient_a": "(99/101)^(a-1)",
+    "a_inclusive": [
+      1,
+      1024
+    ],
+    "coefficients_in_0_1": true,
+    "Boolean": false,
+    "lambda_exact": "(101/10)*sqrt(1-(99/101)^2048)",
+    "coefficient_energy_exact": "(10201/400)*(1-(99/101)^2048)"
+  },
+  "all_circle_M_upper": {
+    "exact": "505001/1000000",
+    "decimal": 0.505001
+  },
+  "calibration": "lambda=2*sqrt(sum of squared coefficients), not occupied count",
+  "infinite_invariants": {
+    "g": {
+      "exact": "5/114",
+      "decimal": 0.043859649122807015
+    },
+    "C1": {
+      "exact": "-10/139",
+      "decimal": -0.07194244604316546
+    },
+    "C2_over_lambda": {
+      "exact": "-890/19321",
+      "decimal": -0.046063868329796594
+    },
+    "t_over_lambda_cubed": {
+      "exact": "99/160",
+      "decimal": 0.61875
+    },
+    "lambda_Hodd": {
+      "exact": "5425/2202594",
+      "decimal": 0.0024630049841232655
+    },
+    "lambda_Heven": {
+      "exact": "118285/2202594",
+      "decimal": 0.05370258885659363
+    }
+  },
+  "tail_certificate": {
+    "function_sup_error_upper": "1/1000000",
+    "lambda_error_upper": "1/1000000000000",
+    "checks": "r^1024/(1-r)<1e-6; (101/10)*r^2048<1e-12; lambda_N>10",
+    "inverse_real_margin_lower": "9",
+    "normalized_first_basis_error": "200001/2000000000000",
+    "normalized_second_basis_error": "101000191/810000000000000",
+    "energy_entry_errors": [
+      [
+        {
+          "exact": "5400027/250000000000",
+          "decimal": 2.1600108e-05
+        },
+        {
+          "exact": "64000163/5625000000000",
+          "decimal": 1.1377806755555555e-05
+        }
+      ],
+      [
+        {
+          "exact": "64000163/5625000000000",
+          "decimal": 1.1377806755555555e-05
+        },
+        {
+          "exact": "431000899/135000000000000",
+          "decimal": 3.192599251851852e-06
+        }
+      ]
+    ]
+  },
+  "normalized_basis": {
+    "odd": [
+      "Im(F)/lambda",
+      "lambda*Im(p)"
+    ],
+    "even": [
+      "Re(F)/lambda",
+      "lambda*Re(p)-1"
+    ],
+    "weight": "2*Re(F)/lambda",
+    "p": "1/(lambda+F)"
+  },
+  "certificates": {
+    "odd": {
+      "infinite_energy_matrix": [
+        [
+          {
+            "exact": "99/320",
+            "decimal": 0.309375
+          },
+          {
+            "exact": "-445/19321",
+            "decimal": -0.023031934164898297
+          }
+        ],
+        [
+          {
+            "exact": "-445/19321",
+            "decimal": -0.023031934164898297
+          },
+          {
+            "exact": "5425/2202594",
+            "decimal": 0.0024630049841232655
+          }
+        ]
+      ],
+      "finite_first_diagonal_lower": {
+        "exact": "77338349973/250000000000",
+        "decimal": 0.309353399892
+      },
+      "finite_second_diagonal_lower": {
+        "exact": "121904280000977999/49558365000000000000",
+        "decimal": 0.002459812384871414
+      },
+      "finite_determinant_lower": {
+        "exact": "825704510554102723709819302752989/3590689388118750000000000000000000000",
+        "decimal": 0.00022995709773345488
+      },
+      "finite_entire_plane_positive_definite": true
+    },
+    "even": {
+      "infinite_energy_matrix": [
+        [
+          {
+            "exact": "297/320",
+            "decimal": 0.928125
+          },
+          {
+            "exact": "-15541/77284",
+            "decimal": -0.20108948812173283
+          }
+        ],
+        [
+          {
+            "exact": "-15541/77284",
+            "decimal": -0.20108948812173283
+          },
+          {
+            "exact": "118285/2202594",
+            "decimal": 0.05370258885659363
+          }
+        ]
+      ],
+      "finite_first_diagonal_lower": {
+        "exact": "232025849973/250000000000",
+        "decimal": 0.928103399892
+      },
+      "finite_second_diagonal_lower": {
+        "exact": "2661254280000977999/49558365000000000000",
+        "decimal": 0.05369939625734178
+      },
+      "finite_determinant_lower": {
+        "exact": "33741830124986127811704686490252989/3590689388118750000000000000000000000",
+        "decimal": 0.009397033961398788
+      },
+      "finite_entire_plane_positive_definite": true
+    }
+  },
+  "qualification": "Exact rational tail inequalities and positive determinants prove the full finite weighted reciprocal parity planes are positive definite. No quadrature, minimum grid or unchecked solver is used. The coefficients are not Boolean; P2 and Chowla are not refuted."
+}

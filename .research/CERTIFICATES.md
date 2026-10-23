@@ -346,3 +346,33 @@ Archived copies are in examples/r7_certificates/. The originals, runnable from t
 ## 2026-10-20 isolated lens-fiber certificates
 
 The Boolean radial family has two separate rigorous LOWER bounds for M: exact-root Arb point evaluations and a nonnegative product-Fejer measure of exactly unit mean. Strong CRT kernel separation proves zero Fourier aliases, so the second certificate reduces to a finite weighted lens sum. All three finite certificates are rechecked with independent reverse-factor enumeration and 192-bit arithmetic. These do not certify global upper bounds. [Derivation and reproduction](notes/cstar_radial_boolean_2026-10-20.md).
+
+## 2026-10-23: exact finite projection failure and full inverse comparison
+
+[Current statements and proof](notes/P2_phase_projection_2026-10-23.md),
+[independent internal review](notes/advisor_P2_coupling_2026-10-23.md).
+
+The Boolean n76,L36 support has all-circle M<=17/2 by two disjoint
+Sidon difference-square identities, with raw distinct differences
+independently reconstructed. Its finite criterion Psi3>0.9990 is
+certified by384-bit ball inverse recurrences; selected convolution
+separately checks the inverse-square pairing. The complete inverse
+uses a dyadic polynomial of band12672 and exact integer residual
+norm, divided by the global inverse margin lambda-17/2. A sparse
+Python-integer reconstruction independently checks the FLINT product.
+The full H and original determinant are rigorously negative, despite
+the false stronger finite-projection inequality.
+Retaining ALL negative Fourier coefficients recovers the SAME finite
+case with Psi_minus<-.7399 and2Gminus>y, entirely from finite
+recurrences. The separate full inverse comparison still validates
+the discarded positive-frequency energy. No universal extrapolation.
+[All bounds/numerators](experiments/P2_projection_2026-10-23/results.json).
+
+The weighted geometric finite model is certified without quadrature:
+exact rational tail bounds enclose the ENTIRE inverse and both parity
+matrices. Positive diagonal and determinant lower bounds establish PD.
+Its coefficients are not Boolean, so it is a relaxation falsifier.
+[Exact certificate](experiments/P2_geometric_2026-10-23/results.json).
+
+These are paper/exact finite certificates, internally audited, not
+new Lean/kernel checks or an unrestricted Chowla result.

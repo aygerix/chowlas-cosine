@@ -1,5 +1,53 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — sharper phase gate; exact Boolean falsification of a finite closure
+
+Previousa5ced79 was progress. The full signed P2 target was retained.
+The new generic phase identity ||(F²+lambda*conjugate(F))*p²||²
+=g-4lambda H, plus two orthogonal projections, proves H<0 for
+g>=4/25 atlambda2sqrt(n). The small-gap Boolean branch is still
+open. [Derivations and independent advisor review](notes/P2_phase_projection_2026-10-23.md).
+
+One predeclared finite-alias scan tested47 disjoint unions of
+12-point/5-point Sidon differences, all with n76 and exact
+all-circle M<=17/2<sqrt76. No grid falsifier; stop the scan.
+Only L36 received a full inverse certificate in the following test.
+
+The concrete new falsification is Boolean: the rigorous generic
+lower bound G3=[y²+4(C1+y)²+2y]/5 for g is insufficient to
+close P2. On the SAME n76,L36,maxA396 support, the stronger
+finite criterion Psi3>0.9990564. Exact inverse and inverse-square
+Taylor recurrences, with independent selected convolution, certify
+this positive sign. Full infinite inverse residual certification
+gives H<0 and originalPhi near-3.3081. The exact discarded
+phase norm is5(g-G3), so the failed criterion is not a P2 falsifier.
+FLINT polynomial and sparse Python-integer residual paths agree.
+
+An explicit finite weighted geometric model r99/101,N1024 also
+certifies BOTH parity planes PD at actual L2 calibration, with
+all-circle M<=.505001. Exact rational tail transfer, not sampled
+quadrature, encloses its full inverse. It refutes the generic
+relaxation, not Boolean P2 or Chowla.
+
+GLOBAL REVIEW: stop generic finite-rank Gram closure and more alias
+controls. The next derived target uses every negative coefficient
+k_j=lambda*sum_(a>=j)(p²)_(a-j): Gminus=(y²+sum k_j²+2y)/5<=g.
+Testing its stronger criterion on SAME L36 now gives exact
+Psi_minus=-.739972557...<0; already2Gminus>y proves H<0.
+One finite recovery, no larger search. On the geometric model
+Gminus=G3, so unit-coefficient input is essential. The new Boolean
+boundary lemma gives k_D=1/lambda and
+k_(D-minA)=1_A(D-minA)/lambda-2/lambda², hence negative-block
+excess>=2/lambda⁴ and g-G3>=1/(40n²). This is too small for
+Chowla. First next derivation: aggregate Boolean rows toward
+Nminus+(5lambda/(2t))*C2²>=y/2-y²,t>0, retaining signed
+coefficients and the C2 correction. Retain signed
+Boolean inverse coupling, actual scalar/mixed-factor coefficient
+control, and genuine growing all-circle constructions as distinct
+lines. Jobs terminal/PASS; no GPU or VM lifecycle action, Dirichlet
+shared and on, conservative GPU total$0.10. No universal exponent
+gain or vanishing-ratio family is claimed.
+
 ## 2026-10-23 — fixed-support phase gap survives dilation; universal disk upgrade fails
 
 Previous2b7b13f was progress. The actual new archimedean result

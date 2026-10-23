@@ -2,6 +2,37 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Span-free multiplicity-defect and weighted centroid inequalities (2026-10-23)
+
+For every k>=2 point real set B and real r>=2,
+E_r=sum_(positive occurring d)|r_d-r|>=((r-2)k+2r)/6.
+Paper proof compares the centered row Gram with paired lag
+centroids, using the arithmetic-chain variance boundr_d*d²<=2V.
+It rules out E_r=o(k sqrt r) for growing r, and the associated
+integer difference-support square/l1 certificate is strictly>1/2
+for every finite k>=2,r>=2. Actual M is not lower-bounded by that
+certificate floor. Class-discarding and signed correction are outside.
+[Full proof](notes/multiplicity_centroid_2026-10-23.md),
+[independent audit](notes/advisor_multiplicity_centroid_2026-10-23.md).
+
+For one positive-real factor lambda+f_A=|Q|², the weighted version
+gives lambda-1/2>=sqrt(lambda+n)/(4qmax), hence
+n<=16lambda(lambda-1/2)²-lambda. RatioL gives
+lambda>=sqrt(n)/(2sqrtL), with old P8 stronger atL<2. It applies
+to actual M only if such a factor exists at the optimal floor.
+General signed/complex/multiple factors are not covered; an optimal
+qmax bound and a general representation bridge remain unproved.
+[Weighted proof](notes/weighted_centroid_2026-10-23.md),
+[independent audit](notes/advisor_weighted_centroid_2026-10-23.md).
+
+The continuation also derives P9's depth corollary M>=sqrt(n/(2h))
+and a sharp deletion theorem: for Sidon B of sizek, forcing retained
+positive-sum depth<=H costs at least the balanced(H+1)-partite
+Turan deficit, attained by explicit clustered power9 offsets.
+Thus an O(M) cheap-core reduction is false even at actual lowM.
+[Statement, proof and corrected deletion scopes](notes/cstar_depth_core_2026-10-23.md).
+No new kernel checks or external novelty claims for these paper results.
+
 ## All fixed-degree phase-polynomial witnesses fail as universal certificates (2026-10-23)
 
 For every fixed d, there are C_d,k_d such that every cyclic perfect

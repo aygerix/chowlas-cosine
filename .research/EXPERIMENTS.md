@@ -1,5 +1,29 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — one growing-multiplicity l1 mechanism pilot
+
+src/multiplicity_l1_pilot.py used k128,r8,B subset[0,2048], one
+chain,15000 proposals, seed2026102308. Objective was exact integer
+E_r=sum_nonzero|r_d-r|;1/2/4 point exchanges and local/global
+coordinate proposals. This retained ALL classes, unlike P23's
+discarding of nonexact multiplicities. No cosine grid was used.
+
+Run on shared Dirichlet with2cores/4GB/120s cap; terminal/PASS,
+2.36seconds recorded. Best E2964 (initial7016), N1136. Matrix pair
+counts independently match every coefficient of an exact FLINT
+polynomial autocorrelation. Symbolic square/l1 bound is only
+M<=757/2 and R_upper²=573049/4544, about11.23. E/(k sqrt r)
+about8.187 misses1/8; the half-constant upper also fails.
+Artifact: experiments/multiplicity_l1_2026-10-23/results.json.
+
+The subsequent PAPER centroid theorem proves the gate itself was
+impossible: E_r>=((r-2)k+2r)/6 universally, and this certificate
+always has R_cert>1/2 for r>=2. Stop all enlargement/GPU on this
+objective. That is an upper-certificate barrier, not a lower bound
+on actual M. [Proof](notes/multiplicity_centroid_2026-10-23.md),
+[advisor source/artifact and proof audits](notes/advisor_multiplicity_centroid_2026-10-23.md).
+No VM lifecycle operations or new GPU spend.
+
 ## 2026-10-23 — exact five-count phase-plane falsification
 
 Predeclared claim: the plane{ImF,ImF²} should have a nonpositive

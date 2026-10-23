@@ -1,5 +1,22 @@
 # Constructions (parametric families)
 
+2026-10-23: all-class l1 rounding of a high-multiplicity complex
+square is now excluded by a general paper theorem. For every k-point
+real B, E_r=sum_nonzero|r_d-r|>=((r-2)k+2r)/6. Thus the proposed
+growing-r error o(k sqrt r) is impossible, and the displayed
+square/l1 upper certificate is strictly above1/2 in every finite
+case r>=2. [Proof and scope](notes/multiplicity_centroid_2026-10-23.md).
+The one changed count pilot failed before this proof explained it;
+no enlargement or GPU. This does not bound actual M from below or
+close the earlier P23 route which discards weak classes, signed
+correction near factor zeros, or general weighted/signed factors.
+
+Weighted continuation: one positive-real factor lambda+f_A=|Q|²
+satisfies lambda-1/2>=sqrt(lambda+n)/(4qmax). It gives certificate
+energy restrictions but no general representation theorem. The
+precise next weight/phase gap is in
+[the weighted note](notes/weighted_centroid_2026-10-23.md).
+
 2026-10-20 deterministic upgrade: the full p-point cyclic-Sidon fiber architecture at primitive ||u||<=sqrt(X) has M>=sqrt(n)/16 eventually for EVERY deterministic assignment under kernel gap>3X. No actual marginal/independence law remains. Dense windowed intersections with Fourier norm<=Bp^delta, any fixed delta<1/2, also have a positive square-root lower bound after adaptive window/cardinality matching. Stop treating sharp conditional Cp^3 or correlations alone as an escape in these classes. The spectral endpoint and arbitrary supports remain open. [Proof and concrete partial/windowed certificates](notes/cstar_sidon_deterministic_2026-10-20.md).
 
 2026-10-20 Sidon-fiber update: primitive ||u||<=U, lifted affine-parabola differences give a genuine Boolean family n=Theta(X^2 log U), each left fiber M<=p_u/2, and a uniform ensemble with M(mean)=O(U^2). At U=X^(1/4), a nonlinear mixed-certificate paper theorem forces Pr[M>=sqrt(n)/5]>=1/6 for ANY coupling with these whole-fiber marginals. Thus a small mean does not give a guaranteed counteralgorithm. Arbitrary deterministic parameter choices remain outside that probability theorem; a precise conditional reference-cubic bound would exclude them within this architecture. [Construction, exact mean, theorem and checks](notes/cstar_sidon_mixed_2026-10-20.md).

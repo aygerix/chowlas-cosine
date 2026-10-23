@@ -1,5 +1,24 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Bounded primary-source check: growing multiplicity (2026-10-23)
+
+Kravitz, [Generalized difference sets and autocorrelation integrals,
+arXiv:2004.06611v1](https://arxiv.org/html/2004.06611), introduction
+and Theorem1.2, relates minimum-size g-difference coverings of a
+fixed interval to a continuous autocorrelation extremum, in iterated
+limits g then interval size. This is distinct from the all-class
+l1 defect on an arbitrary positive difference support considered
+here. No theorem from that paper is needed for the new elementary
+centroid bound. Xu, [Popular differences and generalized Sidon sets,
+v5](https://arxiv.org/abs/1706.05969v5), abstract inspected only,
+studies the maximum representation count on a short difference
+interval; its full proof was not reviewed in this bounded check.
+
+These are related antecedents, not a priority determination. The
+general defect bound and weighted extension are paper-proved and
+internally audited; external novelty remains unassessed. No broad
+absence-of-prior-art claim follows from the two targeted searches.
+
 ## Targeted check: finite Fourier normalization for Sidon shift moments (2026-10-20)
 
 Tao, [247B Lecture Notes9, Q3, p.13](https://www.math.ucla.edu/~tao/247b.1.07w/notes9.pdf), states finite-group Hausdorff-Young with probability measure on the group and counting measure on its dual. By duality, inverse Fourier synthesis maps counting l^(6/5) to probability L^6 with norm<=1. This is the classical ingredient used in the new cyclic-shift estimate; alternatively apply Plancherel and three-fold Young convolution. The primary source was read for this exact normalization, without a novelty/literature-wide claim. The Sidon-fiber mixed-certificate result has its own [paper derivation](notes/cstar_sidon_mixed_2026-10-20.md).

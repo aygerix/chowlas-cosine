@@ -1,5 +1,54 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — exponential audit, changed count pilot, and centroid theorem
+
+Prior turn was progress (f5801d2). The all-order coefficient recurrence
+was derived with its signed collision terms retained. Fixed scaled
+temperature is equivalent to the old lowM L1-flatness gap. A generic
+selected-exponential sign/parity lemma is valid but not Boolean.
+The exponential bounded-depth theorem is dominated by the existing
+P9 corollary M>=sqrt(n/(2h)); do not count it as a new lower-bound
+advance. The sharp balanced-Turan deletion threshold, attained by
+explicit clustered power9 Sidon sets, kills the cheap O(M) core
+shortcut. The stronger frozen-connection-set count does not apply
+after recomputing frequencies. [Cycle](notes/cstar_exponential_cycle_2026-10-23.md),
+[corrected sharp theorem](notes/cstar_depth_core_2026-10-23.md).
+
+Changed construction: keep every positive difference class, with
+l1 rounding error E_r=sum|r_d-r|. One even-r asymmetric pilot at
+k128,r8,X2048,15000proposals produced E2964,N1136 and only the
+all-circle upper757/2. Counts independently match polynomial
+autocorrelation; both gates fail. No min-angle search or GPU.
+
+The follow-up paper argument resolves that mechanism generally:
+E_r>=((r-2)k+2r)/6 for EVERY k-point real B. The row Gram has
+baseline(k-r)I+rJ and error norm<=2E. Lag centroids pair with shift
+r_d*d; each lag graph is an arithmetic-chain union with
+r_d*d²<=2sum(b-mean)². Comparing upper and lower energies proves
+the bound. Growing-r l1 flatness is impossible, and even the weaker
+denominator8 proves exact finite certificate R_cert>1/2.
+[Proof](notes/multiplicity_centroid_2026-10-23.md),
+[independent audit](notes/advisor_multiplicity_centroid_2026-10-23.md).
+This is a certificate-architecture obstruction, not actual M>=sqrt(n)/2.
+Old class-discarding P23 and signed correction remain outside it.
+
+Weighted extension gives lambda-1/2>=sqrt(lambda+n)/(4qmax) for
+one positive-real factor lambda+f_A=|Q|², hence an n^(1/3)
+certificate floor and improved bounded-ratio dependence forL>2.
+It does not cover general signed/complex or multiple factors.
+[Proof and exact gap](notes/weighted_centroid_2026-10-23.md),
+[advisor audit](notes/advisor_weighted_centroid_2026-10-23.md).
+Next test: whether optimal nonnegative factors have a uniformly
+bounded endpoint coefficient, or derive a signed stability term.
+No such estimate, general representation bridge, universal exponent
+improvement or vanishing-ratio family has been proved.
+
+Global decision: stop the fixed-temperature/depth restatements and
+all-class l1 count optimizer. Pursue the new weighted centroid
+interaction and actual phase-cancellation gap; retain all-scale
+susceptibility and an independently changed construction route.
+All own jobs terminal/PASS; no new GPU spend or VM lifecycle action.
+
 ## 2026-10-23 — coupled sign audit and a full phase-polynomial obstruction
 
 New sufficient reduction: the weaker movable P2 plane{ImF,Im p},

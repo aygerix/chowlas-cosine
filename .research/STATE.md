@@ -1,5 +1,61 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation checkpoint — centroid progress, 2026-10-23
+
+Full GOAL remains active and unresolved. Previous goal turn was
+progress (f5801d2). This continuation proved a general combinatorial
+defect bound and a weighted factor inequality, both independently
+checked by the one existing advisor. No new universal exponent or
+counterexample family is claimed. All own CPU jobs are terminal;
+Dirichlet remains shared and running, no lifecycle actions taken,
+no GPU worker or additional spend (cumulative conservative$0.10).
+
+For every k-point real set B and reference multiplicity r>=2,
+E_r=sum_nonzero_lags|r_d-r| satisfies
+E_r>=((r-2)k+2r)/6. This span-free centroid theorem closes the
+changed construction target E_r=o(k sqrt r). Its all-class square/l1
+certificate is strictly above1/2 for every finite k>=2,r>=2.
+This is a limitation of that UPPER certificate, not a lower bound on
+actual M or a closure of the old class-discarding/signed-error methods.
+[Proof](notes/multiplicity_centroid_2026-10-23.md),
+[audit](notes/advisor_multiplicity_centroid_2026-10-23.md).
+
+The same mechanism for one positive-real factor lambda+f_A=|Q|²
+gives lambda-1/2>=sqrt(lambda+n)/(4qmax), hence
+n<=16lambda(lambda-1/2)²-lambda. RatioL of factor weights gives
+lambda>=sqrt(n)/(2sqrtL), with the stated comparison to old P8.
+These bound lambda; a bound on actual M requires a positive factor
+at the optimal floor. General signed/complex and multiple factors
+are outside this theorem. No representation bridge was proved.
+[Proof](notes/weighted_centroid_2026-10-23.md),
+[audit](notes/advisor_weighted_centroid_2026-10-23.md).
+
+First next derivation: test whether OPTIMAL nonnegative factors have
+an absolute endpoint coefficient bound; it would turn the displayed
+weighted inequality into a root bound for that class. Arbitrary
+nonoptimal factors already have unbounded qmax on{1,2}. A large
+qmax must be an endpoint, but the unit-circle-zero estimate only
+gives k-1>=2qmax². Do not assume interval factors are positive.
+In parallel preserve the broader task of extending the centroid
+Gram identity to signed/complex factors with explicit cancellation
+terms, rather than assume every A admits a positive factor.
+
+The exponential attempt also resolved two tempting detours: bounded
+scaled temperature is exactly lowM L1 flatness; its depth bound is
+dominated by P9's M>=sqrt(n/(2h)). A sharp Turan deletion theorem
+rules out deleting O(M) frequencies to force bounded recomputed
+depth on all lowM sets. [Cycle](notes/cstar_exponential_cycle_2026-10-23.md),
+[sharp corrected core theorem](notes/cstar_depth_core_2026-10-23.md).
+No further fixed-temperature, bounded-depth or raw-multiplicity
+optimizer enlargement. The one changed k128,r8 pilot failed before
+the centroid proof explained why its half-gate was impossible.
+
+Three retained lines: weighted/signed centroid and full Rayleigh;
+all-scale Boolean exponential susceptibility (unproved); independent
+construction with genuine signed correction or a different mechanism,
+requiring all-circle upper bounds. Current RESUME supersedes the
+older same-date first-next statements below.
+
 ## Resumed campaign — 2026-10-23
 
 **SHARED VM — current user instruction:** Dirichlet is used by other

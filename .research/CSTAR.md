@@ -1,5 +1,25 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Current continuation, October23: a new general centroid inequality
+proves E_r>=((r-2)k+2r)/6 for every real k-point B, with no span or
+symmetry assumption. It closes the changed all-class l1 multiplicity
+construction and proves its finite upper certificate always exceeds
+1/2. Actual M is not lower-bounded by that certificate floor.
+[Proof](notes/multiplicity_centroid_2026-10-23.md).
+
+Weighted extension: a single positive-real factor lambda+f_A=|Q|²
+satisfies lambda-1/2>=sqrt(lambda+n)/(4qmax). An absolute optimal
+qmax bound would give a root theorem within that class; signs/phases
+and a representation bridge to arbitrary A remain open.
+[Proof](notes/weighted_centroid_2026-10-23.md),
+[independent audit](notes/advisor_weighted_centroid_2026-10-23.md).
+This is the next concrete derivation in RESUME. The all-order target
+remains unproved; fixed temperature returns to flatness and the
+exponential depth route is dominated by P9. The raw-count pilot is
+terminal and retired; no GPU or VM lifecycle changes.
+
+### Earlier same-date checkpoint
+
 2026-10-23: the user has explicitly RESUMED the goal. Read the top of
 STATE for current status; older PAUSED notes below are historical.
 R0 and its two-variable prefix/pad transfer are the initial derivations.

@@ -7,6 +7,48 @@ Dirichlet is SHARED with other agents. The user explicitly instructed
 us to leave it running. No shutdown traps, stops, restarts, suspensions,
 resets or lifecycle changes without a NEW explicit user instruction.
 
+## Current continuation: what actually advanced and what comes next
+
+The new span-free centroid theorem gives
+E_r>=((r-2)k+2r)/6 for every k-point real B. It rules out growing-r
+all-class l1 rounding, and the exact finite certificate is always
+above1/2. Read [proof](notes/multiplicity_centroid_2026-10-23.md) and
+[advisor audit](notes/advisor_multiplicity_centroid_2026-10-23.md).
+It is not a lower bound on actual M and does not close P23's
+class-discarding/signed-error construction target.
+
+The weighted extension to a single positive-real square is
+lambda-1/2>=sqrt(lambda+n)/(4qmax), with an n^(1/3) certificate
+floor and a root bound when factor coefficients have bounded ratio.
+Read [proof](notes/weighted_centroid_2026-10-23.md) and
+[audit](notes/advisor_weighted_centroid_2026-10-23.md). This is a new
+quantitative statement, not a representation theorem for all A.
+
+First concrete next derivation: prove or falsify an absolute bound on
+qmax for a nonnegative factor at lambda=M(A). The old endpoint
+lemma puts any qmax>1/sqrt2 at an endpoint and bounds every other
+weight by1/(2qmax). A unit-circle zero yields only
+k-1>=2qmax². The analogous claim for nonoptimal factors is already
+false on{1,2}; interval-factor positivity is unproved and must not
+be assumed. A successful estimate would give Chowla for this class,
+not all supports. The general signed/complex factor case remains an
+independent extension target with explicit phase-cancellation terms.
+
+Completed continuation: exponential fixed-temperature gap equals
+lowM flatness; generic C-sign and parity identities are checked;
+the new exponential depth estimate is weaker than old P9. The
+sharp Turan core theorem disproves the cheap-deletion shortcut,
+with original/recomputed connection sets distinguished. The one
+k128,r8 count pilot failed; subsequent paper proof explains that
+its half-constant gate was impossible. No numerical expansion/GPU.
+
+All own CPU jobs terminal, no active worker, cumulative GPU$0.10.
+Three active lines: centroid/weighted and full signed Rayleigh;
+all-scale Boolean susceptibility; independently changed constructions
+with exact all-circle upper bounds. Full Chowla remains open.
+
+## Earlier same-date sufficient-sign and exponential frontier
+
 Current proof frontier: the internally reviewed padding reductions show
 that qualitative universal S0 would imply Chowla with c=2^-85, and
 the weaker adaptive two-direction sign P2 would suffice with c=2^-107.
@@ -24,7 +66,7 @@ Read [the proof](notes/cstar_phase_polynomial_obstruction_2026-10-23.md)
 and [advisor audit](notes/advisor_P2_boolean_2026-10-23.md). Do not return
 to another fixed number of analytic powers or scalar powers of D.
 
-First concrete next derivation: return to the existing all-order/Gibbs
+Earlier next derivation, now attempted: return to the existing all-order/Gibbs
 C* programme rather than require the unproved P2 plane to be complete.
 For E_s=exp(-sF)=sum_j c_j(s)z^j, use the exact unit-coefficient ODE
 c_j'=-sum_A c_(j-a), c_0=1, c_j(0)=0 for j>0, and Z=sum_j c_j².

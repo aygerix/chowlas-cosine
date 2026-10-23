@@ -1,5 +1,23 @@
 # Certificates
 
+## 2026-10-23 — exact all-class multiplicity/l1 upper and its barrier
+
+For a k-point integer B, retain every nonzero positive difference
+as A and let E_r=sum|r_d-r|. The exact identity
+2r*f_A=|F_B|²-k+2sum(r-r_d)cos(dx) certifies
+M(A)<=k/(2r)+E_r/r on the entire circle. No angular quadrature
+is needed: verify distinctness, pair counts and the l1 remainder.
+src/multiplicity_l1_pilot.py independently matches direct pair counts
+to exact polynomial autocorrelation; saved final M_upper757/2 and
+R_upper²=573049/4544 are rational, though weak.
+
+A new internally reviewed paper theorem proves E_r>=((r-2)k+2r)/6
+and this particular R_cert>1/2 for every k>=2,r>=2. The certificate
+therefore cannot give a vanishing construction. It does not assert
+actual M>sqrt(N)/2. [Full proof and signed-error scope](notes/multiplicity_centroid_2026-10-23.md).
+The code/artifact are reproducible failed-mechanism records, not a
+recommended new search or an Epoch solution.
+
 ## 2026-10-20 — selective reference and matching-window certificates
 
 For fixed actual A, average the mixed positive moment matrix over equal-cardinality references; use Q_bar=2a_bar. Freezing only the short reference fibers keeps actual targets in the ruling cubic. Pairwise completion gives p^3 log^4 cost, while an exact primitive-relation/lattice bound gives off-left O(X^2U^2 log U). This yields deterministic square-root lower bounds for the stated cyclic-Sidon and windowed architectures, without a law on actual choices. References in a window are trimmed/padded within a Sidon curve to match cardinality. [All hypotheses and proof](notes/cstar_sidon_deterministic_2026-10-20.md). Six finite mixed certificates have exact rational positivity checks; full direct four-coordinate recounts at X64 and the two concrete base385 examples. The latter also have square-identity all-circle UPPER bounds. Data in `experiments/sidon_cutoff_2026-10-20/`; source-scoped verification limits remain explicit. No universal Chowla or Lean claim.

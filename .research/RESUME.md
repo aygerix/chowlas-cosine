@@ -1,5 +1,41 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: dense exponent1/3 extended to C<400/29
+
+Previous86f5ca5 was progress. Full GOAL remainsactive, unresolved.
+Read [current quantified proof](notes/cubic_profile_cap_2026-10-23.md)
+and [independent internal audit](notes/advisor_two_block_gram_2026-10-23.md).
+
+PROVED: forallfixed0<C<400/29, existsineffectivec(C)>0 suchthat
+forallfinitepositiveBooleanA,maxA<=C|A|⇒M>=c(C)|A|^(1/3).
+PriorP66range1000/73; new400/29≈13.7931. No endpoint equality,
+unrestrictedexponentgain, fullChowla, kernelcheck orpriorityclaim.
+
+ActualcubicPDprofile givesCFcap v<=b(t). ConvexPsi_b=phi up to
+b andtangentafterb allowsJensen onGaborMIXTURES; don'timpose
+cubicPD onindividualgenerators. ExactD29/400 certificate and
+independent reconstructionPASS:815leaves,75tangent,127CFcaps,
+188supportlines,64Schurcells,min251243300521/1966080000000000.
+Allownjobs terminal; noGPU orVMlifecycleoperation,sharedDirichlet on.
+
+TotalrootGram mixedWalsh followup collapsed to genericPSDquadratic
+phase; stopthatprojection. OldE93b generatorconstrainednumerics
+are notglobalmixturebounds. FirstcosinedualLPeta≈0, noextrasweep;
+thechangedCAPobjective producedthe actualnewtheorem.
+
+FIRST NEXT: useactualthree-pointcubicPD constraintR=G(v2t)-
+2G(vt)²/c0+c0>=0,c0=sqrt3/18. For0<=gamma<=1/24,
+Lambda=phi+gamma(t/2)G/2-2gamma(t)G²/c0 isconvex/increasing.
+Currentnote provesconstants. Derivea pointwise/potentialcertificate
+for ONElocalizedcontinuousshape near1/4 BEFOREa targetedproposal.
+Half-sine autocorrelation explicitlyviolatesthecoupledconstraint
+there while bothlocalpointcapsareinactive; a smalltriangulargamma
+strictlylowersitscost, notyettheglobal supremum. TangentcapLambda
+atb(t)canretaintheCFconstraint.
+No claimedconstant/experimentyet; noarbitrarysize/frequencysweep.
+Keep unrestrictedBooleanproof andgrowingall-circleconstruction
+tracks alongside thisdensepartialresult. Fulltargetisunchanged.
+
 ## Newest checkpoint: no upper gain from runs; joint independent-root certificate refuted
 
 SCOPE: both finiteensemble supports have n3,R>3/4; no asymptotic,

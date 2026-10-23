@@ -1,5 +1,60 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — a certified extension of the dense one-third theorem
+
+Previous86f5ca5 was progress. Full GOAL active; Chowla unresolved.
+[New proof and exact certificates](notes/cubic_profile_cap_2026-10-23.md),
+[sole advisor audit](notes/advisor_two_block_gram_2026-10-23.md).
+
+NEW THEOREM, paper proof plus independent exact computer checks:
+for EVERY fixed0<C<400/29≈13.7931034483, there is ineffective
+c(C)>0 such that EVERY nonempty finite positiveBooleanA with
+maxA<=C|A| hasM(A)>=c(C)|A|^(1/3). The priorP66/P68 endpoint
+was1000/73≈13.698630137. StrictC<400/29; noendpoint equality.
+No newunrestrictedexponent, rootChowla, kernelcheck orpriorityclaim.
+The one-thirdbound still permitsvanishingM/sqrt(n).
+
+Mechanism: actualcubicprofileg(p)PD givesCFsupportcap on
+v=4p(1-p): v(t)<=b_k, b_k²(1-b_k)=(4/27)cos²(pi/(k+2)),
+k=ceil1/t-1,b_k<=2/3. ConvexincreasingPsi_b equalsphi belowb
+and continues by its tangentaboveb. Insert this onACTUALprofile
+BEFORE GaborJensen; generators neednotindividuallysatisfycubicPD.
+Smoothing/dilation andcomplexfactor majorization areaudited.
+Atp0=u* the samecapforcesliminf[p0-p(t)]/t>=pi/6: endpoint
+profilesmusthaveacusp, not a strictuniversalfrontgap.
+
+CERTIFICATION: producer+independent verifier bothPROVED.
+815pointwiseleaves,75tangentleaves,127CFcaps,188supportlines,
+64continuumSchurcells; exactminmargin251243300521/1966080000000000.
+D=29/400. IndependentSymPyQQ reconstruction/directSchurintegrals
+plusSturmlonglines; bothprogramsuseFLINTrationals, noindependent
+arithmeticbackendclaim. Hashes/artifacts in cubic_cap_2026-10-23.
+
+Recordedtwo-blockGram attempt COMPLETED andkilledasautomatic
+signmethod: totalenergy is invariantamplitude+PSDquadraticphase,
+allWalshdegrees>=3vanish. DoesnotexcludeadditionalBooleanroot
+constraints. Firstdensecosine-dualLPchoseeta≈0; nofrequencysweep.
+The CHANGED support-capenvelope gave a useful exactcertificate.
+OldE93b single-generatorcubicPDnumerics doNOTcertify allmixtures;
+the oldrigorous13.6986 theoremwasunaffected.
+
+FIRST NEXT: actualgPDthree-pointconstraint givesR(t)=G(v2t)-
+2G(vt)²/c0+c0>=0,c0=sqrt3/18. Forcontinuous0<=gamma<=1/24,
+Lambda_t(v)=phi(v)+gamma(t/2)G(v)/2-2gamma(t)G(v)²/c0 is
+convex/increasing, with explicitpositive derivative margins.
+Deriveits pointwise/potentialcertificate BEFORE anyjob, initially
+ONElocalizedcontinuousshape near t1/4; applya tangentcap ifneeded.
+The half-sine autocorrelation givesR_generator/c0<-1/180 at1/4
+whilethe TWO relevantpointcapsareinactive. An explicittriangle
+gamma=rho*(1-30000|t-1/4|)_+,rho<=1/24, strictlylowersitscost
+evenwiththetangentcap; no decreaseofglobalsupremum isproved.
+Thisretains genuine(t,2t)cubicinteraction
+beforeJensen. No newconstant orLPresult forit isclaimed. Stop if
+termisunused orper-generatorPDassumptionreappears; nogrid/sizesweep.
+Keep unrestricted signedBoolean coupling, denseprofileinverse work,
+and genuinegrowingconstructions asdistinctlines. Allownjobs terminal,
+noGPU/lifecycleaction, Dirichlet shared/on, cumulativeRunPod$0.10.
+
 ## Current continuation — run telescope fails; independent root selection fails even primitively
 
 SCOPE: both finiteensemble supports have n3,R>3/4. These refute

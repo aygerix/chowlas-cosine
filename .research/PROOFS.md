@@ -2,6 +2,38 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Dense one-third theorem extended by a cubic-profile support envelope (2026-10-23)
+
+PROVED, paper plus exact computer certificates and sole-advisor audit:
+for everyfixed0<C<400/29, existsineffectivec(C)>0 with
+M(A)>=c(C)|A|^(1/3) for EVERY nonemptyfiniteA⊂positiveintegers
+withmaxA<=C|A|. StrictC<400/29≈13.7931034483. Thisextends
+P66/P68's1000/73; unrestrictedexponent andfullChowlaunchanged.
+
+Newinput: underP66'scontradictionhypothesis, actualg(p)=p(1-p)(1-2p)
+isPD. Finite-symbolCFsupportcaps givev=4p(1-p)<=b_k, where
+b_k²(1-b_k)=(4/27)cos²(pi/(k+2)), b_k<=2/3,k=ceil1/t-1.
+ConvexPsi_b equalsphi(v) belowb andits tangentaboveb. Insert on
+theACTUALprofilebeforeGaborJensen; no individualgeneratorcubicPD
+assumption. Smoothing,dilation andcomplexmajorization audited.
+
+Exactcertificate: D_envelope<=29/400. Producer+independentverifier
+bothPROVED:815pointwiseleaves(75tangent),127CFcaps,188support
+lines,64continuumSchurcells; minmargin251243300521/1966080000000000.
+IndependentQQreconstruction/directSchurintegrals andSturmlonglines.
+BothuseFLINTrationals; noindependentbackend orLean/kernelclaim.
+Fullquantifiers, radicals, endpointcoverage and artifacts:
+[proof](notes/cubic_profile_cap_2026-10-23.md),
+[advisor](notes/advisor_two_block_gram_2026-10-23.md).
+
+AlsoPROVED: ifp0=(3-sqrt3)/6, liminf_t↓0[p0-p(t)]/t>=pi/6.
+Thisrequiresacusp, not a strictuniversalfrontgap. A validconvex
+two-scale cubicPDdual with0<=gamma<=1/24 is derivedfornextwork;
+no furtherconstant isclaimed. TotalrootGramrefinement instead
+collapses toPSDisingenergy, soautomaticmixed-signinferenceretired.
+Externalnoveltyunchecked; limitedprimarysearchreturnedno matching
+exactconstant anddoesnotestablishpriority.
+
 ## Full-run collapse and root-ensemble joint certificate (2026-10-23)
 
 PROVED: finite t-run telescope with ACTUAL middle-band multiplier
@@ -3054,6 +3086,13 @@ Lead's reading.
 - An exponent above ¼ needs an estimate of the peak Λ that is better than O(KL²). This is the QU(2) wall of P65.
 
 ## P68. Round-15 agent results: P66 audited CORRECT and extended to C < 1000/73; the cyclic ¼ equality case made exact (report .research/agents/tdense15_report.md; lead re-checked every item marked ✓) — 2026-10-19
+UPDATE2026-10-23: the rigorouslyprovedP66denseone-thirdrange is now
+C<400/29, by a newpre-Jensen cubic-supportenvelope and independent
+rationalcertificate. See the newfrontsection and
+[completeproof](notes/cubic_profile_cap_2026-10-23.md). Historical
+certificate/detailsbelowremainunchanged; the newbounddoesnotuse
+theoldE93b single-generatorconstrainednumericalreach.
+
 1. ✓ P66 AUDIT: every step CORRECT, with these qualifications (lead read all of them).
    - The cubic weak limit at fixed ε has the cross term (p − Q_ε)(1 − 3Q_ε + 3Q_ε²). It vanishes as ε -> 0,
      bounded by 2‖Q_ε − p‖_∞‖ψ‖₁.

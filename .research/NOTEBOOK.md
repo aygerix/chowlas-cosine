@@ -1,5 +1,46 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — new certified dense one-third range via cubic support before Jensen
+
+Previous86f5ca5 was progress. Completedtherecordedtwo-blockGram
+derivation: totalenergy=integralP'^2/4+integralP²(phi'-mu)².
+Phasevelocityisaffineinrootchoices, soALLWalshdegrees>=3vanish;
+mixedcoefficientisgenericPSDphaseinnerproduct, nosignedgain.
+Stop enlargingthattotalGramprojection; no blanketphaseimpossibility.
+
+MATHEMATICAL PIVOT toP66denseBooleanprofiles. Firstderivedvalid
+cubicPDcosinedual BEFORE GaborJensen, carefullyavoidingfalse
+per-generatorPD. OnefixedLPω9.1 choseeta≈0; nofrequency/Ksweep.
+Changedmechanism: CFsupportcaponACTUALg(p) givesv=4p(1-p)<=b_k,
+b_k²(1-b_k)=(4/27)cos²(pi/(k+2)). Psi_b=phi belowb,tangentafterb
+isconvex/increasing, equalsactualphi andkeepsa validGaborupper
+bound. Itsnonincreasingstaircasecapmakesdilationmonotone.
+
+NEW THEOREM: forallfixed0<C<400/29≈13.7931, existsc(C)>0,
+ineffective, suchthat ALLfinitepositiveBooleanA,maxA<=C|A|,
+haveM>=c(C)|A|^(1/3). Priorendpoint1000/73≈13.6986.
+ThisdoesnotimprovetheunrestrictedexponentorsolvefullChowla;
+n^(1/3)stillallowsvanishingnormalizedratio.
+
+CERTIFICATES: sameK64,degree10discoveryD≈.0723833; notproof.
+Rationalreconstruction,targetD29/400,815pointwiseleavesincluding
+75tangent,127CFcaps,188supportlines,64Schurcells. Bothproducer
+andindependentQQ/directSchur/SturmverifierPROVED, identicalpositive
+margin251243300521/1966080000000000. Soleadvisorpaper/source/
+artifactauditPASS. NoLean/kernel orpublicationpriorityclaim.
+
+Structuralbonus: atmaxcubicfrontp0=u*, capforcesliminf[p0-p(t)]/t
+>=pi/6, soanendpointprofilehasa cusp. Notastrictfrontgap.
+FIRSTNEXT: actual3x3cubicPDconstraintR(t)=G(v2t)-2G(vt)²/c0+c0>=0
+canbeinsertedbeforeJensenwithcontinuous0<=gamma<=1/24; explicit
+convexitymarginsareproved. Deriveits coupledpointwisecertificate
+beforeanewtargetedproposal; nogrid/frequencysweepornewconstantyet.
+Keep unrestrictedBooleancoupling,denseinversework,genuinegrowing
+all-circleconstructions distinct. Allownjobs terminal,noGPU/lifecycle
+action,sharedDirichlet on,total$0.10.
+[Fullproof/certificates/nextlemma](notes/cubic_profile_cap_2026-10-23.md),
+[soleadvisor audit](notes/advisor_two_block_gram_2026-10-23.md).
+
 ## 2026-10-23 — complete run cancellation and primitive failure of an independent-root certificate
 
 Previous781bfd9 was progress. The recorded next derivation was

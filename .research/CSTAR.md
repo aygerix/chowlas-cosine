@@ -1,5 +1,22 @@
 # CSTAR — THE problem. Read this first, every session.
 
+CURRENT: a newcertifieddensepartialtheorem. Everyfixed0<C<400/29
+hasc(C)>0 withM(A)>=c(C)|A|^(1/3) whenevermaxA<=C|A|,
+forALLgenuinepositiveBooleanA. ThisextendsP66/P68's1000/73.
+ItisNOTunrestrictedsquare-rootChowla; itsconstantisineffective.
+[Proof and certificates](notes/cubic_profile_cap_2026-10-23.md),
+[soleadvisor audit](notes/advisor_two_block_gram_2026-10-23.md).
+
+Newmechanism: cubicPDsupportcap onACTUALprofile, convex tangent
+continuation beforeGaborJensen. Exactproducerandindependentverifier
+PASS withD29/400,815leaves,64Schurcells. No falseper-generator
+cubicPDassumption. TotalrootGramexpansion insteadcollapses to
+PSDquadraticphase; stopautomaticmixedsign inference.
+FIRST NEXT: auditedtwo-scalecubicPDdualLambda withcontinuous
+0<=gamma<=1/24; deriveits potentialcertificate beforeanytargetedLP.
+No nextconstantclaimed; fullgoalactive,allownjobs terminal, noGPU/
+lifecycleaction, Dirichletshared/on. CurrentSTATEsupersedesbelow.
+
 Scope of currentrootensemble counterexamples: n3,R>3/4. They
 do not exclude growing-n orhypotheticalR→0 versions; no such
 conditional gain is proved. Dilation increasesdegree,notcardinality.

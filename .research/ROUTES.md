@@ -4,6 +4,55 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 P66 cubic-PD dual BEFORE Gabor-Jensen, after totalGram
+collapse: genuinely coupled version of existingP61/P66, not a new
+universalChowla proof. Letphi(v)=(1-sqrt(1-v))/2,
+G(v)=v*sqrt(1-v)/4, F_t(v)=phi(v)+eta*cos(omega*t)*G(v),
+0<=eta<=1/2. Parent derived F_t convex/increasing on[0,2/3].
+Sinceg(p)PD, d<=integralF_t(4e); Jensen then gives a VALID
+single-generator SUPREMUM without assuming g(phi(σ|w|²))PD for
+eachGabor generator. Target: prove a uniform bound on this supremum
+below73/1000 to enlarge the arbitrary-Boolean dense exponent1/3
+range. First falsification: tryeta=0 andtheoldnumericaloptimizer;
+thenone bounded targetedLP/certificate ifit can discriminate the
+proposed dual. Do not call E93b's generator-constrainednumerics a
+certified bound for mixtures. No newconstant is assumed or claimed.
+FixedcosineLP RESULT: eta≈4.95e-9 (effectively0), discoveryD≈.072516;
+no gain fromthatmultiplier inthiscoarserelaxation. No omega/K sweep.
+CHANGED mechanism: CFsupportcap on the ACTUAL cubicPDprofile gives
+v(t)<=b_k, b_k²(1-b_k)=(4/27)cos²(pi/(k+2)), b_k<=2/3.
+Use convexC1 extension Psi_b(v)=phi(v) belowb and its tangentline
+aboveb. It equalsactualphi but is smaller onexcessgeneratorvalues;
+Jensenremainsvalid. TestONEsameK64degree10LP withthisobjective,
+thenexactcertificateifit genuinelyimproves. Thisisnotassuming
+individualgeneratorcubicPD, nor aparameter/size enlargement.
+RESULT: changed envelope discoveryD≈.072383313. Exact rational
+certificate and independent reconstruction BOTH PROVED D<=29/400,
+815leaves(75tangent),127CFcaps,188supportlines,64Schurcells.
+Hence P66 denseone-thirdrange extends from1000/73 to400/29.
+AllfinitepositiveBooleanA undermaxA<=C|A|, fixedC<400/29;
+ineffectivec(C), nounrestrictedexponent orfullChowla claim.
+Additionalstructurallemma: p0=u* forcesfrontcusp liminf[p0-p(t)]/t
+>=pi/6. FIRSTNEXT validtwo-scalePDdualLambda with0<=gamma<=1/24,
+actualG(v2t)-2G(vt)²/c0+c0>=0 insertedbeforeJensen. Explicit
+half-sinegenerator/triangulargamma probe detectsan interaction
+while its TWO relevant pointcapsareinactive; no global-sup gain
+yetproved. Derivepotentialcertificate beforeoneproposal,noK/omega
+sweep. [Currentproof](notes/cubic_profile_cap_2026-10-23.md).
+
+2026-10-23 two-blockGram continuation from86f5ca5: carry out the
+recorded mixedWalsh calculation before another experiment. Parent
+DERIVED, advisor audit pending: for p=|Q_e|² and centeredderivative
+X_e, totalGramenergy=integral p'^2/4+integral p²(phi_e'-mu_e)².
+The centeredphasevelocity is affine inroot-choice signs; hence the
+ENTIRE all-block energy hasWalshdegree<=2 and a PSDquadratic phase
+part. Boolean R(h)^2=R(h)/2 aligns onlythe invariant amplitude term
+withSV/4; it does not itselfsign the mixedphaseinnerproducts.
+This refines the existing signed-centroid route, not a new theorem
+selectingstablebranches. If audited, stop totalGram block expansion;
+do not infer a blanketimpossibility for using additionalBooleanroot
+information, or for genuinely weighted/selected lag forms.
+
 2026-10-23 branch-ensemble refinement of EXISTING signed-centroid/
 joint-factor route, after full finite-run telescoping gives only
 reflection identities and a wrong-direction Cauchy bound. Target:

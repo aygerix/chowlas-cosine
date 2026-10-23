@@ -1,5 +1,38 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — cubicPD dual/envelope, one changed-objective LP and exact certificate
+
+No supportsearch, frequenciesweep orGPU. FirstfixedP66dualLP:
+omega9.1,K64,degree10,shape.1,eta∈[0,.5] choseeta4.95e-9,
+D≈.07251605; explicitlyuncertified,nogainfromthatcosineinthis
+relaxation. TheNEWcubic-support convexenvelope objective atSAME
+K/degree/shape proposedD≈.072383313. Thisisdiscovery,notproof.
+
+Exactproducer reconstructedQdata withaa upwardrounding+1e-4,
+monotonebeta repair, rationalcosupper caps, rationalcubiccapUP
+bisectionden3e9,targetD29/400. Verified815all-x leaves,75using
+the tangentbranch; no missedbreakpoint orradical sign. Independent
+SymPyQQ verifier reconstructsallcaps/coverage/signs,Sturmlonglines,
+188finite-symbolsupportlines and64DIRECTSchurintegrals. Both
+statusPROVED, minmargin251243300521/1966080000000000>0.
+This supportsC<400/29intheP66one-thirdtheorem, notfullChowla.
+
+    src/dirun.sh -c 2 -m 4 -t 140 python src/cubic_dual_discovery.py
+    src/dirun.sh -c 2 -m 4 -t 140 python src/cubic_cap_discovery.py
+    src/dirun.sh -c 2 -m 4 -t 200 python src/cubic_cap_certify.py
+    src/dirun.sh -c 2 -m 4 -t 220 python src/cubic_cap_verify.py
+
+DiscoveryGurobi13.0.3,2threads; runtimes13.60s/12.23s.
+Producer56.40s, independentverifier71.06s; Python3.12.3,SymPy1.14.
+AllDirichletjobs terminal/PASS,2core/4GBcaps,noVMlifecycleaction.
+Saveddiscovery statusremainsuncertified. Validationofartifactsneeds
+onlycertifier/verifier,noreoptimization. Data cubic_cap directory:
+experiments/cubic_cap_2026-10-23/{certificate,independent_verification}.json;
+earlierproposal experiments/cubic_dual_2026-10-23. Source/certificate
+hashes savedbyindependentverifier. Both arithmetic paths use FLINT rationals.
+[Paperproof/scope](notes/cubic_profile_cap_2026-10-23.md),
+[advisor audit](notes/advisor_two_block_gram_2026-10-23.md).
+
 ## 2026-10-23 — two fixed root-reflection ensembles, complete and certified
 
 No support search or size sweep. FirstpredeclaredA={8,16,24}

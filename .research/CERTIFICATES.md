@@ -1,5 +1,32 @@
 # Certificates
 
+## 2026-10-23 — dense one-third theorem for every C<400/29
+
+The new cubic-profile support-cap envelope has a paper proof using
+P66's actual Boolean limit profile BEFORE Gabor-Jensen. It avoids
+assuming the cubic constraint for individual mixture generators.
+
+Exact rational producer and independent verifier both reportPROVED:
+815 pointwise leaves, including75 tangent leaves;127 CF support caps;
+188 rederived support lines;64 continuum Schur cells. The target is
+D=29/400, with strictly positive minimum Schur margin
+251243300521/1966080000000000. The verifier independently rebuilds
+both radical/tangent inequalities, checks cap rounding and complete
+leaf coverage, proves the long lines by Sturm and reconstructs Schur
+polynomials by direct exact integrals. Both use FLINT rationals.
+
+Together with the audited mixture argument, this proves that for
+every fixed0<C<400/29 there is ineffectivec(C)>0 with
+M(A)>=c(C)|A|^(1/3) whenevermaxA<=C|A|, for ALL genuine finite
+positive-integer supports. No endpoint equality, unrestricted exponent
+gain, full Chowla, external priority or Lean/kernel claim. The earlier
+P66/P68 certificate for1000/73 remains preserved.
+
+[Complete proof](notes/cubic_profile_cap_2026-10-23.md),
+[certificate](experiments/cubic_cap_2026-10-23/certificate.json),
+[independent verification and hashes](experiments/cubic_cap_2026-10-23/independent_verification.json),
+[sole-advisor audit](notes/advisor_two_block_gram_2026-10-23.md).
+
 ## 2026-10-23 — certified real-factor branch budgets and exact local traps
 
 A={8,16,24} actualM=(17+7sqrt7)/27 is proved by exactcubic

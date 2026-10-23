@@ -1,5 +1,21 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Limited source/novelty check after the cubic-envelope result (2026-10-23)
+
+A targeted arXiv search for the dense cosine problem with exponent1/3
+and the constants400/29,13.793 or13.698 returned no matching exact
+claim. This is NOT a priority check sufficient for publication and
+does not establish novelty. The result is reported as an extension
+of the repository's P66/P68 theorem, independently internally audited.
+
+The primary [Bu et al. abstract, arXiv2610.17160v1](https://arxiv.org/abs/2610.17160v1),
+submitted12Oct2026, was reopened. Its dense lower-bound statement is
+exponent1/4 for supports inside[1,Cn]; the same abstract states a
+mixed L1/cubic inequality. No claim about absence of stronger results
+elsewhere follows from this limited search. The new proof depends
+on the already-audited P58-P68 inputs and a fresh exact certificate,
+not on an unverified literature decimal or search absence.
+
 ## Scoped source checks: conditional discrepancy and the quadratic floor (2026-10-23)
 
 Larsen, *Fast Discrepancy Minimization with Hereditary Guarantees*,

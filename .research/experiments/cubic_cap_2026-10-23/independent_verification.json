@@ -1,0 +1,24 @@
+{
+  "status": "PROVED",
+  "independent_method": "SymPy QQ reconstruction of radical/tangent branches and cubic caps; exact leaf coverage; direct Schur integrals/interpolation; Sturm long lines; rational finite-symbol evaluations",
+  "pointwise_leaves": 815,
+  "CF_caps": 127,
+  "support_lines": 188,
+  "schur_cells": 64,
+  "min_schur": "251243300521/1966080000000000",
+  "D1": "29/400",
+  "dense_C": "400/29",
+  "dense_C_float": 13.793103448275861,
+  "binary_algebra_checked": true,
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "sha256": {
+    "cubic_cap_certify.py": "7c964b46da484a0342682284b16b3e626781c692fcc0975bc570dd2dfdb78540",
+    "cubic_cap_verify.py": "5299bc21590cf1c670ea5af11d5dde3774a4fde6539672ff86b4a2491dde3593",
+    "cubic_cap_discovery.py": "dd350a08795f3fae02171bc8bd8f64d5e480f85c70492ba3e4f3f776cc345e1b",
+    "certify.py": "a14572ed02de2157625f81ea21ba35598165fdcc16007648a1eab939f35057fc",
+    "independent_verify.py": "383bd72dff8a8470d7d2f8203a81f69c4b252e8a62f839903b459cff72efe080",
+    "certificate.json": "64026d564c66b9c52bcc35afadb8b7ac602de39fdfe28e951fa0120decefc902"
+  },
+  "seconds": 71.06400966644287
+}

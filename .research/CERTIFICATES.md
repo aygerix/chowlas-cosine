@@ -1,5 +1,29 @@
 # Certificates
 
+## 2026-10-23 — quadratic convolution-loss family and independent finite bounds
+
+The asymptotic theorem uses exact Boolean Fourier identities, a
+piecewise-quadratic lens integral, the verified Spencer real-matrix
+theorem, eight conditional affine-rounding stages, and Bernstein's
+derivative inequality. It proves all-circleK=Theta(sqrtQ) and a
+negative modulated SELF-convolution point of orderQ for every
+sufficiently large Qdiv8. No sampled minimum or independence of
+the final dependent bits enters the proof.
+
+The separate finite Bernoulli candidate has exact coefficients/sets,
+two ball point evaluators, and two all-circle upper arguments with
+different remainder proofs (Taylor versus mean/noise Bernstein).
+Both arithmetic implementations use Arb, not independent backends.
+Best saved M upper is75623/180. Exact point intervals, all frequencies,
+seed and proof constants are preserved in the artifacts.
+
+[Proof and statuses](notes/modulated_triangle_2026-10-23.md),
+[pilot](experiments/modulated_triangle_2026-10-23/pilot.json),
+[independent checks](experiments/modulated_triangle_2026-10-23/verification.json),
+[advisor audit](notes/advisor_modulated_convolution_2026-10-23.md).
+Paper proof/internal scrutiny and exact finite certificates only;
+no Lean/kernel verification, novelty certification or Chowla solution.
+
 ## 2026-10-23 — odd-zero disk phase certificates, paper scope only
 
 An odd-zero disk of lambda+f_A gives an explicit positive lower

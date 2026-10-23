@@ -1,0 +1,28 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "Q": 65536,
+  "n": 32787,
+  "independent_intersection_point": [
+    "-79755519951030838099969/18446744073709551616",
+    "-79755519951030569664511/18446744073709551616"
+  ],
+  "saved_point_interval_independently_verified": true,
+  "second_all_circle_certificate": {
+    "method": "Triangular mean plus96-bit Arb noise DFT and Bernstein derivative bound",
+    "grid": 1048576,
+    "noise_grid_abs_upper": 337,
+    "mean_cosine_floor": "-3/4",
+    "Bernstein_multiplier": "56/45",
+    "M_upper_rational": "75623/180",
+    "all_circle": true
+  },
+  "first_M_upper_rational": "11351778564305199/26938034880512",
+  "G_over_best_Kupper_squared_ball": "[-0.006123761146840545856400296841 +/- 6.74e-31]",
+  "G_decimal": -4323.555399930924,
+  "M_upper_decimal": 421.4033657116358,
+  "second_M_upper_decimal": 420.1277777777778,
+  "paper_rational_constant_checks_pass": true,
+  "asymptotic_selection_implemented": false,
+  "qualification": "An independent exact set identity verifies the point. A different mean/noise Bernstein argument certifies an additional all-circle upper bound. The pilot is Bernoulli, not the Spencer-selected asymptotic family; no Chowla counterexample or formalization is claimed."
+}

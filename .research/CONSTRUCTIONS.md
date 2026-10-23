@@ -1,5 +1,30 @@
 # Constructions (parametric families)
 
+## 2026-10-23 — bounded-ratio integer family forcing quadratic convolution loss
+
+This is an OBSTRUCTION family, not a candidate vanishing-ratio family.
+For every integer Qdiv8,Q>=10^12, eight conditional Spencer stages
+give distinct positive A_Q⊂[1,Q-1], n=Q/2+O(sqrtQ), containingQ/4.
+ActualK=2M lies in[sqrtQ/20,500sqrtQ], while for τ=-Q/4,
+h_τ=2(1+sin τx)D_A has(h_τ*h_τ)(4pi/Q)<=-K²/6250000.
+Convolution is probability Haar. Thus M/sqrt n has a positive
+lower bound; this family does not meet Epoch's quantified target.
+
+Selection rule: start with p_a=1-a/Q, forcep_(Q/4)=1. At each of
+eight component stages choose a Boolean rounding satisfying the
+finite16Q Fourier-grid and conditional-observable row bounds from
+the proof. Existence follows from square padding/dyadic Spencer.
+Equivalently choose the lexicographically first full support meeting
+the two bounds(5) of the proof with an added1 of slack. Exhaustive
+search with exact algebraic comparison is an
+effective finite selection rule; no practical implementation of this
+astronomical-threshold asymptotic algorithm is claimed.
+
+[Full parameter map and proof](notes/modulated_triangle_2026-10-23.md).
+The saved Q65536 Bernoulli pilot in src/modulated_triangle.py is a
+SEPARATE finite mechanism check and has its own two all-circle bounds.
+Do not label it a Spencer-selected output or infer the theorem from it.
+
 2026-10-23 full-coefficient gate: a SINGLE exact real polynomial
 power P_lambda=H^q is completely classified. Onlyq2 survives,
 with A={d},lambda1 or A={d,2d},lambda9/8. No coefficient-sign

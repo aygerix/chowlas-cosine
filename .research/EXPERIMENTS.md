@@ -1,5 +1,34 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — one triangular Boolean modulation pilot, two global arguments
+
+Single predeclared pilot Q65536,seed20261023,t=Q/4 forced occupied,
+n32787. This is independent Bernoulli triangular rounding, NOT an
+implementation of the existential eight-stage Spencer theorem.
+
+Exact integer Fourier-square coefficients agree with a separate
+shifted-set-intersection identity. Independent Horner/ball-DFT
+point evaluations agree, with an explicit DFT orientation control:
+G_-t(4pi/Q)=-4323.555399930924... . The mean calculation also agrees
+with the proved lens-profile asymptotic (bounded error, not a fit).
+
+All-circle upperM is independently enclosed by two arguments:
+96-bit Arb DFT plus nearest-minimizer Taylor remainder gives
+421.4033657116..., while a separate centered-noise DFT/Bernstein
+argument gives75623/180<420.128. Both share Arb arithmetic.
+The saved point implies a certified quadratic-scale finite ratio;
+it does not certify a refutation of16K from the available K upper.
+
+    src/dirun.sh -c 2 -m 4 -t 180 python src/modulated_triangle.py
+    src/dirun.sh -c 2 -m 4 -t 180 python src/modulated_triangle_verify.py
+
+Data: experiments/modulated_triangle_2026-10-23/{pilot,verification}.json.
+[Paper theorem, exact quantifiers and scope](notes/modulated_triangle_2026-10-23.md),
+[independent source/paper audit](notes/advisor_modulated_convolution_2026-10-23.md).
+The infinite theorem is proved by conditional discrepancy, not inferred
+from this finite probe. No additional seeds, sizes or optimization.
+All own jobs terminal/PASS, no GPU or VM lifecycle operations.
+
 ## 2026-10-23 — complete reciprocal-square enumeration through degree24
 
 src/boolean_reciprocal_square.py exhausts all first-half outer

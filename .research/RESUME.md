@@ -1,5 +1,46 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: a rigorous quadratic-loss family after covariance reduction
+
+Previous1a2026f was progress. Full GOAL remains active and unresolved.
+[New theorem and operational proof record](notes/modulated_triangle_2026-10-23.md),
+[independent advisor proof/source audit](notes/advisor_modulated_convolution_2026-10-23.md).
+
+The proposed covariance tests produce no new Boolean bound: the full
+matrix is exactly the old Schur cap, and its two-vector relaxation
+has growing prefix counterexamples with g→0. Stop polishing it.
+[Exact formulas and scope](notes/advisor_full_covariance_2026-10-23.md).
+
+After a mathematical pivot to P14/P19, a new paper theorem gives
+actual integer Boolean sets for every Q divisible8,Q>=10^12:
+n=Q/2+O(sqrtQ), t=-Q/4∈±A, K=2M with
+sqrtQ/20<=K<=500sqrtQ and(h_t*h_t)(4pi/Q)<=-K²/6250000.
+Convolution uses probability Haar,h_t=2(1+sin tx)D_A,D_A=2f_A.
+Thus EVERY uniform o(K²) pointwise loss is false. The proof uses
+8 conditional Spencer stages, NOT independence of the final bits.
+Its key tool controls bounded-component nonlinear observables and
+Fourier discrepancy together. Primary theorem6sqrt(m), real square
+matrices, verified at arXiv2207.03268v2 PDFp2. No priority/kernel claim.
+
+Do not mistake this for an Epoch counterexample: M/sqrt n stays
+bounded below. It does not refute gains conditional on n/K²→infinity.
+The fixed Bernoulli Q65536 pilot is a SEPARATE finite example,
+n32787,G=-4323.5554..., all-circleM<=75623/180. Two point evaluators
+and two all-circle arguments pass, sharing Arb. It is NOT a practical
+implementation of Spencer's asymptotic construction. No more pilots.
+
+First concrete next derivation: P14's EXISTING joint non-saturation
+question in the spiky regime. Derive the five-linear expression for
+sum_(t∈S)|F_(S∩(S+t))(x)|² with the t-sum retained, then keep
+the B_t projection and all pure-positive truncation remainders.
+A proposed averaged gain must keep the old K⁴ additive scale and
+use the integer circle (P20 group models are adversaries). Neither
+that conditional bound nor any new universal exponent is proved.
+Keep unrestricted signed coupling, mixed/scalar factor coefficients
+and genuine growing construction ideas as the three distinct lines.
+Jobs terminal/PASS, no GPU or VM lifecycle actions, Dirichlet shared
+and on, cumulative conservative GPU spend$0.10.
+
 ## Newest checkpoint: negative and complete cyclic phase closures are false
 
 Previous4bdf346 was progress. Full GOAL active and unresolved.

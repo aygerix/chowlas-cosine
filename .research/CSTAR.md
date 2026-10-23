@@ -1,5 +1,26 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Current continuation: stop generic covariance polishing. The full
+matrix is exactly the old Schur cap, and the proposed two-vector
+compression misses growing prefix countermodels to that relaxation.
+No new Boolean norm-gap estimate. [Audit](notes/advisor_full_covariance_2026-10-23.md).
+
+The P14/P19 pivot now yields a PROVED infinite INTEGER Boolean
+family with actualK=2M=Theta(sqrt n), but modulated self-convolution
+as negative as -cK². Eight conditional Spencer stages control a
+bounded-component quadratic observable and the whole Fourier grid
+simultaneously; Bernstein gives the ENTIRE-circle bound.
+[Complete theorem, proof, finite certificates and scope](notes/modulated_triangle_2026-10-23.md).
+This upgrades the old finite/heuristic quadratic-loss evidence to
+an asymptotic theorem. It is not a Chowla counterexample or an
+exponent gain and leaves spiky-regime conditional improvements open.
+
+Stop universal o(K²) pointwise floors and further calibration scans.
+First next work is retained P14 joint boundary non-saturation with
+actual degree-one positivity, all t and pure-positive remainders.
+Current STATE/RESUME supersede historical first-next targets below.
+Full GOAL active; jobs terminal/PASS, no GPU/lifecycle actions.
+
 Current continuation: the stronger FULL-negative-block target is
 REFUTED even by A={1,...,8}, exactM<=11/4<sqrt8. A global
 allpass positive-phase bound recovers that example, but its ENTIRE

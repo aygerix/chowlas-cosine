@@ -1,5 +1,61 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — covariance closes back to Schur; quadratic loss has an integer family
+
+Previous1a2026f was progress. Full GOAL active, Chowla unresolved.
+The covariance follow-up is now audited: its full matrix is EXACTLY
+(I-Toeplitz_D(|lambda*p-1|²))/(2lambda), the old Schur cap.
+The two proposed adaptive-vector tests miss it: growing Boolean
+prefixes have a PD compression on their ENTIRE two-vector span
+while g→0; full matrix fails in another direction. This is a
+relaxation counter, not actual-lowM or a Chowla counterfamily.
+Stop generic covariance/projection polishing. [Audit](notes/advisor_full_covariance_2026-10-23.md).
+
+Changed quantitative attack: P14/P19's h_t*h_t floor. A new
+paper construction uses genuine Boolean triangular rounding,
+with8 conditional Spencer stages controlling both Fourier grid
+rows and a bounded-block quadratic observable. It yields, for
+every Q divisible8 and Q>=10^12, A⊂[1,Q-1], t=-Q/4∈±A,
+Q/3<=n<=2Q/3, actualK=2M with
+
+    sqrt(Q)/20 <= K <=500sqrt(Q),
+    (h_t*h_t)(4pi/Q)<=-Q/25<=-K²/6250000,
+    h_t=2(1+sin(tx))*D_A, D_A=2f_A.
+
+The convolution is probability Haar. Thus this SPECIFIC quadratic
+loss cannot be replaced uniformly by o(K²), even on actual integer
+Boolean sets. This makes rigorous a sharpness claim for which old
+P19 had finite cases and heuristic asymptotics. It is NOT a Chowla
+counterexample: M/sqrt(n) stays bounded below by a positive constant.
+It does not rule out improvements conditional on n/K²→infinity.
+The sole advisor independently checked the proof mechanism; source
+Spencer real-matrix theorem rechecked at arXiv2207.03268v2,p2.
+No priority or Lean/kernel claim.
+[Complete proof and scope](notes/modulated_triangle_2026-10-23.md),
+[independent paper/source audit](notes/advisor_modulated_convolution_2026-10-23.md).
+
+One fixed Bernoulli pilot Q65536,seed20261023 is terminal/PASS,
+n32787; its negative convolution point and all-circleM upper have
+Arb certificates plus exact coefficient cross-checks. G=-4323.5554...
+and two distinct all-circle arguments give M<=421.404 and
+M<=75623/180<420.128. The latter uses centered-noise Bernstein;
+the former a minimizer Taylor bound. Both share Arb arithmetic.
+It does NOT implement the asymptotic Spencer selection. Producer
+and independent verifier terminal/PASS; no more seeds/sizes.
+
+Global decision: stop improving this global pointwise convolution
+floor; its quadratic scale is now proved sharp. First next derivation
+returns to EXISTING P14 joint non-saturation in the genuinely spiky
+n/K²→infinity regime. Keep the t-sum and pure-positive remainders;
+start from exactfive-linear sum_t|F_(S∩(S+t))|² rather than bounding
+each direction separately. OldP20 finite-group models remain an
+adversary, so a new conditional gain must use the integer circle.
+No such gain, universal exponent, or vanishing-ratio construction
+is proved here. Keep signed Boolean coupling, mixed/scalar factor
+coefficients and genuine growing constructions as distinct lines.
+All own jobs terminal; no GPU or VM lifecycle action; shared
+Dirichlet remains on, conservative GPU total$0.10.
+
 ## Current continuation — negative-block target refuted; keep positive phase, 2026-10-23
 
 Previous4bdf346 was progress; full GOAL remains active and unresolved.

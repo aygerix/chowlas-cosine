@@ -4,6 +4,32 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 global covariance review and P14/P19 pivot:
+the FULL covariance matrix is exactly the old finite Schur cap,
+H=(I-Toeplitz_D(|lambda*p-1|²))/(2lambda). Its proposed two-vector
+relaxation admits growing Boolean prefixes with g→0; no new norm-gap
+bound. Stop generic covariance polishing. See advisor_full_covariance.
+Return to P14/P19's modulated self-convolution, targeting whether its
+quadraticK loss can improve. New derived TRIANGULAR Boolean rounding
+mechanism forces G_-t(4pi/Q)=-cQ+O(sqrtQ) while all-circleK=O(sqrtQ):
+bounded interaction blocks plus eight conditional Spencer roundings
+control the nonlinear observable and all Fourier grid rows together.
+This would supply a proved infinite integer family where P19 formerly
+had finite certificates/heuristic asymptotics. It is a sharpness
+obstruction for this loss, not a Chowla counterexample. One fixed
+Bernoulli pilot Q65536,seed20261023, forcedtQ/4, tests the derived
+mechanism, with exact point and all-circle Arb certificates. The pilot
+does not claim to implement the existential Spencer construction.
+No seed/size expansion, GPU, or extra agents.
+RESULT: complete conditional-rounding proof and sole-advisor audit
+PASS. For Qdiv8,Q>=10^12 it givesactualsqrtQ/20<=K<=500sqrtQ
+andG<=-Q/25<=-K²/6250000. Globalo(K²) floors are impossible.
+The separate Bernoulli pilot and independent verifier alsoPASS;
+they do not implement the Spencer construction. This nThetaK²
+family leaves genuinely spiky conditional gains open. Stop this
+globalfloor lane; next retainsP14jointnon-saturationandallremainders.
+See notes/modulated_triangle_2026-10-23.md for proof and limitations.
+
 2026-10-23 aggregation follow-up within the SAME P2 route:
 the proposed stronger finite target is
 Nminus+(5lambda/(2t))*C2²>=y/2-y² atlambda2sqrt(n),

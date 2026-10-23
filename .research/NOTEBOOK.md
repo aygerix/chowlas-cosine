@@ -1,5 +1,48 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — conditional discrepancy proves genuine quadratic convolution loss
+
+Previous1a2026f was progress. The next full-covariance derivation
+was carried out and independently checked: it is exactly the old
+Schur cap. The proposed two signed-vector tests have a growing
+Boolean prefix relaxation counterfamily with PD compression and
+g→0; an actual-lowM small example requires signed optimizer entries.
+Stop generic covariance polishing. This is not a Chowla counterfamily.
+
+MATHEMATICAL PIVOT to an existing P14/P19 ingredient: can the generic
+h_t*h_t>=-16K² loss improve? The initial triangular Bernoulli profile
+gives exact meanG=-cQ+O1, c=(pi+12)/(8pi³)>3/50, at t=-Q/4,
+x4pi/Q. Lens Fourier integrals and all signs were independently
+derived. The crucial upgrade is eight conditional Spencer stages:
+the local quadratic observable has interaction blocks<=8, so each
+stage is an ordinary fractional linear-discrepancy problem alongside
+all16Q Fourier rows. No extra nonlinear rounding theorem is assumed.
+
+NEW PAPER THEOREM: for every Qdiv8,Q>=10^12, genuine integer A_Q
+has n~Q/2, actualsqrtQ/20<=K=2M<=500sqrtQ, and
+G_t(4pi/Q)<=-Q/25<=-K²/6250000. Therefore no global o(K²)
+pointwise floor holds. All-circle control uses Bernstein, not a
+sampled minimum. This makes P19's finite/heuristic sharpness
+asymptotic on a different family. It is not an Epoch counterexample,
+and n=Theta(K²) leaves genuinely spiky conditional gains unrefuted.
+
+The one fixed Bernoulli pilot Q65536,seed20261023,n32787 is distinct
+from the Spencer construction. Exact coefficient and set identities,
+two ball point evaluators, and different Taylor/Bernstein all-circle
+arguments certify G=-4323.5554... and M<=75623/180. Both arithmetic
+arguments use Arb; no independent backend or kernel check is claimed.
+The Spencer source was reverified at arXiv2207.03268v2,p2 after the
+old author URL404. [Proof, artifacts and scope](notes/modulated_triangle_2026-10-23.md),
+[independent review](notes/advisor_modulated_convolution_2026-10-23.md).
+
+GLOBAL REVIEW: stop this global floor target and the covariance
+relabeling. Retain the bounded-component rounding tool. First next
+derivation is P14's existing joint boundary non-saturation in n/K²→∞,
+with t-sum/pure-positive remainders retained and P20 group adversaries.
+No universal exponent improved. Keep the three lines in STATE.
+All own jobs terminal/PASS, no GPU use or VM lifecycle operation,
+sharedDirichlet on, cumulative conservative GPU$0.10.
+
 ## 2026-10-23 — full-negative and cyclic phase closures refuted; keep full covariance
 
 Previous4bdf346 was progress. The announced many-row attempt was

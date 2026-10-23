@@ -1,5 +1,30 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Scoped source checks: conditional discrepancy and the quadratic floor (2026-10-23)
+
+Larsen, *Fast Discrepancy Minimization with Hereditary Guarantees*,
+[arXiv2207.03268v2](https://arxiv.org/pdf/2207.03268v2),24Nov2022,
+PDFp2/printedp1, Introductionitem2: directly reverified the REAL
+square-matrix Spencer bound |a_ij|<=1,disc(A)<=6sqrt(m). The
+old author-hostedHereditary.pdf URL returned404 this cycle; the
+versioned primary arXiv text was accessible. Only this classical
+existence input is used; no algorithmic claim from later theorems.
+The arbitrary-fractional dyadic argument and bounded-component
+conditional-observable extension are derived in the new proof record.
+
+Bedert, [2509.05260v3](https://arxiv.org/html/2509.05260v3),24Jul2026,
+Section7,equations36–38: rechecked the Fourier-square convention,
+the generic16K² self-convolution floor and its use in the pointwise
+even/odd inequality. No claim is made that the new sharpness family
+resolves the later truncation or averaged-boundary bottleneck.
+
+Local P19 PropositionC's source labels its finite cases certified
+and asymptotic explanation HEURISTIC. The new integer rounding
+theorem supplies a uniform quadratic-loss family by a different
+mechanism; no Singer asymptotic constant or publication priority is
+claimed. A limited targeted search is not a novelty certification.
+[Proof, dependencies and exact scope](notes/modulated_triangle_2026-10-23.md).
+
 ## Scoped source check: phase stability (2026-10-23)
 
 Ephremidze--Shargorodsky--Spitkovsky,

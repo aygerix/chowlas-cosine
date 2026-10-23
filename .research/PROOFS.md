@@ -2,6 +2,40 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Quadratic modulated-convolution loss: an actual integer counterfamily (2026-10-23)
+
+PROVED on paper using classical real-matrix Spencer discrepancy,
+independently internally audited. For every Q divisible8,Q>=10^12,
+there is a genuine A_Q⊂[1,Q-1], t=-Q/4∈±A, n=Q/2+O(sqrtQ),
+actualK=2M with sqrtQ/20<=K<=500sqrtQ, and
+
+    (h_t*h_t)(4pi/Q)<=-Q/25<=-K²/6250000,
+    h_t=2(1+sin tx)*D_A, D_A=2f_A.
+
+Haar is probability normalized. Thus no uniform -o(K²) replacement
+is possible in this P14/P19 pointwise step. The sets still satisfy
+M=Theta(sqrt n); no Chowla counterexample, universal exponent or
+spiky-regime conditional obstruction is claimed.
+
+The new proof ingredient is bounded-component nonlinear rounding:
+quadratic interactions have blocks<=8; one variable/component/stage
+makes the conditional expectation affine. Eight padded Spencer
+roundings control it and16Q Fourier grid rows simultaneously, with
+O(sqrtQ) error and no final-bit independence assumption. Bernstein
+transfers to allx. This is derived from the verified6sqrt(m) real
+square-matrix theorem, not an unproved nonlinear discrepancy input.
+
+One independent Bernoulli pilot, NOT the asymptotic Spencer choice,
+has32787 frequencies, certifiedG=-4323.5554... and all-circle
+M<=75623/180. Independent coefficient/set/ball-DFT point checks and
+Taylor/Bernstein upper arguments pass. No new kernel verification.
+[Complete proof and scope](notes/modulated_triangle_2026-10-23.md),
+[advisor audit](notes/advisor_modulated_convolution_2026-10-23.md).
+
+The preceding covariance attempt is exactly the old finite Schur
+cap; its proposed two-vector compression is insufficient. No new
+norm-gap bound follows from that rewriting. [Audit](notes/advisor_full_covariance_2026-10-23.md).
+
 ## Full scalar phase: exact closure falsifications and retained kernel (2026-10-23)
 
 REFUTED on paper and exact finite checks: the proposed universal
@@ -1076,6 +1110,13 @@ convolutions cap at K^{2r}. With the degree-1 no-gap barrier (NOTEBOOK; audited 
 of an A-independent multiplier): every "pointwise gap inequality + test function" proof is capped at K^4.
 Proposition C (agent, arb-certified single points): the K² in (37) is attained by genuine sets (Singer q=31: −0.668K²,
 q=53: −0.590K², Erdős–Turán p=59: −0.511K², with K <= |D|), so the constant term cannot be o(K²).
+Scope clarification2026-10-23: the linked report labels those finite
+cases interval-certified and their asymptotic explanation HEURISTIC.
+Finite examples alone did not prove the uniform no-o(K²) conclusion.
+The new [triangular-rounding theorem](notes/modulated_triangle_2026-10-23.md)
+now proves that conclusion with a different infinite integer family.
+It does not prove the original Singer asymptotic constant, and does
+not rely on admissible-t membership in those old finite tables.
 Proposition M (PROVED by agent from (38) + Lemma 7.2): |B_t| <= 4388 ∫ min(|1̂_{B_t}|, 13.46 K|B_t|^{1/2})² — the exact power
 of the method. TARGET LEMMA S (OPEN): ∫ min(|1̂_{B_t}|, K³)² <= C K^{4−δ} under F >= −K; δ = 1 gives Chowla exponent 1/4
 (with Shankar). It fails for the Theorem A sets, so it must use F >= −K at degree 1. Splits into (S1) little L² mass of

@@ -1,5 +1,21 @@
 # Certificates
 
+## 2026-10-23 — exhaustive finite square checks and an all-degree paper theorem
+
+For all8190 first-half bit vectors at even root degrees2..24,
+src/boolean_reciprocal_square.py reconstructs signed rational h,
+checks every off-center coefficient of h² in{0,1}, and independently
+checks h autocorrelations. Only24 singleton/two-harmonic patterns
+survive; exact Chebyshev/Sturm checks prove their unit-circle zeros
+and actual M1or9/8. Artifact boolean_square_2026-10-23/enumeration.json
+is terminal/PASS on Dirichlet. These are exact all-circle finite
+certificates, not numerical minima or a degree-unrestricted proof.
+
+The all-degree, all-real-power rigidity theorem is separately
+proved on paper and internally audited in
+[the proof note](notes/boolean_power_rigidity_2026-10-23.md).
+No kernel verification or universal Chowla conclusion is asserted.
+
 ## 2026-10-23 — exact weighted phase countermodel, not a Boolean construction
 
 Q2=(1+z18)[(1+z²)^4+z(z²-1)^3]/sqrt180 has exact

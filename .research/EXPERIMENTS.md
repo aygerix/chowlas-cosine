@@ -1,5 +1,23 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — complete reciprocal-square enumeration through degree24
+
+src/boolean_reciprocal_square.py exhausts all first-half outer
+coefficient bits for even root degrees2..24 (8190 vectors), with
+signed rational roots and unrestricted central coefficient.
+Exactly two predicted shapes survive at each degree,24total.
+Polynomial multiplication and separate autocorrelation agree;
+exact Chebyshev/Sturm root counts certify unit-circle zeros,
+hence actual M1 or9/8. No grid minima or random sampling.
+Artifact: experiments/boolean_square_2026-10-23/enumeration.json.
+Dirichlet,2cores/4GB/180s cap; runtime about1.20s, terminal/PASS.
+
+The subsequent independent paper proof covers all real polynomial
+powers and all degrees. The finite enumeration is corroboration
+only. No larger search is justified by these results;
+mixed norms and general factors remain outside the class. No
+GPU spend or VM lifecycle operation.
+
 ## 2026-10-23 — exact joint-factor identities and a weighted phase falsifier
 
 Deterministic src/joint_factor_identities.py, run through dirun

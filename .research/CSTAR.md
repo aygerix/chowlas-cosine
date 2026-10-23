@@ -1,5 +1,21 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Latest continuation: exact0/1 coefficient equations give an
+all-degree perfect-power rigidity theorem. P_lambda=H^q is possible
+only for q2 and the singleton or two-harmonic A={d,2d}; lambda1
+or9/8. Signs and rationality of the root are not assumed. This
+closes a whole construction architecture, not general |Q|² or
+mixed norms. [Proof](notes/boolean_power_rigidity_2026-10-23.md),
+[independent audit](notes/advisor_boolean_norm_2026-10-23.md).
+
+For ALL actual c2M, D^D*c is algebraically integral; a nontrivial
+denominator ideal for n>=3 is a perfectgthpower for someg|D,g>=3.
+No archimedean gain follows yet. Next quantify/construct the
+cancellation in mixed coefficient equations; the explicit A12
+mixed family already defeats verbatim transfer of the square
+argument. No larger square search or phase-gap claim. Full GOAL
+active;8190-pattern exact corroboration PASS, Dirichlet unchanged.
+
 Newest continuation: joint factor budgets under dilation are proved
 on paper and internally reviewed. For Q2=E(z²)+zO(z²), E1=S,O1=0,
 the zero-sum channel has signed variance-8O'(1)²/S. Its OUTPUT

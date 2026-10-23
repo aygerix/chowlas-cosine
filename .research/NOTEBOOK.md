@@ -1,5 +1,35 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — a full-coefficient rigidity theorem and arithmetic extension
+
+Previous5678d00 was progress. This cycle used the actual0/1
+outer coefficients, rather than a phase relaxation. For ALL A,
+lambda>=M, P_lambda=H^q can occur only for q2 with A singleton
+or{d,2d},lambda1or9/8. Outer recurrence forces rational roots;
+strict p-adic binomial-valuation decrease gives a unique least
+term at support multiples. Reversal forces a single middle term;
+everyq>=3 then has an outer coefficient>1. Signs, rationality
+and optimality were not assumptions. Advisor independently audited.
+[Proof](notes/boolean_power_rigidity_2026-10-23.md).
+
+One exact search independently checked8190 bit vectors at even
+degrees2..24. Only24 predicted patterns survive, all with exact
+unit-circle zeros and actual minima. Stop expanding this class:
+the proof is all-degree. Dirichlet job terminal/PASS, no GPU.
+
+For actualc2M even irrational, the same audit yields D^D*c
+algebraically integral and any denominator ideal a perfectgthpower,
+g|D,g>=3 whenn>=3. This constrains arithmetic, not size. Rational
+denominators obeyb|D^D, with primeD requiringb1orD^D.
+
+The mixed example U=1+((1+r²)/2)w+w²,V=r(1-w) keeps A12
+bits by2U1-V0²=1; lambda9/8+5r²/4+r4/8. It demonstrates why
+unique-term dominance does not transfer automatically. r1/3's
+denominator3⁴ atD2 is NONOPTIMAL, so no arithmetic contradiction.
+Next quantify mixed cancellation or build a growing family; do
+not replace qualitative phase asymmetry by an unproved root-scale
+energy gap. Full signed Rayleigh/all-scale susceptibility retained.
+
 ## 2026-10-23 — joint factor budgets and the dilation loophole
 
 Previous turn32f83bc was progress. New independently reviewed

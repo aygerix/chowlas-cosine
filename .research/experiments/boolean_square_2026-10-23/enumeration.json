@@ -1,0 +1,839 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "elapsed_seconds": 1.1961197310010903,
+  "scope": {
+    "even_degrees": [
+      2,
+      24
+    ],
+    "signed_coefficients_allowed": true,
+    "rational_coefficients": true,
+    "monic_reciprocal": true,
+    "all_outer_coefficients_exactly_zero_or_one": true,
+    "central_coefficient_unrestricted": true,
+    "optimality_not_assumed": true
+  },
+  "degree_results": [
+    {
+      "degree": 2,
+      "bit_vectors": 2,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 2,
+          "h": [
+            "1",
+            "0",
+            "1"
+          ],
+          "A": [
+            2
+          ],
+          "n": 1,
+          "max_A": 2,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 2,
+          "h": [
+            "1",
+            "1/2",
+            "1"
+          ],
+          "A": [
+            1,
+            2
+          ],
+          "n": 2,
+          "max_A": 2,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 4,
+      "bit_vectors": 4,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 4,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            4
+          ],
+          "n": 1,
+          "max_A": 4,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 4,
+          "h": [
+            "1",
+            "0",
+            "1/2",
+            "0",
+            "1"
+          ],
+          "A": [
+            2,
+            4
+          ],
+          "n": 2,
+          "max_A": 4,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 6,
+      "bit_vectors": 8,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 6,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            6
+          ],
+          "n": 1,
+          "max_A": 6,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 6,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            3,
+            6
+          ],
+          "n": 2,
+          "max_A": 6,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 8,
+      "bit_vectors": 16,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 8,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            8
+          ],
+          "n": 1,
+          "max_A": 8,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 8,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            4,
+            8
+          ],
+          "n": 2,
+          "max_A": 8,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 10,
+      "bit_vectors": 32,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 10,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            10
+          ],
+          "n": 1,
+          "max_A": 10,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 10,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            5,
+            10
+          ],
+          "n": 2,
+          "max_A": 10,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 12,
+      "bit_vectors": 64,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 12,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            12
+          ],
+          "n": 1,
+          "max_A": 12,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 12,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            6,
+            12
+          ],
+          "n": 2,
+          "max_A": 12,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 14,
+      "bit_vectors": 128,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 14,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            14
+          ],
+          "n": 1,
+          "max_A": 14,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 14,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            7,
+            14
+          ],
+          "n": 2,
+          "max_A": 14,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 16,
+      "bit_vectors": 256,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 16,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            16
+          ],
+          "n": 1,
+          "max_A": 16,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 16,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            8,
+            16
+          ],
+          "n": 2,
+          "max_A": 16,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 18,
+      "bit_vectors": 512,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 18,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            18
+          ],
+          "n": 1,
+          "max_A": 18,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 18,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            9,
+            18
+          ],
+          "n": 2,
+          "max_A": 18,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 20,
+      "bit_vectors": 1024,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 20,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            20
+          ],
+          "n": 1,
+          "max_A": 20,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 20,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            10,
+            20
+          ],
+          "n": 2,
+          "max_A": 20,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 22,
+      "bit_vectors": 2048,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 22,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            22
+          ],
+          "n": 1,
+          "max_A": 22,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 22,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            11,
+            22
+          ],
+          "n": 2,
+          "max_A": 22,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    },
+    {
+      "degree": 24,
+      "bit_vectors": 4096,
+      "complete_first_half_enumeration": true,
+      "survivors": [
+        {
+          "degree": 24,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            24
+          ],
+          "n": 1,
+          "max_A": 24,
+          "lambda_upper_exact": "1",
+          "upper_R_squared_exact": "1",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "1",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        },
+        {
+          "degree": 24,
+          "h": [
+            "1",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1/2",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "0",
+            "1"
+          ],
+          "A": [
+            12,
+            24
+          ],
+          "n": 2,
+          "max_A": 24,
+          "lambda_upper_exact": "9/8",
+          "upper_R_squared_exact": "81/128",
+          "unit_circle_zero_exact": true,
+          "actual_M_exact": "9/8",
+          "certification": "exact full-circle square identity; actual optimum also certified",
+          "proposed_one_or_two_frequency_form": true
+        }
+      ]
+    }
+  ],
+  "counterexamples_to_proposed_classification": [],
+  "qualification": "Finite complete enumeration of this rational-square class only; not an unrestricted Chowla theorem. Odd-degree proof is separate."
+}

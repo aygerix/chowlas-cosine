@@ -1,5 +1,24 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Bounded priority check: exact power rigidity (2026-10-23)
+
+Six targeted queries on reciprocal0/1 polynomial powers, a free
+central coefficient, and rational critical-value denominators did
+not establish a priority result. A related lead was Kolountzakis,
+[arXiv:0806.1809v2](https://arxiv.org/abs/0806.1809v2), abstract
+and version metadata inspected only. Its abstract concerns maximum
+coefficients/sparsity of squares whose ROOT has0/1 coefficients;
+it does not state the exact central-exception condition considered
+here. The author notice acknowledges stronger prior work by
+Cilleruelo and asks not to cite the preprint; it is recorded only
+as a search lead, not used as a theorem or priority reference.
+A related Dubickas PDF fetch failed, so its contents were not read.
+
+The new internal proof uses elementary valuation comparisons and
+has independent internal review. This bounded check establishes
+neither novelty nor absence of prior art. No manuscript, submission
+or specialist outreach follows.
+
 ## Bounded primary-source check: growing multiplicity (2026-10-23)
 
 Kravitz, [Generalized difference sets and autocorrelation integrals,

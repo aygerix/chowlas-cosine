@@ -15,6 +15,19 @@ example rules out prescribed-factor phase balance alone. Next
 must use exact0/1 product coefficients or a genuine construction.
 The stable signed-factor target remains unproved and unfalsified.
 
+2026-10-23 coefficient test COMPLETED within the same norm route:
+the exact0/1 outer coefficients classify ALL real polynomial powers
+P_A=H^q. Onlyq2 with singleton/two-harmonic sets survives; root
+rationality and reciprocity are automatic. A strict p-adic binomial
+valuation comparison gives the all-degree proof. Enumeration of
+8190 first-half bit vectors through even degree24 corroborates it
+but is no longer the scope limit. Stop expanding that search.
+[Proof and mixed-cancellation barrier](notes/boolean_power_rigidity_2026-10-23.md).
+This is a construction/denominator gate, not a universal lower bound.
+General mixed norms already evade unique-term dominance; retain
+their exact0/1 product equations rather than extend the theorem
+without a cancellation argument.
+
 User-directed priority revision (after checkpoint608cd3d): primary work is the existing arbitrary-support Boolean mixed-certificate problem; independent construction work must seek a vanishing ratio with an all-circle upper bound. A new specialized model warrants substantial effort only if it tests an explicitly stated arbitrary-support principle or offers a plausible new counterexample mechanism. Critical Sidon-window refinements are subordinate diagnostics. Consolidation, specialist review and submission are deferred by the user. The goal is active again; see the first section of [STATE](STATE.md) for the current derivation and previously refuted shortcuts. This changes priorities, not theorem statuses, and does not create a new route.
 
 ## The core obstruction C* — worked in .research/CSTAR.md (object, design rules, chain, attack log). A row reading "= C*" is a reason to push C* in CSTAR, not to leave it.

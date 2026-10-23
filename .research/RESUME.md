@@ -1,5 +1,37 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: the exact power architecture is completely settled
+
+Read [Boolean power proof](notes/boolean_power_rigidity_2026-10-23.md)
+and [advisor audit](notes/advisor_boolean_norm_2026-10-23.md).
+Previous5678d00 was progress. Full GOAL remains active.
+
+For arbitrary A,lambda>=M, P=2lambda*wD+sum(w^(D+a)+w^(D-a))
+is a real polynomial power only for q2 with A singleton,lambda1,
+or A={d,2d},lambda9/8. This is an all-degree paper theorem,
+signed/irrational roots allowed initially, not a finite search
+claim. Exact outer bits force the root rational; a strictly
+decreasing p-adic binomial valuation contradicts reversal.
+General Fejer--Riesz and mixed factors are not perfect powers.
+
+The same audit proves an arithmetic constraint for ALL actual
+algebraic minima c2M: D^D*c integral, and any nontrivial denominator
+ideal has common exponentg|D,g>=3 when n>=3. There is no size
+bound on M. Ideal power does not mean a principal power. Rational
+specialization: b|D^D; prime primitiveD=ell gives b1 or ell^ell.
+
+First concrete next derivation: allow both terms of the full
+mixed norm; identify/quantify the cancellation that breaks unique
+valuation dominance. The explicit A12 family in the proof already
+shows 2U1-V0²=1, so extending the square argument verbatim is
+false. Those upper floors are nonoptimal: r1/3 has denominator3⁴
+withD2 and does NOT contradict the actual-minimum gate. Do not
+restart perfect-power enumeration or infer a uniform phase-energy
+gap from the qualitative rigidity theorem. Preserve unrestricted
+signed Rayleigh, all-scale susceptibility and genuine constructions.
+One bounded8190-pattern exact check is terminal/PASS; no own live
+jobs, no GPU use or VM lifecycle actions. Shared Dirichlet stays on.
+
 ## Newest checkpoint: full polyphase cancellation, not phase balance alone
 
 Read [joint factor budget](notes/joint_factor_budget_2026-10-23.md)

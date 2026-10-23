@@ -1,5 +1,21 @@
 # Constructions (parametric families)
 
+2026-10-23 full-coefficient gate: a SINGLE exact real polynomial
+power P_lambda=H^q is completely classified. Onlyq2 survives,
+with A={d},lambda1 or A={d,2d},lambda9/8. No coefficient-sign
+or rationality assumption on H is needed; the all-degree proof
+uses p-adic dominance of the exact outer bits. Thus no growing
+construction exists in this architecture. General complex squares,
+multiple squares and nonconstant corrections remain outside.
+[Proof and certified finite corroboration](notes/boolean_power_rigidity_2026-10-23.md).
+
+Mixed correction remains materially different: U=1+((1+r²)/2)w+w²,
+V=r(1-w) gives exact A12 outer bits and lambda9/8+5r²/4+r4/8.
+This fixed-size nonoptimal family is only a cancellation check,
+not a promising asymptotic construction. A useful next result
+must increase cardinality with a certified smaller ratio or prove
+a quantitative arbitrary-support mixed-coefficient constraint.
+
 2026-10-23: all-class l1 rounding of a high-multiplicity complex
 square is now excluded by a general paper theorem. For every k-point
 real B, E_r=sum_nonzero|r_d-r|>=((r-2)k+2r)/6. Thus the proposed

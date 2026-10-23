@@ -1,5 +1,50 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — exact Boolean power rigidity, 2026-10-23
+
+Previous turn5678d00 was progress. Full GOAL remains active and
+unresolved. A new all-degree paper theorem uses the exact0/1
+coefficient equations, independently checked by the one advisor.
+[Proof](notes/boolean_power_rigidity_2026-10-23.md),
+[independent audit](notes/advisor_boolean_norm_2026-10-23.md).
+
+For ANY A and lambda>=M, let P=2lambda*w^D+sum_A(w^(D+a)+w^(D-a)).
+If P is a real polynomial power H^q,q>=2, then q2 and the ONLY
+sets are A={D},lambda1, or A={D/2,D},lambda9/8. No sign,
+rationality or optimality assumption on H is needed. Outer bits
+force rational coefficients; strict prime-adic valuation dominance
+contradicts coefficient reversal unless the first interior term
+is the middle one. Every higher power is excluded. General complex
+squares |Q|², mixed norms and multiple squares remain outside.
+
+For actual c=2M, normalize gcdA1,D=maxA and set K=Q(c). Then
+D^D*c is an algebraic integer. If c has a nontrivial denominator
+ideal with exponents e_v, g=gcd(D,{e_v})>=2. Caseg2 forces the
+two-frequency set; for n>=3, g>=3 and the denominator IDEAL is
+a perfectgthpower,g|D. This includes irrational minima, but gives
+no archimedean lower bound and says nothing when c is integral.
+Do not mistake an ideal power for a power of a denominator element.
+For rationalc=u/b, b|D^D; primeD=ell forces b1 or ell^ell.
+
+Exact square enumeration through even degree24 examined8190 bit
+vectors, allowing signed roots and nonoptimal floors. Only the24
+predicted survivors occur; separate autocorrelation and exact
+Sturm checks pass. The proof covers ALL degrees independently of
+this finite check. Own job terminal/PASS, no GPU deployment or
+VM lifecycle action; Dirichlet left on, cumulative GPU$0.10.
+
+Stop enlarging the square search. First next derivation: use the
+new least-valuation mechanism on GENUINELY mixed coefficient
+equations, controlling cancellation instead of assuming it absent.
+Even U=1+((1+r²)/2)w+w²,V=r(1-w) gives outer bits for A12:
+2U1-V0²=1 and lambda=9/8+5r²/4+r4/8. This is nonoptimal for
+r!=0; its r1/3 denominator3⁴ explicitly shows why the arithmetic
+gate concerns ACTUAL minima only. Seek a quantitative mixed
+coefficient bound or a growing certified construction. Exact
+nonzero phase is not a proved root-scale phase-energy gap.
+Retain full signed Rayleigh and all-scale susceptibility as
+distinct lines; general Chowla remains unresolved.
+
 ## Current continuation — joint factor budgets under dilation, 2026-10-23
 
 Previous turn32f83bc was progress. Full GOAL remains active and

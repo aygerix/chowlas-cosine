@@ -2,6 +2,39 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Perfect-power rigidity from exact Boolean coefficients (2026-10-23)
+
+PROVED on paper and independently internally audited. For arbitrary
+A and lambda>=M, the monic reciprocal polynomial
+P=2lambda*wD+sum_A(w^(D+a)+w^(D-a)) is a real polynomial power
+H^q,q>=2, only whenq2 and A singleton,lambda1, or A={d,2d},
+lambda9/8. No initial rationality/nonnegativity of H, or optimality
+of lambda, is assumed. Reciprocity and local rationality follow;
+forp|q, v_p binom(1/q,r)=-r v_p(q)-v_p(r!) strictly decreases.
+A unique least term at multiples of the first support index
+contradicts reversal unless that index is the midpoint. Higher
+powers then have a forbidden outer coefficient>1.
+[Full proof and scope](notes/boolean_power_rigidity_2026-10-23.md),
+[independent audit](notes/advisor_boolean_norm_2026-10-23.md).
+
+Consequences: exact real linear-phase factors and spectra with
+ALL roots on the unit circle admit only those two cases. This
+does not classify all-real Chebyshev roots below-1 or general
+complex/signed Fejer--Riesz factors.
+
+Universal actual-minimum arithmetic: normalize gcdA1, put c2M,
+K=Q(c). Then D^D*c integral. For nontrivial denominator ideal,
+g=gcd(D,all negative-place exponents)>=2. Ifg2, P is a real
+square and the classified A12 results. Thus n>=3=>g>=3 and
+the denominator ideal is a perfectgthpower,g|D. No principal-
+ideal or total-reality assumption, no archimedean bound. Rational
+c=u/b gives b|D^D and primeD=ell gives b1 or ell^ell.
+
+Exact corroboration: all8190 first-half bit vectors through
+even degree24 give exactly24 predicted survivors. Separate
+autocorrelations and exact unit-root checks PASS. General proof
+does not rely on bounded enumeration. No kernel/novelty claim.
+
 ## Joint signed factor budgets under dilation (2026-10-23)
 
 PROVED on paper, independently internally reviewed. For a real

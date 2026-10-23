@@ -1,5 +1,36 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — signed translation constants, no support or branch search
+
+The mathematical derivation and adversarial infinite-family proofs
+preceded computation. Only exact algebra and rational thresholds
+were checked, with a bounded 2-core / 4-GB Dirichlet job:
+
+    src/dirun.sh -c 2 -m 4 -t 45 python src/signed_translation_checks.py
+
+The initial session52090 exited1 because SymPy structural equality
+compared expanded and factored forms. Expanding their difference
+fixed the check without changing formulas. Session43092 then
+exited0, EXACT_CONSTANTS_PASS,0.159 seconds compute. After the
+paper three-color strengthening, session70749 reran the extended
+checker and exited0,0.155 seconds compute, SymPy1.14.0.
+
+The saved artifact checks signed root constant squared31/4608,
+the all-m two-color count formulas, thresholdm2000 and rational
+gap47/65000. Three-color checks cover mass threshold1/8, each
+color probability>=1/4, edge lower1783/2304>3/4 and triangle
+gap34705/1327104. Bu realization constants11/20,363/400 and
+base threshold20000 are checked; the external theorem's asymptotic
+threshold is not computed. No actual huge frequency sets, roots or
+sampled minima were evaluated.
+
+[Source](../src/signed_translation_checks.py),
+[exact output](experiments/signed_translation_2026-10-23/constants.json),
+[paper proof](notes/signed_translation_2026-10-23.md),
+[independent advisor audit](notes/advisor_cp_translation_2026-10-23.md).
+All own jobs terminal. User requested a checkpoint; research paused.
+No GPU/lifecycle action; shared Dirichlet running, cumulative$0.10.
+
 ## 2026-10-23 — one coupled-dual pilot and exact profile algebra
 
 All work on shared Dirichlet, bounded to 2 cores / 4 GB per job.

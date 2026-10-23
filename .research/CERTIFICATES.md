@@ -1,5 +1,22 @@
 # Certificates
 
+## 2026-10-23 — translation floors and all-factor mass obstructions
+
+The single nonnegative factor root floor and signed-mass conditional
+floor have complete paper proofs with independent internal audit.
+The explicit two-Sidon family has an exact all-circle minimum from
+its square identities and equality at pi. Its all-optimal-factor
+negative-mass obstruction is a paper graph proof, not a finite branch
+scan. The stronger finite three-color theorem has an elementary
+paper proof; its growing low-M realization uses Bu v1's cited
+all-circle upper theorem as a separate dependency.
+
+Exact constants passed on Dirichlet. No new universal Chowla bound,
+vanishing-ratio construction, sampled-minimum certificate, external
+priority claim or Lean/kernel result follows. Research paused at
+user request. [Proof and verification](notes/signed_translation_2026-10-23.md),
+[exact artifact](experiments/signed_translation_2026-10-23/constants.json).
+
 ## 2026-10-23 — scope of the two-scale and profile checks
 
 The current 192-bit Arb certificate proves a strict coupled residual

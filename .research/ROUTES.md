@@ -4,6 +4,54 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 consequential upgrade of the signed-mass adversary:
+THREE equal separated blocks have no mixed-color triangles. The
+finite weighted graph Goodman lower bound and per-color spectral
+triangle upper bound show that n0>=85lambda rules out N/S<=1/8
+for EVERY real exact factor. Three dilated copies of a Bu half-
+constant base eventually have actual M<=sqrt(n) and satisfy this
+premise. This tests the OLD signed-centroid mass budget itself,
+not just the new stricter 1/64 budget. Verify the primary all-circle
+Bu upper bound and keep it as an explicit cited dependency. This
+does not refute hypothetical vanishing-R branch selection, CP-Chowla,
+or full Chowla. Update stale universal stable-branch targets now.
+
+2026-10-23 adversary to the NEW one-budget signed-factor target:
+use a separated union of TWO parity-balanced Sidon difference sets
+of sizes 2m and m, with odd L>2D_low. Actual M=3m/2<=sqrt(n)
+for even m>=6. Its two edge types cannot form a mixed triangle.
+For the positive part of ANY real optimal factor, missing edge
+probability is bounded by its negative coefficient mass, whereas
+the two macroscopic Boolean lag masses force mixed wedges. Derive
+the weighted graph inequality before any computation. This changes
+the old fixed-order scalar or branch-average adversary: it attacks
+the proposed new mass-only sufficient branch via exact Boolean
+geometry and an infinite actual-low-M family, not a finite control.
+
+2026-10-23 signed bounded-translation refinement of EXISTING stable
+factor selection. For one real factor Q at lambda=M(A), the exact
+paired correlation lower bound D_theta holds even with signed q.
+The clique upper identity gains a missing-lag error. Before any
+computation, bound that error using lagwise zero correlations and
+the total negative coefficient mass N, rather than qmax or signed
+centroid variance. Candidate: N<=S/64 alone implies a universal
+root bound, S=Q(1)=sqrt(lambda+n). This is a one-budget sufficient
+branch target, not existence of such a branch. It changes the old
+three-budget centroid criterion with a stricter mass threshold; the
+two sufficient hypotheses are not ordered. It is not a fixed-degree
+scalar witness or a bounded-mean positive-reference architecture.
+
+2026-10-23 quantitative test of the EXISTING full CP translation
+completion after 1f2d803. Define D_theta as its first nonnegative
+cross-lag square sum with c_i=Q_i(e^(i theta))/S_i. The exact
+energy gives D_theta<=4lambda(lambda-1/2). Candidate bridge:
+sup_theta D_theta>=c*n for all Boolean CP certificates with
+lambda<=sqrt(n), or after optimizing harmless component origins.
+This would prove CP-Chowla, not an arbitrary-A representation
+bridge. Derive D exactly for adversarial families BEFORE any
+experiment; a generic PSD or clique reduction is a stop decision.
+No parameter sweep is authorized by this candidate alone.
+
 2026-10-23 refinement of EXISTING P76 CP-Chowla, not a new bridge
 from arbitrary spectral factors to nonnegative ones. For a finite
 nonnegative-coefficient square decomposition, every component
@@ -294,7 +342,10 @@ not a new universal method. Bounded-l1 allpass flattening is ruled
 out as a shortcut; a certified optimal WEIGHTED positive-cap
 example rules out prescribed-factor phase balance alone. Next
 must use exact0/1 product coefficients or a genuine construction.
-The stable signed-factor target remains unproved and unfalsified.
+HISTORICAL STATUS SUPERSEDED by the three-color result at this
+ledger's top: universal stable-factor existence under M<=sqrt(n)
+is REFUTED by its N/S<=1/8 requirement. A much smaller-R conditional
+selection claim remains unproved/unrefuted.
 
 2026-10-23 coefficient test COMPLETED within the same norm route:
 the exact0/1 outer coefficients classify ALL real polynomial powers

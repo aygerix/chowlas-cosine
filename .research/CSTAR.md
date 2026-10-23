@@ -1,5 +1,28 @@
 # CSTAR — THE problem. Read this first, every session.
 
+PAUSED at the user's requested natural checkpoint. Full Chowla is
+unresolved. Read current STATE/RESUME for the saved proofs and
+deferred first derivation; do not resume work without user instructions.
+All own jobs terminal, advisor stopped, shared Dirichlet stays running.
+
+CURRENT: bounded translations prove a root floor for ONE exact
+nonnegative real factor, with no coefficient bound, and a signed
+factor floor under N/Q(1)<=1/64. These are conditional certificate
+results, not unrestricted Chowla. The new infinite graph adversary
+then refutes universal low-M small-mass branch selection; a three-
+color upgrade rules out even the OLD N/S<=1/8 budget on growing
+actual-low-M inputs. The former three-budget universal stable-factor
+target is therefore REFUTED, not an unrefuted next lemma. A much
+smaller-R conditional version remains unproved/unrefuted.
+[New proofs, exact constants and scopes](notes/signed_translation_2026-10-23.md),
+[sole advisor audit](notes/advisor_cp_translation_2026-10-23.md).
+
+FIRST NEXT is the full multi-component coherence inequality in
+current STATE/RESUME. It needs exact Boolean lag allocation beyond
+generic Cauchy. No universal CP rank or cheap representation bridge
+is proved. Full GOAL paused/unresolved; all own jobs terminal; no
+GPU/lifecycle action; shared Dirichlet stays on; total RunPod $0.10.
+
 CURRENT: the localized coupled-cubic pilot chose effectively zero
 weight. Stop that shape; the proved dense endpoint stays C<400/29.
 An explicit profile W=(1-|t|)_+, v=W^2/4, p=phi(v) satisfies all

@@ -1,5 +1,51 @@
 # Research handoff — current October23 frontier
 
+User requested a natural checkpoint and a wait for further
+instructions. Research is PAUSED. No derivation, experiment or
+advisor work is scheduled. Shared Dirichlet remains running;
+all this project's jobs are terminal. Resume only on user instruction.
+
+## Read first: new signed translation floor; old universal branch budget is false
+
+Previous 1f2d803 was progress; full GOAL unresolved and paused.
+[Current proof](notes/signed_translation_2026-10-23.md),
+[independent advisor audit](notes/advisor_cp_translation_2026-10-23.md).
+This supersedes every older FIRST NEXT below.
+
+PROVED on paper: exact SINGLE nonnegative real factor implies
+lambda>sqrt(n/48), without qmax/multiplicity assumptions. Exact
+real factor with N<=Q(1)/64 implies lambda>sqrt(31/4608)*sqrt(n).
+Actual M is bounded only when the factor is optimal. The new signed
+criterion drops qmax and variance budgets with a stricter mass budget;
+neither theorem proves branch existence. Exact constants PASS.
+
+The proposed universal small-mass branch is false. A primitive
+two-Sidon-scale growing family forces N/S>1/64 for EVERY optimal
+real factor, actual M<=sqrt(n), R tending3/sqrt10. The stronger
+three-color graph argument rules out even OLD N/S<=1/8 whenever
+three equal lag blocks have no mixed triangles and n0>=85lambda.
+Three separated Bu bases supply growing actual-low-M examples;
+their all-circle upper is an explicit rechecked cited dependency.
+Thus the OLD three-budget universal stable-branch target is refuted
+by its mass requirement. A hypothetical much smaller-R restriction
+is neither proved nor refuted; don't broaden the impossibility.
+
+DEFERRED NEXT DERIVATION, AFTER USER RESUMES: the full MULTI-component D is still open.
+Its exact reduction, the within-component lower bound and the
+r-component floor sqrt(3/(512r))*sqrt(n) are proved. Try the
+Boolean coherence estimate ||A_c||^2<=(lambda-1/2)sum lambda_i*x_i
++P(theta)^2/(2P(0)), equivalent to the candidate rank-one lower
+bound for D. Ordinary Cauchy has a larger sum S_i^2*x_i^2 term;
+dropping that variance is invalid. An exact adversary or proof is
+needed before a new pilot. No origin optimization (D is invariant),
+componentwise Booleanity, or branch-size enlargement.
+
+Keep unrestricted signed Rayleigh, finite multi-certificate incidence,
+and growing all-circle construction lines separate. No new quantified
+Epoch construction, universal exponent, kernel check or priority claim.
+All own jobs terminal; Dirichlet shared/on; no GPU/lifecycle action;
+RunPod total $0.10; exactly one advisor, no papers or outreach.
+
 ## Read first: profile relaxation closed at low density; finite lag interactions next
 
 Full goal active, unresolved. Continuation after 92215dc.

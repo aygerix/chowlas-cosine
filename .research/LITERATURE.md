@@ -1,5 +1,19 @@
 # Literature (versioned, concise) — read 2026-10-17
 
+## Source dependency for the three-color branch obstruction (2026-10-23)
+
+Lead and sole advisor reopened the primary
+[Bu et al., arXiv2610.17160v1, Theorems1.2--1.3](https://arxiv.org/html/2610.17160v1),
+12Oct2026, and inspected the infimum definition and all-circle upper
+statement. Its strict half-constant margin supplies sets U of every
+sufficiently large size t with M(U)<=11sqrt(t)/20; no infimum
+attainment is assumed. This is the cited construction input for the
+growing three-color signed-factor obstruction. The external proof
+was not newly reproduced in full this turn. The finite graph theorem
+and signed translation floors have independent elementary paper
+proofs in the repository. No external novelty/priority claim.
+[Precise dependency and scopes](notes/signed_translation_2026-10-23.md).
+
 ## Limited source/novelty check after the cubic-envelope result (2026-10-23)
 
 A targeted arXiv search for the dense cosine problem with exponent1/3

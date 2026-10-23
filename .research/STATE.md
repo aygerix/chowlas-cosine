@@ -1,5 +1,87 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## User-requested pause — October 23 checkpoint
+
+Research is PAUSED at the user's requested natural checkpoint.
+Do not resume derivations, experiments, advisor work or GPU work
+until the user gives further instructions. The full GOAL objective
+is unchanged and unresolved. All own jobs are terminal; the advisor
+has stopped. Dirichlet is shared and must remain running.
+
+The current proofs, exact checks, refuted universal intermediates,
+cited dependencies and deferred next derivation are organized below
+and in [the proof note](notes/signed_translation_2026-10-23.md).
+No manuscripts, outreach or push. RunPod total remains $0.10.
+
+## Current continuation — translation theorem; universal stable-branch target refuted
+
+Previous 1f2d803 was progress. Full GOAL is unresolved, now paused.
+[New signed translation proof](notes/signed_translation_2026-10-23.md),
+[independent advisor derivations](notes/advisor_cp_translation_2026-10-23.md).
+This supersedes the older FIRST NEXT instructions below.
+
+NEW PAPER THEOREMS, independently checked: for EVERY finite Boolean A,
+any exact single nonnegative real square factor lambda+f_A=|Q|^2
+has lambda>sqrt(n/48), without qmax or multiplicity assumptions.
+For ANY real exact factor oriented with S=Q(1)=sqrt(lambda+n),
+N=sum(-q_b)_+, the condition N<=S/64 alone gives
+lambda>sqrt(31/4608)*sqrt(n). These are certificate floors; they
+bound actual M only for factors at lambda=M. No kernel/priority claim.
+
+Mechanism: bounded translation X_b=(exp(ib theta)-c)q_b with zero
+coefficient sum. The exact Boolean paired-lag term is
+D=|c|^2(n-f(theta))/4. Missing-lag cancellation bounds its signed
+error by4|c|N(S+N), removing qmax and negative variance from this
+sufficient theorem, with a stricter mass threshold.
+
+REFUTED selection target: an elementary primitive two-Sidon-scale
+family has actual M<=sqrt(n), R tending3/sqrt10, and EVERY optimal
+real factor has N/S>1/64. This is an all-family/all-factor graph
+proof, not branch enumeration. Exact constants PASS on Dirichlet.
+
+STRONGER FINITE GRAPH RESULT: if A partitions into three equal lag
+blocks of size n0, its colored Cayley graph has no mixed-color
+triangle, and n0>=85lambda, then EVERY real exact factor at that
+floor has N/S>1/8. Proof combines missing-lag mass, weighted
+Goodman triangle lower bound and per-color Hilbert--Schmidt upper
+bound. Three sufficiently separated copies of a Bu half-constant
+base eventually satisfy actual M<=sqrt(n) and n0>=85M. Bu's
+versioned all-circle upper theorem was rechecked in the primary
+arXiv source; it is an explicit cited dependency of this growing
+corollary, not of the finite graph theorem.
+
+CONSEQUENCE: the OLD unqualified universal three-budget stable-factor
+target (qmax bounded, N/S<=1/8, negative variance controlled) is
+REFUTED already by its mass requirement on growing low-M inputs.
+Do not hand it off as an unrefuted universal missing lemma. This
+does not refute branch assertions restricted to hypothetical much
+smaller R, all signed witnesses, CP-Chowla, or Chowla itself.
+
+MULTIPLE POSITIVE FACTORS remain distinct. The retained full D has
+an exact reduction and a proved within-component lower bound:
+D>=(1/4)sum_i S_i^2*x_i(1-x_i), x_i=|Q_i(theta)/S_i|^2.
+An available r-component certificate consequently has
+lambda>sqrt(3/(512r))*sqrt(n). No bound on necessary CP rank or
+cheap CP representation for arbitrary A follows. Artificial splitting
+weakens that corollary; the FULL D remains splitting invariant.
+
+DEFERRED FIRST STEP, ONLY AFTER USER RESUMES: bound the exterior-square/coherence term in
+the multi-component identity, using exact Boolean lag allocation.
+The explicit candidate D>=P(theta)(P(0)-P(theta))/(4P(0)) is OPEN.
+Equivalently need ||A_c||^2<=(lambda-1/2)sum lambda_i*x_i
++P(theta)^2/(2P(0)), with definitions in the current proof/audit.
+Ordinary Cauchy gives the larger sum S_i^2*x_i^2/2 term and does
+not prove it. Attempt an exact Boolean counterexample or a quantitative
+estimate before any computation; no phase/origin or branch sweep.
+
+GLOBAL DECISION: preserve the new certificate-class theorems;
+retire the unqualified mass-selection bridge. Preserve separately
+unrestricted signed Rayleigh coupling, finite multi-certificate
+Boolean incidence, and genuinely growing all-circle constructions.
+The existing dense profile relaxation barrier still applies.
+All own jobs terminal; no GPU/lifecycle action, Dirichlet shared/on,
+cumulative RunPod $0.10; exactly one advisor, no manuscript/outreach.
+
 ## Current continuation — explicit profile barrier; finite Boolean interactions next
 
 Continuation after 92215dc. Full GOAL is active and unresolved.

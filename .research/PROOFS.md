@@ -2,6 +2,36 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Bounded translation floors and universal stable-branch obstruction (2026-10-23)
+
+PROVED on paper, independently internally checked:
+
+* Any exact single nonnegative real factor lambda+f_A=|Q|^2 has
+  lambda>sqrt(n/48), with no qmax or multiplicity assumption.
+* Any real exact factor with S=Q(1)=sqrt(lambda+n)>0 and
+  negative coefficient mass N<=S/64 has
+  lambda>sqrt(31/4608)*sqrt(n). Actual M is bounded only for an
+  optimal factor. The proof retains exact missing-lag cancellations.
+* Three equal Boolean lag blocks, no mixed-color triangle and
+  block cardinality t>=85lambda imply N/S>1/8 for EVERY real
+  exact factor. The proof is a weighted finite graph triangle argument.
+
+The third theorem plus Bu v1's cited half-constant construction gives
+growing primitive actual-low-M examples with NO optimal real factor
+satisfying the OLD one-eighth mass budget. Thus the old universal
+three-budget stable-branch existence target is REFUTED. The two-
+Sidon-scale primitive example separately refutes the new stricter
+one-sixty-fourth target using an entirely elementary explicit family.
+Neither refutes a selection claim confined to hypothetical vanishing
+normalized minima. No Chowla resolution or kernel/priority claim.
+
+For an available r-component nonnegative square decomposition,
+lambda>sqrt(3/(512r))*sqrt(n); no universal CP-rank or representation
+bridge follows. The stronger full multi-component coherence estimate
+is OPEN. [Complete proof and exact scopes](notes/signed_translation_2026-10-23.md),
+[independent audit](notes/advisor_cp_translation_2026-10-23.md).
+Research paused at the user's requested checkpoint.
+
 ## Explicit countermodel to the cubic/Gabor continuum relaxation (2026-10-23)
 
 PROVED on paper, independently internally checked: let W=(1-|t|)_+,

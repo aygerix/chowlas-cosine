@@ -1,0 +1,38 @@
+{
+  "status": "EXACT_CONSTANTS_PASS",
+  "scope": "Paper theorem constants; no sampled minimum or huge-set enumeration.",
+  "signed_mass_threshold": "1/64",
+  "signed_gram_margin": "31/2048",
+  "root_constant_squared": "31/4608",
+  "even_m_threshold": 2000,
+  "n": "5*m**2/2 - 3*m/2",
+  "actual_M": "3*m/2",
+  "n_minus_M_squared": "m*(m - 6)/4",
+  "S_squared": "5*m**2/2",
+  "low_edge_numerator_lower": "2046863/2560000",
+  "high_edge_numerator_lower": "511119/2560000",
+  "edge_probability_product_strict_lower": "1/8",
+  "four_missing_probability_upper": "4039/32500",
+  "strict_contradiction_gap": "47/65000",
+  "three_color_upgrade": {
+    "signed_mass_threshold": "1/8",
+    "finite_premise": "Each of three equal blocks has n0>=85*lambda; no mixed-color triangle.",
+    "block_mass_lower": "85/256",
+    "each_color_probability_lower": "1/4",
+    "edge_probability_lower": "1783/2304",
+    "edge_lower_minus_three_quarters": "55/2304",
+    "triangle_contradiction_gap_at_edge_lower": "34705/1327104",
+    "cited_Bu_base_ratio_upper_eventually": "11/20",
+    "three_block_ratio_upper_squared": "363/400",
+    "base_cardinality_additional_threshold": 20000,
+    "scope": "Cited Bu asymptotic upper bound also required; its threshold is not computed here."
+  },
+  "independent_paper_dependencies": [
+    "weighted graph degree inequality from row-difference Jensen",
+    "no mixed triangles for separated small and L-divisible lags",
+    "signed autocorrelation matching and ordered missing-lag mass bound",
+    "parity-balanced Sidon square identity at pi"
+  ],
+  "sympy_version": "1.14.0",
+  "compute_seconds": 0.15499954899860313
+}

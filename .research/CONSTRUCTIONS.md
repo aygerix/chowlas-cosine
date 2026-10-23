@@ -1,5 +1,30 @@
 # Constructions (parametric families)
 
+## 2026-10-23 — growing signed-mass obstructions, not Chowla counterexamples
+
+Elementary explicit family: for even m>=2000 use balanced-parity
+power9 Sidon sets of sizes2m and m; take their positive differences
+A0,A1, D0=max A0 and A=A0 union(2D0+1)A1. Then
+n=(5m^2-3m)/2, actual M=3m/2<=sqrt(n), R tends3/sqrt10,
+gcd A=1, and EVERY optimal real factor has N/Q(1)>1/64.
+The minimum and all-factor assertion are separate exact paper proofs.
+
+Three-color upgrade: choose a known Bu half-constant base U of
+sufficiently large size t with M(U)<=11sqrt(t)/20, t>=20000.
+Set L=2max U+1 and A=U union LU union L^2U. Then n=3t,
+M(A)<=33sqrt(t)/20<sqrt(3t), and the finite graph theorem forces
+N/Q(1)>1/8 for EVERY optimal real factor. Gcd normalization makes
+the family primitive if necessary. The cited Bu theorem is an
+explicit dependency; its asymptotic threshold is not computed here.
+Only a known limsup ratio<=sqrt3/2, not an exact or vanishing
+asymptotic ratio, is inferred from this construction-side argument.
+
+This refutes old universal stable-factor existence through its mass
+budget; it does not disprove Chowla or provide an Epoch generator.
+[Full formulas, graph proofs and scope](notes/signed_translation_2026-10-23.md),
+[independent advisor audit](notes/advisor_cp_translation_2026-10-23.md).
+Research paused at the user's checkpoint request.
+
 ## 2026-10-23 — continuum countermodel is not an integer construction
 
 W=(1-|t|)_+, v=W^2/4, p=phi(v) gives an explicit admissible

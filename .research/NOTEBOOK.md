@@ -1,5 +1,56 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — signed translation theorem, growing mass obstructions, user pause
+
+Previous 1f2d803 was progress. The full cross-component calculation
+gives an actual single-factor advance: lambda+f_A=|Q|^2 with
+nonnegative real coefficients implies lambda>sqrt(n/48), without
+qmax or multiplicity assumptions. The signed extension controls
+the missing-lag error by4|c|N(S+N), proving the certificate floor
+lambda>sqrt(31/4608)*sqrt(n) under N<=S/64. For optimal factors
+this bounds actual M; no branch existence is assumed.
+
+ADVERSARIAL PROOF: two separated balanced-parity Sidon blocks of
+sizes2m,m give an explicit primitive family with actual M<=sqrt(n),
+R tending3/sqrt10 and EVERY optimal real factor having N/S>1/64.
+The probability graph has no mixed triangle; weighted degree
+inequalities give a contradiction to a small mass budget. No roots
+or minimum grid were computed.
+
+STRONGER GRAPH THEOREM: three equal lag blocks, no mixed triangles
+and t>=85lambda rule out even N/S<=1/8 for every real factor.
+Weighted triangle lower bound and per-color spectral upper bound
+give the contradiction (2e-1)^2<=max ell_i<=e-1/2 with e>3/4.
+Three separated Bu bases meet the actual-low-M and cardinality
+premises eventually. Primary versioned Bu upper theorem was reopened;
+its construction remains an explicit cited dependency of that
+realization, not of the finite graph theorem. No exact or vanishing
+asymptotic ratio is inferred. Old universal three-budget stable-
+factor existence is now REFUTED by its mass requirement.
+
+Full multi-component D has an exact reduction and a proved within-
+component lower bound, yielding a certificate-rank-dependent root
+floor. A universal coherence improvement is still OPEN. No generic
+Cauchy contraction, origin optimization or artificial splitting fixes
+that gap. These are not a universal Chowla proof or Epoch solution.
+
+VERIFICATION: sole advisor independently checked the paper proofs.
+Exact Fraction/SymPy checks ran on Dirichlet; a structural equality
+assertion was fixed, then both constant passes succeeded. Final
+artifact includes two-color gap47/65000 and three-color gap34705/1327104.
+No support search, GPU, extra agent, VM lifecycle action, manuscript
+or outreach. All own jobs terminal; Dirichlet remains shared/running;
+RunPod total $0.10.
+
+USER CHECKPOINT: user requested gathering/organization and awaiting
+further instructions. Research and advisor work are PAUSED. The
+universal objective is unchanged and unresolved. Deferred first step
+after resumption: attempt the recorded FULL multi-component coherence
+inequality with exact Boolean lag allocation, or a precise adversary;
+do not resume universal small-negative-mass branch selection.
+[Proof and scopes](notes/signed_translation_2026-10-23.md),
+[independent advisor audit](notes/advisor_cp_translation_2026-10-23.md).
+
 ## 2026-10-23 — stop the unused coupled shape; make the profile barrier explicit
 
 Previous 92215dc was progress. Completed its recorded next task:

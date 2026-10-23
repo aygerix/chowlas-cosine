@@ -1,5 +1,31 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Scope of currentrootensemble counterexamples: n3,R>3/4. They
+do not exclude growing-n orhypotheticalR→0 versions; no such
+conditional gain is proved. Dilation increasesdegree,notcardinality.
+
+Current continuation: the promised full-run calculation gives only
+reflection cancellation and a LOWER bound; stop that compression.
+The subsequent signed-factor ensemble has exact coefficient/centroid
+kernels, but its universal unbiased joint-budget certificate is
+REFUTED even on primitiveA={1,7,8}, actualM=3/2. Meanmass alone
+passes; massPLUSvariance cost>27/20 precludes that sufficient bound
+for everyC andmomentorder. Stablebranches still exist in this example.
+[Current proof/data/scope](notes/run_and_root_ensemble_2026-10-23.md),
+[independent advisor audit](notes/advisor_run_multiplier_2026-10-23.md).
+
+The separate L8 cube also refutes a universal one-block greedy
+descent for the derived jointcost. Arbitrary fair correlations are
+exactlytheoldselectiongap: anybranch/reverse law is fair. Don't
+renamecouplingchoice as a new theorem or enlarge the control box.
+Full Chowla and stablebranchselection remainopen. Current STATE
+supersedes the historical firstnext calculations below. All ownjobs
+terminal; noGPU/lifecycleaction, Dirichlet shared/on.
+First next: exact TWO-blockroot square, four centeredderivative
+Walshvectors and the Boolean missing-lagGram identity. Retain the
+mixedterm and lagwise C0(h)^2=C0(h)/2; summingfirst onlyrecovers
+oldnorminvariants. Formula/killcriterion in currentnote andSTATE.
+
 Current continuation: the P14 joint-boundary task produced an exact
 admissible-t group obstruction to raw jointL1 averaging. The endpoint
 pivot then refuted H_t<=C K|B_t| on genuine integer sets by an

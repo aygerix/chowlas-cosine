@@ -1,5 +1,26 @@
 # Certificates
 
+## 2026-10-23 — certified real-factor branch budgets and exact local traps
+
+A={8,16,24} actualM=(17+7sqrt7)/27 is proved by exactcubic
+factorization. ALL16realbranches have rigorousArb coefficient,
+centroid,mass andvarianceenclosures. Independentrealquadratic/
+complexlinearfactorizations agree at192/256bits. Meanmass exceeds
+S/8, butsame-marginalcorrelatedcost<1. Strictbadlocalminima ofthe
+jointcost are certified by rational comparisons againsteveryneighbor.
+Thisexampleisimprimitive; gcdnormalization avoidsit.
+
+PrimitiveA={1,7,8} has actualM3/2 by a squareidentitywithzeroat
+primitivecuberoots. Itsdegree6 residual roots areproposednumerically
+then certified in sixdisjointdisks by explicitRouche inequalities,
+coveringthedegree. ALL8realbranches are evaluated at256bits,
+withindependentcomplexlinearbudgetchecks. Meanmassalonepasses;
+8meanmass/S+6meannegativevariance/V>27/20 invalidates the
+unbiasedjointcertificate forEVERYC,r. Existinggoodbranchesremain.
+No sampled minimum, universalChowla implication fromfinitecases,
+kernelcheck or noveltyclaim. [Proof and data](notes/run_and_root_ensemble_2026-10-23.md),
+[advisor audit](notes/advisor_run_multiplier_2026-10-23.md).
+
 ## 2026-10-23 — exact endpoint energy and transferred global bound
 
 The existing triangular pilot enlarged by frequency65536 has

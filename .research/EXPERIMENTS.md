@@ -1,5 +1,42 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — two fixed root-reflection ensembles, complete and certified
+
+No support search or size sweep. FirstpredeclaredA={8,16,24}
+has actualM=(17+7sqrt7)/27 by an exact cubic identity. Enumerate
+ALL16 realfactorbranches fromfourreciprocalquadratics. Product
+covariance matcheseverybranchsecondmoment. At192bitsArb certifies
+meanNminus/S>.2248>1/8. Independent256bitcomplexlinear factors
+and exactQ(sqrt7) cubic proof corroborate everybudget. A same-fair-
+marginal correlated law hascostPhi<.6596<1. The savedcube also
+hasstrictbadlocalminima0110,1001; exact rational edgeinequalities
+are checked by the independent verifier. Imprimitive,gcd8 scope.
+
+To address THAT gcdloophole, ONE newadvisor-derivedprimitive
+A={1,7,8}, actualM=3/2 exactly, complete8realbranches. Six roots
+of1-z²+z³-z5+z6 have disjointcertifiedRouche disks r10^-40.
+Realquadratic/complexlinearmultiplications match at256bits.
+Meanmass/S in(.1221,.1223)<1/8, meannegativevariance/V in
+(.0646,.0647). Their normalizedjointcost>27/20, refutingunbiased
+ENS for EVERYC,r even thoughfourstableC1branches arecertified.
+Knownpositivebase/reverse hasPhi3/4. No min grid is used.
+
+    src/dirun.sh -c 2 -m 4 -t 120 python src/root_ensemble.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/root_ensemble_verify.py
+    src/dirun.sh -c 2 -m 4 -t 120 python src/primitive_root_ensemble.py
+
+Data: experiments/root_ensemble_2026-10-23/{results,verification,primitive}.json.
+Reruns added the coherent jointcost, exactlocaltrap comparison and
+primitivejointaggregate on the SAME inputs. Duringextension, the Arb
+fourth-moment computation producedNaN; computing fourthpowers by
+explicit repeated multiplication fixedit. A verifier launchedafterthatfailedproducer
+correctly rejected its older artifact for missingnewfields; producer
+thenverifier were rerun sequentially andPASS. No mathematical result
+uses the failed/stale run. All jobs terminal/PASS at finalcheckpoint,
+eachsuccessfulcompute<1second, noGPU/lifecycleactions.
+[Paper derivations and scope](notes/run_and_root_ensemble_2026-10-23.md),
+[soleadvisor audit](notes/advisor_run_multiplier_2026-10-23.md).
+
 ## 2026-10-23 — reuse of a certified pilot for ordered endpoint energy
 
 No fresh sampling, search or optimization. Append65536 to the saved

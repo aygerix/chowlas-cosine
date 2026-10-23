@@ -1,5 +1,74 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — run telescope fails; independent root selection fails even primitively
+
+SCOPE: both finiteensemble supports have n3,R>3/4. These refute
+the statedALL-support rules, NOT a growing-n/smaller-ratio/R→0
+version. Such conditional repairs remainunproved andunexcluded.
+Degreegrowth by dilation is notcardinalitygrowth. Don'tturn this
+checkpointinto a blanketmethodimpossibility or startmorecontrols.
+
+Previous781bfd9 was progress. Full GOAL active; Chowla unresolved.
+[Current proof, finite certificates and limits](notes/run_and_root_ensemble_2026-10-23.md),
+[sole advisor derivations](notes/advisor_run_multiplier_2026-10-23.md).
+
+The promised full integer-run telescope was carried out WITH the
+middle multiplier. It collapses to reflection symmetry and a LOWER
+bound onJ, not the needed upper bound. Kernel summation by parts
+introduces uncontrolled variation/crossing terms. Stop this compression;
+the integer middle estimate remains OPEN, not refuted.
+
+Pivoted within the existing signed-factor route. Derived exact
+2r-point root-choice kernels and a centroid-tilted two-point kernel,
+with quantitative bounds on EXPECTED negative coefficient mass and
+variance. A joint bound ENS<1 would select a stable branch and imply
+root Chowla via the existing centroid theorem. The UNIVERSAL
+INDEPENDENT version of this sufficient certificate is now REFUTED.
+
+FixedL8,A={8,16,24}: ALL16real branches at actualM=(17+7sqrt7)/27.
+E Nminus/S≈.22485>1/8. Onlythebase/reversal satisfyC1 budgets;
+a correlated law with identical fair root marginals has cost≈.6595<1.
+Gcd normalization avoids this example, so a primitive check followed.
+FixedprimitiveA={1,7,8}, actualM=3/2 exactly: ALL8real branches,
+six disjoint Rouche root disks and two factor multiplication methods.
+E Nminus/S≈.12217<1/8 (primitive MEAN claim not refuted), but
+8E Nminus/S+6E Vminus/V>27/20>1. Thus the full unbiased ENS
+fails for EVERYC,r even after gcd normalization. FourC1 branches
+certified; knownbase/reversal jointcost3/4. No root search or min grid.
+
+Advisor also identified a strict BAD one-block local minimum of the
+jointcostPhi in the SAVED L8 cube; all four neighbors have larger
+certifiedcost. Exact rational edge comparisons independently rechecked.
+This refutes universal one-block descent, not primitive-only descent.
+Do not respond by increasing flipblocksize or running more controls.
+
+Arbitrary fair-marginal jointlaws are EXACTLY the old selection gap:
+pair any branch with its globalreverse to make every marginalfair,
+preserving costs. Therefore inf_fair E Phi=min_branchPhi. Merely
+allowingcorrelations is not a new universal reduction. Even log-
+cumulants and the signed centralfourthmoment are invariant; sixth
+centralmoment need not be. None boundsnegativebudgets universally.
+
+All own jobs terminal/PASS after code corrections recorded in
+EXPERIMENTS. Exact/probability identities are paper proofs; finite
+inequalities are Arb-certified, no kernel/priority claim. No more
+ensembleinputs; no GPU/VM lifecycle actions, Dirichlet shared/on,
+cumulativeRunPod$0.10. Keep unrestricted signed Boolean coupling,
+mixed/scalar factor equations and genuine growing constructions as
+distinct lines; next derivation must supply an actual Boolean bound,
+not repeat independent averaging or rename arbitrary correlations.
+FIRST NEXT, advisor-directed: keep a TWO-blocksquare
+Q=a+sigma*b+tau*c+sigma*tau*d, ad=bc. Its three nonconstant
+autocorrelationWalshcoefficients vanish generically. OnlyC0(h)^2=
+C0(h)/2 fornonzeroh is specificallyBoolean. The fourcentered-
+derivativeWalshvectors are derived in the current note, retaining
+mu=mu0+sigma*theta+tau*eta. Insert these into the exactBoolean
+Gram/missing-lagidentity; retain the mixedWalshterm and attempt
+a quantitativeSIGNEDinteraction bound beforeaggregatinglags.
+Kill if it becomesonlyoldnorm/centroidinvariants or works equally
+for the certifiedweighted geometriccountermodel. No two-flip
+descent assertion, blocksize sweep or newensemble has been assumed.
+
 ## Current continuation — endpoint cancellation isolates an integer middle-band target
 
 Previousa33f2bd was progress. Full GOAL active; Chowla unresolved.

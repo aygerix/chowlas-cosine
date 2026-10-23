@@ -2,6 +2,43 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Full-run collapse and root-ensemble joint certificate (2026-10-23)
+
+PROVED: finite t-run telescope with ACTUAL middle-band multiplier
+only yields2Re<dF_start,d²P>=||d²P||² andJ>=||d²P||²/4. No
+upper gain; kernel summation by parts retains uncontrolled variation.
+The realpartidentity Re q=(1-cos tx)(D-F_isolated) is also generic
+and lower-bound-only. Stop this compression; integerMID staysOPEN.
+
+PROVED ensemble identities: with real reciprocal blocksD_j,D_jrev,
+A_j=(D_j+D_jrev)/2,B_j=(D_j-D_jrev)/2,
+E Q(z)Q(w)=U(z)U(w)prod(A_j(z)A_j(w)+B_j(z)B_j(w)).
+2r-point/centroid-tilted kernels give exact mixed coefficient moments.
+Enegative mass<=B_N, Enegativevariance<=B_V as defined in the
+[full record](notes/run_and_root_ensemble_2026-10-23.md).
+ENS=8B_N/S+6B_V/V+C^(-2r)sum E q_b^(2r)<1 is a sufficient
+stablebranch criterion, NOT a proved uniform estimate.
+
+REFUTED universal unbiasedENS evenprimitively: A={1,7,8}, actual
+M=3/2<sqrt3, eightcomplete realbranches, certifiedrootdisks.
+Enegative mass/S≈.12217<1/8 but8Enegative mass/S+6Enegative
+variance/V>27/20>1. HenceENS impossible for EVERYC,r there.
+FourC1branches exist; stable-selectiontarget remainsOPEN.
+
+FINITE CERTIFIED L8 example: A={8,16,24},actualM=(17+7sqrt7)/27,
+16realbranches. Meanmass/S>.2248, while a fullycorrelatedfair law
+has jointcost<.6596; paperbound14/15. Also strictbadone-block
+local minima above1 withallneighborshigher. Imprimitive scope:
+gcdnormalization removes this example, not the primitiveENS failure.
+
+PROVED no-new-route equality: inf_fair_jointlaws E Phi=min_branchPhi
+for anyreversal-invariantcost, by pairing abranchwithitsreverse.
+Evenlogcumulants andsignedcentralfourthmoment are invariant; even
+centralmomentsin general are not. [Advisor proof/audit](notes/advisor_run_multiplier_2026-10-23.md).
+No universal exponent/Chowla/novelty/kernel claim.
+Bothfiniteensembleexampleshave n3,R>3/4. No growing-n or
+hypotheticalR→0 version of these estimates is refuted here.
+
 ## Joint boundaries and a localized endpoint-energy target (2026-10-23)
 
 SettingS=±A,N=2n,D=2f_A,K=2M, probability Haar, t∈S,

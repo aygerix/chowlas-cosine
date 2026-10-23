@@ -4,6 +4,59 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 branch-ensemble refinement of EXISTING signed-centroid/
+joint-factor route, after full finite-run telescoping gives only
+reflection identities and a wrong-direction Cauchy bound. Target:
+derive the exact two-variable average Q_e(z)Q_e(w) over independent
+reciprocal root-pair choices at actuallambda=M, withQ_e(1)=S.
+Determine whether it controls joint coefficient mass/variance, rather
+than assuming a flattening kernel has bounded cost. A branch with
+qmax<=C,Nminus<=S/8,Vminus<=Vintrinsic/6 would prove root Chowla
+by the existing signed-centroid theorem; that selection is NOT assumed.
+First falsification is an exact small symbolic ensemble or a paper
+counterfamily to a proposed moment bound, not more successful n5
+branches. Also inspect which centered moments are branch-invariant.
+This changes the previously deterministic single-flip/bounded-kernel
+calculation, not the ultimate stable-factor gap.
+PREDECLARED adversary: A0={1,2,3}, exactM=(17+7sqrt7)/27,
+dilated by8. Its degree24 real factor has4 independent reciprocal
+quadratic choices, hence16 branches. Test the precise optimistic
+claim E_uniform Nminus<=S/8 by192-bit Arb, comparing the exact
+two-variable kernel with the branch second moments. The lifted base
+is a known positive stable branch, so a failed mean-budget estimate
+would expose the averaging method rather than refute stable selection.
+No fresh support optimization, seeds, dimension sweep or GPU.
+SCOPE/PIVOT: gcd8 normalization avoids that first obstruction. Test
+the CHANGED primitive-support hypothesis on ONE advisor-derived
+adversary A={1,7,8}: exactactualM=3/2 via |1+z+z^8|², attained
+at primitive cube roots. RemovePhi3 from1+z+z^8 to obtain the
+degree6 residual1-z²+z³-z^5+z^6, with three distinct nonunit
+conjugate pairs and exactly8 real branch choices. Certify its root
+disks by an explicit Rouche inequality before evaluating budgets.
+A failed primitive mean bound would remove the gcd escape; a pass
+does not authorize any set/parameter enlargement. No prefix8 search.
+RESULT: fullruncompression collapses to reflection identities and
+LOWERbounds; stopit. Exactrootkernels andmixedcentroidcertificate
+derived. L8meanmass>.2248S, whereas a fullycorrelatedsame-marginal
+lawhasjointcost<1. PrimitiveA178 meanmassPASSES(.12217S), but
+joint8meanmass/S+6meanvariance/V>27/20: unbiasedENS failsfor
+EVERYC,r evenprimitively. Stablebranchesexist, so doNOTrefute
+stableexistence. SavedL8cubehasstrictbadone-blocklocalminima,
+independentlyrationallyverified; generalgreedy1flipisfalse.
+ArbitraryfairjointlawsareEXACTLYoldselection bybranch/reverse
+pairing; don'trenamecorrelationsasanewroute. No moreensemble
+inputs orblocksizeincreases. [Currentproof](notes/run_and_root_ensemble_2026-10-23.md).
+NEXT refinement, explicitly not a descent conjecture: expand
+Q=a+sigma*b+tau*c+sigma*tau*d and its four moving-centroid
+derivativeWalshvectors in the exactBooleanmissing-lagGram form.
+Use C0(h)^2=C0(h)/2 beforeaggregating; nonconstantautocorrelation
+Walshzeros and ad=bc are genericweightedidentities. Need a signed
+mixedinteraction bound. Kill if onlyoldinvariants/weightedvalidity;
+no new inputs or arbitraryflipblocksize increase.
+SCOPE: both certifiedrootensembles have cardinality3,R>3/4.
+No growing-n orhypotheticalR→0 mean/ENS/descent estimate is
+refuted; onlythe stated unqualified rules. No such repair is proved.
+
 2026-10-23 retained-P14 joint-boundary refinement: test the exact-B
 target sum_(t in S)||F_Bt||_1^2 <= C(NK+K^4), not the older chosen
 Q1 decomposition. Its conditional consequence is exponent1/4.

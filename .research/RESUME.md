@@ -1,5 +1,49 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: no upper gain from runs; joint independent-root certificate refuted
+
+SCOPE: both finiteensemble supports have n3,R>3/4; no asymptotic,
+growing-cardinality or hypotheticalR→0 estimate is refuted here.
+Onlythe UNQUALIFIED all-support rules testedbelow are retired.
+
+Previous781bfd9 was progress; full GOAL active, Chowla unresolved.
+Read [current proof/test record](notes/run_and_root_ensemble_2026-10-23.md)
+and [sole advisor note](notes/advisor_run_multiplier_2026-10-23.md).
+
+The recorded full-run summation by parts was done, preservingw=D1_mid.
+Reflection makes endpoint energies equal and leaves only a LOWER
+bound onJ. Stop this compression; middle estimate stillOPEN.
+
+Root-ensemble pivot derived exact coefficient/centroid moment kernels
+and a sufficient joint stable-branch certificate ENS. Unbiased ENS
+is FALSE universally, includingprimitiveA={1,7,8},actualM=3/2.
+ALL8real branches certified via six Rouche disks. Meanmass alone
+passes(.12217<1/8), but normalizedmean mass+variance cost>27/20,
+so nochoiceC or momentorder repairs this PARTICULAR certificate.
+FourstableC1 branches exist; the counter is to averaging, not Chowla.
+
+EarlierfixedL8 dilationA={8,16,24} has meanmass>.2248S and a
+same-marginal correlatedlawcost<.6596. Its SAVED16-vertex cube
+also has a strict bad one-block local minimum, rationally verified.
+Gcd normalization avoids THAT example; don't erase this scope.
+Arbitraryfair jointlaws are exactlyoldbranchselection via pairing
+anybranch withreverse, so correlations alone are not a new route.
+No more inputs/scans/flipblocksize increases. All own jobs terminal;
+Dirichlet shared/on, noGPU/lifecycleaction, cumulative$0.10.
+
+Do not resume the superseded 'firstnext' run calculation below.
+The next operation must derive quantitative Boolean control of a
+genuinely coupled coefficient term or change construction mechanism;
+the independent moment and generic correlation shortcuts are closed.
+FIRST CONCRETE NEXT: use the advisor-directed TWO-blocksquare
+Q=a+sigma*b+tau*c+sigma*tau*d and the FOUR centeredderivative
+Walshvectors already written in the current note. Insert into the
+exactBooleanGram/missinglagidentity. Keep the mixedWalshterm,
+and use C0(h)^2=C0(h)/2 LAGWISE before aggregation. Need an actual
+signedinteraction bound, not generic vanishingWalshcoefficients.
+Kill if onlyoldnorms/centroids or weightedcountervalidity results.
+Do not assume a two-flip descent rule or enlarge experiments.
+
 ## Newest checkpoint: endpoint cancellation leaves the intermediate spectrum
 
 Previousa33f2bd was progress. Full GOAL active; Chowla unresolved.

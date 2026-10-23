@@ -1,0 +1,231 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "precision_bits": 256,
+  "elapsed_seconds": 0.008390549002797343,
+  "A": [
+    8,
+    16,
+    24
+  ],
+  "complete_branch_count": 16,
+  "exact_quadratic_field_cubic_identity": true,
+  "complex_linear_root_budget_verification": true,
+  "mean_negative_mass_over_S": [
+    "4147804784501446655/18446744073709551616",
+    "4147804784501454849/18446744073709551616"
+  ],
+  "mean_negative_mass_minus_S_over8": [
+    "3826480040289286655/18446744073709551616",
+    "3826480040289294849/18446744073709551616"
+  ],
+  "stable_C1_choices": [
+    [
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      1,
+      1
+    ]
+  ],
+  "mass_budget_failing_choices": [
+    [
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      1,
+      1
+    ],
+    [
+      0,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1
+    ],
+    [
+      1,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      0,
+      1
+    ],
+    [
+      1,
+      0,
+      1,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      1
+    ],
+    [
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      1,
+      1,
+      0,
+      1
+    ],
+    [
+      1,
+      1,
+      1,
+      0
+    ]
+  ],
+  "naive_uniform_mean_mass_bound_refuted": true,
+  "coherent_same_marginal_joint_cost_C1_r2": [
+    "12165370571563055103/18446744073709551616",
+    "12165370571563087873/18446744073709551616"
+  ],
+  "coherent_same_marginal_certificate_passes": true,
+  "certified_bad_one_block_local_minima": [
+    {
+      "choices": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "cost_interval": [
+        "49710981568265215999/18446744073709551616",
+        "49710981568265347073/18446744073709551616"
+      ],
+      "all_one_flip_neighbor_lowers": [
+        {
+          "choices": [
+            1,
+            1,
+            1,
+            0
+          ],
+          "cost_lower": "66757129393733681151/18446744073709551616"
+        },
+        {
+          "choices": [
+            0,
+            0,
+            1,
+            0
+          ],
+          "cost_lower": "65279950696696037375/18446744073709551616"
+        },
+        {
+          "choices": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "cost_lower": "65247914232150024191/18446744073709551616"
+        },
+        {
+          "choices": [
+            0,
+            1,
+            1,
+            1
+          ],
+          "cost_lower": "66962980272272252927/18446744073709551616"
+        }
+      ]
+    },
+    {
+      "choices": [
+        1,
+        0,
+        0,
+        1
+      ],
+      "cost_interval": [
+        "49710981568265215999/18446744073709551616",
+        "49710981568265347073/18446744073709551616"
+      ],
+      "all_one_flip_neighbor_lowers": [
+        {
+          "choices": [
+            0,
+            0,
+            0,
+            1
+          ],
+          "cost_lower": "66757129393733681151/18446744073709551616"
+        },
+        {
+          "choices": [
+            1,
+            1,
+            0,
+            1
+          ],
+          "cost_lower": "65279950696696037375/18446744073709551616"
+        },
+        {
+          "choices": [
+            1,
+            0,
+            1,
+            1
+          ],
+          "cost_lower": "65247914232150024191/18446744073709551616"
+        },
+        {
+          "choices": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "cost_lower": "66962980272272252927/18446744073709551616"
+        }
+      ]
+    }
+  ],
+  "qualification": "Independent factor multiplication and higher ball precision; both use Arb. This refutes the uniform mean-mass bound, not stable-branch existence."
+}

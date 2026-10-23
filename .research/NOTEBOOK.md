@@ -1,5 +1,54 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — complete run cancellation and primitive failure of an independent-root certificate
+
+Previous781bfd9 was progress. The recorded next derivation was
+completed with the actual middle-band multiplier. Full finite-run
+telescoping gives2Re<dF_start,d²P>=||d²P||²; reflection cancels
+J and Cauchy gives a LOWER bound. Kernel integration by parts
+retains uncontrolled variation and level-crossing atoms. Stop this
+compression, not the stillopen integer middle estimate.
+
+MATHEMATICAL PIVOT to existing signedfactorselection: derived exact
+2r-point reciprocal-choice kernels and centroid-tilted mixed moments,
+including a quantitative sufficient stable-branch certificate ENS.
+No branch-independence of coefficient signs/centroid was assumed.
+
+ADVERSARIALTEST1: complete16-branch L8 dilation ofA0={1,2,3},
+exactM=(17+7sqrt7)/27. CertifiedE Nminus/S≈.22485>1/8. Correlating
+allrootchoices with SAME fair marginals gives goodbase/reverse,
+jointcost≈.6595<1 (paperbound14/15). Gcd8 normalization avoids
+this obstruction, so primitive mean claim was not silently retired.
+
+ADVERSARIALTEST2: advisor-derived primitiveA={1,7,8}, exactM=3/2,
+eightreal branches. Six explicitdisjointRouche rootdisks validate
+allrootproposals. Meanmass/S≈.12217 passes, but meanvariance/V≈.06465
+and8meanmass/S+6meanvariance/V>27/20>1. Thus UNIVERSAL unbiased
+ENS fails for everyC andmomentorder even on primitive actual-lowM.
+FourC1branchescertified; knownpositivebase hascost3/4. These are
+falsifications of stronger averaging principles, not of stableexistence.
+
+Advisor identified two strict bad one-block local minima in the
+ALREADY saved L8 cube. Independent verifier checks exact rational
+cost/edge inequalities. Universal greedydescent is refuted; no
+primitive-only or larger-block conclusion. Finally proved
+inf_fair_jointlaws E Phi=min_branchPhi by branch/reverse pairing.
+Unrestrictedcorrelationselection is exactlyoldgap, not a reduction.
+
+GLOBAL REVIEW: retire fullruncompression, unbiasedENS and general
+one-blockdescent. No further inputs, sweeps or flipblocksize changes.
+Keep true ensemble/cumulant formulas as tools; they give no universal
+exponent. Need an actualBoolean bound on a coupled term, not more
+representation. All own jobs terminal/PASS; noGPU/lifecycleactions,
+sharedDirichlet on,total$0.10. [Proof/artifacts](notes/run_and_root_ensemble_2026-10-23.md),
+[sole advisor derivations](notes/advisor_run_multiplier_2026-10-23.md).
+Scopeaudit: bothensemble supports have n3,R>3/4. Degreegrowthby
+dilation is notcardinalitygrowth; asymptotic/R→0 repairs are neither
+proved norrefuted. Nextconcretederivation is the two-root-block
+Walshsquare and itsfourcenteredderivativevectors in the exactBoolean
+missing-lagGram form, retaining mixedterms beforelagaggregation.
+Kill if onlyoldnorm/centroidinvariants or weightedcountervalidity.
+
 ## 2026-10-23 — joint-boundary obstruction, integer endpoint counterfamily and middle-band localization
 
 Previousa33f2bd was progress. Carried out the announced P14 joint

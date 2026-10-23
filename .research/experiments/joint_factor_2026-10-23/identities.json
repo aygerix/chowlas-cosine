@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "host": "dirichlet.us-east1-b.c.littlewood-paley-8375.internal",
+  "python": "3.12.3",
+  "sympy": "1.14.0",
+  "checks": [
+    "generic negative-real-root net phase increment, not admissible for doubled Boolean factors",
+    "conjugate-pair net phase increment",
+    "mass-variance intersection first quadratic",
+    "mass-variance intersection second quadratic",
+    "mass-variance boundary N=S/2",
+    "stable mass constant N=S/8",
+    "nonzero zero-sum, zero-first-moment channel with exact cross-phase zero",
+    "exact generic p=1+(2-w-w^-1)^3, explicitly non-Boolean",
+    "optimal positive capped WEIGHTED example; first phase jet zero but both signed budgets fail",
+    "weighted example gcd of full polyphase channels",
+    "reduced reciprocal U identity",
+    "reduced anti-reciprocal V identity",
+    "full canonical polynomial norm on exact weighted example"
+  ],
+  "generic_example": {
+    "E": {
+      "2": "1"
+    },
+    "O": {
+      "0": "-1",
+      "1": "3",
+      "2": "-3",
+      "3": "1"
+    },
+    "p_laurent_coefficients": {
+      "-3": "-1",
+      "-2": "6",
+      "-1": "-15",
+      "0": "21",
+      "1": "-15",
+      "2": "6",
+      "3": "-1"
+    },
+    "certificate_status": "exact generic polynomial identity; not a Boolean A"
+  },
+  "optimal_weighted_phase_countermodel": {
+    "qualification": "WEIGHTED relaxation only; not a set of unit coefficients",
+    "cosine_weights": {
+      "1": "41/45",
+      "2": "34/45",
+      "3": "7/45",
+      "4": "1/45",
+      "5": "1/90",
+      "6": "7/90",
+      "7": "17/45",
+      "8": "41/90",
+      "9": "1",
+      "10": "41/90",
+      "11": "17/45",
+      "12": "7/90",
+      "13": "1/90"
+    },
+    "lambda_exact": "1",
+    "actual_M_exact": "1",
+    "global_certificate": "Q2=(1+z^18)*[(1+z^2)^4+z*(z^2-1)^3]/sqrt(180); |Q2(z)|^2=1+sum(weights[a]*cos(2*a*x)), z=exp(ix). The common factor vanishes at x=pi/18, so the weighted cosine polynomial in the undoubled convention attains -1 at pi/9.",
+    "unscaled_q": {
+      "0": "1",
+      "1": "-1",
+      "2": "4",
+      "3": "3",
+      "4": "6",
+      "5": "-3",
+      "6": "4",
+      "7": "1",
+      "8": "1",
+      "18": "1",
+      "19": "-1",
+      "20": "4",
+      "21": "3",
+      "22": "6",
+      "23": "-3",
+      "24": "4",
+      "25": "1",
+      "26": "1"
+    },
+    "qmax_squared": "1/5",
+    "negative_mass_ratio": "1/4",
+    "alpha": "21/127",
+    "phase_imbalance": "0",
+    "zero_channel_first_moment": "0",
+    "existence_qualification": "No claim that every spectral branch fails; this is a prescribed-factor countermodel"
+  },
+  "qualification": "Exact symbolic identities and sparse rational convolution only. The minimax inequalities and polyphase concentration have separate paper proofs. No stable-factor selection theorem, universal Chowla bound or Lean check."
+}

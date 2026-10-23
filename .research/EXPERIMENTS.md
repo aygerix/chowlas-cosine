@@ -1,5 +1,26 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — exact joint-factor identities and a weighted phase falsifier
+
+Deterministic src/joint_factor_identities.py, run through dirun
+with2cores/4GB/120s cap, is terminal/PASS13. SymPy checks exact
+root-phase/minimax identities; independent sparse Fraction
+convolution checks the full generic and WEIGHTED polynomials.
+Artifact: experiments/joint_factor_2026-10-23/identities.json,
+including host, versions, exact coefficients and qualifications.
+No numerical angle grid, seed, support search or branch sweep.
+
+The weighted example has cosine coefficients
+[82,68,14,2,1,7,34,41,90,41,34,7,1]/90 at frequencies1..13.
+Its actual all-circle M is1 by a sum of squares and common unit
+zero. The corresponding doubled spectral factor has qmax²1/5,
+N/S1/4,alpha21/127,delta0. Thus a phase-only prescribed-factor
+inference fails even with positive Fourier caps and optimality.
+It is NOT an admissible Boolean set and says nothing about all
+other branches. The general inequalities and norm reduction
+are paper proofs reviewed independently, not kernel-checked by
+this script. No GPU spend or VM lifecycle action.
+
 ## 2026-10-23 — one certified optimal endpoint branch and signed recovery
 
 Predeclared A=[1,5], no support/factor-family sweep. An old numerical

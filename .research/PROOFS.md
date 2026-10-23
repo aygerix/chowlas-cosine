@@ -2,6 +2,50 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Joint signed factor budgets under dilation (2026-10-23)
+
+PROVED on paper, independently internally reviewed. For a real
+factor of p(z^L), small negative massN<=S/8 forces a residue signed
+sum at least(9+3sqrt5)S/16. At N=0 every factor is a monomial
+times a lifted base factor. Signed concentration does not make
+the dominant channel a scalar factor.
+
+For Q2=E(z²)+zO(z²), arranged E1=S,O1=0, B=2O'(1), let N0
+be negative mass in O. Its exact signed variance is-2B²/S.
+Cauchy and an explicit quadratic minimax give
+
+    Vminus>=B²(1+2N0/S)²/(4N0), 0<N0<=S/2.
+
+Under Nminus<=S/8 and alpha<=1/8, this forces
+O'(1)²<=2sum_A a²/75. The translation-invariant net phase
+imbalance delta=mu_plus-mu_minus therefore satisfies
+delta²<=32sum_A a²/(75S²). The proof gives exact increments
+for conjugate-pair reflections. Doubled Boolean factors have no
+real roots; the generic real-root formula is not an admissible
+move in this doubled problem.
+
+Separate transform-specific obstruction: flattening a positive
+endpointa to qmax<=C requires analytic allpass coefficient norm
+at least(sqrt(C²+2)-C)a. Kernel and OUTPUT negative masses are
+different; no stable-branch existence theorem is inferred.
+[Full proof and higher-order limitation](notes/joint_factor_budget_2026-10-23.md),
+[independent audit](notes/advisor_joint_factor_2026-10-23.md).
+No new kernel check, universal exponent or novelty claim.
+
+Full-spectrum continuation: strip polynomial gcdK from E=K*U,
+O=K*V. Coprimality and cross-phase give U*=w^-d U,
+V*=-w^(1-d)V, d even for nonzeroV. The exact Boolean polynomial
+is2K*Krev*(U²-wV²). Coprime mixed factor |U|²+|V|² is strictly
+positive on the circle, so every optimal-floor circle zero lies
+in K. Its Chebyshev form u(T)²+2(1-T)v(T)² is positive for every
+realT. This is an exact factor reduction, not a coefficient bound.
+
+Exact prescribed-factor countermodel in the WEIGHTED positive-cap
+relaxation: Q2=(1+z18)[(1+z²)^4+z(z²-1)^3]/sqrt180 gives
+actual weighted M1,qmax²1/5,delta0,N/S1/4,alpha21/127. No Boolean
+or existential-branch falsification. General proofs internally
+reviewed;13 symbolic/rational checks PASS on Dirichlet.
+
 ## Signed centroid constraint on arbitrary Boolean factors (2026-10-23)
 
 For any real finite factor lambda+f_A=|Q|², orient S=sumq>0 and

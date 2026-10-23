@@ -1,5 +1,30 @@
 # CSTAR — THE problem. Read this first, every session.
 
+Newest continuation: joint factor budgets under dilation are proved
+on paper and internally reviewed. For Q2=E(z²)+zO(z²), E1=S,O1=0,
+the zero-sum channel has signed variance-8O'(1)²/S. Its OUTPUT
+negative mass sharpens the necessary stable condition to
+O'(1)²<=2sum_A a²/75. Net root-reflection phase increments may
+cancel; this does not give qmax or stable-factor existence.
+[Proof, limitations and next derivation](notes/joint_factor_budget_2026-10-23.md).
+
+Dilation has no extra nonnegative factors, but extra signed
+branches cannot be reduced to base scalar factors by signed-mass
+concentration alone. Bounded-kernel flattening is excluded as a
+shortcut. Next combine FULL cross-phase and Boolean coefficient
+identities, allowing zero first-moment but nonzero signed channels.
+Do not launch extra n5 controls or claim phase jets alone suffice.
+
+Full algebraic reduction now available: E=K*U,O=K*V with coprime
+reciprocalU,anti-reciprocalV and even degreeU. The Boolean polynomial
+is2K*Krev*(U²-wV²); every boundary zero lies in K, so optimality
+does not itself bound the mixed factor. A certified positive-cap
+WEIGHTED example has optimal M1,qmax²1/5,phase imbalance0, yet
+N/S1/4,alpha21/127. It refutes a prescribed-factor phase shortcut,
+not any Boolean existence statement. All13 exact checks PASS.
+Next derive a coefficient estimate using the exact0/1 product,
+or exploit it for a genuine construction.
+
 Latest continuation: the signed centroid inequality now applies to
 arbitrary Boolean A through real optimal Fejer--Riesz factors:
 S(1-4alpha)<=4(lambda-1/2)qmax+2Nminus. Its proof controls actual

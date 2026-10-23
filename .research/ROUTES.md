@@ -4,6 +4,17 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 refinement of the EXISTING signed-centroid route:
+[joint-factor proof](notes/joint_factor_budget_2026-10-23.md)
+gives full polyphase constraints, a coupled output mass/variance
+budget, and a canonical exact product2K*Krev*(U²-wV²). All optimal
+zeros are in K. These are reductions within the current route,
+not a new universal method. Bounded-l1 allpass flattening is ruled
+out as a shortcut; a certified optimal WEIGHTED positive-cap
+example rules out prescribed-factor phase balance alone. Next
+must use exact0/1 product coefficients or a genuine construction.
+The stable signed-factor target remains unproved and unfalsified.
+
 User-directed priority revision (after checkpoint608cd3d): primary work is the existing arbitrary-support Boolean mixed-certificate problem; independent construction work must seek a vanishing ratio with an all-circle upper bound. A new specialized model warrants substantial effort only if it tests an explicitly stated arbitrary-support principle or offers a plausible new counterexample mechanism. Critical Sidon-window refinements are subordinate diagnostics. Consolidation, specialist review and submission are deferred by the user. The goal is active again; see the first section of [STATE](STATE.md) for the current derivation and previously refuted shortcuts. This changes priorities, not theorem statuses, and does not create a new route.
 
 ## The core obstruction C* — worked in .research/CSTAR.md (object, design rules, chain, attack log). A row reading "= C*" is a reason to push C* in CSTAR, not to leave it.

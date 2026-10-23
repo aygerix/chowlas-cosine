@@ -1,5 +1,67 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — joint factor budgets under dilation, 2026-10-23
+
+Previous turn32f83bc was progress. Full GOAL remains active and
+unresolved. This cycle proves quantitative polyphase concentration
+and a joint OUTPUT negative-mass/variance bound, independently
+reviewed by the one advisor. [Current proof and decision](notes/joint_factor_budget_2026-10-23.md),
+[independent audit](notes/advisor_joint_factor_2026-10-23.md).
+
+For any real factor of p(z^L), Nminus<=S/8 forces one residue
+to carry at least(9+3sqrt5)S/16 signed mass. At Nminus=0 every
+factor is a lifted base factor; additional signed branches are
+possible. The dominant polyphase component is only one square,
+not automatically a scalar factor of p.
+
+For Q2=E(z²)+zO(z²), orient/shift so E(1)=S,O(1)=0. Put
+B=2O'(1), N0=negative mass of O. Its signed variance is exactly
+-2B²/S. For0<N0<=S/2,
+
+    Vminus>=B²(1+2N0/S)²/(4N0).
+
+With both stable signed budgets this gives the NECESSARY condition
+O'(1)²<=2sum_A a²/75, or delta²<=32sum_A a²/(75S²), where
+delta is the NET phase-log-derivative difference at+1 and-1.
+Root increments add, but may cancel. Doubled Boolean factors have
+NO real roots; only conjugate-pair flips are admissible there.
+This condition does not control qmax or higher cancellation.
+Stable-factor existence remains unproved and unfalsified.
+
+Bounded-l1 analytic allpass filters cannot flatten an unbounded
+positive endpoint: reaching qmax<=C from endpointa requires
+||l||1>=(sqrt(C²+2)-C)a. Kernel mass is not output mass; correlated
+cancellation is the missing mechanism. No extra n5 metric sweep:
+the known stable signed base factor already lifts unchanged.
+
+The full cross-phase relation now has a canonical reduction:
+E=K*U,O=K*V, with coprime reciprocalU and anti-reciprocalV;
+nonzeroV requires even degreeU. All boundary zeros are in K,
+while the reduced mixed factor is strictly positive. The exact
+Boolean polynomial is2K*Krev*(U²-wV²), every off-center coefficient
+exactly0 or1. This is algebra, not a new coefficient inequality.
+
+An exact positive/capped WEIGHTED countermodel has actual M1,
+qmax²1/5, O'(1)=delta0, but N/S1/4 and alpha21/127. This refutes
+a prescribed-factor phase-only shortcut; it is neither Boolean nor
+an existential branch-selection falsifier. Exact verifier PASS.
+
+First next derivation: use the FULL cross-phase identity
+w O(w)E(w^-1)+E(w)O(w^-1)=0 together with the exact Boolean
+equations R_E(d)+R_O(d)=1_A(d)/2. Explicitly allow O'(1)=0;
+the optimal positive/capped weighted countermodel shows first-moment
+phase balance alone cannot control the zero-sum channel. Work with
+the exact polynomial norm above: optimality places zeros in K but
+does not bound its mixed factor. Seek a genuine coefficient bound
+using every0/1 equation, or a Boolean signed-correction
+construction, not a phase-jet-only or successful-control test.
+Retain full signed Rayleigh/all-scale susceptibility and independent
+all-circle constructions as distinct active lines. Exact symbolic
+and independent sparse rational checks are terminal/PASS13; artifact
+experiments/joint_factor_2026-10-23/identities.json. These do not
+kernel-check the general inequalities. Shared Dirichlet is unchanged;
+no GPU deployment or new spend (cumulative$0.10), no own live jobs.
+
 ## Current continuation — signed centroid and exact factor recovery, 2026-10-23
 
 Previous goal turn was progress (1735ac3). Full GOAL remains active

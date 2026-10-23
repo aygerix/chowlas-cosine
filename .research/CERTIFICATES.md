@@ -1,5 +1,21 @@
 # Certificates
 
+## 2026-10-23 — exact weighted phase countermodel, not a Boolean construction
+
+Q2=(1+z18)[(1+z²)^4+z(z²-1)^3]/sqrt180 has exact
+|Q2(e^(ix))|²=1+sum_(a=1)^13 c_a*cos(2ax), with positive
+c=[82,68,14,2,1,7,34,41,90,41,34,7,1]/90. Nonnegativity
+and the zero at x=pi/18 certify actual weighted M1 globally
+(undoubled cosine convention minimizes at pi/9). Direct integer
+autocorrelation and Fraction geometry give qmax²1/5,N/S1/4,
+alpha21/127,delta0. This certifies a prescribed-factor phase
+shortcut fails in the WEIGHTED relaxation; it is not a Boolean
+A or an existential stable-branch falsifier.
+[Proof and exact artifact](notes/joint_factor_budget_2026-10-23.md).
+Verifier src/joint_factor_identities.py terminal/PASS13 on
+Dirichlet. General inequalities remain independently reviewed
+paper proofs, not Lean/kernel-checked statements.
+
 ## 2026-10-23 — rational contraction certifies an optimal n5 factor
 
 For A=[1,5], the saved center/radius and rational inverse R certify

@@ -1,5 +1,55 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — joint factor budgets and the dilation loophole
+
+Previous turn32f83bc was progress. New independently reviewed
+paper lemmas distinguish signed dilation branches from inherited
+nonnegative ones. Polyphase sums obey sum s=S,sum s²=S²;
+N<=S/8 gives a signed residue >=(9+3sqrt5)S/16. At zeroN
+every factor is a lifted base factor, but a dominant signed
+channel is only one square, so no scalar reduction follows.
+
+For doubled sets the zero-sum channel has exact signed variance
+-2B²/S, B=2O'(1). Combining its positive/negative first-moment
+Cauchy inequalities gives Vminus>=B²(1+2N0/S)²/(4N0) for
+N0<=S/2. With both stable budgets the new necessary bound is
+O'(1)²<=2sum_A a²/75, equivalently a bound on the NET sum of
+root-phase increments. Positive real roots are impossible.
+No amplitude or stable-factor existence conclusion follows.
+[Proof and global decision](notes/joint_factor_budget_2026-10-23.md),
+[advisor audit](notes/advisor_joint_factor_2026-10-23.md).
+
+A bounded-l1 allpass kernel cannot flatten unbounded positive
+endpointa; its norm must grow >=(sqrt(C²+2)-C)a. Kernel mass
+does not bound output mass after correlated cancellation. Skip
+another n5 certificate because the known stable signed base lift
+already exists. A generic E=w²,O=(w-1)³ shows first-moment phase
+balance can miss a whole nonzero channel; it is nonBoolean.
+Next combine FULL cross-phase with exact Boolean autocorrelation,
+not more phase jets. Full signed Rayleigh/all-scale susceptibility
+and independent signed-correction constructions remain distinct
+lines. No GPU deployment or VM lifecycle operation this cycle.
+
+Full-identity follow-through: removing gcdK gives coprime reciprocalU
+and anti-reciprocalV; nonzeroV has even degreeU>=2. The exact
+Boolean product is2K*Krev*(U²-wV²). All optimal-floor zeros lie
+in K; mixed factor is strictly positive on the circle and in its
+real Chebyshev variable. This is algebraic normalization, not a
+new Boolean estimate. The doubled factor has no real roots, so
+the generic negative-real-root increment is not an admissible
+move here; actual moves are conjugate pairs only.
+
+One targeted WEIGHTED countermodel closes the negative-Fourier
+and nonoptimality loopholes: multiply E=(1+w)^4,O=(w-1)³ by
+1+w9 and scale1/sqrt180. The13 exact positive cosineweights
+are capped1; common unit zero gives actual M1. Yet delta0 and
+qmax²1/5 coexist with N/S1/4,alpha21/127. This is a prescribed-
+factor relaxation falsifier, not a Boolean counterexample or
+existential failure. Exact symbolic identities plus separate
+sparse Fraction convolution/geometry pass13 checks on Dirichlet.
+No new support search; own job terminal. Next use EVERY0/1
+equation in the norm product, not phase balance or optimality alone.
+
 ## 2026-10-23 — signed centroid, endpoint falsification, and exact phase recovery
 
 Prior turn classified as progress (1735ac3). Root extended the new

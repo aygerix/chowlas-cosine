@@ -1,5 +1,53 @@
 # Research handoff — current October23 frontier
 
+## Newest checkpoint: full polyphase cancellation, not phase balance alone
+
+Read [joint factor budget](notes/joint_factor_budget_2026-10-23.md)
+and [advisor audit](notes/advisor_joint_factor_2026-10-23.md) first.
+The preceding turn32f83bc was progress. Full GOAL stays active.
+
+New paper theorem for Q2=E(z²)+zO(z²), E1=S,O1=0: with
+B=2O'(1), odd negative massN0 and full signed centroid,
+Vplus_O-Vminus_O=-2B²/S and, for0<N0<=S/2,
+Vminus>=B²(1+2N0/S)²/(4N0). Both stable signed budgets force
+O'(1)²<=2sum_A a²/75, equivalently net phase imbalance
+delta²<=32sum_A a²/(75S²). Reflections contribute signed
+increments to delta; only the NET sum is constrained. This is
+necessary and does not supply qmax or a stable-branch existence rule.
+
+Dilation creates no new NONNEGATIVE factors. Low negative mass
+forces a dominant signed residue, but its channel is only one
+square of p, so a scalar reduction is unproved. Bounded-l1 allpass
+flattening is also insufficient. Do not recertify extra n5 branches:
+an inherited stable signed lift is already proved.
+
+The FULL cross-phase equation has now been reduced: E=K*U,O=K*V
+with coprime reciprocalU and anti-reciprocalV, nonzeroV requiring
+even degreeU>=2. Every boundary circle zero is carried by K;
+the mixed norm is strictly positive. The exact Boolean polynomial
+equals2K*Krev*(U²-wV²), with off-center coefficients0or1. No
+quantitative coefficient control follows from this algebra alone.
+There are no real roots of a doubled Boolean factor; only
+conjugate-pair reflection moves occur there.
+
+An exact WEIGHTED positive-cap countermodel has actual M1,
+qmax²1/5 and phase imbalance0 but N/S1/4,alpha21/127. Thus
+phase balance and optimality alone are insufficient even under
+positive Fourier coefficient caps. This does not refute a Boolean
+or existential stable-branch claim. The13-check exact Dirichlet
+artifact is PASS; no own jobs remain. Read its normalization
+and all-circle identity in the current proof note.
+
+First concrete next derivation: combine the FULL anti-reciprocal
+cross-phase relation w O E*+E O*=0 with R_E+R_O=(1/2)1_A
+off0, now using the full polynomial norm above. Allow O'(1)=0:
+the certified weighted countermodel already passes that phase
+test. It is NOT a Boolean counterexample. Attempt a coefficient
+cancellation estimate from the exact0/1 norm product, or a Boolean signed
+construction. No finite-jet completeness or extra control sweep.
+Current STATE supersedes the historical targets below. Dirichlet
+is shared and left on; no GPU spend or deployment this cycle.
+
 2026-10-23 STATUS UPDATE: the user explicitly reactivated the goal.
 This handoff is now being executed; its older paused notices record
 the previous checkpoint. Current status is at the top of STATE.md.

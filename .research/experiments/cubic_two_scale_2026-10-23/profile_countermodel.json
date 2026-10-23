@@ -1,0 +1,17 @@
+{
+  "status": "EXACT_ALGEBRA_PASS",
+  "scope": "Continuum necessary-condition countermodel; no Boolean set or Chowla counterexample.",
+  "sigma": "1/4",
+  "second_derivative_identity": true,
+  "curvature_numerator_minimum": "1/8",
+  "endpoint_value_and_derivative_zero": true,
+  "density": "-pi/12 - sqrt(3)/8 + 1/2",
+  "density_strict_lower_bound": "3/140",
+  "density_bound_dependencies": [
+    "sqrt(3)<26/15 by squaring",
+    "classical pi<22/7"
+  ],
+  "positive_definiteness": "Paper proof: positive Catalan series and positive mixture of triangular kernels.",
+  "sympy_version": "1.14.0",
+  "compute_seconds": 0.25581535100354813
+}

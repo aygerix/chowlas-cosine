@@ -2,6 +2,33 @@
 
 Status labels: PROVED (paper proof here), CITED, HEURISTIC, CONJECTURED, REFUTED.
 
+## Explicit countermodel to the cubic/Gabor continuum relaxation (2026-10-23)
+
+PROVED on paper, independently internally checked: let W=(1-|t|)_+,
+v=W^2/4, p=phi(v), e=v/4, h=G(v). Then p,e,h are continuous,
+even, positive definite and supported in [-1,1]; p is on the smaller
+root with p(0)<u_*; e/e(0)=W^2 lies exactly in the Gabor class.
+The density is 1/2-sqrt(3)/8-pi/12 > 3/140. Generic completely
+positive translation Gram conditions also hold. Positive Catalan
+series proves p PD; h''=sigma*(2-9v+6v^2)/(4*(1-v)^(3/2))>0
+at sigma=1/4 gives an explicit positive triangular mixture for h.
+Exact symbolic derivative, endpoint and integral checks passed.
+
+This is a rigorous scope limitation of THESE abstract conditions and
+their valid duals, not a Boolean set, weighted low-M realization,
+Chowla counterexample, or impossibility theorem for all dense methods.
+It closes NOTEBOOK cont.18's prior small-PD-bump heuristic in this
+specified relaxation. No novelty/kernel claim.
+[Full proof, two-scale identities and stopped pilot](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md).
+
+The coupled two-scale dual itself is valid and has rational pointwise
+certificate algebra. One interval-certified generator improvement
+did not improve the fixed LP (rho approximately 8.14e-10); this is
+not a theorem about every multiplier. No new density constant.
+The finite CP followup derives exact vector and full cross-component
+translation identities; its global variance and diagonal-only
+shortcuts fail. [Proof and exact scopes](notes/advisor_cp_vector_2026-10-23.md).
+
 ## Dense one-third theorem extended by a cubic-profile support envelope (2026-10-23)
 
 PROVED, paper plus exact computer certificates and sole-advisor audit:

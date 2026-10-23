@@ -1,5 +1,25 @@
 # CSTAR — THE problem. Read this first, every session.
 
+CURRENT: the localized coupled-cubic pilot chose effectively zero
+weight. Stop that shape; the proved dense endpoint stays C<400/29.
+An explicit profile W=(1-|t|)_+, v=W^2/4, p=phi(v) satisfies all
+current p/e/g PD, support, smaller-root and exact Gabor conditions,
+with density 1/2-sqrt(3)/8-pi/12 > 3/140. Paper proof independently
+checked; exact algebra PASS. It is a continuum relaxation model,
+NOT a Boolean set or Chowla counterexample. More valid duals of
+these same conditions cannot supply an all-density contradiction.
+[Proof and test record](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md).
+
+The changed finite CP attempt retains a full cross-component
+bounded-translation identity after global variance averaging and
+diagonal-only component bounds fail for precise reasons. FIRST NEXT
+is a quantitative use of the exact Boolean DIAGONAL lag sums in
+that FULL quadratic identity, not another profile constraint or a
+componentwise Boolean assumption. [Advisor derivation](notes/advisor_cp_vector_2026-10-23.md).
+Current STATE/RESUME supersede all older FIRST NEXT entries below.
+Full goal active/unresolved; own jobs terminal; no GPU/lifecycle
+action; shared Dirichlet stays on; cumulative RunPod $0.10.
+
 CURRENT: a newcertifieddensepartialtheorem. Everyfixed0<C<400/29
 hasc(C)>0 withM(A)>=c(C)|A|^(1/3) whenevermaxA<=C|A|,
 forALLgenuinepositiveBooleanA. ThisextendsP66/P68's1000/73.

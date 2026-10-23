@@ -1,5 +1,49 @@
 # NOTEBOOK (dated)
 
+## 2026-10-23 — stop the unused coupled shape; make the profile barrier explicit
+
+Previous 92215dc was progress. Completed its recorded next task:
+derived the coupled cubic dual's exact radical certificate algebra,
+then interval-certified one half-sine generator improvement on the
+whole interval [3/16,1/4]. The one fixed discovery LP gave rho
+approximately 8.14e-10 and no useful gain. Stop this shape; no sweep.
+The prior certified C<400/29, exponent 1/3 theorem is unchanged.
+
+GLOBAL REVIEW / PAPER RESULT: W=(1-|t|)_+, v=W^2/4, p=phi(v),
+e=v/4, h=G(v) satisfies every current p/e/h PD/support condition,
+the smaller-root relation, and e/e(0)=W^2 in the exact Gabor class.
+Density = 1/2-sqrt(3)/8-pi/12 > 3/140. Positive Catalan series
+and positive triangular mixture give a full-line proof; exact algebra
+and sole-advisor audit check it. Generic CP translation matrices
+also satisfy the relaxation. This makes cont.18's small-PD-bump
+heuristic explicit, with exact hypotheses and scope.
+
+No actual Boolean support or weighted small-M realization is supplied.
+This admissible continuum profile shows why valid duals of these
+conditions alone cannot exclude every fixed density. Retain the
+completed dense theorem, but move the universal effort to information
+lost in passing from finite zero-or-one coefficients to profiles.
+
+CHANGED DERIVATION within P76: vector-centroid identity is valid,
+but a distant singleton swamps its global variance ratio. Bounded
+translations remove that frequency explosion; diagonal-only squares
+then fail under duplicating a component. The full cross-component
+U_ij/R_ij identity avoids that artificial loss. Lead and advisor checked
+the algebra independently. It supplies no universal size inequality
+yet; the exact diagonal Boolean lag sums must control cross terms.
+No CP representation bridge, numerical pilot or construction claimed.
+
+First next: derive such a finite cross-component inequality, retaining
+signed lags and the common-center coherence penalty. Stop if only
+the old clique/Schur bound is recovered. Keep unrestricted signed
+witnesses and growing all-circle constructions separate. No revival
+of Paley DC deletion/nested schedules without a changed identity.
+All own jobs terminal; no GPU/lifecycle action, shared Dirichlet on,
+cumulative $0.10. Full GOAL remains active, unresolved.
+[Paper proof and artifacts](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md),
+[advisor audit](notes/advisor_cubic_two_scale_2026-10-23.md),
+[finite CP calculation](notes/advisor_cp_vector_2026-10-23.md).
+
 ## 2026-10-23 — new certified dense one-third range via cubic support before Jensen
 
 Previous86f5ca5 was progress. Completedtherecordedtwo-blockGram

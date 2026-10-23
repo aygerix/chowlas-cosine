@@ -1,5 +1,39 @@
 # Constructions (parametric families)
 
+## 2026-10-23 — continuum countermodel is not an integer construction
+
+W=(1-|t|)_+, v=W^2/4, p=phi(v) gives an explicit admissible
+model for the current cubic/Gabor profile relaxation, with density
+1/2-sqrt(3)/8-pi/12>3/140. No finite Boolean realization with
+small M is constructed. This is a scope result for the relaxation,
+not an Epoch algorithm or a family with M/sqrt(n) tending to zero.
+[Full proof and precise exclusions](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md).
+
+The CP-vector satellite example in the advisor note is also an
+obstruction to a proposed estimate, not a new small-ratio family:
+for even k>=8, take B_i=2*9^i+epsilon_i, 0<=i<k, with exactly
+k/2 epsilon_i equal to 1. Let A0 be its distinct positive differences,
+D=max A0, and append an odd L>2D. Then n=k(k-1)/2+1 and
+M(A0 union {L})=k/2+1 EXACTLY, attained at pi. Equality of two
+perturbed differences first reduces modulo16 to equality of the
+power differences, then 9-adic valuations identify the pair.
+F_B(pi)=0 proves the minimum via the exact difference square.
+Thus the normalized ratio tends to 1/sqrt(2), rather than zero.
+
+For EVERY optimal nonnegative square decomposition, each component
+containing lag L has exactly two balanced endpoints; together these
+contribute centroid numerator L^2/2 and denominator L^2/4. Low
+components contribute at most n0*D^2/2 to either quantity. Hence
+L/(kD) tending to infinity forces the proposed global variance ratio
+to 2 uniformly over all optimal CP decompositions. This defeats a
+universal square-root lower bound for that ratio, not CP-Chowla.
+The all-k and all-circle statements are independently checked paper
+proofs; no new numerical minimum or kernel certification is claimed.
+Keep the genuine construction track separate. Previously
+closed Paley DC deletion and nested residue schedules are not
+reactivated by suggesting an unspecified recursive repair.
+[Finite CP identities and scope](notes/advisor_cp_vector_2026-10-23.md).
+
 ## 2026-10-23 — integer obstruction to linear-K endpoint energy
 
 An OBSTRUCTION family, not a vanishing-ratio construction. For every

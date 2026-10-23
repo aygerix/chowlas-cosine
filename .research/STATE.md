@@ -1,5 +1,75 @@
 # >>> READ FIRST: .research/CSTAR.md <<<
 
+## Current continuation — explicit profile barrier; finite Boolean interactions next
+
+Continuation after 92215dc. Full GOAL is active and unresolved.
+Read [the current paper proof and test record](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md)
+and the [sole advisor audit](notes/advisor_cubic_two_scale_2026-10-23.md).
+This block supersedes the older FIRST NEXT instructions below.
+
+The recorded coupled cubic dual was derived, including rational
+pointwise/tangent certificate algebra. One dyadic localized shape
+was interval-certified to improve the cost of the half-sine generator
+throughout [3/16,1/4], with normalized residual < -1/100. The ONE
+fixed discovery LP nevertheless chose rho approximately 8.14e-10.
+No useful improvement; stop this shape, with no size/shape sweep.
+No new density endpoint is claimed. The prior proved theorem remains
+M>=c(C)n^(1/3) for every fixed C<400/29 and max A<=Cn.
+
+NEW PAPER SCOPE RESULT, independently checked: W=(1-|t|)_+,
+v=W^2/4, p=(1-sqrt(1-v))/2, e=v/4 and g=G(v) satisfy ALL
+current p/e/g positive-definite support conditions, the smaller-root
+relation, and the exact single-generator Gabor condition e/e(0)=W^2.
+The density is exactly 1/2-sqrt(3)/8-pi/12 > 3/140. The proof
+uses a positive Catalan series for p and a positive triangular-kernel
+mixture for g; exact derivative/antiderivative checks passed on
+Dirichlet. Generic completely positive translation Gram conditions
+also hold. This rigorously closes an old small-PD-bump heuristic.
+
+SCOPE: this is an abstract continuum relaxation countermodel, NOT
+a Boolean set, weighted low-M realization, or Chowla counterexample.
+It shows why these conditions plus further valid duals cannot alone
+give a contradiction for every fixed density (e.g. C>=140/3).
+New finite Boolean information may exclude it. Retain the completed
+dense theorem, but stop treating constant refinements of this
+relaxation as a demonstrated route to full Chowla.
+
+CHANGED FINITE ATTEMPT: for nonnegative square components Q_i,
+the vector-centroid identity is valid; a distant singleton refutes
+its proposed global variance ratio for EVERY optimal nonnegative
+decomposition of an explicit growing family with actual
+M=k/2+1<=sqrt(n), R tending to 1/sqrt(2). It does not refute a
+vanishing-R conditional claim. Bounded translations avoid the
+frequency explosion, but dropping cross-component terms fails under
+exact duplication Q -> R copies of Q/sqrt(R). The advisor derived
+the full splitting-invariant U_ij/R_ij identity, which the lead checked.
+No new universal quantitative inequality follows yet. This is within
+P76 CP-Chowla and supplies no bridge from arbitrary A to a cheap CP
+certificate. [Finite identities and scope](notes/advisor_cp_vector_2026-10-23.md).
+
+FIRST CONCRETE NEXT: let c_i=Q_i(e^(i theta))/S_i,
+X_i=(Q_i(e^(i theta)z)-c_i Q_i(z)),
+U_ij(d)=sum_b X_(i,b) q_(j,b+d),
+R_ji(d)=sum_b q_(j,b) q_(i,b+d). Keep ALL i,j and signed d in
+U_ij(-d)-e^(id theta)U_ji(d)=(e^(id theta)c_j-c_i)R_ji(d).
+Try to use the exact Boolean sum_i R_ii(d)=1_A(d)/2 for d>0
+to control this full quadratic identity. Do not apply Booleanity to
+each component separately or discard the signed coherence penalty.
+If it yields only the old clique norm or an equivalent Schur cap,
+stop that reduction before computation and change mechanism.
+
+Three distinct retained lines: unrestricted signed-factor/negative
+Rayleigh coupling; finite CP lag-incidence interactions; genuine
+growing Boolean constructions with all-circle UPPER certificates.
+No new construction is claimed. Paley DC deletion and nested residue
+schedules remain closed; a proposed recursive repair needs a changed
+exact coefficient identity before any pilot.
+
+All own jobs are terminal: interval probe PASS, discovery completed
+(uncertified), exact profile algebra PASS. No GPU or VM lifecycle
+action; shared Dirichlet stays running; RunPod cumulative $0.10.
+No manuscript, outreach, or new agent. No new push authorized.
+
 ## Current continuation — a certified extension of the dense one-third theorem
 
 Previous86f5ca5 was progress. Full GOAL active; Chowla unresolved.

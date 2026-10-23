@@ -1,5 +1,38 @@
 # Experiments (exact tests, seeds, outputs)
 
+## 2026-10-23 — one coupled-dual pilot and exact profile algebra
+
+All work on shared Dirichlet, bounded to 2 cores / 4 GB per job.
+No GPU, support search, or VM lifecycle operation.
+
+    src/dirun.sh -c 2 -m 4 -t 45 python src/cubic_two_scale_probe.py
+    src/dirun.sh -c 2 -m 4 -t 140 python src/cubic_two_scale_discovery.py
+    src/dirun.sh -c 2 -m 4 -t 45 python src/cubic_profile_countermodel.py
+
+The 192-bit Arb probe covers the WHOLE interval [3/16,1/4] by
+64 monotone endpoint enclosures. It proves normalized coupled
+residual < -1/100 for the explicit half-sine autocorrelation, not
+an improvement of the variational supremum. Status PASS.
+
+One fixed K64 / degree10 LP, gamma=rho*(1-32|t-7/32|)_+,
+rho in [0,1/24], returned rho=8.139804678365318e-10,
+D_total=0.07238331307791188. Gurobi 13.0.3, 2 threads,
+13.954 seconds compute. Discovery is explicitly UNCERTIFIED and
+shows no useful gain; stop the shape, no followup optimization.
+
+The profile-model check uses SymPy 1.14.0 exact expressions for
+sigma=1/4. It verifies the curvature identity, endpoint zeros,
+antiderivative and rational lower bound d_*>3/140. Status
+EXACT_ALGEBRA_PASS, 0.256 seconds compute. The full-line PD proof
+is separate paper mathematics, not a finite matrix test. No Boolean
+set or low-M polynomial realization is asserted.
+
+All three jobs terminal, exit zero. Earlier probe/discovery sessions
+53692 and 98911; profile check 92760. Data in
+experiments/cubic_two_scale_2026-10-23/{probe,profile_countermodel}.json
+and discovery_sigma0.6667_K64_d10_s0.1_t0.json.
+[Paper derivation, certificate algebra and limits](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md).
+
 ## 2026-10-23 — cubicPD dual/envelope, one changed-objective LP and exact certificate
 
 No supportsearch, frequenciesweep orGPU. FirstfixedP66dualLP:

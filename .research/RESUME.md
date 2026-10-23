@@ -1,5 +1,53 @@
 # Research handoff — current October23 frontier
 
+## Read first: profile relaxation closed at low density; finite lag interactions next
+
+Full goal active, unresolved. Continuation after 92215dc.
+[Current proof and experiment record](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md),
+[advisor audit](notes/advisor_cubic_two_scale_2026-10-23.md).
+This entry supersedes older FIRST NEXT instructions below.
+
+Completed the two-scale cubic dual task. One interval-certified
+generator improvement did not improve the fixed discovery LP:
+rho approximately 8.14e-10. Stop the shape, no sweep or further
+certificate. The proved endpoint is still C<400/29, exponent 1/3.
+
+Explicit continuum countermodel: W=(1-|t|)_+, v=W^2/4,
+p=phi(v), e=v/4, g=G(v). All p/e/g PD, supported, smaller-root
+and exact Gabor-square conditions hold. Density is
+1/2-sqrt(3)/8-pi/12 > 3/140. Positive Catalan series and positive
+triangular mixture prove this; exact algebra check and internal
+independent audit passed. Generic CP translation matrices also pass.
+It is NOT a Boolean frequency set or low-M polynomial realization.
+These abstract conditions and their valid duals cannot alone yield
+an all-density contradiction. Preserve the dense theorem; require
+new finite Boolean information rather than more constant tuning.
+
+The changed P76 finite CP attempt gives a valid vector-centroid
+identity, but one distant singleton defeats global variance averaging.
+The strengthened example has actual optimal floor M=k/2+1 and
+defeats EVERY optimal nonnegative decomposition; R tends to
+1/sqrt(2), so no vanishing-R estimate is refuted.
+Bounded translations avoid that explosion; diagonal component squares
+are then defeated by duplicating a component. Keep the exact FULL
+cross-component identity instead; no quantitative gain is claimed.
+[Definitions and derivation](notes/advisor_cp_vector_2026-10-23.md).
+
+FIRST NEXT DERIVATION: use
+U_ij(-d)-e^(id theta)U_ji(d)=(e^(id theta)c_j-c_i)R_ji(d)
+and its full quadratic identity, ALL i,j and signed lags retained.
+Try coupling these terms to sum_i R_ii(d)=1_A(d)/2 for d>0.
+No individual R_ii is Boolean. Preserve the independently centered
+coherence term, or pay the exact common-center penalty. Stop if
+only the old clique norm/Schur cap remains. No numerical pilot
+without a genuinely quantitative estimate to discriminate.
+
+Keep unrestricted signed witnesses, finite CP incidence, and growing
+all-circle constructions distinct. Paley deletion/nested schedules
+are not fresh routes; no new construction mechanism is claimed.
+All own jobs terminal. No GPU/lifecycle action; Dirichlet shared/on,
+RunPod cumulative $0.10. Exactly one advisor; no manuscripts/outreach.
+
 ## Newest checkpoint: dense exponent1/3 extended to C<400/29
 
 Previous86f5ca5 was progress. Full GOAL remainsactive, unresolved.

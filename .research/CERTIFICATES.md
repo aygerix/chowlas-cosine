@@ -1,5 +1,20 @@
 # Certificates
 
+## 2026-10-23 — scope of the two-scale and profile checks
+
+The current 192-bit Arb certificate proves a strict coupled residual
+for ONE explicit generator on the whole interval [3/16,1/4]. It
+does not bound the supremum over generators or produce a new Chowla
+bound. The corresponding fixed discovery LP is uncertified and
+chose effectively zero multiplier weight; no further certificate.
+
+The explicit sigma=1/4 continuum profile has a complete paper PD
+proof and an exact symbolic algebra check. It is not a certificate
+for an actual frequency set. No all-circle upper bound for a new
+Boolean construction, new universal lower bound, or Lean result
+was produced in this continuation.
+[Precise statements and artifacts](notes/cubic_two_scale_and_profile_barrier_2026-10-23.md).
+
 ## 2026-10-23 — dense one-third theorem for every C<400/29
 
 The new cubic-profile support-cap envelope has a paper proof using

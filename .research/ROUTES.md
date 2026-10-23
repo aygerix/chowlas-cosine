@@ -4,6 +4,47 @@ RULE: before ANY new route gets work (lead or agent), add a row. The row must sa
 reduces to, or give a concrete reason it does not. A new statement that is "new wording" of a row below is NOT a new
 route. Grep PROOFS/NOTEBOOK for the MECHANISM, not just the statement.
 
+2026-10-23 refinement of EXISTING P76 CP-Chowla, not a new bridge
+from arbitrary spectral factors to nonnegative ones. For a finite
+nonnegative-coefficient square decomposition, every component
+support is an A-clique. The vector-centroid identity is exact, but
+a distant singleton destroys its proposed global variance ratio.
+Bounded translations remove that frequency explosion; componentwise
+correlation squares then fail under exact duplication of a component.
+Retain the full cross-component U_ij/R_ij identity instead. The next
+derivation must use the Boolean diagonal lag sums without losing
+cross-component coherence. No bound on those terms is assumed;
+no pilot or generic CP-profile constraint can supply the missing
+finite incidence estimate. Sharp positivity-preserving Boolean
+Toeplitz masks give only subgroup restrictions already in P76(d).
+
+2026-10-23 GLOBAL REVIEW after the localized two-scale multiplier
+is unused. Close NOTEBOOK cont.18's small-PD-bump heuristic with an
+explicit countermodel to the EXISTING P61/P66 continuum relaxation:
+W(t)=(1-|t|)_+, v=W^2/4, p=phi(v), e=v/4, g=G(v).
+Prove p,e,g positive definite and e/e(0)=W^2 in the Gabor class;
+derive its positive density exactly. This is a scope theorem for
+these abstract necessary conditions, not a Boolean construction or
+an impossibility theorem about all dense-set methods. If it passes,
+stop treating more valid duals of this relaxation as a route to all
+densities. Require new finite Boolean information or a genuinely
+changed construction mechanism before a new pilot.
+
+2026-10-23 two-scale cubic dual continuation after92215dc. This
+retains the actual (t,2t) cubic-PD interaction before Gabor-Jensen,
+inside the existing P66 route. ONE practical localized shape is
+s(t)=(1-32|t-7/32|)_+, gamma=rho*s, 0<=rho<=1/24. Its dyadic
+knots and child knots align with the existing K64 cells. First certify
+the half-sine discriminator over [3/16,1/4] with monotone endpoint
+bounds; do not assume its negativity from a grid. Derive both-t-
+endpoint pointwise inequalities before ONE fixed discovery LP.
+A rational cU>=sqrt3/18 safely weakens the negative G² coefficient
+and enlarges the constant offset cU*rho/32, keeping certification
+rational. Tangent continuation remains affine in rho and in t on
+each linear piece. If the term is unused, stop this shape; no K,
+frequency or shape sweep. Even success is only dense exponent1/3;
+it cannot replace the full unrestricted square-root objective.
+
 2026-10-23 P66 cubic-PD dual BEFORE Gabor-Jensen, after totalGram
 collapse: genuinely coupled version of existingP61/P66, not a new
 universalChowla proof. Letphi(v)=(1-sqrt(1-v))/2,
